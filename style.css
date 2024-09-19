@@ -1,527 +1,40 @@
-/*Fibra*/
-@media screen and (max-width: 800px) {
-	.tituloFibraHTML {
-		background-color: rgb(239, 239, 239);
-		color: #000;
-		text-align: center;
-	}
-	
-	.parrafoFibraHTML {
-		background-color: rgb(246, 246, 246);
-		color: #000;
-	}
-}
-
-/*MESH*/
-.queEsMeshModel{
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	justify-content: center;
-	align-items: center;
-	align-self: center;
-	height: 70vh;
-	background-color: rgba(36, 77, 5, 0.274);
-	padding-left: 17%;
-	padding-right: 10%;
-	padding-top: 4%;
-}
-
-.superContenedorMeshHohgar{
-	background-color: #03142711;
-	margin-bottom: -4.55%;
-}
-.contenedorMESH{
-	margin-top: -70px;
-}
-
-
-
-.meshModel{
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	justify-content: center;
-	align-items: center;
-	height: 70vh;
-	padding-left: 5%;
-	padding-right: 5%;
-	background-color: #e3e9ef11;
-}
-
-.carrouselMesh2{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 100%;
-}
-
-.carousel-container2{
-	display: flex;
-	height: 100%;
-	width: 100%;
-	align-items: center;
-	align-self: center;
-}
-
-.carousel2{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
-	width: 100%;
-	align-items: center;
-	align-self: center;
-}
-
-.imgMesh2{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	align-self: center;
-	width: 80%;
-	height: 95%;
-	padding-left: 20%;
-}
-
-
-.meshModelHijoRight{
-	display: flex;
-	flex-direction: column;
-	width: 90%;
-	height: 100%;
-}
-
-.parrafoModelRight{
-	display: flex;
-	flex-direction: column;
-	padding-top: 15%;
-	padding-bottom: 10%;
-	padding-right: 10%;
-}
-
-
-/*mesh home*/
-
-.carousel-container {
-	position: relative;
-	max-width: auto;
-	margin: auto;
-	overflow: hidden;
-	display: flex;
-	justify-content: center;
-  }
-  
-  .carousel {
-	display: flex;
-	transition: transform 0.5s ease-in-out;
-	justify-content: center;
-	justify-items: center;
-	width: 100%;
-	align-self: center;
-	align-content: center;
-  }
-  
-  
-  .slide {
-	min-width: 100%;
-	transition: transform 0.5s ease-in-out;
-	display: flex;
-	justify-content: center;
-	justify-items: center;
-  }
-  
-  .imgMesh {
-	width: auto;
-	height: auto;
-	padding-left: 25%;
-	padding-right: 25%;
-  }
-  
-  .prev, .next {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	background-color: rgba(0, 0, 0, 0.5);
-	color: white;
+ /* Estilo general del botón flotante */
+ #backToTopBtn {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	background-color: rgba(20, 159, 206, 0.926); /* Color del botón */
 	border: none;
-	padding: 10px;
-	cursor: pointer;
-  }
-  
-  .prev {
-	left: 10px;
-  }
-  
-  .next {
-	right: 10px;
-  }
-  
-  .dots-container {
-	text-align: center;
-	padding: 10px;
-  }
-  
-  .dot {
-	cursor: pointer;
-	height: 15px;
-	width: 15px;
-	margin: 0 2px;
-	background-color: #bbb;
 	border-radius: 50%;
+	cursor: pointer;
+	display: none; /* Se ocultará al inicio */
+	justify-content: center;
+	align-items: center;
+	transition: opacity 0.3s ease;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Estilo de la flecha simple */
+  .flecha {
 	display: inline-block;
-	transition: background-color 0.3s ease;
+	color: white;
+	font-size: 20px;
+	font-weight: bolder; /* Hacerla más ligera */
+	line-height: 1; /* Reducir el espacio vertical */
   }
   
-  .active, .dot:hover {
-	background-color: #717171;
+  /* Hover del botón */
+  #backToTopBtn:hover {
+	background-color: #09488c;
   }
-  
-  .tituloPrecioFlex{
-	display: flex; 
-	justify-content: flex-start ; 
-	align-items: center; 
-	padding-left: 17%;
-  }
-
-  @media screen and (max-width: 1000px) {
-	.tituloPrecioFlex{
-		display: flex; 
-		justify-content: flex-start ; 
-		align-items: center;
-		padding-left: 0px;
-	  }
-}
 
  
-@media screen and (max-width: 1000px) {
-	.imgMesh {
-		width: auto;
-		height: auto;
-		padding-left: 25%;
-		padding-right: 25%;
-	  }
-}
+  
 
-
-@media screen and (max-width: 800px) {
-	.tituloMESH{
-		text-align: center;
-	}
-	.parrafoMESH{
-		text-align: center;
-	}
-	.tituloPreciosMEsh{
-		text-align: center;
-	}
-	.parrafoMeshPrecio{
-		text-align: center;
-	}
-	.contenedorPrecioMesh{
-		display: flex;
-		justify-content: center;
-	}
-	.imgMesh {
-		width: auto;
-		height: auto;
-		padding-left: 25%;
-		padding-right: 25%;
-	  }
-	.parrafoMeshPrecio{
-		padding-left: 8%;
-		padding-right: 8%;
-	}
-}
-
-/*CABLE TV*/
-.imgTV{
-	display: none;
-}
-.buttonTVcelu{
-	display: none;
-}
-@media screen and (max-width: 800px) {
-	.tvCABLE{
-		text-align: center;
-	}
-	.parrafoTV{
-		text-align: center;
-	}
-	.contenedorTV{
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-	.imgTVCeluNo{
-		display: none;
-	}
-	.imgTV{
-		display: flex;
-	}
-}
-
-
-
-/*Empresas*/
-@media screen and (max-width: 800px) {
-	.imagenUsina{
-	}
-	.tituloContenedorEmpresas{
-		text-align: center;
-	}
-	.parraforEmpresasContenedor{
-		text-align: center;
-	}
-}
-
-.menu-item {
-	position: relative;
-}
-
-.menu-link {
-	display: flex;
-	/* Cambiado a flex para alinear el texto y la flecha */
-	align-items: center;
-	/* Centrar verticalmente el texto y la flecha */
-	padding: 10px 15px;
-	text-decoration: none;
-	color: #333;
-}
-
-.lista {
-	display: flex;
-}
-
-.arrow-down {
-	font-size: 1.2em;
-	/* Ajustar el tamaño de la flecha */
-	margin-left: 5px;
-	color: #555;
-	/* Color gris oscuro para la flecha */
-}
-
-.dropdown-menu {
-	display: none;
-	position: absolute;
-	top: 100%;
-	right: 0;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	width: 200px;
-	background-color: #fff;
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-}
-
-.dropdown-menu li {
-	width: 200px;
-}
-
-.dropdown-menu li a {
-	display: block;
-	padding: 10px 15px;
-	text-decoration: none;
-	color: #333;
-}
-
-.dropdown-menu li a:hover {
-	background-color: #ddd;
-}
-
-.menu-item:hover .dropdown-menu {
-	display: block;
-}
-
-
-@media screen and (min-width: 800px) {
-
-	/* Desactivar clientes movil en tamaño normal*/
-	.clientesMovil {
-		display: none;
-	}
-}
-
-@media screen and (max-width: 1000px) {
-
-	/* Desactivar clientes movil en tamaño normal*/
-	.clientesWeb {
-		display: none;
-	}
-}
-
-
-@media screen and (min-width: 1000px) {
-	.clientesWeb {
-		display: flex;
-		justify-content: center;
-		text-align: center;
-		align-items: center;
-	}
-}
-
-/*Residenciales*/
-/* Cambiar el fondo y el color del texto */
-::cue {
-	background-color: #f8d7da;
-	color: #721c24;
-	border-radius: 4px;
-	padding: 10px;
-}
-
-/* Cambiar el estilo del borde */
-::cue::before {
-	content: "ℹ️ ";
-	font-weight: bold;
-	margin-right: 5px;
-}
-
-/* Estilos generales del botón flotante */
-.floating-button {
-	position: fixed;
-	bottom: 100px;
-	right: 33px;
-	width: 55px;
-	height: 55px;
-	background-image: url('img/whatsapp_nuevo.png');
-	/* Ruta de tu imagen de WhatsApp */
-	background-size: cover;
-	border-radius: 100%;
-	transition: transform 0.3s, box-shadow 0.3s;
-	animation: backInRight;
-	/* referring directly to the animation's @keyframe declaration */
-	animation-duration: 2s;
-	/* don't forget to set a duration! */
-}
-
-
-.floating-button:hover {
-	transform: scale(1.1);
-}
-
-.dropbtn {
-	background-color: transparent;
-	color: white;
-	font-size: 16px;
-	border: none;
-	cursor: pointer;
-	padding: 10px;
-}
-
-/*Estilos boton autogestión*/
-.buttonAutogestion {
-	display: inline-block;
-	position: relative;
-	cursor: pointer;
-	outline: none;
-	white-space: nowrap;
-	margin: 5px;
-	padding: 8px 22px;
-	font-size: 0.875rem;
-	line-height: 24px;
-	background-color: #1ABC9C;
-	color: #FFF;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	border: none;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-.buttonAutogestion2 {
-	display: inline-block;
-	position: relative;
-	cursor: pointer;
-	outline: none;
-	white-space: nowrap;
-	margin: 5px;
-	padding: 8px 22px;
-	font-size: 0.875rem;
-	line-height: 24px;
-	background-color: rgb(47, 115, 231);
-	color: #FFF;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	border: none;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-.buttonAutogestion2:hover {
-	background-color: rgb(23, 46, 116);
-	color: #FFF;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-.buttonAutogestion:hover {
-	background-color: #0a6855;
-	color: #FFF;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilos para el contenedor del dropdown */
-.dropdown {
-	position: relative;
-}
-
-/* Estilos para la línea a la izquierda 
- .dropdown:before {
- 	content: "";
- 	position: absolute;
- 	left: 0;
- 	top: 0;
- 	bottom: 0;
- 	width: 1px;
- 	background-color: white;
-	
- }
-	*/
-
-/* Estilos para el ícono de flecha */
-.dropdown-icon {
-	margin-left: 5px;
-	/* Ajusta el espaciado entre el texto y el ícono */
-}
-
-/* Estilos para la lista desplegable */
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: rgb(238, 236, 236);
-	/* Cambia el fondo a blanco */
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-	margin-left: 1px;
-	/* Ajusta el margen para la línea a la izquierda */
-}
-
-/* Estilos para los enlaces de la lista desplegable */
-.dropdown-content a {
-	color: black;
-	/* Cambia el color del texto a verde oscuro */
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-	/* Cambia la fuente del texto */
-	font-size: 15px;
-	/* Ajusta el tamaño de la fuente */
-	font-weight: normal;
-	/* Quita la negrita del texto */
-}
-
-.dropdown-content a:hover {
-	background-color: rgb(99, 206, 174);
-}
-
-/* Estilos para mostrar la lista desplegable al pasar el cursor sobre el botón */
-.dropdown:hover .dropdown-content {
-	display: block;
-}
-
+  
+  
 /* Estilos para el formato móvil */
 @media screen and (max-width: 600px) {
 	.dropdown:before {
@@ -5279,6 +4792,21 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
 	font-family: 'Poppins', sans-serif;
 }
 
+.navItems{
+	transition: transform 0.5s ease; /* Para hacer la transición suave */
+}
+
+.navItemseleccion{
+	color: #3b9bea;
+	transform: scale(1.55);
+}
+
+
+.navItems:hover {
+	color: #3b9bea;
+	transform: scale(1.55); /* Aumenta ligeramente el tamaño, 5% en este caso */
+}
+
 .menu-link span {
 	display: none;
 }
@@ -5295,7 +4823,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
 
 .menu-item:hover>.menu-link,
 .menu-item.current>.menu-link {
-	color: #1ABC9C;
+	color: #0b66ce;
 }
 
 .menu-item.sub-menu>.menu-link>div {}
@@ -5566,7 +5094,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
 		background-color: #FFF;
 		box-shadow: 0px 13px 42px 11px rgba(0, 0, 0, 0.05);
 		border: 1px solid #EEE;
-		border-top: 2px solid #1ABC9C;
+		border-top: 2px solid #0e69d9;
 		z-index: 399;
 		top: 100%;
 		left: 0;
@@ -5651,7 +5179,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
 	.sub-menu-container .menu-item:hover>.menu-link {
 		background-color: #F9F9F9;
 		padding-left: 18px;
-		color: #1ABC9C;
+		color: #1a6ebc;
 	}
 
 	.menu-link div>i.icon-angle-down {
@@ -5789,7 +5317,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
 	}
 
 	.mega-menu-style-2 .mega-menu-title>.menu-link:hover {
-		color: #1ABC9C;
+		color: #1a73bc;
 	}
 
 	.mega-menu-style-2 .sub-menu-container:not(.mega-menu-dropdown) .menu-item {
@@ -5853,7 +5381,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
 	.style-3 .menu-container>.menu-item.current>.menu-link {
 		color: #FFF;
 		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-		background-color: #1ABC9C;
+		background-color: #1a8ebc;
 	}
 
 
@@ -5870,7 +5398,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
 
 	.style-4 .menu-container>.menu-item:hover>.menu-link,
 	.style-4 .menu-container>.menu-item.current>.menu-link {
-		border-color: #1ABC9C;
+		border-color: #1a8ebc;
 	}
 
 
@@ -5918,7 +5446,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
 		left: 50%;
 		height: 2px;
 		width: 0;
-		border-top: 2px solid #1ABC9C;
+		border-top: 2px solid #1a8ebc;
 		-webkit-transition: width .3s ease;
 		-o-transition: width .3s ease;
 		transition: width .3s ease;
@@ -5987,7 +5515,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
 		z-index: -1;
 		width: 100%;
 		height: 100%;
-		background-color: #1ABC9C;
+		background-color: #1a8ebc;
 		border-top: 5px solid rgba(0, 0, 0, 0.1);
 	}
 
@@ -6680,7 +6208,7 @@ body:not(.top-search-open) .top-search-parent .header-misc>*:not(#top-search) {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #1ABC9C;
+	background-color: #1a8ebc;
 	opacity: 0.8;
 	z-index: -1;
 }
@@ -6766,7 +6294,7 @@ body:not(.top-search-open) .top-search-parent .header-misc>*:not(#top-search) {
 }
 
 .top-cart-item-image:hover {
-	border-color: #1ABC9C;
+	border-color: #1a8ebc;
 }
 
 .top-cart-item-desc,
