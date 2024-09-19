@@ -443,7 +443,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
   }
 }
 .menu-item:hover > .menu-link, .menu-item.current > .menu-link {
-  color: #1ABC9C;
+  color: #1472c4;
 }
 .menu-item .sub-menu-trigger {
   display: block;
@@ -782,7 +782,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
   .sub-menu-container .menu-item:hover > .menu-link {
     background-color: #f9f9f9;
     padding-left: 18px;
-    color: #1ABC9C;
+    color: #1472c4;
   }
 
   .menu-link div > i.icon-angle-down {
@@ -979,7 +979,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
   .style-3 .menu-container > .menu-item.current > .menu-link {
     color: #FFF;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    background-color: #1ABC9C;
+    background-color: #1472c4;
   }
 
   /* Primary Menu - Style 4
@@ -994,7 +994,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
 
   .style-4 .menu-container > .menu-item:hover > .menu-link,
   .style-4 .menu-container > .menu-item.current > .menu-link {
-    border-color: #1ABC9C;
+    border-color: #1472c4;
   }
 
   /* Primary Menu - Style 5
@@ -1093,7 +1093,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
     color: #EEE;
   }
 
-  .sub-title .menu-container > .menu-item:hover > .menu-link::after,
+  .sub-title .menu-container > .hover > .menu-link::after,
   .sub-title .menu-container > .menu-item.current > .menu-link::after {
     content: '';
     position: absolute;
@@ -1102,7 +1102,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
     z-index: -1;
     width: 100%;
     height: 100%;
-    background-color: #1ABC9C;
+    background-color: #1472c4;
     border-top: 5px solid rgba(0, 0, 0, 0.1);
   }
 
@@ -2076,7 +2076,7 @@ body:not(.top-search-open .top-search-parent) .header-misc > *:not(#top-search) 
     top: 100%;
     left: 0;
     padding: 0;
-    background-color: #1ABC9C;
+    background-color: #147edb;
   }
 }
 .page-menu-item:hover > .page-menu-sub-menu {
