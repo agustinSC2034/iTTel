@@ -31,8 +31,47 @@
   }
 
  
+/* Ajuste para la fila del header */
+.header-row {
+	position: relative; /* Permite posicionar elementos de forma absoluta */
+	display: flex;
+	justify-content: center; /* Centra el contenido horizontalmente */
+	align-items: center; /* Centra el contenido verticalmente */
+  }
   
-
+  /* Estilo para el logo */
+  #logo {
+	position: absolute; /* Coloca el logo de forma absoluta */
+  }
+  
+  /* Menú principal */
+  .primary-menu {
+	display: flex;
+	justify-content: center; /* Centra el menú dentro del espacio disponible */
+	align-items: center;
+	flex: 1; /* Asegura que el menú ocupe todo el espacio disponible */
+	padding-right: 0;
+  }
+  
+  /* Lista del menú */
+  .menu-container {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+  }
+  
+  /* Estilo para los ítems del menú */
+  .menu-item {
+	margin: 0 15px; /* Espacio entre los ítems */
+  }
+  
+  /* Ajustar tamaño del logo */
+  #logo img {
+	max-height: 60px; /* Ajusta la altura del logo */
+  }
+  
   
   
 /* Estilos para el formato móvil */
