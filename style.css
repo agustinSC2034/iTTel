@@ -12,6 +12,10 @@
 	flex-direction: column;
 }
 
+.clients{
+	margin-top: 30%;
+}
+
 .unidadIT{
 	height: auto; 
 	display: flex; 
