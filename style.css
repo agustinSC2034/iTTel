@@ -1,5 +1,38 @@
+.padreSupremo{
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+.contenedorPadre1{
+	width: 100%;
+	height: auto;
+	margin-bottom: 5%;
+	display: flex;
+	flex-direction: column;
+}
 
+.unidadIT{
+	height: auto; 
+	display: flex; 
+	justify-content: center; 
+	flex-direction: row; 
+	padding-inline: 13%; 
+	padding-top: 5%;
+	margin-bottom: 5%;
+	font-size: 15px;
+}
  
+.estrategiaIT{
+	height: auto; 
+	display: flex; 
+	justify-content:center; 
+	flex-direction: row; 
+	padding-inline: 12%; 
+	padding-top: 0.6%;
+	margin-bottom: 1%;
+	font-size: 15px;
+}
  
  
  /* Estilo general del botón flotante */
