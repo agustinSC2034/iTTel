@@ -24,6 +24,12 @@
 	font-weight: bolder; /* Hacerla más ligera */
 	line-height: 1; /* Reducir el espacio vertical */
   }
+
+  ::selection {
+	background-color: #3b9bea; /* Color de fondo amarillo dorado */
+	color: #000000; /* Color de texto negro */
+  }
+  
   
   /* Hover del botón */
   #backToTopBtn:hover {
@@ -1197,21 +1203,15 @@ li {
 	overflow: hidden;
 }
 
-::selection {
-	background: #1ABC9C;
-	color: #FFF;
-	text-shadow: none;
-}
-
 ::-moz-selection {
-	background: #1ABC9C;
+	background: #3b9bea;
 	/* Firefox */
 	color: #FFF;
 	text-shadow: none;
 }
 
 ::-webkit-selection {
-	background: #1ABC9C;
+	background: #3b9bea;
 	/* Safari */
 	color: #FFF;
 	text-shadow: none;
@@ -4908,7 +4908,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
 
 .menu-item:hover>.menu-link,
 .menu-item.current>.menu-link {
-	color: #0b66ce;
+	color: #3b9bea;
 }
 
 .menu-item.sub-menu>.menu-link>div {}

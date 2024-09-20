@@ -116,10 +116,10 @@
     margin-top: 25vh;
     font-size: 2rem;
     font-weight: bold;
-    color: #ffc6c6;
+    color:  #3b9bea;
     transition: var(--transition-1);
   }
   
   .selection::selection {
-    color: #64ceaa;
+    color: #3b9bea;
   }
