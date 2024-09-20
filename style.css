@@ -39,6 +39,26 @@
 	height: auto;
 }
 
+.owl-dots {
+	text-align: center;
+	margin-top: 15px;
+  }
+  
+  .owl-dot {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	margin: 0 5px;
+	background-color: #0e0d0d;
+	border-radius: 50%;
+	cursor: pointer;
+  }
+  
+  .owl-dot.active {
+	background-color: #099ef5de; /* Color activo */
+  }
+  
+
 
  
  

@@ -516,9 +516,6 @@ body:not(.has-plugin-html5video) .video-wrap video {
 .flex-prev:hover,
 .flex-next:hover,
 .slider-arrow-top-sm:hover,
-.slider-arrow-bottom-sm:hover {
-  background-color: rgba(0, 0, 0, 0.6) !important !important;
-}
 
 /* Slide Number
 -----------------------------------------------------------------*/
