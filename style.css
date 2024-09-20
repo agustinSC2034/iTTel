@@ -1,3 +1,43 @@
+/*Cambios responsive 20-9*/
+
+@media (max-width: 768px) {
+	.header-row {
+	  flex-direction: column; /* Cambia el header a una columna en pantallas pequeñas */
+	  align-items: center;
+	  height: auto; /* Ajusta la altura automáticamente */
+	}
+  
+	#logo {
+	  margin-bottom: 20px; /* Da espacio entre el logo y el menú */
+	}
+  
+	.primary-menu {
+	  flex-direction: column; /* Coloca los elementos del menú en una columna */
+	  justify-content: center;
+	}
+  
+	.menu-item {
+	  margin: 10px 0; /* Ajusta el espaciado de los ítems del menú */
+	}
+  }
+
+  
+
+  @media (max-width: 768px) {
+	#logo img {
+	  max-height: 40px; /* Reduce el tamaño del logo en móviles */
+	}
+  }
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  /* Estilo general del botón flotante */
  #backToTopBtn {
 	position: fixed;
