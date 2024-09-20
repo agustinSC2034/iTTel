@@ -33,7 +33,7 @@
   
   /* Hover del botón */
   #backToTopBtn:hover {
-	background-color: #09488c;
+	background-color: #0f5680de;
   }
 
  
@@ -513,7 +513,7 @@ input[type="number"]:focus {
 }
 
 #contact .form button[type="submit"] {
-	background: rgb(6, 162, 149);
+	background: #227db3de;
 	border: 0;
 	padding: 10px 30px;
 	color: #fff;
@@ -522,7 +522,7 @@ input[type="number"]:focus {
 }
 
 #contact .form button[type="submit"]:hover {
-	background: rgb(6, 108, 100);
+	background: #0f5680de;
 }
 
 .contactoForm1 {
@@ -601,103 +601,6 @@ input[type="number"]:focus {
 	width: auto;
 	height: auto;
 	align-items: center;
-}
-
-/* WEB DE ALCANCE DE SERVICIOS*/
-
-.separadorResidencial {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	height: 50px;
-	width: 85%;
-	background-color: rgb(55, 138, 166);
-	font-size: large;
-	font-weight: bold;
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-	border-radius: 3%;
-	color: white;
-	margin-bottom: 7vh;
-}
-
-.separadorComercio {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	height: 50px;
-	width: 85%;
-	background-color: #1ABC9C;
-	font-size: large;
-	font-weight: bold;
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-	border-radius: 3%;
-	color: white;
-	margin-bottom: 7vh;
-}
-
-.separadorCondiciones {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	height: 50px;
-	width: 85%;
-	background-color: #FC6471;
-	font-size: large;
-	font-weight: bold;
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-	border-radius: 3%;
-	color: white;
-	margin-bottom: 1vh;
-}
-
-.separadorDedicado {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	height: 50px;
-	width: 85%;
-	background-color: #7D5BA6;
-	font-size: large;
-	font-weight: bold;
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-	border-radius: 3%;
-	color: white;
-	margin-bottom: 7vh;
-}
-
-.contenedorDeLinks {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	height: 25vh;
-	width: 85%;
-}
-
-.subContenedorDeLinks1 {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	width: 95%;
-	gap: 6%;
-}
-
-.subContenedorDeLinks2 {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	width: 95%;
-	gap: 6%;
-}
-
-/* FORM DE BAJA*/
-
-.tituloForm {
-	margin-bottom: -80px;
 }
 
 /*Mobile code nuevo*/
@@ -15321,7 +15224,7 @@ blockquote.float-right {
 /* Owl Carousel - Controls - Dots
 -----------------------------------------------------------------*/
 
-.owl-carousel .owl-dots .owl-dot {
+.owl-carousel .owl-dots .owl-dot{
 	display: inline-block;
 	zoom: 1;
 	width: 8px;
@@ -15329,10 +15232,23 @@ blockquote.float-right {
 	margin: 30px 4px 0 4px;
 	opacity: 0.5;
 	border-radius: 50%;
-	background-color: #1ABC9C;
 	-webkit-transition: all .3s ease;
 	-o-transition: all .3s ease;
 	transition: all .3s ease;
+}
+
+.dotspeciales{
+	display: inline-block;
+	zoom: 1;
+	width: 8px;
+	height: 8px;
+	margin: 30px 4px 0 4px;
+	opacity: 0.5;
+	border-radius: 50%;
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+	background-color: #009efd;
 }
 
 .owl-carousel .owl-dots .owl-dot.active,
