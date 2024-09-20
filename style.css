@@ -33,6 +33,19 @@
 	margin-bottom: 1%;
 	font-size: 15px;
 }
+
+/*carrousel owl cambios mios*/
+.ocCarrouselEditMio{
+	height: auto;
+}
+
+  /*CLIENTES*/
+  @media screen and (min-width: 2000px) {
+	.ocCarrouselEditMio{
+}
+}
+
+
  
  
  /* Estilo general del botón flotante */
