@@ -1,10 +1,11 @@
-.padreSupremo{
+.padreSupremo {
 	width: 100%;
 	height: auto;
 	display: flex;
 	flex-direction: column;
 }
-.contenedorPadre1{
+
+.contenedorPadre1 {
 	width: 100%;
 	height: auto;
 	margin-bottom: 5%;
@@ -13,44 +14,45 @@
 	justify-content: center;
 	align-items: center;
 }
-.clients{
+
+.clients {
 	margin-top: 30%;
 }
 
-.unidadIT{
-	height: auto; 
-	display: flex; 
-	justify-content: center; 
-	flex-direction: row; 
-	padding-inline: 13%; 
+.unidadIT {
+	height: auto;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	padding-inline: 13%;
 	padding-top: 5%;
 	margin-bottom: 5%;
 	font-size: 15px;
 }
- 
-.estrategiaIT{
-	height: auto; 
+
+.estrategiaIT {
+	height: auto;
 	width: 100%;
-	display: flex; 
-	justify-content:center; 
-	flex-direction: row; 
-	padding-inline: 12%; 
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	padding-inline: 12%;
 	padding-top: 0.6%;
 	margin-bottom: 1%;
 	font-size: 15px;
 }
 
 /*carrousel owl cambios mios*/
-.ocCarrouselEditMio{
+.ocCarrouselEditMio {
 	height: auto;
 }
 
 .owl-dots2 {
 	text-align: center;
 	margin-top: 15px;
-  }
-  
-  .owl-dot2 {
+}
+
+.owl-dot2 {
 	display: inline-block;
 	width: 15px;
 	height: 15px;
@@ -58,133 +60,230 @@
 	background-color: #0e0d0d;
 	border-radius: 50%;
 	cursor: pointer;
-  }
-  
-  .owl-dot2.active {
-	background-color: #099ef5de; /* Color activo */
-  }
-  
+}
+
+.owl-dot2.active {
+	background-color: #099ef5de;
+	/* Color activo */
+}
 
 
- 
- 
- /* Estilo general del botón flotante */
- #backToTopBtn {
+
+
+
+
+
+/* Estilo general del botón flotante */
+#backToTopBtn {
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
 	width: 50px;
 	height: 50px;
-	background-color: rgba(20, 159, 206, 0.926); /* Color del botón */
+	background-color: rgba(20, 159, 206, 0.926);
+	/* Color del botón */
 	border: none;
 	border-radius: 50%;
 	cursor: pointer;
-	display: none; /* Se ocultará al inicio */
+	display: none;
+	/* Se ocultará al inicio */
 	justify-content: center;
 	align-items: center;
 	transition: opacity 0.3s ease;
 	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Estilo de la flecha simple */
-  .flecha {
+}
+
+/* Estilo de la flecha simple */
+.flecha {
 	display: inline-block;
 	color: white;
 	font-size: 20px;
-	font-weight: bolder; /* Hacerla más ligera */
-	line-height: 1; /* Reducir el espacio vertical */
-  }
+	font-weight: bolder;
+	/* Hacerla más ligera */
+	line-height: 1;
+	/* Reducir el espacio vertical */
+}
 
-  ::selection {
-	background-color: #3b9bea; /* Color de fondo amarillo dorado */
-	color: #000000; /* Color de texto negro */
-  }
-  
-  
-  /* Hover del botón */
-  #backToTopBtn:hover {
+::selection {
+	background-color: #3b9bea;
+	/* Color de fondo amarillo dorado */
+	color: #000000;
+	/* Color de texto negro */
+}
+
+
+/* Hover del botón */
+#backToTopBtn:hover {
 	background-color: #0f5680de;
-  }
+}
 
- 
+
 /* Ajuste para la fila del header */
 .header-row {
-	position: relative; /* Permite posicionar elementos de forma absoluta */
+	position: relative;
+	/* Permite posicionar elementos de forma absoluta */
 	display: flex;
-	justify-content: center; /* Centra el contenido horizontalmente */
-	align-items: center; /* Centra el contenido verticalmente */
-  }
-  
-  /* Estilo para el logo */
-  #logo {
-	position: absolute; /* Coloca el logo de forma absoluta */
-  }
-  
-  /* Menú principal */
-  .primary-menu {
-	display: flex;
-	justify-content: center; /* Centra el menú dentro del espacio disponible */
+	justify-content: center;
+	/* Centra el contenido horizontalmente */
 	align-items: center;
-	flex: 1; /* Asegura que el menú ocupe todo el espacio disponible */
+	/* Centra el contenido verticalmente */
+}
+
+/* Estilo para el logo */
+#logo {
+	position: absolute;
+	/* Coloca el logo de forma absoluta */
+}
+
+/* Menú principal */
+.primary-menu {
+	display: flex;
+	justify-content: center;
+	/* Centra el menú dentro del espacio disponible */
+	align-items: center;
+	flex: 1;
+	/* Asegura que el menú ocupe todo el espacio disponible */
 	padding-right: 0;
-  }
-  
-  /* Lista del menú */
-  .menu-container {
+}
+
+/* Lista del menú */
+.menu-container {
 	display: flex;
 	justify-content: center;
 	list-style: none;
 	padding: 0;
 	margin: 0;
-  }
-  
-  /* Estilo para los ítems del menú */
-  .menu-item {
-	margin: 0 15px; /* Espacio entre los ítems */
-  }
-  
-  /* Ajustar tamaño del logo */
-  #logo img {
-	max-height: 60px; /* Ajusta la altura del logo */
-  }
-
-  /*Efecto imagen ittel*/
-  .shine-effect {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 200%;
-    height: 100%;
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
-    transform: skewX(-20deg);
-    animation: shine 2s infinite;
-  }
-
-  @keyframes shine {
-    0% {
-      left: -100%;
-    }
-    100% {
-      left: 100%;
-    }
-  }
-
-  /*CLIENTES*/
-  @media screen and (min-width: 800px) {
-	/* Desactivar clientes movil en tamaño normal*/
-.clientesMovil{
-	display: none;
 }
+
+/* Estilo para los ítems del menú */
+.menu-item {
+	margin: 0 15px;
+	/* Espacio entre los ítems */
+}
+
+/* Ajustar tamaño del logo */
+#logo img {
+	max-height: 60px;
+	/* Ajusta la altura del logo */
+}
+
+/*Efecto imagen ittel*/
+.shine-effect {
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 200%;
+	height: 100%;
+	background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+	transform: skewX(-20deg);
+	animation: shine 2s infinite;
+}
+
+@keyframes shine {
+	0% {
+		left: -100%;
+	}
+
+	100% {
+		left: 100%;
+	}
+}
+
+/*CLIENTES*/
+@media screen and (min-width: 800px) {
+
+	/* Desactivar clientes movil en tamaño normal*/
+	.clientesMovil {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 800px) {
+
 	/* Desactivar clientes movil en tamaño normal*/
+	.clientesWeb {
+		display: none;
+	}
+}
+
+.videoEdit {
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.imagenEdit {
+	width: 70%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 20px;
+	position: relative;
+	overflow: hidden;
+	padding-left: 4%;
+}
+
+.divEstrategiaMayor {
+	width: 70%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	text-align: justify;
+	align-items: center;
+	justify-content: center;
+}
+
+.divEstrategia {
+	width: 65%;
+}
+
 .clientesWeb{
-	display: none;
+	display: flex; justify-content: center;
 }
+
+/*Video*/
+@media screen and (max-width: 1000px) {
+
+	/* Desactivar cosas */
+	.videoEdit {
+		display: none;
+	}
+
+	.imagenEdit {
+		display: none;
+	}
+
+	.divEstrategia {
+		width: 100%;
+	}
+	.divEstrategiaMayor{
+		width: 100%;
+	}
+	.estrategiaIT{
+		width: 100%;
+		padding-inline: 0%;
+	}
+	.unidadIT{
+		padding-inline: 9%;
+		padding-top: 15%;
+	}
 }
-  
-  
+
+/*Video*/
+@media screen and (max-width: 800px) {
+
+	.clientesWeb{
+		display: none;
+	}
+	.clientesMovil{
+		display: flex;
+	}
+}
+
+
+
+
 /* Estilos para el formato móvil */
 @media screen and (max-width: 600px) {
 	.dropdown:before {
@@ -4839,14 +4938,13 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
 	font-family: 'Poppins', sans-serif;
 }
 
-.navItems{
-}
+.navItems {}
 
-.navItemseleccion{
+.navItemseleccion {
 	color: #3b9bea;
 }
 
-.navItemseleccion:hover{
+.navItemseleccion:hover {
 	color: #3b9bea;
 }
 
@@ -4855,12 +4953,12 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
 	color: #3b9bea;
 }
 
-.menu-item:hover{
+.menu-item:hover {
 	color: #3b9bea;
 	font-weight: bold;
 }
 
-.menu-link:hover{
+.menu-link:hover {
 	color: #3b9bea;
 	font-weight: bold;
 }
@@ -15294,7 +15392,7 @@ blockquote.float-right {
 /* Owl Carousel - Controls - Dots
 -----------------------------------------------------------------*/
 
-.owl-carousel .owl-dots .owl-dot{
+.owl-carousel .owl-dots .owl-dot {
 	display: inline-block;
 	zoom: 1;
 	width: 8px;
@@ -15307,7 +15405,7 @@ blockquote.float-right {
 	transition: all .3s ease;
 }
 
-.dotspeciales{
+.dotspeciales {
 	display: inline-block;
 	zoom: 1;
 	width: 8px;
