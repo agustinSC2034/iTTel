@@ -39,12 +39,12 @@
 	height: auto;
 }
 
-.owl-dots {
+.owl-dots2 {
 	text-align: center;
 	margin-top: 15px;
   }
   
-  .owl-dot {
+  .owl-dot2 {
 	display: inline-block;
 	width: 15px;
 	height: 15px;
@@ -54,7 +54,7 @@
 	cursor: pointer;
   }
   
-  .owl-dot.active {
+  .owl-dot2.active {
 	background-color: #099ef5de; /* Color activo */
   }
   
