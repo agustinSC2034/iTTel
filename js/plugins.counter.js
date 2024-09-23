@@ -14,7 +14,7 @@ window.SEMICOLON_counterInit = function( $counterEl ){
 		let element		= $(this),
 			elComma		= element.find('span').attr('data-comma'),
 			elSep		= element.find('span').attr('data-sep') || ',',
-			elPlaces	= element.find('span').attr('data-places') || 3;
+			elPlaces	= element.find('span').attr('data-places') || 5;
 
 		let elCommaObj	= {
 			comma : elComma,

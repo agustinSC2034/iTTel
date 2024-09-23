@@ -282,34 +282,38 @@
         
 
         <div class="container"
-          style="max-width: 100%; background-color: rgba(39, 38, 38, 0.911); color: whitesmoke; font-weight: bold; display: flex; flex-direction: column; justify-content: center; text-align: center; align-items: center;">
-          <div class="row col-mb-30 mt-5" style="width: 70%; text-align: center;">
-            <div class="col-md-4">
-              <div class="d-flex align-items-center justify-content-center">
-                <div class="counter counter-xlarge text-dark font-weight-bolder"><span style="color: white;"
-                    data-from="0" data-to="10" data-refresh-interval="2" data-speed="600"></span></div>
+    style="max-width: 100%; background-color: rgba(39, 38, 38, 0.911); color: whitesmoke; font-weight: bold; display: flex; flex-direction: column; justify-content: center; text-align: center; align-items: center;">
+    <div class="row col-mb-30 mt-5" style="width: 70%; text-align: center;">
+        <div class="col-md-4">
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="counter counter-xlarge text-dark font-weight-bolder">
+                    <span style="color: white;" data-from="0" data-to="10" data-refresh-interval="2" data-speed="600" data-comma="true"></span>
+                </div>
                 <span>+ Años de <br>experiencia.</span>
-              </div>
             </div>
-
-            <div class="col-md-4">
-              <div class="d-flex align-items-center justify-content-center">
-                <div class="counter counter-xlarge text-dark font-weight-bolder"><span style="color: white;"
-                    data-from="1" data-to="340" data-refresh-interval="50" data-speed="1500"></span></div>
-                <span>+proyectos <br>de exito.</span>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="d-flex align-items-center justify-content-center">
-                <div class="counter counter-xlarge text-dark font-weight-bolder"><span style="color: white;"
-                    data-from="1" data-to="99.99" data-refresh-interval="30" data-speed="1200"></span></div>
-                <span>% de SLA<br>garantizado</span>
-              </div>
-            </div>
-          </div>
-          <div class="line line-sm mb-0"></div>
         </div>
+
+        <div class="col-md-4">
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="counter counter-xlarge text-dark font-weight-bolder">
+                    <span style="color: white;" data-from="1" data-to="340" data-refresh-interval="50" data-speed="1400" data-comma="true"></span>
+                </div>
+                <span>+ Proyectos <br>de éxito.</span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="counter counter-xlarge text-dark font-weight-bolder">
+                    <span style="color: white;" data-from="1" data-to="99.99" data-refresh-interval="30" data-speed="1400" data-comma="true" data-decimals="2"></span>
+                </div>
+                <span>% de SLA<br>garantizado</span>
+            </div>
+        </div>
+    </div>
+    <div class="line line-sm mb-0"></div>
+</div>
+
 
 
         <div class="divider divider-sm divider-center"><i class="icon-circle"></i></div>
@@ -821,6 +825,8 @@
     <!-- Footer Scripts
 	============================================= -->
     <script src="js/functions.js"></script>
+
+    
 
     <script>
       jQuery(window).on('pluginCarouselReady', function () {
