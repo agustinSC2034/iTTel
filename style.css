@@ -5,6 +5,7 @@
 	flex-direction: column;
 }
 
+/* CONTENEDOR img y video*/
 .contenedorPadre1 {
 	width: 100%;
 	height: auto;
@@ -13,10 +14,6 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-}
-
-.clients {
-	margin-top: 30%;
 }
 
 .unidadIT {
@@ -42,7 +39,95 @@
 	font-size: 15px;
 }
 
-/*carrousel owl cambios mios*/
+.videoEdit {
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.imagenEdit {
+	width: 70%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 20px;
+	position: relative;
+	overflow: hidden;
+	padding-left: 4%;
+}
+
+.divEstrategiaMayor {
+	width: 70%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	text-align: justify;
+	align-items: center;
+	justify-content: center;
+}
+
+.divEstrategia {
+	width: 65%;
+}
+
+/*Video*/
+@media screen and (max-width: 1000px) {
+
+	/* Desactivar cosas */
+	.videoEdit {
+		display: none;
+	}
+
+	.imagenEdit {
+		display: none;
+	}
+
+	.divEstrategia {
+		width: 100%;
+	}
+	.divEstrategiaMayor{
+		width: 100%;
+	}
+	.estrategiaIT{
+		width: 100%;
+		padding-inline: 0%;
+	}
+	.unidadIT{
+		padding-inline: 9%;
+		padding-top: 15%;
+	}
+}
+
+/*Efecto imagen ittel*/
+.shine-effect {
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 200%;
+	height: 100%;
+	background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+	transform: skewX(-20deg);
+	animation: shine 2s infinite;
+}
+
+@keyframes shine {
+	0% {
+		left: -100%;
+	}
+
+	100% {
+		left: 100%;
+	}
+}
+
+/*clientes carrousel owl cambios mios*/
+
+.clients {
+	margin-top: 30%;
+}
+
+
 .ocCarrouselEditMio {
 	height: auto;
 }
@@ -66,11 +151,6 @@
 	background-color: #099ef5de;
 	/* Color activo */
 }
-
-
-
-
-
 
 
 /* Estilo general del botón flotante */
@@ -167,29 +247,7 @@
 	/* Ajusta la altura del logo */
 }
 
-/*Efecto imagen ittel*/
-.shine-effect {
-	position: absolute;
-	top: 0;
-	left: -100%;
-	width: 200%;
-	height: 100%;
-	background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
-	transform: skewX(-20deg);
-	animation: shine 2s infinite;
-}
-
-@keyframes shine {
-	0% {
-		left: -100%;
-	}
-
-	100% {
-		left: 100%;
-	}
-}
-
-/*CLIENTES*/
+/*CLIENTES movil*/
 @media screen and (min-width: 800px) {
 
 	/* Desactivar clientes movil en tamaño normal*/
@@ -206,69 +264,13 @@
 	}
 }
 
-.videoEdit {
-	width: 100%;
-	height: auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 
-.imagenEdit {
-	width: 70%;
-	height: auto;
-	object-fit: cover;
-	border-radius: 20px;
-	position: relative;
-	overflow: hidden;
-	padding-left: 4%;
-}
-
-.divEstrategiaMayor {
-	width: 70%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	text-align: justify;
-	align-items: center;
-	justify-content: center;
-}
-
-.divEstrategia {
-	width: 65%;
-}
 
 .clientesWeb{
 	display: flex; justify-content: center;
 }
 
-/*Video*/
-@media screen and (max-width: 1000px) {
 
-	/* Desactivar cosas */
-	.videoEdit {
-		display: none;
-	}
-
-	.imagenEdit {
-		display: none;
-	}
-
-	.divEstrategia {
-		width: 100%;
-	}
-	.divEstrategiaMayor{
-		width: 100%;
-	}
-	.estrategiaIT{
-		width: 100%;
-		padding-inline: 0%;
-	}
-	.unidadIT{
-		padding-inline: 9%;
-		padding-top: 15%;
-	}
-}
 
 /*Video*/
 @media screen and (max-width: 800px) {
