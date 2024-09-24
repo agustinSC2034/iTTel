@@ -220,36 +220,7 @@
 	}
 }
 
-/*clientes carrousel owl cambios mios*/
 
-.clients {
-	margin-top: 30%;
-}
-
-
-.ocCarrouselEditMio {
-	height: auto;
-}
-
-.owl-dots2 {
-	text-align: center;
-	margin-top: 15px;
-}
-
-.owl-dot2 {
-	display: inline-block;
-	width: 15px;
-	height: 15px;
-	margin: 0 5px;
-	background-color: #0e0d0d;
-	border-radius: 50%;
-	cursor: pointer;
-}
-
-.owl-dot2.active {
-	background-color: #099ef5de;
-	/* Color activo */
-}
 
 
 /* Estilo general del botón flotante */
@@ -364,10 +335,40 @@
 }
 
 
+/*clientes carrousel owl cambios mios*/
+
 
 .clientesWeb {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	justify-items: center;
+	align-items: center;
+	height: auto;
+	width: auto;
+}
+
+.carrouselClientes{
+	display: flex;
+	flex: column;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+	display: flex; 
+	height: auto; 
+
+}
+
+.itemCliente{
+	height: auto;
+}
+
+.owl-dots{
+
+}
+
+.owl-dots .owl-dot{
+	background-color: rgb(20, 158, 205);
 }
 
 
