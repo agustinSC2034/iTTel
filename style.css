@@ -215,9 +215,6 @@
 		width: 90%;
 		background-color: transparent;
 	}
-	.containerMIO2{
-		background-color: transparent;
-	}
 }
 
 @media screen and (min-width: 785px) and (max-width: 900px) {
@@ -235,9 +232,6 @@
 		width: 90%;
 		background-color: transparent;
 	}
-	.containerMIO2{
-		background-color: transparent;
-	}
 }
 
 @media screen and (min-width: 720px) and (max-width: 785px) {
@@ -253,9 +247,6 @@
 	}
 	.containerMIO{
 		width: 90%;
-		background-color: transparent;
-	}
-	.containerMIO2{
 		background-color: transparent;
 	}
 }
@@ -276,14 +267,15 @@
 		background-color: transparent;
 	}
 	.containerMIO2{
-		background-color: transparent;
+		background-color: transparent	;
+		margin-bottom: 3%;
 	}
 }
 
-@media screen and (min-width: 500px) and (max-width: 600px) {
+@media screen and (min-width: 550px) and (max-width: 600px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -15%;
+		margin-bottom: -16%;
 		background-color: transparent;
 	}
 
@@ -296,11 +288,32 @@
 		background-color: transparent;
 	}
 	.containerMIO2{
+		background-color: transparent	;
+		margin-bottom: 3%;
+	}
+}
+@media screen and (min-width: 500px) and (max-width: 550px) {
+	.videoPrincipal {
+		height: auto;
+		margin-bottom: -23%;
 		background-color: transparent;
+	}
+
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 90%;
+	}
+	.containerMIO{
+		width: 90%;
+		background-color: transparent;
+	}
+	.containerMIO2{
+		background-color: transparent	;
+		margin-bottom: 3%;
 	}
 }
 
-@media screen and (min-width: 400px) and (max-width: 500px) {
+@media screen and (min-width: 450px) and (max-width: 500px) {
 	.videoPrincipal {
 		height: auto;
 		margin-bottom: -30%;
@@ -316,14 +329,36 @@
 		background-color: transparent;
 	}
 	.containerMIO2{
+		background-color: transparent	;
+		margin-bottom: 3%;
+	}
+}
+
+@media screen and (min-width: 400px) and (max-width: 450px) {
+	.videoPrincipal {
+		height: auto;
+		margin-bottom: -41%;
 		background-color: transparent;
+	}
+
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 90%;
+	}
+	.containerMIO{
+		width: 90%;
+		background-color: transparent;
+	}
+	.containerMIO2{
+		background-color: transparent	;
+		margin-bottom: 3%;
 	}
 }
 
 @media screen and (min-width: 350px) and (max-width: 400px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -45%;
+		margin-bottom: -52%;
 		background-color: transparent;
 	}
 
@@ -337,7 +372,8 @@
 		background-color: transparent;
 	}
 	.containerMIO2{
-		background-color: transparent;
+		background-color: transparent	;
+		margin-bottom: 3%;
 	}
 }
 
@@ -358,7 +394,8 @@
 		background-color: transparent;
 	}
 	.containerMIO2{
-		background-color: transparent;
+		background-color: transparent	;
+		margin-bottom: 7%;
 	}
 }
 
@@ -378,6 +415,7 @@
 	}
 	.containerMIO2{
 		background-color: transparent;
+		margin-bottom: 5%;
 	}
 }
 
