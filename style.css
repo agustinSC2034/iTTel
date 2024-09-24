@@ -45,7 +45,20 @@
 	flex-direction: column;
 	justify-content: center;
 	width: 65%;
+}
 
+.containerMEV {
+	display: flex;
+	justify-content: center;
+}
+
+.containerMIO{
+	width: 69%;
+	background-color: transparent;
+}
+
+.containerMIO2{
+	background-color: transparent;
 }
 
 .unidadIT {
@@ -161,6 +174,11 @@
 		margin-bottom: 0%;
 		background-color: transparent;
 	}
+
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 90%;
+	}
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1350px) {
@@ -168,6 +186,11 @@
 		height: auto;
 		margin-bottom: 0%;
 		background-color: transparent;
+	}
+
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 90%;
 	}
 }
 
@@ -177,6 +200,11 @@
 		margin-bottom: -5%;
 		background-color: transparent;
 	}
+
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 90%;
+	}
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1100px) {
@@ -184,6 +212,11 @@
 		height: auto;
 		margin-bottom: -8%;
 		background-color: transparent;
+	}
+
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 90%;
 	}
 }
 
@@ -193,6 +226,11 @@
 		margin-bottom: -12%;
 		background-color: transparent;
 	}
+
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 90%;
+	}
 }
 
 @media screen and (min-width: 785px) and (max-width: 900px) {
@@ -200,6 +238,11 @@
 		height: auto;
 		margin-bottom: -22%;
 		background-color: transparent;
+	}
+
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 90%;
 	}
 }
 
@@ -209,6 +252,11 @@
 		margin-bottom: -30%;
 		background-color: transparent;
 	}
+
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 90%;
+	}
 }
 
 @media screen and (min-width: 600px) and (max-width: 720px) {
@@ -216,6 +264,11 @@
 		height: auto;
 		margin-bottom: -5%;
 		background-color: transparent;
+	}
+
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 90%;
 	}
 }
 
@@ -225,6 +278,11 @@
 		margin-bottom: -15%;
 		background-color: transparent;
 	}
+
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 90%;
+	}
 }
 
 @media screen and (min-width: 400px) and (max-width: 500px) {
@@ -232,6 +290,11 @@
 		height: auto;
 		margin-bottom: -30%;
 		background-color: transparent;
+	}
+
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 90%;
 	}
 }
 
@@ -241,6 +304,12 @@
 		margin-bottom: -45%;
 		background-color: transparent;
 	}
+
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 90%;
+		margin-bottom: -0%;
+	}
 }
 
 @media screen and (min-width: 300px) and (max-width: 350px) {
@@ -249,6 +318,12 @@
 		margin-bottom: -65%;
 		background-color: transparent;
 	}
+
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 90%;
+		margin-bottom: -0%;
+	}
 }
 
 @media screen and (min-width: 0px) and (max-width: 300px) {
@@ -256,10 +331,21 @@
 		height: auto;
 		margin-bottom: -75%;
 	}
+
 	.nosotrosClass2 {
 		background-color: transparent;
 		width: 90%;
 		margin-bottom: -0%;
+	}
+
+	.containerMIO {
+		background-color: yellow;
+		width: 100%;
+	}
+
+	.containerMIO2 {
+		background-color: red;
+		width: 110%;
 	}
 }
 
