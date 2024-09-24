@@ -32,6 +32,22 @@
 	align-items: center;
 }
 
+.nosotrosClass {
+	height: auto;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding-top: 3%;
+}
+
+.nosotrosClass2 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 65%;
+
+}
+
 .unidadIT {
 	height: auto;
 	display: flex;
@@ -139,63 +155,113 @@
 	}
 }
 
-@media screen and (min-width: 1300px) and (max-width: 1500px) {
+@media screen and (min-width: 1350px) and (max-width: 1500px) {
 	.videoPrincipal {
-	  height: auto;
-	  margin-bottom: 0%;
-	  background-color: transparent;
+		height: auto;
+		margin-bottom: 0%;
+		background-color: transparent;
 	}
-  }
-@media screen and (min-width: 1100px) and (max-width: 1300px) {
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1350px) {
 	.videoPrincipal {
-	  height: auto;
-	  margin-bottom: -4%;
-	  background-color: transparent;
+		height: auto;
+		margin-bottom: 0%;
+		background-color: transparent;
 	}
-  }
-@media screen and (min-width: 900px) and (max-width: 1100px) {
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1200px) {
 	.videoPrincipal {
-	  height: auto;
-	  margin-bottom: -12%;
-	  background-color: transparent;
+		height: auto;
+		margin-bottom: -5%;
+		background-color: transparent;
 	}
-  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1100px) {
+	.videoPrincipal {
+		height: auto;
+		margin-bottom: -8%;
+		background-color: transparent;
+	}
+}
+
+@media screen and (min-width: 900px) and (max-width: 1000px) {
+	.videoPrincipal {
+		height: auto;
+		margin-bottom: -12%;
+		background-color: transparent;
+	}
+}
+
 @media screen and (min-width: 785px) and (max-width: 900px) {
 	.videoPrincipal {
-	  height: auto;
-	  margin-bottom: -16%;
-	  background-color: transparent;
+		height: auto;
+		margin-bottom: -22%;
+		background-color: transparent;
 	}
-  }
+}
+
 @media screen and (min-width: 720px) and (max-width: 785px) {
 	.videoPrincipal {
-	  height: auto;
-	  margin-bottom: -3%;
-	  background-color: transparent;
+		height: auto;
+		margin-bottom: -30%;
+		background-color: transparent;
 	}
-  }
+}
+
 @media screen and (min-width: 600px) and (max-width: 720px) {
 	.videoPrincipal {
-	  height: auto;
-	  margin-bottom: -5%;
-	  background-color: transparent;
+		height: auto;
+		margin-bottom: -5%;
+		background-color: transparent;
 	}
-  }
-@media screen and (min-width: 400px) and (max-width: 600px) {
+}
+
+@media screen and (min-width: 500px) and (max-width: 600px) {
 	.videoPrincipal {
-	  height: auto;
-	  margin-bottom: -18%;
-	  background-color: transparent;
+		height: auto;
+		margin-bottom: -15%;
+		background-color: transparent;
 	}
-  }
-@media screen and (min-width: 0px) and (max-width: 400px) {
+}
+
+@media screen and (min-width: 400px) and (max-width: 500px) {
 	.videoPrincipal {
-	  height: auto;
-	  margin-bottom: -55%;
-	  background-color: transparent;
+		height: auto;
+		margin-bottom: -30%;
+		background-color: transparent;
 	}
-  }
-  
+}
+
+@media screen and (min-width: 350px) and (max-width: 400px) {
+	.videoPrincipal {
+		height: auto;
+		margin-bottom: -45%;
+		background-color: transparent;
+	}
+}
+
+@media screen and (min-width: 300px) and (max-width: 350px) {
+	.videoPrincipal {
+		height: auto;
+		margin-bottom: -65%;
+		background-color: transparent;
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 300px) {
+	.videoPrincipal {
+		height: auto;
+		margin-bottom: -75%;
+	}
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 90%;
+		margin-bottom: -0%;
+	}
+}
 
 
 /*Efecto imagen ittel*/
@@ -219,9 +285,6 @@
 		left: 100%;
 	}
 }
-
-
-
 
 /* Estilo general del botón flotante */
 #backToTopBtn {
@@ -348,26 +411,24 @@
 	width: auto;
 }
 
-.carrouselClientes{
+.carrouselClientes {
 	display: flex;
 	flex: column;
 	justify-content: center;
 	justify-items: center;
 	align-items: center;
-	display: flex; 
-	height: auto; 
+	display: flex;
+	height: auto;
 
 }
 
-.itemCliente{
+.itemCliente {
 	height: auto;
 }
 
-.owl-dots{
+.owl-dots {}
 
-}
-
-.owl-dots .owl-dot{
+.owl-dots .owl-dot {
 	background-color: rgb(20, 158, 205);
 }
 
@@ -384,8 +445,6 @@
 		display: flex;
 	}
 }
-
-
 
 
 /* Estilos para el formato móvil */
@@ -596,6 +655,32 @@ body {
 	height: auto;
 	align-items: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Fin codigo nuevo */
 
