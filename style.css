@@ -52,12 +52,12 @@
 	justify-content: center;
 }
 
-.containerMIO{
+.containerMIO {
 	width: 69%;
 	background-color: transparent;
 }
 
-.containerMIO2{
+.containerMIO2 {
 	background-color: transparent;
 }
 
@@ -85,9 +85,26 @@
 	font-size: 15px;
 }
 
+.informationClass {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.informaationClass2 {
+	width: 80%;
+}
+
+.divEstrategia {
+	width: 65%;
+}
+
 .imagenEdit {
 	display: flex;
-	width: 70%;
+	width: 75%;
 	height: auto;
 	object-fit: cover;
 	border-radius: 20px;
@@ -95,6 +112,8 @@
 	overflow: hidden;
 	padding-left: 7%;
 }
+
+
 
 .divEstrategiaMayor {
 	width: 65%;
@@ -106,9 +125,7 @@
 	justify-content: center;
 }
 
-.divEstrategia {
-	width: 65%;
-}
+
 
 .videoEdit1 {
 	display: flex;
@@ -146,25 +163,33 @@
 		display: none;
 	}
 
-	.divEstrategia {
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 8%;
 		width: 100%;
 	}
 
-	.divEstrategiaMayor {
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
+		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 10%;
 		width: 100%;
 	}
 
-	.estrategiaIT {
+	.divEstrategiaMayor{
 		width: 100%;
-		padding-inline: 0%;
-		display: flex;
-		justify-content: center;
-		margin-left: -5%;
+		background-color: transparent;
 	}
-
-	.unidadIT {
-		padding-inline: 9%;
-		padding-top: 15%;
+	.divEstrategia{
+		width: 90%;
 	}
 }
 
@@ -174,6 +199,34 @@
 		margin-bottom: 0%;
 		background-color: transparent;
 	}
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 8%;
+		width: 100%;
+	}
+
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
+		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 10%;
+		width: 100%;
+	}
+
+	.divEstrategiaMayor{
+		width: 100%;
+		background-color: transparent;
+	}
+	.divEstrategia{
+		width: 90%;
+	}
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1350px) {
@@ -181,6 +234,34 @@
 		height: auto;
 		margin-bottom: 0%;
 		background-color: transparent;
+	}
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
+		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.divEstrategiaMayor{
+		width: 100%;
+		background-color: transparent;
+	}
+	.divEstrategia{
+		width: 90%;
 	}
 }
 
@@ -190,6 +271,34 @@
 		margin-bottom: -5%;
 		background-color: transparent;
 	}
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
+		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.divEstrategiaMayor{
+		width: 100%;
+		background-color: transparent;
+	}
+	.divEstrategia{
+		width: 90%;
+	}
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1100px) {
@@ -197,6 +306,34 @@
 		height: auto;
 		margin-bottom: -8%;
 		background-color: transparent;
+	}
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
+		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.divEstrategiaMayor{
+		width: 100%;
+		background-color: transparent;
+	}
+	.divEstrategia{
+		width: 90%;
 	}
 }
 
@@ -211,9 +348,38 @@
 		background-color: transparent;
 		width: 90%;
 	}
-	.containerMIO{
+
+	.containerMIO {
 		width: 90%;
 		background-color: transparent;
+	}
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
+		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.divEstrategiaMayor{
+		width: 100%;
+		background-color: transparent;
+	}
+	.divEstrategia{
+		width: 90%;
 	}
 }
 
@@ -228,9 +394,38 @@
 		background-color: transparent;
 		width: 90%;
 	}
-	.containerMIO{
+
+	.containerMIO {
 		width: 90%;
 		background-color: transparent;
+	}
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
+		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.divEstrategiaMayor{
+		width: 100%;
+		background-color: transparent;
+	}
+	.divEstrategia{
+		width: 90%;
 	}
 }
 
@@ -245,9 +440,39 @@
 		background-color: transparent;
 		width: 90%;
 	}
-	.containerMIO{
+
+	.containerMIO {
 		width: 90%;
 		background-color: transparent;
+	}
+
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
+		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.divEstrategiaMayor{
+		width: 100%;
+		background-color: transparent;
+	}
+	.divEstrategia{
+		width: 90%;
 	}
 }
 
@@ -262,13 +487,43 @@
 		background-color: transparent;
 		width: 90%;
 	}
-	.containerMIO{
+
+	.containerMIO {
 		width: 90%;
 		background-color: transparent;
 	}
-	.containerMIO2{
-		background-color: transparent	;
+
+	.containerMIO2 {
+		background-color: transparent;
 		margin-bottom: 3%;
+	}
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
+		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.divEstrategiaMayor{
+		width: 100%;
+		background-color: transparent;
+	}
+	.divEstrategia{
+		width: 90%;
 	}
 }
 
@@ -283,15 +538,46 @@
 		background-color: transparent;
 		width: 90%;
 	}
-	.containerMIO{
+
+	.containerMIO {
 		width: 90%;
 		background-color: transparent;
 	}
-	.containerMIO2{
-		background-color: transparent	;
+
+	.containerMIO2 {
+		background-color: transparent;
 		margin-bottom: 3%;
 	}
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
+		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.divEstrategiaMayor{
+		width: 100%;
+		background-color: transparent;
+	}
+	.divEstrategia{
+		width: 90%;
+	}
 }
+
 @media screen and (min-width: 500px) and (max-width: 550px) {
 	.videoPrincipal {
 		height: auto;
@@ -303,13 +589,43 @@
 		background-color: transparent;
 		width: 90%;
 	}
-	.containerMIO{
+
+	.containerMIO {
 		width: 90%;
 		background-color: transparent;
 	}
-	.containerMIO2{
-		background-color: transparent	;
+
+	.containerMIO2 {
+		background-color: transparent;
 		margin-bottom: 3%;
+	}
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
+		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.divEstrategiaMayor{
+		width: 100%;
+		background-color: transparent;
+	}
+	.divEstrategia{
+		width: 90%;
 	}
 }
 
@@ -324,13 +640,43 @@
 		background-color: transparent;
 		width: 90%;
 	}
-	.containerMIO{
+
+	.containerMIO {
 		width: 90%;
 		background-color: transparent;
 	}
-	.containerMIO2{
-		background-color: transparent	;
+
+	.containerMIO2 {
+		background-color: transparent;
 		margin-bottom: 3%;
+	}
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
+		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.divEstrategiaMayor{
+		width: 100%;
+		background-color: transparent;
+	}
+	.divEstrategia{
+		width: 90%;
 	}
 }
 
@@ -345,13 +691,43 @@
 		background-color: transparent;
 		width: 90%;
 	}
-	.containerMIO{
+
+	.containerMIO {
 		width: 90%;
 		background-color: transparent;
 	}
-	.containerMIO2{
-		background-color: transparent	;
+
+	.containerMIO2 {
+		background-color: transparent;
 		margin-bottom: 3%;
+	}
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
+		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.divEstrategiaMayor{
+		width: 100%;
+		background-color: transparent;
+	}
+	.divEstrategia{
+		width: 90%;
 	}
 }
 
@@ -367,13 +743,43 @@
 		width: 90%;
 		margin-bottom: -0%;
 	}
-	.containerMIO{
+
+	.containerMIO {
 		width: 90%;
 		background-color: transparent;
 	}
-	.containerMIO2{
-		background-color: transparent	;
+
+	.containerMIO2 {
+		background-color: transparent;
 		margin-bottom: 3%;
+	}
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
+		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.divEstrategiaMayor{
+		width: 100%;
+		background-color: transparent;
+	}
+	.divEstrategia{
+		width: 90%;
 	}
 }
 
@@ -389,13 +795,43 @@
 		width: 90%;
 		margin-bottom: -0%;
 	}
-	.containerMIO{
+
+	.containerMIO {
 		width: 90%;
 		background-color: transparent;
 	}
-	.containerMIO2{
-		background-color: transparent	;
+
+	.containerMIO2 {
+		background-color: transparent;
 		margin-bottom: 7%;
+	}
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
+		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.divEstrategiaMayor{
+		width: 100%;
+		background-color: transparent;
+	}
+	.divEstrategia{
+		width: 90%;
 	}
 }
 
@@ -404,18 +840,50 @@
 		height: auto;
 		margin-bottom: -75%;
 	}
+
 	.nosotrosClass2 {
 		background-color: transparent;
 		width: 90%;
 		margin-bottom: -0%;
 	}
-	.containerMIO{
+
+	.containerMIO {
 		width: 90%;
 		background-color: transparent;
 	}
-	.containerMIO2{
+
+	.containerMIO2 {
 		background-color: transparent;
 		margin-bottom: 5%;
+	}
+
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
+		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.divEstrategiaMayor{
+		width: 100%;
+		background-color: transparent;
+	}
+	.divEstrategia{
+		width: 90%;
 	}
 }
 
