@@ -1076,8 +1076,12 @@
 	}
 
 	.clientesMovil {
-		display: flex;
+		display: flex;		
 	}
+	.clientemovilindividual{
+		margin-bottom: 10%;
+	}
+
 }
 
 
