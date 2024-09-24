@@ -83,6 +83,7 @@
 	padding-top: 0.6%;
 	margin-bottom: 1%;
 	font-size: 15px;
+	background-color: yellow;
 }
 
 .informationClass {
@@ -149,6 +150,13 @@
 	object-fit: cover;
 	/* Mantiene la proporción del video */
 	border-radius: 40px;
+}
+
+/*Video responsive*/
+@media screen and (min-width: 1300px) {
+	.estrategiaIT{
+		
+	}
 }
 
 /*Video responsive*/
