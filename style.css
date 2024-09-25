@@ -287,7 +287,7 @@
 @media screen and (min-width: 1200px) and (max-width: 1350px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 2%;
+		margin-bottom: -2%;
 		background-color: transparent;
 	}
 	.nosotrosClass{
@@ -339,7 +339,7 @@
 @media screen and (min-width: 1100px) and (max-width: 1200px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 4%;
+		margin-bottom: -10%;
 		background-color: transparent;
 	}
 
@@ -390,7 +390,7 @@
 @media screen and (min-width: 1000px) and (max-width: 1100px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 5%;
+		margin-bottom: -15%;
 		background-color: transparent;
 	}
 
@@ -440,7 +440,7 @@
 @media screen and (min-width: 900px) and (max-width: 1000px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 5%;
+		margin-bottom: -25%;
 		background-color: transparent;
 	}
 
@@ -503,7 +503,7 @@
 @media screen and (min-width: 785px) and (max-width: 900px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 0%;
+		margin-bottom: -30%;
 		background-color: transparent;
 	}
 
@@ -567,7 +567,7 @@
 @media screen and (min-width: 720px) and (max-width: 785px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 5%;
+		margin-bottom: 2%;
 		background-color: transparent;
 	}
 
@@ -631,7 +631,7 @@
 @media screen and (min-width: 600px) and (max-width: 720px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -2%;
+		margin-bottom: -12%;
 		background-color: transparent;
 	}
 
@@ -699,7 +699,7 @@
 @media screen and (min-width: 550px) and (max-width: 600px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -10%;
+		margin-bottom: -22%;
 		background-color: transparent;
 	}
 
@@ -767,7 +767,7 @@
 @media screen and (min-width: 500px) and (max-width: 550px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -15%;
+		margin-bottom: -25%;
 		background-color: transparent;
 	}
 
@@ -835,7 +835,7 @@
 @media screen and (min-width: 450px) and (max-width: 500px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -20%;
+		margin-bottom: -30%;
 		background-color: transparent;
 	}
 
@@ -903,7 +903,7 @@
 @media screen and (min-width: 400px) and (max-width: 450px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -30%;
+		margin-bottom: -35%;
 		background-color: transparent;
 	}
 
@@ -971,7 +971,7 @@
 @media screen and (min-width: 350px) and (max-width: 400px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -40%;
+		margin-bottom: -45%;
 		background-color: transparent;
 	}
 
