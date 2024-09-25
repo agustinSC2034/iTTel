@@ -186,6 +186,9 @@
 	.nosotrosClass{
 		background-color: transparent	;
 	}
+	.parrafoNosotros{
+		text-align: center;
+	}
 
 }
 
@@ -282,6 +285,9 @@
 	.divEstrategia{
 		width: 90%;
 	}
+	.parrafoNosotros{
+		text-align: center;
+	}
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1350px) {
@@ -333,6 +339,9 @@
 	}
 	.ocCarrouselEditMio{
 		background-color: rgb(245, 243, 243);
+	}
+	.parrafoNosotros{
+		text-align: center;
 	}
 }
 
@@ -388,6 +397,9 @@
 	.parrafoClienteSoporte{
 		text-align: justify;
 	}
+	.parrafoNosotros{
+		text-align: justify;
+	}
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1100px) {
@@ -439,6 +451,9 @@
 		background-color: rgb(245, 243, 243);
 	}
 	.parrafoClienteSoporte{
+		text-align: justify;
+	}
+	.parrafoNosotros{
 		text-align: justify;
 	}
 }
@@ -505,6 +520,9 @@
 		background-color: rgb(245, 243, 243);
 	}
 	.parrafoClienteSoporte{
+		text-align: justify;
+	}
+	.parrafoNosotros{
 		text-align: justify;
 	}
 }
@@ -574,6 +592,9 @@
 	.parrafoClienteSoporte{
 		text-align: justify;
 	}
+	.parrafoNosotros{
+		text-align: justify;
+	}
 }
 
 @media screen and (min-width: 720px) and (max-width: 785px) {
@@ -639,6 +660,9 @@
 		background-color: rgb(245, 243, 243);
 	}
 	.parrafoClienteSoporte{
+		text-align: justify;
+	}
+	.parrafoNosotros{
 		text-align: justify;
 	}
 }
@@ -712,6 +736,9 @@
 	.parrafoClienteSoporte{
 		text-align: justify;
 	}
+	.parrafoNosotros{
+		text-align: justify;
+	}
 }
 
 @media screen and (min-width: 550px) and (max-width: 600px) {
@@ -783,6 +810,9 @@
 	.parrafoClienteSoporte{
 		text-align: justify;
 	}
+	.parrafoNosotros{
+		text-align: justify;
+	}
 }
 
 @media screen and (min-width: 500px) and (max-width: 550px) {
@@ -797,7 +827,7 @@
 	}
 
 	.nosotrosClass2 {
-		background-color: grey;
+		background-color: transparent;
 		width: 95%;
 	}
 
@@ -852,6 +882,9 @@
 		background-color: rgb(245, 243, 243);
 	}
 	.parrafoClienteSoporte{
+		text-align: justify;
+	}
+	.parrafoNosotros{
 		text-align: justify;
 	}
 }
@@ -925,6 +958,9 @@
 	.parrafoClienteSoporte{
 		text-align: justify;
 	}
+	.parrafoNosotros{
+		text-align: justify;
+	}
 }
 
 @media screen and (min-width: 400px) and (max-width: 450px) {
@@ -994,6 +1030,9 @@
 		background-color: rgb(245, 243, 243);
 	}
 	.parrafoClienteSoporte{
+		text-align: justify;
+	}
+	.parrafoNosotros{
 		text-align: justify;
 	}
 }
@@ -1068,6 +1107,9 @@
 	.parrafoClienteSoporte{
 		text-align: justify;
 	}
+	.parrafoNosotros{
+		text-align: justify;
+	}
 }
 
 @media screen and (min-width: 300px) and (max-width: 350px) {
@@ -1137,6 +1179,9 @@
 	.parrafoClienteSoporte{
 		text-align: justify;
 	}
+	.parrafoNosotros{
+		text-align: justify;
+	}
 }
 
 @media screen and (min-width: 250px) and (max-width: 300px) {
@@ -1204,6 +1249,9 @@
 		padding-inline: 0%;
 	}
 	.parrafoClienteSoporte{
+		text-align: justify;
+	}
+	.parrafoNosotros{
 		text-align: justify;
 	}
 }
@@ -1280,10 +1328,9 @@
 	.parrafoClienteSoporte{
 		text-align: justify;
 	}
-}
-
-.parrafoClienteSoporte{
-	text-align: center;
+	.parrafoNosotros{
+		text-align: justify;
+	}
 }
 
 
