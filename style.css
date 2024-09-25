@@ -225,12 +225,8 @@
 @media screen and (min-width: 1350px) and (max-width: 1450px) {
 	.videoPrincipal {
 		height: auto;
-		min-height: 40vh;
+		min-height: 85vh;
 		background-color: transparent;
-	}
-	.nosotrosClass {
-		background-color: transparent;
-		width: 75%;
 	}
 }
 
