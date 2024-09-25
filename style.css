@@ -341,14 +341,8 @@
 		height: auto;
 		margin-bottom: 4%;
 		background-color: transparent;
-		display: none;
 	}
 
-	.videoPrincipal2{
-		display: flex;
-		height: auto;
-		margin-bottom: 4%;
-	}
 	.nosotrosClass2 {
 		background-color: transparent;
 		width: 91%;
@@ -398,13 +392,6 @@
 		height: auto;
 		margin-bottom: 5%;
 		background-color: transparent;
-		display: none;
-	}
-
-	.videoPrincipal2{
-		display: flex;
-		height: auto;
-		margin-bottom: 5%;
 	}
 
 	.nosotrosClass2 {
@@ -455,13 +442,6 @@
 		height: auto;
 		margin-bottom: 5%;
 		background-color: transparent;
-		display: none;
-	}
-
-	.videoPrincipal2{
-		display: flex;
-		height: auto;
-		margin-bottom: 5%;
 	}
 
 	.seccionVid1{
@@ -525,13 +505,6 @@
 		height: auto;
 		margin-bottom: 0%;
 		background-color: transparent;
-		display: none;
-	}
-
-	.videoPrincipal2{
-		display: flex;
-		height: auto;
-		margin-bottom: 0%;
 	}
 
 	.seccionVid1{
@@ -596,13 +569,6 @@
 		height: auto;
 		margin-bottom: 5%;
 		background-color: transparent;
-		display: none;
-	}
-
-	.videoPrincipal2{
-		display: flex;
-		height: auto;
-		margin-bottom: 5%;
 	}
 
 	.seccionVid1{
@@ -665,15 +631,8 @@
 @media screen and (min-width: 600px) and (max-width: 720px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 4%;
+		margin-bottom: -2%;
 		background-color: transparent;
-		display: none;
-	}
-
-	.videoPrincipal2{
-		display: flex;
-		height: auto;
-		margin-bottom: 4%;
 	}
 
 	.seccionVid1{
@@ -740,15 +699,8 @@
 @media screen and (min-width: 550px) and (max-width: 600px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 5%;
+		margin-bottom: -10%;
 		background-color: transparent;
-		display: none;
-	}
-
-	.videoPrincipal2{
-		display: flex;
-		height: auto;
-		margin-bottom: 5%;
 	}
 
 	.seccionVid1{
@@ -815,15 +767,8 @@
 @media screen and (min-width: 500px) and (max-width: 550px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 2%;
+		margin-bottom: -15%;
 		background-color: transparent;
-		display: none;
-	}
-
-	.videoPrincipal2{
-		display: flex;
-		height: auto;
-		margin-bottom: 2%;
 	}
 
 	.seccionVid1{
@@ -890,15 +835,8 @@
 @media screen and (min-width: 450px) and (max-width: 500px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -5%;
+		margin-bottom: -20%;
 		background-color: transparent;
-		display: none;
-	}
-
-	.videoPrincipal2{
-		display: flex;
-		height: auto;
-		margin-bottom: -5%;
 	}
 
 	.seccionVid1{
@@ -965,15 +903,8 @@
 @media screen and (min-width: 400px) and (max-width: 450px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -10%;
+		margin-bottom: -30%;
 		background-color: transparent;
-		display: none;
-	}
-
-	.videoPrincipal2{
-		display: flex;
-		height: auto;
-		margin-bottom: -10%;
 	}
 
 	.seccionVid1{
@@ -1040,15 +971,8 @@
 @media screen and (min-width: 350px) and (max-width: 400px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -20%;
+		margin-bottom: -40%;
 		background-color: transparent;
-		display: none;
-	}
-
-	.videoPrincipal2{
-		display: flex;
-		height: auto;
-		margin-bottom: -20%;
 	}
 
 	.seccionVid1{
@@ -1116,15 +1040,8 @@
 @media screen and (min-width: 300px) and (max-width: 350px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -30%;
+		margin-bottom: -45%;
 		background-color: transparent;
-		display: none;
-	}
-
-	.videoPrincipal2{
-		display: flex;
-		height: auto;
-		margin-bottom: -30%;
 	}
 
 	.seccionVid1{
@@ -1189,14 +1106,7 @@
 @media screen and (min-width: 250px) and (max-width: 300px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -45%;
-		display: none;
-	}
-
-	.videoPrincipal2{
-		display: flex;
-		height: auto;
-		margin-bottom: -45%;
+		margin-bottom: -65%;
 	}
 
 	.seccionVid1{
