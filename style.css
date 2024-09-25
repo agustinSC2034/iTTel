@@ -44,7 +44,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	width: 65%;
+	width: 70%;
 }
 
 .containerMEV {
@@ -53,7 +53,7 @@
 }
 
 .containerMIO {
-	width: 69%;
+	width: 71%;
 	background-color: transparent;
 }
 
@@ -83,7 +83,6 @@
 	padding-top: 0.6%;
 	margin-bottom: 1%;
 	font-size: 15px;
-	background-color: yellow;
 }
 
 .informationClass {
@@ -114,8 +113,6 @@
 	padding-left: 7%;
 }
 
-
-
 .divEstrategiaMayor {
 	width: 65%;
 	height: 100%;
@@ -125,7 +122,6 @@
 	align-items: center;
 	justify-content: center;
 }
-
 
 
 .videoEdit1 {
@@ -152,16 +148,35 @@
 	border-radius: 40px;
 }
 
+.containerClientes{
+	width: 85%;
+	background-color: transparent;
+}
+
+.containerSoporte{
+	width: 100%;
+	background-color: transparent;
+	padding-inline: 8%;
+}
+
 /*Video responsive*/
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1500px) {
+	.videoPrincipal {
+		height: auto;
+		margin-bottom: 2%;
+		background-color: transparent;
+	}
+	.nosotrosClass{
+		background-color: transparent	;
+	}
 
 }
 
 /*Video responsive*/
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1200px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 4%;
+		margin-bottom: 2%;
 		background-color: transparent;
 	}
 
@@ -207,7 +222,19 @@
 @media screen and (min-width: 1350px) and (max-width: 1500px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 4%;
+		margin-bottom: 2%;
+		background-color: transparent;
+	}
+	.nosotrosClass{
+		background-color: transparent	;
+	}
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 75%;
+	}
+
+	.containerMIO {
+		width: 75%;
 		background-color: transparent;
 	}
 	.unidadIT{
@@ -227,7 +254,7 @@
 
 	.estrategiaIT{
 		background-color: transparent;
-		padding-inline: 10%;
+		padding-inline: 12%;
 		width: 100%;
 	}
 
@@ -243,12 +270,25 @@
 @media screen and (min-width: 1200px) and (max-width: 1350px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 4%;
+		margin-bottom: 2%;
+		background-color: transparent;
+	}
+	.nosotrosClass{
+		background-color: transparent;
+	}
+	
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 89%;
+	}
+
+	.containerMIO {
+		width: 89%;
 		background-color: transparent;
 	}
 	.unidadIT{
 		background-color: transparent;
-		padding-inline: 0%;
+		padding-inline: 2%;
 		width: 100%;
 	}
 
@@ -263,7 +303,7 @@
 
 	.estrategiaIT{
 		background-color: transparent;
-		padding-inline: 0%;
+		padding-inline: 6%;
 		width: 100%;
 	}
 
@@ -282,6 +322,18 @@
 		margin-bottom: 0%;
 		background-color: transparent;
 	}
+
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 91%;
+	}
+
+	.containerMIO {
+		width: 91%;
+		background-color: transparent;
+	}
+
+
 	.unidadIT{
 		background-color: transparent;
 		padding-inline: 0%;
@@ -315,9 +367,20 @@
 @media screen and (min-width: 1000px) and (max-width: 1100px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 0%;
+		margin-bottom: -1%;
 		background-color: transparent;
 	}
+
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 93%;
+	}
+
+	.containerMIO {
+		width: 93%;
+		background-color: transparent;
+	}
+
 	.unidadIT{
 		background-color: transparent;
 		padding-inline: 0%;
@@ -351,17 +414,17 @@
 @media screen and (min-width: 900px) and (max-width: 1000px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -2%;
+		margin-bottom: -7%;
 		background-color: transparent;
 	}
 
 	.nosotrosClass2 {
 		background-color: transparent;
-		width: 90%;
+		width: 95%;
 	}
 
 	.containerMIO {
-		width: 90%;
+		width: 95%;
 		background-color: transparent;
 	}
 	.unidadIT{
@@ -391,25 +454,36 @@
 	}
 	.divEstrategia{
 		width: 90%;
+	}
+	.containerClientes{
+		width: 100%;
+		background-color: transparent;
+	}
+	
+	.containerSoporte{
+		width: 100%;
+		background-color: transparent;
+		padding-inline: 0%;
 	}
 }
 
 @media screen and (min-width: 785px) and (max-width: 900px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -5%;
+		margin-bottom: -15%;
 		background-color: transparent;
 	}
 
 	.nosotrosClass2 {
 		background-color: transparent;
-		width: 90%;
+		width: 95%;
 	}
 
 	.containerMIO {
-		width: 90%;
+		width: 95%;
 		background-color: transparent;
 	}
+
 	.unidadIT{
 		background-color: transparent;
 		padding-inline: 0%;
@@ -437,6 +511,16 @@
 	}
 	.divEstrategia{
 		width: 90%;
+	}
+	.containerClientes{
+		width: 100%;
+		background-color: transparent;
+	}
+	
+	.containerSoporte{
+		width: 100%;
+		background-color: transparent;
+		padding-inline: 0%;
 	}
 }
 
@@ -449,11 +533,11 @@
 
 	.nosotrosClass2 {
 		background-color: transparent;
-		width: 90%;
+		width: 95%;
 	}
 
 	.containerMIO {
-		width: 90%;
+		width: 95%;
 		background-color: transparent;
 	}
 
@@ -484,23 +568,33 @@
 	}
 	.divEstrategia{
 		width: 90%;
+	}
+	.containerClientes{
+		width: 100%;
+		background-color: transparent;
+	}
+	
+	.containerSoporte{
+		width: 100%;
+		background-color: transparent;
+		padding-inline: 0%;
 	}
 }
 
 @media screen and (min-width: 600px) and (max-width: 720px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 5%;
+		margin-bottom: 2%;
 		background-color: transparent;
 	}
 
 	.nosotrosClass2 {
 		background-color: transparent;
-		width: 90%;
+		width: 95%;
 	}
 
 	.containerMIO {
-		width: 90%;
+		width: 95%;
 		background-color: transparent;
 	}
 
@@ -535,61 +629,20 @@
 	}
 	.divEstrategia{
 		width: 90%;
+	}
+	.containerClientes{
+		width: 100%;
+		background-color: transparent;
+	}
+	
+	.containerSoporte{
+		width: 100%;
+		background-color: transparent;
+		padding-inline: 0%;
 	}
 }
 
 @media screen and (min-width: 550px) and (max-width: 600px) {
-	.videoPrincipal {
-		height: auto;
-		margin-bottom: -0%;
-		background-color: transparent;
-	}
-
-	.nosotrosClass2 {
-		background-color: transparent;
-		width: 90%;
-	}
-
-	.containerMIO {
-		width: 90%;
-		background-color: transparent;
-	}
-
-	.containerMIO2 {
-		background-color: transparent;
-		margin-bottom: 3%;
-	}
-	.unidadIT{
-		background-color: transparent;
-		padding-inline: 0%;
-		width: 100%;
-	}
-
-	.informationClass {
-		width: 100%;
-		background-color: transparent;
-	}
-
-	.informaationClass2 {
-		width: 90%;
-	}
-
-	.estrategiaIT{
-		background-color: transparent;
-		padding-inline: 0%;
-		width: 100%;
-	}
-
-	.divEstrategiaMayor{
-		width: 100%;
-		background-color: transparent;
-	}
-	.divEstrategia{
-		width: 90%;
-	}
-}
-
-@media screen and (min-width: 500px) and (max-width: 550px) {
 	.videoPrincipal {
 		height: auto;
 		margin-bottom: -5%;
@@ -598,11 +651,72 @@
 
 	.nosotrosClass2 {
 		background-color: transparent;
-		width: 90%;
+		width: 95%;
 	}
 
 	.containerMIO {
+		width: 95%;
+		background-color: transparent	;
+	}
+
+	.containerMIO2 {
+		background-color: transparent;
+		margin-bottom: 3%;
+	}
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
 		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.divEstrategiaMayor{
+		width: 100%;
+		background-color: transparent;
+	}
+	.divEstrategia{
+		width: 90%;
+	}
+	.containerClientes{
+		width: 100%;
+		background-color: transparent;
+	}
+	
+	.containerSoporte{
+		width: 100%;
+		background-color: transparent;
+		padding-inline: 0%;
+	}
+}
+
+@media screen and (min-width: 500px) and (max-width: 550px) {
+	.videoPrincipal {
+		height: auto;
+		margin-bottom: -9%;
+		background-color: transparent;
+	}
+
+	.nosotrosClass2 {
+		background-color: transparent;
+		width: 95%;
+	}
+
+	.containerMIO {
+		width: 95%;
 		background-color: transparent;
 	}
 
@@ -637,23 +751,33 @@
 	}
 	.divEstrategia{
 		width: 90%;
+	}
+	.containerClientes{
+		width: 100%;
+		background-color: transparent;
+	}
+	
+	.containerSoporte{
+		width: 100%;
+		background-color: transparent;
+		padding-inline: 0%;
 	}
 }
 
 @media screen and (min-width: 450px) and (max-width: 500px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -10%;
+		margin-bottom: -15%;
 		background-color: transparent;
 	}
 
 	.nosotrosClass2 {
 		background-color: transparent;
-		width: 90%;
+		width: 95%;
 	}
 
 	.containerMIO {
-		width: 90%;
+		width: 95%;
 		background-color: transparent;
 	}
 
@@ -688,23 +812,33 @@
 	}
 	.divEstrategia{
 		width: 90%;
+	}
+	.containerClientes{
+		width: 100%;
+		background-color: transparent;
+	}
+	
+	.containerSoporte{
+		width: 100%;
+		background-color: transparent;
+		padding-inline: 0%;
 	}
 }
 
 @media screen and (min-width: 400px) and (max-width: 450px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -30%;
+		margin-bottom: -29%;
 		background-color: transparent;
 	}
 
 	.nosotrosClass2 {
-		background-color: transparent;
-		width: 90%;
+		background-color: red;
+		width: 95%;
 	}
 
 	.containerMIO {
-		width: 90%;
+		width: 95%;
 		background-color: transparent;
 	}
 
@@ -739,24 +873,34 @@
 	}
 	.divEstrategia{
 		width: 90%;
+	}
+	.containerClientes{
+		width: 100%;
+		background-color: transparent;
+	}
+	
+	.containerSoporte{
+		width: 100%;
+		background-color: transparent;
+		padding-inline: 0%;
 	}
 }
 
 @media screen and (min-width: 350px) and (max-width: 400px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -30%;
+		margin-bottom: -37%;
 		background-color: transparent;
 	}
 
 	.nosotrosClass2 {
 		background-color: transparent;
-		width: 90%;
+		width: 95%;
 		margin-bottom: -0%;
 	}
 
 	.containerMIO {
-		width: 90%;
+		width: 95%;
 		background-color: transparent;
 	}
 
@@ -792,23 +936,33 @@
 	.divEstrategia{
 		width: 90%;
 	}
+	.containerClientes{
+		width: 100%;
+		background-color: transparent;
+	}
+	
+	.containerSoporte{
+		width: 100%;
+		background-color: transparent;
+		padding-inline: 0%;
+	}
 }
 
 @media screen and (min-width: 300px) and (max-width: 350px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -40%;
+		margin-bottom: -50%;
 		background-color: transparent;
 	}
 
 	.nosotrosClass2 {
 		background-color: transparent;
-		width: 90%;
+		width: 95%;
 		margin-bottom: -0%;
 	}
 
 	.containerMIO {
-		width: 90%;
+		width: 95%;
 		background-color: transparent;
 	}
 
@@ -844,6 +998,16 @@
 	.divEstrategia{
 		width: 90%;
 	}
+	.containerClientes{
+		width: 100%;
+		background-color: transparent;
+	}
+	
+	.containerSoporte{
+		width: 100%;
+		background-color: transparent;
+		padding-inline: 0%;
+	}
 }
 
 @media screen and (min-width: 0px) and (max-width: 300px) {
@@ -854,7 +1018,8 @@
 
 	.nosotrosClass2 {
 		width: 90%;
-		margin-bottom: -0%;
+		margin-bottom: -2%;
+		background-color: transparent;
 	}
 
 	.containerMIO {
@@ -894,6 +1059,16 @@
 	}
 	.divEstrategia{
 		width: 90%;
+	}
+	.containerClientes{
+		width: 100%;
+		background-color: transparent;
+	}
+	
+	.containerSoporte{
+		width: 100%;
+		background-color: transparent;
+		padding-inline: 0%;
 	}
 }
 
