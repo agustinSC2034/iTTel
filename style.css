@@ -322,7 +322,7 @@
 @media screen and (min-width: 1100px) and (max-width: 1200px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 0%;
+		margin-bottom: 4%;
 		background-color: transparent;
 	}
 
@@ -373,7 +373,7 @@
 @media screen and (min-width: 1000px) and (max-width: 1100px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -1%;
+		margin-bottom: 5%;
 		background-color: transparent;
 	}
 
@@ -423,7 +423,7 @@
 @media screen and (min-width: 900px) and (max-width: 1000px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -7%;
+		margin-bottom: 5%;
 		background-color: transparent;
 	}
 
@@ -482,7 +482,7 @@
 @media screen and (min-width: 785px) and (max-width: 900px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -15%;
+		margin-bottom: 0%;
 		background-color: transparent;
 	}
 
@@ -602,7 +602,7 @@
 @media screen and (min-width: 600px) and (max-width: 720px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 2%;
+		margin-bottom: 4%;
 		background-color: transparent;
 	}
 
@@ -666,7 +666,7 @@
 @media screen and (min-width: 550px) and (max-width: 600px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -5%;
+		margin-bottom: 5%;
 		background-color: transparent;
 	}
 
@@ -730,7 +730,7 @@
 @media screen and (min-width: 500px) and (max-width: 550px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -9%;
+		margin-bottom: 2%;
 		background-color: transparent;
 	}
 
@@ -794,7 +794,7 @@
 @media screen and (min-width: 450px) and (max-width: 500px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -15%;
+		margin-bottom: -5%;
 		background-color: transparent;
 	}
 
@@ -858,7 +858,7 @@
 @media screen and (min-width: 400px) and (max-width: 450px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -29%;
+		margin-bottom: -10%;
 		background-color: transparent;
 	}
 
@@ -922,7 +922,7 @@
 @media screen and (min-width: 350px) and (max-width: 400px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -37%;
+		margin-bottom: -20%;
 		background-color: transparent;
 	}
 
@@ -987,7 +987,7 @@
 @media screen and (min-width: 300px) and (max-width: 350px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -50%;
+		margin-bottom: -30%;
 		background-color: transparent;
 	}
 
@@ -1046,7 +1046,68 @@
 	}
 }
 
-@media screen and (min-width: 0px) and (max-width: 300px) {
+@media screen and (min-width: 250px) and (max-width: 300px) {
+	.videoPrincipal {
+		height: auto;
+		margin-bottom: -45%;
+	}
+
+	.nosotrosClass2 {
+		width: 90%;
+		margin-bottom: -2%;
+		background-color: transparent;
+	}
+
+	.containerMIO {
+		width: 90%;
+		background-color: transparent;
+	}
+
+	.containerMIO2 {
+		background-color: transparent;
+		margin-bottom: 5%;
+	}
+
+	.unidadIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.informationClass {
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.informaationClass2 {
+		width: 90%;
+	}
+
+	.estrategiaIT{
+		background-color: transparent;
+		padding-inline: 0%;
+		width: 100%;
+	}
+
+	.divEstrategiaMayor{
+		width: 100%;
+		background-color: transparent;
+	}
+	.divEstrategia{
+		width: 90%;
+	}
+	.containerClientes{
+		width: 100%;
+		background-color: transparent;
+	}
+	
+	.containerSoporte{
+		width: 100%;
+		background-color: transparent;
+		padding-inline: 0%;
+	}
+}
+@media screen and (min-width: 0) and (max-width: 250px) {
 	.videoPrincipal {
 		height: auto;
 		margin-bottom: -70%;
@@ -1055,7 +1116,7 @@
 	.nosotrosClass2 {
 		width: 90%;
 		margin-bottom: -2%;
-		background-color: transparent;
+		background-color: red;
 	}
 
 	.containerMIO {
