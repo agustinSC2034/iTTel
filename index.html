@@ -733,7 +733,7 @@
     <script src="js/plugins.min.js"></script>
 
     <script src="script.js"></script>
-    <!-- Footer Scripts
+    <!-- Deslizamiento
 	============================================= -->
     <script src="js/functions.js"></script>
 
@@ -752,19 +752,6 @@
             768: { items: 2 },
             1200: { stagePadding: 200 }
           },
-        });
-      });
-    </script>
-
-    <script>
-      jQuery(document).ready(function ($) {
-        $("[data-pricing-plan]").click(function () {
-          $("#get-started-form")
-            .find("#get-started-form-package")
-            .val($(this).attr("data-pricing-plan"));
-          $("#get-started-form")
-            .find("#modal-get-started-package")
-            .html($(this).attr("data-pricing-plan"));
         });
       });
     </script>
