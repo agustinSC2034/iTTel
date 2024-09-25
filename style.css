@@ -385,6 +385,9 @@
 	.ocCarrouselEditMio{
 		background-color: rgb(245, 243, 243);
 	}
+	.parrafoClienteSoporte{
+		text-align: justify;
+	}
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1100px) {
@@ -434,6 +437,9 @@
 	}
 	.ocCarrouselEditMio{
 		background-color: rgb(245, 243, 243);
+	}
+	.parrafoClienteSoporte{
+		text-align: justify;
 	}
 }
 
@@ -497,6 +503,9 @@
 	}
 	.ocCarrouselEditMio{
 		background-color: rgb(245, 243, 243);
+	}
+	.parrafoClienteSoporte{
+		text-align: justify;
 	}
 }
 
@@ -562,6 +571,9 @@
 	.ocCarrouselEditMio{
 		background-color: rgb(245, 243, 243);
 	}
+	.parrafoClienteSoporte{
+		text-align: justify;
+	}
 }
 
 @media screen and (min-width: 720px) and (max-width: 785px) {
@@ -625,6 +637,9 @@
 	}
 	.ocCarrouselEditMio{
 		background-color: rgb(245, 243, 243);
+	}
+	.parrafoClienteSoporte{
+		text-align: justify;
 	}
 }
 
@@ -694,6 +709,9 @@
 	.ocCarrouselEditMio{
 		background-color: rgb(245, 243, 243);
 	}
+	.parrafoClienteSoporte{
+		text-align: justify;
+	}
 }
 
 @media screen and (min-width: 550px) and (max-width: 600px) {
@@ -761,6 +779,9 @@
 	}
 	.ocCarrouselEditMio{
 		background-color: rgb(245, 243, 243);
+	}
+	.parrafoClienteSoporte{
+		text-align: justify;
 	}
 }
 
@@ -830,6 +851,9 @@
 	.ocCarrouselEditMio{
 		background-color: rgb(245, 243, 243);
 	}
+	.parrafoClienteSoporte{
+		text-align: justify;
+	}
 }
 
 @media screen and (min-width: 450px) and (max-width: 500px) {
@@ -898,6 +922,9 @@
 	.ocCarrouselEditMio{
 		background-color: rgb(245, 243, 243);
 	}
+	.parrafoClienteSoporte{
+		text-align: justify;
+	}
 }
 
 @media screen and (min-width: 400px) and (max-width: 450px) {
@@ -965,6 +992,9 @@
 	}
 	.ocCarrouselEditMio{
 		background-color: rgb(245, 243, 243);
+	}
+	.parrafoClienteSoporte{
+		text-align: justify;
 	}
 }
 
@@ -1035,6 +1065,9 @@
 	.ocCarrouselEditMio{
 		background-color: rgb(245, 243, 243);
 	}
+	.parrafoClienteSoporte{
+		text-align: justify;
+	}
 }
 
 @media screen and (min-width: 300px) and (max-width: 350px) {
@@ -1100,6 +1133,9 @@
 		width: 100%;
 		background-color: transparent;
 		padding-inline: 0%;
+	}
+	.parrafoClienteSoporte{
+		text-align: justify;
 	}
 }
 
@@ -1167,6 +1203,9 @@
 		background-color: transparent;
 		padding-inline: 0%;
 	}
+	.parrafoClienteSoporte{
+		text-align: justify;
+	}
 }
 @media screen and (min-width: 0) and (max-width: 250px) {
 	.videoPrincipal {
@@ -1233,12 +1272,18 @@
 		width: 100%;
 		background-color: transparent;
 	}
-	
 	.containerSoporte{
 		width: 100%;
 		background-color: transparent;
 		padding-inline: 0%;
 	}
+	.parrafoClienteSoporte{
+		text-align: justify;
+	}
+}
+
+.parrafoClienteSoporte{
+	text-align: center;
 }
 
 
