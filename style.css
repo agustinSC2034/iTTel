@@ -314,6 +314,9 @@
 	.divEstrategia{
 		width: 90%;
 	}
+	.ocCarrouselEditMio{
+		background-color: rgb(245, 243, 243);
+	}
 }
 
 @media screen and (min-width: 1100px) and (max-width: 1200px) {
@@ -362,6 +365,9 @@
 	.divEstrategia{
 		width: 90%;
 	}
+	.ocCarrouselEditMio{
+		background-color: rgb(245, 243, 243);
+	}
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1100px) {
@@ -408,6 +414,9 @@
 	}
 	.divEstrategia{
 		width: 90%;
+	}
+	.ocCarrouselEditMio{
+		background-color: rgb(245, 243, 243);
 	}
 }
 
@@ -464,6 +473,9 @@
 		width: 100%;
 		background-color: transparent;
 		padding-inline: 0%;
+	}
+	.ocCarrouselEditMio{
+		background-color: rgb(245, 243, 243);
 	}
 }
 
@@ -522,6 +534,9 @@
 		background-color: transparent;
 		padding-inline: 0%;
 	}
+	.ocCarrouselEditMio{
+		background-color: rgb(245, 243, 243);
+	}
 }
 
 @media screen and (min-width: 720px) and (max-width: 785px) {
@@ -578,6 +593,9 @@
 		width: 100%;
 		background-color: transparent;
 		padding-inline: 0%;
+	}
+	.ocCarrouselEditMio{
+		background-color: rgb(245, 243, 243);
 	}
 }
 
@@ -640,6 +658,9 @@
 		background-color: transparent;
 		padding-inline: 0%;
 	}
+	.ocCarrouselEditMio{
+		background-color: rgb(245, 243, 243);
+	}
 }
 
 @media screen and (min-width: 550px) and (max-width: 600px) {
@@ -700,6 +721,9 @@
 		width: 100%;
 		background-color: transparent;
 		padding-inline: 0%;
+	}
+	.ocCarrouselEditMio{
+		background-color: rgb(245, 243, 243);
 	}
 }
 
@@ -762,6 +786,9 @@
 		background-color: transparent;
 		padding-inline: 0%;
 	}
+	.ocCarrouselEditMio{
+		background-color: rgb(245, 243, 243);
+	}
 }
 
 @media screen and (min-width: 450px) and (max-width: 500px) {
@@ -823,6 +850,9 @@
 		background-color: transparent;
 		padding-inline: 0%;
 	}
+	.ocCarrouselEditMio{
+		background-color: rgb(245, 243, 243);
+	}
 }
 
 @media screen and (min-width: 400px) and (max-width: 450px) {
@@ -833,7 +863,7 @@
 	}
 
 	.nosotrosClass2 {
-		background-color: red;
+		background-color: transparent;
 		width: 95%;
 	}
 
@@ -883,6 +913,9 @@
 		width: 100%;
 		background-color: transparent;
 		padding-inline: 0%;
+	}
+	.ocCarrouselEditMio{
+		background-color: rgb(245, 243, 243);
 	}
 }
 
@@ -945,6 +978,9 @@
 		width: 100%;
 		background-color: transparent;
 		padding-inline: 0%;
+	}
+	.ocCarrouselEditMio{
+		background-color: rgb(245, 243, 243);
 	}
 }
 
