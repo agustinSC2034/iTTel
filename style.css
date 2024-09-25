@@ -14,23 +14,6 @@
 	object-fit: fill;
 }
 
-.videoPrincipal2 {
-	display: none;
-	position: relative;
-	height: 120vh;
-	width: 100%;
-}
-
-.videoPrincipal2 video {
-	display: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: auto;
-	object-fit: fill;
-}
-
 .padreSupremo {
 	width: 100%;
 	height: auto;
@@ -670,7 +653,7 @@
 @media screen and (min-width: 600px) and (max-width: 720px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -12%;
+		margin-bottom: -13%;
 		background-color: transparent;
 	}
 
@@ -744,7 +727,7 @@
 @media screen and (min-width: 550px) and (max-width: 600px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -22%;
+		margin-bottom: -27%;
 		background-color: transparent;
 	}
 
@@ -818,7 +801,7 @@
 @media screen and (min-width: 500px) and (max-width: 550px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -25%;
+		margin-bottom: -35%;
 		background-color: transparent;
 	}
 
@@ -892,7 +875,7 @@
 @media screen and (min-width: 450px) and (max-width: 500px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -30%;
+		margin-bottom: -45%;
 		background-color: transparent;
 	}
 
@@ -966,7 +949,7 @@
 @media screen and (min-width: 400px) and (max-width: 450px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -35%;
+		margin-bottom: -55%;
 		background-color: transparent;
 	}
 
@@ -1040,7 +1023,7 @@
 @media screen and (min-width: 350px) and (max-width: 400px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -47%;
+		margin-bottom: -68%;
 		background-color: transparent;
 	}
 
@@ -1115,7 +1098,7 @@
 @media screen and (min-width: 300px) and (max-width: 350px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -45%;
+		margin-bottom: -69%;
 		background-color: transparent;
 	}
 
@@ -1187,7 +1170,7 @@
 @media screen and (min-width: 250px) and (max-width: 300px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -67%;
+		margin-bottom: -70%;
 	}
 
 	.seccionVid1{
@@ -1258,12 +1241,6 @@
 @media screen and (min-width: 0) and (max-width: 250px) {
 	.videoPrincipal {
 		display: none;
-		height: auto;
-		margin-bottom: -72%;
-	}
-
-	.videoPrincipal2{
-		display: flex;
 		height: auto;
 		margin-bottom: -70%;
 	}
