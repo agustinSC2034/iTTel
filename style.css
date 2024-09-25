@@ -3,6 +3,7 @@
 	position: relative;
 	height: 120vh;
 	width: 100%;
+	min-height: 115vh;
 }
 
 .videoPrincipal video {
@@ -179,7 +180,6 @@
 @media screen and (max-width: 1200px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 2%;
 		background-color: transparent;
 	}
 
@@ -222,10 +222,22 @@
 	}
 }
 
+@media screen and (min-width: 1350px) and (max-width: 1450px) {
+	.videoPrincipal {
+		height: auto;
+		min-height: 40vh;
+		background-color: transparent;
+	}
+	.nosotrosClass {
+		background-color: red;
+		width: 75%;
+	}
+}
+
 @media screen and (min-width: 1350px) and (max-width: 1500px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 2%;
+		min-height: 78vh;
 		background-color: transparent;
 	}
 	.nosotrosClass{
@@ -276,7 +288,7 @@
 @media screen and (min-width: 1200px) and (max-width: 1350px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -2%;
+		min-height: 70vh;
 		background-color: transparent;
 	}
 	.nosotrosClass{
@@ -331,7 +343,7 @@
 @media screen and (min-width: 1100px) and (max-width: 1200px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -10%;
+		min-height: 65vh;
 		background-color: transparent;
 	}
 
@@ -388,7 +400,7 @@
 @media screen and (min-width: 1000px) and (max-width: 1100px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -15%;
+		min-height: 56vh;
 		background-color: transparent;
 	}
 
@@ -444,7 +456,7 @@
 @media screen and (min-width: 900px) and (max-width: 1000px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -25%;
+		min-height: 50vh;
 		background-color: transparent;
 	}
 
@@ -513,7 +525,7 @@
 @media screen and (min-width: 785px) and (max-width: 900px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -30%;
+		min-height: 45vh;
 		background-color: transparent;
 	}
 
@@ -583,7 +595,7 @@
 @media screen and (min-width: 720px) and (max-width: 785px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: 2%;
+		min-height: 50vh;
 		background-color: transparent;
 	}
 
@@ -653,7 +665,7 @@
 @media screen and (min-width: 600px) and (max-width: 720px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -13%;
+		min-height: 40vh;
 		background-color: transparent;
 	}
 
@@ -727,7 +739,7 @@
 @media screen and (min-width: 550px) and (max-width: 600px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -27%;
+		min-height: 40vh;
 		background-color: transparent;
 	}
 
@@ -801,7 +813,7 @@
 @media screen and (min-width: 500px) and (max-width: 550px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -35%;
+		min-height: 36vh;
 		background-color: transparent;
 	}
 
@@ -875,7 +887,7 @@
 @media screen and (min-width: 450px) and (max-width: 500px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -45%;
+		min-height: 35vh;
 		background-color: transparent;
 	}
 
@@ -949,7 +961,7 @@
 @media screen and (min-width: 400px) and (max-width: 450px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -55%;
+		min-height: 35vh;
 		background-color: transparent;
 	}
 
@@ -1023,7 +1035,7 @@
 @media screen and (min-width: 350px) and (max-width: 400px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -52%;
+		min-height: 30vh;
 		background-color: transparent;
 	}
 
@@ -1098,7 +1110,7 @@
 @media screen and (min-width: 300px) and (max-width: 350px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -69%;
+		min-height: 30vh;
 		background-color: transparent;
 	}
 
@@ -1170,7 +1182,7 @@
 @media screen and (min-width: 250px) and (max-width: 300px) {
 	.videoPrincipal {
 		height: auto;
-		margin-bottom: -70%;
+		min-height: 25vh;
 	}
 
 	.seccionVid1{
@@ -1241,8 +1253,7 @@
 @media screen and (min-width: 0) and (max-width: 250px) {
 	.videoPrincipal {
 		display: none;
-		height: auto;
-		margin-bottom: -70%;
+		min-height: 20vh;
 	}
 
 	.seccionVid1{
