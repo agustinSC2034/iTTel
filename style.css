@@ -3,7 +3,7 @@
 	position: relative;
 	height: 120vh;
 	width: 100%;
-	min-height: 115vh;
+	min-height: 120vh;
 }
 
 .videoPrincipal video {
@@ -163,7 +163,7 @@
 /*Video responsive*/
 @media screen and (min-width: 1500px) {
 	.videoPrincipal {
-		height: auto;
+		min-height: 120vh;
 		margin-bottom: 2%;
 		background-color: transparent;
 	}
@@ -178,11 +178,6 @@
 
 /*Video responsive*/
 @media screen and (max-width: 1200px) {
-	.videoPrincipal {
-		height: auto;
-		background-color: transparent;
-	}
-
 	/* Desactivar cosas */
 	.videoEdit1 {
 		display: none;
@@ -222,18 +217,9 @@
 	}
 }
 
-@media screen and (min-width: 1350px) and (max-width: 1450px) {
-	.videoPrincipal {
-		height: auto;
-		min-height: 85vh;
-		background-color: transparent;
-	}
-}
-
 @media screen and (min-width: 1350px) and (max-width: 1500px) {
 	.videoPrincipal {
-		height: auto;
-		min-height: 78vh;
+		min-height: 120vh;
 		background-color: transparent;
 	}
 	.nosotrosClass{
@@ -283,8 +269,7 @@
 
 @media screen and (min-width: 1200px) and (max-width: 1350px) {
 	.videoPrincipal {
-		height: auto;
-		min-height: 70vh;
+		min-height: 120vh;
 		background-color: transparent;
 	}
 	.nosotrosClass{
@@ -338,8 +323,7 @@
 
 @media screen and (min-width: 1100px) and (max-width: 1200px) {
 	.videoPrincipal {
-		height: auto;
-		min-height: 65vh;
+		min-height: 120vh;
 		background-color: transparent;
 	}
 
@@ -395,8 +379,7 @@
 
 @media screen and (min-width: 1000px) and (max-width: 1100px) {
 	.videoPrincipal {
-		height: auto;
-		min-height: 56vh;
+		min-height: 120vh;
 		background-color: transparent;
 	}
 
