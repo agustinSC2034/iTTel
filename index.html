@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="SemiColonWeb" />
   <link rel="icon" href="img/favicon.png" type="image/x-icon" />
-
-  <link rel="preload" href="img/videoIttel1.mp4" as="video" type="video/mp4">
   <!-- Stylesheets
 	============================================= -->
 
@@ -118,6 +116,7 @@
           <!-- Video de fondo -->
           <video autoplay muted loop preload="auto">
             <source src="img/videoIttel1.mp4" type="video/mp4">
+            <source src='img/videoIttel1.mp4' type='video/webm' />
             <!-- Puedes agregar más fuentes para diferentes formatos de video -->
             Tu navegador no soporta el elemento de video.
           </video>
@@ -179,7 +178,7 @@
             </div>
           </div>
           <div class="video-wrap">
-            <video poster="img/videoSeparador.mp4" preload="auto" loop autoplay muted style="object-fit: cover;">
+            <video poster="img/videoSeparador.mp4" preload="" loop autoplay muted style="object-fit: cover;">
               <source src='img/videoSeparador.mp4' type='video/webm' />
               <source src='img/videoSeparador.mp4' type='video/mp4' />
             </video>
@@ -200,30 +199,21 @@
                   TECHNOLOGY & TELECOMMUNICATIONS</h2>
                 <p>Fuimos pioneros en implementar en el mercado Argentino lo que hoy se conoce en la industria de las
                   telecomunicaciones como <b>“Redes Neutrales”</b> o <b>“Compartición de Infraestructura Telco“</b>.</p>
-                <p>Desarrollos que venimos implementando y perfeccionando hace más de 10 años en las más variadas
-                  jurisdicciones y topologías de red. Casos que nos posicionan como la Empresa con mayor experiencia en
-                  despliegues de infraestructura compartida de Argentina.</p>
-                <p>Operando sobre una misma infraestructura pasiva, la convivencia de redes MAN WAN Y LAN, con la
-                  transmisión de las TELCOs.</p>
+                <p>Desarrollos que venimos implementando y perfeccionando hace más de 10 años en las más variadas jurisdicciones y topologías de red.</p>
+                <p>Operando sobre una misma infraestructura pasiva, la convivencia de redes MAN WAN Y LAN, con la transmisión de las TELCOs, fijas y móviles.</p>
               </div>
             </div>
           </div>
           <div id="estrategiaIT" class="estrategiaIT">
             <div class="divEstrategiaMayor">
               <div class="divEstrategia" style="text-align: justify;">
-                <h2>ESTRATEGIA</h2>
-                <p>La diferenciación es nuestra estrategia y tiene pilares en:</p>
-                <ul>
-                  <p style="margin-bottom: 5%;"><span><b>Cuidados operativos:</b></span> coordinamos y acompañamos todos
-                    los accesos a la red (sitios y fibra óptica), de manera de asegurar la correcta operación del
-                    titular del espacio como el acceso de los operadores de telecomunicaciones.</p>
-                  <p style="margin-bottom: 5%;"><span><b>SLA:</b></span> Gracias a la ingeniería de nuestras redes,
-                    garantizamos el Service Level Agreement mas alto del Mercado.</p>
-                  <p style="margin-bottom: 5%;"><span><b>Cuidados visuales:</b></span> diseñamos e instalamos las
-                    estructuras portantes de antenas, con menor impacto visual del mercado.</p>
-                  <p style="margin-bottom: 5%;"><span><b>Cuidados ambientales:</b></span> Controlamos la potencia y
-                    radiación del equipamiento que se instala.</p>
-                </ul>
+                <h2>ESTRATEGIA ESTRATEGIA DE DIFERENCIACIÓN </h2>
+                  <p style="margin-bottom: 5%;">Nos adaptamos con sinergia a la operación de nuestros Providers Locativos: <b>coordinamos y acompañamos todos los accesos a la red</b>  (de sitios y fibra óptica), de manera de asegurar la correcta operación del titular del espacio, como el acceso de los operadores de telecomunicaciones.
+                  </p>
+                  <p style="margin-bottom: 5%;">Esta estrategia se refleja en nuestros acuerdos y, sumado a la ingeniería de nuestras redes, nos permite brindar el <b>Service Level Agreement (SLA) mas alto del Mercado.</b> 
+                  </p>
+                  <p style="margin-bottom: 5%;">Otras diferencias que nos caracterizan son los <b>cuidados visuales y ambientales de nuestras implementaciones</b>, certificando de manera sustentable cada proyecto.
+                  </p>
               </div>
             </div>
             <div class="videoEdit1">
@@ -718,15 +708,15 @@
     <!-- JavaScripts
 	============================================= -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="js/jquery.js" async defer></script>
-    <script src="script.js" async defer></script>
+    <script src="js/jquery.js"></script>
+    <script src="script.js"></script>
     <!-- Deslizamiento
 	============================================= -->
-    <script src="js/functions.js" async defer></script>
+    <script src="js/functions.js"></script>
 
 
 
-    <script async defer>
+    <script>
       jQuery(window).on('pluginCarouselReady', function () {
         $('#oc-features').owlCarousel({
           items: 1,
