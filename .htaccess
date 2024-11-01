@@ -9,12 +9,8 @@ RewriteRule ^ https://www.%1%{REQUEST_URI} [L,NE,R=301]
  Order allow,deny
  Allow from all
 </FilesMatch>
-
 RewriteBase /
 DirectoryIndex index.html
-
-# Redirigir en.html a la raíz del sitio
-RewriteRule ^en\.html$ / [R=301,L]
 
 # BEGIN cPanel-generated php ini directives, do not edit
 # Manual editing of this file may result in unexpected behavior.
