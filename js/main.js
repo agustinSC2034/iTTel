@@ -583,19 +583,34 @@ function initLanguageSelector() {
                 title: 'Proyectos',
                 items: [
                     {
-                        title: 'Modernización de Infraestructura',
+                        title: 'Acuerdo ITTEL - AUSA',
                         description: [
-                            'Implementación de redes de nueva generación para empresas del sector financiero.',
-                            'Migración completa de sistemas legacy a arquitecturas cloud-native.',
-                            'Optimización de performance y reducción de costos operativos.'
+                            'Integramos el despliegue de infraestructura TELCO más importante de la Ciudad de Buenos Aires:',
+                            'Sólo en este proyecto superamos los 1.000 kilómetros de hilos arrendados.',
+                            'Gestionamos desde el diseño, pasando por la implementación y operación de más de 100 estructuras portantes de antenas, instaladas a lo largo de las Autopistas y Avenidas que delimitan TODA la Ciudad de Buenos Aires.'
                         ]
                     },
                     {
-                        title: 'Soluciones IoT Empresariales',
+                        title: 'Acuerdo ITTEL - AUBASA',
                         description: [
-                            'Desarrollo de plataformas IoT para monitoreo en tiempo real.',
-                            'Integración de sensores y dispositivos inteligentes.',
-                            'Análisis de datos y reporting automatizado.'
+                            'Se ha implementado una red de fibra óptica con topología redundante para AUBASA, que integra servicios esenciales para la autopista y transmisiones para clientes TELCO.',
+                            'Esta red actúa como un backbone estratégico, conectando Buenos Aires con La Plata y enlazando con otras redes para ofrecer fibra óptica oscura y un camino redundante hacia la salida internacional de Internet en Las Toninas.',
+                            'El proyecto busca equilibrar la operatividad, seguridad vial y compromiso ambiental.'
+                        ]
+                    },
+                    {
+                        title: 'PROYECTO ADIFSE',
+                        description: [
+                            'En el Marco del Proyecto de desarrollo de las redes de Telecomunicaciones en los trazados ferroviarios que administra la ADIF S.E, trabajamos la primer Etapa, la cual constó del relevamiento de la infraestructura disponible, su estado, ocupación, y potencialidad.',
+                            'El objetivo del proyecto fue informar la situación actual y las posibilidades de desarrollo sustentable.'
+                        ]
+                    },
+                    {
+                        title: 'USITTEL - Internet y TV',
+                        description: [
+                            'USITTEL es nuestro servicio de Internet y Televisión desarrollado en alianza con La Usina de Tandil, ofreciendo conectividad de alta calidad en la región.',
+                            'Brindamos servicios de Internet de alta velocidad y televisión digital con tecnología de vanguardia y cobertura estratégica en zonas urbanas y rurales.',
+                            'Más información disponible en www.usittel.com.ar'
                         ]
                     }
                 ]
@@ -699,19 +714,34 @@ function initLanguageSelector() {
                 title: 'Projects',
                 items: [
                     {
-                        title: 'ADIFSE PROJECT',
+                        title: 'ITTEL - AUSA Agreement',
                         description: [
-                            'Implementation of next-generation networks for financial sector companies.',
-                            'Complete migration from legacy systems to cloud-native architectures.',
-                            'Performance optimization and operational cost reduction.'
+                            'We integrated the most important TELCO infrastructure deployment in Buenos Aires City:',
+                            'In this project alone, we exceeded 1,000 kilometers of leased lines.',
+                            'We manage from design, through implementation and operation of more than 100 antenna supporting structures, installed along the highways and avenues that delimit the ENTIRE City of Buenos Aires.'
                         ]
                     },
                     {
-                        title: 'Enterprise IoT Solutions',
+                        title: 'ITTEL - AUBASA Agreement',
                         description: [
-                            'Development of IoT platforms for real-time monitoring.',
-                            'Integration of sensors and smart devices.',
-                            'Data analysis and automated reporting.'
+                            'A fiber optic network with redundant topology has been implemented for AUBASA, integrating essential services for the highway and transmissions for TELCO clients.',
+                            'This network acts as a strategic backbone, connecting Buenos Aires with La Plata and linking with other networks to offer dark fiber optics and a redundant path to the international Internet outlet in Las Toninas.',
+                            'The project seeks to balance operability, road safety and environmental commitment.'
+                        ]
+                    },
+                    {
+                        title: 'ADIFSE PROJECT',
+                        description: [
+                            'Within the framework of the Telecommunications network development project in the railway routes administered by ADIF S.E, we worked on the first stage, which consisted of surveying the available infrastructure, its condition, occupation, and potential.',
+                            'The objective of the project was to report the current situation and the possibilities for sustainable development.'
+                        ]
+                    },
+                    {
+                        title: 'USITTEL - Internet and TV',
+                        description: [
+                            'USITTEL is our Internet and Television service developed in alliance with La Usina de Tandil, offering high-quality connectivity in the region.',
+                            'We provide high-speed Internet and digital television services with cutting-edge technology and strategic coverage in urban and rural areas.',
+                            'More information available at www.usittel.com.ar'
                         ]
                     }
                 ]
