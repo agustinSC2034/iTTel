@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo iTTel - Information Technology & Telecommunications</title>
+    <meta name="description" content="Empresa líder en telecomunicaciones e IT en Argentina. Especialistas en infraestructura telco, redes neutrales y soluciones integrales.">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="./assets/video/hero-video.mp4" as="video" type="video/mp4">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/images/favicon.png" type="image/png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="./assets/images/logoIttel1.jpg" alt="iTTel Logo" class="nav-logo">
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#inicio" class="nav-link active" data-section="inicio">INICIO</a>
+                <a href="#nosotros" class="nav-link" data-section="nosotros">Nosotros</a>
+                <a href="#servicios" class="nav-link" data-section="servicios">IT & TELCO</a>
+                <a href="#proyectos" class="nav-link" data-section="proyectos">Proyectos</a>
+                <a href="#clientes" class="nav-link" data-section="clientes">Clientes</a>
+                <a href="#contacto" class="nav-link" data-section="contacto">Contacto</a>
+                
+                <div class="language-selector">
+                    <button class="language-btn" id="language-btn">
+                        <span>ES</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown" id="language-dropdown">
+                        <a href="#" class="language-option active">Español</a>
+                        <a href="#" class="language-option">English</a>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-video">
+            <video autoplay muted loop playsinline poster="./assets/images/mundoITTEL.png" id="hero-video">
+                <source src="./assets/video/videoIttel1.mp4" type="video/mp4">
+                <source src="./assets/video/videoIttel1.webm" type="video/webm">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <!-- Botón de pantalla completa movido fuera del contenedor del video -->
+        <button class="fullscreen-btn" id="fullscreen-btn" title="Ver en pantalla completa">
+            <i class="fas fa-expand"></i>
+        </button>
+        
+        <div class="hero-content">
+            <!-- Hero sin textos (solo video) -->
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="section about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">NOSOTROS</h2>
+                <p class="section-description">
+                    Somos una Empresa con vasta experiencia en el mercado de las telecomunicaciones, 
+                    que reconoce el impacto y el Valor Agregado que la innovación tecnológica genera 
+                    en las organizaciones y comunidades.
+                </p>
+            </div>
+            
+            <div class="mission-grid">
+                <div class="mission-card animate-in">
+                    <h3>Nuestra Misión</h3>
+                    <p>Brindar soluciones integrales en tecnología y telecomunicaciones, adaptadas a las necesidades de cada cliente, garantizando calidad, eficiencia y un servicio de postventa excepcional.</p>
+                </div>
+                <div class="mission-card animate-in">
+                    <h3>Nuestra Visión</h3>
+                    <p>Ser la empresa de tecnología y telecomunicaciones líder en la región, reconocida por nuestra innovación, confiabilidad y el compromiso con el éxito de nuestros clientes.</p>
+                </div>
+                <div class="mission-card animate-in">
+                    <h3>Nuestros Valores</h3>
+                    <p>Compromiso, Calidad, Innovación, Confianza y Orientación al cliente. Estos pilares guían cada uno de nuestros proyectos y relaciones comerciales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="section services">
+        <div class="container">
+            <div class="services-content">
+                <div class="services-text animate-in">
+                    <h2><span class="text-primary">IT</span> & <span class="text-primary">TEL</span> INFORMATION TECHNOLOGY & TELECOMMUNICATIONS</h2>
+                    
+                    <div class="services-description">
+                        <p>Fuimos pioneros en implementar en el mercado Argentino lo que hoy se conoce en la industria de las telecomunicaciones como <strong>"Redes Neutrales"</strong> o <strong>"Compartición de Infraestructura Telco"</strong>.</p>
+                        
+                        <p>Desarrollos que venimos implementando y perfeccionando hace más de 10 años en las más variadas jurisdicciones y topologías de red.</p>
+                        
+                        <p>Operando sobre una misma infraestructura pasiva, la convivencia de redes MAN WAN Y LAN, con la transmisión de las TELCOs, fijas y móviles.</p>
+                    </div>
+                </div>
+                <div class="section-image-wrapper animate-in">
+                    <img src="assets/images/1.jpg" alt="Servicios de Telecomunicaciones" class="services-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy Section -->
+    <section id="estrategia" class="section strategy">
+        <div class="container">
+            <div class="strategy-content">
+                <div class="section-image-wrapper animate-in">
+                    <img src="assets/images/vidImg2.png" alt="Antenas de Telecomunicaciones" class="strategy-img">
+                </div>
+                <div class="strategy-text animate-in">
+                    <h2>Estrategia de diferenciación</h2>
+                    
+                    <div class="strategy-points">
+                        <div class="strategy-point">
+                            <p>Nos adaptamos con <strong>Sinergia</strong> a la operación de nuestros <strong>Providers Locativos</strong>: coordinamos y acompañamos todos los accesos a la red (de sitios y fibra óptica), de manera de asegurar la correcta operación del titular del espacio, como el acceso de los operadores de telecomunicaciones.</p>
+                        </div>
+                        
+                        <div class="strategy-point">
+                            <p>Esta estrategia se refleja en nuestros acuerdos y, sumado a la ingeniería de nuestras redes, nos permite brindar el <strong>Service Level Agreement (SLA) mas alto del Mercado.</strong></p>
+                        </div>
+                        
+                        <div class="strategy-point">
+                            <p>Otras diferencias que nos caracterizan son los <strong>cuidados visuales y ambientales de nuestras implementaciones</strong>, certificando de manera sustentable cada proyecto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="10">0</div>
+                    <div class="stat-label">+ Años de<br>experiencia</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-target="340">0</div>
+                    <div class="stat-label">+ Proyectos<br>de éxito</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number" data-target="99.99">0</div>
+                    <div class="stat-label">% de SLA<br>garantizado</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="proyectos" class="section projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">PROYECTOS DESTACADOS</h2>
+                <p class="section-description">Casos de éxito que demuestran nuestra experiencia y capacidad técnica</p>
+            </div>
+            
+            <div class="projects-carousel">
+                <div class="project-slide active">
+                    <div class="project-content">
+                        <div class="project-image">
+                            <img src="./assets/images/AUSA4.jpg" alt="Proyecto AUSA">
+                        </div>
+                        <div class="project-info">
+                            <h3>Acuerdo ITTEL - AUSA</h3>
+                            <div class="project-description">
+                                <p>Integramos el despliegue de <strong>infraestructura TELCO</strong> más importante de la Ciudad de Buenos Aires:</p>
+                                <p>Sólo en este proyecto superamos los <strong>1.000 kilómetros</strong> de hilos arrendados.</p>
+                                <p>Gestionamos desde el diseño, pasando por la implementación y operación de más de 100 estructuras portantes de antenas, instaladas a lo largo de las Autopistas y Avenidas que delimitan <strong>TODA la Ciudad de Buenos Aires.</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-slide">
+                    <div class="project-content">
+                        <div class="project-image">
+                            <img src="./assets/images/AUBASA1.jpg" alt="Proyecto AUBASA">
+                        </div>
+                        <div class="project-info">
+                            <h3>Acuerdo ITTEL - AUBASA</h3>
+                            <div class="project-description">
+                                <p>Se ha implementado una red de <strong>fibra óptica</strong> con topología redundante para AUBASA, que integra servicios esenciales para la autopista y transmisiones para clientes TELCO.</p>
+                                <p>Esta red actúa como un <strong>backbone</strong> estratégico, <strong>conectando Buenos Aires con La Plata</strong> y enlazando con otras redes para ofrecer fibra óptica oscura y un camino redundante hacia la salida internacional de Internet en Las Toninas.</p>
+                                <p>El proyecto busca equilibrar la <strong>operatividad, seguridad vial y compromiso ambiental.</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-slide">
+                    <div class="project-content">
+                        <div class="project-image">
+                            <img src="./assets/images/adif.jpg" alt="Proyecto ADIF">
+                        </div>
+                        <div class="project-info">
+                            <h3>PROYECTO ADIFSE</h3>
+                            <div class="project-description">
+                                <p>En el Marco del Proyecto de desarrollo de las <strong>redes de Telecomunicaciones</strong> en los trazados ferroviarios que administra la ADIF S.E, trabajamos la primer Etapa, la cual constó del <strong>relevamiento</strong> de la infraestructura disponible, su estado, ocupación, y potencialidad.</p>
+                                <p>El objetivo del proyecto fue informar la situación actual y las posibilidades de <strong>desarrollo sustentable.</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-controls">
+                    <button class="project-prev" id="project-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="project-dots">
+                        <span class="project-dot active" data-slide="0"></span>
+                        <span class="project-dot" data-slide="1"></span>
+                        <span class="project-dot" data-slide="2"></span>
+                    </div>
+                    <button class="project-next" id="project-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clientes" class="section clients">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Socios estratégicos</div>
+                <h2 class="section-title">NUESTROS CLIENTES</h2>
+                <p class="section-description">
+                    Consideramos que nuestra mejor carta de presentación son aquellas Empresas y Organizaciones 
+                    que han confiado en nuestros servicios y pueden dar testimonio de la SINERGIA que alcanzamos 
+                    para que cada implementación sea un éxito. Bajo el concepto de Socios Estratégicos, 
+                    nos enorgullece haber trabajado con ellos:
+                </p>
+            </div>
+            
+            <div class="clients-carousel">
+                <div class="clients-track" id="clients-track">
+                    <img class="client-logo" src="./assets/images/clients/client-1.png" alt="Cliente 1">
+                    <img class="client-logo" src="./assets/images/clients/client-2.png" alt="Cliente 2">
+                    <img class="client-logo" src="./assets/images/clients/client-3.png" alt="Cliente 3">
+                    <img class="client-logo" src="./assets/images/clients/client-4.png" alt="Cliente 4">
+                    <img class="client-logo" src="./assets/images/clients/client-5.png" alt="Cliente 5">
+                    <img class="client-logo" src="./assets/images/clients/client-6.png" alt="Cliente 6">
+                    <img class="client-logo" src="./assets/images/clients/client-7.png" alt="Cliente 7">
+                    <img class="client-logo" src="./assets/images/clients/client-8.png" alt="Cliente 8">
+                    <img class="client-logo" src="./assets/images/clients/client-9.png" alt="Cliente 9">
+                    <img class="client-logo" src="./assets/images/clients/client-10.png" alt="Cliente 10">
+                    <img class="client-logo" src="./assets/images/clients/client-11.png" alt="Cliente 11">
+                    <img class="client-logo" src="./assets/images/clients/client-12.png" alt="Cliente 12">
+                    <img class="client-logo" src="./assets/images/clients/client-13.png" alt="Cliente 13">
+                    <img class="client-logo" src="./assets/images/clients/client-14.png" alt="Cliente 14">
+                    <img class="client-logo" src="./assets/images/clients/client-15.png" alt="Cliente 15">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">SOPORTE | CONTACTO</h2>
+                <p class="section-description">
+                    Nuestro equipo de profesionales brinda soporte y atención técnica las 24 horas 
+                    de los 365 días del año superando los requerimientos más altos en SLA.
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.051944262572!2d-58.457091323605184!3d-34.552240172972716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb034747aa5d9%3A0xe0b59a8583c2ccc1!2sGrupo%20iTTel!5e0!3m2!1ses!2sar!4v1726797775897!5m2!1ses!2sar"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3>Información de Contacto</h3>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Ciudad de Buenos Aires, Argentina</strong>
+                                <p><a href="https://maps.app.goo.gl/wUxh3sxNJKnENYWt7" target="_blank">Manuel Ugarte 1667, Belgrano</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <p><a href="tel:01152729000">011-5272-9000</a></p>
+                                <p><a href="tel:0810345ITTEL">0810-345-ITTEL (4883)</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <p><a href="mailto:administracion@it-tel.com.ar">administracion@it-tel.com.ar</a></p>
+                                <p><a href="mailto:soporte@it-tel.com.ar">soporte@it-tel.com.ar</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-social">
+                            <a href="https://www.linkedin.com/company/grupoittel/" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#nosotros">Quienes somos</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#proyectos">Proyectos</a></li>
+                        <li><a href="#clientes">Clientes</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Grupo iTTel S.R.L</h4>
+                    <p>Information Technology & Telecommunications</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/grupoittel/" target="_blank" class="footer-social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Manuel Ugarte 1667<br>Ciudad de Buenos Aires</p>
+                    <p>011-5272-9000</p>
+                    <p>administracion@it-tel.com.ar</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 GRUPO ITTEL SRL | INFORMATION TECHNOLOGY & TELECOMMUNICATIONS</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
