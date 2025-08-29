@@ -51,7 +51,7 @@ body {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
-.nav-container {display:flex;justify-content:space-between;align-items:center;padding:10px 25px;max-width:1400px;margin:0 auto;}
+.nav-container {display:flex;justify-content:space-between;align-items:center;padding:6px 25px;max-width:1400px;margin:0 auto;}
 
 .nav-logo {height:68px;width:auto;object-fit:contain;}
 .services-description p {margin-bottom:14px;color:#555;line-height:1.55;font-size:15px;}
@@ -68,7 +68,7 @@ body {
 
 .nav-link::after {
     content: '';
-.strategy-content {display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.strategy-content {display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center;}
     position: absolute;
     bottom: -5px;
     left: 0;
