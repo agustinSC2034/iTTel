@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITTEL - Proyectos Innovadores</title>
+    <meta name="description" content="Explora los proyectos de infraestructura y tecnología más destacados de Grupo iTTel.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+
+    <!-- Custom Styles and Tailwind Config -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc; /* light gray background */
+        }
+        body.modal-open {
+            overflow: hidden;
+        }
+        .project-panel {
+            display: flex;
+            width: 100%;
+            height: 600px;
+            gap: 1rem;
+        }
+        .project-slice {
+            flex: 1;
+            border-radius: 1.5rem; /* rounded-3xl */
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: flex 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: flex;
+        }
+        .project-slice.active {
+            flex: 6;
+        }
+        .slice-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .project-slice:hover .slice-bg {
+            transform: scale(1.05);
+        }
+        .slice-content {
+            position: absolute;
+            inset: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            background: linear-gradient(to top, rgba(1, 22, 56, 0.85) 0%, rgba(1, 22, 56, 0.1) 100%);
+        }
+        .slice-title {
+            color: white;
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
+            transition: opacity 0.3s ease, transform 0.4s ease;
+        }
+        .project-slice.active .slice-title {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .slice-details {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s 0.3s ease, transform 0.5s 0.3s ease;
+            max-width: 90%;
+            pointer-events: none;
+        }
+        .project-slice.active .slice-details {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        /* Modal Styles */
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal.hidden {
+            visibility: hidden;
+        }
+        .modal-content {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ittel-dark-blue': '#011638',
+                        'ittel-blue': '#227db3',
+                        'ittel-accent': '#38bdf8',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-gray-800 antialiased">
+
+    <!-- =========== GENERIC HEADER =========== -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-40">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <img src="assets/images/logoIttel.jpg" alt="iTTel Logo" class="h-14 w-auto">
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#" class="text-gray-600 hover:text-ittel-blue transition">Servicios</a>
+                <a href="#" class="text-ittel-blue font-semibold">Proyectos</a>
+                <a href="#" class="text-gray-600 hover:text-ittel-blue transition">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- =========== INNOVATIVE PROJECTS SECTION =========== -->
+    <main id="proyectos" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-ittel-dark-blue">Casos de Éxito</h1>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                    Explora nuestra trayectoria a través de implementaciones clave. Cada proyecto es un testimonio de nuestra capacidad y compromiso.
+                </p>
+            </div>
+
+            <div class="project-panel" data-aos="fade-up" data-aos-delay="200">
+                
+                <!-- Slice 1: AUSA -->
+                <div class="project-slice active" data-title="Acuerdo ITTEL – AUSA" data-image="assets/images/AUSA4.jpg" data-description="Gestión integral de más de <strong>1.000 km</strong> de hilos arrendados y <strong>100+ estructuras</strong> de antenas a lo largo de las autopistas y avenidas estratégicas de CABA. Este proyecto consolida nuestra posición como líderes en infraestructura de telecomunicaciones urbanas, garantizando conectividad crítica para operadores y servicios de la ciudad.">
+                    <img src="assets/images/AUSA4.jpg" class="slice-bg" alt="Mapa del proyecto AUSA">
+                    <div class="slice-content">
+                        <h2 class="slice-title">AUSA</h2>
+                        <div class="slice-details">
+                            <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3">Acuerdo ITTEL – AUSA</h3>
+                            <p class="text-gray-200 mb-4">Gestión integral de infraestructura TELCO de alto desempeño en CABA.</p>
+                            <button class="open-modal-btn bg-ittel-accent text-white font-bold py-2 px-4 rounded-lg hover:bg-white hover:text-ittel-accent transition-colors duration-300">Ver Más</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slice 2: AUBASA -->
+                <div class="project-slice" data-title="Acuerdo ITTEL – AUBASA" data-image="assets/images/AUBASA1.jpg" data-description="Implementación de una red de <strong>fibra óptica redundante</strong> que funciona como <strong>backbone</strong> estratégico entre CABA y La Plata, proveyendo servicios esenciales para la autopista y transmisiones para clientes TELCO. Ofrecemos una solución robusta con fibra oscura y caminos redundantes hacia salidas internacionales.">
+                    <img src="assets/images/AUBASA1.jpg" class="slice-bg" alt="Mapa del proyecto AUBASA">
+                    <div class="slice-content">
+                        <h2 class="slice-title">AUBASA</h2>
+                         <div class="slice-details">
+                            <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3">Acuerdo ITTEL – AUBASA</h3>
+                            <p class="text-gray-200 mb-4">Red de fibra óptica redundante y backbone estratégico CABA - La Plata.</p>
+                            <button class="open-modal-btn bg-ittel-accent text-white font-bold py-2 px-4 rounded-lg hover:bg-white hover:text-ittel-accent transition-colors duration-300">Ver Más</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slice 3: USITTEL -->
+                <div class="project-slice" data-title="Red FTTH en Tandil – USITTEL" data-image="assets/images/cobertura.png" data-description="Despliegue de red <strong>FTTH</strong> con arquitectura GPON para brindar <strong>Internet y TV</strong> de alta calidad en la ciudad de Tandil, con operación conjunta junto a <strong>La Usina de Tandil</strong>. El proyecto abarca cobertura urbana y periurbana con última milla optimizada y un SLA premium orientado al usuario final.">
+                    <img src="assets/images/cobertura.png" class="slice-bg" alt="Mapa de cobertura FTTH en Tandil">
+                    <div class="slice-content">
+                        <h2 class="slice-title">USITTEL</h2>
+                         <div class="slice-details">
+                            <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3">Red FTTH en Tandil – USITTEL</h3>
+                            <p class="text-gray-200 mb-4">Despliegue de red FTTH para Internet y TV en alianza con La Usina de Tandil.</p>
+                             <div class="flex items-center gap-4">
+                                <button class="open-modal-btn bg-ittel-accent text-white font-bold py-2 px-4 rounded-lg hover:bg-white hover:text-ittel-accent transition-colors duration-300">Ver Más</button>
+                                <a href="http://usittel.com.ar" target="_blank" class="text-white hover:text-ittel-accent transition text-2xl"><i class="fa-solid fa-globe"></i></a>
+                                <a href="#" target="_blank" class="text-white hover:text-ittel-accent transition text-2xl"><i class="fab fa-instagram"></i></a>
+                                <a href="#" target="_blank" class="text-white hover:text-ittel-accent transition text-2xl"><i class="fab fa-facebook"></i></a>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slice 4: LARANET -->
+                <div class="project-slice" data-title="Red FTTH en La Matanza – LARANET" data-image="assets/images/vidImg2.png" data-description="Diseño e implementación de <strong>red óptica pasiva</strong> para LARANET en el partido de La Matanza. El proyecto se destaca por su expansión modular y alta capacidad de crecimiento. Cuenta con un backbone redundante y monitoreo NOC para operación 24/7.">
+                    <img src="assets/images/vidImg2.png" class="slice-bg" alt="Antenas de telecomunicaciones">
+                    <div class="slice-content">
+                        <h2 class="slice-title">LARANET</h2>
+                         <div class="slice-details">
+                            <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3">Red FTTH en La Matanza – LARANET</h3>
+                            <p class="text-gray-200 mb-4">Diseño e implementación de red óptica pasiva con alta capacidad de crecimiento.</p>
+                             <div class="flex items-center gap-4">
+                                <button class="open-modal-btn bg-ittel-accent text-white font-bold py-2 px-4 rounded-lg hover:bg-white hover:text-ittel-accent transition-colors duration-300">Ver Más</button>
+                                <a href="http://laranet.com.ar" target="_blank" class="text-white hover:text-ittel-accent transition text-2xl"><i class="fa-solid fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slice 5: ADIFSE -->
+                <div class="project-slice" data-title="Proyecto ADIFSE" data-image="assets/images/adif.jpg" data-description="Relevamiento integral de la infraestructura existente y el <strong>potencial de desarrollo</strong> de nuevas redes de telecomunicaciones en todos los trazados ferroviarios administrados por ADIF S.E. Este estudio es la base para una planificación de <strong>despliegue sustentable</strong> y eficiente a nivel nacional.">
+                    <img src="assets/images/adif.jpg" class="slice-bg" alt="Mapa de vías ADIFSE">
+                    <div class="slice-content">
+                        <h2 class="slice-title">ADIFSE</h2>
+                        <div class="slice-details">
+                            <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3">Proyecto ADIFSE</h3>
+                            <p class="text-gray-200 mb-4">Relevamiento de infraestructura y potencial de desarrollo en trazados ferroviarios.</p>
+                            <button class="open-modal-btn bg-ittel-accent text-white font-bold py-2 px-4 rounded-lg hover:bg-white hover:text-ittel-accent transition-colors duration-300">Ver Más</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slice 6: VITTAL -->
+                <div class="project-slice" data-title="VITTAL – Videovigilancia" data-image="assets/images/vidImg1.png" data-description="Implementación de un <strong>sistema complejo</strong> de videovigilancia IP en todas las dependencias de Vittal. La arquitectura cuenta con <strong>grabación centralizada</strong>, acceso seguro desde dispositivos móviles y consolas, y un sistema de analítica básica con perfiles de usuario por rol para una gestión de seguridad avanzada.">
+                    <img src="assets/images/vidImg1.png" class="slice-bg" alt="Esquema de videovigilancia Vittal">
+                    <div class="slice-content">
+                        <h2 class="slice-title">VITTAL</h2>
+                        <div class="slice-details">
+                            <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3">VITTAL – Videovigilancia</h3>
+                            <p class="text-gray-200 mb-4">Sistema complejo de videovigilancia IP con grabación y acceso centralizado.</p>
+                            <button class="open-modal-btn bg-ittel-accent text-white font-bold py-2 px-4 rounded-lg hover:bg-white hover:text-ittel-accent transition-colors duration-300">Ver Más</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+    <!-- =========== PROJECT MODAL =========== -->
+    <div id="project-modal" class="modal fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 hidden opacity-0">
+        <div id="modal-overlay" class="absolute inset-0"></div>
+        <div id="modal-content" class="modal-content bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col transform scale-95">
+             <div class="p-4 flex justify-between items-center border-b">
+                <h3 id="modal-title" class="text-xl font-bold text-ittel-dark-blue"></h3>
+                <button id="modal-close-btn" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <div class="p-6 flex-grow overflow-y-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <img id="modal-image" src="" alt="Imagen del proyecto" class="rounded-lg w-full h-auto object-contain max-h-96">
+                    <p id="modal-description" class="text-gray-600 leading-relaxed"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =========== GENERIC FOOTER =========== -->
+    <footer class="bg-ittel-dark-blue text-white mt-16 md:mt-24">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 GRUPO ITTEL SRL | Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- =========== SCRIPTS =========== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+        });
+
+        // --- Interactive Project Slices ---
+        const projectSlices = document.querySelectorAll('.project-slice');
+        projectSlices.forEach(slice => {
+            slice.addEventListener('click', () => {
+                if(slice.classList.contains('active')) return;
+                projectSlices.forEach(s => s.classList.remove('active'));
+                slice.classList.add('active');
+            });
+        });
+
+        // --- Project Modal Functionality ---
+        const modal = document.getElementById('project-modal');
+        const modalContent = document.getElementById('modal-content');
+        const modalTitle = document.getElementById('modal-title');
+        const modalImage = document.getElementById('modal-image');
+        const modalDescription = document.getElementById('modal-description');
+        const openModalButtons = document.querySelectorAll('.open-modal-btn');
+        const closeModalButton = document.getElementById('modal-close-btn');
+        const modalOverlay = document.getElementById('modal-overlay');
+
+        const openModal = (slice) => {
+            const projectTitle = slice.dataset.title;
+            const projectImage = slice.dataset.image;
+            const projectDescription = slice.dataset.description;
+
+            modalTitle.textContent = projectTitle;
+            modalImage.src = projectImage;
+            modalImage.alt = `Imagen de ${projectTitle}`;
+            modalDescription.innerHTML = projectDescription;
+            
+            document.body.classList.add('modal-open');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+            }, 10);
+        };
+
+        const closeModal = () => {
+            document.body.classList.remove('modal-open');
+            modal.classList.add('opacity-0');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        };
+
+        openModalButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation(); // Evita que el click se propague al panel y lo cierre
+                const slice = button.closest('.project-slice');
+                openModal(slice);
+            });
+        });
+
+        closeModalButton.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', closeModal);
+    </script>
+</body>
+</html>
+
+
