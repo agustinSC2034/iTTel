@@ -214,7 +214,8 @@ function initHero() {
 
 // Statistics counter animation
 function initStats() {
-    const statNumbers = document.querySelectorAll('.stat-number');
+    // Buscar tanto las estadísticas antiguas como las nuevas
+    const statNumbers = document.querySelectorAll('.stat-number, .stat-v2-number');
     let animated = false;
     
     const animateStats = () => {
@@ -250,7 +251,7 @@ function initStats() {
     };
     
     // Trigger animation when stats section is in view
-    const statsSection = document.querySelector('.stats');
+    const statsSection = document.querySelector('.stats, .stats-v2');
     if (statsSection) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
