@@ -1,12 +1,23 @@
 // Main JavaScript for iTTel Website
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar AOS (Animate On Scroll)
+    AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100,
+        delay: 0
+    });
+    
     // Initialize all components
     initNavigation();
     initHero();
+    initInnovationTech(); // Nueva función para la sección innovadora
     initStats();
     initProjects();
     initClients();
+    initContactForm(); // Nueva función para el formulario de contacto
     initScrollEffects();
     initBackToTop();
     initLanguageSelector();
@@ -1046,6 +1057,86 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Reduced motion support
+// Innovation Tech Section functionality
+function initInnovationTech() {
+    // Typing animation for subtitle - se activa cuando el usuario llega a la sección
+    const typingText = document.querySelector('.typing-text');
+    if (typingText) {
+        const text = typingText.getAttribute('data-text') || '';
+        let isAnimating = false;
+        
+        // Observer para detectar cuando la sección es visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !isAnimating) {
+                    isAnimating = true;
+                    startTypingAnimation();
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        // Observar la sección
+        const innovationSection = document.querySelector('.innovation-tech');
+        if (innovationSection) {
+            observer.observe(innovationSection);
+        }
+        
+        function startTypingAnimation() {
+            let index = 0;
+            let isDeleting = false;
+            const typeSpeed = 40;
+            const deleteSpeed = 25;
+            const pauseTime = 2000;
+            
+            function typeEffect() {
+                if (!isDeleting) {
+                    // Escribiendo
+                    typingText.textContent = text.slice(0, index + 1);
+                    index++;
+                    
+                    if (index >= text.length) {
+                        isDeleting = true;
+                        setTimeout(typeEffect, pauseTime);
+                    } else {
+                        setTimeout(typeEffect, typeSpeed);
+                    }
+                } else {
+                    // Borrando
+                    typingText.textContent = text.slice(0, index);
+                    index--;
+                    
+                    if (index < 0) {
+                        isDeleting = false;
+                        setTimeout(typeEffect, 500);
+                    } else {
+                        setTimeout(typeEffect, deleteSpeed);
+                    }
+                }
+            }
+            
+            typeEffect();
+        }
+    }
+
+    // Enhanced card hover effects (sutiles)
+    const innovationCards = document.querySelectorAll('.innovation-card');
+    innovationCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            const floatingIcon = card.querySelector('.floating-icon');
+            if (floatingIcon) {
+                floatingIcon.style.transform = 'translateY(-6px)';
+            }
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            const floatingIcon = card.querySelector('.floating-icon');
+            if (floatingIcon) {
+                floatingIcon.style.transform = '';
+            }
+        });
+    });
+}
+
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     // Disable auto-playing carousel for users who prefer reduced motion
     const projectsSection = document.querySelector('.projects');
@@ -1059,6 +1150,142 @@ window.addEventListener('error', (e) => {
     console.error('JavaScript Error:', e.error);
     // You can add error reporting here
 });
+
+// =============================================
+// FORMULARIO DE CONTACTO MODERNO
+// =============================================
+function initContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (!contactForm) return;
+    
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Obtener datos del formulario
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData);
+        
+        // Validación básica
+        if (!data.nombre || !data.email || !data.mensaje || !data.servicio) {
+            showNotification('Por favor completa todos los campos obligatorios', 'error');
+            return;
+        }
+        
+        // Validar email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(data.email)) {
+            showNotification('Por favor ingresa un email válido', 'error');
+            return;
+        }
+        
+        // Simular envío del formulario
+        const submitBtn = contactForm.querySelector('.form-submit');
+        const originalText = submitBtn.innerHTML;
+        
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        submitBtn.disabled = true;
+        
+        // Simular proceso de envío (en producción aquí iría la integración con el backend)
+        setTimeout(() => {
+            showNotification('¡Mensaje enviado exitosamente! Te contactaremos pronto.', 'success');
+            contactForm.reset();
+            
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }, 2000);
+    });
+    
+    // Agregar efectos a los campos del formulario
+    const formInputs = contactForm.querySelectorAll('input, select, textarea');
+    formInputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', function() {
+            if (!this.value) {
+                this.parentElement.classList.remove('focused');
+            }
+        });
+    });
+}
+
+// Sistema de notificaciones
+function showNotification(message, type = 'info') {
+    // Crear elemento de notificación
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+            <span>${message}</span>
+        </div>
+        <button class="notification-close"><i class="fas fa-times"></i></button>
+    `;
+    
+    // Estilos inline para la notificación
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
+        color: white;
+        padding: 16px 20px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        z-index: 10000;
+        transform: translateX(400px);
+        transition: transform 0.3s ease;
+        max-width: 400px;
+        font-size: 14px;
+    `;
+    
+    notification.querySelector('.notification-content').style.cssText = `
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    `;
+    
+    notification.querySelector('.notification-close').style.cssText = `
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        background: none;
+        border: none;
+        color: rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+        font-size: 12px;
+    `;
+    
+    // Agregar al DOM
+    document.body.appendChild(notification);
+    
+    // Animar entrada
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Auto-remove después de 5 segundos
+    const autoRemove = setTimeout(() => {
+        removeNotification(notification);
+    }, 5000);
+    
+    // Botón de cierre
+    notification.querySelector('.notification-close').addEventListener('click', () => {
+        clearTimeout(autoRemove);
+        removeNotification(notification);
+    });
+}
+
+function removeNotification(notification) {
+    notification.style.transform = 'translateX(400px)';
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.parentNode.removeChild(notification);
+        }
+    }, 300);
+}
 
 // Console message for developers
 console.log('%c👋 ¡Hola! Sitio web desarrollado para Grupo iTTel', 'color: #227db3; font-size: 16px; font-weight: bold;');
