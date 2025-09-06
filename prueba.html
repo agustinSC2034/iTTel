@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITTEL - Proyectos Innovadores</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Styles and Tailwind Config -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Un gris muy claro para el fondo */
+        }
+
+        .project-item .project-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s ease-out;
+            padding: 0 2rem;
+        }
+
+        .project-item.active .project-content {
+            max-height: 1000px; /* Suficientemente grande para el contenido */
+            padding: 2rem 2rem;
+        }
+        
+        .project-header .plus-icon {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-item.active .project-header .plus-icon {
+            transform: rotate(45deg);
+        }
+
+        .project-bg-image {
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .project-header:hover .project-bg-image {
+            transform: scale(1.05);
+            filter: brightness(1);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ittel-dark-blue': '#011638',
+                        'ittel-light-blue': '#0d9488', 
+                        'ittel-accent': '#38bdf8',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-gray-800">
+
+    <!-- =========== GENERIC HEADER =========== -->
+    <header class="bg-ittel-dark-blue shadow-lg sticky top-0 z-40">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-extrabold text-white">ITTEL</a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#" class="text-white hover:text-ittel-accent transition duration-300">Inicio</a>
+                <a href="#" class="text-ittel-accent font-semibold">Proyectos</a>
+                <a href="#" class="text-white hover:text-ittel-accent transition duration-300">Contacto</a>
+            </nav>
+            <button class="md:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- =========== INNOVATIVE PROJECTS SECTION =========== -->
+    <main id="proyectos" class="py-12 md:py-20">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-ittel-dark-blue">Casos de Éxito</h1>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                    Explora nuestros proyectos más ambiciosos. Cada uno representa un desafío único y una solución de ingeniería a medida. Haz clic para expandir.
+                </p>
+            </div>
+
+            <div class="space-y-4 max-w-5xl mx-auto">
+                
+                <!-- Project 1 -->
+                <div class="project-item bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <div class="project-header cursor-pointer p-6 md:p-8 relative flex justify-between items-center overflow-hidden">
+                        <img src="https://images.pexels.com/photos/236163/pexels-photo-236163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="project-bg-image absolute inset-0 w-full h-full object-cover filter brightness-50" alt="Antena 5G">
+                        <div class="relative z-10">
+                            <span class="text-ittel-accent font-bold">01</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">Construcción de Torres 5G</h2>
+                        </div>
+                        <div class="relative z-10">
+                            <svg class="plus-icon w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <p class="text-gray-600 mb-6">ITTEL lideró el diseño, obra civil y montaje de 15 nuevas torres de telecomunicaciones para un operador líder, preparando la infraestructura para el despliegue de la red 5G y mejorando la cobertura en zonas de alta densidad.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                            <img src="https://images.pexels.com/photos/247763/pexels-photo-247763.jpeg?auto=compress&cs=tinysrgb&w=600" class="rounded-lg w-full h-48 object-cover shadow" alt="Cimientos de torre">
+                            <img src="https://images.pexels.com/photos/1484518/pexels-photo-1484518.jpeg?auto=compress&cs=tinysrgb&w=600" class="rounded-lg w-full h-48 object-cover shadow" alt="Montaje de estructura">
+                            <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=600" class="rounded-lg w-full h-48 object-cover shadow" alt="Antena instalada">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-item bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <div class="project-header cursor-pointer p-6 md:p-8 relative flex justify-between items-center overflow-hidden">
+                        <img src="https://images.pexels.com/photos/777001/pexels-photo-777001.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="project-bg-image absolute inset-0 w-full h-full object-cover filter brightness-50" alt="Centro de monitoreo">
+                        <div class="relative z-10">
+                            <span class="text-ittel-accent font-bold">02</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">Videovigilancia para Clínicas</h2>
+                        </div>
+                         <div class="relative z-10">
+                            <svg class="plus-icon w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                         <p class="text-gray-600 mb-6">Implementación de un sistema centralizado de videovigilancia IP con más de 300 cámaras en todas las dependencias de la red de clínicas 'Salud Total'. El proyecto incluyó desde el tendido de red hasta la puesta en marcha del centro de monitoreo 24/7.</p>
+                         <div class="bg-black rounded-lg overflow-hidden aspect-video shadow-lg">
+                            <img src="https://images.pexels.com/photos/208890/pexels-photo-208890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="w-full h-full object-cover" alt="Centro de monitoreo detalle"/>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 & 4 (Combined for map view) -->
+                <div class="project-item bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <div class="project-header cursor-pointer p-6 md:p-8 relative flex justify-between items-center overflow-hidden">
+                         <img src="https://images.pexels.com/photos/259200/pexels-photo-259200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="project-bg-image absolute inset-0 w-full h-full object-cover filter brightness-50" alt="Técnico de fibra óptica">
+                        <div class="relative z-10">
+                            <span class="text-ittel-accent font-bold">03</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">Despliegue de Fibra Óptica (FTTH)</h2>
+                        </div>
+                         <div class="relative z-10">
+                            <svg class="plus-icon w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <p class="text-gray-600 mb-6">Ejecución de proyectos de Fibra Óptica al Hogar (FTTH) en Tandil y La Matanza, llevando internet de alta velocidad a miles de hogares y enfrentando desafíos logísticos en zonas de alta y baja densidad poblacional.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-gray-100 rounded-lg p-4">
+                                <h4 class="text-center font-bold mb-2 text-ittel-dark-blue">Cobertura - Tandil</h4>
+                                <img src="https://i.ibb.co/6Pz7dD2/mapa-tandil.png" class="w-full h-auto rounded shadow" alt="Mapa de cobertura Tandil">
+                            </div>
+                            <div class="bg-gray-100 rounded-lg p-4">
+                                <h4 class="text-center font-bold mb-2 text-ittel-dark-blue">Cobertura - La Matanza</h4>
+                                <img src="https://i.ibb.co/qD4kQvY/mapa-matanza.png" class="w-full h-auto rounded shadow" alt="Mapa de cobertura La Matanza">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-item bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <div class="project-header cursor-pointer p-6 md:p-8 relative flex justify-between items-center overflow-hidden">
+                        <img src="https://images.pexels.com/photos/164586/pexels-photo-164586.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="project-bg-image absolute inset-0 w-full h-full object-cover filter brightness-50" alt="Autopista">
+                        <div class="relative z-10">
+                            <span class="text-ittel-accent font-bold">04</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">O&M para Autopistas</h2>
+                        </div>
+                         <div class="relative z-10">
+                            <svg class="plus-icon w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <p class="text-gray-600 mb-6">Contrato de Operación y Mantenimiento (O&M) para toda la infraestructura de telecomunicaciones de AUSA y AUBASA, garantizando una disponibilidad del servicio del 99.8% con nuestro sistema de gestión proactiva.</p>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                          <h4 class="text-lg font-bold text-center mb-4 text-ittel-dark-blue">Diagrama de Flujo de Operación</h4>
+                          <div class="flex flex-wrap justify-center items-center gap-4 text-center">
+                            <div class="flex items-center gap-2"><div class="bg-red-100 text-red-800 p-3 rounded-full shadow-md font-semibold">Incidencia</div><div class="text-gray-400 font-bold text-2xl hidden sm:block">→</div></div>
+                            <div class="flex items-center gap-2"><div class="bg-yellow-100 text-yellow-800 p-3 rounded-full shadow-md font-semibold">Asignación</div><div class="text-gray-400 font-bold text-2xl hidden sm:block">→</div></div>
+                            <div class="flex items-center gap-2"><div class="bg-blue-100 text-blue-800 p-3 rounded-full shadow-md font-semibold">Trabajo en Sitio</div><div class="text-gray-400 font-bold text-2xl hidden sm:block">→</div></div>
+                            <div class="bg-green-100 text-green-800 p-3 rounded-full shadow-md font-semibold">Servicio OK</div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- =========== GENERIC FOOTER =========== -->
+    <footer class="bg-ittel-dark-blue text-white mt-12 md:mt-20">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 ITTEL. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- =========== SCRIPTS =========== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+        });
+
+        const projectItems = document.querySelectorAll('.project-item');
+
+        projectItems.forEach(item => {
+            const header = item.querySelector('.project-header');
+            header.addEventListener('click', () => {
+                // Check if the clicked item is already active
+                const wasActive = item.classList.contains('active');
+
+                // First, close all other items
+                projectItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+                
+                // If the clicked item wasn't active, open it
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

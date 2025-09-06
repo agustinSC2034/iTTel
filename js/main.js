@@ -15,12 +15,14 @@ document.addEventListener('DOMContentLoaded', function() {
     initHero();
     initInnovationTech(); // Nueva función para la sección innovadora
     initStats();
-    initProjects();
+    initProjectsFull();
     initClients();
     initContactForm(); // Nueva función para el formulario de contacto
+    initInnovationParticles(); // Partículas en IT & TELCO
     initScrollEffects();
     initBackToTop();
     initLanguageSelector();
+    initProjectsCarousel(); // Inicializar carrusel de proyectos
 });
 
 // Navigation functionality
@@ -1290,3 +1292,289 @@ function removeNotification(notification) {
 // Console message for developers
 console.log('%c👋 ¡Hola! Sitio web desarrollado para Grupo iTTel', 'color: #227db3; font-size: 16px; font-weight: bold;');
 console.log('%cSi estás interesado en nuestros servicios, contáctanos: administracion@it-tel.com.ar', 'color: #666; font-size: 12px;');
+
+// ==============================
+// Utilidad viewport
+function isInViewport(el){
+    const r = el.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    return r.top <= vh*0.8 && r.bottom >= vh*0.2;
+}
+
+// ==============================
+// Slider de proyectos full-screen pinneado
+function initProjectsFull(){
+    const section = document.getElementById('proyectos');
+    const bullets = document.querySelectorAll('.nav-bullet');
+    const slides = document.querySelectorAll('.project-slide');
+    
+    if(!section || bullets.length === 0 || slides.length === 0) return;
+
+    let index = 0;
+    let isAnimating = false;
+    let isProjectsActive = false;
+    let scrollDirection = 0;
+
+    // Establecer altura total para scroll-pin
+    const totalHeight = window.innerHeight * (slides.length + 2); // +2 para entrada y salida
+    section.style.height = totalHeight + 'px';
+
+    const setActive = (i) => {
+        if(i < 0 || i >= slides.length || isAnimating) return;
+        
+        isAnimating = true;
+        
+        // Remover active de todos con animación stagger
+        slides.forEach((s, idx) => {
+            s.classList.remove('active', 'prev', 'next');
+            if(idx < i) s.classList.add('prev');
+            if(idx > i) s.classList.add('next');
+        });
+        bullets.forEach(b => b.classList.remove('active'));
+        
+        // Animación de entrada del slide actual
+        setTimeout(() => {
+            slides[i].classList.add('active');
+            bullets[i]?.classList.add('active');
+            index = i;
+        }, 200);
+        
+        setTimeout(() => isAnimating = false, 1000);
+    };
+
+    // Función para detectar si estamos en la sección de proyectos
+    const checkProjectsInView = () => {
+        const rect = section.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Está completamente visible cuando top <= 0 y bottom >= windowHeight
+        return rect.top <= 0 && rect.bottom >= windowHeight;
+    };
+
+    // Scroll principal del documento
+    let lastScrollY = window.pageYOffset;
+    
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.pageYOffset;
+        scrollDirection = currentScrollY > lastScrollY ? 1 : -1;
+        lastScrollY = currentScrollY;
+        
+        const rect = section.getBoundingClientRect();
+        const progress = Math.max(0, Math.min(1, -rect.top / (rect.height - window.innerHeight)));
+        
+        // Determinar slide basado en progreso
+        const targetSlide = Math.floor(progress * slides.length);
+        
+        if(checkProjectsInView()) {
+            if(!isProjectsActive) {
+                isProjectsActive = true;
+                document.body.style.overflow = 'hidden';
+                setActive(Math.max(0, Math.min(slides.length - 1, targetSlide)));
+            }
+        } else {
+            if(isProjectsActive) {
+                isProjectsActive = false;
+                document.body.style.overflow = 'auto';
+            }
+        }
+    });
+
+    // Navegación con wheel cuando está activa la sección
+    section.addEventListener('wheel', (e) => {
+        if(!isProjectsActive || isAnimating) return;
+        
+        e.preventDefault();
+        const dir = Math.sign(e.deltaY);
+        
+        if(dir > 0 && index < slides.length - 1) {
+            // Scroll hacia abajo - siguiente proyecto
+            setActive(index + 1);
+        } else if(dir < 0 && index > 0) {
+            // Scroll hacia arriba - proyecto anterior
+            setActive(index - 1);
+        } else if(dir > 0 && index === slides.length - 1) {
+            // Salir de la sección hacia abajo
+            isProjectsActive = false;
+            document.body.style.overflow = 'auto';
+            window.scrollTo(0, section.offsetTop + section.offsetHeight);
+        } else if(dir < 0 && index === 0) {
+            // Salir de la sección hacia arriba
+            isProjectsActive = false;
+            document.body.style.overflow = 'auto';
+            window.scrollTo(0, section.offsetTop - window.innerHeight);
+        }
+    }, {passive: false});
+
+    // Touch para mobile
+    let touchStartY = 0;
+    let touchStartTime = 0;
+    
+    section.addEventListener('touchstart', (e) => {
+        if(!isProjectsActive) return;
+        touchStartY = e.touches[0].clientY;
+        touchStartTime = Date.now();
+    }, {passive: true});
+    
+    section.addEventListener('touchmove', (e) => {
+        if(!isProjectsActive || isAnimating) return;
+        
+        const touchY = e.touches[0].clientY;
+        const deltaY = touchStartY - touchY;
+        const deltaTime = Date.now() - touchStartTime;
+        
+        if(Math.abs(deltaY) < 50 || deltaTime < 100) return;
+        
+        e.preventDefault();
+        
+        if(deltaY > 0 && index < slides.length - 1) {
+            setActive(index + 1);
+        } else if(deltaY < 0 && index > 0) {
+            setActive(index - 1);
+        }
+    }, {passive: false});
+
+    // Navegación por bullets
+    bullets.forEach((bullet, i) => {
+        bullet.addEventListener('click', () => {
+            if(i !== index && isProjectsActive) setActive(i);
+        });
+    });
+
+    // Navegación por teclado
+    document.addEventListener('keydown', (e) => {
+        if(!isProjectsActive || isAnimating) return;
+        
+        if(e.key === 'ArrowDown' || e.key === 'PageDown') {
+            e.preventDefault();
+            if(index < slides.length - 1) setActive(index + 1);
+        } else if(e.key === 'ArrowUp' || e.key === 'PageUp') {
+            e.preventDefault();
+            if(index > 0) setActive(index - 1);
+        } else if(e.key === 'Escape') {
+            isProjectsActive = false;
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Auto-iniciar el primer slide
+    setActive(0);
+}
+
+// ==============================
+// Partículas sutiles en IT & TELCO - FUNCIÓN DESHABILITADA
+function initInnovationParticles(){
+    // Esta función está deshabilitada porque las partículas rompían el diseño
+    return;
+    /*
+    const canvas = document.getElementById('particles-canvas');
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let w, h, dpr = window.devicePixelRatio || 1;
+    let particles = [];
+    const COUNT = 60; // sutil
+
+    function resize(){
+        w = canvas.clientWidth;
+        h = canvas.clientHeight;
+        canvas.width = Math.floor(w * dpr);
+        canvas.height = Math.floor(h * dpr);
+        ctx.setTransform(dpr,0,0,dpr,0,0);
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function rand(a,b){return Math.random()*(b-a)+a}
+    for(let i=0;i<COUNT;i++){
+        particles.push({
+            x: rand(0, w), y: rand(0, h),
+            vx: rand(-0.2, 0.2), vy: rand(-0.2, 0.2), r: rand(1, 2.2)
+        });
+    }
+
+    function step(){
+        ctx.clearRect(0,0,w,h);
+        // vínculos
+        for(let i=0;i<particles.length;i++){
+            const p = particles[i];
+            for(let j=i+1;j<particles.length;j++){
+                const q = particles[j];
+                const dx=p.x-q.x, dy=p.y-q.y; const dist=Math.hypot(dx,dy);
+                if(dist<120){
+                    ctx.strokeStyle = 'rgba(0, 180, 255, ' + (0.16*(1-dist/120)) + ')';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.stroke();
+                }
+            }
+        }
+        // puntos
+        for(const p of particles){
+            p.x += p.vx; p.y += p.vy;
+            if(p.x<0||p.x>w) p.vx*=-1; if(p.y<0||p.y>h) p.vy*=-1;
+            ctx.fillStyle = 'rgba(0, 212, 255, 0.8)';
+            ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+        }
+        requestAnimationFrame(step);
+    }
+    step();
+    */
+}
+
+// Carrusel de proyectos - navegación con botones
+function initProjectsCarousel() {
+    const carousel = document.getElementById('projects-carousel');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    if (!carousel || !prevBtn || !nextBtn) return;
+
+    const scrollStep = () => {
+        const card = carousel.querySelector('.project-card');
+        if(!card) return;
+        const cardRect = card.getBoundingClientRect();
+        const carouselRect = carousel.getBoundingClientRect();
+        
+        // Verificar si el card está completamente visible
+        if (cardRect.bottom <= carouselRect.bottom && cardRect.top >= carouselRect.top) {
+            // Calcular el desplazamiento necesario
+            const offset = cardRect.top - carouselRect.top;
+            carousel.scrollTo({
+                top: offset + carousel.scrollTop,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    // Navegación por botones
+    prevBtn.addEventListener('click', () => {
+        const activeCard = carousel.querySelector('.project-card.active');
+        if (!activeCard) return;
+        
+        const prevCard = activeCard.previousElementSibling;
+        if (prevCard) {
+            activeCard.classList.remove('active');
+            prevCard.classList.add('active');
+            scrollStep();
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        const activeCard = carousel.querySelector('.project-card.active');
+        if (!activeCard) return;
+        
+        const nextCard = activeCard.nextElementSibling;
+        if (nextCard) {
+            activeCard.classList.remove('active');
+            nextCard.classList.add('active');
+            scrollStep();
+        }
+    });
+
+    // Navegación por teclado
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevBtn.click();
+        } else if (e.key === 'ArrowRight') {
+            nextBtn.click();
+        }
+    });
+}
