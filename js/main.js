@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollEffects();
     initBackToTop();
     initLanguageSelector();
-    initProjectsCarousel(); // Inicializar carrusel de proyectos
+    initProjectsInteractive(); // Nueva funcionalidad de slices interactivos
 });
 
 // Navigation functionality
@@ -1519,62 +1519,115 @@ function initInnovationParticles(){
     */
 }
 
-// Carrusel de proyectos - navegación con botones
-function initProjectsCarousel() {
-    const carousel = document.getElementById('projects-carousel');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-
-    if (!carousel || !prevBtn || !nextBtn) return;
-
-    const scrollStep = () => {
-        const card = carousel.querySelector('.project-card');
-        if(!card) return;
-        const cardRect = card.getBoundingClientRect();
-        const carouselRect = carousel.getBoundingClientRect();
-        
-        // Verificar si el card está completamente visible
-        if (cardRect.bottom <= carouselRect.bottom && cardRect.top >= carouselRect.top) {
-            // Calcular el desplazamiento necesario
-            const offset = cardRect.top - carouselRect.top;
-            carousel.scrollTo({
-                top: offset + carousel.scrollTop,
-                behavior: 'smooth'
+// Sección de Proyectos Interactiva - Slices y Modal
+function initProjectsInteractive() {
+    // --- Interactive Project Slices ---
+    const projectSlices = document.querySelectorAll('.project-slice');
+    
+    if (projectSlices.length > 0) {
+        projectSlices.forEach(slice => {
+            slice.addEventListener('click', () => {
+                if(slice.classList.contains('active')) return;
+                
+                // Remover clase active de todos los slices
+                projectSlices.forEach(s => s.classList.remove('active'));
+                
+                // Agregar clase active al slice clickeado
+                slice.classList.add('active');
             });
-        }
+        });
+    }
+
+    // --- Project Modal Functionality ---
+    const modal = document.getElementById('project-modal');
+    const modalContent = document.getElementById('modal-content');
+    const modalTitle = document.getElementById('modal-title');
+    const modalImage = document.getElementById('modal-image');
+    const modalDescription = document.getElementById('modal-description');
+    const openModalButtons = document.querySelectorAll('.open-modal-btn');
+    const closeModalButton = document.getElementById('modal-close-btn');
+    const modalOverlay = document.getElementById('modal-overlay');
+
+    if (!modal) return; // Exit si no existe el modal
+
+    // Función para abrir el modal
+    const openModal = (slice) => {
+        const projectTitle = slice.dataset.title;
+        const projectImage = slice.dataset.image;
+        const projectDescription = slice.dataset.description;
+
+        modalTitle.textContent = projectTitle;
+        modalImage.src = projectImage;
+        modalImage.alt = `Imagen de ${projectTitle}`;
+        modalDescription.innerHTML = projectDescription;
+        
+        // Prevenir scroll del body cuando el modal está abierto
+        document.body.style.overflow = 'hidden';
+        
+        // Mostrar modal con animación
+        modal.classList.add('show');
     };
 
-    // Navegación por botones
-    prevBtn.addEventListener('click', () => {
-        const activeCard = carousel.querySelector('.project-card.active');
-        if (!activeCard) return;
+    // Función para cerrar el modal
+    const closeModal = () => {
+        // Restaurar scroll del body
+        document.body.style.overflow = '';
         
-        const prevCard = activeCard.previousElementSibling;
-        if (prevCard) {
-            activeCard.classList.remove('active');
-            prevCard.classList.add('active');
-            scrollStep();
-        }
-    });
+        // Ocultar modal con animación
+        modal.classList.remove('show');
+    };
 
-    nextBtn.addEventListener('click', () => {
-        const activeCard = carousel.querySelector('.project-card.active');
-        if (!activeCard) return;
-        
-        const nextCard = activeCard.nextElementSibling;
-        if (nextCard) {
-            activeCard.classList.remove('active');
-            nextCard.classList.add('active');
-            scrollStep();
-        }
-    });
+    // Event listeners para los botones "Ver Más"
+    if (openModalButtons.length > 0) {
+        openModalButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation(); // Evita que el click se propague al slice
+                const slice = button.closest('.project-slice');
+                if (slice) {
+                    openModal(slice);
+                }
+            });
+        });
+    }
 
-    // Navegación por teclado
+    // Event listener para cerrar modal
+    if (closeModalButton) {
+        closeModalButton.addEventListener('click', closeModal);
+    }
+    
+    // Event listener para cerrar modal clickeando el overlay
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', closeModal);
+    }
+
+    // Cerrar modal con tecla ESC
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-            prevBtn.click();
-        } else if (e.key === 'ArrowRight') {
-            nextBtn.click();
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            closeModal();
+        }
+    });
+
+    // Navegación por teclado en los slices
+    document.addEventListener('keydown', (e) => {
+        if (!projectSlices.length) return;
+        
+        const activeSlice = document.querySelector('.project-slice.active');
+        if (!activeSlice) return;
+
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            const prevSlice = activeSlice.previousElementSibling;
+            if (prevSlice && prevSlice.classList.contains('project-slice')) {
+                projectSlices.forEach(s => s.classList.remove('active'));
+                prevSlice.classList.add('active');
+            }
+        } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            const nextSlice = activeSlice.nextElementSibling;
+            if (nextSlice && nextSlice.classList.contains('project-slice')) {
+                projectSlices.forEach(s => s.classList.remove('active'));
+                nextSlice.classList.add('active');
+            }
         }
     });
 }
