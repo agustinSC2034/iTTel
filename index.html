@@ -16,6 +16,9 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <!-- Styles -->
     <link rel="stylesheet" href="./assets/css/main.css">
     
@@ -58,6 +61,8 @@
         </div>
     </nav>
 
+
+
     <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="hero-video">
@@ -68,7 +73,7 @@
             <div class="hero-overlay"></div>
         </div>
         
-        <!-- Botón de pantalla completa movido fuera del contenedor del video -->
+        <!-- Botón de pantalla completa en esquina inferior derecha -->
         <button class="fullscreen-btn" id="fullscreen-btn" title="Ver en pantalla completa">
             <i class="fas fa-expand"></i>
         </button>
@@ -77,17 +82,19 @@
             <!-- Hero sin textos (solo video) -->
         </div>
         
+        <!-- Scroll indicator comentado para simplificar
         <div class="scroll-indicator">
             <div class="scroll-arrow">
                 <i class="fas fa-chevron-down"></i>
             </div>
         </div>
+        -->
     </section>
 
     <!-- About Section -->
     <section id="nosotros" class="section about">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">NOSOTROS</h2>
                 <p class="section-description">
                     Somos una Empresa con vasta experiencia en el mercado de las telecomunicaciones, 
@@ -97,15 +104,15 @@
             </div>
             
             <div class="mission-grid">
-                <div class="mission-card animate-in">
+                <div class="mission-card" data-aos="fade-up" data-aos-delay="100">
                     <h3>Nuestra Misión</h3>
                     <p>Brindar soluciones integrales en tecnología y telecomunicaciones, adaptadas a las necesidades de cada cliente, garantizando calidad, eficiencia y un servicio de postventa excepcional.</p>
                 </div>
-                <div class="mission-card animate-in">
+                <div class="mission-card" data-aos="fade-up" data-aos-delay="200">
                     <h3>Nuestra Visión</h3>
                     <p>Ser la empresa de tecnología y telecomunicaciones líder en la región, reconocida por nuestra innovación, confiabilidad y el compromiso con el éxito de nuestros clientes.</p>
                 </div>
-                <div class="mission-card animate-in">
+                <div class="mission-card" data-aos="fade-up" data-aos-delay="300">
                     <h3>Nuestros Valores</h3>
                     <p>Compromiso, Calidad, Innovación, Confianza y Orientación al cliente. Estos pilares guían cada uno de nuestros proyectos y relaciones comerciales.</p>
                 </div>
@@ -113,71 +120,141 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="servicios" class="section services">
+    <!-- Innovación Tecnológica Section - Completamente renovada -->
+    <section id="servicios" class="section innovation-tech">
         <div class="container">
-            <div class="services-content">
-                <div class="services-text animate-in">
-                    <h2><span class="text-primary">IT</span> & <span class="text-primary">TEL</span> INFORMATION TECHNOLOGY & TELECOMMUNICATIONS</h2>
-                    
-                    <div class="services-description">
-                        <p>Fuimos pioneros en implementar en el mercado Argentino lo que hoy se conoce en la industria de las telecomunicaciones como <strong>"Redes Neutrales"</strong> o <strong>"Compartición de Infraestructura Telco"</strong>.</p>
-                        
-                        <p>Desarrollos que venimos implementando y perfeccionando hace más de 10 años en las más variadas jurisdicciones y topologías de red.</p>
-                        
-                        <p>Operando sobre una misma infraestructura pasiva, la convivencia de redes MAN WAN Y LAN, con la transmisión de las TELCOs, fijas y móviles.</p>
-                    </div>
-                </div>
-                <div class="section-image-wrapper animate-in">
-                    <img src="assets/images/1.jpg" alt="Servicios de Telecomunicaciones" class="services-img">
+            <!-- Fondo de partículas sutiles -->
+            <div class="particles-bg" aria-hidden="true">
+                <canvas id="particles-canvas"></canvas>
+            </div>
+            <!-- Header principal -->
+            <div class="innovation-header">
+                <h2 class="innovation-title">
+                    <span class="tech-particle" data-text="IT">IT</span>
+                    <span class="connector">&</span>
+                    <span class="tech-particle" data-text="TELCO">TELCO</span>
+                </h2>
+                <div class="innovation-subtitle">
+                    <span class="typing-text" data-text="INFORMATION TECHNOLOGY & TELECOMMUNICATIONS"></span>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Strategy Section -->
-    <section id="estrategia" class="section strategy">
-        <div class="container">
-            <div class="strategy-content">
-                <div class="section-image-wrapper animate-in">
-                    <img src="assets/images/vidImg2.png" alt="Antena en Marcha" class="strategy-img">
+            <!-- Grid de características innovadoras -->
+            <div class="innovation-grid">
+                <!-- Tarjeta principal - Pioneros -->
+                <div class="innovation-card featured" data-aos="fade-up">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <div class="floating-icon">
+                                <i class="fas fa-broadcast-tower"></i>
+                            </div>
+                        </div>
+                        <h3>Pioneros en Redes Neutrales</h3>
+                        <p>Fuimos los <strong>primeros en Argentina</strong> en implementar lo que hoy se conoce como <em>"Redes Neutrales"</em> o <em>"Compartición de Infraestructura Telco"</em></p>
+                        <div class="card-stats">
+                            <span class="stat-badge">+10 años</span>
+                            <span class="stat-badge">Líderes</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="strategy-text animate-in">
-                    <h2>Estrategia de diferenciación</h2>
-                    
-                    <div class="strategy-points">
-                        <div class="strategy-point">
-                            <p>Nos adaptamos con <strong>Sinergia</strong> a la operación de nuestros <strong>Providers Locativos</strong>: coordinamos y acompañamos todos los accesos a la red (de sitios y fibra óptica), de manera de asegurar la correcta operación del titular del espacio, como el acceso de los operadores de telecomunicaciones.</p>
+
+                <!-- Tarjeta - Desarrollo -->
+                <div class="innovation-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <div class="floating-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
                         </div>
-                        
-                        <div class="strategy-point">
-                            <p>Esta estrategia se refleja en nuestros acuerdos y, sumado a la ingeniería de nuestras redes, nos permite brindar el <strong>Service Level Agreement (SLA) mas alto del Mercado.</strong></p>
+                        <h3>Desarrollo Continuo</h3>
+                        <p>Más de <strong>10 años perfeccionando</strong> nuestros desarrollos en las más variadas jurisdicciones y topologías de red</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta - Convergencia -->
+                <div class="innovation-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <div class="floating-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
                         </div>
-                        
-                        <div class="strategy-point">
-                            <p>Otras diferencias que nos caracterizan son los <strong>cuidados visuales y ambientales de nuestras implementaciones</strong>, certificando de manera sustentable cada proyecto.</p>
+                        <h3>Convergencia Total</h3>
+                        <p>Operamos sobre una <strong>misma infraestructura pasiva</strong> la convivencia de redes MAN, WAN y LAN con transmisión TELCOs fijas y móviles</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta - Sinergia -->
+                <div class="innovation-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <div class="floating-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                        </div>
+                        <h3>Sinergia Operativa</h3>
+                        <p>Nos adaptamos con <strong>sinergia total</strong> a nuestros Providers Locativos, coordinando todos los accesos de red y fibra óptica</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta - SLA Premium -->
+                <div class="innovation-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <div class="floating-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                        </div>
+                        <h3>SLA Premium</h3>
+                        <p>Ofrecemos el <strong>Service Level Agreement (SLA) más alto del mercado</strong> gracias a nuestra ingeniería de redes especializada</p>
+                        <div class="card-stats">
+                            <span class="stat-badge premium">99.9% SLA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta - Sostenibilidad -->
+                <div class="innovation-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <div class="floating-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                        </div>
+                        <h3>Implementación Sustentable</h3>
+                        <p>Cuidados <strong>visuales y ambientales</strong> en todas nuestras implementaciones, certificando la sustentabilidad de cada proyecto</p>
+                        <div class="card-stats">
+                            <span class="stat-badge eco">Eco-Friendly</span>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Bloque interactivo removido para un diseño más prolijo -->
         </div>
     </section>
 
     <!-- Stats Section -->
     <section class="section stats">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
+            <div class="stats-grid" data-aos="fade-up">
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
                     <div class="stat-number" data-target="10">0</div>
                     <div class="stat-label">+ Años de<br>experiencia</div>
                 </div>
                 
-                <div class="stat-item">
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
                     <div class="stat-number" data-target="340">0</div>
                     <div class="stat-label">+ Proyectos<br>de éxito</div>
                 </div>
                 
-                <div class="stat-item">
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
                     <div class="stat-number" data-target="99.99">0</div>
                     <div class="stat-label">% de SLA<br>garantizado</div>
                 </div>
@@ -185,92 +262,103 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="proyectos" class="section projects">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">PROYECTOS DESTACADOS</h2>
-                <p class="section-description">Casos de éxito que demuestran nuestra experiencia y capacidad técnica</p>
-            </div>
-            
-            <div class="projects-carousel">
-                <div class="project-slide active">
-                    <div class="project-content">
-                        <div class="project-image">
+    <!-- Projects Section - Fullscreen Scroll-Pinned Slider -->
+    <section id="proyectos" class="section projects-full">
+        <div class="projects-wrapper" style="--slides: 6;">
+            <div class="projects-viewport" id="projects-viewport">
+                <ul class="project-bullets" id="project-bullets" aria-label="Navegación de proyectos">
+                    <li class="active" data-index="0"></li>
+                    <li data-index="1"></li>
+                    <li data-index="2"></li>
+                    <li data-index="3"></li>
+                    <li data-index="4"></li>
+                    <li data-index="5"></li>
+                </ul>
+
+                <!-- Slide 1: Red FTTH en Tandil - USITTEL -->
+                <section class="project-slide-full active" data-index="0">
+                    <div class="slide-grid">
+                        <div class="slide-text">
+                            <h3>Red FTTH en Tandil – USITTEL</h3>
+                            <p>Despliegue de red <strong>FTTH</strong> con arquitectura GPON para brindar <strong>Internet y TV</strong> de alta calidad en la ciudad de Tandil, con operación conjunta junto a <strong>La Usina</strong>.</p>
+                            <p>Cobertura urbana y periurbana con <strong>última milla</strong> optimizada, headend redundante y <strong>SLA</strong> orientado al usuario final.</p>
+                            <p>Más info: <a target="_blank" href="https://www.usittel.com.ar">www.usittel.com.ar</a></p>
+                        </div>
+                        <div class="slide-media">
+                            <img src="./assets/images/cobertura.png" alt="Cobertura USITTEL Tandil">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 2: Red FTTH en La Matanza – LARANET -->
+                <section class="project-slide-full" data-index="1">
+                    <div class="slide-grid">
+                        <div class="slide-text">
+                            <h3>Red FTTH en La Matanza – LARANET</h3>
+                            <p>Diseño e implementación de <strong>red óptica pasiva</strong> para LARANET, con expansión modular y <strong>capacidad de crecimiento</strong> para nuevas zonas.</p>
+                            <p>Backbone redundante, monitoreo NOC y <strong>operación 24/7</strong> con herramientas de observabilidad.</p>
+                        </div>
+                        <div class="slide-media">
+                            <img src="./assets/images/vidImg2.png" alt="Red FTTH La Matanza LARANET">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 3: AUSA -->
+                <section class="project-slide-full" data-index="2">
+                    <div class="slide-grid">
+                        <div class="slide-text">
+                            <h3>Acuerdo ITTEL – AUSA</h3>
+                            <p>Más de <strong>1.000 km</strong> de hilos arrendados y <strong>100+ estructuras</strong> de antenas a lo largo de autopistas y avenidas estratégicas en CABA.</p>
+                            <p>Gestión integral: diseño, implementación y operación de <strong>infraestructura TELCO</strong> de alto desempeño.</p>
+                        </div>
+                        <div class="slide-media">
                             <img src="./assets/images/AUSA4.jpg" alt="Proyecto AUSA">
                         </div>
-                        <div class="project-info">
-                            <h3>Acuerdo ITTEL - AUSA</h3>
-                            <div class="project-description">
-                                <p>Integramos el despliegue de <strong>infraestructura TELCO</strong> más importante de la Ciudad de Buenos Aires:</p>
-                                <p>Sólo en este proyecto superamos los <strong>1.000 kilómetros</strong> de hilos arrendados.</p>
-                                <p>Gestionamos desde el diseño, pasando por la implementación y operación de más de 100 estructuras portantes de antenas, instaladas a lo largo de las Autopistas y Avenidas que delimitan <strong>TODA la Ciudad de Buenos Aires.</strong></p>
-                            </div>
-                        </div>
                     </div>
-                </div>
-                
-                <div class="project-slide">
-                    <div class="project-content">
-                        <div class="project-image">
+                </section>
+
+                <!-- Slide 4: AUBASA -->
+                <section class="project-slide-full" data-index="3">
+                    <div class="slide-grid">
+                        <div class="slide-text">
+                            <h3>Acuerdo ITTEL – AUBASA</h3>
+                            <p>Red de <strong>fibra óptica redundante</strong> que integra servicios esenciales y transmisiones para clientes TELCO.</p>
+                            <p>Funciona como <strong>backbone</strong> entre CABA y La Plata, conectando con otras redes y proveyendo <strong>fibra oscura</strong>.</p>
+                        </div>
+                        <div class="slide-media">
                             <img src="./assets/images/AUBASA1.jpg" alt="Proyecto AUBASA">
                         </div>
-                        <div class="project-info">
-                            <h3>Acuerdo ITTEL - AUBASA</h3>
-                            <div class="project-description">
-                                <p>Se ha implementado una red de <strong>fibra óptica</strong> con topología redundante para AUBASA, que integra servicios esenciales para la autopista y transmisiones para clientes TELCO.</p>
-                                <p>Esta red actúa como un <strong>backbone</strong> estratégico, <strong>conectando Buenos Aires con La Plata</strong> y enlazando con otras redes para ofrecer fibra óptica oscura y un camino redundante hacia la salida internacional de Internet en Las Toninas.</p>
-                                <p>El proyecto busca equilibrar la <strong>operatividad, seguridad vial y compromiso ambiental.</strong></p>
-                            </div>
+                    </div>
+                </section>
+
+                <!-- Slide 5: ADIFSE -->
+                <section class="project-slide-full" data-index="4">
+                    <div class="slide-grid">
+                        <div class="slide-text">
+                            <h3>Proyecto ADIFSE</h3>
+                            <p>Relevamiento integral de infraestructura y <strong>potencial de desarrollo</strong> de redes de telecomunicaciones en trazados ferroviarios.</p>
+                            <p>Base para una planificación de <strong>despliegue sustentable</strong> y eficiente.</p>
+                        </div>
+                        <div class="slide-media">
+                            <img src="./assets/images/adif.jpg" alt="Proyecto ADIFSE">
                         </div>
                     </div>
-                </div>
-                
-                <div class="project-slide">
-                    <div class="project-content">
-                        <div class="project-image">
-                            <img src="./assets/images/adif.jpg" alt="Proyecto ADIF">
+                </section>
+
+                <!-- Slide 6: VITTAL -->
+                <section class="project-slide-full" data-index="5">
+                    <div class="slide-grid">
+                        <div class="slide-text">
+                            <h3>VITTAL – Videovigilancia</h3>
+                            <p>Implementación de un <strong>sistema complejo</strong> de videovigilancia IP en todas las dependencias, con acceso seguro desde dispositivos móviles y consolas.</p>
+                            <p>Arquitectura con <strong>grabación centralizada</strong>, analítica básica y perfiles por rol.</p>
                         </div>
-                        <div class="project-info">
-                            <h3>PROYECTO ADIFSE</h3>
-                            <div class="project-description">
-                                <p>En el Marco del Proyecto de desarrollo de las <strong>redes de Telecomunicaciones</strong> en los trazados ferroviarios que administra la ADIF S.E, trabajamos la primer Etapa, la cual constó del <strong>relevamiento</strong> de la infraestructura disponible, su estado, ocupación, y potencialidad.</p>
-                                <p>El objetivo del proyecto fue informar la situación actual y las posibilidades de <strong>desarrollo sustentable.</strong></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-slide">
-                    <div class="project-content">
-                        <div class="project-image">
-                            <img src="./assets/images/cobertura.png" alt="USITTEL Cobertura">
-                        </div>
-                        <div class="project-info">
-                            <h3>USITTEL - Internet y TV</h3>
-                            <div class="project-description">
-                                <p><strong>USITTEL</strong> es nuestro servicio de <strong>Internet y Televisión</strong> desarrollado en alianza con La Usina de Tandil, ofreciendo conectividad de alta calidad en la región.</p>
-                                <p>Brindamos servicios de <strong>Internet de alta velocidad y televisión digital</strong> con tecnología de vanguardia y cobertura estratégica en zonas urbanas y rurales.</p>
-                                <p>Más información disponible en <strong><a target="_blank" href="https://www.usittel.com.ar">www.usittel.com.ar</a></strong></p>
-                            </div>
+                        <div class="slide-media">
+                            <img src="./assets/images/vidImg1.png" alt="Sistema de videovigilancia VITTAL">
                         </div>
                     </div>
-                </div>
-                
-                <div class="project-controls">
-                    <button class="project-prev" id="project-prev">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <div class="project-dots">
-                        <span class="project-dot active" data-slide="0"></span>
-                        <span class="project-dot" data-slide="1"></span>
-                        <span class="project-dot" data-slide="2"></span>
-                        <span class="project-dot" data-slide="3"></span>
-                    </div>
-                    <button class="project-next" id="project-next">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
+                </section>
             </div>
         </div>
     </section>
@@ -278,7 +366,7 @@
     <!-- Clients Section -->
     <section id="clientes" class="section clients">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <div class="section-subtitle">Socios estratégicos</div>
                 <h2 class="section-title">NUESTROS CLIENTES</h2>
                 <p class="section-description">
@@ -289,7 +377,7 @@
                 </p>
             </div>
             
-            <div class="clients-carousel">
+            <div class="clients-carousel" data-aos="fade-up" data-aos-delay="200">
                 <div class="clients-track" id="clients-track">
                     <img class="client-logo" src="./assets/images/clients/client-1.png" alt="Cliente 1">
                     <img class="client-logo" src="./assets/images/clients/client-2.png" alt="Cliente 2">
@@ -311,60 +399,32 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contacto" class="section contact">
+    <!-- Contact Section - Estilo limpio -->
+    <section id="contacto" class="section contact-clean">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">SOPORTE | CONTACTO</h2>
-                <p class="section-description">
-                    Nuestro equipo de profesionales brinda soporte y atención técnica las 24 horas 
-                    de los 365 días del año superando los requerimientos más altos en SLA.
-                </p>
-            </div>
-            
-            <div class="contact-content">
-                <div class="contact-map">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.051944262572!2d-58.457091323605184!3d-34.552240172972716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb034747aa5d9%3A0xe0b59a8583c2ccc1!2sGrupo%20iTTel!5e0!3m2!1ses!2sar!4v1726797775897!5m2!1ses!2sar"
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+            <div class="contact-clean-grid" data-aos="fade-up">
+                <div class="contact-clean-left">
+                    <h2 class="contact-title">Hablemos de tu proyecto</h2>
+                    <p class="contact-subtitle">Completa el formulario y uno de nuestros especialistas se pondrá en contacto a la brevedad.</p>
+                    
+                    <form class="contact-clean-form" id="contactForm">
+                        <div class="row-2">
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo" required>
+                            <input type="email" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <input type="text" id="asunto" name="asunto" placeholder="Asunto" required>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+                        <button type="submit" class="btn-primary">Enviar Consulta</button>
+                    </form>
                 </div>
-                
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <h3>Información de Contacto</h3>
-                        
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Ciudad de Buenos Aires, Argentina</strong>
-                                <p><a href="https://maps.app.goo.gl/wUxh3sxNJKnENYWt7" target="_blank">Manuel Ugarte 1667, Belgrano</a></p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <p><a href="tel:01152729000">011-5272-9000</a></p>
-                                <p><a href="tel:0810345ITTEL">0810-345-ITTEL (4883)</a></p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <p><a href="mailto:administracion@it-tel.com.ar">administracion@it-tel.com.ar</a></p>
-                                <p><a href="mailto:soporte@it-tel.com.ar">soporte@it-tel.com.ar</a></p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-social">
-                            <a href="https://www.linkedin.com/company/grupoittel/" target="_blank" class="social-link">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                        </div>
+                <div class="contact-clean-right">
+                    <div class="contact-map clean">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.051944262572!2d-58.457091323605184!3d-34.552240172972716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb034747aa5d9%3A0xe0b59a8583c2ccc1!2sGrupo%20iTTel!5e0!3m2!1ses!2sar!4v1726797775897!5m2!1ses!2sar"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -416,6 +476,15 @@
     </button>
 
     <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/main.js"></script>
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
