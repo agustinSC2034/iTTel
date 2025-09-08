@@ -1555,11 +1555,29 @@ function initProjectsInteractive() {
     const openModal = (slice) => {
         const projectTitle = slice.dataset.title;
         const projectImage = slice.dataset.image;
+        const projectVideo = slice.dataset.video;
         const projectDescription = slice.dataset.description;
 
         modalTitle.textContent = projectTitle;
-        modalImage.src = projectImage;
-        modalImage.alt = `Imagen de ${projectTitle}`;
+        
+        // Obtener elementos del modal
+        const modalImage = document.getElementById('modal-image');
+        const modalVideo = document.getElementById('modal-video');
+        const modalDescription = document.getElementById('modal-description');
+        
+        // Si hay video, mostrar video y ocultar imagen
+        if (projectVideo) {
+            modalImage.style.display = 'none';
+            modalVideo.style.display = 'block';
+            modalVideo.src = projectVideo;
+        } else {
+            // Si no hay video, mostrar imagen y ocultar video
+            modalVideo.style.display = 'none';
+            modalImage.style.display = 'block';
+            modalImage.src = projectImage;
+            modalImage.alt = `Imagen de ${projectTitle}`;
+        }
+        
         modalDescription.innerHTML = projectDescription;
         
         // Prevenir scroll del body cuando el modal está abierto
@@ -1571,6 +1589,12 @@ function initProjectsInteractive() {
 
     // Función para cerrar el modal
     const closeModal = () => {
+        // Pausar video si está reproduciéndose
+        const modalVideo = document.getElementById('modal-video');
+        if (modalVideo && !modalVideo.paused) {
+            modalVideo.pause();
+        }
+        
         // Restaurar scroll del body
         document.body.style.overflow = '';
         
