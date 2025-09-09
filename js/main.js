@@ -420,7 +420,7 @@ function initClients() {
 
     // Función para resetear la animación
     function resetAnimation() {
-        clientsTrack.style.animation = 'scroll 20s linear infinite';
+        clientsTrack.style.animation = 'scroll 17s linear infinite';
         clientsTrack.style.transform = '';
         clientsTrack.style.animationPlayState = 'running';
     }
@@ -1170,7 +1170,7 @@ function initContactForm() {
         const data = Object.fromEntries(formData);
         
         // Validación básica
-        if (!data.nombre || !data.email || !data.mensaje || !data.servicio) {
+    if (!data.nombre || !data.email || !data.mensaje) {
             showNotification('Por favor completa todos los campos obligatorios', 'error');
             return;
         }
@@ -1182,8 +1182,8 @@ function initContactForm() {
             return;
         }
         
-        // Simular envío del formulario
-        const submitBtn = contactForm.querySelector('.form-submit');
+    // Simular envío del formulario (buscar el botón submit de forma robusta)
+    const submitBtn = contactForm.querySelector('button[type="submit"], .btn-primary') || contactForm.querySelector('button');
         const originalText = submitBtn.innerHTML;
         
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
@@ -1200,7 +1200,7 @@ function initContactForm() {
     });
     
     // Agregar efectos a los campos del formulario
-    const formInputs = contactForm.querySelectorAll('input, select, textarea');
+    const formInputs = contactForm.querySelectorAll('input, textarea');
     formInputs.forEach(input => {
         input.addEventListener('focus', function() {
             this.parentElement.classList.add('focused');
@@ -1524,19 +1524,107 @@ function initInnovationParticles(){
 function initProjectsInteractive() {
     // --- Interactive Project Slices ---
     const projectSlices = document.querySelectorAll('.project-slice');
+    const projectNavPrev = document.querySelector('.project-nav-prev');
+    const projectNavNext = document.querySelector('.project-nav-next');
+    let currentProjectIndex = 0;
     
     if (projectSlices.length > 0) {
-        projectSlices.forEach(slice => {
+        // Función para actualizar los botones de navegación
+        const updateNavButtons = () => {
+            if (projectNavPrev) {
+                projectNavPrev.disabled = currentProjectIndex === 0;
+            }
+            if (projectNavNext) {
+                projectNavNext.disabled = currentProjectIndex === projectSlices.length - 1;
+            }
+        };
+        
+        // Función para encontrar el índice del slice activo
+        const findActiveIndex = () => {
+            for (let i = 0; i < projectSlices.length; i++) {
+                if (projectSlices[i].classList.contains('active')) {
+                    return i;
+                }
+            }
+            return 0;
+        };
+        
+        // Event listeners para clicks en slices (funcionalidad original)
+        projectSlices.forEach((slice, index) => {
             slice.addEventListener('click', () => {
-                if(slice.classList.contains('active')) return;
-                
                 // Remover clase active de todos los slices
                 projectSlices.forEach(s => s.classList.remove('active'));
                 
                 // Agregar clase active al slice clickeado
                 slice.classList.add('active');
+                
+                // Actualizar el índice actual
+                currentProjectIndex = index;
+                updateNavButtons();
             });
         });
+        
+        // Event listeners para botones de navegación
+        if (projectNavPrev) {
+            projectNavPrev.addEventListener('click', () => {
+                if (currentProjectIndex > 0) {
+                    const newIndex = currentProjectIndex - 1;
+                    projectSlices.forEach(s => s.classList.remove('active'));
+                    projectSlices[newIndex].classList.add('active');
+                    currentProjectIndex = newIndex;
+                    updateNavButtons();
+                }
+            });
+        }
+        
+        if (projectNavNext) {
+            projectNavNext.addEventListener('click', () => {
+                if (currentProjectIndex < projectSlices.length - 1) {
+                    const newIndex = currentProjectIndex + 1;
+                    projectSlices.forEach(s => s.classList.remove('active'));
+                    projectSlices[newIndex].classList.add('active');
+                    currentProjectIndex = newIndex;
+                    updateNavButtons();
+                }
+            });
+        }
+        
+        // Navegación por teclado
+        document.addEventListener('keydown', (e) => {
+            if (!projectSlices.length) return;
+            
+            const projectsSection = document.getElementById('proyectos');
+            if (!projectsSection) return;
+            
+            const sectionRect = projectsSection.getBoundingClientRect();
+            const isInViewport = sectionRect.top < window.innerHeight && sectionRect.bottom > 0;
+            
+            if (!isInViewport) return;
+
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (currentProjectIndex > 0) {
+                    const newIndex = currentProjectIndex - 1;
+                    projectSlices.forEach(s => s.classList.remove('active'));
+                    projectSlices[newIndex].classList.add('active');
+                    currentProjectIndex = newIndex;
+                    updateNavButtons();
+                }
+            } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (currentProjectIndex < projectSlices.length - 1) {
+                    const newIndex = currentProjectIndex + 1;
+                    projectSlices.forEach(s => s.classList.remove('active'));
+                    projectSlices[newIndex].classList.add('active');
+                    currentProjectIndex = newIndex;
+                    updateNavButtons();
+                }
+            }
+        });
+        
+        // Inicializar: encontrar el slice activo actual y configurar los botones
+        currentProjectIndex = findActiveIndex();
+        updateNavButtons();
     }
 
     // --- Project Modal Functionality ---
@@ -1548,6 +1636,7 @@ function initProjectsInteractive() {
     const openModalButtons = document.querySelectorAll('.open-modal-btn');
     const closeModalButton = document.getElementById('modal-close-btn');
     const modalOverlay = document.getElementById('modal-overlay');
+    let previouslyFocusedElement = null;
 
     if (!modal) return; // Exit si no existe el modal
 
@@ -1582,9 +1671,26 @@ function initProjectsInteractive() {
         
         // Prevenir scroll del body cuando el modal está abierto
         document.body.style.overflow = 'hidden';
-        
-        // Mostrar modal con animación
+
+        // Guardar el elemento enfocado previamente
+        previouslyFocusedElement = document.activeElement;
+
+        // Mostrar modal con animación y accesibilidad
         modal.classList.add('show');
+        modal.removeAttribute('aria-hidden');
+        
+        // Enfocar primer elemento interactivo dentro del modal
+        requestAnimationFrame(() => {
+            const focusables = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            if (focusables.length) {
+                focusables[0].focus();
+            } else {
+                modal.focus();
+            }
+        });
+
+        // Activar trampa de foco
+        trapFocus(modal);
     };
 
     // Función para cerrar el modal
@@ -1598,8 +1704,21 @@ function initProjectsInteractive() {
         // Restaurar scroll del body
         document.body.style.overflow = '';
         
-        // Ocultar modal con animación
+        // Ocultar modal con animación de salida
+        modal.classList.add('hiding');
         modal.classList.remove('show');
+        modal.setAttribute('aria-hidden', 'true');
+
+        // Liberar trampa de foco
+        releaseFocusTrap();
+
+        // Esperar transición y limpiar
+        setTimeout(() => {
+            modal.classList.remove('hiding');
+            if (previouslyFocusedElement && typeof previouslyFocusedElement.focus === 'function') {
+                previouslyFocusedElement.focus();
+            }
+        }, 320);
     };
 
     // Event listeners para los botones "Ver Más"
@@ -1632,27 +1751,36 @@ function initProjectsInteractive() {
         }
     });
 
-    // Navegación por teclado en los slices
-    document.addEventListener('keydown', (e) => {
-        if (!projectSlices.length) return;
+    // Focus trap helpers
+    let focusTrapHandler = null;
+    function trapFocus(container) {
+        const selectors = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])';
+        const getFocusable = () => Array.from(container.querySelectorAll(selectors)).filter(el => (el.offsetParent !== null) || el === container);
         
-        const activeSlice = document.querySelector('.project-slice.active');
-        if (!activeSlice) return;
-
-        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-            e.preventDefault();
-            const prevSlice = activeSlice.previousElementSibling;
-            if (prevSlice && prevSlice.classList.contains('project-slice')) {
-                projectSlices.forEach(s => s.classList.remove('active'));
-                prevSlice.classList.add('active');
+        focusTrapHandler = (e) => {
+            if (e.key !== 'Tab') return;
+            const focusables = getFocusable();
+            if (focusables.length === 0) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey) {
+                if (document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                }
+            } else {
+                if (document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
             }
-        } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-            e.preventDefault();
-            const nextSlice = activeSlice.nextElementSibling;
-            if (nextSlice && nextSlice.classList.contains('project-slice')) {
-                projectSlices.forEach(s => s.classList.remove('active'));
-                nextSlice.classList.add('active');
-            }
+        };
+        document.addEventListener('keydown', focusTrapHandler);
+    }
+    function releaseFocusTrap() {
+        if (focusTrapHandler) {
+            document.removeEventListener('keydown', focusTrapHandler);
+            focusTrapHandler = null;
         }
-    });
+    }
 }
