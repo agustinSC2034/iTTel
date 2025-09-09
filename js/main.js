@@ -1654,17 +1654,24 @@ function initProjectsInteractive() {
         const modalVideo = document.getElementById('modal-video');
         const modalDescription = document.getElementById('modal-description');
         
-        // Si hay video, mostrar video y ocultar imagen
-        if (projectVideo) {
-            modalImage.style.display = 'none';
-            modalVideo.style.display = 'block';
-            modalVideo.src = projectVideo;
-        } else {
-            // Si no hay video, mostrar imagen y ocultar video
-            modalVideo.style.display = 'none';
+        // Si hay video e imagen: mostrar ambos (imagen arriba, video abajo). Si no, mostrar lo disponible.
+        const hasImage = Boolean(projectImage);
+        const hasVideo = Boolean(projectVideo);
+        if (hasImage) {
             modalImage.style.display = 'block';
             modalImage.src = projectImage;
             modalImage.alt = `Imagen de ${projectTitle}`;
+        } else {
+            modalImage.style.display = 'none';
+            modalImage.removeAttribute('src');
+        }
+
+        if (hasVideo) {
+            modalVideo.style.display = 'block';
+            modalVideo.src = projectVideo;
+        } else {
+            modalVideo.style.display = 'none';
+            modalVideo.removeAttribute('src');
         }
         
         modalDescription.innerHTML = projectDescription;
