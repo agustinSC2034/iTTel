@@ -1932,6 +1932,7 @@ html {
 @media (max-width: 768px) {
     .hero {
         padding: 0;
+        margin-top: 98px; /* Aumentado para compensar navbar en móvil (68px logo + 15px padding*2) */
         height: auto; /* Altura automática basada en el video */
         overflow: hidden;
     }
