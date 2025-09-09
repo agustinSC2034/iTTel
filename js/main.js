@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initBackToTop();
     initLanguageSelector();
     initProjectsInteractive(); // Nueva funcionalidad de slices interactivos
+    initItGallery(); // Galería minimalista IT & Telco
+    initModalImageFullscreen(); // Fullscreen imagen en modal
 });
 
 // Navigation functionality
@@ -532,6 +534,8 @@ function initLanguageSelector() {
                 estrategia: 'Estrategia de diferenciación',
                 estadisticas: 'Estadísticas',
                 proyectos: 'Proyectos',
+                // Ajuste de título visible en la sección
+                proyectos: 'Proyectos Destacados',
                 clientes: 'Nuestros Clientes',
                 contacto: 'Contacto'
             },
@@ -662,7 +666,8 @@ function initLanguageSelector() {
                 servicios: 'IT & TEL Information Technology & Telecommunications',
                 estrategia: 'Differentiation Strategy',
                 estadisticas: 'Statistics',
-                proyectos: 'Projects',
+                // Ajuste de título visible en la sección
+                proyectos: 'Featured Projects',
                 clientes: 'Our Clients',
                 contacto: 'Contact'
             },
@@ -911,12 +916,12 @@ function applyTranslations(lang, translations) {
     });
 
     // Update projects section
+    // 1) Proyectos tipo fullscreen (si existieran)
     const projectSlides = document.querySelectorAll('.project-slide');
     projectSlides.forEach((slide, index) => {
         const h3 = slide.querySelector('.project-info h3');
         const paragraphs = slide.querySelectorAll('.project-description p');
-        
-        if (t.projects.items[index]) {
+        if (t.projects.items && t.projects.items[index]) {
             if (h3) h3.textContent = t.projects.items[index].title;
             paragraphs.forEach((p, pIndex) => {
                 if (t.projects.items[index].description[pIndex]) {
@@ -925,6 +930,41 @@ function applyTranslations(lang, translations) {
             });
         }
     });
+
+    // 2) Proyectos Slices Interactivos
+    const slices = document.querySelectorAll('.project-slice');
+    const isEnglish = lang === 'en';
+    slices.forEach(slice => {
+        const titleEs = slice.getAttribute('data-title');
+        const titleEn = slice.getAttribute('data-title-en');
+        const briefEs = slice.getAttribute('data-brief-es');
+        const briefEn = slice.getAttribute('data-brief-en');
+        const descEs = slice.getAttribute('data-description');
+        const descEn = slice.getAttribute('data-description-en');
+
+        // Actualizar título del modal
+        slice.setAttribute('data-title', isEnglish && titleEn ? titleEn : titleEs || '');
+        
+        // Actualizar breve visible en tarjeta
+        const detailTitle = slice.querySelector('.slice-detail-title');
+        const detailDesc = slice.querySelector('.slice-detail-desc');
+        if (detailTitle) {
+            detailTitle.textContent = isEnglish && titleEn ? titleEn : titleEs || '';
+        }
+        if (detailDesc) {
+            detailDesc.textContent = isEnglish && briefEn ? briefEn : (briefEs || detailDesc.textContent);
+        }
+
+        // Guardar ambas descripciones y setear la activa
+        if (descEs) slice.setAttribute('data-description', isEnglish && descEn ? descEn : descEs);
+        if (descEn) slice.setAttribute('data-description-en', descEn);
+    });
+
+    // 3) IT & Telco Gallery header
+    const galleryTitle = document.querySelector('.it-gallery-title');
+    const gallerySubtitle = document.querySelector('.it-gallery-subtitle');
+    if (galleryTitle) galleryTitle.textContent = isEnglish ? 'Field Works' : 'Obras en Campo';
+    if (gallerySubtitle) gallerySubtitle.textContent = isEnglish ? 'Records of our implementations and deployments' : 'Registros de nuestras implementaciones y despliegues';
 
     // Update contact section
     const contactSection = document.querySelector('#contacto');
@@ -1790,4 +1830,200 @@ function initProjectsInteractive() {
             focusTrapHandler = null;
         }
     }
+}
+
+// ==============================
+// Galería minimalista IT & Telco (mejorada)
+function initItGallery(){
+    const track = document.getElementById('itGalleryTrack');
+    if(!track) return;
+    
+    const prev = document.querySelector('.it-gallery-prev');
+    const next = document.querySelector('.it-gallery-next');
+    const viewport = track.parentElement;
+    const images = Array.from(track.querySelectorAll('.it-gallery-item'));
+    const fullscreenBtns = track.querySelectorAll('.it-gallery-fullscreen-btn');
+    
+    // Detectar orientación de imágenes y ajustar width
+    images.forEach(img => {
+        img.addEventListener('load', () => {
+            if(img.naturalHeight > img.naturalWidth) {
+                img.setAttribute('data-orientation', 'portrait');
+            } else {
+                img.setAttribute('data-orientation', 'landscape');
+            }
+        });
+        // Si ya está cargada
+        if(img.complete && img.naturalHeight > 0) {
+            if(img.naturalHeight > img.naturalWidth) {
+                img.setAttribute('data-orientation', 'portrait');
+            }
+        }
+    });
+
+    const itemWidth = () => {
+        const first = track.querySelector('.it-gallery-item-container');
+        if(!first) return 320;
+        const styles = window.getComputedStyle(first);
+        return first.getBoundingClientRect().width + parseFloat(styles.marginRight || '8');
+    };
+
+    const scrollBy = (dir) => {
+        const delta = itemWidth() * (window.innerWidth < 768 ? 1 : 1.5);
+        track.scrollBy({ left: dir * delta, behavior: 'smooth' });
+    };
+
+    prev && prev.addEventListener('click', () => scrollBy(-1));
+    next && next.addEventListener('click', () => scrollBy(1));
+
+    // Teclado cuando el viewport está en foco/hover
+    const keyHandler = (e) => {
+        if(e.key === 'ArrowLeft') scrollBy(-1);
+        if(e.key === 'ArrowRight') scrollBy(1);
+    };
+    viewport.addEventListener('mouseenter', () => document.addEventListener('keydown', keyHandler));
+    viewport.addEventListener('mouseleave', () => document.removeEventListener('keydown', keyHandler));
+
+    // Inicializar fullscreen viewer para cada imagen
+    initItGalleryFullscreen(images, fullscreenBtns);
+}
+
+// ==============================
+// Fullscreen viewer para galería IT
+function initItGalleryFullscreen(images, fullscreenBtns) {
+    const viewer = document.getElementById('itGalleryFullscreenViewer');
+    const fullscreenImg = document.getElementById('itGalleryFullscreenImage');
+    const closeBtn = viewer.querySelector('.it-gallery-fullscreen-close');
+    const prevBtn = viewer.querySelector('.it-gallery-fullscreen-prev');
+    const nextBtn = viewer.querySelector('.it-gallery-fullscreen-next');
+    const currentIndexEl = document.getElementById('itGalleryCurrentIndex');
+    const totalCountEl = document.getElementById('itGalleryTotalCount');
+    
+    if(!viewer || !fullscreenImg) return;
+    
+    let currentIndex = 0;
+    
+    // Actualizar contador total
+    totalCountEl.textContent = images.length;
+    
+    const showImage = (index) => {
+        if(index < 0 || index >= images.length) return;
+        currentIndex = index;
+        const img = images[index];
+        fullscreenImg.src = img.src;
+        fullscreenImg.alt = img.alt;
+        currentIndexEl.textContent = index + 1;
+    };
+    
+    const openViewer = (startIndex) => {
+        showImage(startIndex);
+        viewer.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    };
+    
+    const closeViewer = () => {
+        viewer.classList.remove('show');
+        document.body.style.overflow = '';
+    };
+    
+    const goToPrev = () => {
+        const newIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+        showImage(newIndex);
+    };
+    
+    const goToNext = () => {
+        const newIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+        showImage(newIndex);
+    };
+    
+    // Event listeners para botones fullscreen de miniaturas
+    fullscreenBtns.forEach((btn, index) => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openViewer(index);
+        });
+    });
+    
+    // Event listeners para controles del viewer
+    closeBtn.addEventListener('click', closeViewer);
+    prevBtn.addEventListener('click', goToPrev);
+    nextBtn.addEventListener('click', goToNext);
+    
+    // Cerrar al hacer click fuera de la imagen
+    viewer.addEventListener('click', (e) => {
+        if(e.target === viewer) closeViewer();
+    });
+    
+    // Controles de teclado
+    const keyHandler = (e) => {
+        if(!viewer.classList.contains('show')) return;
+        
+        switch(e.key) {
+            case 'Escape':
+                closeViewer();
+                break;
+            case 'ArrowLeft':
+                goToPrev();
+                break;
+            case 'ArrowRight':
+                goToNext();
+                break;
+        }
+    };
+    
+    document.addEventListener('keydown', keyHandler);
+    
+    // Click en imagen también abre fullscreen
+    images.forEach((img, index) => {
+        img.addEventListener('click', () => {
+            openViewer(index);
+        });
+    });
+}
+
+// ==============================
+// Fullscreen en imagen del modal
+function initModalImageFullscreen(){
+    const img = document.getElementById('modal-image');
+    const btn = document.getElementById('modal-image-fullscreen');
+    if(!img || !btn) return;
+
+    // Mostrar/ocultar botón según si hay src
+    const toggleBtn = () => {
+        btn.style.display = img && img.src ? 'inline-flex' : 'none';
+    };
+
+    const openFullscreen = () => {
+        if(!img) return;
+        // Intentar usar API Fullscreen con un contenedor temporal
+        const wrapper = document.createElement('div');
+        wrapper.style.cssText = 'position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:9999;';
+        const clone = new Image();
+        clone.src = img.src;
+        clone.alt = img.alt || '';
+        clone.style.cssText = 'max-width:98vw;max-height:94vh;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,.6);';
+        const closeBtn = document.createElement('button');
+        closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+        closeBtn.setAttribute('aria-label','Cerrar');
+        closeBtn.style.cssText = 'position:fixed;top:16px;right:16px;background:rgba(17,24,39,.7);color:#fff;border:none;border-radius:10px;padding:10px 12px;cursor:pointer;z-index:10000;';
+        wrapper.appendChild(clone);
+        wrapper.appendChild(closeBtn);
+        document.body.appendChild(wrapper);
+
+        const exit = () => {
+            if(wrapper && wrapper.parentNode){ wrapper.parentNode.removeChild(wrapper); }
+            document.removeEventListener('keydown', escHandler);
+        };
+        const escHandler = (e) => { if(e.key === 'Escape') exit(); };
+        closeBtn.addEventListener('click', exit);
+        wrapper.addEventListener('click', (e) => { if(e.target === wrapper) exit(); });
+        document.addEventListener('keydown', escHandler);
+    };
+
+    btn.addEventListener('click', (e) => { e.preventDefault(); openFullscreen(); });
+
+    // Observa cambios en el src al abrir el modal
+    const observer = new MutationObserver(toggleBtn);
+    observer.observe(img, { attributes: true, attributeFilter: ['src', 'style'] });
+    toggleBtn();
 }

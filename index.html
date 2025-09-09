@@ -171,8 +171,7 @@
                                 Fuimos los <strong>primeros en Argentina</strong> en implementar lo que hoy se conoce como <em>"Redes Neutrales"</em> o <em>"Compartición de Infraestructura Telco"</em>. Llevamos más de 10 años perfeccionando nuestros desarrollos en las más variadas jurisdicciones.
                             </p>
                         </div>
-                        <img src="assets/images/antenas_sin_fondo.png" alt="Instalación de antena de telecomunicaciones" class="featured-image" loading="lazy" decoding="async">
-                        <br>
+                      
                     </div>
                 </div>
 
@@ -201,23 +200,41 @@
                 </div>
             </div>
 
-            <!-- Galería de Obras (minimalista) -->
+            <!-- Galería de Obras (integrada) -->
             <div class="it-gallery" data-aos="fade-up">
                 <div class="it-gallery-header">
-                    <h3 class="it-gallery-title">Obras</h3>
-                    <p class="it-gallery-subtitle">Algunos registros de campo y despliegue</p>
+                    <h3 class="it-gallery-title">Obras en Campo</h3>
+                    <p class="it-gallery-subtitle">Registros de nuestras implementaciones y despliegues</p>
                 </div>
                 <div class="it-gallery-viewport">
                     <button class="it-gallery-nav it-gallery-prev" aria-label="Anterior">
                         <i class="fas fa-chevron-left"></i>
                     </button>
                     <div class="it-gallery-track" id="itGalleryTrack">
-                        <img src="assets/images/antena_en_marcha.webp" alt="Instalación de antena" loading="lazy" decoding="async" class="it-gallery-item">
-                        <img src="assets/images/vidImg1.png" alt="Tendido de fibra" loading="lazy" decoding="async" class="it-gallery-item">
-                        <img src="assets/images/vidImg2.png" alt="Backbone urbano" loading="lazy" decoding="async" class="it-gallery-item">
-                        <img src="assets/images/proyectos/cobertura.png" alt="Cobertura de red" loading="lazy" decoding="async" class="it-gallery-item">
-                        <img src="assets/images/proyectos/Usittelcobertura.png" alt="USITTEL cobertura" loading="lazy" decoding="async" class="it-gallery-item">
-                        <img src="assets/images/proyectos/LARANET.png" alt="LARANET red FTTH" loading="lazy" decoding="async" class="it-gallery-item">
+                        <div class="it-gallery-item-container" data-index="0">
+                            <img src="assets/images/antena_en_marcha.webp" alt="Instalación de antena" loading="lazy" decoding="async" class="it-gallery-item">
+                            <button class="it-gallery-fullscreen-btn" aria-label="Ver imagen a pantalla completa">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                        <div class="it-gallery-item-container" data-index="1">
+                            <img src="assets/images/vidImg2.png" alt="Backbone urbano" loading="lazy" decoding="async" class="it-gallery-item">
+                            <button class="it-gallery-fullscreen-btn" aria-label="Ver imagen a pantalla completa">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                        <div class="it-gallery-item-container" data-index="2">
+                            <img src="assets/images/antena_en_marcha.webp" alt="Instalación de antena (repetida)" loading="lazy" decoding="async" class="it-gallery-item">
+                            <button class="it-gallery-fullscreen-btn" aria-label="Ver imagen a pantalla completa">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                        <div class="it-gallery-item-container" data-index="3">
+                            <img src="assets/images/vidImg2.png" alt="Backbone urbano (repetida)" loading="lazy" decoding="async" class="it-gallery-item">
+                            <button class="it-gallery-fullscreen-btn" aria-label="Ver imagen a pantalla completa">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
                     </div>
                     <button class="it-gallery-nav it-gallery-next" aria-label="Siguiente">
                         <i class="fas fa-chevron-right"></i>
@@ -226,6 +243,25 @@
             </div>
          </div>
     </section>
+
+    <!-- IT Gallery Fullscreen Viewer -->
+    <div id="itGalleryFullscreenViewer" class="it-gallery-fullscreen-viewer">
+        <div class="it-gallery-fullscreen-content">
+            <img id="itGalleryFullscreenImage" class="it-gallery-fullscreen-image" src="" alt="">
+            <button class="it-gallery-fullscreen-nav it-gallery-fullscreen-prev" aria-label="Imagen anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="it-gallery-fullscreen-nav it-gallery-fullscreen-next" aria-label="Imagen siguiente">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <button class="it-gallery-fullscreen-close" aria-label="Cerrar visor">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="it-gallery-fullscreen-counter">
+            <span id="itGalleryCurrentIndex">1</span> / <span id="itGalleryTotalCount">4</span>
+        </div>
+    </div>
 
     <!-- Stats Separator - Renovado -->
     <section id="stats" class="section stats-v2">
@@ -273,7 +309,7 @@
                 </div>
                 
                 <!-- Slice 1: AUSA -->
-                <div class="project-slice active" data-title="Acuerdo ITTEL – AUSA" data-video="assets/video/ausa.mp4" data-description="<p>Gestionamos más de <strong>1.000 km</strong> de hilos arrendados y <strong>100+</strong> estructuras de antenas distribuidas a lo largo de autopistas y avenidas estratégicas de CABA.</p><p>Este despliegue integra la infraestructura TELCO más relevante de la ciudad, asegurando conectividad crítica y un <strong>SLA &gt; 99,9%</strong> con atención 24×7×365.</p><p>Diseño, implementación y operación bajo estándares de alta disponibilidad.</p>">
+                <div class="project-slice active" data-title="Acuerdo ITTEL – AUSA" data-title-en="ITTEL – AUSA Agreement" data-brief-es="Gestión integral de infraestructura TELCO de alto desempeño en CABA." data-brief-en="End-to-end high-performance TELCO infrastructure management in Buenos Aires City." data-video="assets/video/ausa.mp4" data-description="<p>Gestionamos más de <strong>1.000 km</strong> de hilos arrendados y <strong>100+</strong> estructuras de antenas distribuidas a lo largo de autopistas y avenidas estratégicas de CABA.</p><p>Este despliegue integra la infraestructura TELCO más relevante de la ciudad, asegurando conectividad crítica y un <strong>SLA &gt; 99,9%</strong> con atención 24×7×365.</p><p>Diseño, implementación y operación bajo estándares de alta disponibilidad.</p>" data-description-en="<p>We manage more than <strong>1,000 km</strong> of leased lines and <strong>100+</strong> antenna structures across strategic highways and avenues in Buenos Aires City.</p><p>This deployment integrates the city’s most relevant TELCO infrastructure, ensuring critical connectivity and a <strong>SLA &gt; 99.9%</strong> with 24×7×365 support.</p><p>Design, implementation and operations under high-availability standards.</p>">
                     <img src="assets/images/AUSA4.jpg" class="slice-bg" alt="Mapa del proyecto AUSA" loading="lazy" decoding="async">
                     <div class="slice-content">
                         <h3 class="slice-title">AUSA</h3>
@@ -286,7 +322,7 @@
                 </div>
 
                 <!-- Slice 2: AUBASA -->
-                <div class="project-slice" data-title="Acuerdo ITTEL – AUBASA" data-image="assets/images/proyectos/ruta_AUBASA.jpg" data-description="<p>Implementación de una red de <strong>fibra óptica</strong> con topología <strong>redundante</strong> que opera como <strong>backbone</strong> estratégico entre CABA y La Plata.</p><p>Conviven los servicios CORE que requiere la Autopista con servicios de transmisión para Clientes TELCO.</p><p>Al empalmar con nuestra red, ofrecemos <strong>Fibra Oscura</strong> entre CABASE y el NAP La Plata, además de un camino redundante y más seguro hacia la salida internacional (Las Toninas).</p><p>El trazado lindera con múltiples localidades y barrios privados; el proyecto contempla Seguridad Vial y compromiso ambiental.</p><p><strong>Ventajas:</strong></p><ul><li>SLA contractual &gt; <strong>99,99%</strong>.</li><li>Cuadrilla in situ con TRS inmediato.</li><li>Alquiler de estructuras portantes para redes móviles/inalámbricas.</li></ul>">
+                <div class="project-slice" data-title="Acuerdo ITTEL – AUBASA" data-title-en="ITTEL – AUBASA Agreement" data-brief-es="Red de fibra óptica redundante y backbone estratégico CABA - La Plata." data-brief-en="Redundant fiber backbone between Buenos Aires and La Plata." data-image="assets/images/proyectos/ruta_AUBASA.jpg" data-description="<p>Implementación de una red de <strong>fibra óptica</strong> con topología <strong>redundante</strong> que opera como <strong>backbone</strong> estratégico entre CABA y La Plata.</p><p>Conviven los servicios CORE que requiere la Autopista con servicios de transmisión para Clientes TELCO.</p><p>Al empalmar con nuestra red, ofrecemos <strong>Fibra Oscura</strong> entre CABASE y el NAP La Plata, además de un camino redundante y más seguro hacia la salida internacional (Las Toninas).</p><p>El trazado lindera con múltiples localidades y barrios privados; el proyecto contempla Seguridad Vial y compromiso ambiental.</p><p><strong>Ventajas:</strong></p><ul><li>SLA contractual &gt; <strong>99,99%</strong>.</li><li>Cuadrilla in situ con TRS inmediato.</li><li>Alquiler de estructuras portantes para redes móviles/inalámbricas.</li></ul>" data-description-en="<p>Implementation of a <strong>redundant</strong> <strong>fiber optic</strong> network acting as a strategic <strong>backbone</strong> between Buenos Aires and La Plata.</p><p>Highway CORE services coexist with transmission services for TELCO clients.</p><p>Linked to our network, we provide <strong>Dark Fiber</strong> between CABASE and the La Plata NAP, plus a safer redundant path to the international Internet gateway (Las Toninas).</p><p>The route borders multiple towns and private neighborhoods; the project addresses Road Safety and environmental commitment.</p><p><strong>Advantages:</strong></p><ul><li>Contractual SLA &gt; <strong>99.99%</strong>.</li><li>On-site crew with immediate response time.</li><li>Tower/structure leasing for mobile/wireless networks.</li></ul>">
                     <img src="assets/images/AUBASA1.jpg" class="slice-bg" alt="Mapa del proyecto AUBASA" loading="lazy" decoding="async">
                     <div class="slice-content">
                         <h3 class="slice-title">AUBASA</h3>
@@ -299,7 +335,7 @@
                 </div>
 
                 <!-- Slice 3: USITTEL -->
-                <div class="project-slice" data-title="Red FTTH en Tandil – USITTEL" data-image="assets/images/proyectos/Usittelcobertura.png" data-description="<p>Despliegue de red <strong>FTTH</strong> con arquitectura <strong>GPON</strong> para brindar Internet y TV digital de alta calidad en Tandil, en conjunto con <strong>La Usina de Tandil</strong>.</p><p>Cobertura urbana y periurbana, última milla optimizada y <strong>SLA</strong> premium orientado al usuario final.</p><p>Operación centralizada con monitoreo proactivo y planes de crecimiento por demanda.</p><p>Más información: <a href='http://usittel.com.ar' target='_blank' rel='noopener'>usittel.com.ar</a></p><div class='modal-social-links'><a href='http://usittel.com.ar' target='_blank' class='social-modal-link'><i class='fas fa-globe'></i> Sitio Web</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-instagram'></i> Instagram</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-facebook'></i> Facebook</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-whatsapp'></i> WhatsApp</a></div>">
+                <div class="project-slice" data-title="Red FTTH en Tandil – USITTEL" data-title-en="FTTH Network in Tandil – USITTEL" data-brief-es="Despliegue de red FTTH para Internet y TV en alianza con La Usina de Tandil." data-brief-en="FTTH rollout for Internet and TV in partnership with La Usina de Tandil." data-image="assets/images/proyectos/Usittelcobertura.png" data-description="<p>Despliegue de red <strong>FTTH</strong> con arquitectura <strong>GPON</strong> para brindar Internet y TV digital de alta calidad en Tandil, en conjunto con <strong>La Usina de Tandil</strong>.</p><p>Cobertura urbana y periurbana, última milla optimizada y <strong>SLA</strong> premium orientado al usuario final.</p><p>Operación centralizada con monitoreo proactivo y planes de crecimiento por demanda.</p><p>Más información: <a href='http://usittel.com.ar' target='_blank' rel='noopener'>usittel.com.ar</a></p><div class='modal-social-links'><a href='http://usittel.com.ar' target='_blank' class='social-modal-link'><i class='fas fa-globe'></i> Sitio Web</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-instagram'></i> Instagram</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-facebook'></i> Facebook</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-whatsapp'></i> WhatsApp</a></div>" data-description-en="<p><strong>FTTH</strong> network deployment with <strong>GPON</strong> architecture to deliver high-quality Internet and Digital TV in Tandil, together with <strong>La Usina de Tandil</strong>.</p><p>Urban and peri-urban coverage, optimized last mile, and premium <strong>SLA</strong> focused on the end user.</p><p>Centralized operations with proactive monitoring and growth plans on demand.</p><p>More info: <a href='http://usittel.com.ar' target='_blank' rel='noopener'>usittel.com.ar</a></p><div class='modal-social-links'><a href='http://usittel.com.ar' target='_blank' class='social-modal-link'><i class='fas fa-globe'></i> Website</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-instagram'></i> Instagram</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-facebook'></i> Facebook</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-whatsapp'></i> WhatsApp</a></div>">
                     <img src="assets/images/proyectos/usittel_internet.png" class="slice-bg" alt="Red FTTH USITTEL en Tandil" loading="lazy" decoding="async">
                     <div class="slice-content">
                         <h3 class="slice-title">USITTEL</h3>
@@ -318,7 +354,7 @@
                 </div>
                 
                 <!-- Slice 4: LARANET -->
-                <div class="project-slice" data-title="Red FTTH en La Matanza – LARANET" data-image="assets/images/proyectos/LARANET.png" data-description="<p>Diseño e implementación de <strong>red óptica pasiva</strong> FTTH en <strong>La Matanza</strong>, en conjunto con la <strong>Cooperativa LARA</strong>.</p><p>Arquitectura escalable con backbone redundante y operación 24/7 desde NOC.</p><p>Implementación por etapas con rápidas altas de servicio y mantenimiento preventivo.</p><p>Más información: <a href='http://laranet.com.ar' target='_blank' rel='noopener'>laranet.com.ar</a></p><div class='modal-social-links'><a href='http://laranet.com.ar' target='_blank' class='social-modal-link'><i class='fas fa-globe'></i> Sitio Web</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-instagram'></i> Instagram</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-facebook'></i> Facebook</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-whatsapp'></i> WhatsApp</a></div>">
+                <div class="project-slice" data-title="Red FTTH en La Matanza – LARANET" data-title-en="FTTH Network in La Matanza – LARANET" data-brief-es="Diseño e implementación de red óptica pasiva con alta capacidad de crecimiento." data-brief-en="Passive optical network design with high growth capacity." data-image="assets/images/proyectos/LARANET.png" data-description="<p>Diseño e implementación de <strong>red óptica pasiva</strong> FTTH en <strong>La Matanza</strong>, en conjunto con la <strong>Cooperativa LARA</strong>.</p><p>Arquitectura escalable con backbone redundante y operación 24/7 desde NOC.</p><p>Implementación por etapas con rápidas altas de servicio y mantenimiento preventivo.</p><p>Más información: <a href='http://laranet.com.ar' target='_blank' rel='noopener'>laranet.com.ar</a></p><div class='modal-social-links'><a href='http://laranet.com.ar' target='_blank' class='social-modal-link'><i class='fas fa-globe'></i> Sitio Web</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-instagram'></i> Instagram</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-facebook'></i> Facebook</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-whatsapp'></i> WhatsApp</a></div>" data-description-en="<p>Design and implementation of a <strong>passive optical</strong> FTTH network in <strong>La Matanza</strong>, together with the <strong>LARA Cooperative</strong>.</p><p>Scalable architecture with a redundant backbone and 24/7 operations from the NOC.</p><p>Staged rollout with fast service activations and preventive maintenance.</p><p>More info: <a href='http://laranet.com.ar' target='_blank' rel='noopener'>laranet.com.ar</a></p><div class='modal-social-links'><a href='http://laranet.com.ar' target='_blank' class='social-modal-link'><i class='fas fa-globe'></i> Website</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-instagram'></i> Instagram</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-facebook'></i> Facebook</a><a href='#' target='_blank' class='social-modal-link'><i class='fab fa-whatsapp'></i> WhatsApp</a></div>">
                     <img src="assets/images/proyectos/laranett.png" class="slice-bg" alt="Red FTTH LARANET en La Matanza" loading="lazy" decoding="async">
                     <div class="slice-content">
                         <h3 class="slice-title">LARANET</h3>
@@ -337,7 +373,7 @@
                 </div>
 
                 <!-- Slice 5: ADIFSE -->
-                <div class="project-slice" data-title="Proyecto ADIFSE" data-image="assets/images/adif.jpg" data-description="<p>Primera etapa de relevamiento de infraestructura en trazados ferroviarios administrados por <strong>ADIF S.E.</strong>: estado, ocupación y potencialidad.</p><p>Base para planificar un <strong>desarrollo sustentable</strong> de redes, optimizando operación y detectando infraestructura útil para el despliegue TELCO.</p><p><em>Líneas relevadas:</em> Mitre, San Martín, Sarmiento, Belgrano Sur, Gral. Roca y Tren de la Costa.</p>">
+                <div class="project-slice" data-title="Proyecto ADIFSE" data-title-en="ADIFSE Project" data-brief-es="Relevamiento de infraestructura y potencial de desarrollo en trazados ferroviarios." data-brief-en="Infrastructure survey and development potential on railway routes." data-image="assets/images/adif.jpg" data-description="<p>Primera etapa de relevamiento de infraestructura en trazados ferroviarios administrados por <strong>ADIF S.E.</strong>: estado, ocupación y potencialidad.</p><p>Base para planificar un <strong>desarrollo sustentable</strong> de redes, optimizando operación y detectando infraestructura útil para el despliegue TELCO.</p><p><em>Líneas relevadas:</em> Mitre, San Martín, Sarmiento, Belgrano Sur, Gral. Roca y Tren de la Costa.</p>" data-description-en="<p>First-stage infrastructure survey in railway routes administered by <strong>ADIF S.E.</strong>: condition, occupancy and potential.</p><p>Foundation to plan <strong>sustainable</strong> network development, optimizing operations and identifying infrastructure suitable for TELCO deployment.</p><p><em>Lines surveyed:</em> Mitre, San Martín, Sarmiento, Belgrano Sur, General Roca and Tren de la Costa.</p>">
                     <img src="assets/images/proyectos/adifse_portada.png" class="slice-bg" alt="Proyecto ADIFSE trazados ferroviarios" loading="lazy" decoding="async">
                     <div class="slice-content">
                         <h3 class="slice-title">ADIFSE</h3>
@@ -350,7 +386,7 @@
                 </div>
 
                 <!-- Slice 6: VITTAL -->
-                <div class="project-slice" data-title="VITTAL – Videovigilancia" data-image="assets/images/proyectos/solucion_VITTAL.jpg" data-description="<p>Provisión y configuración de una plataforma de <strong>Video Vigilancia</strong> offline y online accesible desde cualquier dispositivo conectado a Internet.</p><ul><li>Visualización y grabación centralizada de todas las cámaras.</li><li>Control remoto de cámaras.</li><li>Soporte de visión nocturna, detección por movimiento, resolución 4K, alarmas y zonas de grabación.</li></ul><p>Interfaz web completa y apps Android/iOS. No requiere cámaras propietarias.</p>">
+                <div class="project-slice" data-title="VITTAL – Videovigilancia" data-title-en="VITTAL – Video Surveillance" data-brief-es="Sistema complejo de videovigilancia IP con grabación y acceso centralizado." data-brief-en="Complex IP video surveillance system with recording and centralized access." data-image="assets/images/proyectos/solucion_VITTAL.jpg" data-description="<p>Provisión y configuración de una plataforma de <strong>Video Vigilancia</strong> offline y online accesible desde cualquier dispositivo conectado a Internet.</p><ul><li>Visualización y grabación centralizada de todas las cámaras.</li><li>Control remoto de cámaras.</li><li>Soporte de visión nocturna, detección por movimiento, resolución 4K, alarmas y zonas de grabación.</li></ul><p>Interfaz web completa y apps Android/iOS. No requiere cámaras propietarias.</p>" data-description-en="<p>Provisioning and configuration of an <strong>offline/online Video Surveillance</strong> platform accessible from any Internet-connected device.</p><ul><li>Centralized viewing and recording of all cameras.</li><li>Remote camera control.</li><li>Night vision, motion detection, 4K resolution, alarms and recording zones.</li></ul><p>Full web UI and Android/iOS apps. No proprietary cameras required.</p>">
                     <img src="assets/images/proyectos/viTTal.png" class="slice-bg" alt="Sistema de videovigilancia Vittal" loading="lazy" decoding="async">
                     <div class="slice-content">
                         <h3 class="slice-title">VITTAL</h3>
@@ -363,7 +399,7 @@
                 </div>
 
                 <!-- Slice 7: CARREFOUR -->
-                <div class="project-slice" data-title="CARREFOUR – Infraestructura IT" data-image="assets/images/proyectos/solucion_carrefour.jpg" data-description="<p>Solución integral que combina equipamiento tecnológico y software de gestión para auto-servicio de comedor con validación de identidad por huella digital o tarjeta de proximidad para visitas.</p><ul><li>Múltiples menús con ítems, precios y usuarios habilitados.</li><li>Control automático que impide consumir un ítem más de una vez por día.</li><li>Registro de transacciones con reportes en Excel (.xlsx) para análisis sencillo.</li></ul><p>La plataforma permite auditoría centralizada y escalado a múltiples sedes con perfiles por rol.</p>">
+                <div class="project-slice" data-title="CARREFOUR – Infraestructura IT" data-title-en="CARREFOUR – IT Infrastructure" data-brief-es="Infraestructura tecnológica integral con conectividad y monitoreo 24/7." data-brief-en="End-to-end IT infrastructure with connectivity and 24/7 monitoring." data-image="assets/images/proyectos/solucion_carrefour.jpg" data-description="<p>Solución integral que combina equipamiento tecnológico y software de gestión para auto-servicio de comedor con validación de identidad por huella digital o tarjeta de proximidad para visitas.</p><ul><li>Múltiples menús con ítems, precios y usuarios habilitados.</li><li>Control automático que impide consumir un ítem más de una vez por día.</li><li>Registro de transacciones con reportes en Excel (.xlsx) para análisis sencillo.</li></ul><p>La plataforma permite auditoría centralizada y escalado a múltiples sedes con perfiles por rol.</p>" data-description-en="<p>Comprehensive solution that combines technology equipment and management software for self-service cafeterias with identity validation via fingerprint or proximity card for visitors.</p><ul><li>Multiple menus with items, prices and authorized users.</li><li>Automatic control preventing an item from being consumed more than once per day.</li><li>Transaction logging with Excel (.xlsx) reports for easy analysis.</li></ul><p>The platform enables centralized auditing and scaling to multiple sites with role-based profiles.</p>">
                     <img src="assets/images/proyectos/carrefour.png" class="slice-bg" alt="Infraestructura IT Carrefour" loading="lazy" decoding="async">
                     <div class="slice-content">
                         <h3 class="slice-title">CARREFOUR</h3>
