@@ -1828,7 +1828,20 @@ function initProjectsInteractive() {
                 console.log('Final description:', desc);
 
                 if (img) {
-                    html += `<div style="margin-bottom:15px"><img src="${img}" alt="${slice.dataset.title}" style="width:100%;height:auto;border-radius:8px;"/></div>`;
+                    const title = slice.dataset.title || '';
+                    const isAubasa = title.includes('AUBASA');
+                    
+                    if (isAubasa) {
+                        // Para AUBASA, agregar botón de pantalla completa
+                        html += `<div style="margin-bottom:15px; position:relative; display:inline-block;">
+                            <img src="${img}" alt="${slice.dataset.title}" style="width:100%;height:auto;border-radius:8px;" class="mobile-expandable-img"/>
+                            <button class="mobile-fullscreen-btn" aria-label="Ver en pantalla completa" style="position:absolute; top:10px; right:10px; background:rgba(17,24,39,.8); color:#fff; border:none; border-radius:8px; padding:8px 10px; cursor:pointer; z-index:100; opacity:0.9;">
+                                <i class="fas fa-expand" style="font-size:14px;"></i>
+                            </button>
+                        </div>`;
+                    } else {
+                        html += `<div style="margin-bottom:15px"><img src="${img}" alt="${slice.dataset.title}" style="width:100%;height:auto;border-radius:8px;"/></div>`;
+                    }
                 }
                 if (video && !img) {
                     // Añadir poster específico para el video de AUSA
@@ -1909,6 +1922,19 @@ function initProjectsInteractive() {
                         else el.addEventListener('load', adjustHeight, { once: true });
                     }
                 });
+
+                // Event listener para botón de pantalla completa (solo AUBASA)
+                const fullscreenBtn = contentWrapper.querySelector('.mobile-fullscreen-btn');
+                if (fullscreenBtn) {
+                    fullscreenBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        const img = contentWrapper.querySelector('.mobile-expandable-img');
+                        if (img && img.src) {
+                            openMobileFullscreen(img.src, img.alt || 'Imagen AUBASA');
+                        }
+                    });
+                }
 
                 // Scroll suave para mostrar el contenido expandido
                 setTimeout(() => {
@@ -2505,4 +2531,51 @@ function initModalImageFullscreen(){
     const observer = new MutationObserver(toggleBtn);
     observer.observe(img, { attributes: true, attributeFilter: ['src', 'style'] });
     toggleBtn();
+}
+
+// Función específica para pantalla completa en móvil (tarjetas expandidas)
+function openMobileFullscreen(imageSrc, imageAlt = '') {
+    const wrapper = document.createElement('div');
+    wrapper.style.cssText = 'position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:9999;';
+    
+    const clone = new Image();
+    clone.src = imageSrc;
+    clone.alt = imageAlt;
+    clone.style.cssText = 'max-width:98vw;max-height:94vh;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,.6);';
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+    closeBtn.setAttribute('aria-label','Cerrar');
+    closeBtn.style.cssText = 'position:fixed;top:16px;right:16px;background:rgba(17,24,39,.8);color:#fff;border:none;border-radius:10px;padding:12px 14px;cursor:pointer;z-index:10000;font-size:16px;';
+    
+    wrapper.appendChild(clone);
+    wrapper.appendChild(closeBtn);
+    document.body.appendChild(wrapper);
+
+    // Agregar animación de entrada
+    wrapper.style.opacity = '0';
+    wrapper.style.transition = 'opacity 0.3s ease-in-out';
+    requestAnimationFrame(() => {
+        wrapper.style.opacity = '1';
+    });
+
+    const exit = () => {
+        wrapper.style.opacity = '0';
+        setTimeout(() => {
+            if(wrapper && wrapper.parentNode){ 
+                wrapper.parentNode.removeChild(wrapper); 
+            }
+        }, 300);
+        document.removeEventListener('keydown', escHandler);
+    };
+    
+    const escHandler = (e) => { 
+        if(e.key === 'Escape') exit(); 
+    };
+    
+    closeBtn.addEventListener('click', exit);
+    wrapper.addEventListener('click', (e) => { 
+        if(e.target === wrapper) exit(); 
+    });
+    document.addEventListener('keydown', escHandler);
 }
