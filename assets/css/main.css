@@ -110,6 +110,15 @@
 }
 
 @media (max-width: 768px) {
+    /* Ocultar Galería de Obras en versión móvil */
+    .it-gallery { display: none !important; }
+    #itGalleryFullscreenViewer { display: none !important; }
+    /* Desactivar visualmente AOS en mobile por si hay estilos inline */
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
     .about-v2 {
     padding: 48px 0;
     }

@@ -3,11 +3,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Inicializar AOS (Animate On Scroll)
     AOS.init({
-        duration: 1000,
+        // Más rápido en desktop
+        duration: 600,
         easing: 'ease-in-out',
         once: true,
         offset: 100,
-        delay: 0
+        delay: 0,
+        // Desactivar en mobile por viewport
+        disable: function() { return window.innerWidth <= 768; }
     });
     
     // Initialize all components
@@ -2189,6 +2192,8 @@ function initProjectsInteractive() {
 // ==============================
 // Galería minimalista IT & Telco (mejorada)
 function initItGallery(){
+    // Desactivar en mobile
+    if (window.innerWidth <= 768) return;
     const track = document.getElementById('itGalleryTrack');
     if(!track) return;
     
