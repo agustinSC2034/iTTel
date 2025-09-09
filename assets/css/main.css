@@ -1312,6 +1312,7 @@
     .projects-nav-arrows {
         left: -25px;
         right: -25px;
+        display: none !important; /* Ocultar flechas de navegación de desktop en mobile */
     }
     
     .project-nav-btn {
@@ -1402,7 +1403,7 @@
         padding: 20px;
         border-radius: 0 0 15px 15px; /* Solo bordes inferiores redondeados */
         margin-top: 0; /* sin separación vertical artificial */
-        margin-bottom: 25px;
+        margin-bottom: 0; /* sin separación inicial mientras está colapsado */
         overflow: hidden; /* ocultar mientras se anima */
         height: 0; /* usar height en lugar de max-height para mejor animación */
         opacity: 0;
@@ -1412,7 +1413,7 @@
         border-top: 1px solid rgba(0, 0, 0, 0.06); /* línea sutil de unión */
         z-index: 1; /* asegurar que esté por encima del fondo */
         /* Forzar que esté en el flujo del documento */
-        display: block;
+        display: none; /* evitar reservar espacio inicial */
         clear: both;
     /* No flexionar dentro del contenedor de columnas, respetar su altura propia */
     flex: 0 0 auto;
@@ -1422,6 +1423,8 @@
 
     .mobile-expanded-content.show {
         opacity: 1;
+        display: block; /* mostrar cuando está expandido */
+        margin-bottom: 25px; /* aplicar separación sólo cuando está visible */
         /* overflow se maneja dinámicamente via JS */
     }
 
