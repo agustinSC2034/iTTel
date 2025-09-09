@@ -2022,6 +2022,17 @@ function initProjectsInteractive() {
 
         // Si pasamos a desktop, eliminar del DOM los contenedores móviles para no romper el layout flex
         if (window.innerWidth > 768) {
+            // Restaurar imagen original de USITTEL al volver a desktop
+            document.querySelectorAll('.project-slice').forEach(slice => {
+                const title = slice.dataset.title || '';
+                if (title.includes('USITTEL')) {
+                    const bgImg = slice.querySelector('.slice-bg');
+                    if (bgImg && bgImg.src.includes('USITTEL_horizontal.png')) {
+                        bgImg.src = 'assets/images/proyectos/usittel_internet.png';
+                    }
+                }
+            });
+            
             document.querySelectorAll('.mobile-expanded-content').forEach(node => {
                 const parent = node.parentNode; if (parent) parent.removeChild(node);
             });
