@@ -364,19 +364,36 @@ function initClients() {
     let startX = 0;
     let currentTransform = 0;
     let animationPaused = false;
+    let manualMode = false; // cuando true, usamos transform fijo sin animación
 
     // Pausar animación al pasar el mouse
+    // Guardar desplazamiento actual cuando pausamos por hover
+    const freezeAtCurrentPosition = () => {
+        // Computar el offset actual de la animación y fijarlo como transform para evitar "salto al inicio"
+        const progress = getComputedStyle(clientsTrack).animationPlayState !== 'paused'
+            ? (performance.now() % (parseFloat(getComputedStyle(clientsTrack).animationDuration) * 1000)) / (parseFloat(getComputedStyle(clientsTrack).animationDuration) * 1000)
+            : 0;
+        // No es trivial obtener offset desde keyframes; en su lugar, tomamos transform actual calculado
+        const offset = getTransformValue();
+        clientsTrack.style.animation = 'none';
+        if (!isNaN(offset)) {
+            clientsTrack.style.transform = `translateX(${offset}px)`;
+        }
+        manualMode = true;
+    };
+
     clientsTrack.addEventListener('mouseenter', () => {
         if (!isDragging) {
-            clientsTrack.style.animationPlayState = 'paused';
+            freezeAtCurrentPosition();
             animationPaused = true;
         }
     });
 
     clientsTrack.addEventListener('mouseleave', () => {
         if (!isDragging) {
-            clientsTrack.style.animationPlayState = 'running';
+            // Reanudar sin reiniciar: mantenemos transform y programamos reanudación suave
             animationPaused = false;
+            resumeAnimationSmooth();
         }
     });
 
@@ -399,8 +416,9 @@ function initClients() {
         const newTransform = currentTransform + deltaX;
         
         // Aplicar el transform manualmente
-        clientsTrack.style.animation = 'none';
-        clientsTrack.style.transform = `translateX(${newTransform}px)`;
+    clientsTrack.style.animation = 'none';
+    clientsTrack.style.transform = `translateX(${newTransform}px)`;
+    manualMode = true;
     });
 
     document.addEventListener('mouseup', () => {
@@ -409,12 +427,10 @@ function initClients() {
             clientsTrack.style.cursor = 'grab';
             clientsTrack.style.userSelect = 'auto';
             
-            // Reanudar animación después de un delay
-            setTimeout(() => {
-                if (!animationPaused) {
-                    resetAnimation();
-                }
-            }, 1500);
+            // Reanudar animación sin volver al inicio
+            if (!animationPaused) {
+                resumeAnimationSmooth();
+            }
         }
     });
 
@@ -431,10 +447,40 @@ function initClients() {
     // Función para resetear la animación
     function resetAnimation() {
         const isMobileView = window.innerWidth <= 768;
+    
+            // Si hay tarjetas móviles expandidas, recalcular su altura por cambio de texto
+            document.querySelectorAll('.mobile-expanded-content.show').forEach(expanded => {
+                const wrapper = expanded.querySelector('.content-wrapper');
+                if (!wrapper) return;
+                // medir y ajustar
+                expanded.style.overflow = 'hidden';
+                expanded.style.height = 'auto';
+                const h = wrapper.offsetHeight + 40;
+                expanded.style.height = h + 'px';
+                // devolver overflow luego
+                setTimeout(() => { expanded.style.overflow = 'visible'; }, 300);
+            });
         const duration = isMobileView ? '6s' : '10s';
         clientsTrack.style.animation = `scroll ${duration} linear infinite`;
         clientsTrack.style.transform = '';
         clientsTrack.style.animationPlayState = 'running';
+        manualMode = false;
+    }
+
+    function resumeAnimationSmooth(){
+        // Tomar transform actual y convertirlo a porcentaje del ciclo para conectar con la animación
+        const offset = getTransformValue();
+        // Estimación: la animación desplaza -50% del ancho total de track (duplicado). Calculamos porcentaje aproximado del ciclo.
+        // Para simplificar, reanudamos con animación pero manteniendo transform fijo un tiempo corto y luego dejamos que el keyframe tome control.
+        const isMobileView = window.innerWidth <= 768;
+        const duration = isMobileView ? '6s' : '10s';
+        // Mantener el transform actual y agregar transición suave
+        clientsTrack.style.transition = 'transform 0.4s ease-out';
+        clientsTrack.style.transform = `translateX(${offset}px)`;
+        setTimeout(() => {
+            clientsTrack.style.transition = '';
+            resetAnimation();
+        }, 420);
     }
 
     // Soporte para touch en dispositivos móviles
@@ -459,9 +505,9 @@ function initClients() {
 
     clientsTrack.addEventListener('touchend', () => {
         touchStartX = 0;
-        setTimeout(() => {
-            resetAnimation();
-        }, 1500);
+        if (!animationPaused) {
+            resumeAnimationSmooth();
+        }
     });
 
     // Actualizar velocidad al cambiar tamaño de ventana
@@ -1366,6 +1412,11 @@ function initProjectsFull(){
     
     if(!section || bullets.length === 0 || slides.length === 0) return;
 
+    // Limpiar event listeners anteriores para evitar duplicados
+    const newSection = section.cloneNode(true);
+    section.parentNode.replaceChild(newSection, section);
+    const sectionRef = document.getElementById('proyectos'); // Obtener nueva referencia
+
     let index = 0;
     let isAnimating = false;
     let isProjectsActive = false;
@@ -1373,7 +1424,7 @@ function initProjectsFull(){
 
     // Establecer altura total para scroll-pin
     const totalHeight = window.innerHeight * (slides.length + 2); // +2 para entrada y salida
-    section.style.height = totalHeight + 'px';
+    sectionRef.style.height = totalHeight + 'px';
 
     const setActive = (i) => {
         if(i < 0 || i >= slides.length || isAnimating) return;
@@ -1400,7 +1451,7 @@ function initProjectsFull(){
 
     // Función para detectar si estamos en la sección de proyectos
     const checkProjectsInView = () => {
-        const rect = section.getBoundingClientRect();
+        const rect = sectionRef.getBoundingClientRect();
         const windowHeight = window.innerHeight;
         
         // Está completamente visible cuando top <= 0 y bottom >= windowHeight
@@ -1410,12 +1461,12 @@ function initProjectsFull(){
     // Scroll principal del documento
     let lastScrollY = window.pageYOffset;
     
-    window.addEventListener('scroll', () => {
+    const handleScroll = () => {
         const currentScrollY = window.pageYOffset;
         scrollDirection = currentScrollY > lastScrollY ? 1 : -1;
         lastScrollY = currentScrollY;
         
-        const rect = section.getBoundingClientRect();
+        const rect = sectionRef.getBoundingClientRect();
         const progress = Math.max(0, Math.min(1, -rect.top / (rect.height - window.innerHeight)));
         
         // Determinar slide basado en progreso
@@ -1433,10 +1484,12 @@ function initProjectsFull(){
                 document.body.style.overflow = 'auto';
             }
         }
-    });
+    };
+    
+    window.addEventListener('scroll', handleScroll);
 
     // Navegación con wheel cuando está activa la sección
-    section.addEventListener('wheel', (e) => {
+    const handleWheel = (e) => {
         if(!isProjectsActive || isAnimating) return;
         
         e.preventDefault();
@@ -1452,26 +1505,28 @@ function initProjectsFull(){
             // Salir de la sección hacia abajo
             isProjectsActive = false;
             document.body.style.overflow = 'auto';
-            window.scrollTo(0, section.offsetTop + section.offsetHeight);
+            window.scrollTo(0, sectionRef.offsetTop + sectionRef.offsetHeight);
         } else if(dir < 0 && index === 0) {
             // Salir de la sección hacia arriba
             isProjectsActive = false;
             document.body.style.overflow = 'auto';
-            window.scrollTo(0, section.offsetTop - window.innerHeight);
+            window.scrollTo(0, sectionRef.offsetTop - window.innerHeight);
         }
-    }, {passive: false});
+    };
+    
+    sectionRef.addEventListener('wheel', handleWheel, {passive: false});
 
     // Touch para mobile
     let touchStartY = 0;
     let touchStartTime = 0;
     
-    section.addEventListener('touchstart', (e) => {
+    const handleTouchStart = (e) => {
         if(!isProjectsActive) return;
         touchStartY = e.touches[0].clientY;
         touchStartTime = Date.now();
-    }, {passive: true});
+    };
     
-    section.addEventListener('touchmove', (e) => {
+    const handleTouchMove = (e) => {
         if(!isProjectsActive || isAnimating) return;
         
         const touchY = e.touches[0].clientY;
@@ -1487,7 +1542,10 @@ function initProjectsFull(){
         } else if(deltaY < 0 && index > 0) {
             setActive(index - 1);
         }
-    }, {passive: false});
+    };
+    
+    sectionRef.addEventListener('touchstart', handleTouchStart, {passive: true});
+    sectionRef.addEventListener('touchmove', handleTouchMove, {passive: false});
 
     // Navegación por bullets
     bullets.forEach((bullet, i) => {
@@ -1682,6 +1740,260 @@ function initProjectsInteractive() {
         updateNavButtons();
     }
 
+    // --- Mobile expandable cards (en lugar de modal) ---
+    const enableMobileExpand = () => {
+        if (window.innerWidth > 768) return; // sólo mobile
+        
+        document.querySelectorAll('.project-slice').forEach((slice, sliceIndex) => {
+            const indicator = slice.querySelector('.slice-expand-indicator');
+            if (!indicator) return;
+
+            // Crear contenedor de expansión único por slice si no existe
+            let expandedContent = slice.nextElementSibling;
+            if (!expandedContent || !expandedContent.classList.contains('mobile-expanded-content')) {
+                expandedContent = document.createElement('div');
+                expandedContent.className = 'mobile-expanded-content';
+                expandedContent.setAttribute('aria-hidden', 'true');
+                expandedContent.innerHTML = `
+                    <button class="mobile-close-btn" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+                    <div class="content-wrapper"></div>
+                `;
+                slice.parentNode.insertBefore(expandedContent, slice.nextSibling);
+                
+                // Event listener para botón de cierre
+                const closeBtn = expandedContent.querySelector('.mobile-close-btn');
+                closeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    collapseContent(slice, expandedContent, indicator);
+                });
+            }
+
+            const renderContent = () => {
+                const lang = (document.querySelector('.language-btn span')?.textContent || 'ES').toLowerCase();
+                const isEn = lang === 'en';
+                let html = '';
+                const img = slice.dataset.image;
+                const video = slice.dataset.video;
+                let desc = '';
+                
+                // Debug: verificar datos
+                console.log('Rendering mobile content for:', slice.dataset.title);
+                console.log('Image:', img);
+                console.log('Video:', video);
+                
+                // Usar versiones móviles más concisas
+                if (isEn) {
+                    desc = slice.dataset.descriptionMobileEn || slice.dataset.descriptionEn || slice.dataset.description || '';
+                } else {
+                    desc = slice.dataset.descriptionMobile || slice.dataset.description || '';
+                }
+
+                // Si no hay versión móvil, crear una más concisa
+                if (!slice.dataset.descriptionMobile && !slice.dataset.descriptionMobileEn) {
+                    // Versiones concisas para móvil según el proyecto
+                    const title = slice.dataset.title || '';
+                    if (title.includes('AUSA')) {
+                        desc = isEn 
+                            ? `<p>Comprehensive TELCO infrastructure management in Buenos Aires City with <strong>SLA > 99.9%</strong> and 24×7×365 support.</p><p><strong>Key achievements:</strong> 1,000+ km leased lines, 100+ antenna structures across strategic highways.</p>`
+                            : `<p>Gestión integral de infraestructura TELCO en CABA con <strong>SLA > 99,9%</strong> y atención 24×7×365.</p><p><strong>Logros clave:</strong> 1.000+ km de hilos arrendados, 100+ estructuras de antenas en autopistas estratégicas.</p>`;
+                    } else if (title.includes('AUBASA')) {
+                        desc = isEn 
+                            ? `<p><strong>Redundant fiber network</strong> between Buenos Aires and La Plata acting as strategic backbone.</p><p><strong>Services:</strong> Dark Fiber between CABASE and La Plata NAP, redundant path to international gateway.</p><p><strong>SLA:</strong> > 99.99% with on-site crew.</p>`
+                            : `<p><strong>Red de fibra óptica redundante</strong> entre CABA y La Plata que funciona como backbone estratégico.</p><p><strong>Servicios:</strong> Fibra Oscura entre CABASE y NAP La Plata, camino redundante hacia salida internacional.</p><p><strong>SLA:</strong> > 99,99% con cuadrilla in situ.</p>`;
+                    } else if (title.includes('ADIFSE')) {
+                        desc = isEn 
+                            ? `<p><strong>Railway infrastructure assessment</strong> project for ADIF S.E telecommunications network development.</p><p>Comprehensive survey of available infrastructure, current status, occupation levels and development potential for sustainable growth.</p>`
+                            : `<p><strong>Relevamiento de infraestructura ferroviaria</strong> para desarrollo de redes de telecomunicaciones de ADIF S.E.</p><p>Evaluación integral de infraestructura disponible, estado actual, ocupación y potencial de desarrollo sustentable.</p>`;
+                    } else if (title.includes('USITTEL')) {
+                        desc = isEn 
+                            ? `<p><strong>High-speed Internet and Digital TV</strong> service in alliance with La Usina de Tandil.</p><p>Cutting-edge technology with strategic coverage in urban and rural areas. More info: www.usittel.com.ar</p>`
+                            : `<p><strong>Internet de alta velocidad y TV Digital</strong> desarrollado en alianza con La Usina de Tandil.</p><p>Tecnología de vanguardia con cobertura estratégica en zonas urbanas y rurales. Más info: www.usittel.com.ar</p>`;
+                    }
+                }
+
+                console.log('Final description:', desc);
+
+                if (img) {
+                    html += `<div style="margin-bottom:15px"><img src="${img}" alt="${slice.dataset.title}" style="width:100%;height:auto;border-radius:8px;"/></div>`;
+                }
+                if (video && !img) {
+                    // Añadir poster específico para el video de AUSA
+                    const poster = video.includes('ausa.mp4') ? 'assets/images/proyectos/acuerdo_ittel_ausa.png' : '';
+                    const posterAttr = poster ? ` poster="${poster}"` : '';
+                    html += `<div style="margin-bottom:15px"><video src="${video}" controls${posterAttr} style="width:100%;height:auto;border-radius:8px;"></video></div>`;
+                }
+                html += desc || '';
+                
+                console.log('Final HTML:', html);
+                
+                const contentWrapper = expandedContent.querySelector('.content-wrapper');
+                contentWrapper.innerHTML = html;
+                console.log('Content wrapper after setting innerHTML:', contentWrapper);
+            };
+
+            const expandContent = () => {
+                renderContent();
+                slice.classList.add('mobile-expanding'); // Para continuidad visual
+                indicator.classList.add('expanded');
+
+                // Forzar layout antes de animar
+                expandedContent.style.display = 'block';
+                expandedContent.style.height = 'auto';
+                expandedContent.style.visibility = 'hidden'; // Oculto pero ocupa espacio
+                expandedContent.classList.add('show');
+                expandedContent.setAttribute('aria-hidden', 'false');
+                
+                // Forzar reflow para medir altura real
+                const contentWrapper = expandedContent.querySelector('.content-wrapper');
+                expandedContent.offsetHeight; // trigger reflow
+                const targetHeight = contentWrapper.scrollHeight + 40; // +40 para padding
+                
+                // Reset para animación suave desde 0
+                expandedContent.style.visibility = 'visible'; // Mostrar para animar
+                expandedContent.style.height = '0px';
+                expandedContent.style.opacity = '0';
+                expandedContent.style.overflow = 'hidden';
+                
+                // Forzar layout antes de animar
+                requestAnimationFrame(() => {
+                    expandedContent.style.height = targetHeight + 'px';
+                    expandedContent.style.opacity = '1';
+                    
+                    // Cambiar overflow después de la animación para evitar cortes
+                    setTimeout(() => {
+                        if (expandedContent.classList.contains('show')) {
+                            expandedContent.style.overflow = 'visible';
+                        }
+                    }, 500); // Duración de la transición CSS
+                });
+
+                // Ajustar altura si el contenido interno cambia (imágenes/videos cargan)
+                const adjustHeight = () => {
+                    if (!expandedContent.classList.contains('show')) return;
+                    // medir con contenido visible
+                    expandedContent.style.overflow = 'hidden';
+                    expandedContent.style.height = 'auto';
+                    const newHeight = contentWrapper.scrollHeight + 40;
+                    expandedContent.style.height = newHeight + 'px';
+                };
+
+                // ResizeObserver para contenido dinámico
+                let ro;
+                if ('ResizeObserver' in window) {
+                    ro = new ResizeObserver(() => {
+                        adjustHeight();
+                    });
+                    ro.observe(contentWrapper);
+                }
+
+                // Eventos load en imágenes y videos
+                contentWrapper.querySelectorAll('img, video').forEach(el => {
+                    if (el.tagName.toLowerCase() === 'video') {
+                        el.addEventListener('loadedmetadata', adjustHeight, { once: true });
+                    } else {
+                        if (el.complete) setTimeout(adjustHeight, 0);
+                        else el.addEventListener('load', adjustHeight, { once: true });
+                    }
+                });
+
+                // Scroll suave para mostrar el contenido expandido
+                setTimeout(() => {
+                    expandedContent.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'nearest' 
+                    });
+                }, 300);
+            };
+
+            const collapseContent = (targetSlice, targetExpanded, targetIndicator) => {
+                targetSlice.classList.remove('mobile-expanding'); // Restaurar aspecto original
+                targetExpanded.classList.remove('show');
+                targetExpanded.setAttribute('aria-hidden', 'true');
+                targetExpanded.style.height = '0px';
+                targetExpanded.style.opacity = '0';
+                targetExpanded.style.overflow = 'hidden';
+                targetIndicator.classList.remove('expanded');
+                
+                // Ocultar completamente después de la animación
+                setTimeout(() => {
+                    if (!targetExpanded.classList.contains('show')) {
+                        targetExpanded.style.display = 'none';
+                    }
+                }, 500);
+            };
+
+            const toggle = (e) => {
+                e && e.stopPropagation();
+                
+                // Cerrar todas las otras expansiones abiertas
+                document.querySelectorAll('.mobile-expanded-content.show').forEach(openContent => {
+                    if (openContent !== expandedContent) {
+                        const openSlice = openContent.previousElementSibling;
+                        const openIndicator = openSlice?.querySelector('.slice-expand-indicator');
+                        if (openSlice && openIndicator) {
+                            collapseContent(openSlice, openContent, openIndicator);
+                        }
+                    }
+                });
+                
+                const isOpen = expandedContent.classList.contains('show');
+                if (isOpen) {
+                    collapseContent(slice, expandedContent, indicator);
+                } else {
+                    expandContent();
+                }
+            };
+
+            // Event listener para el indicador de expansión
+            indicator.onclick = toggle;
+            
+            // También permitir tocar en cualquier parte del slice (pero no en botones de enlaces)
+            slice.addEventListener('click', (ev) => {
+                const t = ev.target;
+                if (t.closest('.slice-links') || t.classList.contains('open-modal-btn')) return; // no interferir
+                toggle(ev);
+            });
+        });
+    };
+
+    enableMobileExpand();
+    
+    window.addEventListener('resize', debounce(() => {
+        // Al cambiar breakpoint, cerrar expansiones y limpiar
+        document.querySelectorAll('.mobile-expanded-content.show').forEach(content => {
+            content.classList.remove('show');
+            content.setAttribute('aria-hidden', 'true');
+            const prevSlice = content.previousElementSibling;
+            if (prevSlice) {
+                prevSlice.classList.remove('mobile-expanding'); // Limpiar estado de expansión
+            }
+            const indicator = prevSlice?.querySelector('.slice-expand-indicator');
+            if (indicator) {
+                indicator.classList.remove('expanded');
+            }
+            content.style.height = '0px';
+            content.style.overflow = 'hidden';
+            // Ocultar por completo tras la transición
+            setTimeout(() => { if(!content.classList.contains('show')) content.style.display = 'none'; }, 350);
+        });
+        
+        // Re-inicializar handlers móviles si corresponde
+        enableMobileExpand();
+
+        // Si pasamos a desktop, eliminar del DOM los contenedores móviles para no romper el layout flex
+        if (window.innerWidth > 768) {
+            document.querySelectorAll('.mobile-expanded-content').forEach(node => {
+                const parent = node.parentNode; if (parent) parent.removeChild(node);
+            });
+            // Asegurar que los slices conserven un único activo
+            const slices = Array.from(document.querySelectorAll('.project-slice'));
+            if (slices.length) {
+                const anyActive = slices.some(s => s.classList.contains('active'));
+                if (!anyActive) slices[0].classList.add('active');
+            }
+        }
+    }, 300)); // Aumentado a 300ms para dar más tiempo al resize
+
     // --- Project Modal Functionality ---
     const modal = document.getElementById('project-modal');
     const modalContent = document.getElementById('modal-content');
@@ -1744,6 +2056,13 @@ function initProjectsInteractive() {
         if (hasVideo) {
             modalVideo.style.display = 'block';
             modalVideo.src = projectVideo;
+            
+            // Añadir poster específico para el video de AUSA
+            if (projectVideo.includes('ausa.mp4')) {
+                modalVideo.poster = 'assets/images/proyectos/acuerdo_ittel_ausa.png';
+            } else {
+                modalVideo.removeAttribute('poster');
+            }
         } else {
             modalVideo.style.display = 'none';
             modalVideo.removeAttribute('src');
