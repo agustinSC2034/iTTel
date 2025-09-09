@@ -1747,6 +1747,17 @@ function initProjectsInteractive() {
     const enableMobileExpand = () => {
         if (window.innerWidth > 768) return; // sólo mobile
         
+        // Cambiar imagen de fondo de USITTEL solo en móvil
+        document.querySelectorAll('.project-slice').forEach(slice => {
+            const title = slice.dataset.title || '';
+            if (title.includes('USITTEL')) {
+                const bgImg = slice.querySelector('.slice-bg');
+                if (bgImg) {
+                    bgImg.src = 'assets/images/proyectos/USITTEL_horizontal.png';
+                }
+            }
+        });
+        
         document.querySelectorAll('.project-slice').forEach((slice, sliceIndex) => {
             const indicator = slice.querySelector('.slice-expand-indicator');
             if (!indicator) return;
