@@ -351,6 +351,14 @@ function initClients() {
         clientsTrack.dataset.cloned = 'true';
     }
 
+    // Establecer velocidad inicial correcta basada en viewport
+    const setInitialSpeed = () => {
+        const isMobileView = window.innerWidth <= 768;
+        const duration = isMobileView ? '6s' : '10s';
+        clientsTrack.style.animationDuration = duration;
+    };
+    setInitialSpeed();
+
     // Variables para el control del carrusel
     let isDragging = false;
     let startX = 0;
@@ -422,7 +430,9 @@ function initClients() {
 
     // Función para resetear la animación
     function resetAnimation() {
-        clientsTrack.style.animation = 'scroll 17s linear infinite';
+        const isMobileView = window.innerWidth <= 768;
+        const duration = isMobileView ? '6s' : '10s';
+        clientsTrack.style.animation = `scroll ${duration} linear infinite`;
         clientsTrack.style.transform = '';
         clientsTrack.style.animationPlayState = 'running';
     }
@@ -453,6 +463,11 @@ function initClients() {
             resetAnimation();
         }, 1500);
     });
+
+    // Actualizar velocidad al cambiar tamaño de ventana
+    window.addEventListener('resize', debounce(() => {
+        setInitialSpeed();
+    }, 250));
 }
 
 // Scroll effects and animations
@@ -1685,7 +1700,27 @@ function initProjectsInteractive() {
         const projectTitle = slice.dataset.title;
         const projectImage = slice.dataset.image;
         const projectVideo = slice.dataset.video;
-        const projectDescription = slice.dataset.description;
+        
+        // Detectar si es mobile y usar descripción mobile si está disponible
+        const isMobileView = window.innerWidth <= 768;
+        const currentLang = document.querySelector('.language-btn span').textContent.toLowerCase();
+        const isEnglish = currentLang === 'en';
+        
+        let projectDescription;
+        if (isMobileView) {
+            // Priorizar versión mobile
+            if (isEnglish && slice.dataset.descriptionMobileEn) {
+                projectDescription = slice.dataset.descriptionMobileEn;
+            } else if (!isEnglish && slice.dataset.descriptionMobile) {
+                projectDescription = slice.dataset.descriptionMobile;
+            } else {
+                // Fallback a versión completa
+                projectDescription = isEnglish && slice.dataset.descriptionEn ? slice.dataset.descriptionEn : slice.dataset.description;
+            }
+        } else {
+            // Desktop usa versión completa
+            projectDescription = isEnglish && slice.dataset.descriptionEn ? slice.dataset.descriptionEn : slice.dataset.description;
+        }
 
         modalTitle.textContent = projectTitle;
         
@@ -1843,6 +1878,7 @@ function initItGallery(){
     const viewport = track.parentElement;
     const images = Array.from(track.querySelectorAll('.it-gallery-item'));
     const fullscreenBtns = track.querySelectorAll('.it-gallery-fullscreen-btn');
+    const dotsContainer = document.getElementById('itGalleryDots');
     
     // Detectar orientación de imágenes y ajustar width
     images.forEach(img => {
@@ -1883,6 +1919,114 @@ function initItGallery(){
     };
     viewport.addEventListener('mouseenter', () => document.addEventListener('keydown', keyHandler));
     viewport.addEventListener('mouseleave', () => document.removeEventListener('keydown', keyHandler));
+
+    // Dots de paginación sólo visibles en mobile
+    let dots = [];
+    const isMobile = () => window.matchMedia('(max-width: 640px)').matches;
+    const progressBar = document.getElementById('itGalleryProgressBar');
+    let currentMobileIndex = 0;
+    
+    const createDots = () => {
+        if(!dotsContainer) return;
+        dotsContainer.innerHTML = '';
+        dots = images.map((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'it-gallery-dot';
+            dot.type = 'button';
+            dot.setAttribute('aria-label', `Ir a imagen ${i+1}`);
+            dot.addEventListener('click', () => {
+                // Desplazar al inicio del ítem i
+                const item = track.children[i];
+                if(item){ 
+                    item.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+                    currentMobileIndex = i;
+                    updateProgress();
+                }
+            });
+            dotsContainer.appendChild(dot);
+            return dot;
+        });
+        updateDots(0);
+    };
+
+    const updateDots = (activeIndex) => {
+        dots.forEach((d, i) => d.classList.toggle('active', i === activeIndex));
+        currentMobileIndex = activeIndex;
+        updateProgress();
+    };
+
+    const updateProgress = () => {
+        if(progressBar && isMobile()) {
+            const progress = images.length > 0 ? ((currentMobileIndex + 1) / images.length) * 100 : 0;
+            progressBar.style.width = `${progress}%`;
+        }
+    };
+
+    // Detectar índice visible en mobile mediante IntersectionObserver
+    let io;
+    const setupObserver = () => {
+        if(!isMobile()) return;
+        if(!('IntersectionObserver' in window)) return;
+        if(io) { io.disconnect(); }
+        io = new IntersectionObserver((entries) => {
+            // Elegir el que tenga mayor intersección
+            let best = { index: 0, ratio: 0 };
+            entries.forEach(entry => {
+                const idx = Array.prototype.indexOf.call(track.children, entry.target);
+                if(entry.isIntersecting && entry.intersectionRatio > best.ratio){
+                    best = { index: idx, ratio: entry.intersectionRatio };
+                }
+            });
+            updateDots(best.index);
+        }, { root: viewport, threshold: [0.5, 0.75, 1] });
+
+        Array.from(track.children).forEach(item => io.observe(item));
+    };
+
+    // Fallback: actualizar dots en base al scrollLeft si no hay IO
+    let scrollHandler;
+    const setupScrollFallback = () => {
+        if(!isMobile()) return;
+        if('IntersectionObserver' in window) return; // no usar fallback si hay IO
+        if(scrollHandler) track.removeEventListener('scroll', scrollHandler);
+        scrollHandler = throttle(() => {
+            if(!isMobile()) return;
+            const trackWidth = track.scrollWidth;
+            const containerWidth = track.clientWidth;
+            const scrollLeft = track.scrollLeft;
+            const totalItems = images.length;
+            
+            // Calcular índice basado en scroll position
+            const itemWidth = trackWidth / totalItems;
+            const newIndex = Math.round(scrollLeft / itemWidth);
+            const clampedIndex = Math.max(0, Math.min(totalItems - 1, newIndex));
+            
+            if(clampedIndex !== currentMobileIndex) {
+                updateDots(clampedIndex);
+            }
+        }, 100);
+        track.addEventListener('scroll', scrollHandler, { passive: true });
+    };
+
+    // Inicialización de dots y observer si mobile
+    if(isMobile()){
+        createDots();
+        setupObserver();
+        setupScrollFallback();
+    }
+
+    // Reconfigurar al redimensionar
+    window.addEventListener('resize', debounce(() => {
+        if(isMobile()){
+            createDots();
+            setupObserver();
+            setupScrollFallback();
+        } else {
+            if(dotsContainer) dotsContainer.innerHTML = '';
+            if(io) io.disconnect();
+            if(scrollHandler) track.removeEventListener('scroll', scrollHandler);
+        }
+    }, 200));
 
     // Inicializar fullscreen viewer para cada imagen
     initItGalleryFullscreen(images, fullscreenBtns);
