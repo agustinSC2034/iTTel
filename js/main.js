@@ -1936,13 +1936,7 @@ function initProjectsInteractive() {
                     });
                 }
 
-                // Scroll suave para mostrar el contenido expandido
-                setTimeout(() => {
-                    expandedContent.scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'nearest' 
-                    });
-                }, 300);
+                // Eliminado el scroll automático para que el usuario permanezca donde está
             };
 
             const collapseContent = (targetSlice, targetExpanded, targetIndicator) => {
