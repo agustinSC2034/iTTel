@@ -35,35 +35,42 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
+    <!-- Navigation - Glass/Transparent Style -->
+    <nav class="navbar-glass" id="navbar">
+        <div class="nav-glass-container">
             <div class="nav-brand">
-                <img src="assets/images/logoIttel.jpg" alt="iTTel Logo" class="nav-logo" width="150" height="50"
+                <img src="assets/images/logoIttel1.jpg" alt="iTTel Logo" class="nav-logo-glass" width="150" height="50"
                     loading="lazy">
             </div>
 
-            <div class="nav-menu" id="nav-menu">
-                <a href="#inicio" class="nav-link active" data-section="inicio">INICIO</a>
-                <a href="#nosotros" class="nav-link" data-section="nosotros">NOSOTROS</a>
-                <a href="#servicios" class="nav-link" data-section="servicios">IT & TELCO</a>
-                <a href="#proyectos" class="nav-link" data-section="proyectos">PROYECTOS</a>
-                <a href="#clientes" class="nav-link" data-section="clientes">CLIENTES</a>
-                <a href="#contacto" class="nav-link" data-section="contacto">CONTACTO</a>
+            <div class="nav-menu-glass" id="nav-menu">
+                <a href="#inicio" class="nav-link-glass active" data-section="inicio">INICIO</a>
+                <a href="#nosotros" class="nav-link-glass" data-section="nosotros">NOSOTROS</a>
+                <a href="#servicios" class="nav-link-glass" data-section="servicios">IT & TELCO</a>
+                <a href="#proyectos" class="nav-link-glass" data-section="proyectos">PROYECTOS</a>
+                <a href="#clientes" class="nav-link-glass" data-section="clientes">CLIENTES</a>
+                <a href="#contacto" class="nav-link-glass" data-section="contacto">CONTACTO</a>
 
-                <div class="language-selector">
-                    <button class="language-btn" id="language-btn">
-                        <span>ES</span>
+                <div class="language-selector-glass">
+                    <button class="language-btn-glass" id="language-btn">
+                        <img src="https://flagcdn.com/w20/ar.png" alt="Argentina" class="flag-icon">
+                        <span>ARG</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
-                    <div class="language-dropdown" id="language-dropdown">
-                        <a href="#" class="language-option active">Español</a>
-                        <a href="#" class="language-option">English</a>
+                    <div class="language-dropdown-glass" id="language-dropdown">
+                        <a href="#" class="language-option-glass active">
+                            <img src="https://flagcdn.com/w20/ar.png" alt="Argentina" class="flag-icon">
+                            Español
+                        </a>
+                        <a href="#" class="language-option-glass">
+                            <img src="https://flagcdn.com/w20/us.png" alt="Estados Unidos" class="flag-icon">
+                            English
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <button class="nav-toggle" id="nav-toggle">
+            <button class="nav-toggle-glass" id="nav-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -73,22 +80,22 @@
 
 
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-video">
+    <!-- Hero Section - Fullscreen -->
+    <section id="inicio" class="hero-fullscreen">
+        <div class="hero-video-fullscreen">
             <video autoplay muted loop playsinline poster="./assets/images/mundoITTEL.png" id="hero-video">
                 <source src="./assets/video/videoIttel1.mp4" type="video/mp4">
                 <source src="./assets/video/videoIttel1.webm" type="video/webm">
             </video>
-            <div class="hero-overlay"></div>
+            <div class="hero-overlay-fullscreen"></div>
         </div>
 
         <!-- Botón de pantalla completa en esquina inferior derecha -->
-        <button class="fullscreen-btn" id="fullscreen-btn" title="Ver en pantalla completa">
+        <button class="fullscreen-btn-glass" id="fullscreen-btn" title="Ver en pantalla completa">
             <i class="fas fa-expand"></i>
         </button>
 
-        <div class="hero-content">
+        <div class="hero-content-fullscreen">
             <!-- Hero sin textos (solo video) -->
         </div>
 
