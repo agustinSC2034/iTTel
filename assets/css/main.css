@@ -4096,21 +4096,20 @@ html {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.95); /* Siempre fondo blanco */
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1); /* Transparente sobre video */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50px;
     z-index: 2000;
     transition: all 0.3s ease;
     padding: 8px 25px;
     width: auto;
     max-width: 90%;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15); /* Sombra siempre visible */
 }
 
 .navbar-glass.scrolled {
-    background: rgba(255, 255, 255, 0.95); /* Mismo fondo */
+    background: rgba(255, 255, 255, 0.95); /* Blanco cuando sale del video */
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -4125,6 +4124,11 @@ html {
 .navbar-glass.scrolled .nav-link-glass:hover,
 .navbar-glass.scrolled .nav-link-glass.active {
     color: #227db3;
+}
+
+.navbar-glass.scrolled .nav-link-glass:hover::after,
+.navbar-glass.scrolled .nav-link-glass.active::after {
+    background: #227db3; /* Línea azul cuando está scrolled */
 }
 
 .navbar-glass.scrolled .language-btn-glass {
@@ -4160,8 +4164,9 @@ html {
     height: 40px;
     width: auto;
     object-fit: contain;
-    filter: none; /* Sin filtros para mantener colores originales */
+    filter: none; /* Logo con colores originales siempre */
     flex-shrink: 0;
+    transition: filter 0.3s ease;
 }
 
 .nav-menu-glass {
@@ -4174,16 +4179,16 @@ html {
 
 .nav-link-glass {
     text-decoration: none;
-    color: #333; /* Siempre color oscuro */
+    color: white; /* Blanco sobre video */
     font-weight: 500;
-    font-size: 13px;
+    font-size: 13.5px; /* Aumentado ligeramente de 13px */
     font-family: 'Poppins', sans-serif;
     letter-spacing: 0.6px;
     transition: all 0.3s ease;
     position: relative;
     padding: 6px 12px;
     border-radius: 20px;
-    text-shadow: none; /* Sin sombra */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Sombra para legibilidad */
     white-space: nowrap;
 }
 
@@ -4195,15 +4200,15 @@ html {
     right: 12px;
     width: 0;
     height: 2px;
-    background: #227db3; /* Siempre azul */
+    background: rgba(255, 255, 255, 0.9); /* Línea blanca */
     transition: width 0.3s ease;
 }
 
 .nav-link-glass:hover,
 .nav-link-glass.active {
-    color: #227db3; /* Siempre azul en hover */
+    color: rgba(255, 255, 255, 0.9); /* Blanco en hover sobre video */
     background: transparent;
-    text-shadow: none;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .nav-link-glass:hover::after,
@@ -4217,10 +4222,10 @@ html {
 }
 
 .language-btn-glass {
-    background: rgba(34, 125, 179, 0.1);
-    border: 1px solid rgba(34, 125, 179, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 25px;
-    color: #227db3; /* Siempre azul */
+    color: white; /* Blanco sobre video */
     padding: 6px 12px;
     font-size: 12px;
     font-weight: 500;
@@ -4231,16 +4236,17 @@ html {
     gap: 6px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    text-shadow: none; /* Sin sombra */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Sombra para legibilidad */
     white-space: nowrap;
 }
 
 .language-btn-glass:hover {
-    background: rgba(34, 125, 179, 0.2);
-    border-color: rgba(34, 125, 179, 0.4);
-    color: #227db3;
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: white;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(34, 125, 179, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .flag-icon {
@@ -4301,8 +4307,8 @@ html {
 .nav-toggle-glass {
     display: none;
     flex-direction: column;
-    background: rgba(34, 125, 179, 0.1);
-    border: 1px solid rgba(34, 125, 179, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
     padding: 6px;
     cursor: pointer;
@@ -4315,15 +4321,16 @@ html {
 .nav-toggle-glass span {
     width: 18px;
     height: 2px;
-    background: #333; /* Siempre oscuro */
+    background: white; /* Blanco sobre video */
     margin: 1.5px 0;
     transition: all 0.3s ease;
     border-radius: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .nav-toggle-glass:hover {
-    background: rgba(34, 125, 179, 0.2);
-    border-color: rgba(34, 125, 179, 0.4);
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
     transform: translateY(-1px);
 }
 
