@@ -4441,10 +4441,11 @@ html {
         top: calc(100% + 10px);
         left: 0;
         right: 0;
-        background: rgba(255, 255, 255, 0.85); /* Más opaco para legibilidad */
-        backdrop-filter: blur(25px); /* Más blur para mejor efecto */
-        -webkit-backdrop-filter: blur(25px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        /* Igual base que el navbar, pero reforzado con overlays */
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(24px) saturate(120%);
+        -webkit-backdrop-filter: blur(24px) saturate(120%);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 20px;
         flex-direction: column;
         gap: 0;
@@ -4453,8 +4454,30 @@ html {
         visibility: hidden;
         transform: translateY(-20px);
         transition: all 0.3s ease;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* Sombra más fuerte */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         justify-content: flex-start;
+        overflow: hidden; /* Para que los overlays respeten el borde redondeado */
+    }
+
+    /* Overlays internos para "tapar" mejor el video manteniendo efecto glass */
+    .nav-menu-glass::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        /* Capa de niebla clara (similar al brillo del navbar) */
+        background: linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.16) 100%);
+        pointer-events: none;
+    }
+
+    .nav-menu-glass::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        /* Sutil oscurecido para que el texto destaque y no se vea el video nítido */
+        background: rgba(0, 0, 0, 0.08);
+        pointer-events: none;
     }
     
     .nav-menu-glass.active {
@@ -4464,10 +4487,10 @@ html {
     }
     
     .nav-link-glass {
-        color: #333 !important; /* Oscuro para legibilidad sobre fondo semitransparente */
+        color: #ffffff !important; /* Igual que el navbar sobre el video */
         padding: 10px 25px;
         font-size: 14px;
-        text-shadow: none !important; /* Sin sombra para mejor contraste */
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35) !important;
         width: 100%;
         text-align: left;
         border-radius: 0;
@@ -4478,11 +4501,11 @@ html {
         display: none; /* Sin línea en mobile */
     }
     
-    /* Hover legible tanto sobre video como scrolled */
+    /* Hover legible en estado transparente (mismo estilo del navbar) */
     .navbar-glass:not(.scrolled) .nav-link-glass:hover {
-        color: #227db3 !important; /* Azul legible */
-        background: rgba(34, 125, 179, 0.1) !important; /* Fondo sutil */
-        text-shadow: none !important;
+        color: rgba(255,255,255,0.9) !important;
+        background: rgba(255,255,255,0.06) !important;
+        text-shadow: 0 1px 4px rgba(0,0,0,0.45) !important;
     }
     
     /* En mobile, hover cuando hay fondo blanco */
@@ -4500,15 +4523,15 @@ html {
     
     .language-selector-glass {
         padding: 10px 25px;
-        border-top: 1px solid rgba(0, 0, 0, 0.1); /* Línea oscura visible */
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
         margin-top: 10px;
     }
     
     .language-btn-glass {
-        background: rgba(34, 125, 179, 0.1); /* Fondo azul sutil */
-        border-color: rgba(34, 125, 179, 0.3);
-        color: #227db3; /* Azul legible */
-        text-shadow: none;
+        background: rgba(255, 255, 255, 0.18);
+        border-color: rgba(255, 255, 255, 0.3);
+        color: #ffffff;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
         justify-content: flex-start;
     }
     
