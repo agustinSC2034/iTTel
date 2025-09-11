@@ -4458,6 +4458,7 @@ html {
         justify-content: flex-start;
         overflow: hidden; /* Para que los overlays respeten el borde redondeado */
         z-index: 2100;
+    isolation: isolate; /* Asegura stacking context para overlays */
     }
 
     /* Overlays internos para "tapar" mejor el video manteniendo efecto glass */
@@ -4466,20 +4467,16 @@ html {
         position: absolute;
         inset: 0;
         border-radius: inherit;
-        /* Niebla clara (más intensa para tapar video en superficie grande) */
-        background: linear-gradient(180deg, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0.24) 100%);
+        /* Capa combinada: niebla + oscurecido, detrás del contenido */
+        background:
+            linear-gradient(0deg, rgba(0,0,0,0.26), rgba(0,0,0,0.26)),
+            linear-gradient(180deg, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0.24) 100%);
         pointer-events: none;
+        z-index: 0;
     }
 
-    .nav-menu-glass::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        /* Oscurecido sutil adicional para que el texto destaque */
-        background: rgba(0, 0, 0, 0.28);
-        pointer-events: none;
-    }
+    /* Elevar el contenido del menú por encima del overlay */
+    .nav-menu-glass > * { position: relative; z-index: 1; }
 
     /* En estado scrolled (fondo blanco sólido), no necesitamos overlays */
     .navbar-glass.scrolled .nav-menu-glass::before,
