@@ -109,10 +109,11 @@ function updateActiveNavLink(activeLink) {
 
 // Hero section functionality
 function initHero() {
-    const hero = document.querySelector('.hero');
+    const hero = document.querySelector('.hero') || document.querySelector('.hero-fullscreen');
     const heroVideo = document.querySelector('#hero-video');
     const fullscreenBtn = document.getElementById('fullscreen-btn');
     
+    console.log('Hero section:', hero); // Debug
     console.log('Hero video:', heroVideo); // Debug
     console.log('Fullscreen button:', fullscreenBtn); // Debug
     
@@ -123,17 +124,19 @@ function initHero() {
         });
         
         // Pause video when not in viewport (performance optimization)
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    heroVideo.play();
-                } else {
-                    heroVideo.pause();
-                }
+        if (hero) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        heroVideo.play();
+                    } else {
+                        heroVideo.pause();
+                    }
+                });
             });
-        });
-        
-        observer.observe(hero);
+            
+            observer.observe(hero);
+        }
     }
     
     // Fullscreen functionality
@@ -158,7 +161,7 @@ function initHero() {
         });
 
         // Mostrar/ocultar botón basado en la visibilidad del video
-        const heroSection = document.querySelector('.hero');
+        const heroSection = document.querySelector('.hero') || document.querySelector('.hero-fullscreen');
         if (heroSection) {
             // Función para verificar si el hero está visible en pantalla
             const checkVideoVisibility = () => {

@@ -4089,3 +4089,482 @@ html {
         min-height: 300px;
     }
 }
+
+/* ===== GLASS NAVBAR STYLES (index2.html) ===== */
+.navbar-glass {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95); /* Siempre fondo blanco */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    z-index: 2000;
+    transition: all 0.3s ease;
+    padding: 8px 25px;
+    width: auto;
+    max-width: 90%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15); /* Sombra siempre visible */
+}
+
+.navbar-glass.scrolled {
+    background: rgba(255, 255, 255, 0.95); /* Mismo fondo */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-glass.scrolled .nav-link-glass {
+    color: #333;
+    text-shadow: none;
+}
+
+.navbar-glass.scrolled .nav-link-glass:hover,
+.navbar-glass.scrolled .nav-link-glass.active {
+    color: #227db3;
+}
+
+.navbar-glass.scrolled .language-btn-glass {
+    background: rgba(34, 125, 179, 0.1);
+    border-color: rgba(34, 125, 179, 0.3);
+    color: #227db3;
+    text-shadow: none;
+}
+
+.navbar-glass.scrolled .nav-toggle-glass {
+    background: rgba(34, 125, 179, 0.1);
+    border-color: rgba(34, 125, 179, 0.3);
+}
+
+.navbar-glass.scrolled .nav-toggle-glass span {
+    background: #333;
+}
+
+.navbar-glass.scrolled .nav-logo-glass {
+    filter: none;
+}
+
+.nav-glass-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 55px;
+    gap: 20px;
+}
+
+.nav-logo-glass {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    filter: none; /* Sin filtros para mantener colores originales */
+    flex-shrink: 0;
+}
+
+.nav-menu-glass {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-link-glass {
+    text-decoration: none;
+    color: #333; /* Siempre color oscuro */
+    font-weight: 500;
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.6px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-shadow: none; /* Sin sombra */
+    white-space: nowrap;
+}
+
+.nav-link-glass::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 12px;
+    right: 12px;
+    width: 0;
+    height: 2px;
+    background: #227db3; /* Siempre azul */
+    transition: width 0.3s ease;
+}
+
+.nav-link-glass:hover,
+.nav-link-glass.active {
+    color: #227db3; /* Siempre azul en hover */
+    background: transparent;
+    text-shadow: none;
+}
+
+.nav-link-glass:hover::after,
+.nav-link-glass.active::after {
+    width: calc(100% - 24px);
+}
+
+.language-selector-glass {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.language-btn-glass {
+    background: rgba(34, 125, 179, 0.1);
+    border: 1px solid rgba(34, 125, 179, 0.3);
+    border-radius: 25px;
+    color: #227db3; /* Siempre azul */
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-shadow: none; /* Sin sombra */
+    white-space: nowrap;
+}
+
+.language-btn-glass:hover {
+    background: rgba(34, 125, 179, 0.2);
+    border-color: rgba(34, 125, 179, 0.4);
+    color: #227db3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(34, 125, 179, 0.2);
+}
+
+.flag-icon {
+    width: 14px;
+    height: 10px;
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+.language-dropdown-glass {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 8px 0;
+    min-width: 130px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-top: 8px;
+}
+
+.language-selector-glass:hover .language-dropdown-glass {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-option-glass {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    color: #333;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.language-option-glass:hover {
+    background: rgba(34, 125, 179, 0.1);
+    color: #227db3;
+}
+
+.language-option-glass.active {
+    background: rgba(34, 125, 179, 0.15);
+    color: #227db3;
+    font-weight: 600;
+}
+
+.nav-toggle-glass {
+    display: none;
+    flex-direction: column;
+    background: rgba(34, 125, 179, 0.1);
+    border: 1px solid rgba(34, 125, 179, 0.3);
+    border-radius: 8px;
+    padding: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    flex-shrink: 0;
+}
+
+.nav-toggle-glass span {
+    width: 18px;
+    height: 2px;
+    background: #333; /* Siempre oscuro */
+    margin: 1.5px 0;
+    transition: all 0.3s ease;
+    border-radius: 1px;
+}
+
+.nav-toggle-glass:hover {
+    background: rgba(34, 125, 179, 0.2);
+    border-color: rgba(34, 125, 179, 0.4);
+    transform: translateY(-1px);
+}
+
+/* ===== FULLSCREEN HERO STYLES (index2.html) ===== */
+.hero-fullscreen {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-video-fullscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-video-fullscreen video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top; /* Cambio a 'top' para preservar la parte superior */
+    display: block;
+}
+
+.hero-overlay-fullscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.1) 50%,
+        rgba(0, 0, 0, 0.2) 100%
+    );
+    z-index: 2;
+}
+
+.hero-content-fullscreen {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.fullscreen-btn-glass {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.fullscreen-btn-glass:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== RESPONSIVE STYLES FOR GLASS NAVBAR ===== */
+@media (max-width: 768px) {
+    .navbar-glass {
+        top: 15px;
+        width: calc(100% - 30px);
+        max-width: none;
+        padding: 8px 20px;
+    }
+    
+    .nav-glass-container {
+        height: 50px;
+        gap: 15px;
+    }
+    
+    .nav-logo-glass {
+        height: 35px;
+    }
+    
+    .nav-menu-glass {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        background: #ffffff; /* Fondo blanco sólido */
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        flex-direction: column;
+        gap: 0;
+        padding: 15px 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        justify-content: flex-start;
+    }
+    
+    .nav-menu-glass.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    
+    .nav-link-glass {
+        color: #333 !important; /* Fuerza color negro en mobile siempre */
+        padding: 10px 25px;
+        font-size: 14px;
+        text-shadow: none !important; /* Sin sombra en mobile */
+        width: 100%;
+        text-align: left;
+        border-radius: 0;
+        justify-content: flex-start;
+    }
+    
+    .nav-link-glass::after {
+        display: none; /* Sin línea en mobile */
+    }
+    
+    /* En mobile, NO hay hover cuando está sobre video */
+    .navbar-glass:not(.scrolled) .nav-link-glass:hover {
+        color: #333 !important; /* Mantiene negro siempre */
+        background: transparent !important;
+        text-shadow: none !important;
+    }
+    
+    /* En mobile, hover solo cuando hay fondo blanco */
+    .navbar-glass.scrolled .nav-link-glass:hover {
+        color: #227db3 !important; /* Azul solo con fondo blanco */
+        background: transparent !important;
+    }
+    
+    /* Active state también controlado */
+    .nav-link-glass.active {
+        color: #227db3 !important;
+        background: transparent !important;
+        text-shadow: none !important;
+    }
+    
+    .language-selector-glass {
+        padding: 10px 25px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        margin-top: 10px;
+    }
+    
+    .language-btn-glass {
+        background: #f8f9fa;
+        border-color: rgba(0, 0, 0, 0.2);
+        color: #333;
+        text-shadow: none;
+        justify-content: flex-start;
+    }
+    
+    .nav-toggle-glass {
+        display: flex;
+    }
+    
+    .fullscreen-btn-glass {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-glass {
+        top: 10px;
+        width: calc(100% - 20px);
+        padding: 6px 15px;
+    }
+    
+    .nav-glass-container {
+        height: 45px;
+        gap: 10px;
+    }
+    
+    .nav-logo-glass {
+        height: 30px;
+    }
+    
+    .nav-link-glass {
+        font-size: 13px;
+        padding: 8px 20px;
+    }
+    
+    .language-selector-glass {
+        padding: 8px 20px;
+    }
+    
+    .fullscreen-btn-glass {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+/* ===== MOBILE VIDEO ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+    .hero-video-fullscreen video {
+        object-position: center top; /* Asegurar que se vea la parte superior en móvil */
+        min-height: 100vh; /* Asegurar que cubra toda la altura */
+    }
+}
+
+@media (max-aspect-ratio: 9/16) {
+    /* Para pantallas muy altas (móviles en vertical) */
+    .hero-video-fullscreen video {
+        object-fit: cover;
+        object-position: center center; /* En pantallas muy verticales, centrar */
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+    }
+}
