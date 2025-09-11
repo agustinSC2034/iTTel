@@ -4441,8 +4441,10 @@ html {
         top: calc(100% + 10px);
         left: 0;
         right: 0;
-        background: #ffffff; /* Fondo blanco sólido */
-        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.85); /* Más opaco para legibilidad */
+        backdrop-filter: blur(25px); /* Más blur para mejor efecto */
+        -webkit-backdrop-filter: blur(25px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
         border-radius: 20px;
         flex-direction: column;
         gap: 0;
@@ -4451,7 +4453,7 @@ html {
         visibility: hidden;
         transform: translateY(-20px);
         transition: all 0.3s ease;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* Sombra más fuerte */
         justify-content: flex-start;
     }
     
@@ -4462,10 +4464,10 @@ html {
     }
     
     .nav-link-glass {
-        color: #333 !important; /* Fuerza color negro en mobile siempre */
+        color: #333 !important; /* Oscuro para legibilidad sobre fondo semitransparente */
         padding: 10px 25px;
         font-size: 14px;
-        text-shadow: none !important; /* Sin sombra en mobile */
+        text-shadow: none !important; /* Sin sombra para mejor contraste */
         width: 100%;
         text-align: left;
         border-radius: 0;
@@ -4476,17 +4478,17 @@ html {
         display: none; /* Sin línea en mobile */
     }
     
-    /* En mobile, NO hay hover cuando está sobre video */
+    /* Hover legible tanto sobre video como scrolled */
     .navbar-glass:not(.scrolled) .nav-link-glass:hover {
-        color: #333 !important; /* Mantiene negro siempre */
-        background: transparent !important;
+        color: #227db3 !important; /* Azul legible */
+        background: rgba(34, 125, 179, 0.1) !important; /* Fondo sutil */
         text-shadow: none !important;
     }
     
-    /* En mobile, hover solo cuando hay fondo blanco */
+    /* En mobile, hover cuando hay fondo blanco */
     .navbar-glass.scrolled .nav-link-glass:hover {
         color: #227db3 !important; /* Azul solo con fondo blanco */
-        background: transparent !important;
+        background: rgba(34, 125, 179, 0.1) !important;
     }
     
     /* Active state también controlado */
@@ -4498,20 +4500,44 @@ html {
     
     .language-selector-glass {
         padding: 10px 25px;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-top: 1px solid rgba(0, 0, 0, 0.1); /* Línea oscura visible */
         margin-top: 10px;
     }
     
     .language-btn-glass {
-        background: #f8f9fa;
-        border-color: rgba(0, 0, 0, 0.2);
-        color: #333;
+        background: rgba(34, 125, 179, 0.1); /* Fondo azul sutil */
+        border-color: rgba(34, 125, 179, 0.3);
+        color: #227db3; /* Azul legible */
         text-shadow: none;
         justify-content: flex-start;
     }
     
     .nav-toggle-glass {
         display: flex;
+    }
+    
+    /* ===== ESTILOS PARA MENÚ MÓVIL CUANDO ESTÁ SCROLLED ===== */
+    .navbar-glass.scrolled .nav-menu-glass {
+        background: rgba(255, 255, 255, 0.95); /* Fondo blanco cuando scrolled */
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .navbar-glass.scrolled .nav-link-glass {
+        color: #333 !important; /* Oscuro cuando scrolled */
+        text-shadow: none !important;
+    }
+    
+    .navbar-glass.scrolled .language-btn-glass {
+        background: rgba(34, 125, 179, 0.1);
+        border-color: rgba(34, 125, 179, 0.3);
+        color: #227db3;
+    }
+    
+    .navbar-glass.scrolled .language-selector-glass {
+        border-top-color: rgba(0, 0, 0, 0.1); /* Línea oscura cuando scrolled */
     }
     
     .fullscreen-btn-glass {
