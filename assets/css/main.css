@@ -4441,10 +4441,10 @@ html {
         top: calc(100% + 10px);
         left: 0;
         right: 0;
-        /* Igual base que el navbar, pero reforzado con overlays */
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(24px) saturate(120%);
-        -webkit-backdrop-filter: blur(24px) saturate(120%);
+        /* Misma base visual que el navbar, reforzada para cubrir superficie más grande */
+        background: rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(30px) saturate(120%) contrast(0.92);
+        -webkit-backdrop-filter: blur(30px) saturate(120%) contrast(0.92);
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 20px;
         flex-direction: column;
@@ -4457,6 +4457,7 @@ html {
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         justify-content: flex-start;
         overflow: hidden; /* Para que los overlays respeten el borde redondeado */
+        z-index: 2100;
     }
 
     /* Overlays internos para "tapar" mejor el video manteniendo efecto glass */
@@ -4465,8 +4466,8 @@ html {
         position: absolute;
         inset: 0;
         border-radius: inherit;
-        /* Capa de niebla clara (similar al brillo del navbar) */
-        background: linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.16) 100%);
+        /* Niebla clara (más intensa para tapar video en superficie grande) */
+        background: linear-gradient(180deg, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0.26) 100%);
         pointer-events: none;
     }
 
@@ -4475,9 +4476,15 @@ html {
         position: absolute;
         inset: 0;
         border-radius: inherit;
-        /* Sutil oscurecido para que el texto destaque y no se vea el video nítido */
-        background: rgba(0, 0, 0, 0.08);
+        /* Oscurecido sutil adicional para que el texto destaque */
+        background: rgba(0, 0, 0, 0.2);
         pointer-events: none;
+    }
+
+    /* En estado scrolled (fondo blanco sólido), no necesitamos overlays */
+    .navbar-glass.scrolled .nav-menu-glass::before,
+    .navbar-glass.scrolled .nav-menu-glass::after {
+        display: none;
     }
     
     .nav-menu-glass.active {
