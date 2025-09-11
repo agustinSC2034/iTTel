@@ -33,16 +33,19 @@ document.addEventListener('DOMContentLoaded', function() {
 // Navigation functionality
 function initNavigation() {
     const navbar = document.getElementById('navbar');
+    const navbarGlass = document.querySelector('.navbar-glass'); // Soporte para navbar glass
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.nav-link, .nav-link-glass'); // Soporte para ambos tipos
     
-    // Navbar scroll effect
+    // Navbar scroll effect (para ambos tipos de navbar)
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
+            if (navbar) navbar.classList.add('scrolled');
+            if (navbarGlass) navbarGlass.classList.add('scrolled');
         } else {
-            navbar.classList.remove('scrolled');
+            if (navbar) navbar.classList.remove('scrolled');
+            if (navbarGlass) navbarGlass.classList.remove('scrolled');
         }
     });
     
