@@ -104,7 +104,7 @@ function initNavigation() {
 }
 
 function updateActiveNavLink(activeLink) {
-    document.querySelectorAll('.nav-link, .nav-link-glass').forEach(link => {
+    document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
     });
     activeLink.classList.add('active');
@@ -590,7 +590,7 @@ function initBackToTop() {
 function initLanguageSelector() {
     const languageBtn = document.getElementById('language-btn');
     const languageDropdown = document.getElementById('language-dropdown');
-    const languageOptions = document.querySelectorAll('.language-option, .language-option-glass');
+    const languageOptions = document.querySelectorAll('.language-option');
     
     if (!languageBtn || !languageDropdown) return;
     
@@ -902,7 +902,7 @@ function applyTranslations(lang, translations) {
     const t = translations[lang];
     
     // Update navigation items
-    const navLinks = document.querySelectorAll('.nav-link, .nav-link-glass');
+    const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach((link, index) => {
         if (t.navItems[index]) {
             link.textContent = t.navItems[index];
@@ -1789,7 +1789,7 @@ function initProjectsInteractive() {
             }
 
             const renderContent = () => {
-                const lang = (document.querySelector('.language-btn span') || document.querySelector('.language-btn-glass span'))?.textContent?.toLowerCase() || 'es';
+                const lang = (document.querySelector('.language-btn span')?.textContent || 'ES').toLowerCase();
                 const isEn = lang === 'en';
                 let html = '';
                 const img = slice.dataset.image;
@@ -2066,7 +2066,7 @@ function initProjectsInteractive() {
         
         // Detectar si es mobile y usar descripción mobile si está disponible
         const isMobileView = window.innerWidth <= 768;
-        const currentLang = (document.querySelector('.language-btn span') || document.querySelector('.language-btn-glass span'))?.textContent?.toLowerCase() || 'es';
+        const currentLang = document.querySelector('.language-btn span').textContent.toLowerCase();
         const isEnglish = currentLang === 'en';
         
         let projectDescription;
