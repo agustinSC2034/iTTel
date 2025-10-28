@@ -591,278 +591,16 @@ function initBackToTop() {
 function initLanguageSelector() {
     const languageBtn = document.getElementById('language-btn');
     const languageDropdown = document.getElementById('language-dropdown');
-    const languageOptions = document.querySelectorAll('.language-option');
+    const languageOptions = document.querySelectorAll('.language-option-glass');
     
     if (!languageBtn || !languageDropdown) return;
     
-    // Define translations
-    const translations = {
-        es: {
-            navItems: ['Inicio', 'Nosotros', 'Servicios', 'Estrategia', 'Proyectos', 'Clientes', 'Contacto'],
-            sectionTitles: {
-                nosotros: 'NOSOTROS',
-                servicios: 'IT & TEL Information Technology & Telecommunications',
-                estrategia: 'Estrategia de diferenciación',
-                estadisticas: 'Estadísticas',
-                proyectos: 'Proyectos',
-                // Ajuste de título visible en la sección
-                proyectos: 'Proyectos Destacados',
-                clientes: 'Nuestros Clientes',
-                contacto: 'Contacto'
-            },
-            sectionDescriptions: {
-                nosotros: 'Somos una Empresa con vasta experiencia en el mercado de las telecomunicaciones, que reconoce el impacto y el Valor Agregado que la innovación tecnológica genera en las organizaciones y comunidades.',
-                servicios: 'Ofrecemos soluciones tecnológicas integrales y servicios de telecomunicaciones de vanguardia.',
-                clientes: 'Empresas que confían en nuestros servicios y soluciones tecnológicas.',
-                contacto: 'Estamos aquí para ayudarte. Contáctanos para más información sobre nuestros servicios.'
-            },
-            missionCards: {
-                mission: {
-                    title: 'Nuestra Misión',
-                    content: 'Brindar soluciones integrales en tecnología y telecomunicaciones, adaptadas a las necesidades de cada cliente, garantizando calidad, eficiencia y un servicio de postventa excepcional.'
-                },
-                vision: {
-                    title: 'Nuestra Visión', 
-                    content: 'Ser la empresa de tecnología y telecomunicaciones líder en la región, reconocida por nuestra innovación, confiabilidad y el compromiso con el éxito de nuestros clientes.'
-                },
-                values: {
-                    title: 'Nuestros Valores',
-                    content: 'Compromiso, Calidad, Innovación, Confianza y Orientación al cliente. Estos pilares guían cada uno de nuestros proyectos y relaciones comerciales.'
-                }
-            },
-            services: {
-                title: 'IT & TEL Information Technology & Telecommunications',
-                description: [
-                    'Somos especialistas en brindar soluciones tecnológicas integrales que impulsan el crecimiento y la eficiencia de su organización.',
-                    'Nuestro equipo de expertos está comprometido con la excelencia en cada proyecto, desde la consultoría inicial hasta la implementación y el soporte continuo.',
-                    'Trabajamos con las últimas tecnologías y mejores prácticas de la industria para garantizar resultados que superen sus expectativas.'
-                ]
-            },
-            strategy: {
-                title: 'Estrategia de diferenciación',
-                points: [
-                    {
-                        title: 'Experiencia Comprobada',
-                        content: 'Más de 15 años en el mercado de las telecomunicaciones nos respaldan.'
-                    },
-                    {
-                        title: 'Tecnología de Vanguardia',
-                        content: 'Utilizamos las últimas tecnologías para ofrecer soluciones innovadoras.'
-                    },
-                    {
-                        title: 'Soporte 24/7',
-                        content: 'Brindamos atención continua para garantizar el funcionamiento óptimo.'
-                    },
-                    {
-                        title: 'Soluciones Personalizadas',
-                        content: 'Cada proyecto se adapta específicamente a las necesidades del cliente.'
-                    }
-                ]
-            },
-            stats: {
-                title: 'Estadísticas',
-                items: [
-                    { number: '150', label: 'Proyectos Completados' },
-                    { number: '50', label: 'Clientes Satisfechos' },
-                    { number: '15', label: 'Años de Experiencia' },
-                    { number: '99.99', label: '% Uptime Garantizado' }
-                ]
-            },
-            projects: {
-                title: 'Proyectos',
-                items: [
-                    {
-                        title: 'Acuerdo ITTEL - AUSA',
-                        description: [
-                            'Integramos el despliegue de infraestructura TELCO más importante de la Ciudad de Buenos Aires:',
-                            'Sólo en este proyecto superamos los 1.000 kilómetros de hilos arrendados.',
-                            'Gestionamos desde el diseño, pasando por la implementación y operación de más de 100 estructuras portantes de antenas, instaladas a lo largo de las Autopistas y Avenidas que delimitan TODA la Ciudad de Buenos Aires.'
-                        ]
-                    },
-                    {
-                        title: 'Acuerdo ITTEL - AUBASA',
-                        description: [
-                            'Se ha implementado una red de fibra óptica con topología redundante para AUBASA, que integra servicios esenciales para la autopista y transmisiones para clientes TELCO.',
-                            'Esta red actúa como un backbone estratégico, conectando Buenos Aires con La Plata y enlazando con otras redes para ofrecer fibra óptica oscura y un camino redundante hacia la salida internacional de Internet en Las Toninas.',
-                            'El proyecto busca equilibrar la operatividad, seguridad vial y compromiso ambiental.'
-                        ]
-                    },
-                    {
-                        title: 'PROYECTO ADIFSE',
-                        description: [
-                            'En el Marco del Proyecto de desarrollo de las redes de Telecomunicaciones en los trazados ferroviarios que administra la ADIF S.E, trabajamos la primer Etapa, la cual constó del relevamiento de la infraestructura disponible, su estado, ocupación, y potencialidad.',
-                            'El objetivo del proyecto fue informar la situación actual y las posibilidades de desarrollo sustentable.'
-                        ]
-                    },
-                    {
-                        title: 'USITTEL - Internet y TV',
-                        description: [
-                            'USITTEL es nuestro servicio de Internet y Televisión desarrollado en alianza con La Usina de Tandil, ofreciendo conectividad de alta calidad en la región.',
-                            'Brindamos servicios de Internet de alta velocidad y televisión digital con tecnología de vanguardia y cobertura estratégica en zonas urbanas y rurales.',
-                            'Más información disponible en www.usittel.com.ar'
-                        ]
-                    }
-                ]
-            },
-            contact: {
-                title: 'Contacto',
-                description: 'Estamos aquí para ayudarte. Contáctanos para más información sobre nuestros servicios.',
-                info: {
-                    phone: 'Teléfono',
-                    email: 'Email',
-                    address: 'Dirección',
-                    hours: 'Horarios de Atención'
-                },
-                values: {
-                    phone: '+54 11 1234-5678',
-                    email: 'administracion@it-tel.com.ar',
-                    address: 'Buenos Aires, Argentina',
-                    hours: 'Lunes a Viernes: 9:00 - 18:00'
-                }
-            },
-            footer: {
-                sections: {
-                    links: 'Links',
-                    company: 'Grupo iTTel S.R.L',
-                    contact: 'Contacto'
-                },
-                links: ['Quienes somos', 'Servicios', 'Proyectos', 'Clientes', 'Contacto'],
-                copyright: '© 2024 GRUPO ITTEL SRL | INFORMATION TECHNOLOGY & TELECOMMUNICATIONS'
-            }
-        },
-        en: {
-            navItems: ['Home', 'About Us', 'Services', 'Strategy', 'Projects', 'Clients', 'Contact'],
-            sectionTitles: {
-                nosotros: 'ABOUT US',
-                servicios: 'IT & TEL Information Technology & Telecommunications',
-                estrategia: 'Differentiation Strategy',
-                estadisticas: 'Statistics',
-                // Ajuste de título visible en la sección
-                proyectos: 'Featured Projects',
-                clientes: 'Our Clients',
-                contacto: 'Contact'
-            },
-            sectionDescriptions: {
-                nosotros: 'We are a company with extensive experience in the telecommunications market, recognizing the impact and added value that technological innovation generates in organizations and communities.',
-                servicios: 'We offer comprehensive technological solutions and cutting-edge telecommunications services.',
-                clientes: 'Companies that trust our services and technological solutions.',
-                contacto: 'We are here to help you. Contact us for more information about our services.'
-            },
-            missionCards: {
-                mission: {
-                    title: 'Our Mission',
-                    content: 'Provide comprehensive technology and telecommunications solutions, adapted to the needs of each client, ensuring quality, efficiency and exceptional after-sales service.'
-                },
-                vision: {
-                    title: 'Our Vision',
-                    content: 'To be the leading technology and telecommunications company in the region, recognized for our innovation, reliability and commitment to our clients\' success.'
-                },
-                values: {
-                    title: 'Our Values',
-                    content: 'Commitment, Quality, Innovation, Trust and Customer Orientation. These pillars guide each of our projects and business relationships.'
-                }
-            },
-            services: {
-                title: 'IT & TEL Information Technology & Telecommunications',
-                description: [
-                    'We specialize in providing comprehensive technological solutions that drive the growth and efficiency of your organization.',
-                    'Our team of experts is committed to excellence in every project, from initial consulting to implementation and ongoing support.',
-                    'We work with the latest technologies and industry best practices to ensure results that exceed your expectations.'
-                ]
-            },
-            strategy: {
-                title: 'Differentiation Strategy',
-                points: [
-                    {
-                        title: 'Proven Experience',
-                        content: 'More than 15 years in the telecommunications market back us up.'
-                    },
-                    {
-                        title: 'Cutting-edge Technology',
-                        content: 'We use the latest technologies to offer innovative solutions.'
-                    },
-                    {
-                        title: '24/7 Support',
-                        content: 'We provide continuous attention to ensure optimal operation.'
-                    },
-                    {
-                        title: 'Customized Solutions',
-                        content: 'Each project is specifically adapted to the client\'s needs.'
-                    }
-                ]
-            },
-            stats: {
-                title: 'Statistics',
-                items: [
-                    { number: '150', label: 'Completed Projects' },
-                    { number: '50', label: 'Satisfied Clients' },
-                    { number: '15', label: 'Years of Experience' },
-                    { number: '99.99', label: '% Guaranteed Uptime' }
-                ]
-            },
-            projects: {
-                title: 'Projects',
-                items: [
-                    {
-                        title: 'ITTEL - AUSA Agreement',
-                        description: [
-                            'We integrated the most important TELCO infrastructure deployment in Buenos Aires City:',
-                            'In this project alone, we exceeded 1,000 kilometers of leased lines.',
-                            'We manage from design, through implementation and operation of more than 100 antenna supporting structures, installed along the highways and avenues that delimit the ENTIRE City of Buenos Aires.'
-                        ]
-                    },
-                    {
-                        title: 'ITTEL - AUBASA Agreement',
-                        description: [
-                            'A fiber optic network with redundant topology has been implemented for AUBASA, integrating essential services for the highway and transmissions for TELCO clients.',
-                            'This network acts as a strategic backbone, connecting Buenos Aires with La Plata and linking with other networks to offer dark fiber optics and a redundant path to the international Internet outlet in Las Toninas.',
-                            'The project seeks to balance operability, road safety and environmental commitment.'
-                        ]
-                    },
-                    {
-                        title: 'ADIFSE PROJECT',
-                        description: [
-                            'Within the framework of the Telecommunications network development project in the railway routes administered by ADIF S.E, we worked on the first stage, which consisted of surveying the available infrastructure, its condition, occupation, and potential.',
-                            'The objective of the project was to report the current situation and the possibilities for sustainable development.'
-                        ]
-                    },
-                    {
-                        title: 'USITTEL - Internet and TV',
-                        description: [
-                            'USITTEL is our Internet and Television service developed in alliance with La Usina de Tandil, offering high-quality connectivity in the region.',
-                            'We provide high-speed Internet and digital television services with cutting-edge technology and strategic coverage in urban and rural areas.',
-                            'More information available at www.usittel.com.ar'
-                        ]
-                    }
-                ]
-            },
-            contact: {
-                title: 'Contact',
-                description: 'We are here to help you. Contact us for more information about our services.',
-                info: {
-                    phone: 'Phone',
-                    email: 'Email',
-                    address: 'Address',
-                    hours: 'Business Hours'
-                },
-                values: {
-                    phone: '+54 11 1234-5678',
-                    email: 'administracion@it-tel.com.ar',
-                    address: 'Buenos Aires, Argentina',
-                    hours: 'Monday to Friday: 9:00 AM - 6:00 PM'
-                }
-            },
-            footer: {
-                sections: {
-                    links: 'Links',
-                    company: 'Grupo iTTel S.R.L',
-                    contact: 'Contact'
-                },
-                links: ['About Us', 'Services', 'Projects', 'Clients', 'Contact'],
-                copyright: '© 2024 GRUPO ITTEL SRL | INFORMATION TECHNOLOGY & TELECOMMUNICATIONS'
-            }
-        }
-    };
+    // Get current language from localStorage or default to 'es'
+    let currentLang = localStorage.getItem('language') || 'es';
+    
+    // Apply saved language on page load
+    applyTranslations(currentLang);
+    updateLanguageButton(currentLang);
     
     // Toggle dropdown
     languageBtn.addEventListener('click', (e) => {
@@ -884,125 +622,72 @@ function initLanguageSelector() {
             languageOptions.forEach(opt => opt.classList.remove('active'));
             option.classList.add('active');
             
-            // Update button text
-            const selectedLang = option.textContent.trim();
-            const langCode = selectedLang === 'Español' ? 'ES' : 'EN';
-            languageBtn.querySelector('span').textContent = langCode;
+            // Determine selected language
+            const selectedLang = option.textContent.trim().toLowerCase();
+            const lang = selectedLang.includes('english') ? 'en' : 'es';
+            
+            // Save to localStorage
+            localStorage.setItem('language', lang);
+            
+            // Update button
+            updateLanguageButton(lang);
             
             // Close dropdown
             languageDropdown.classList.remove('active');
             
             // Apply translations
-            const lang = langCode === 'ES' ? 'es' : 'en';
-            applyTranslations(lang, translations);
+            applyTranslations(lang);
         });
     });
 }
 
-function applyTranslations(lang, translations) {
+function updateLanguageButton(lang) {
+    const languageBtn = document.getElementById('language-btn');
+    if (!languageBtn) return;
+    
+    const flagImg = languageBtn.querySelector('.flag-icon');
+    const span = languageBtn.querySelector('span');
+    
+    if (lang === 'es') {
+        if (flagImg) flagImg.src = 'https://flagcdn.com/w20/ar.png';
+        if (span) span.textContent = 'ARG';
+    } else {
+        if (flagImg) flagImg.src = 'https://flagcdn.com/w20/us.png';
+        if (span) span.textContent = 'ENG';
+    }
+}
+
+function applyTranslations(lang) {
+    if (!window.translations || !translations[lang]) {
+        console.warn('Translations not loaded');
+        return;
+    }
+    
     const t = translations[lang];
     
-    // Update navigation items
-    const navLinks = document.querySelectorAll('.nav-link');
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const translation = getNestedTranslation(t, key);
+        if (translation) {
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                el.placeholder = translation;
+            } else {
+                el.textContent = translation;
+            }
+        }
+    });
+    
+    // Update navigation
+    const navLinks = document.querySelectorAll('.nav-link-glass');
+    // Orden debe coincidir con los links en el DOM
+    const navKeys = ['inicio', 'nosotros', 'servicios', 'obras', 'proyectos', 'clientes', 'contacto'];
     navLinks.forEach((link, index) => {
-        if (t.navItems[index]) {
-            link.textContent = t.navItems[index];
-        }
+        const key = `nav.${navKeys[index]}`;
+        if (t[key]) link.textContent = t[key];
     });
     
-    // Update section titles
-    const sectionTitles = document.querySelectorAll('.section-title');
-    sectionTitles.forEach(title => {
-        const section = title.closest('.section');
-        if (section) {
-            const sectionId = section.getAttribute('id');
-            if (t.sectionTitles[sectionId]) {
-                title.textContent = t.sectionTitles[sectionId];
-            }
-        }
-    });
-
-    // Update section descriptions
-    const sectionDescriptions = document.querySelectorAll('.section-description');
-    sectionDescriptions.forEach(desc => {
-        const section = desc.closest('.section');
-        if (section) {
-            const sectionId = section.getAttribute('id');
-            if (t.sectionDescriptions[sectionId]) {
-                desc.textContent = t.sectionDescriptions[sectionId];
-            }
-        }
-    });
-    
-    // Update mission cards
-    const missionCards = document.querySelectorAll('.mission-card');
-    const cardKeys = ['mission', 'vision', 'values'];
-    missionCards.forEach((card, index) => {
-        const h3 = card.querySelector('h3');
-        const p = card.querySelector('p');
-        if (h3 && p && t.missionCards[cardKeys[index]]) {
-            h3.textContent = t.missionCards[cardKeys[index]].title;
-            p.textContent = t.missionCards[cardKeys[index]].content;
-        }
-    });
-
-    // Update services section
-    const servicesText = document.querySelector('.services-text');
-    if (servicesText && t.services) {
-        const h2 = servicesText.querySelector('h2');
-        const paragraphs = servicesText.querySelectorAll('.services-description p');
-        
-        if (h2) h2.textContent = t.services.title;
-        paragraphs.forEach((p, index) => {
-            if (t.services.description[index]) {
-                p.textContent = t.services.description[index];
-            }
-        });
-    }
-
-    // Update strategy section
-    const strategyText = document.querySelector('.strategy-text');
-    if (strategyText && t.strategy) {
-        const h2 = strategyText.querySelector('h2');
-        const strategyPoints = strategyText.querySelectorAll('.strategy-point');
-        
-        if (h2) h2.textContent = t.strategy.title;
-        strategyPoints.forEach((point, index) => {
-            const h3 = point.querySelector('h3');
-            const p = point.querySelector('p');
-            if (h3 && p && t.strategy.points[index]) {
-                h3.textContent = t.strategy.points[index].title;
-                p.textContent = t.strategy.points[index].content;
-            }
-        });
-    }
-
-    // Update stats section
-    const statItems = document.querySelectorAll('.stat-item');
-    statItems.forEach((item, index) => {
-        const label = item.querySelector('.stat-label');
-        if (label && t.stats.items[index]) {
-            label.textContent = t.stats.items[index].label;
-        }
-    });
-
-    // Update projects section
-    // 1) Proyectos tipo fullscreen (si existieran)
-    const projectSlides = document.querySelectorAll('.project-slide');
-    projectSlides.forEach((slide, index) => {
-        const h3 = slide.querySelector('.project-info h3');
-        const paragraphs = slide.querySelectorAll('.project-description p');
-        if (t.projects.items && t.projects.items[index]) {
-            if (h3) h3.textContent = t.projects.items[index].title;
-            paragraphs.forEach((p, pIndex) => {
-                if (t.projects.items[index].description[pIndex]) {
-                    p.textContent = t.projects.items[index].description[pIndex];
-                }
-            });
-        }
-    });
-
-    // 2) Proyectos Slices Interactivos
+    // Update project slices (interactive projects)
     const slices = document.querySelectorAll('.project-slice');
     const isEnglish = lang === 'en';
     slices.forEach(slice => {
@@ -1012,74 +697,73 @@ function applyTranslations(lang, translations) {
         const briefEn = slice.getAttribute('data-brief-en');
         const descEs = slice.getAttribute('data-description');
         const descEn = slice.getAttribute('data-description-en');
+        const descMobileEs = slice.getAttribute('data-description-mobile');
+        const descMobileEn = slice.getAttribute('data-description-mobile-en');
 
-        // Actualizar título del modal
-        slice.setAttribute('data-title', isEnglish && titleEn ? titleEn : titleEs || '');
-        
-        // Actualizar breve visible en tarjeta
+        // Update visible content in slice
         const detailTitle = slice.querySelector('.slice-detail-title');
         const detailDesc = slice.querySelector('.slice-detail-desc');
+        
         if (detailTitle) {
             detailTitle.textContent = isEnglish && titleEn ? titleEn : titleEs || '';
         }
         if (detailDesc) {
-            detailDesc.textContent = isEnglish && briefEn ? briefEn : (briefEs || detailDesc.textContent);
+            detailDesc.textContent = isEnglish && briefEn ? briefEn : briefEs || '';
         }
-
-        // Guardar ambas descripciones y setear la activa
-        if (descEs) slice.setAttribute('data-description', isEnglish && descEn ? descEn : descEs);
-        if (descEn) slice.setAttribute('data-description-en', descEn);
+        
+        // Store current language descriptions for modal
+        slice.setAttribute('data-current-title', isEnglish && titleEn ? titleEn : titleEs || '');
+        slice.setAttribute('data-current-description', isEnglish && descEn ? descEn : descEs || '');
+        if (descMobileEs || descMobileEn) {
+            slice.setAttribute('data-current-description-mobile', isEnglish && descMobileEn ? descMobileEn : descMobileEs || '');
+        }
     });
-
-    // 3) IT & Telco Gallery header
-    const galleryTitle = document.querySelector('.it-gallery-title');
-    const gallerySubtitle = document.querySelector('.it-gallery-subtitle');
-    if (galleryTitle) galleryTitle.textContent = isEnglish ? 'Field Works' : 'Obras en Campo';
-    if (gallerySubtitle) gallerySubtitle.textContent = isEnglish ? 'Records of our implementations and deployments' : 'Registros de nuestras implementaciones y despliegues';
-
-    // Update contact section
-    const contactSection = document.querySelector('#contacto');
-    if (contactSection && t.contact) {
-        const description = contactSection.querySelector('.section-description');
-        if (description) description.textContent = t.contact.description;
-
-        // Update contact info labels
-        const contactItems = contactSection.querySelectorAll('.contact-item');
-        const infoKeys = ['phone', 'email', 'address', 'hours'];
+    
+    // Update stats section
+    const statItems = document.querySelectorAll('.stat-v2-item');
+    statItems.forEach((item, index) => {
+        const label = item.querySelector('.stat-v2-label');
+        if (!label) return;
         
-        contactItems.forEach((item, index) => {
-            const strong = item.querySelector('strong');
-            if (strong && t.contact.info[infoKeys[index]]) {
-                strong.textContent = t.contact.info[infoKeys[index]] + ':';
-            }
-        });
-    }
-
-    // Update footer section
-    if (t.footer) {
-        const footerSections = document.querySelectorAll('.footer-section h4');
-        const footerSectionKeys = ['links', 'company', 'contact'];
+        const br = label.querySelector('br');
+        if (!br) return;
         
-        footerSections.forEach((h4, index) => {
-            if (t.footer.sections[footerSectionKeys[index]]) {
-                h4.textContent = t.footer.sections[footerSectionKeys[index]];
-            }
-        });
-
-        // Update footer links
-        const footerLinks = document.querySelectorAll('.footer-links a');
-        footerLinks.forEach((link, index) => {
-            if (t.footer.links[index]) {
-                link.textContent = t.footer.links[index];
-            }
-        });
-
-        // Update copyright
-        const footerBottom = document.querySelector('.footer-bottom p');
-        if (footerBottom && t.footer.copyright) {
-            footerBottom.textContent = t.footer.copyright;
+        // Parse current structure
+        const parts = label.innerHTML.split('<br>');
+        if (parts.length !== 2) return;
+        
+        let firstPart = parts[0].trim();
+        let secondPart = parts[1].trim();
+        
+        // Update based on index
+        if (index === 0) { // Years
+            firstPart = lang === 'es' ? '+ Años de' : '+ Years of';
+            secondPart = lang === 'es' ? 'experiencia' : 'experience';
+        } else if (index === 1) { // Projects
+            firstPart = lang === 'es' ? '+ Proyectos' : '+ Successful';
+            secondPart = lang === 'es' ? 'de éxito' : 'Projects';
+        } else if (index === 2) { // SLA
+            firstPart = lang === 'es' ? '% de SLA' : '% SLA';
+            secondPart = lang === 'es' ? 'garantizado' : 'guaranteed';
         }
+        
+        label.innerHTML = `${firstPart}<br>${secondPart}`;
+    });
+    
+    // Update modal buttons if modal exists
+    const modalReadMore = document.querySelectorAll('.open-modal-btn');
+    modalReadMore.forEach(btn => {
+        btn.textContent = lang === 'es' ? 'Ver Más' : 'Read More';
+    });
+    
+    const modalClose = document.querySelector('.modal-close');
+    if (modalClose) {
+        modalClose.setAttribute('aria-label', lang === 'es' ? 'Cerrar' : 'Close');
     }
+}
+
+function getNestedTranslation(obj, path) {
+    return path.split('.').reduce((current, key) => current?.[key], obj);
 }
 
 // Utility functions
@@ -1674,7 +1358,12 @@ function initProjectsInteractive() {
         
         // Event listeners para clicks en slices (funcionalidad original)
         projectSlices.forEach((slice, index) => {
-            slice.addEventListener('click', () => {
+            slice.addEventListener('click', (e) => {
+                // Ignorar clicks en botones "Ver Más" y enlaces
+                if (e.target.closest('.open-modal-btn') || e.target.closest('.slice-links')) {
+                    return;
+                }
+                
                 // Remover clase active de todos los slices
                 projectSlices.forEach(s => s.classList.remove('active'));
                 
@@ -1790,7 +1479,8 @@ function initProjectsInteractive() {
             }
 
             const renderContent = () => {
-                const lang = (document.querySelector('.language-btn span')?.textContent || 'ES').toLowerCase();
+                // Determinar idioma actual desde localStorage (fallback 'es')
+                const lang = (localStorage.getItem('language') || 'es').toLowerCase();
                 const isEn = lang === 'en';
                 let html = '';
                 const img = slice.dataset.image;
@@ -2065,10 +1755,11 @@ function initProjectsInteractive() {
         const projectImage = slice.dataset.image;
         const projectVideo = slice.dataset.video;
         
-        // Detectar si es mobile y usar descripción mobile si está disponible
-        const isMobileView = window.innerWidth <= 768;
-        const currentLang = document.querySelector('.language-btn span').textContent.toLowerCase();
-        const isEnglish = currentLang === 'en';
+    // Detectar si es mobile y usar descripción mobile si está disponible
+    const isMobileView = window.innerWidth <= 768;
+    // Usar localStorage para determinar el idioma actual (más robusto que leer del DOM)
+    const currentLang = (localStorage.getItem('language') || 'es').toLowerCase();
+    const isEnglish = currentLang === 'en';
         
         let projectDescription;
         if (isMobileView) {
