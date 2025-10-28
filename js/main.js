@@ -26,8 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initBackToTop();
     initLanguageSelector();
     initProjectsInteractive(); // Nueva funcionalidad de slices interactivos
-    initItGallery(); // Galería minimalista IT & Telco
+    //initItGallery(); // Galería anterior deshabilitada al reemplazar 'Obras en Campo'
     initModalImageFullscreen(); // Fullscreen imagen en modal
+    initObrasGallery(); // Nueva galería de Obras en Campo
 });
 
 // Navigation functionality
@@ -2494,6 +2495,134 @@ function initItGalleryFullscreen(images, fullscreenBtns) {
         img.addEventListener('click', () => {
             openViewer(index);
         });
+    });
+}
+
+// ==============================
+// Nueva Galería de Obras en Campo (Masonry + Lightbox)
+function initObrasGallery(){
+    const grid = document.querySelector('.masonry-grid');
+    const lb = document.getElementById('obrasLightbox');
+    if(!grid || !lb) return;
+
+    // Función para obtener solo los elementos visibles (no desktop-only ni mobile-hidden en móvil)
+    const getVisibleItems = () => {
+        const isMobile = window.innerWidth <= 768;
+        const allLinks = Array.from(grid.querySelectorAll('.masonry-item'));
+        if (isMobile) {
+            return allLinks.filter(link => 
+                !link.classList.contains('desktop-only') && 
+                !link.classList.contains('mobile-hidden')
+            );
+        }
+        return allLinks;
+    };
+
+    let links = getVisibleItems();
+    
+    const imgEl = lb.querySelector('.obras-lightbox-image');
+    const videoEl = lb.querySelector('.obras-lightbox-video');
+    const btnClose = lb.querySelector('.obras-lightbox-close');
+    const btnPrev = lb.querySelector('.obras-lightbox-nav.prev');
+    const btnNext = lb.querySelector('.obras-lightbox-nav.next');
+    const idxEl = lb.querySelector('#obrasIndex');
+    const totalEl = lb.querySelector('#obrasTotal');
+    let current = 0;
+
+    const updateTotal = () => {
+        links = getVisibleItems();
+        totalEl.textContent = String(links.length);
+    };
+
+    updateTotal();
+
+    // Actualizar al cambiar el tamaño de la ventana
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            updateTotal();
+            if (lb.classList.contains('show')) {
+                close();
+            }
+        }, 250);
+    });
+
+    const show = (i) => {
+        current = (i + links.length) % links.length;
+        const link = links[current];
+        const href = link.getAttribute('href');
+        const type = link.getAttribute('data-type') || 'image';
+        const alt = link.querySelector('img')?.alt || 'Obra';
+
+        // Alternar entre imagen y video
+        if(type === 'video'){
+            if(imgEl){ imgEl.style.display = 'none'; imgEl.removeAttribute('src'); }
+            if(videoEl){
+                videoEl.style.display = 'block';
+                // Preparar reproducción estilo GIF (autoplay, muted, loop)
+                videoEl.controls = true;
+                videoEl.muted = true;
+                videoEl.loop = true;
+                videoEl.playsInline = true;
+                videoEl.autoplay = true;
+                videoEl.src = href;
+                const poster = link.getAttribute('data-poster');
+                if(poster) videoEl.poster = poster; else videoEl.removeAttribute('poster');
+                // Forzar carga y reproducción (silenciado permite autoplay)
+                try { videoEl.load(); } catch(_){}
+                setTimeout(() => { videoEl.play().catch(() => {}); }, 50);
+            }
+        } else {
+            if(videoEl){
+                try { videoEl.pause(); } catch(_){}
+                videoEl.removeAttribute('src');
+                videoEl.style.display = 'none';
+            }
+            if(imgEl){
+                imgEl.style.display = 'block';
+                imgEl.src = href;
+                imgEl.alt = alt;
+            }
+        }
+        idxEl.textContent = String(current + 1);
+    };
+
+    const open = (i) => {
+        show(i);
+        lb.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+        lb.classList.remove('show');
+        document.body.style.overflow = '';
+        // Limpiar reproducción de video
+        if(videoEl){ try { videoEl.pause(); } catch(_){} videoEl.removeAttribute('src'); videoEl.load(); videoEl.style.display='none'; }
+    };
+    const prev = () => show(current - 1);
+    const next = () => show(current + 1);
+
+    links.forEach((a, i) => {
+        a.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Recalcular índice basado en elementos visibles
+            const visibleLinks = getVisibleItems();
+            const clickedIndex = visibleLinks.indexOf(a);
+            if (clickedIndex !== -1) {
+                open(clickedIndex);
+            }
+        });
+    });
+
+    btnClose.addEventListener('click', close);
+    btnPrev.addEventListener('click', prev);
+    btnNext.addEventListener('click', next);
+    lb.addEventListener('click', (e) => { if(e.target === lb) close(); });
+    document.addEventListener('keydown', (e) => {
+        if(!lb.classList.contains('show')) return;
+        if(e.key === 'Escape') close();
+        if(e.key === 'ArrowLeft') prev();
+        if(e.key === 'ArrowRight') next();
     });
 }
 

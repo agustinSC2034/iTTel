@@ -273,6 +273,134 @@
 }
 
 /* ========================================
+   OBRAS EN CAMPO - Masonry Gallery (Nueva)
+   ======================================== */
+
+.obras-campo {
+    background: #fbfdff;
+    padding: 90px 0 100px;
+}
+
+.obras-campo .container {
+    max-width: 1400px;
+}
+
+.obras-header { 
+    text-align: center; 
+    margin-bottom: 28px; 
+}
+.obras-header .section-title{ margin-bottom: 10px; }
+.obras-header .section-description{ color: var(--text-medium, #6b7280); }
+
+.masonry-grid {
+    column-count: 4;
+    column-gap: 16px;
+}
+
+.masonry-item { 
+    break-inside: avoid; 
+    display: block; 
+    margin-bottom: 16px; 
+    position: relative; 
+    border-radius: 14px; 
+    overflow: hidden; 
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+    transform: translateZ(0); /* mejora rendimiento */
+}
+
+/* Videos grandes - ocupan más espacio */
+.masonry-item-large {
+    grid-row: span 2;
+    margin-bottom: 24px;
+}
+
+.masonry-item img { 
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    transition: transform .45s cubic-bezier(0.16,1,0.3,1), filter .3s ease; 
+}
+
+.masonry-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.masonry-item::after{ 
+    content: '';
+    position: absolute; inset: 0; 
+    background: linear-gradient(180deg, rgba(1,22,56,0) 40%, rgba(1,22,56,0.45) 100%);
+    opacity: 0; transition: opacity .35s ease; 
+}
+
+.masonry-item:hover img { transform: scale(1.04); filter: saturate(1.05); }
+.masonry-item:hover::after{ opacity: 1; }
+
+/* Badge de video */
+.masonry-item.is-video .play-badge{
+    position: absolute; left: 12px; bottom: 12px; 
+    background: rgba(0,0,0,.6); color:#fff; border-radius: 999px; 
+    display: inline-flex; align-items: center; justify-content: center; 
+    width: 40px; height: 40px; box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
+.masonry-item.is-video .play-badge i{ font-size: 14px; }
+
+/* Lightbox */
+.obras-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+.obras-lightbox.show { display: flex; }
+.obras-lightbox-image { 
+    max-width: 96vw; max-height: 92vh; border-radius: 12px; 
+    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+/* Forzar mismo tamaño para videos en el lightbox */
+.obras-lightbox-video {
+    max-width: 96vw !important; 
+    max-height: 92vh !important; 
+    border-radius: 12px; 
+    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+.obras-lightbox-close{
+    position: fixed; top: 20px; right: 20px;
+    background: rgba(17,24,39,.85); color:#fff; border:none; border-radius: 12px; 
+    width: 46px; height: 46px; display: grid; place-items: center; cursor: pointer;
+}
+.obras-lightbox-nav{ 
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 54px; height: 54px; border-radius: 50%; border:none; cursor: pointer;
+    background: rgba(17,24,39,.7); color:#fff; display: grid; place-items: center;
+}
+.obras-lightbox-nav.prev{ left: 24px; }
+.obras-lightbox-nav.next{ right: 24px; }
+.obras-lightbox-counter{
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: rgba(17,24,39,.75); color:#fff; padding: 6px 12px; border-radius: 999px; font-size: 14px;
+}
+
+@media (max-width: 1280px){ .masonry-grid{ column-count: 3; } }
+@media (max-width: 860px){ .masonry-grid{ column-count: 2; } }
+@media (max-width: 560px){ .masonry-grid{ column-count: 1; } }
+
+/* Ocultar elementos desktop-only en móvil */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+    .mobile-hidden {
+        display: none !important;
+    }
+}
+
+/* ========================================
    Stats Section v2 (Renovada)
    ======================================== */
 
@@ -3460,7 +3588,9 @@ html {
 
 .contact-info-wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* Usamos 3 columnas porque la sección contiene 3 items (Teléfonos / Emails / LinkedIn)
+       Esto da más ancho a cada tarjeta y evita que direcciones de email largas se quiebren */
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     align-items: stretch;
 }
@@ -3513,6 +3643,9 @@ html {
     margin: 0;
     color: #334155;
     text-decoration: none;
+    /* Evitar quiebre de línea en direcciones de correo y enlaces en pantalla ancha */
+    white-space: nowrap;
+    word-break: normal;
 }
 
 .contact-info-item .content a:hover { text-decoration: underline; }
@@ -3537,6 +3670,12 @@ html {
 @media (max-width: 640px) {
     .contact-info-wrapper {
         grid-template-columns: 1fr;
+    }
+
+    /* En mobile permitimos que el texto haga wrap para evitar overflow */
+    .contact-info-item .content p, .contact-info-item .content a {
+        white-space: normal;
+        word-break: break-word;
     }
 }
 
