@@ -32,6 +32,9 @@
 
     <!-- Favicon -->
     <link rel="icon" href="./assets/images/favicon.png" type="image/png">
+
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -724,6 +727,7 @@
                         </div>
                         <input type="text" id="asunto" name="asunto" data-i18n="contact.form.phone" placeholder="Teléfono" required>
                         <textarea id="mensaje" name="mensaje" rows="6" data-i18n="contact.form.message" placeholder="Mensaje" required></textarea>
+                        <div class="g-recaptcha" data-sitekey="6LeK7VlsAAAAJcPyHaWA3sCQisGE1aHHiy4VHYE" style="margin-bottom: 20px;"></div>
                         <button type="submit" class="btn-primary" data-i18n="contact.form.submit">Enviar mensaje</button>
                     </form>
                 </div>

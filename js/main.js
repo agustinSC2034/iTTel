@@ -960,6 +960,13 @@ function initContactForm() {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
+        // Verificar reCAPTCHA
+        const recaptchaResponse = grecaptcha.getResponse();
+        if (!recaptchaResponse) {
+            showNotification('Por favor completa el reCAPTCHA', 'error');
+            return;
+        }
+        
         // Obtener datos del formulario
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
@@ -988,6 +995,11 @@ function initContactForm() {
         setTimeout(() => {
             showNotification('¡Mensaje enviado exitosamente! Te contactaremos pronto.', 'success');
             contactForm.reset();
+            
+            // Resetear reCAPTCHA
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.reset();
+            }
             
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
