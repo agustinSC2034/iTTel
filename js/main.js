@@ -984,17 +984,30 @@ function initContactForm() {
             return;
         }
         
-    // Simular envío del formulario (buscar el botón submit de forma robusta)
-    const submitBtn = contactForm.querySelector('button[type="submit"], .btn-primary') || contactForm.querySelector('button');
+        // Obtener el botón submit
+        const submitBtn = contactForm.querySelector('button[type="submit"], .btn-primary') || contactForm.querySelector('button');
         const originalText = submitBtn.innerHTML;
         
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
         submitBtn.disabled = true;
         
-        // Simular proceso de envío (en producción aquí iría la integración con el backend)
-        setTimeout(() => {
-            showNotification('¡Mensaje enviado exitosamente! Te contactaremos pronto.', 'success');
-            contactForm.reset();
+        // Crear FormData incluyendo el token de reCAPTCHA
+        const formDataToSend = new FormData(contactForm);
+        formDataToSend.append('g-recaptcha-response', recaptchaResponse);
+        
+        // Enviar al servidor PHP
+        fetch('contacto.php', {
+            method: 'POST',
+            body: formDataToSend
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                showNotification(result.message, 'success');
+                contactForm.reset();
+            } else {
+                showNotification(result.message || 'Error al enviar el mensaje', 'error');
+            }
             
             // Resetear reCAPTCHA
             if (typeof grecaptcha !== 'undefined') {
@@ -1003,7 +1016,19 @@ function initContactForm() {
             
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
-        }, 2000);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showNotification('Error de conexión. Por favor intenta más tarde.', 'error');
+            
+            // Resetear reCAPTCHA
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.reset();
+            }
+            
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        });
     });
     
     // Agregar efectos a los campos del formulario
