@@ -1813,8 +1813,8 @@ function initProjectsInteractive() {
             modalVideo.src = projectVideo;
             
             // Añadir poster específico para el video de AUSA
-            if (projectVideo.includes('ausa.mp4')) {
-                modalVideo.poster = 'assets/images/proyectos/acuerdo_ittel_ausa.png';
+            if (projectVideo.includes('videoIttel2.mp4')) {
+                modalVideo.poster = 'assets/images/proyectos/acuerdo_ittel_ausa.webp';
             } else {
                 modalVideo.removeAttribute('poster');
             }
