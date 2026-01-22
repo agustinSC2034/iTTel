@@ -991,22 +991,34 @@ function initContactForm() {
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
         submitBtn.disabled = true;
         
-        // Crear FormData incluyendo el token de reCAPTCHA
+        // Crear FormData (ya incluye g-recaptcha-response automáticamente del widget)
         const formDataToSend = new FormData(contactForm);
-        formDataToSend.append('g-recaptcha-response', recaptchaResponse);
         
         // Enviar al servidor PHP
         fetch('contacto.php', {
             method: 'POST',
             body: formDataToSend
         })
-        .then(response => response.json())
-        .then(result => {
-            if (result.success) {
-                showNotification(result.message, 'success');
+        .then(response => {
+            // Primero obtener el texto de la respuesta
+            return response.text().then(text => {
+                try {
+                    // Intentar parsear como JSON
+                    const json = JSON.parse(text);
+                    return { ok: response.ok, data: json };
+                } catch (e) {
+                    // Si no es JSON, mostrar el error
+                    console.error('Respuesta del servidor:', text);
+                    throw new Error('Error en el servidor. Respuesta: ' + text.substring(0, 200));
+                }
+            });
+        })
+        .then(({ ok, data }) => {
+            if (data.success) {
+                showNotification(data.message, 'success');
                 contactForm.reset();
             } else {
-                showNotification(result.message || 'Error al enviar el mensaje', 'error');
+                showNotification(data.message || 'Error al enviar el mensaje', 'error');
             }
             
             // Resetear reCAPTCHA
