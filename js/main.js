@@ -970,13 +970,7 @@ function initContactForm() {
         submitBtn.disabled = true;
         
         // Crear FormData (ya incluye g-recaptcha-response automáticamente del widget)
-        const formDataToSend = new FormData(contactForm);
-        
-        // Enviar al servidor PHP
-        fetch('contacto.php', {
-            method: 'POST',
-            body: formDataToSend
-        })
+        initContactForm
         .then(response => {
             // Primero obtener el texto de la respuesta
             return response.text().then(text => {
