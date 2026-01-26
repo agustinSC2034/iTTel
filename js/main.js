@@ -1,5 +1,7 @@
 // Main JavaScript for iTTel Website
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Inicializar AOS (Animate On Scroll)
     AOS.init({
@@ -587,22 +589,19 @@ function initBackToTop() {
     });
 }
 
-// Language selector functionality
+// Language selector functionality (SIMPLIFICADA PARA SITIO ESTÁTICO)
 function initLanguageSelector() {
     const languageBtn = document.getElementById('language-btn');
     const languageDropdown = document.getElementById('language-dropdown');
-    const languageOptions = document.querySelectorAll('.language-option-glass');
     
+    // Validamos que existan los elementos
     if (!languageBtn || !languageDropdown) return;
     
-    // Get current language from localStorage or default to 'es'
-    let currentLang = localStorage.getItem('language') || 'es';
-    
-    // Apply saved language on page load
-    applyTranslations(currentLang);
-    updateLanguageButton(currentLang);
-    
-    // Toggle dropdown
+    // ELIMINAMOS TODA LA LÓGICA DE LOCALSTORAGE Y TRADUCCIÓN AUTOMÁTICA
+    // Ya no queremos que JS decida qué bandera mostrar al inicio.
+    // El HTML de cada página (es/en) ya tiene la bandera correcta.
+
+    // Toggle dropdown (Abrir/Cerrar menú)
     languageBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         languageDropdown.classList.toggle('active');
@@ -613,33 +612,12 @@ function initLanguageSelector() {
         languageDropdown.classList.remove('active');
     });
     
-    // Language selection
-    languageOptions.forEach(option => {
-        option.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            // Update active language
-            languageOptions.forEach(opt => opt.classList.remove('active'));
-            option.classList.add('active');
-            
-            // Determine selected language
-            const selectedLang = option.textContent.trim().toLowerCase();
-            const lang = selectedLang.includes('english') ? 'en' : 'es';
-            
-            // Save to localStorage
-            localStorage.setItem('language', lang);
-            
-            // Update button
-            updateLanguageButton(lang);
-            
-            // Close dropdown
-            languageDropdown.classList.remove('active');
-            
-            // Apply translations
-            applyTranslations(lang);
-        });
-    });
+    // NOTA: Ya no necesitamos los listeners para los clicks en las opciones
+    // porque ahora son enlaces <a> normales que llevan a otra URL.
 }
+
+// Puedes borrar o comentar las funciones updateLanguageButton y applyTranslations 
+// ya que no se usarán más, o dejarlas ahí (no harán daño si no se llaman).
 
 function updateLanguageButton(lang) {
     const languageBtn = document.getElementById('language-btn');

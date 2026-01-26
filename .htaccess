@@ -1,7 +1,13 @@
 # Configuración principal del sitio iTTel
 
-# Página de inicio por defecto
+# Página de inicio por defecto (Aplica a raíz y a la carpeta /en/)
 DirectoryIndex index.html index.htm index.php
+
+# Forzar la barra al final en directorios
+# IMPORTANTE: Esto asegura que si alguien entra a "tudominio.com/en",
+# el servidor lo redirija a "tudominio.com/en/".
+# Sin esto, los enlaces "../" de tu versión en inglés no funcionarían.
+DirectorySlash On
 
 # Desactivar listado de directorios
 Options -Indexes
@@ -41,7 +47,7 @@ ErrorDocument 404 /index.html
     Header always set X-XSS-Protection "1; mode=block"
 </IfModule>
 
-# Forzar HTTPS (descomenta cuando tengas SSL instalado)
+# Forzar HTTPS (descomenta estas 3 líneas cuando tengas el SSL activo)
 # RewriteEngine On
 # RewriteCond %{HTTPS} off
 # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
