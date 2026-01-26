@@ -2,6 +2,90 @@
    Nosotros Section v2 (Renovada)
    ======================================== */
 
+/* --- Arreglo del Selector de Idioma --- */
+
+/* 1. El contenedor padre debe ser relativo para que el hijo no se escape */
+.language-selector-glass {
+    position: relative; 
+    display: inline-block;
+}
+
+/* 2. El botón del selector */
+.language-btn-glass {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.language-btn-glass:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* 3. El menú desplegable (El que se veía mal en la foto) */
+.language-dropdown-glass {
+    position: absolute;
+    top: 120%; /* Lo empuja un poco hacia abajo del botón */
+    right: 0;    /* Lo alinea a la derecha del botón */
+    background: white;
+    border-radius: 12px;
+    padding: 8px 0;
+    min-width: 140px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Sombra suave */
+    
+    /* Animación de entrada */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* Estado activo (cuando se abre) */
+.language-dropdown-glass.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* 4. Los enlaces dentro del menú */
+.language-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.language-link:hover {
+    background-color: #f0f9ff;
+    color: #227db3; /* Azul iTTel */
+}
+
+.language-link img {
+    width: 20px;
+    border-radius: 2px;
+}
+
+/* Arreglo para cuando el navbar se pone blanco al bajar (scrolled) */
+.navbar-glass.scrolled .language-btn-glass {
+    color: #333;
+    border-color: #ddd;
+    background: rgba(0,0,0,0.05);
+}
+
 .about-v2 {
     background-color: #ffffff;
     padding: 100px 0;

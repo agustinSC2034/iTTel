@@ -39,21 +39,20 @@
 
 <body>
     <!-- Navigation - Glass/Transparent Style -->
-    <nav class="navbar-glass" id="navbar">
+   <nav class="navbar-glass" id="navbar">
         <div class="nav-glass-container">
             <div class="nav-brand">
-                <img src="assets/images/logoIttel1.webp" alt="iTTel Logo" class="nav-logo-glass" width="150" height="50"
-                    loading="lazy">
+                <img src="assets/images/logoIttel1.webp" alt="iTTel Logo" class="nav-logo-glass" width="150" height="50" loading="lazy">
             </div>
 
             <div class="nav-menu-glass" id="nav-menu">
-                <a href="#inicio" class="nav-link-glass active" data-section="inicio">INICIO</a>
-                <a href="#nosotros" class="nav-link-glass" data-section="nosotros">NOSOTROS</a>
-                <a href="#servicios" class="nav-link-glass" data-section="servicios">IT & TELCO</a>
-                <a href="#obras" class="nav-link-glass" data-section="obras">OBRAS</a>
-                <a href="#proyectos" class="nav-link-glass" data-section="proyectos">PROYECTOS</a>
-                <a href="#clientes" class="nav-link-glass" data-section="clientes">CLIENTES</a>
-                <a href="#contacto" class="nav-link-glass" data-section="contacto">CONTACTO</a>
+                <a href="#inicio" class="nav-link-glass active">INICIO</a>
+                <a href="#nosotros" class="nav-link-glass">NOSOTROS</a>
+                <a href="#servicios" class="nav-link-glass">IT & TELCO</a>
+                <a href="#obras" class="nav-link-glass">OBRAS</a>
+                <a href="#proyectos" class="nav-link-glass">PROYECTOS</a>
+                <a href="#clientes" class="nav-link-glass">CLIENTES</a>
+                <a href="#contacto" class="nav-link-glass">CONTACTO</a>
 
                 <div class="language-selector-glass">
                     <button class="language-btn-glass" id="language-btn">
@@ -61,12 +60,13 @@
                         <span>ARG</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
+                    
                     <div class="language-dropdown-glass" id="language-dropdown">
-                        <a href="#" class="language-option-glass active">
+                        <a href="#" class="language-link active">
                             <img src="https://flagcdn.com/w20/ar.png" alt="Argentina" class="flag-icon">
                             Español
                         </a>
-                        <a href="#" class="language-option-glass">
+                        <a href="./en/" class="language-link">
                             <img src="https://flagcdn.com/w20/us.png" alt="Estados Unidos" class="flag-icon">
                             English
                         </a>
@@ -840,7 +840,6 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./js/translations.js"></script>
     <script src="./js/main.js"></script>
     <script>
         // Inicializar AOS
@@ -850,6 +849,25 @@
             offset: 100
         });
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const langBtn = document.getElementById('language-btn');
+        const langDropdown = document.getElementById('language-dropdown');
+
+        if(langBtn && langDropdown) {
+            // Al hacer clic en el botón, alterna la clase 'active'
+            langBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Evita que el clic cierre el menú inmediatamente
+                langDropdown.classList.toggle('active');
+            });
+
+            // Cerrar si se hace clic fuera
+            document.addEventListener('click', () => {
+                langDropdown.classList.remove('active');
+            });
+        }
+    });
+</script>
 </body>
 
 </html>
