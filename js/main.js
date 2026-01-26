@@ -930,6 +930,9 @@ window.addEventListener('error', (e) => {
 // =============================================
 // FORMULARIO DE CONTACTO MODERNO
 // =============================================
+// =============================================
+// FORMULARIO DE CONTACTO (CORREGIDO)
+// =============================================
 function initContactForm() {
     const contactForm = document.getElementById('contactForm');
     
@@ -939,6 +942,10 @@ function initContactForm() {
         e.preventDefault();
         
         // Verificar reCAPTCHA
+        if (typeof grecaptcha === 'undefined') {
+             showNotification('Error al cargar reCAPTCHA', 'error');
+             return;
+        }
         const recaptchaResponse = grecaptcha.getResponse();
         if (!recaptchaResponse) {
             showNotification('Por favor completa el reCAPTCHA', 'error');
@@ -950,7 +957,7 @@ function initContactForm() {
         const data = Object.fromEntries(formData);
         
         // Validación básica
-    if (!data.nombre || !data.email || !data.mensaje) {
+        if (!data.nombre || !data.email || !data.mensaje) {
             showNotification('Por favor completa todos los campos obligatorios', 'error');
             return;
         }
@@ -969,8 +976,19 @@ function initContactForm() {
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
         submitBtn.disabled = true;
         
-        // Crear FormData (ya incluye g-recaptcha-response automáticamente del widget)
-        initContactForm
+        // Crear FormData para envío
+        const formDataToSend = new FormData(contactForm);
+        
+        // --- AQUÍ ESTÁ LA MAGIA PARA QUE FUNCIONE EN LOS DOS IDIOMAS ---
+        // Si la URL tiene '/en/', buscamos el PHP una carpeta atrás (../contacto.php)
+        // Si no, buscamos en la misma carpeta (contacto.php)
+        const contactUrl = window.location.pathname.includes('/en/') ? '../contacto.php' : 'contacto.php';
+        
+        // Enviar al servidor PHP
+        fetch(contactUrl, {
+            method: 'POST',
+            body: formDataToSend
+        })
         .then(response => {
             // Primero obtener el texto de la respuesta
             return response.text().then(text => {
@@ -979,9 +997,8 @@ function initContactForm() {
                     const json = JSON.parse(text);
                     return { ok: response.ok, data: json };
                 } catch (e) {
-                    // Si no es JSON, mostrar el error
-                    console.error('Respuesta del servidor:', text);
-                    throw new Error('Error en el servidor. Respuesta: ' + text.substring(0, 200));
+                    console.error('Respuesta del servidor no es JSON:', text);
+                    throw new Error('Error en el servidor. Respuesta inesperada.');
                 }
             });
         })
@@ -989,44 +1006,29 @@ function initContactForm() {
             if (data.success) {
                 showNotification(data.message, 'success');
                 contactForm.reset();
+                if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
             } else {
                 showNotification(data.message || 'Error al enviar el mensaje', 'error');
+                if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
             }
-            
-            // Resetear reCAPTCHA
-            if (typeof grecaptcha !== 'undefined') {
-                grecaptcha.reset();
-            }
-            
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
         })
         .catch(error => {
             console.error('Error:', error);
-            showNotification('Error de conexión. Por favor intenta más tarde.', 'error');
-            
-            // Resetear reCAPTCHA
-            if (typeof grecaptcha !== 'undefined') {
-                grecaptcha.reset();
-            }
+            showNotification('Error de conexión o del servidor. Intenta más tarde.', 'error');
+            if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
             
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
         });
     });
     
-    // Agregar efectos a los campos del formulario
+    // Efectos visuales inputs
     const formInputs = contactForm.querySelectorAll('input, textarea');
     formInputs.forEach(input => {
-        input.addEventListener('focus', function() {
-            this.parentElement.classList.add('focused');
-        });
-        
-        input.addEventListener('blur', function() {
-            if (!this.value) {
-                this.parentElement.classList.remove('focused');
-            }
-        });
+        input.addEventListener('focus', function() { this.parentElement.classList.add('focused'); });
+        input.addEventListener('blur', function() { if (!this.value) this.parentElement.classList.remove('focused'); });
     });
 }
 
