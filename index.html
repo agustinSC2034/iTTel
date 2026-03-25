@@ -33,8 +33,7 @@
     <!-- Favicon -->
     <link rel="icon" href="./assets/images/favicon.webp" type="image/webp">
 
-    <!-- Google reCAPTCHA -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Google reCAPTCHA será cargado al final -->
 </head>
 
 <body>
@@ -87,7 +86,7 @@
     <!-- Hero Section - Fullscreen -->
     <section id="inicio" class="hero-fullscreen">
         <div class="hero-video-fullscreen">
-            <video autoplay muted loop playsinline poster="./assets/images/mundoITTEL.webp" id="hero-video">
+            <video autoplay muted loop playsinline preload="metadata" poster="./assets/images/mundoITTEL.webp" id="hero-video">
                 <source src="./assets/video/videoIttel1.mp4" type="video/mp4">
                 <source src="./assets/video/videoIttel1.webm" type="video/webm">
             </video>
@@ -839,6 +838,7 @@
     </button>
 
     <!-- Scripts -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/main.js"></script>
     <script>

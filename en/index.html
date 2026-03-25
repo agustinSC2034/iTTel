@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="icon" href="../assets/images/favicon.webp" type="image/webp">
 
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Google reCAPTCHA will be loaded at the end -->
 </head>
 
 <body>
@@ -72,7 +72,7 @@
 
     <section id="inicio" class="hero-fullscreen">
         <div class="hero-video-fullscreen">
-            <video autoplay muted loop playsinline poster="../assets/images/mundoITTEL.webp" id="hero-video">
+            <video autoplay muted loop playsinline preload="metadata" poster="../assets/images/mundoITTEL.webp" id="hero-video">
                 <source src="../assets/video/videoIttel1.mp4" type="video/mp4">
                 <source src="../assets/video/videoIttel1.webm" type="video/webm">
             </video>
@@ -614,5 +614,6 @@
             }
         });
     </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
