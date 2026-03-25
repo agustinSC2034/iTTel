@@ -129,23 +129,31 @@ function initHero() {
             heroVideo.style.opacity = '1';
         });
         
-        // Pause video when not in viewport (performance optimization)
+        // Use IntersectionObserver to manage both play/pause and button visibility efficiently
         if (hero) {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         heroVideo.play();
+                        if(fullscreenBtn) {
+                            fullscreenBtn.style.opacity = '0.8';
+                            fullscreenBtn.style.visibility = 'visible';
+                        }
                     } else {
                         heroVideo.pause();
+                        if(fullscreenBtn) {
+                            fullscreenBtn.style.opacity = '0';
+                            fullscreenBtn.style.visibility = 'hidden';
+                        }
                     }
                 });
-            });
+            }, { threshold: 0.1 });
             
             observer.observe(hero);
         }
     }
     
-    // Fullscreen functionality
+    // Fullscreen functionality - click event only
     if (fullscreenBtn && heroVideo) {
         fullscreenBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -165,53 +173,6 @@ function initHero() {
                 console.error('Fullscreen error:', error);
             }
         });
-
-        // Mostrar/ocultar botón basado en la visibilidad del video
-        const heroSection = document.querySelector('.hero') || document.querySelector('.hero-fullscreen');
-        if (heroSection) {
-            // Función para verificar si el hero está visible en pantalla
-            const checkVideoVisibility = () => {
-                const heroRect = heroSection.getBoundingClientRect();
-                
-                // El botón debe estar visible solo si alguna parte del hero está visible
-                const isHeroVisible = heroRect.bottom > 80 && heroRect.top < window.innerHeight - 100;
-                
-                if (isHeroVisible) {
-                    fullscreenBtn.style.opacity = '0.8';
-                    fullscreenBtn.style.visibility = 'visible';
-                } else {
-                    fullscreenBtn.style.opacity = '0';
-                    fullscreenBtn.style.visibility = 'hidden';
-                }
-            };
-
-            // Verificar visibilidad en scroll
-            window.addEventListener('scroll', throttle(checkVideoVisibility, 100));
-            
-            // Verificar visibilidad inicial
-            checkVideoVisibility();
-            
-            // Mostrar más opaco al pasar mouse (solo si está visible)
-            heroSection.addEventListener('mouseenter', () => {
-                const heroRect = heroSection.getBoundingClientRect();
-                const isHeroVisible = heroRect.bottom > 80 && heroRect.top < window.innerHeight - 100;
-                
-                if (isHeroVisible) {
-                    fullscreenBtn.style.opacity = '1';
-                }
-            });
-            
-            heroSection.addEventListener('mouseleave', () => {
-                const heroRect = heroSection.getBoundingClientRect();
-                const isHeroVisible = heroRect.bottom > 80 && heroRect.top < window.innerHeight - 100;
-                
-                if (isHeroVisible) {
-                    setTimeout(() => {
-                        fullscreenBtn.style.opacity = '0.8';
-                    }, 1500);
-                }
-            });
-        }
     }
     
     // Parallax effect for hero content
@@ -982,7 +943,7 @@ function initContactForm() {
         // --- AQUÍ ESTÁ LA MAGIA PARA QUE FUNCIONE EN LOS DOS IDIOMAS ---
         // Si la URL tiene '/en/', buscamos el PHP una carpeta atrás (../contacto.php)
         // Si no, buscamos en la misma carpeta (contacto.php)
-        const contactUrl = window.location.pathname.includes('/en/') ? '../contacto.php' : 'contacto.php';
+        const contactUrl = '/contacto.php';
         
         // Enviar al servidor PHP
         fetch(contactUrl, {
