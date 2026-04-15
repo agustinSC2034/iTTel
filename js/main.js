@@ -2394,3 +2394,99 @@ function openMobileFullscreen(imageSrc, imageAlt = '') {
     });
     document.addEventListener('keydown', escHandler);
 }
+
+// ========================================
+// SHOWROOM SLIDER + LIGHTBOX
+// ========================================
+(function () {
+    var track = document.getElementById('showroom-track');
+    if (!track) return;
+
+    var pages = track.querySelectorAll('.showroom-page');
+    var dots  = document.querySelectorAll('.showroom-dot');
+    var prevBtn = document.getElementById('showroom-prev');
+    var nextBtn = document.getElementById('showroom-next');
+    var total   = pages.length;
+    var current = 0;
+
+    function goTo(n) {
+        current = Math.max(0, Math.min(n, total - 1));
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+        if (prevBtn) prevBtn.disabled = current === 0;
+        if (nextBtn) nextBtn.disabled = current === total - 1;
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(current - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current + 1); });
+    dots.forEach(function (d) {
+        d.addEventListener('click', function () { goTo(parseInt(d.dataset.page, 10)); });
+    });
+
+    // Touch / swipe
+    var touchStartX = 0;
+    track.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', function (e) {
+        var diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) { diff > 0 ? goTo(current + 1) : goTo(current - 1); }
+    });
+
+    // Keyboard (only when lightbox is closed)
+    document.addEventListener('keydown', function (e) {
+        var lb = document.getElementById('sw-lightbox');
+        if (lb && lb.getAttribute('aria-hidden') === 'false') return;
+        if (e.key === 'ArrowLeft')  goTo(current - 1);
+        if (e.key === 'ArrowRight') goTo(current + 1);
+    });
+
+    goTo(0);
+
+    // ---- LIGHTBOX ----
+    var lightbox = document.getElementById('sw-lightbox');
+    if (!lightbox) return;
+
+    var lbImage   = document.getElementById('sw-lb-image');
+    var lbCounter = document.getElementById('sw-lb-counter');
+    var lbCloseEl = document.getElementById('sw-lb-close');
+    var lbOverlay = document.getElementById('sw-lb-overlay');
+    var lbPrev    = document.getElementById('sw-lb-prev');
+    var lbNext    = document.getElementById('sw-lb-next');
+
+    var allCards = Array.prototype.slice.call(track.querySelectorAll('.showroom-card'));
+    var allSrcs  = allCards.map(function (c) { return c.querySelector('img').src; });
+    var lbIndex  = 0;
+
+    function lbShow(idx) {
+        lbIndex = (idx + allSrcs.length) % allSrcs.length;
+        lbImage.classList.add('loading');
+        lbCounter.textContent = (lbIndex + 1) + ' / ' + allSrcs.length;
+        var tmp = new Image();
+        tmp.onload = function () {
+            lbImage.src = allSrcs[lbIndex];
+            lbImage.classList.remove('loading');
+        };
+        tmp.src = allSrcs[lbIndex];
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function lbClose() {
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    allCards.forEach(function (card, i) {
+        card.addEventListener('click', function () { lbShow(i); });
+    });
+    lbCloseEl.addEventListener('click', lbClose);
+    lbOverlay.addEventListener('click', lbClose);
+    lbPrev.addEventListener('click', function () { lbShow(lbIndex - 1); });
+    lbNext.addEventListener('click', function () { lbShow(lbIndex + 1); });
+
+    document.addEventListener('keydown', function (e) {
+        if (lightbox.getAttribute('aria-hidden') !== 'false') return;
+        if (e.key === 'Escape')     lbClose();
+        if (e.key === 'ArrowLeft')  lbShow(lbIndex - 1);
+        if (e.key === 'ArrowRight') lbShow(lbIndex + 1);
+    });
+}());
