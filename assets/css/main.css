@@ -92,7 +92,7 @@
 
 .credentials-section {
     background-color: #ffffff;
-    padding: 100px 0;
+    padding: 130px 0;
 }
 
 .credentials-grid {
@@ -118,18 +118,61 @@
 }
 
 .credentials-heading {
-    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
     font-weight: 800;
+    font-family: 'Poppins', sans-serif;
     color: var(--text-dark);
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
 }
 
-.credentials-desc {
-    font-size: 1rem;
+.credentials-subtitle {
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    color: #999;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.credentials-lead {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+}
+
+.credentials-pillars {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.credentials-pillar-item {
+    padding-left: 1rem;
+    border-left: 2px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.pillar-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.pillar-text {
+    font-size: 0.95rem;
     color: var(--text-medium);
-    line-height: 1.75;
-    max-width: 42ch;
+    line-height: 1.6;
 }
 
 .credentials-data {
@@ -199,7 +242,7 @@
         transition: none !important;
     }
     .credentials-section {
-        padding: 56px 0;
+        padding: 72px 0;
     }
     .credentials-heading {
         font-size: 1.875rem;
@@ -234,20 +277,63 @@
 
 .infrastructure-section {
     background-color: #f8fafc;
-    padding: 100px 0;
+    padding: 130px 0;
 }
 
 .infra-header {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 .infra-title {
     font-size: clamp(1.875rem, 3.5vw, 2.75rem);
     font-weight: 800;
+    font-family: 'Poppins', sans-serif;
     color: var(--text-dark);
     line-height: 1.2;
     max-width: 22ch;
     margin: 0.75rem 0 0;
+}
+
+/* Service Pillars — 3-column */
+.service-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.service-pillar {
+    padding: 2rem 0;
+}
+
+.pillar-icon {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.pillar-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+}
+
+.pillar-desc {
+    font-size: 0.95rem;
+    color: var(--text-medium);
+    line-height: 1.7;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .service-pillars {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
 
 .infra-global-stats {
@@ -668,7 +754,7 @@
 
 .projects-interactive {
     background-color: #f8fafc;
-    padding: 100px 0;
+    padding: 130px 0;
 }
 
 /* Contenedor más ancho específicamente para proyectos */
@@ -3649,22 +3735,24 @@ html {
 }
 
 .client-logo {
-    height: 76px; /* +15% sobre 66px ≈ 75.9 */
+    height: 76px;
     width: auto;
-    max-width: 253px; /* +15% sobre 220px ≈ 253 */
+    max-width: 253px;
     object-fit: contain;
-    opacity: 0.8;
+    filter: grayscale(1);
+    opacity: 0.5;
     transition: var(--transition);
     flex-shrink: 0;
     cursor: pointer;
     padding: 10px;
     border-radius: 12px;
-    background: transparent; /* Sin fondo para evitar contraste */
+    background: transparent;
 }
 
 .client-logo:hover {
+    filter: grayscale(0);
     opacity: 1;
-    transform: scale(1.05); /* Solo zoom, sin sombra ni cambio de fondo */
+    transform: scale(1.05);
 }
 
 .client-logo:active {
@@ -4590,7 +4678,7 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top; /* Cambio a 'top' para preservar la parte superior */
+    object-position: center top;
     display: block;
 }
 
@@ -4602,9 +4690,9 @@ html {
     height: 100%;
     background: linear-gradient(
         135deg,
-        rgba(0, 0, 0, 0.3) 0%,
-        rgba(0, 0, 0, 0.1) 50%,
-        rgba(0, 0, 0, 0.2) 100%
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0.15) 50%,
+        rgba(0, 0, 0, 0.35) 100%
     );
     z-index: 2;
 }
@@ -4614,8 +4702,39 @@ html {
     z-index: 3;
     text-align: center;
     color: white;
-    max-width: 800px;
+    max-width: 900px;
     padding: 0 20px;
+}
+
+.hero-title-main {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    margin: 0 0 0.25rem;
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.75rem, 1.4vw, 1.1rem);
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0 0 2rem;
+}
+
+.hero-anchor {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.95rem, 1.6vw, 1.25rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
 }
 
 .fullscreen-btn-glass {
@@ -4916,6 +5035,7 @@ html {
     font-size: clamp(1.875rem, 3.5vw, 2.75rem);
     font-weight: 800;
     color: var(--text-dark);
+    font-family: 'Poppins', sans-serif;
 }
 
 .section-title--clean::after {
@@ -4933,7 +5053,7 @@ html {
 
 .showroom-section {
     background-color: #ffffff;
-    padding: 100px 0;
+    padding: 130px 0;
 }
 
 .showroom-header {
@@ -4943,6 +5063,7 @@ html {
 .showroom-title {
     font-size: clamp(1.875rem, 3.5vw, 2.75rem);
     font-weight: 800;
+    font-family: 'Poppins', sans-serif;
     color: var(--text-dark);
     line-height: 1.2;
     margin: 0.75rem 0 0;
