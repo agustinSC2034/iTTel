@@ -10,38 +10,47 @@ const translations = {
         'nav.clientes': 'CLIENTES',
         'nav.contacto': 'CONTACTO',
         
-        // Sección Nosotros
-        'about.subtitle': 'GRUPO ITTEL',
-        'about.title': 'Conectamos el futuro con tecnología de vanguardia',
-        'about.description': 'Somos un grupo de empresas especializadas en telecomunicaciones y tecnología de la información con más de 10 años de experiencia. Nos dedicamos al diseño, implementación y gestión de infraestructura crítica para operadores y empresas, garantizando conectividad de alta disponibilidad.',
-        
-        'about.mission.title': 'Misión',
-        'about.mission.text': 'Proveer soluciones tecnológicas integrales y sostenibles que impulsen la transformación digital de nuestros clientes, garantizando excelencia operativa y soporte 24/7.',
-        
-        'about.vision.title': 'Visión',
-        'about.vision.text': 'Ser el referente líder en infraestructura de telecomunicaciones e IT en Argentina y la región, reconocidos por nuestra innovación, confiabilidad y compromiso con la calidad.',
-        
-        'about.values.title': 'Valores',
-        'about.values.text': 'Innovación constante, compromiso con el cliente, trabajo en equipo, responsabilidad ambiental y ética profesional en cada proyecto que emprendemos.',
-        
-        // Sección IT & TELCO
-        'ittelco.title': 'IT & Telco',
-        'ittelco.description': 'Nuestra experiencia y desarrollos nos permiten ofrecer un servicio diferencial en el mercado.',
-        
-        'ittelco.featured.title': 'Soluciones Integrales',
-        'ittelco.featured.text': 'Diseñamos e implementamos infraestructura de telecomunicaciones end-to-end, desde la fibra óptica hasta servicios gestionados de IT, asegurando alta disponibilidad y rendimiento óptimo para operadores y empresas.',
-        
-        'ittelco.feature1.title': 'Infraestructura de Fibra Óptica',
-        'ittelco.feature1.text': 'Despliegue y gestión de redes FTTH, backbone y enlaces dedicados.',
-        
-        'ittelco.feature2.title': 'Redes Neutrales',
-        'ittelco.feature2.text': 'Acceso compartido a infraestructura de alta capacidad para múltiples operadores.',
-        
-        'ittelco.feature3.title': 'Data Centers & NOC',
-        'ittelco.feature3.text': 'Operación 24/7 con monitoreo proactivo y gestión de incidentes.',
-        
-        'ittelco.feature4.title': 'Ingeniería Especializada',
-        'ittelco.feature4.text': 'Diseño, construcción y mantenimiento de infraestructura crítica telco.',
+        // Sección Nuestras Credenciales / Alcance
+        'credentials.eyebrow': 'GRUPO ITTEL',
+        'credentials.title': 'Pioneros en compartición de infraestructura en Argentina.',
+        'credentials.description': 'Oferta integral: Torres de telecomunicaciones, Fibra Óptica y Servicios de Valor Agregado. Un solo interlocutor para toda la cadena de infraestructura.',
+
+        'credentials.item1.label': 'Operadores Móviles',
+        'credentials.item1.value': 'Claro · Movistar · Telecom',
+        'credentials.item1.note': 'Acuerdos comerciales vigentes con la totalidad de los operadores móviles de Argentina.',
+
+        'credentials.item2.label': 'Operadores de Fibra',
+        'credentials.item2.value': 'ARSAT · IPLAN · CenturyLink · DIRECTV · Metrotel',
+        'credentials.item2.note': 'Red neutral con acceso para los principales carriers de fibra del país.',
+
+        'credentials.item3.label': 'Alcance Institucional',
+        'credentials.item3.value': 'Trenes Argentinos · PBA · CABA · Municipios',
+        'credentials.item3.note': 'Presencia en todas las jurisdicciones del territorio nacional.',
+
+        // Sección Capacidad de Infraestructura
+        'infra.eyebrow': 'CAPACIDAD DE INFRAESTRUCTURA',
+        'infra.title': 'Escala real. Presencia comprobable.',
+
+        'infra.stat1.unit': 'km de Fibra Óptica',
+        'infra.stat1.label': 'desplegados a nivel nacional',
+
+        'infra.stat2.unit': 'Torres Telco',
+        'infra.stat2.label': 'en operación a nivel nacional',
+
+        'infra.region1.name': 'CABA',
+        'infra.region1.fo': 'FO operativa',
+        'infra.region1.torres': 'torres críticas',
+
+        'infra.region2.name': 'PROVINCIA DE BS. AS.',
+        'infra.region2.fo': 'de FO',
+        'infra.region2.torres': 'torres estratégicas',
+
+        'infra.region3.name': 'RED FERROVIARIA NACIONAL',
+        'infra.region3.desc': 'Despliegue paralelo de torres y anillos de fibra en la red de nodos ferroviarios de Trenes Argentinos.',
+
+        'infra.projection.label': 'PROYECCIÓN 2029',
+        'infra.projection.tandil': 'manzanas FTTH · Tandil',
+        'infra.projection.matanza': 'nodo FO centralizado · La Matanza',
         
         // Sección Obras en Campo
         'obras.title': 'Obras en Campo',
@@ -110,38 +119,47 @@ const translations = {
         'nav.clientes': 'CLIENTS',
         'nav.contacto': 'CONTACT',
         
-        // About Section
-        'about.subtitle': 'ITTEL GROUP',
-        'about.title': 'Connecting the future with cutting-edge technology',
-        'about.description': 'We are a group of companies specialized in telecommunications and information technology with over 10 years of experience. We focus on the design, implementation and management of critical infrastructure for operators and companies, ensuring high-availability connectivity.',
-        
-        'about.mission.title': 'Mission',
-        'about.mission.text': 'Provide comprehensive and sustainable technological solutions that drive our clients\' digital transformation, guaranteeing operational excellence and 24/7 support.',
-        
-        'about.vision.title': 'Vision',
-        'about.vision.text': 'To be the leading reference in telecommunications and IT infrastructure in Argentina and the region, recognized for our innovation, reliability and commitment to quality.',
-        
-        'about.values.title': 'Values',
-        'about.values.text': 'Constant innovation, customer commitment, teamwork, environmental responsibility and professional ethics in every project we undertake.',
-        
-        // IT & TELCO Section
-        'ittelco.title': 'IT & Telco',
-        'ittelco.description': 'Our experience and developments allow us to offer a differential service in the market.',
-        
-        'ittelco.featured.title': 'Integral Solutions',
-        'ittelco.featured.text': 'We design and implement end-to-end telecommunications infrastructure, from fiber optics to managed IT services, ensuring high availability and optimal performance for operators and companies.',
-        
-        'ittelco.feature1.title': 'Fiber Optic Infrastructure',
-        'ittelco.feature1.text': 'Deployment and management of FTTH networks, backbone and dedicated links.',
-        
-        'ittelco.feature2.title': 'Neutral Networks',
-        'ittelco.feature2.text': 'Shared access to high-capacity infrastructure for multiple operators.',
-        
-        'ittelco.feature3.title': 'Data Centers & NOC',
-        'ittelco.feature3.text': '24/7 operation with proactive monitoring and incident management.',
-        
-        'ittelco.feature4.title': 'Specialized Engineering',
-        'ittelco.feature4.text': 'Design, construction and maintenance of critical telco infrastructure.',
+        // Credentials / Reach Section
+        'credentials.eyebrow': 'ITTEL GROUP',
+        'credentials.title': "Argentina's pioneers in infrastructure sharing.",
+        'credentials.description': 'A comprehensive offering: Telecom Towers, Fiber Optics, and Value-Added Services. A single point of contact for the entire infrastructure chain.',
+
+        'credentials.item1.label': 'Mobile Operators',
+        'credentials.item1.value': 'Claro · Movistar · Telecom',
+        'credentials.item1.note': 'Active commercial agreements with all mobile operators in Argentina.',
+
+        'credentials.item2.label': 'Fiber Operators',
+        'credentials.item2.value': 'ARSAT · IPLAN · CenturyLink · DIRECTV · Metrotel',
+        'credentials.item2.note': "Neutral network with access for the country's leading fiber carriers.",
+
+        'credentials.item3.label': 'Institutional Reach',
+        'credentials.item3.value': 'Trenes Argentinos · Buenos Aires Province · CABA · Municipalities',
+        'credentials.item3.note': 'Active agreements across all jurisdictions of the national territory.',
+
+        // Infrastructure Capability Section
+        'infra.eyebrow': 'INFRASTRUCTURE CAPABILITY',
+        'infra.title': 'Real scale. Verifiable presence.',
+
+        'infra.stat1.unit': 'km of Fiber Optics',
+        'infra.stat1.label': 'deployed nationwide',
+
+        'infra.stat2.unit': 'Telecom Towers',
+        'infra.stat2.label': 'in operation nationwide',
+
+        'infra.region1.name': 'CABA',
+        'infra.region1.fo': 'of operational FO',
+        'infra.region1.torres': 'critical towers',
+
+        'infra.region2.name': 'BUENOS AIRES PROVINCE',
+        'infra.region2.fo': 'of FO',
+        'infra.region2.torres': 'strategic towers',
+
+        'infra.region3.name': 'NATIONAL RAIL NETWORK',
+        'infra.region3.desc': 'Parallel deployment of towers and fiber rings across the Trenes Argentinos national rail node network.',
+
+        'infra.projection.label': '2029 PROJECTION',
+        'infra.projection.tandil': 'FTTH blocks · Tandil',
+        'infra.projection.matanza': 'centralized FO node · La Matanza',
         
         // Field Works Section
         'obras.title': 'Field Works',
