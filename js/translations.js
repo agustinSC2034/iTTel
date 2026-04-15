@@ -9,11 +9,22 @@ const translations = {
         'nav.proyectos': 'PROYECTOS',
         'nav.clientes': 'CLIENTES',
         'nav.contacto': 'CONTACTO',
+
+        // Hero
+        'hero.title': 'GRUPO ITTEL',
+        'hero.anchor': 'Pioneros en Argentina en el desarrollo de proyectos de compartición de infraestructura de gran escala.',
         
         // Sección Nuestras Credenciales / Alcance
-        'credentials.eyebrow': 'NUESTRAS CREDENCIALES',
-        'credentials.title': 'Pioneros en compartición de infraestructura en Argentina.',
-        'credentials.description': 'Oferta integral: Torres de telecomunicaciones, Fibra Óptica y Servicios de Valor Agregado. Un solo interlocutor para toda la cadena de infraestructura.',
+        'credentials.eyebrow': 'NOSOTROS',
+        'credentials.title': 'GRUPO ITTEL',
+        'credentials.subtitle': 'INFORMATION TECHNOLOGY & TELECOMMUNICATIONS',
+        'credentials.lead': 'Somos pioneros en Argentina en el desarrollo y compartición de infraestructura de telecomunicaciones a gran escala.',
+        'credentials.pillar1.title': 'Oferta Integral',
+        'credentials.pillar1.desc': 'Integración de Torres, Fibra Óptica y servicios de valor agregado para operadores y organismos públicos.',
+        'credentials.pillar2.title': 'Redes Neutrales',
+        'credentials.pillar2.desc': 'Compartición de infraestructura que optimiza costos y acelera el despliegue comercial.',
+        'credentials.pillar3.title': 'Soluciones de Alta Criticidad',
+        'credentials.pillar3.desc': 'Obras civiles de infraestructura, tecnología aplicada (Smart Cities) y soporte operativo 24/7.',
 
         'credentials.item1.label': 'Operadores Móviles',
         'credentials.item1.note': 'Acuerdos comerciales vigentes con la totalidad de los operadores móviles de Argentina.',
@@ -25,8 +36,16 @@ const translations = {
         'credentials.item3.note': 'Presencia en todas las jurisdicciones del territorio nacional.',
 
         // Sección Capacidad de Infraestructura
-        'infra.eyebrow': 'CAPACIDAD DE INFRAESTRUCTURA',
+        'infra.eyebrow': 'IT & TELCO',
         'infra.title': 'Capacidad de Infraestructura',
+
+        // Pilares de Servicio
+        'services.pillar1.title': 'INFRAESTRUCTURA',
+        'services.pillar1.desc': 'Construcción integral de redes fijas y móviles, despliegues civiles de alta criticidad y mantenimiento preventivo con respuesta rápida.',
+        'services.pillar2.title': 'TECNOLOGÍA',
+        'services.pillar2.desc': 'Soluciones de Smart Cities, radares, videovigilancia avanzada y sensores IoT para entornos corporativos y públicos.',
+        'services.pillar3.title': 'CONECTIVIDAD',
+        'services.pillar3.desc': 'Desarrollo y gestión de redes neutrales de alta capacidad para compartición entre múltiples operadores.',
 
         'infra.stat1.unit': 'km de Fibra Óptica',
         'infra.stat1.label': 'desplegados a nivel nacional',
@@ -51,8 +70,8 @@ const translations = {
         'infra.projection.label': 'TANDIL',
         'infra.projection.tandil': 'manzanas FTTH proyectadas a 2029',
         
-        // Sección Obras en Campo — Project Showroom
-        'obras.eyebrow': 'REGISTRO DE OBRA',
+        // Obras en Campo
+        'obras.eyebrow': 'OBRAS',
         'obras.title': 'Obras en Campo',
         'obras.description': 'Registro fotográfico de obras ejecutadas en campo a lo largo del territorio nacional.',
         'obras.card1.tag': 'Despliegue de Torres',
@@ -77,7 +96,7 @@ const translations = {
         'stats.sla.sub': 'garantizado',
         
         // Proyectos Destacados
-        'projects.eyebrow': 'PROYECTOS DESTACADOS',
+        'projects.eyebrow': 'PROYECTOS',
         'projects.title': 'Proyectos Destacados',
         'projects.description': 'Cada implementación demuestra nuestra capacidad de ejecución a escala.',
         'projects.readmore': 'Ver Más',
@@ -133,11 +152,22 @@ const translations = {
         'nav.proyectos': 'PROJECTS',
         'nav.clientes': 'CLIENTS',
         'nav.contacto': 'CONTACT',
+
+        // Hero
+        'hero.title': 'GRUPO ITTEL',
+        'hero.anchor': 'Pioneers in Argentina in the development of large-scale infrastructure sharing projects.',
         
         // Credentials / Reach Section
-        'credentials.eyebrow': 'OUR CREDENTIALS',
-        'credentials.title': "Argentina's pioneers in infrastructure sharing.",
-        'credentials.description': 'A comprehensive offering: Telecom Towers, Fiber Optics, and Value-Added Services. A single point of contact for the entire infrastructure chain.',
+        'credentials.eyebrow': 'ABOUT US',
+        'credentials.title': 'GRUPO ITTEL',
+        'credentials.subtitle': 'INFORMATION TECHNOLOGY & TELECOMMUNICATIONS',
+        'credentials.lead': 'We are pioneers in Argentina in the development and sharing of large-scale telecommunications infrastructure.',
+        'credentials.pillar1.title': 'Comprehensive Offering',
+        'credentials.pillar1.desc': 'Integration of Towers, Fiber Optics, and value-added services for operators and public entities.',
+        'credentials.pillar2.title': 'Neutral Networks',
+        'credentials.pillar2.desc': 'Infrastructure sharing that optimizes costs and accelerates commercial deployment.',
+        'credentials.pillar3.title': 'Mission-Critical Solutions',
+        'credentials.pillar3.desc': 'Civil infrastructure works, applied technology (Smart Cities), and 24/7 operational support.',
 
         'credentials.item1.label': 'Mobile Operators',
         'credentials.item1.note': 'Active commercial agreements with all mobile operators in Argentina.',
@@ -149,8 +179,16 @@ const translations = {
         'credentials.item3.note': 'Active agreements across all jurisdictions of the national territory.',
 
         // Infrastructure Capability Section
-        'infra.eyebrow': 'INFRASTRUCTURE CAPACITY',
+        'infra.eyebrow': 'IT & TELCO',
         'infra.title': 'Infrastructure Capacity',
+
+        // Service Pillars
+        'services.pillar1.title': 'INFRASTRUCTURE',
+        'services.pillar1.desc': 'End-to-end construction of fixed and mobile networks, high-criticality civil deployments and preventive maintenance with rapid response.',
+        'services.pillar2.title': 'TECHNOLOGY',
+        'services.pillar2.desc': 'Smart Cities solutions, radars, advanced video surveillance and IoT sensors for corporate and public environments.',
+        'services.pillar3.title': 'CONNECTIVITY',
+        'services.pillar3.desc': 'Development and management of high-capacity neutral networks for multi-operator sharing.',
 
         'infra.stat1.unit': 'km of Fiber Optics',
         'infra.stat1.label': 'deployed nationwide',
@@ -175,8 +213,8 @@ const translations = {
         'infra.projection.label': 'TANDIL',
         'infra.projection.tandil': 'FTTH blocks projected to 2029',
         
-        // Field Works Section — Project Showroom
-        'obras.eyebrow': 'FIELD RECORD',
+        // Field Works
+        'obras.eyebrow': 'FIELD WORKS',
         'obras.title': 'Field Works',
         'obras.description': 'Photographic record of field works executed across the national territory.',
         'obras.card1.tag': 'Tower Deployment',
@@ -201,7 +239,7 @@ const translations = {
         'stats.sla.sub': 'guaranteed',
         
         // Featured Projects
-        'projects.eyebrow': 'FEATURED PROJECTS',
+        'projects.eyebrow': 'PROJECTS',
         'projects.title': 'Featured Projects',
         'projects.description': 'Each implementation demonstrates our execution capability at scale.',
         'projects.readmore': 'Read More',
