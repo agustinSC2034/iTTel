@@ -312,27 +312,33 @@
 .infra-detail-card {
     padding: 2rem 1.75rem;
     border-right: 1px solid #E2E8F0;
+    transition: background-color 0.35s ease, border-color 0.35s ease;
+    cursor: default;
 }
 
 .infra-detail-card:last-child {
     border-right: none;
 }
 
-.infra-detail-card--accent {
+.infra-detail-card:hover {
     background-color: #0f172a;
+    border-color: transparent;
+    position: relative;
+    z-index: 1;
 }
 
-.infra-detail-card--accent .infra-region-tag {
-    color: rgba(255,255,255,0.45);
+.infra-detail-card:hover .infra-region-tag {
+    color: rgba(255, 255, 255, 0.45);
 }
 
-.infra-detail-card--accent .infra-metric-num {
+.infra-detail-card:hover .infra-metric-num {
     color: #ffffff;
 }
 
-.infra-detail-card--accent .infra-metric-label {
-    color: rgba(255,255,255,0.6);
+.infra-detail-card:hover .infra-metric-label {
+    color: rgba(255, 255, 255, 0.6);
 }
+
 
 .infra-region-tag {
     font-size: 0.6rem;
@@ -4879,7 +4885,7 @@ html {
 
 .credential-logos img[alt="Movistar"],
 .credential-logos img[alt="ARSAT"],
-.credential-logos img[alt="Trenes Argentinos"] {
+.credential-logos img[alt="ADIF S.E."] {
     height: 34px;
 }
 
@@ -4922,7 +4928,7 @@ html {
 }
 
 /* ========================================
-   SHOWROOM SECTION — 6-card grid
+   SHOWROOM SECTION — Slider + Lightbox
    ======================================== */
 
 .showroom-section {
@@ -4931,7 +4937,7 @@ html {
 }
 
 .showroom-header {
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
 }
 
 .showroom-title {
@@ -4950,7 +4956,19 @@ html {
     margin-top: 1rem;
 }
 
-.showroom-grid {
+.showroom-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.showroom-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.showroom-page {
+    min-width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
@@ -4961,7 +4979,8 @@ html {
     overflow: hidden;
     border-radius: 4px;
     aspect-ratio: 4 / 3;
-    cursor: pointer;
+    cursor: zoom-in;
+    background: #0f172a;
 }
 
 .showroom-card img {
@@ -4969,65 +4988,197 @@ html {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.35s ease;
+}
+
+.showroom-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.35s ease;
+    pointer-events: none;
 }
 
 .showroom-card:hover img {
     transform: scale(1.05);
+    opacity: 0.78;
 }
 
-.showroom-card-overlay {
+.showroom-card:hover::after {
+    background: rgba(0, 0, 0, 0.28);
+}
+
+.showroom-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.showroom-btn-prev,
+.showroom-btn-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #E2E8F0;
+    background: #fff;
+    color: var(--text-dark);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    font-size: 0.8rem;
+}
+
+.showroom-btn-prev:hover,
+.showroom-btn-next:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+.showroom-btn-prev:disabled,
+.showroom-btn-next:disabled {
+    opacity: 0.25;
+    cursor: default;
+    pointer-events: none;
+}
+
+.showroom-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.showroom-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: #CBD5E1;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.25s ease;
+}
+
+.showroom-dot.active {
+    background: var(--primary-color);
+    transform: scale(1.35);
+}
+
+/* Lightbox */
+.sw-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.sw-lightbox[aria-hidden="false"] {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.sw-lb-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.15) 55%, transparent 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(6px);
+}
+
+.sw-lb-image {
+    position: relative;
+    z-index: 1;
+    max-width: 90vw;
+    max-height: 88vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.2s ease;
+}
+
+.sw-lb-image.loading {
     opacity: 0;
-    transition: opacity 0.4s ease;
 }
 
-.showroom-card:hover .showroom-card-overlay {
-    opacity: 1;
+.sw-lb-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    z-index: 2;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 0;
 }
 
-.showroom-card-tag {
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #38bdf8;
-    margin-bottom: 0.5rem;
+.sw-lb-close:hover { color: #fff; }
+
+.sw-lb-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-size: 0.9rem;
 }
 
-.showroom-card-text {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 1.55;
-    margin: 0;
+.sw-lb-nav:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.sw-lb-prev { left: 1.5rem; }
+.sw-lb-next { right: 1.5rem; }
+
+.sw-lb-counter {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.4);
 }
 
 @media (max-width: 1024px) {
-    .showroom-grid {
+    .showroom-page {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    .showroom-section {
-        padding: 56px 0;
+    .showroom-section { padding: 56px 0; }
+    .showroom-page {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
     }
-    .showroom-grid {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-    }
-    .showroom-card {
-        aspect-ratio: 16 / 10;
-    }
-    .showroom-card-overlay {
-        opacity: 1;
-    }
+    .sw-lb-prev { left: 0.5rem; }
+    .sw-lb-next { right: 0.5rem; }
+    .sw-lb-nav { width: 40px; height: 40px; }
 }
 
 /* ========================================

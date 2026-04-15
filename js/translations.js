@@ -49,12 +49,12 @@ const translations = {
         'infra.region4.fo': 'nodo FO centralizado',
 
         'infra.projection.label': 'TANDIL',
-        'infra.projection.tandil': 'Proyectado a 2029: +1.500 manzanas FTTH',
+        'infra.projection.tandil': 'manzanas FTTH proyectadas a 2029',
         
         // Sección Obras en Campo — Project Showroom
         'obras.eyebrow': 'REGISTRO DE OBRA',
         'obras.title': 'Obras en Campo',
-        'obras.description': 'Bitácora de despliegues ejecutados. Cada tarjeta representa una categoría de intervención técnica verificable.',
+        'obras.description': 'Registro fotográfico de obras ejecutadas en campo a lo largo del territorio nacional.',
         'obras.card1.tag': 'Despliegue de Torres',
         'obras.card1.text': 'Instalación de monopostes y estructuras portantes para operadores móviles — Red AUSA / CABA.',
         'obras.card2.tag': 'Tendido de Fibra Óptica',
@@ -173,12 +173,12 @@ const translations = {
         'infra.region4.fo': 'centralized FO node',
 
         'infra.projection.label': 'TANDIL',
-        'infra.projection.tandil': 'Projected to 2029: +1,500 FTTH blocks',
+        'infra.projection.tandil': 'FTTH blocks projected to 2029',
         
         // Field Works Section — Project Showroom
         'obras.eyebrow': 'FIELD RECORD',
         'obras.title': 'Field Works',
-        'obras.description': 'Log of executed deployments. Each card represents a verifiable technical intervention category.',
+        'obras.description': 'Photographic record of field works executed across the national territory.',
         'obras.card1.tag': 'Tower Deployment',
         'obras.card1.text': 'Installation of monopoles and support structures for mobile operators — AUSA / CABA Network.',
         'obras.card2.tag': 'Fiber Optic Trenching',
