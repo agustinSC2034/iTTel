@@ -11,25 +11,22 @@ const translations = {
         'nav.contacto': 'CONTACTO',
         
         // Sección Nuestras Credenciales / Alcance
-        'credentials.eyebrow': 'GRUPO ITTEL',
+        'credentials.eyebrow': 'NUESTRAS CREDENCIALES',
         'credentials.title': 'Pioneros en compartición de infraestructura en Argentina.',
         'credentials.description': 'Oferta integral: Torres de telecomunicaciones, Fibra Óptica y Servicios de Valor Agregado. Un solo interlocutor para toda la cadena de infraestructura.',
 
         'credentials.item1.label': 'Operadores Móviles',
-        'credentials.item1.value': 'Claro · Movistar · Telecom',
         'credentials.item1.note': 'Acuerdos comerciales vigentes con la totalidad de los operadores móviles de Argentina.',
 
         'credentials.item2.label': 'Operadores de Fibra',
-        'credentials.item2.value': 'ARSAT · IPLAN · CenturyLink · DIRECTV · Metrotel',
         'credentials.item2.note': 'Red neutral con acceso para los principales carriers de fibra del país.',
 
         'credentials.item3.label': 'Alcance Institucional',
-        'credentials.item3.value': 'Trenes Argentinos · PBA · CABA · Municipios',
         'credentials.item3.note': 'Presencia en todas las jurisdicciones del territorio nacional.',
 
         // Sección Capacidad de Infraestructura
         'infra.eyebrow': 'CAPACIDAD DE INFRAESTRUCTURA',
-        'infra.title': 'Escala real. Presencia comprobable.',
+        'infra.title': 'Capacidad de Infraestructura',
 
         'infra.stat1.unit': 'km de Fibra Óptica',
         'infra.stat1.label': 'desplegados a nivel nacional',
@@ -48,13 +45,28 @@ const translations = {
         'infra.region3.name': 'RED FERROVIARIA NACIONAL',
         'infra.region3.desc': 'Despliegue paralelo de torres y anillos de fibra en la red de nodos ferroviarios de Trenes Argentinos.',
 
-        'infra.projection.label': 'PROYECCIÓN 2029',
-        'infra.projection.tandil': 'manzanas FTTH · Tandil',
-        'infra.projection.matanza': 'nodo FO centralizado · La Matanza',
+        'infra.region4.name': 'LA MATANZA',
+        'infra.region4.fo': 'nodo FO centralizado',
+
+        'infra.projection.label': 'TANDIL',
+        'infra.projection.tandil': 'Proyectado a 2029: +1.500 manzanas FTTH',
         
-        // Sección Obras en Campo
+        // Sección Obras en Campo — Project Showroom
+        'obras.eyebrow': 'REGISTRO DE OBRA',
         'obras.title': 'Obras en Campo',
-        'obras.description': 'Una selección amplia de registros de implementación en campo. Explora en detalle cada obra.',
+        'obras.description': 'Bitácora de despliegues ejecutados. Cada tarjeta representa una categoría de intervención técnica verificable.',
+        'obras.card1.tag': 'Despliegue de Torres',
+        'obras.card1.text': 'Instalación de monopostes y estructuras portantes para operadores móviles — Red AUSA / CABA.',
+        'obras.card2.tag': 'Tendido de Fibra Óptica',
+        'obras.card2.text': 'Zanjado, canalizado y empalme de FO en autopistas y rutas provinciales — AUBASA.',
+        'obras.card3.tag': 'Trabajo en Altura',
+        'obras.card3.text': 'Montaje de antenas y equipos RF en estructuras existentes — 60+ m de altura operativa.',
+        'obras.card4.tag': 'Nodos Estratégicos',
+        'obras.card4.text': 'Construcción e integración de nodos de distribución en la red ferroviaria nacional.',
+        'obras.card5.tag': 'Ingeniería Civil',
+        'obras.card5.text': 'Fundaciones, bases de hormigón y obra civil para infraestructura crítica telco.',
+        'obras.card6.tag': 'Infraestructura Compartida',
+        'obras.card6.text': 'Torres multi-operador con gestión integral de accesos, energía y SLA diferenciado.',
         
         // Estadísticas
         'stats.years': '+ Años de',
@@ -65,19 +77,22 @@ const translations = {
         'stats.sla.sub': 'garantizado',
         
         // Proyectos Destacados
+        'projects.eyebrow': 'PROYECTOS DESTACADOS',
         'projects.title': 'Proyectos Destacados',
-        'projects.description': 'Una selección de nuestros proyectos más importantes. Cada implementación demuestra nuestra experiencia y dedicación en el desarrollo de soluciones tecnológicas de vanguardia.',
+        'projects.description': 'Cada implementación demuestra nuestra capacidad de ejecución a escala.',
         'projects.readmore': 'Ver Más',
         'projects.close': 'Cerrar',
         
         // Clientes
+        'clients.eyebrow': 'CLIENTES',
         'clients.title': 'Nuestros Clientes',
-        'clients.description': 'Trabajamos con las empresas más importantes del sector, brindando soluciones tecnológicas de alta calidad que impulsan su crecimiento y transformación digital. Nuestra cartera de clientes refleja la confianza depositada en nuestros servicios.',
+        'clients.description': 'Operadores, concesionarios y organismos que confían en nuestra infraestructura.',
         
         // Contacto
+        'contact.eyebrow': 'CONTACTO',
         'contact.title': 'Contacto',
         'contact.subtitle': 'Estamos aquí para ayudarte',
-        'contact.description': 'Si tienes alguna consulta o necesitas más información sobre nuestros servicios, no dudes en contactarnos. Nuestro equipo está disponible para responder todas tus preguntas.',
+        'contact.description': 'Consultas comerciales, técnicas o institucionales.',
         
         'contact.form.name': 'Nombre completo',
         'contact.form.email': 'Correo electrónico',
@@ -120,25 +135,22 @@ const translations = {
         'nav.contacto': 'CONTACT',
         
         // Credentials / Reach Section
-        'credentials.eyebrow': 'ITTEL GROUP',
+        'credentials.eyebrow': 'OUR CREDENTIALS',
         'credentials.title': "Argentina's pioneers in infrastructure sharing.",
         'credentials.description': 'A comprehensive offering: Telecom Towers, Fiber Optics, and Value-Added Services. A single point of contact for the entire infrastructure chain.',
 
         'credentials.item1.label': 'Mobile Operators',
-        'credentials.item1.value': 'Claro · Movistar · Telecom',
         'credentials.item1.note': 'Active commercial agreements with all mobile operators in Argentina.',
 
         'credentials.item2.label': 'Fiber Operators',
-        'credentials.item2.value': 'ARSAT · IPLAN · CenturyLink · DIRECTV · Metrotel',
         'credentials.item2.note': "Neutral network with access for the country's leading fiber carriers.",
 
         'credentials.item3.label': 'Institutional Reach',
-        'credentials.item3.value': 'Trenes Argentinos · Buenos Aires Province · CABA · Municipalities',
         'credentials.item3.note': 'Active agreements across all jurisdictions of the national territory.',
 
         // Infrastructure Capability Section
-        'infra.eyebrow': 'INFRASTRUCTURE CAPABILITY',
-        'infra.title': 'Real scale. Verifiable presence.',
+        'infra.eyebrow': 'INFRASTRUCTURE CAPACITY',
+        'infra.title': 'Infrastructure Capacity',
 
         'infra.stat1.unit': 'km of Fiber Optics',
         'infra.stat1.label': 'deployed nationwide',
@@ -157,13 +169,28 @@ const translations = {
         'infra.region3.name': 'NATIONAL RAIL NETWORK',
         'infra.region3.desc': 'Parallel deployment of towers and fiber rings across the Trenes Argentinos national rail node network.',
 
-        'infra.projection.label': '2029 PROJECTION',
-        'infra.projection.tandil': 'FTTH blocks · Tandil',
-        'infra.projection.matanza': 'centralized FO node · La Matanza',
+        'infra.region4.name': 'LA MATANZA',
+        'infra.region4.fo': 'centralized FO node',
+
+        'infra.projection.label': 'TANDIL',
+        'infra.projection.tandil': 'Projected to 2029: +1,500 FTTH blocks',
         
-        // Field Works Section
+        // Field Works Section — Project Showroom
+        'obras.eyebrow': 'FIELD RECORD',
         'obras.title': 'Field Works',
-        'obras.description': 'A wide selection of field implementation records. Explore each work in detail.',
+        'obras.description': 'Log of executed deployments. Each card represents a verifiable technical intervention category.',
+        'obras.card1.tag': 'Tower Deployment',
+        'obras.card1.text': 'Installation of monopoles and support structures for mobile operators — AUSA / CABA Network.',
+        'obras.card2.tag': 'Fiber Optic Trenching',
+        'obras.card2.text': 'Trenching, conduit routing and FO splicing on highways and provincial routes — AUBASA.',
+        'obras.card3.tag': 'Height Work',
+        'obras.card3.text': 'Antenna and RF equipment mounting on existing structures — 60+ m operational height.',
+        'obras.card4.tag': 'Strategic Nodes',
+        'obras.card4.text': 'Construction and integration of distribution nodes on the national rail network.',
+        'obras.card5.tag': 'Civil Engineering',
+        'obras.card5.text': 'Foundations, concrete bases and civil works for critical telco infrastructure.',
+        'obras.card6.tag': 'Shared Infrastructure',
+        'obras.card6.text': 'Multi-operator towers with comprehensive access management, power and differentiated SLA.',
         
         // Statistics
         'stats.years': '+ Years of',
@@ -174,19 +201,22 @@ const translations = {
         'stats.sla.sub': 'guaranteed',
         
         // Featured Projects
+        'projects.eyebrow': 'FEATURED PROJECTS',
         'projects.title': 'Featured Projects',
-        'projects.description': 'A selection of our most important projects. Each implementation demonstrates our experience and dedication in developing cutting-edge technological solutions.',
+        'projects.description': 'Each implementation demonstrates our execution capability at scale.',
         'projects.readmore': 'Read More',
         'projects.close': 'Close',
         
         // Clients
+        'clients.eyebrow': 'CLIENTS',
         'clients.title': 'Our Clients',
-        'clients.description': 'We work with the most important companies in the sector, providing high-quality technological solutions that drive their growth and digital transformation. Our client portfolio reflects the trust placed in our services.',
+        'clients.description': 'Operators, concessionaires and agencies that trust our infrastructure.',
         
         // Contact
+        'contact.eyebrow': 'CONTACT',
         'contact.title': 'Contact',
         'contact.subtitle': 'We\'re here to help you',
-        'contact.description': 'If you have any questions or need more information about our services, don\'t hesitate to contact us. Our team is available to answer all your questions.',
+        'contact.description': 'Commercial, technical or institutional inquiries.',
         
         'contact.form.name': 'Full name',
         'contact.form.email': 'Email address',

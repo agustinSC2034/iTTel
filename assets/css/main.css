@@ -305,7 +305,7 @@
 
 .infra-detail-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     border: 1px solid #E2E8F0;
 }
 
@@ -379,17 +379,15 @@
 
 @media (max-width: 1280px) {
     .infra-detail-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
-    .infra-detail-card:nth-child(2) {
-        border-right: none;
-    }
-    .infra-detail-card:nth-child(3) {
+    .infra-detail-card {
         border-top: 1px solid #E2E8F0;
-        border-right: 1px solid #E2E8F0;
     }
-    .infra-detail-card:nth-child(4) {
-        border-top: 1px solid #E2E8F0;
+    .infra-detail-card:nth-child(-n+3) {
+        border-top: none;
+    }
+    .infra-detail-card:nth-child(3n) {
         border-right: none;
     }
 }
@@ -4839,4 +4837,215 @@ html {
         height: auto;
         min-height: 100vh;
     }
+}
+
+/* ========================================
+   GLOBAL EYEBROW — Identidad corporativa
+   ======================================== */
+
+.global-eyebrow {
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.global-eyebrow--light {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+/* ========================================
+   CREDENTIAL LOGOS — logos en grayscale
+   ======================================== */
+
+.credential-logos {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.6rem 0;
+}
+
+.credential-logos img {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.55);
+    transition: filter 0.3s ease;
+}
+
+.credential-logos img[alt="Movistar"],
+.credential-logos img[alt="ARSAT"],
+.credential-logos img[alt="Trenes Argentinos"] {
+    height: 34px;
+}
+
+.credential-logos img:hover {
+    filter: grayscale(0%) opacity(1);
+}
+
+@media (max-width: 768px) {
+    .credential-logos img {
+        height: 22px;
+    }
+}
+
+/* ========================================
+   SECTION HEADER — Clean variant
+   ======================================== */
+
+.section-header--left {
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.section-title--clean {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: var(--text-dark);
+    background-clip: unset;
+    font-size: clamp(1.875rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.section-title--clean::after {
+    display: none;
+}
+
+.section-description--left {
+    margin: 0;
+    max-width: 50ch;
+}
+
+/* ========================================
+   SHOWROOM SECTION — 6-card grid
+   ======================================== */
+
+.showroom-section {
+    background-color: #ffffff;
+    padding: 100px 0;
+}
+
+.showroom-header {
+    margin-bottom: 3.5rem;
+}
+
+.showroom-title {
+    font-size: clamp(1.875rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin: 0.75rem 0 0;
+}
+
+.showroom-desc {
+    font-size: 1rem;
+    color: var(--text-medium);
+    line-height: 1.75;
+    max-width: 55ch;
+    margin-top: 1rem;
+}
+
+.showroom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.showroom-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    aspect-ratio: 4 / 3;
+    cursor: pointer;
+}
+
+.showroom-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.showroom-card:hover img {
+    transform: scale(1.05);
+}
+
+.showroom-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.15) 55%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.showroom-card:hover .showroom-card-overlay {
+    opacity: 1;
+}
+
+.showroom-card-tag {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #38bdf8;
+    margin-bottom: 0.5rem;
+}
+
+.showroom-card-text {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.55;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .showroom-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .showroom-section {
+        padding: 56px 0;
+    }
+    .showroom-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    .showroom-card {
+        aspect-ratio: 16 / 10;
+    }
+    .showroom-card-overlay {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   STATS V2 — eyebrow alignment
+   ======================================== */
+
+.stats-v2 .global-eyebrow--light {
+    margin-bottom: 2rem;
+}
+
+/* ========================================
+   CONTACT CLEAN — eyebrow spacing
+   ======================================== */
+
+.contact-clean .section-eyebrow {
+    margin-bottom: 0.5rem;
+}
+
+.contact-clean .section-title--clean {
+    margin-bottom: 0.75rem;
 }

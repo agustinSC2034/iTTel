@@ -115,11 +115,11 @@
     <!-- Credenciales / Alcance Section -->
     <section id="nosotros" class="section credentials-section">
         <div class="container">
+            <span class="global-eyebrow" data-aos="fade-up">GRUPO ITTEL &nbsp;|&nbsp; INFORMATION TECHNOLOGY & TELECOMMUNICATIONS</span>
             <div class="credentials-grid">
 
                 <!-- Columna Izquierda: Intro corporativa -->
                 <div class="credentials-intro" data-aos="fade-right">
-                    <span class="section-eyebrow" data-i18n="credentials.eyebrow">GRUPO ITTEL</span>
                     <h2 class="credentials-heading" data-i18n="credentials.title">
                         Pioneros en compartición de infraestructura en Argentina.
                     </h2>
@@ -133,7 +133,11 @@
 
                     <div class="credential-row" data-aos="fade-up" data-aos-delay="100">
                         <span class="credential-row-label" data-i18n="credentials.item1.label">Operadores Móviles</span>
-                        <span class="credential-row-value" data-i18n="credentials.item1.value">Claro · Movistar · Telecom</span>
+                        <div class="credential-logos">
+                            <img src="assets/images/clients/client-4.webp" alt="Claro" loading="lazy">
+                            <img src="assets/images/clients/client-3.webp" alt="Movistar" loading="lazy">
+                            <img src="assets/images/clients/client-1.webp" alt="Personal/Telecom" loading="lazy">
+                        </div>
                         <p class="credential-row-note" data-i18n="credentials.item1.note">Acuerdos comerciales vigentes con la totalidad de los operadores móviles de Argentina.</p>
                     </div>
 
@@ -141,7 +145,12 @@
 
                     <div class="credential-row" data-aos="fade-up" data-aos-delay="200">
                         <span class="credential-row-label" data-i18n="credentials.item2.label">Operadores de Fibra</span>
-                        <span class="credential-row-value" data-i18n="credentials.item2.value">ARSAT · IPLAN · CenturyLink · DIRECTV · Metrotel</span>
+                        <div class="credential-logos">
+                            <img src="assets/images/clients/client-14.webp" alt="ARSAT" loading="lazy">
+                            <img src="assets/images/clients/client-7.webp" alt="IPLAN" loading="lazy">
+                            <img src="assets/images/clients/client-8.webp" alt="DIRECTV" loading="lazy">
+                            <img src="assets/images/clients/client-10.webp" alt="Metrotel" loading="lazy">
+                        </div>
                         <p class="credential-row-note" data-i18n="credentials.item2.note">Red neutral con acceso para los principales carriers de fibra del país.</p>
                     </div>
 
@@ -149,7 +158,11 @@
 
                     <div class="credential-row" data-aos="fade-up" data-aos-delay="300">
                         <span class="credential-row-label" data-i18n="credentials.item3.label">Alcance Institucional</span>
-                        <span class="credential-row-value" data-i18n="credentials.item3.value">Trenes Argentinos · PBA · CABA · Municipios</span>
+                        <div class="credential-logos">
+                            <img src="assets/images/clients/client-9.webp" alt="Trenes Argentinos" loading="lazy">
+                            <img src="assets/images/clients/client-5.webp" alt="AUSA" loading="lazy">
+                            <img src="assets/images/clients/client-6.webp" alt="AUBASA" loading="lazy">
+                        </div>
                         <p class="credential-row-note" data-i18n="credentials.item3.note">Presencia en todas las jurisdicciones del territorio nacional.</p>
                     </div>
 
@@ -161,9 +174,9 @@
     <!-- Capacidad de Infraestructura Section -->
     <section id="servicios" class="section infrastructure-section">
         <div class="container">
+            <span class="global-eyebrow" data-aos="fade-up">GRUPO ITTEL &nbsp;|&nbsp; INFORMATION TECHNOLOGY & TELECOMMUNICATIONS</span>
             <div class="infra-header" data-aos="fade-up">
-                <span class="section-eyebrow" data-i18n="infra.eyebrow">CAPACIDAD DE INFRAESTRUCTURA</span>
-                <h2 class="infra-title" data-i18n="infra.title">Escala real. Presencia comprobable.</h2>
+                <h2 class="infra-title" data-i18n="infra.title">Capacidad de Infraestructura</h2>
             </div>
 
             <div class="infra-global-stats" data-aos="fade-up" data-aos-delay="100">
@@ -219,16 +232,21 @@
                     </div>
                 </div>
 
-                <div class="infra-detail-card infra-detail-card--accent">
-                    <div class="infra-region-tag" data-i18n="infra.projection.label">PROYECCIÓN 2029</div>
+                <div class="infra-detail-card">
+                    <div class="infra-region-tag" data-i18n="infra.region4.name">LA MATANZA</div>
                     <div class="infra-region-metrics">
                         <div class="infra-metric-item">
-                            <span class="infra-metric-num">+1.500</span>
-                            <span class="infra-metric-label" data-i18n="infra.projection.tandil">manzanas FTTH · Tandil</span>
-                        </div>
-                        <div class="infra-metric-item">
                             <span class="infra-metric-num">+300 km</span>
-                            <span class="infra-metric-label" data-i18n="infra.projection.matanza">nodo FO centralizado · La Matanza</span>
+                            <span class="infra-metric-label" data-i18n="infra.region4.fo">nodo FO centralizado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="infra-detail-card infra-detail-card--accent">
+                    <div class="infra-region-tag" data-i18n="infra.projection.label">TANDIL</div>
+                    <div class="infra-region-metrics">
+                        <div class="infra-metric-item">
+                            <span class="infra-metric-label" data-i18n="infra.projection.tandil">Proyectado a 2029: +1.500 manzanas FTTH</span>
                         </div>
                     </div>
                 </div>
@@ -237,195 +255,86 @@
         </div>
     </section>
 
-    <!-- Nueva sección amplia: Obras en Campo -->
-    <section id="obras" class="section obras-campo">
+    <!-- Obras en Campo — Project Showroom -->
+    <section id="obras" class="section showroom-section">
         <div class="container">
-            <div class="obras-header" data-aos="fade-up">
-                <h2 class="section-title" data-i18n="obras.title">Obras en Campo</h2>
-                <br><br>
-                <p class="section-description" data-i18n="obras.description">Una selección amplia de registros de implementación en campo. Explora en detalle cada obra.</p>
+            <span class="global-eyebrow" data-aos="fade-up">GRUPO ITTEL &nbsp;|&nbsp; INFORMATION TECHNOLOGY & TELECOMMUNICATIONS</span>
+            <div class="showroom-header" data-aos="fade-up">
+                <span class="section-eyebrow" data-i18n="obras.eyebrow">REGISTRO DE OBRA</span>
+                <h2 class="showroom-title" data-i18n="obras.title">Obras en Campo</h2>
+                <p class="showroom-desc" data-i18n="obras.description">Bitácora de despliegues ejecutados. Cada tarjeta representa una categoría de intervención técnica verificable.</p>
             </div>
 
-            <div class="masonry-grid" data-aos="fade-up" data-aos-delay="100">
-                <!-- Mobile: 8 imágenes seleccionadas | Desktop: Todo -->
-                
-                <!-- 1: Imagen (antena) - MOBILE Y DESKTOP -->
-                <a class="masonry-item" href="assets/images/obras_en_campo/1.webp" data-index="0">
-                    <img src="assets/images/obras_en_campo/1.webp" alt="Antena torre" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 2: Imagen (obra) - OCULTA EN MOBILE -->
-                <a class="masonry-item mobile-hidden" href="assets/images/obras_en_campo/17.webp" data-index="1">
-                    <img src="assets/images/obras_en_campo/17.webp" alt="Obra en campo" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 3: Video - SOLO DESKTOP -->
-                <a class="masonry-item masonry-item-large is-video desktop-only" href="assets/images/obras_en_campo/video_ittel_antena.mp4" data-type="video" data-poster="assets/images/obras_en_campo/1.webp" data-index="2">
-                    <video src="assets/images/obras_en_campo/video_ittel_antena.mp4" poster="assets/images/obras_en_campo/1.webp" autoplay muted loop playsinline preload="metadata"></video>
-                    <span class="play-badge" aria-hidden="true"><i class="fas fa-play"></i></span>
-                </a>
-                
-                <!-- 4: Imagen (antena) - MOBILE Y DESKTOP -->
-                <a class="masonry-item" href="assets/images/obras_en_campo/21.webp" data-index="3">
-                    <img src="assets/images/obras_en_campo/21.webp" alt="Instalación antena" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 5: Imagen (obra) - OCULTA EN MOBILE -->
-                <a class="masonry-item mobile-hidden" href="assets/images/obras_en_campo/2.webp" data-index="4">
-                    <img src="assets/images/obras_en_campo/2.webp" alt="Obra técnica" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 6: Imagen (antena) - MOBILE Y DESKTOP -->
-                <a class="masonry-item" href="assets/images/obras_en_campo/22.webp" data-index="5">
-                    <img src="assets/images/obras_en_campo/22.webp" alt="Torre de telecomunicaciones" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 7: Imagen - SOLO DESKTOP -->
-                <a class="masonry-item desktop-only" href="assets/images/obras_en_campo/3.webp" data-index="6">
-                    <img src="assets/images/obras_en_campo/3.webp" alt="Obra 3" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 8: Imagen (obra) - MOBILE Y DESKTOP -->
-                <a class="masonry-item" href="assets/images/obras_en_campo/18.webp" data-index="7">
-                    <img src="assets/images/obras_en_campo/18.webp" alt="Trabajo en altura" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 9: Video - SOLO DESKTOP -->
-                <a class="masonry-item masonry-item-large is-video desktop-only" href="assets/images/obras_en_campo/video_ittel_antena2.mp4" data-type="video" data-poster="assets/images/obras_en_campo/21.webp" data-index="8">
-                    <video src="assets/images/obras_en_campo/video_ittel_antena2.mp4" poster="assets/images/obras_en_campo/21.webp" autoplay muted loop playsinline preload="metadata"></video>
-                    <span class="play-badge" aria-hidden="true"><i class="fas fa-play"></i></span>
-                </a>
-                
-                <!-- 10: Imagen (antena) - OCULTA EN MOBILE -->
-                <a class="masonry-item mobile-hidden" href="assets/images/obras_en_campo/23.webp" data-index="9">
-                    <img src="assets/images/obras_en_campo/23.webp" alt="Estructura antena" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 11: Imagen (obra) - MOBILE Y DESKTOP -->
-                <a class="masonry-item" href="assets/images/obras_en_campo/19.webp" data-index="10">
-                    <img src="assets/images/obras_en_campo/19.webp" alt="Equipo técnico" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 12: Imagen - SOLO DESKTOP -->
-                <a class="masonry-item desktop-only" href="assets/images/obras_en_campo/4.webp" data-index="11">
-                    <img src="assets/images/obras_en_campo/4.webp" alt="Obra 4" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 13: Imagen - SOLO DESKTOP -->
-                <a class="masonry-item desktop-only" href="assets/images/obras_en_campo/6.webp" data-index="12">
-                    <img src="assets/images/obras_en_campo/6.webp" alt="Obra 6" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 14: Video - SOLO DESKTOP -->
-                <a class="masonry-item is-video desktop-only" href="assets/images/obras_en_campo/video_ittel_antena3.mp4" data-type="video" data-poster="assets/images/obras_en_campo/22.webp" data-index="13">
-                    <video src="assets/images/obras_en_campo/video_ittel_antena3.mp4" poster="assets/images/obras_en_campo/22.webp" autoplay muted loop playsinline preload="metadata"></video>
-                    <span class="play-badge" aria-hidden="true"><i class="fas fa-play"></i></span>
-                </a>
-                
-                <!-- 15: Imagen - SOLO DESKTOP -->
-                <a class="masonry-item desktop-only" href="assets/images/obras_en_campo/7.webp" data-index="14">
-                    <img src="assets/images/obras_en_campo/7.webp" alt="Obra 7" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 16: Imagen - SOLO DESKTOP -->
-                <a class="masonry-item desktop-only" href="assets/images/obras_en_campo/8.webp" data-index="15">
-                    <img src="assets/images/obras_en_campo/8.webp" alt="Obra 8" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 17: Imagen - SOLO DESKTOP -->
-                <a class="masonry-item desktop-only" href="assets/images/obras_en_campo/9.webp" data-index="16">
-                    <img src="assets/images/obras_en_campo/9.webp" alt="Obra 9" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 18: Imagen - SOLO DESKTOP -->
-                <a class="masonry-item desktop-only" href="assets/images/obras_en_campo/10.webp" data-index="17">
-                    <img src="assets/images/obras_en_campo/10.webp" alt="Obra 10" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 19: Video - SOLO DESKTOP -->
-                <a class="masonry-item masonry-item-large is-video desktop-only" href="assets/images/obras_en_campo/video_ittel_antena4.mp4" data-type="video" data-poster="assets/images/obras_en_campo/23.webp" data-index="18">
-                    <video src="assets/images/obras_en_campo/video_ittel_antena4.mp4" poster="assets/images/obras_en_campo/23.webp" autoplay muted loop playsinline preload="metadata"></video>
-                    <span class="play-badge" aria-hidden="true"><i class="fas fa-play"></i></span>
-                </a>
-                
-                <!-- 20: Imagen - SOLO DESKTOP -->
-                <a class="masonry-item desktop-only" href="assets/images/obras_en_campo/11.webp" data-index="19">
-                    <img src="assets/images/obras_en_campo/11.webp" alt="Obra 11" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 21: Imagen - SOLO DESKTOP -->
-                <a class="masonry-item desktop-only" href="assets/images/obras_en_campo/12.webp" data-index="20">
-                    <img src="assets/images/obras_en_campo/12.webp" alt="Obra 12" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 22: Imagen - SOLO DESKTOP -->
-                <a class="masonry-item desktop-only" href="assets/images/obras_en_campo/13.webp" data-index="21">
-                    <img src="assets/images/obras_en_campo/13.webp" alt="Obra 13" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 23: Video - SOLO DESKTOP -->
-                <a class="masonry-item is-video desktop-only" href="assets/images/obras_en_campo/video3.mp4" data-type="video" data-poster="assets/images/obras_en_campo/24.webp" data-index="22">
-                    <video src="assets/images/obras_en_campo/video3.mp4" poster="assets/images/obras_en_campo/24.webp" autoplay muted loop playsinline preload="metadata"></video>
-                    <span class="play-badge" aria-hidden="true"><i class="fas fa-play"></i></span>
-                </a>
-                
-                <!-- 24: Imagen - SOLO DESKTOP -->
-                <a class="masonry-item desktop-only" href="assets/images/obras_en_campo/14.webp" data-index="23">
-                    <img src="assets/images/obras_en_campo/14.webp" alt="Obra 14" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 25: Imagen - SOLO DESKTOP -->
-                <a class="masonry-item desktop-only" href="assets/images/obras_en_campo/15.webp" data-index="24">
-                    <img src="assets/images/obras_en_campo/15.webp" alt="Obra 15" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 26: Imagen - SOLO DESKTOP -->
-                <a class="masonry-item desktop-only" href="assets/images/obras_en_campo/16.webp" data-index="25">
-                    <img src="assets/images/obras_en_campo/16.webp" alt="Obra 16" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 27: Imagen - SOLO DESKTOP -->
-                <a class="masonry-item desktop-only" href="assets/images/obras_en_campo/20.webp" data-index="26">
-                    <img src="assets/images/obras_en_campo/20.webp" alt="Obra 20" loading="lazy" decoding="async"/>
-                </a>
-                
-                <!-- 28: Imagen - SOLO DESKTOP -->
-                <a class="masonry-item desktop-only" href="assets/images/obras_en_campo/25.webp" data-index="27">
-                    <img src="assets/images/obras_en_campo/25.webp" alt="Obra 25" loading="lazy" decoding="async"/>
-                </a>
-            </div>
-        </div>
+            <div class="showroom-grid" data-aos="fade-up" data-aos-delay="100">
 
-        <!-- Lightbox para Obras -->
-        <div id="obrasLightbox" class="obras-lightbox" aria-hidden="true">
-            <button class="obras-lightbox-close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
-            <button class="obras-lightbox-nav prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-            <!-- Soporte imagen y video -->
-            <img class="obras-lightbox-image obras-lightbox-media" src="" alt="Obra"/>
-            <video class="obras-lightbox-video obras-lightbox-media" controls playsinline style="display:none; max-width:96vw; max-height:92vh; border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,.45);"></video>
-            <button class="obras-lightbox-nav next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
-            <div class="obras-lightbox-counter"><span id="obrasIndex">1</span>/<span id="obrasTotal">24</span></div>
+                <div class="showroom-card">
+                    <img src="assets/images/obras_en_campo/1.webp" alt="Despliegue de Torres" loading="lazy" decoding="async">
+                    <div class="showroom-card-overlay">
+                        <span class="showroom-card-tag" data-i18n="obras.card1.tag">Despliegue de Torres</span>
+                        <p class="showroom-card-text" data-i18n="obras.card1.text">Instalación de monopostes y estructuras portantes para operadores móviles — Red AUSA / CABA.</p>
+                    </div>
+                </div>
+
+                <div class="showroom-card">
+                    <img src="assets/images/obras_en_campo/17.webp" alt="Zanjado de Fibra" loading="lazy" decoding="async">
+                    <div class="showroom-card-overlay">
+                        <span class="showroom-card-tag" data-i18n="obras.card2.tag">Tendido de Fibra Óptica</span>
+                        <p class="showroom-card-text" data-i18n="obras.card2.text">Zanjado, canalizado y empalme de FO en autopistas y rutas provinciales — AUBASA.</p>
+                    </div>
+                </div>
+
+                <div class="showroom-card">
+                    <img src="assets/images/obras_en_campo/18.webp" alt="Trabajo en Altura" loading="lazy" decoding="async">
+                    <div class="showroom-card-overlay">
+                        <span class="showroom-card-tag" data-i18n="obras.card3.tag">Trabajo en Altura</span>
+                        <p class="showroom-card-text" data-i18n="obras.card3.text">Montaje de antenas y equipos RF en estructuras existentes — 60+ m de altura operativa.</p>
+                    </div>
+                </div>
+
+                <div class="showroom-card">
+                    <img src="assets/images/obras_en_campo/21.webp" alt="Nodos Estratégicos" loading="lazy" decoding="async">
+                    <div class="showroom-card-overlay">
+                        <span class="showroom-card-tag" data-i18n="obras.card4.tag">Nodos Estratégicos</span>
+                        <p class="showroom-card-text" data-i18n="obras.card4.text">Construcción e integración de nodos de distribución en la red ferroviaria nacional.</p>
+                    </div>
+                </div>
+
+                <div class="showroom-card">
+                    <img src="assets/images/obras_en_campo/2.webp" alt="Ingeniería Civil" loading="lazy" decoding="async">
+                    <div class="showroom-card-overlay">
+                        <span class="showroom-card-tag" data-i18n="obras.card5.tag">Ingeniería Civil</span>
+                        <p class="showroom-card-text" data-i18n="obras.card5.text">Fundaciones, bases de hormigón y obra civil para infraestructura crítica telco.</p>
+                    </div>
+                </div>
+
+                <div class="showroom-card">
+                    <img src="assets/images/obras_en_campo/22.webp" alt="Infraestructura Compartida" loading="lazy" decoding="async">
+                    <div class="showroom-card-overlay">
+                        <span class="showroom-card-tag" data-i18n="obras.card6.tag">Infraestructura Compartida</span>
+                        <p class="showroom-card-text" data-i18n="obras.card6.text">Torres multi-operador con gestión integral de accesos, energía y SLA diferenciado.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <!-- Stats Separator - Renovado -->
+    <!-- Stats Separator -->
     <section id="stats" class="section stats-v2">
         <div class="container">
+            <span class="global-eyebrow global-eyebrow--light" data-aos="fade-up">GRUPO ITTEL &nbsp;|&nbsp; INFORMATION TECHNOLOGY & TELECOMMUNICATIONS</span>
             <div class="stats-v2-grid" data-aos="fade-up">
-                <!-- Stat Item 1 -->
                 <div class="stat-v2-item" data-aos="fade-up" data-aos-delay="100">
                     <span class="stat-v2-number" data-target="10">0</span>
-                    <p class="stat-v2-label">+ Años de<br>experiencia</p>
+                    <p class="stat-v2-label" data-i18n="stats.years">+ Años de<br><span data-i18n="stats.years.sub">experiencia</span></p>
                 </div>
-                <!-- Stat Item 2 -->
                 <div class="stat-v2-item" data-aos="fade-up" data-aos-delay="200">
                     <span class="stat-v2-number" data-target="340">0</span>
-                    <p class="stat-v2-label">+ Proyectos<br>de éxito</p>
+                    <p class="stat-v2-label" data-i18n="stats.projects">+ Proyectos<br><span data-i18n="stats.projects.sub">de éxito</span></p>
                 </div>
-                <!-- Stat Item 3 -->
                 <div class="stat-v2-item" data-aos="fade-up" data-aos-delay="300">
                     <span class="stat-v2-number" data-target="99.99">0.00</span>
-                    <p class="stat-v2-label">% de SLA<br>garantizado</p>
+                    <p class="stat-v2-label" data-i18n="stats.sla">% de SLA<br><span data-i18n="stats.sla.sub">garantizado</span></p>
                 </div>
             </div>
         </div>
@@ -434,11 +343,12 @@
     <!-- Proyectos Destacados - Interactive Slices Section -->
     <section id="proyectos" class="section projects-interactive">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title" data-i18n="projects.title">Proyectos Destacados</h2>
-                <p class="section-description" data-i18n="projects.description">
-                    Una selección de nuestros proyectos más importantes. Cada implementación demuestra nuestra
-                    experiencia y dedicación en el desarrollo de soluciones tecnológicas de vanguardia.
+            <span class="global-eyebrow" data-aos="fade-up">GRUPO ITTEL &nbsp;|&nbsp; INFORMATION TECHNOLOGY & TELECOMMUNICATIONS</span>
+            <div class="section-header section-header--left" data-aos="fade-up">
+                <span class="section-eyebrow" data-i18n="projects.eyebrow">PROYECTOS DESTACADOS</span>
+                <h2 class="section-title section-title--clean" data-i18n="projects.title">Proyectos Destacados</h2>
+                <p class="section-description section-description--left" data-i18n="projects.description">
+                    Cada implementación demuestra nuestra capacidad de ejecución a escala.
                 </p>
             </div>
 
@@ -682,10 +592,12 @@
     <!-- Clients Section -->
     <section id="clientes" class="section clients">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title" data-i18n="clients.title">Nuestros Clientes</h2>
-                <p class="section-description" data-i18n="clients.description">
-                    Trabajamos con las empresas más importantes del sector, brindando soluciones tecnológicas de alta calidad que impulsan su crecimiento y transformación digital. Nuestra cartera de clientes refleja la confianza depositada en nuestros servicios.
+            <span class="global-eyebrow" data-aos="fade-up">GRUPO ITTEL &nbsp;|&nbsp; INFORMATION TECHNOLOGY & TELECOMMUNICATIONS</span>
+            <div class="section-header section-header--left" data-aos="fade-up">
+                <span class="section-eyebrow" data-i18n="clients.eyebrow">CLIENTES</span>
+                <h2 class="section-title section-title--clean" data-i18n="clients.title">Nuestros Clientes</h2>
+                <p class="section-description section-description--left" data-i18n="clients.description">
+                    Operadores, concesionarios y organismos que confían en nuestra infraestructura.
                 </p>
             </div>
 
@@ -729,10 +641,12 @@
     <!-- Contact Section - Exacto como la imagen -->
     <section id="contacto" class="section contact-clean">
         <div class="container">
+            <span class="global-eyebrow" data-aos="fade-up">GRUPO ITTEL &nbsp;|&nbsp; INFORMATION TECHNOLOGY & TELECOMMUNICATIONS</span>
             <div class="contact-clean-grid" data-aos="fade-up">
                 <div class="contact-clean-left">
-                    <h2 class="section-title" data-i18n="contact.title">Contacto</h2>
-                    <p class="contact-subtitle" data-i18n="contact.description">Estamos aquí para ayudarte. Si tienes alguna consulta o necesitas más información sobre nuestros servicios, no dudes en contactarnos.</p>
+                    <span class="section-eyebrow" data-i18n="contact.eyebrow">CONTACTO</span>
+                    <h2 class="section-title section-title--clean" data-i18n="contact.title">Contacto</h2>
+                    <p class="contact-subtitle" data-i18n="contact.description">Consultas comerciales, técnicas o institucionales.</p>
                     <form class="contact-clean-form" id="contactForm">
                         <div class="row-2">
                             <input type="text" id="nombre" name="nombre" data-i18n="contact.form.name" placeholder="Nombre completo" required>
