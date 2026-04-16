@@ -38,7 +38,6 @@
                 <a href="#inicio" class="nav-link-glass active">HOME</a>
                 <a href="#nosotros" class="nav-link-glass">ABOUT US</a>
                 <a href="#servicios" class="nav-link-glass">IT & TELCO</a>
-                <a href="#obras" class="nav-link-glass">FIELD WORKS</a>
                 <a href="#proyectos" class="nav-link-glass">PROJECTS</a>
                 <a href="#clientes" class="nav-link-glass">CLIENTES</a>
                 <a href="#contacto" class="nav-link-glass">CONTACT</a>
@@ -127,16 +126,6 @@
                             <img src="../assets/images/clients/client-10.webp" alt="Metrotel" loading="lazy">
                         </div>
                         <p class="credential-row-note" data-i18n="credentials.item2.note">Neutral network with access for the country's leading fiber carriers.</p>
-                    </div>
-                    <div class="credential-divider"></div>
-                    <div class="credential-row" data-aos="fade-up" data-aos-delay="300">
-                        <span class="credential-row-label" data-i18n="credentials.item3.label">Institutional Reach</span>
-                        <div class="credential-logos">
-                            <img src="../assets/images/clients/client-9.webp" alt="ADIF S.E." loading="lazy">
-                            <img src="../assets/images/clients/client-5.webp" alt="AUSA" loading="lazy">
-                            <img src="../assets/images/clients/client-6.webp" alt="AUBASA" loading="lazy">
-                        </div>
-                        <p class="credential-row-note" data-i18n="credentials.item3.note">Active agreements across all jurisdictions of the national territory.</p>
                     </div>
                 </div>
             </div>
@@ -239,7 +228,7 @@
         </div>
     </section>
 
-    <section id="obras" class="section showroom-section">
+    <section id="obras" class="section showroom-section" hidden aria-hidden="true" style="display: none !important;">
         <div class="container">
             <span class="global-eyebrow" data-aos="fade-up" data-i18n="obras.eyebrow">FIELD WORKS</span>
             <div class="showroom-header" data-aos="fade-up">
@@ -378,7 +367,8 @@
                 </div>
 
                 <div class="project-slice" data-title="FTTH in Tandil – USITTEL"
-                    data-image="../assets/images/proyectos/Usittelcobertura.webp"
+                    data-hide-image-fullscreen="true"
+                    data-image="../assets/images/tandilht.jpeg"
                     data-description="<p><strong>FTTH</strong> network deployment with <strong>GPON</strong> architecture to deliver high-quality Internet and Digital TV in Tandil, together with <strong>La Usina de Tandil</strong>.</p><p>Urban and peri-urban coverage, optimized last mile, and premium SLA focused on the end user.</p>"
                     data-description-mobile="<p><strong>FTTH</strong> network with <strong>GPON</strong> architecture in Tandil with <strong>La Usina de Tandil</strong>.</p>">
                     <img src="../assets/images/proyectos/usittel_internet.webp" class="slice-bg" alt="USITTEL Project" loading="lazy">
@@ -394,7 +384,8 @@
                 </div>
 
                 <div class="project-slice" data-title="FTTH in La Matanza – LARANET"
-                    data-image="../assets/images/proyectos/LARANET.webp"
+                    data-hide-image-fullscreen="true"
+                    data-image="../assets/images/matanzaht.jpeg"
                     data-description="<p>Design and implementation of a <strong>passive optical</strong> FTTH network in <strong>La Matanza</strong>, together with the <strong>LARA Cooperative</strong>.</p><p>Scalable architecture with a redundant backbone and 24/7 operations from the NOC.</p>"
                     data-description-mobile="<p><strong>Passive optical</strong> FTTH network in <strong>La Matanza</strong> with <strong>LARA Cooperative</strong>.</p>">
                     <img src="../assets/images/proyectos/laranett.webp" class="slice-bg" alt="LARANET Project" loading="lazy">
@@ -410,6 +401,7 @@
                 </div>
 
                 <div class="project-slice" data-title="ADIFSE Project"
+                    data-hide-image-fullscreen="true"
                     data-image="../assets/images/adif.webp"
                     data-description="<p>Infrastructure survey in railway routes administered by <strong>ADIF S.E.</strong>: condition, occupancy and potential.</p><p>Foundation to plan <strong>sustainable</strong> network development, optimizing operations.</p>">
                     <img src="../assets/images/proyectos/adifse_portada.webp" class="slice-bg" alt="ADIFSE Project" loading="lazy">
@@ -425,6 +417,7 @@
                 </div>
 
                 <div class="project-slice" data-title="VITTAL – Video Surveillance"
+                    data-hide-image-fullscreen="true"
                     data-image="../assets/images/proyectos/solucion_VITTAL.webp"
                     data-description="<p>Provisioning and configuration of an <strong>offline/online Video Surveillance</strong> platform accessible from any Internet-connected device.</p><p>Centralized viewing and recording of all cameras, remote control, and 4K support.</p>">
                     <img src="../assets/images/proyectos/viTTal.webp" class="slice-bg" alt="VITTAL Project" loading="lazy">
@@ -440,6 +433,7 @@
                 </div>
 
                 <div class="project-slice" data-title="CARREFOUR – IT Infrastructure"
+                    data-hide-image-fullscreen="true"
                     data-image="../assets/images/proyectos/solucion_carrefour.webp"
                     data-description="<p>Comprehensive solution that combines technology equipment and management software for self-service cafeterias with identity validation via fingerprint or proximity card.</p>">
                     <img src="../assets/images/proyectos/carrefour.webp" class="slice-bg" alt="Carrefour Project" loading="lazy">
@@ -555,11 +549,6 @@
                     </div>
                 </div>
                 <div class="contact-info-item">
-                    <div class="icon"><i class="fab fa-linkedin-in"></i></div>
-                    <div class="content">
-                        <h3>LinkedIn</h3>
-                        <p><a href="https://www.linkedin.com/company/grupoittel/" target="_blank">/grupoittel</a></p>
-                    </div>
                 </div>
             </div>
             <div class="contact-info-note" data-aos="fade-up" data-aos-delay="150">

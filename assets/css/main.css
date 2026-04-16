@@ -154,11 +154,20 @@
 }
 
 .credentials-pillar-item {
-    padding-left: 1rem;
+    padding: 1rem 1.1rem 1rem 1rem;
     border-left: 2px solid var(--primary-color);
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
+    border-radius: 0 16px 16px 0;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.credentials-pillar-item:hover {
+    background-color: #0f172a;
+    border-color: var(--primary-color-soft);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.14);
 }
 
 .pillar-name {
@@ -167,17 +176,28 @@
     color: var(--text-dark);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    transition: color 0.3s ease;
 }
 
 .pillar-text {
     font-size: 0.95rem;
     color: var(--text-medium);
     line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.credentials-pillar-item:hover .pillar-name {
+    color: #ffffff;
+}
+
+.credentials-pillar-item:hover .pillar-text {
+    color: rgba(255, 255, 255, 0.76);
 }
 
 .credentials-data {
     display: flex;
     flex-direction: column;
+    padding-top: 1.75rem;
 }
 
 .credential-row {
@@ -303,13 +323,24 @@
 }
 
 .service-pillar {
-    padding: 2rem 0;
+    padding: 2rem 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 22px;
+    transition: background-color 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-pillar:hover {
+    background-color: #0f172a;
+    border-color: #0f172a;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18);
 }
 
 .pillar-icon {
     font-size: 1.75rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
+    transition: color 0.35s ease, transform 0.35s ease;
 }
 
 .pillar-title {
@@ -320,6 +351,7 @@
     text-transform: uppercase;
     color: var(--text-dark);
     margin-bottom: 0.75rem;
+    transition: color 0.35s ease;
 }
 
 .pillar-desc {
@@ -327,6 +359,20 @@
     color: var(--text-medium);
     line-height: 1.7;
     margin: 0;
+    transition: color 0.35s ease;
+}
+
+.service-pillar:hover .pillar-icon {
+    color: #7dd3fc;
+    transform: translateY(-2px);
+}
+
+.service-pillar:hover .pillar-title {
+    color: #ffffff;
+}
+
+.service-pillar:hover .pillar-desc {
+    color: rgba(255, 255, 255, 0.74);
 }
 
 @media (max-width: 768px) {
@@ -349,11 +395,13 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 0 2rem;
+    padding: 1.25rem 2rem;
+    border-radius: 22px;
+    transition: background-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .infra-global-stat:first-child {
-    padding-left: 0;
+    padding-left: 2.5rem;
 }
 
 .infra-global-divider {
@@ -361,6 +409,7 @@
     height: 80px;
     background-color: #E2E8F0;
     flex-shrink: 0;
+    transition: opacity 0.35s ease;
 }
 
 .infra-stat-number {
@@ -389,6 +438,25 @@
     display: block;
 }
 
+.infra-global-stat:hover {
+    background-color: #0f172a;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.16);
+}
+
+.infra-global-stats:hover .infra-global-divider {
+    opacity: 0.45;
+}
+
+.infra-global-stat:hover .infra-stat-number,
+.infra-global-stat:hover .infra-stat-unit {
+    color: #ffffff;
+}
+
+.infra-global-stat:hover .infra-stat-label {
+    color: rgba(255, 255, 255, 0.68);
+}
+
 .infra-detail-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -398,7 +466,7 @@
 .infra-detail-card {
     padding: 2rem 1.75rem;
     border-right: 1px solid #E2E8F0;
-    transition: background-color 0.35s ease, border-color 0.35s ease;
+    transition: background-color 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
     cursor: default;
 }
 
@@ -411,6 +479,8 @@
     border-color: transparent;
     position: relative;
     z-index: 1;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18);
 }
 
 .infra-detail-card:hover .infra-region-tag {
@@ -664,9 +734,10 @@
     display: block;
     font-size: 4rem;
     font-weight: 800;
-    color: #38bdf8;
+    color: var(--primary-color-soft);
     line-height: 1;
     margin-bottom: 0.5rem;
+    letter-spacing: -0.03em;
 }
 
 .stat-v2-label {
@@ -938,19 +1009,23 @@
 }
 
 .open-modal-btn {
-    background-color: #38bdf8;
+    background: rgba(255, 255, 255, 0.04);
     color: white;
     font-weight: 700;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    border: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.72rem 1rem;
+    border-radius: 0.3rem;
+    border: 1px solid rgba(255, 255, 255, 0.72);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 }
 
 .open-modal-btn:hover {
     background-color: white;
-    color: #38bdf8;
+    color: var(--primary-color-deep);
+    border-color: white;
 }
 
 .slice-social-link {
@@ -1025,7 +1100,7 @@
 .modal-close:focus,
 .open-modal-btn:focus,
 .fullscreen-btn:focus {
-    outline: 2px solid #38bdf8;
+    outline: 2px solid var(--primary-color-soft);
     outline-offset: 2px;
 }
 
@@ -1614,21 +1689,26 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: linear-gradient(135deg, #227db3 0%, #3b9bea 100%);
+    padding: 0.72rem 1rem;
+    background: rgba(36, 59, 99, 0.04);
     color: white;
     text-decoration: none;
-    border-radius: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(34, 125, 179, 0.2);
+    border-radius: 0.3rem;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+    box-shadow: none;
 }
 
 .social-modal-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(34, 125, 179, 0.3);
-    color: white;
+    background-color: white;
+    color: var(--primary-color-deep);
+    border-color: white;
+    transform: none;
+    box-shadow: none;
 }
 
 /* Responsive Design */
@@ -3198,14 +3278,13 @@ html {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(calc(-1 * var(--clients-scroll-distance, 50%)));
     }
 }
 
 /* Velocidad más rápida para mobile */
 @media (max-width: 768px) {
     .clients-track {
-        animation-duration: 6s !important;
         gap: 50px;
     }
 }
@@ -3219,6 +3298,8 @@ html {
 :root {
     --primary-color: #227db3;
     --primary-gradient: linear-gradient(135deg, #227db3 0%, #3b9bea 100%);
+    --primary-color-soft: #aecae6;
+    --primary-color-deep: #243b63;
     --secondary-color: #00d4ff;
     --text-dark: #1a202c;
     --text-medium: #4a5568;
@@ -3730,7 +3811,8 @@ html {
     display: flex;
     align-items: center;
     gap: 80px;
-    animation: scroll 17s linear infinite;
+    width: max-content;
+    animation: scroll var(--clients-scroll-duration, 16s) linear infinite;
     will-change: transform;
 }
 
@@ -4043,10 +4125,10 @@ html {
     right: 30px;
     width: 50px;
     height: 50px;
-    background: linear-gradient(45deg, #227db3, #3b9bea);
-    color: white;
-    border: none;
-    border-radius: 50%;
+    background: rgba(36, 59, 99, 0.96);
+    color: var(--primary-color-soft);
+    border: 1px solid rgba(174, 202, 230, 0.35);
+    border-radius: 14px;
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
@@ -4065,7 +4147,10 @@ html {
 
 .back-to-top:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(34, 125, 179, 0.4);
+    background: var(--primary-color-soft);
+    color: var(--primary-color-deep);
+    border-color: var(--primary-color-soft);
+    box-shadow: 0 10px 24px rgba(36, 59, 99, 0.24);
 }
 
 /* Responsive Design */
@@ -4990,12 +5075,12 @@ html {
 .credential-logos {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin: 0.6rem 0;
+    gap: 1.15rem;
+    margin: 0.7rem 0;
 }
 
 .credential-logos img {
-    height: 28px;
+    height: 30px;
     width: auto;
     object-fit: contain;
     filter: grayscale(100%) opacity(0.55);
@@ -5005,7 +5090,7 @@ html {
 .credential-logos img[alt="Movistar"],
 .credential-logos img[alt="ARSAT"],
 .credential-logos img[alt="ADIF S.E."] {
-    height: 34px;
+    height: 36px;
 }
 
 .credential-logos img:hover {
@@ -5014,7 +5099,7 @@ html {
 
 @media (max-width: 768px) {
     .credential-logos img {
-        height: 22px;
+        height: 24px;
     }
 }
 
