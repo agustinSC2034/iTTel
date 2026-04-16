@@ -311,182 +311,64 @@ function initClients() {
     const clientsTrack = document.getElementById('clients-track');
     if (!clientsTrack) return;
 
-    // Nuevo: trabajar con imágenes .client-logo directamente
-    const logos = Array.from(clientsTrack.querySelectorAll('.client-logo'));
-    if (logos.length === 0) return;
+    const originalLogos = Array.from(clientsTrack.querySelectorAll('.client-logo'));
+    if (originalLogos.length === 0) return;
 
-    // Para loop infinito suave duplicamos el set de logos solo 1 vez si aún no se clonó
     if (!clientsTrack.dataset.cloned) {
-        logos.forEach(logo => {
+        originalLogos.forEach((logo) => {
             const clone = logo.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
             clientsTrack.appendChild(clone);
         });
         clientsTrack.dataset.cloned = 'true';
     }
 
-    // Establecer velocidad inicial correcta basada en viewport
-    const setInitialSpeed = () => {
-        const isMobileView = window.innerWidth <= 768;
-        const duration = isMobileView ? '6s' : '10s';
-        clientsTrack.style.animationDuration = duration;
-    };
-    setInitialSpeed();
+    const updateClientsCarousel = () => {
+        const allLogos = Array.from(clientsTrack.querySelectorAll('.client-logo'));
+        const visibleOriginals = allLogos.slice(0, allLogos.length / 2);
+        if (visibleOriginals.length === 0) return;
 
-    // Variables para el control del carrusel
-    let isDragging = false;
-    let startX = 0;
-    let currentTransform = 0;
-    let animationPaused = false;
-    let manualMode = false; // cuando true, usamos transform fijo sin animación
+        const styles = window.getComputedStyle(clientsTrack);
+        const gap = parseFloat(styles.columnGap || styles.gap || '0');
+        const distance = visibleOriginals.reduce((sum, logo) => {
+            return sum + logo.getBoundingClientRect().width;
+        }, 0) + gap * Math.max(visibleOriginals.length - 1, 0);
 
-    // Pausar animación al pasar el mouse
-    // Guardar desplazamiento actual cuando pausamos por hover
-    const freezeAtCurrentPosition = () => {
-        // Computar el offset actual de la animación y fijarlo como transform para evitar "salto al inicio"
-        const progress = getComputedStyle(clientsTrack).animationPlayState !== 'paused'
-            ? (performance.now() % (parseFloat(getComputedStyle(clientsTrack).animationDuration) * 1000)) / (parseFloat(getComputedStyle(clientsTrack).animationDuration) * 1000)
-            : 0;
-        // No es trivial obtener offset desde keyframes; en su lugar, tomamos transform actual calculado
-        const offset = getTransformValue();
-        clientsTrack.style.animation = 'none';
-        if (!isNaN(offset)) {
-            clientsTrack.style.transform = `translateX(${offset}px)`;
-        }
-        manualMode = true;
+        const pixelsPerSecond = window.innerWidth <= 768 ? 210 : 260;
+        const duration = Math.max(distance / pixelsPerSecond, 8);
+
+        clientsTrack.style.setProperty('--clients-scroll-distance', `${distance}px`);
+        clientsTrack.style.setProperty('--clients-scroll-duration', `${duration}s`);
+        clientsTrack.style.animationPlayState = 'running';
     };
+
+    const logoLoadPromises = Array.from(clientsTrack.querySelectorAll('.client-logo')).map((logo) => {
+        if (logo.complete) return Promise.resolve();
+        return new Promise((resolve) => {
+            logo.addEventListener('load', resolve, { once: true });
+            logo.addEventListener('error', resolve, { once: true });
+        });
+    });
+
+    Promise.all(logoLoadPromises).then(updateClientsCarousel);
 
     clientsTrack.addEventListener('mouseenter', () => {
-        if (!isDragging) {
-            freezeAtCurrentPosition();
-            animationPaused = true;
-        }
+        clientsTrack.style.animationPlayState = 'paused';
     });
 
     clientsTrack.addEventListener('mouseleave', () => {
-        if (!isDragging) {
-            // Reanudar sin reiniciar: mantenemos transform y programamos reanudación suave
-            animationPaused = false;
-            resumeAnimationSmooth();
-        }
-    });
-
-    // Funcionalidad mejorada de arrastrar
-    clientsTrack.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        startX = e.pageX;
-        currentTransform = getTransformValue();
-        clientsTrack.style.animationPlayState = 'paused';
-        clientsTrack.style.cursor = 'grabbing';
-        clientsTrack.style.userSelect = 'none';
-        e.preventDefault();
-    });
-
-    document.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        
-        const deltaX = e.pageX - startX;
-        const newTransform = currentTransform + deltaX;
-        
-        // Aplicar el transform manualmente
-    clientsTrack.style.animation = 'none';
-    clientsTrack.style.transform = `translateX(${newTransform}px)`;
-    manualMode = true;
-    });
-
-    document.addEventListener('mouseup', () => {
-        if (isDragging) {
-            isDragging = false;
-            clientsTrack.style.cursor = 'grab';
-            clientsTrack.style.userSelect = 'auto';
-            
-            // Reanudar animación sin volver al inicio
-            if (!animationPaused) {
-                resumeAnimationSmooth();
-            }
-        }
-    });
-
-    // Función para obtener el valor actual del transform
-    function getTransformValue() {
-        const style = window.getComputedStyle(clientsTrack);
-        const matrix = style.transform;
-        if (matrix === 'none') return 0;
-        
-        const values = matrix.split('(')[1].split(')')[0].split(',');
-        return parseFloat(values[4]) || 0;
-    }
-
-    // Función para resetear la animación
-    function resetAnimation() {
-        const isMobileView = window.innerWidth <= 768;
-    
-            // Si hay tarjetas móviles expandidas, recalcular su altura por cambio de texto
-            document.querySelectorAll('.mobile-expanded-content.show').forEach(expanded => {
-                const wrapper = expanded.querySelector('.content-wrapper');
-                if (!wrapper) return;
-                // medir y ajustar
-                expanded.style.overflow = 'hidden';
-                expanded.style.height = 'auto';
-                const h = wrapper.offsetHeight + 40;
-                expanded.style.height = h + 'px';
-                // devolver overflow luego
-                setTimeout(() => { expanded.style.overflow = 'visible'; }, 300);
-            });
-        const duration = isMobileView ? '6s' : '10s';
-        clientsTrack.style.animation = `scroll ${duration} linear infinite`;
-        clientsTrack.style.transform = '';
         clientsTrack.style.animationPlayState = 'running';
-        manualMode = false;
-    }
+    });
 
-    function resumeAnimationSmooth(){
-        // Tomar transform actual y convertirlo a porcentaje del ciclo para conectar con la animación
-        const offset = getTransformValue();
-        // Estimación: la animación desplaza -50% del ancho total de track (duplicado). Calculamos porcentaje aproximado del ciclo.
-        // Para simplificar, reanudamos con animación pero manteniendo transform fijo un tiempo corto y luego dejamos que el keyframe tome control.
-        const isMobileView = window.innerWidth <= 768;
-        const duration = isMobileView ? '6s' : '10s';
-        // Mantener el transform actual y agregar transición suave
-        clientsTrack.style.transition = 'transform 0.4s ease-out';
-        clientsTrack.style.transform = `translateX(${offset}px)`;
-        setTimeout(() => {
-            clientsTrack.style.transition = '';
-            resetAnimation();
-        }, 420);
-    }
-
-    // Soporte para touch en dispositivos móviles
-    let touchStartX = 0;
-    
-    clientsTrack.addEventListener('touchstart', (e) => {
-        touchStartX = e.touches[0].pageX;
-        currentTransform = getTransformValue();
+    clientsTrack.addEventListener('touchstart', () => {
         clientsTrack.style.animationPlayState = 'paused';
-    });
-
-    clientsTrack.addEventListener('touchmove', (e) => {
-        if (touchStartX === 0) return;
-        
-        const deltaX = e.touches[0].pageX - touchStartX;
-        const newTransform = currentTransform + deltaX;
-        
-        clientsTrack.style.animation = 'none';
-        clientsTrack.style.transform = `translateX(${newTransform}px)`;
-        e.preventDefault();
-    });
+    }, { passive: true });
 
     clientsTrack.addEventListener('touchend', () => {
-        touchStartX = 0;
-        if (!animationPaused) {
-            resumeAnimationSmooth();
-        }
+        clientsTrack.style.animationPlayState = 'running';
     });
 
-    // Actualizar velocidad al cambiar tamaño de ventana
-    window.addEventListener('resize', debounce(() => {
-        setInitialSpeed();
-    }, 250));
+    window.addEventListener('resize', debounce(updateClientsCarousel, 200));
 }
 
 // Scroll effects and animations
@@ -620,7 +502,7 @@ function applyTranslations(lang) {
     // Update navigation
     const navLinks = document.querySelectorAll('.nav-link-glass');
     // Orden debe coincidir con los links en el DOM
-    const navKeys = ['inicio', 'nosotros', 'servicios', 'obras', 'proyectos', 'clientes', 'contacto'];
+    const navKeys = ['inicio', 'nosotros', 'servicios', 'proyectos', 'clientes', 'contacto'];
     navLinks.forEach((link, index) => {
         const key = `nav.${navKeys[index]}`;
         if (t[key]) link.textContent = t[key];
@@ -1738,6 +1620,7 @@ function initProjectsInteractive() {
         const projectTitle = slice.dataset.title;
         const projectImage = slice.dataset.image;
         const projectVideo = slice.dataset.video;
+        const hideImageFullscreen = slice.dataset.hideImageFullscreen === 'true';
         
     // Detectar si es mobile y usar descripción mobile si está disponible
     const isMobileView = window.innerWidth <= 768;
@@ -1767,6 +1650,7 @@ function initProjectsInteractive() {
         const modalImage = document.getElementById('modal-image');
         const modalVideo = document.getElementById('modal-video');
         const modalDescription = document.getElementById('modal-description');
+        const modalImageFullscreenBtn = document.getElementById('modal-image-fullscreen');
         
         // Si hay video e imagen: mostrar ambos (imagen arriba, video abajo). Si no, mostrar lo disponible.
         const hasImage = Boolean(projectImage);
@@ -1775,9 +1659,15 @@ function initProjectsInteractive() {
             modalImage.style.display = 'block';
             modalImage.src = projectImage;
             modalImage.alt = `Imagen de ${projectTitle}`;
+            modalImage.dataset.allowFullscreen = hideImageFullscreen ? 'false' : 'true';
         } else {
             modalImage.style.display = 'none';
             modalImage.removeAttribute('src');
+            modalImage.dataset.allowFullscreen = 'false';
+        }
+
+        if (modalImageFullscreenBtn) {
+            modalImageFullscreenBtn.style.display = hasImage && !hideImageFullscreen ? 'inline-flex' : 'none';
         }
 
         if (hasVideo) {
@@ -2310,7 +2200,8 @@ function initModalImageFullscreen(){
 
     // Mostrar/ocultar botón según si hay src
     const toggleBtn = () => {
-        btn.style.display = img && img.src ? 'inline-flex' : 'none';
+        const allowFullscreen = img.dataset.allowFullscreen !== 'false';
+        btn.style.display = img && img.src && allowFullscreen ? 'inline-flex' : 'none';
     };
 
     const openFullscreen = () => {
