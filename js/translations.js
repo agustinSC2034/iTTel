@@ -11,8 +11,25 @@ const translations = {
         'nav.contacto': 'CONTACTO',
 
         // Hero
-        'hero.title': 'GRUPO ITTEL',
-        'hero.anchor': 'Pioneros en Argentina en el desarrollo de proyectos de compartición de infraestructura de gran escala.',
+        'hero.eyebrow': 'GRUPO ITTEL \u00a0|\u00a0 INFORMATION TECHNOLOGY & TELECOMMUNICATIONS',
+        'hero.title': 'Somos l\u00edderes en el desarrollo y operaci\u00f3n de infraestructura cr\u00edtica.',
+        'hero.lead': 'Conectamos el futuro garantizando el cumplimiento de los SLAs m\u00e1s exigentes para operadores, gobiernos y empresas.',
+        'hero.anchor': 'Pioneros en Argentina en el desarrollo de proyectos de compartici\u00f3n de infraestructura de gran escala.',
+
+        // Unidades de Negocio
+        'bu.eyebrow': 'UNIDADES DE NEGOCIO',
+        'bu.title': 'GRUPO ITTEL',
+        'bu.subtitle': 'INFORMATION TECHNOLOGY & TELECOMMUNICATIONS',
+        'bu.lead': 'Somos líderes en Argentina en el desarrollo de infraestructura, operación de redes y servicios de conectividad a gran escala.',
+
+        'bu.unit1.title': 'Redes Neutrales',
+        'bu.unit1.desc': 'Desarrollo y compartici\u00f3n de infraestructura propia (Torres y Fibra Oscura) optimizando el CAPEX de m\u00faltiples operadores.',
+        'bu.unit2.title': 'Obras e Integraci\u00f3n',
+        'bu.unit2.desc': 'Ejecuci\u00f3n de obras civiles, despliegue tecnol\u00f3gico en empresas y tendidos de fibra \u00f3ptica.',
+        'bu.unit3.title': 'Operaci\u00f3n y Mantenimiento',
+        'bu.unit3.desc': 'Gesti\u00f3n proactiva de redes con NOC 24/7 y cuadrillas de respuesta r\u00e1pida en campo.',
+        'bu.unit4.title': 'Servicios ISP',
+        'bu.unit4.desc': 'Operadores de Internet y TV por fibra (FTTH) a trav\u00e9s de nuestras marcas USITTEL y LARANET.',
         
         // Sección Nuestras Credenciales / Alcance
         'credentials.eyebrow': 'NOSOTROS',
@@ -154,8 +171,25 @@ const translations = {
         'nav.contacto': 'CONTACT',
 
         // Hero
-        'hero.title': 'GRUPO ITTEL',
+        'hero.eyebrow': 'GRUPO ITTEL \u00a0|\u00a0 INFORMATION TECHNOLOGY & TELECOMMUNICATIONS',
+        'hero.title': 'We lead the development and operation of critical infrastructure.',
+        'hero.lead': 'Connecting the future while ensuring compliance with the most demanding SLAs for operators, governments and enterprises.',
         'hero.anchor': 'Pioneers in Argentina in the development of large-scale infrastructure sharing projects.',
+
+        // Business Units
+        'bu.eyebrow': 'BUSINESS UNITS',
+        'bu.title': 'GRUPO ITTEL',
+        'bu.subtitle': 'INFORMATION TECHNOLOGY & TELECOMMUNICATIONS',
+        'bu.lead': 'We are leaders in Argentina in infrastructure development, network operations, and connectivity services at scale.',
+
+        'bu.unit1.title': 'Neutral Networks',
+        'bu.unit1.desc': 'Development and sharing of proprietary infrastructure (Towers and Dark Fiber) optimizing CAPEX for multiple operators.',
+        'bu.unit2.title': 'Construction & Integration',
+        'bu.unit2.desc': 'Civil works execution, technology deployment in enterprises and fiber optic installations.',
+        'bu.unit3.title': 'Operations & Maintenance',
+        'bu.unit3.desc': 'Proactive network management with 24/7 NOC and rapid-response field crews.',
+        'bu.unit4.title': 'ISP Services',
+        'bu.unit4.desc': 'Fiber-to-the-home (FTTH) Internet and TV operators through our USITTEL and LARANET brands.',
         
         // Credentials / Reach Section
         'credentials.eyebrow': 'ABOUT US',
