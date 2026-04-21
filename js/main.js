@@ -27,10 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollEffects();
     initBackToTop();
     initLanguageSelector();
+    initSuccessCaseModal();
     initProjectsInteractive(); // Nueva funcionalidad de slices interactivos
     //initItGallery(); // Galería anterior deshabilitada al reemplazar 'Obras en Campo'
     initModalImageFullscreen(); // Fullscreen imagen en modal
     initObrasGallery(); // Nueva galería de Obras en Campo
+    // initWorksGallery(); // Selector temporalmente desactivado: dejamos la primera imagen fija.
 });
 
 // Navigation functionality
@@ -189,55 +191,146 @@ function initHero() {
 
 // Statistics counter animation
 function initStats() {
-    // Buscar tanto las estadísticas antiguas como las nuevas
     const statNumbers = document.querySelectorAll('.stat-number, .stat-v2-number');
-    let animated = false;
-    
-    const animateStats = () => {
-        if (animated) return;
-        
-        statNumbers.forEach(stat => {
-            const target = parseFloat(stat.getAttribute('data-target'));
-            const increment = target / 100;
-            let current = 0;
-            
-            const updateCounter = () => {
-                if (current < target) {
-                    current += increment;
-                    if (target === 99.99) {
-                        stat.textContent = current.toFixed(2);
-                    } else {
-                        stat.textContent = Math.floor(current);
-                    }
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    if (target === 99.99) {
-                        stat.textContent = target.toFixed(2);
-                    } else {
-                        stat.textContent = target;
-                    }
-                }
-            };
-            
-            updateCounter();
-        });
-        
-        animated = true;
+    if (statNumbers.length === 0) return;
+
+    const formatStatValue = (value) => {
+        if (!Number.isFinite(value)) return '0';
+        if (!Number.isInteger(value)) return value.toFixed(2);
+        return Math.floor(value).toLocaleString('es-AR');
     };
-    
-    // Trigger animation when stats section is in view
-    const statsSection = document.querySelector('.stats, .stats-v2');
-    if (statsSection) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateStats();
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        observer.observe(statsSection);
+
+    const animateStat = (stat) => {
+        if (stat.dataset.animated === 'true') return;
+
+        const target = parseFloat(stat.getAttribute('data-target'));
+        if (!Number.isFinite(target)) return;
+
+        stat.dataset.animated = 'true';
+
+        const duration = 1400;
+        const startTime = performance.now();
+
+        const step = (currentTime) => {
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            const easedProgress = 1 - Math.pow(1 - progress, 3);
+            const currentValue = target * easedProgress;
+
+            stat.textContent = formatStatValue(currentValue);
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                stat.textContent = formatStatValue(target);
+            }
+        };
+
+        requestAnimationFrame(step);
+    };
+
+    if (!('IntersectionObserver' in window)) {
+        statNumbers.forEach(animateStat);
+        return;
     }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateStat(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -10% 0px'
+    });
+
+    statNumbers.forEach(stat => observer.observe(stat));
+}
+
+function initSuccessCaseModal() {
+    const modal = document.getElementById('success-case-modal');
+    const overlay = document.getElementById('success-case-modal-overlay');
+    const closeButton = document.getElementById('success-case-modal-close');
+    const title = document.getElementById('success-case-modal-title');
+    const image = document.getElementById('success-case-modal-image');
+    const video = document.getElementById('success-case-modal-video');
+    const description = document.getElementById('success-case-modal-description');
+    const triggers = document.querySelectorAll('.success-case-modal-btn');
+    const isEnglish = document.documentElement.lang.toLowerCase().startsWith('en');
+    const assetBase = isEnglish ? '../' : '';
+
+    if (!modal || triggers.length === 0) return;
+
+    const cases = {
+        ausa: {
+            title: isEnglish ? 'ITTEL – AUSA Agreement' : 'Acuerdo ITTEL – AUSA',
+            video: `${assetBase}assets/video/videoIttel2.mp4`,
+            description: isEnglish
+                ? `<p>We manage more than <strong>1,000 km</strong> of leased lines and <strong>100+</strong> antenna structures distributed across strategic highways and avenues in Buenos Aires City.</p><p>This deployment integrates the city’s most relevant TELCO infrastructure, ensuring critical connectivity and an <strong>SLA &gt; 99.9%</strong> with 24×7×365 support.</p><p>Design, implementation and operations under high-availability standards.</p>`
+                : `<p>Gestionamos más de <strong>1.000 km</strong> de hilos arrendados y <strong>100+</strong> estructuras de antenas distribuidas a lo largo de autopistas y avenidas estratégicas de CABA.</p><p>Este despliegue integra la infraestructura TELCO más relevante de la ciudad, asegurando conectividad crítica y un <strong>SLA &gt; 99,9%</strong> con atención 24×7×365.</p><p>Diseño, implementación y operación bajo estándares de alta disponibilidad.</p>`
+        },
+        aubasa: {
+            title: isEnglish ? 'ITTEL – AUBASA Agreement' : 'Acuerdo ITTEL – AUBASA',
+            image: `${assetBase}assets/images/proyectos/ruta_AUBASA.webp`,
+            description: isEnglish
+                ? `<p>Implementation of a <strong>redundant fiber optic</strong> network that acts as a strategic <strong>backbone</strong> between Buenos Aires City and La Plata.</p><p>Core highway services coexist with transmission services for TELCO clients.</p><p>By connecting to our network, we provide <strong>Dark Fiber</strong> between CABASE and the La Plata NAP, as well as a safer redundant path to the international gateway at Las Toninas.</p><p>The route runs alongside multiple towns and gated communities; the project includes road-safety and environmental commitments.</p><ul><li>Contractual SLA above <strong>99.99%</strong>.</li><li>On-site crew with immediate response time.</li><li>Leasing of support structures for mobile and wireless networks.</li></ul>`
+                : `<p>Implementación de una red de <strong>fibra óptica</strong> con topología <strong>redundante</strong> que opera como <strong>backbone</strong> estratégico entre CABA y La Plata.</p><p>Conviven los servicios CORE que requiere la Autopista con servicios de transmisión para Clientes TELCO.</p><p>Al empalmar con nuestra red, ofrecemos <strong>Fibra Oscura</strong> entre CABASE y el NAP La Plata, además de un camino redundante y más seguro hacia la salida internacional (Las Toninas).</p><p>El trazado lindera con múltiples localidades y barrios privados; el proyecto contempla Seguridad Vial y compromiso ambiental.</p><ul><li>SLA contractual &gt; <strong>99,99%</strong>.</li><li>Cuadrilla in situ con TRS inmediato.</li><li>Alquiler de estructuras portantes para redes móviles e inalámbricas.</li></ul>`
+        }
+    };
+
+    const openModal = (caseKey) => {
+        const data = cases[caseKey];
+        if (!data) return;
+
+        title.textContent = data.title;
+        description.innerHTML = data.description;
+
+        if (data.image) {
+            image.style.display = 'block';
+            image.src = data.image;
+            image.alt = data.title;
+        } else {
+            image.style.display = 'none';
+            image.removeAttribute('src');
+        }
+
+        if (data.video) {
+            video.style.display = 'block';
+            video.src = data.video;
+            video.muted = false;
+            video.volume = 1;
+        } else {
+            video.pause();
+            video.style.display = 'none';
+            video.removeAttribute('src');
+            video.load();
+        }
+
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+        video.pause();
+        modal.classList.remove('show');
+        modal.classList.remove('hiding');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    };
+
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => openModal(trigger.dataset.case));
+    });
+
+    closeButton.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.classList.contains('show')) {
+            closeModal();
+        }
+    });
 }
 
 // Projects carousel functionality
@@ -2381,3 +2474,56 @@ function openMobileFullscreen(imageSrc, imageAlt = '') {
         if (e.key === 'ArrowRight') lbShow(lbIndex + 1);
     });
 }());
+
+function initWorksGallery() {
+    const gallery = document.getElementById('works-gallery');
+    if (!gallery) return;
+
+    const mainImage = document.getElementById('works-gallery-main');
+    const prevButton = document.getElementById('works-gallery-prev');
+    const nextButton = document.getElementById('works-gallery-next');
+    const assetBase = document.documentElement.lang.toLowerCase().startsWith('en') ? '../' : '';
+    const items = [
+        {
+            src: `${assetBase}assets/images/image_rediseño/obras/obra1.png`,
+            alt: 'Obras de telecomunicaciones de alta exigencia'
+        },
+        {
+            src: `${assetBase}assets/images/image_rediseño/obras/7.webp`,
+            alt: 'Despliegue civil de telecomunicaciones en obra de campo'
+        },
+        {
+            src: `${assetBase}assets/images/image_rediseño/obras/13.webp`,
+            alt: 'Infraestructura telco en ejecución con cuadrillas en sitio'
+        },
+        {
+            src: `${assetBase}assets/images/image_rediseño/obras/15.webp`,
+            alt: 'Trabajo de instalación y terminación de infraestructura óptica'
+        },
+        {
+            src: `${assetBase}assets/images/image_rediseño/obras/25.webp`,
+            alt: 'Intervención técnica en obra de telecomunicaciones de alta exigencia'
+        }
+    ];
+
+    if (!mainImage || items.length === 0) return;
+
+    let currentIndex = 0;
+
+    const updateGallery = (nextIndex) => {
+        currentIndex = (nextIndex + items.length) % items.length;
+        const activeItem = items[currentIndex];
+        mainImage.src = activeItem.src;
+        mainImage.alt = activeItem.alt;
+    };
+
+    if (prevButton) {
+        prevButton.addEventListener('click', () => updateGallery(currentIndex - 1));
+    }
+
+    if (nextButton) {
+        nextButton.addEventListener('click', () => updateGallery(currentIndex + 1));
+    }
+
+    updateGallery(currentIndex);
+}
