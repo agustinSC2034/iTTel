@@ -4757,6 +4757,9 @@ html {
     width: 100%;
     height: 100%;
     z-index: 1;
+    background:
+        radial-gradient(circle at top, rgba(34, 125, 179, 0.2) 0%, rgba(34, 125, 179, 0) 42%),
+        linear-gradient(180deg, #0f172a 0%, #020617 100%);
 }
 
 .hero-video-fullscreen video {
@@ -4923,6 +4926,110 @@ html {
 /* ========================================
    Business Units — 2×2 Document Grid
    ======================================== */
+.business-units-section {
+    background-color: #ffffff;
+    padding: 120px 0;
+}
+
+.business-units-shell {
+    display: grid;
+    grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+    gap: 3rem;
+    align-items: start;
+}
+
+.business-units-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.business-units-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2rem, 3.4vw, 3rem);
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.business-units-lead {
+    max-width: 34ch;
+    font-size: 1.02rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0;
+}
+
+.business-units-placeholder {
+    min-height: 320px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: grid;
+    place-items: center;
+    background:
+        linear-gradient(180deg, rgba(248, 250, 252, 0.94) 0%, rgba(241, 245, 249, 0.92) 100%),
+        linear-gradient(135deg, rgba(34, 125, 179, 0.08) 0%, rgba(15, 23, 42, 0.02) 100%);
+    color: #475569;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.business-units-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    border: 1px solid #E2E8F0;
+    background-color: #E2E8F0;
+}
+
+.business-unit-card {
+    min-height: 248px;
+    padding: 2rem;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.business-unit-card:hover {
+    background-color: #F8FAFC;
+    transform: translateY(-2px);
+}
+
+.business-unit-card__index {
+    font-size: 0.74rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.14em;
+    color: #227DB3;
+}
+
+.business-unit-card__title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: #0F172A;
+    margin: 0;
+}
+
+.business-unit-card__description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0;
+}
+
 .bu-section {
     background-color: #ffffff;
     padding: 120px 0;
@@ -4998,6 +5105,23 @@ html {
 }
 
 @media (max-width: 768px) {
+    .business-units-section {
+        padding: 72px 0;
+    }
+    .business-units-shell {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .business-units-placeholder {
+        min-height: 220px;
+    }
+    .business-units-grid {
+        grid-template-columns: 1fr;
+    }
+    .business-unit-card {
+        min-height: auto;
+        padding: 1.75rem 1.5rem;
+    }
     .bu-section {
         padding: 72px 0;
     }
@@ -5189,20 +5313,39 @@ html {
 
 /* ===== MOBILE VIDEO ADJUSTMENTS ===== */
 @media (max-width: 768px) {
+    .hero-fullscreen {
+        height: 100svh;
+        min-height: 100svh;
+    }
+    .hero-video-fullscreen {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 88px 0 40px;
+    }
     .hero-video-fullscreen video {
-        object-position: center top; /* Asegurar que se vea la parte superior en móvil */
-        min-height: 100vh; /* Asegurar que cubra toda la altura */
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        object-position: center center;
+        min-height: 0;
     }
 }
 
 @media (max-aspect-ratio: 9/16) {
     /* Para pantallas muy altas (móviles en vertical) */
+    .hero-video-fullscreen {
+        padding-top: 104px;
+        padding-bottom: 56px;
+    }
     .hero-video-fullscreen video {
-        object-fit: cover;
-        object-position: center center; /* En pantallas muy verticales, centrar */
+        object-fit: contain;
+        object-position: center center;
         width: 100%;
-        height: auto;
-        min-height: 100vh;
+        height: 100%;
+        min-height: 0;
     }
 }
 
