@@ -1172,6 +1172,8 @@
 .works-gallery {
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .works-gallery__stage {
@@ -1188,6 +1190,12 @@
     height: 100%;
     display: block;
     object-fit: cover;
+    transition: opacity 0.42s ease, transform 0.72s ease;
+}
+
+.works-gallery__stage img.is-switching {
+    opacity: 0.38;
+    transform: scale(1.035);
 }
 
 .works-gallery__arrow {
@@ -1224,6 +1232,33 @@
 
 .works-gallery__arrow--next {
     right: 1rem;
+}
+
+.works-gallery__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.95rem 0 0;
+}
+
+.works-gallery__dot {
+    width: 32px;
+    height: 4px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(100, 116, 139, 0.28);
+    cursor: pointer;
+    transition: background-color 0.22s ease, transform 0.22s ease, width 0.22s ease;
+}
+
+.works-gallery__dot:hover {
+    background: rgba(34, 125, 179, 0.42);
+}
+
+.works-gallery__dot.active {
+    width: 42px;
+    background: #227DB3;
 }
 
 .enterprise-block__content {
@@ -1357,6 +1392,14 @@
         gap: 1.5rem;
     }
 
+    .enterprise-block__content {
+        order: 1;
+    }
+
+    .enterprise-block__media {
+        order: 2;
+    }
+
     .enterprise-block__media img {
         min-height: 280px;
     }
@@ -1370,9 +1413,40 @@
         max-height: 320px;
     }
 
-    .enterprise-block__media--map,
-    .enterprise-block__media--works {
+    .enterprise-block__media--map {
         display: none;
+    }
+
+    .enterprise-block__media--works {
+        display: block;
+        min-height: 0;
+    }
+
+    .works-gallery__stage {
+        border-radius: 8px;
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+    }
+
+    .works-gallery__stage img {
+        min-height: 0;
+    }
+
+    .works-gallery__arrow {
+        width: 36px;
+        height: 36px;
+    }
+
+    .works-gallery__arrow--prev {
+        left: 0.75rem;
+    }
+
+    .works-gallery__arrow--next {
+        right: 0.75rem;
+    }
+
+    .works-gallery__controls {
+        padding-top: 0.75rem;
     }
 
     .enterprise-block--rail,

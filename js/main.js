@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //initItGallery(); // Galería anterior deshabilitada al reemplazar 'Obras en Campo'
     initModalImageFullscreen(); // Fullscreen imagen en modal
     initObrasGallery(); // Nueva galería de Obras en Campo
-    // initWorksGallery(); // Selector temporalmente desactivado: dejamos la primera imagen fija.
+    initWorksGallery();
 });
 
 // Navigation functionality
@@ -2482,48 +2482,89 @@ function initWorksGallery() {
     const mainImage = document.getElementById('works-gallery-main');
     const prevButton = document.getElementById('works-gallery-prev');
     const nextButton = document.getElementById('works-gallery-next');
+    const dotButtons = Array.from(gallery.querySelectorAll('.works-gallery__dot'));
     const assetBase = document.documentElement.lang.toLowerCase().startsWith('en') ? '../' : '';
     const items = [
         {
-            src: `${assetBase}assets/images/image_rediseño/obras/obra1.png`,
-            alt: 'Obras de telecomunicaciones de alta exigencia'
+            src: `${assetBase}assets/images/image_rediseño/obras/obras2/imagengrua1.png`,
+            alt: document.documentElement.lang.toLowerCase().startsWith('en')
+                ? 'High-demand telecommunications works with crane deployment'
+                : 'Obras de telecomunicaciones con grúa y despliegue de alta exigencia'
         },
         {
-            src: `${assetBase}assets/images/image_rediseño/obras/7.webp`,
-            alt: 'Despliegue civil de telecomunicaciones en obra de campo'
-        },
-        {
-            src: `${assetBase}assets/images/image_rediseño/obras/13.webp`,
-            alt: 'Infraestructura telco en ejecución con cuadrillas en sitio'
-        },
-        {
-            src: `${assetBase}assets/images/image_rediseño/obras/15.webp`,
-            alt: 'Trabajo de instalación y terminación de infraestructura óptica'
-        },
-        {
-            src: `${assetBase}assets/images/image_rediseño/obras/25.webp`,
-            alt: 'Intervención técnica en obra de telecomunicaciones de alta exigencia'
+            src: `${assetBase}assets/images/image_rediseño/obras/obras2/imagengrua2.png`,
+            alt: document.documentElement.lang.toLowerCase().startsWith('en')
+                ? 'Telecommunications field works with elevated equipment and on-site crew'
+                : 'Obras telco en campo con equipamiento elevado y cuadrilla en sitio'
         }
     ];
 
     if (!mainImage || items.length === 0) return;
 
     let currentIndex = 0;
+    let autoplayId = null;
+
+    items.forEach((item) => {
+        const preloadImage = new Image();
+        preloadImage.src = item.src;
+    });
 
     const updateGallery = (nextIndex) => {
         currentIndex = (nextIndex + items.length) % items.length;
         const activeItem = items[currentIndex];
-        mainImage.src = activeItem.src;
-        mainImage.alt = activeItem.alt;
+        mainImage.classList.add('is-switching');
+
+        window.setTimeout(() => {
+            mainImage.src = activeItem.src;
+            mainImage.alt = activeItem.alt;
+            dotButtons.forEach((button, index) => {
+                button.classList.toggle('active', index === currentIndex);
+                button.setAttribute('aria-pressed', index === currentIndex ? 'true' : 'false');
+            });
+            mainImage.classList.remove('is-switching');
+        }, 160);
+    };
+
+    const startAutoplay = () => {
+        if (items.length < 2) return;
+        window.clearInterval(autoplayId);
+        autoplayId = window.setInterval(() => updateGallery(currentIndex + 1), 4800);
+    };
+
+    const stopAutoplay = () => {
+        window.clearInterval(autoplayId);
     };
 
     if (prevButton) {
-        prevButton.addEventListener('click', () => updateGallery(currentIndex - 1));
+        prevButton.addEventListener('click', () => {
+            updateGallery(currentIndex - 1);
+            startAutoplay();
+        });
     }
 
     if (nextButton) {
-        nextButton.addEventListener('click', () => updateGallery(currentIndex + 1));
+        nextButton.addEventListener('click', () => {
+            updateGallery(currentIndex + 1);
+            startAutoplay();
+        });
     }
 
+    dotButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const nextIndex = Number(button.dataset.index);
+            if (Number.isNaN(nextIndex)) return;
+            updateGallery(nextIndex);
+            startAutoplay();
+        });
+    });
+
+    gallery.addEventListener('mouseenter', stopAutoplay);
+    gallery.addEventListener('mouseleave', startAutoplay);
+    gallery.addEventListener('focusin', stopAutoplay);
+    gallery.addEventListener('focusout', startAutoplay);
+    gallery.addEventListener('touchstart', stopAutoplay, { passive: true });
+    gallery.addEventListener('touchend', startAutoplay, { passive: true });
+
     updateGallery(currentIndex);
+    startAutoplay();
 }
