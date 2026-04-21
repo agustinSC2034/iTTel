@@ -48,7 +48,7 @@
             <div class="nav-menu-glass" id="nav-menu">
                 <a href="#inicio" class="nav-link-glass active">INICIO</a>
                 <a href="#unidades-negocio" class="nav-link-glass">NOSOTROS</a>
-                <a href="#servicios" class="nav-link-glass">IT & TELCO</a>
+                <a href="#infraestructura-cobertura" class="nav-link-glass">IT & TELCO</a>
                 <a href="#clientes" class="nav-link-glass">CLIENTES</a>
                 <a href="#contacto" class="nav-link-glass">CONTACTO</a>
 
@@ -105,10 +105,9 @@
         <div class="container">
             <div class="business-units-shell">
                 <div class="business-units-intro" data-aos="fade-up">
-                    <span class="global-eyebrow">GRUPO ITTEL | INFORMATION TECHNOLOGY & TELECOMMUNICATIONS</span>
-                    <h2 class="business-units-title">Nuestras Unidades de Negocio</h2>
+                    <span class="global-eyebrow">Nosotros</span>
+                    <h2 class="business-units-title">GRUPO ITTEL | INFORMATION TECHNOLOGY & TELECOMMUNICATIONS</h2>
                     <p class="business-units-lead">Somos líderes en Argentina en el desarrollo de infraestructura, operación de redes y servicios de conectividad a gran escala.</p>
-                    <div class="business-units-placeholder">[PLACEHOLDER IMAGEN REDES / INFRAESTRUCTURA]</div>
                 </div>
 
                 <div class="business-units-grid">
@@ -140,8 +139,24 @@
         </div>
     </section>
 
+    <section id="infraestructura-cobertura" class="section infra-coverage-section">
+        <div class="container infra-coverage-container">
+            <div class="infra-coverage-grid">
+                <article class="infra-coverage-panel" data-aos="fade-up" data-aos-delay="40">
+                    <h2 class="infra-coverage-title">Infraestructura Neutral y Escalable</h2>
+                    <p class="infra-coverage-text">Integra Torres, Fibra Óptica y Valor Agregado para el beneficio de toda la red.</p>
+                </article>
+
+                <article class="infra-coverage-panel" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="infra-coverage-title">Cobertura Nacional</h2>
+                    <p class="infra-coverage-text">Despliegues integrales de Fibra Óptica y Torres para TODOS los Operadores Móviles de Argentina a todo nivel jurisdiccional.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Capacidad de Infraestructura Section -->
-    <section id="servicios" class="section infrastructure-section">
+    <section id="servicios" class="section infrastructure-section" hidden aria-hidden="true" style="display: none !important;">
         <div class="container">
             <span class="global-eyebrow" data-aos="fade-up" data-i18n="infra.eyebrow">IT & TELCO</span>
             <div class="infra-header" data-aos="fade-up">
@@ -315,22 +330,222 @@
         </div>
     </section>
 
-    <!-- Stats Separator -->
-    <section id="stats" class="section stats-v2">
+    <section id="casos-exito" class="section success-cases-section">
         <div class="container">
-            
-            <div class="stats-v2-grid" data-aos="fade-up">
+            <span class="global-eyebrow" data-aos="fade-up">GRUPO ITTEL | CASOS DE ÉXITO</span>
+            <div class="success-cases-header" data-aos="fade-up">
+                <h2 class="success-cases-title">Despliegues Estratégicos.</h2>
+            </div>
+
+            <div class="success-cases-grid">
+                <article class="success-case-card" data-aos="fade-up" data-aos-delay="60">
+                    <div class="success-case-card__media">
+                        <img src="assets/images/image_rediseño/cabared.png" alt="Mapa de infraestructura en Ciudad de Buenos Aires" loading="lazy" decoding="async">
+                    </div>
+                    <h3 class="success-case-card__title">Ciudad de Buenos Aires</h3>
+                    <p class="success-case-card__text">+300 km de Fibra Óptica operativa y 73 Torres críticas desplegadas para maximizar la conectividad en la zona de mayor demanda del país.</p>
+                    <div class="success-case-card__actions">
+                        <button class="success-case-modal-btn" type="button" data-case="ausa">Ver más</button>
+                    </div>
+                </article>
+
+                <article class="success-case-card" data-aos="fade-up" data-aos-delay="120">
+                    <div class="success-case-card__media">
+                        <img src="assets/images/image_rediseño/bsasred.png" alt="Mapa de infraestructura en Provincia de Buenos Aires" loading="lazy" decoding="async">
+                    </div>
+                    <h3 class="success-case-card__title">Provincia de Buenos Aires</h3>
+                    <p class="success-case-card__text">+100 km de Fibra Óptica con 41 Torres estratégicas, mejorando la densidad y demanda de conectividad en el territorio provincial.</p>
+                    <div class="success-case-card__actions">
+                        <button class="success-case-modal-btn" type="button" data-case="aubasa">Ver más</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <div id="success-case-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="success-case-modal-title" aria-hidden="true" tabindex="-1">
+        <div id="success-case-modal-overlay" class="modal-overlay"></div>
+        <div class="modal-content success-case-modal-content">
+            <div class="modal-header">
+                <h3 id="success-case-modal-title" class="modal-title"></h3>
+                <button id="success-case-modal-close" class="modal-close" aria-label="Cerrar">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-grid">
+                    <div class="modal-media-container">
+                        <img id="success-case-modal-image" src="" alt="" class="modal-image" style="display:none;">
+                        <video id="success-case-modal-video" class="modal-video" controls style="display:none;">
+                            <source src="" type="video/mp4">
+                            Tu navegador no soporta el elemento video.
+                        </video>
+                    </div>
+                    <div id="success-case-modal-description" class="modal-description"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="stats-red" class="section stats-v2 stats-v2--network">
+        <div class="container">
+            <div class="stats-v2-header" data-aos="fade-up">
+                <p class="stats-v2-kicker">CAPACIDAD DE RED.</p>
+            </div>
+
+            <div class="stats-v2-grid" data-aos="fade-up" data-aos-delay="80">
                 <div class="stat-v2-item" data-aos="fade-up" data-aos-delay="100">
-                    <span class="stat-v2-number" data-target="10">0</span>
-                    <p class="stat-v2-label" data-i18n="stats.years">+ Años de<br><span data-i18n="stats.years.sub">experiencia</span></p>
+                    <div class="stat-v2-number-group">
+                        <span class="stat-v2-number" data-target="1000">0</span>
+                        <span class="stat-v2-suffix">+</span>
+                    </div>
+                    <p class="stat-v2-label">KM DE FIBRA ÓPTICA<br><span class="stat-v2-label-sub">DESPLEGADOS A NIVEL NACIONAL</span></p>
                 </div>
                 <div class="stat-v2-item" data-aos="fade-up" data-aos-delay="200">
-                    <span class="stat-v2-number" data-target="340">0</span>
-                    <p class="stat-v2-label" data-i18n="stats.projects">+ Proyectos<br><span data-i18n="stats.projects.sub">de éxito</span></p>
+                    <div class="stat-v2-number-group">
+                        <span class="stat-v2-number" data-target="200">0</span>
+                        <span class="stat-v2-suffix">+</span>
+                    </div>
+                    <p class="stat-v2-label">TORRES TELCO<br><span class="stat-v2-label-sub">EN OPERACIÓN A NIVEL NACIONAL</span></p>
                 </div>
-                <div class="stat-v2-item" data-aos="fade-up" data-aos-delay="300">
-                    <span class="stat-v2-number" data-target="99.99">0.00</span>
-                    <p class="stat-v2-label" data-i18n="stats.sla">% de SLA<br><span data-i18n="stats.sla.sub">garantizado</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="casos-ftth" class="section success-cases-section">
+        <div class="container">
+            <span class="global-eyebrow" data-aos="fade-up">GRUPO ITTEL | CASOS DE ÉXITO</span>
+            <div class="success-cases-header" data-aos="fade-up">
+                <h2 class="success-cases-title">Despliegues FTTH.</h2>
+            </div>
+
+            <div class="success-cases-grid">
+                <article class="success-case-card" data-aos="fade-up" data-aos-delay="60">
+                    <div class="success-case-card__media">
+                        <img src="assets/images/tandil.jpg" alt="Despliegue FTTH en Tandil" loading="lazy" decoding="async">
+                    </div>
+                    <div class="success-case-card__brand-slot" aria-label="Identidad institucional de Tandil">
+                        <img src="assets/images/image_rediseño/miniTandil.png" alt="Identidad institucional de Tandil" class="success-case-card__municipal-logo" loading="lazy" decoding="async">
+                    </div>
+                    <p class="success-case-card__text">Despliegue de red FTTH con arquitectura GPON para Internet y TV digital de alta calidad en Tandil, operado comercialmente bajo la marca <strong>USITTEL</strong> con cobertura urbana y periurbana en expansión.</p>
+                    <div class="success-case-card__footer">
+                        <a class="success-case-card__brand-link" href="https://usittel.com.ar" target="_blank" rel="noopener" aria-label="Ir a USITTEL">
+                            <img src="assets/images/image_rediseño/usilogo.webp" alt="USITTEL" class="success-case-card__brand-logo" loading="lazy" decoding="async">
+                        </a>
+                    </div>
+                </article>
+
+                <article class="success-case-card" data-aos="fade-up" data-aos-delay="120">
+                    <div class="success-case-card__media">
+                        <img src="assets/images/matanza.jpg" alt="Despliegue FTTH LARANET en La Matanza" loading="lazy" decoding="async">
+                    </div>
+                    <div class="success-case-card__brand-slot" aria-label="Identidad institucional de La Matanza">
+                        <img src="assets/images/image_rediseño/Munimatanza.png" alt="Identidad institucional de La Matanza" class="success-case-card__municipal-logo" loading="lazy" decoding="async">
+                    </div>
+                    <p class="success-case-card__text">Diseño e implementación de red óptica pasiva FTTH en La Matanza, con arquitectura escalable, backbone redundante y operación 24/7 bajo la marca comercial <strong>LARANET</strong>.</p>
+                    <div class="success-case-card__footer">
+                        <a class="success-case-card__brand-link" href="https://laranet.com.ar" target="_blank" rel="noopener" aria-label="Ir a LARANET">
+                            <img src="assets/images/image_rediseño/laralogo.png" alt="LARANET" class="success-case-card__brand-logo" loading="lazy" decoding="async">
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats-ftth-regional" class="section stats-v2 stats-v2--network stats-v2--regional">
+        <div class="container">
+            <div class="stats-v2-header" data-aos="fade-up">
+                <p class="stats-v2-kicker">CAPACIDAD REGIONAL.</p>
+            </div>
+
+            <div class="stats-v2-grid" data-aos="fade-up" data-aos-delay="80">
+                <div class="stat-v2-item" data-aos="fade-up" data-aos-delay="100">
+                    <p class="stat-v2-region">LA MATANZA</p>
+                    <div class="stat-v2-number-group">
+                        <span class="stat-v2-prefix">+</span>
+                        <span class="stat-v2-number" data-target="300">0</span>
+                        <span class="stat-v2-suffix">km</span>
+                    </div>
+                    <p class="stat-v2-label">NODO FO CENTRALIZADO</p>
+                </div>
+                <div class="stat-v2-item" data-aos="fade-up" data-aos-delay="200">
+                    <p class="stat-v2-region">TANDIL</p>
+                    <div class="stat-v2-number-group">
+                        <span class="stat-v2-prefix">+</span>
+                        <span class="stat-v2-number" data-target="1500">0</span>
+                    </div>
+                    <p class="stat-v2-label">MANZANAS FTTH<br><span class="stat-v2-label-sub">PROYECTADAS A 2029</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="redes-argentina" class="section enterprise-block-section">
+        <div class="container">
+            <div class="enterprise-block enterprise-block--reverse enterprise-block--light enterprise-block--rail">
+                <div class="enterprise-block__media enterprise-block__media--map" data-aos="fade-up">
+                    <img src="assets/images/image_rediseño/argRed.png" alt="Redes en Argentina y nodos ferroviarios" loading="lazy" decoding="async">
+                </div>
+                <div class="enterprise-block__content" data-aos="fade-up" data-aos-delay="60">
+                    <span class="global-eyebrow">GRUPO ITTEL | CASOS DE ÉXITO</span>
+                    <h2 class="enterprise-block__title">REDES EN ARGENTINA</h2>
+                    <div class="enterprise-block__partner-mark" aria-label="Trenes Argentinos Infraestructura">
+                        <img src="assets/images/image_rediseño/trenes_arg-removebg-preview.png" alt="Trenes Argentinos Infraestructura" loading="lazy" decoding="async">
+                    </div>
+                    <div class="enterprise-block__items">
+                        <article class="enterprise-block__item">
+                            <h3 class="enterprise-block__item-title">Alcance Nacional</h3>
+                            <p class="enterprise-block__item-text">Acuerdo constructivo de compartición de infraestructura a lo largo de todo el país.</p>
+                        </article>
+                        <article class="enterprise-block__item">
+                            <h3 class="enterprise-block__item-title">Despliegue Paralelo</h3>
+                            <p class="enterprise-block__item-text">Instalación estratégica de torres y anillos de fibra en la red de nodos ferroviarios.</p>
+                        </article>
+                        <article class="enterprise-block__item">
+                            <h3 class="enterprise-block__item-title">Conectividad Ininterrumpida</h3>
+                            <p class="enterprise-block__item-text">Creación de arterias digitales seguras utilizando la capilaridad del transporte público.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="obras-telecomunicaciones" class="section enterprise-block-section enterprise-block-section--alt">
+        <div class="container">
+            <div class="enterprise-block enterprise-block--works">
+                <div class="enterprise-block__media enterprise-block__media--works" data-aos="fade-up">
+                    <div class="works-gallery" id="works-gallery">
+                        <div class="works-gallery__stage">
+                            <img id="works-gallery-main" src="assets/images/image_rediseño/obras/obra1.png" alt="Obras de telecomunicaciones de alta exigencia" loading="lazy" decoding="async">
+                            <!-- Selector temporalmente desactivado: dejamos la primera imagen fija.
+                            <button class="works-gallery__arrow works-gallery__arrow--prev" id="works-gallery-prev" type="button" aria-label="Imagen anterior">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="works-gallery__arrow works-gallery__arrow--next" id="works-gallery-next" type="button" aria-label="Imagen siguiente">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            -->
+                        </div>
+                    </div>
+                </div>
+                <div class="enterprise-block__content" data-aos="fade-up" data-aos-delay="60">
+                    <span class="global-eyebrow">GRUPO ITTEL | CASOS DE ÉXITO</span>
+                    <h2 class="enterprise-block__title">OBRAS TELCO</h2>
+                    <p class="enterprise-block__lead">Soluciones integrales de infraestructura para redes de alta exigencia.</p>
+                    <div class="enterprise-block__items">
+                        <article class="enterprise-block__item">
+                            <h3 class="enterprise-block__item-title">Llave en Mano</h3>
+                            <p class="enterprise-block__item-text">Ejecución completa de redes de telecomunicaciones desde el diseño hasta la puesta en marcha.</p>
+                        </article>
+                        <article class="enterprise-block__item">
+                            <h3 class="enterprise-block__item-title">Despliegues Civiles</h3>
+                            <p class="enterprise-block__item-text">Intervención en distintos entornos y organismos, adaptándonos a cada contexto.</p>
+                        </article>
+                        <article class="enterprise-block__item">
+                            <h3 class="enterprise-block__item-title">Alta Criticidad</h3>
+                            <p class="enterprise-block__item-text">Capacidad demostrada en redes de máxima disponibilidad y continuidad operativa.</p>
+                        </article>
+                    </div>
                 </div>
             </div>
         </div>
@@ -596,6 +811,38 @@
     </section>
     -->
 
+    <section id="stats" class="section stats-v2 stats-v2--backed">
+        <div class="container">
+            <div class="stats-v2-header" data-aos="fade-up">
+                <p class="stats-v2-kicker">NÚMEROS QUE NOS RESPALDAN.</p>
+            </div>
+
+            <div class="stats-v2-grid" data-aos="fade-up" data-aos-delay="80">
+                <div class="stat-v2-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-v2-number-group">
+                        <span class="stat-v2-number" data-target="10">0</span>
+                        <span class="stat-v2-suffix">+</span>
+                    </div>
+                    <p class="stat-v2-label">AÑOS DE EXPERIENCIA</p>
+                </div>
+                <div class="stat-v2-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-v2-number-group">
+                        <span class="stat-v2-number" data-target="340">0</span>
+                        <span class="stat-v2-suffix">+</span>
+                    </div>
+                    <p class="stat-v2-label">PROYECTOS DE ÉXITO</p>
+                </div>
+                <div class="stat-v2-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-v2-number-group">
+                        <span class="stat-v2-number" data-target="99.99">0.00</span>
+                        <span class="stat-v2-suffix">%</span>
+                    </div>
+                    <p class="stat-v2-label">DE SLA GARANTIZADO</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Clients Section -->
     <section id="clientes" class="section clients">
         <div class="container">
@@ -718,7 +965,7 @@
                     <h4 data-i18n="footer.links.title">Enlaces Rápidos</h4>
                     <ul class="footer-links">
                         <li><a href="#unidades-negocio" data-i18n="nav.nosotros">Nosotros</a></li>
-                        <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
+                        <li><a href="#infraestructura-cobertura" data-i18n="nav.servicios">Servicios</a></li>
                         <li><a href="#clientes" data-i18n="nav.clientes">Clientes</a></li>
                         <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
                     </ul>
