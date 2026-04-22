@@ -762,6 +762,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+    position: relative;
 }
 
 .success-case-card__media {
@@ -832,6 +833,8 @@
     justify-content: flex-start;
     align-items: center;
     padding-top: 0.25rem;
+    position: relative;
+    z-index: 2;
 }
 
 .success-case-modal-btn {
@@ -847,6 +850,11 @@
     border-radius: 4px;
     cursor: pointer;
     transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+    position: relative;
+    z-index: 3;
+    pointer-events: auto;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .success-case-modal-btn:hover {

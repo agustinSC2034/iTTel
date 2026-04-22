@@ -320,12 +320,29 @@ function initSuccessCaseModal() {
         document.body.style.overflow = '';
     };
 
+    const bindPress = (element, handler) => {
+        if (!element) return;
+
+        let lastTouchTime = 0;
+
+        element.addEventListener('touchend', (event) => {
+            lastTouchTime = Date.now();
+            event.preventDefault();
+            handler(event);
+        }, { passive: false });
+
+        element.addEventListener('click', (event) => {
+            if (Date.now() - lastTouchTime < 500) return;
+            handler(event);
+        });
+    };
+
     triggers.forEach(trigger => {
-        trigger.addEventListener('click', () => openModal(trigger.dataset.case));
+        bindPress(trigger, () => openModal(trigger.dataset.case));
     });
 
-    closeButton.addEventListener('click', closeModal);
-    overlay.addEventListener('click', closeModal);
+    bindPress(closeButton, closeModal);
+    bindPress(overlay, closeModal);
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && modal.classList.contains('show')) {
             closeModal();
