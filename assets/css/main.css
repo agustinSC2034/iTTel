@@ -1140,22 +1140,21 @@
 }
 
 .enterprise-block__media--map {
-    min-height: 0;
-    align-self: start;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.75rem 1.25rem;
+    min-height: 100%;
+    align-self: stretch;
+    display: block;
+    padding: 0;
     background: linear-gradient(180deg, #F8FAFC 0%, #EEF2F7 100%);
 }
 
 .enterprise-block__media--map img {
-    width: auto;
-    height: auto;
-    min-height: 0;
-    max-width: min(100%, 320px);
-    max-height: 420px;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    min-height: 430px;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    object-position: center;
 }
 
 .enterprise-block--rail {
@@ -1168,7 +1167,7 @@
 }
 
 .enterprise-block--rail .enterprise-block__media--map img {
-    max-height: min(100%, 520px);
+    min-height: 100%;
 }
 
 .enterprise-block__media--works {
@@ -1188,8 +1187,10 @@
     position: relative;
     overflow: hidden;
     border-radius: 0;
-    height: 100%;
-    min-height: 100%;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
     background: #0F172A;
 }
 
@@ -1198,7 +1199,14 @@
     height: 100%;
     display: block;
     object-fit: cover;
+    object-position: center;
     transition: opacity 0.42s ease, transform 0.72s ease;
+}
+
+.obras-telco-image-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
 }
 
 .works-gallery__stage img.is-switching {
@@ -1279,6 +1287,129 @@
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
+}
+
+.enterprise-block-section--maintenance,
+.enterprise-block-section--platform {
+    position: relative;
+    overflow: hidden;
+}
+
+.enterprise-block-section--maintenance {
+    background:
+        linear-gradient(180deg, rgba(248, 250, 252, 0.98) 0%, rgba(255, 255, 255, 0.98) 100%),
+        url('../images/diseño_nuevo_diapo/2fondo.png') right top / 520px auto no-repeat;
+}
+
+.enterprise-block-section--platform {
+    background:
+        linear-gradient(180deg, rgba(248, 250, 252, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%),
+        url('../images/diseño_nuevo_diapo/14fondo.png') right center / 620px auto no-repeat;
+}
+
+.enterprise-block--maintenance,
+.enterprise-block--platform {
+    grid-template-columns: minmax(0, 1.04fr) minmax(0, 1fr);
+    align-items: center;
+}
+
+.enterprise-block--maintenance .enterprise-block__media {
+    order: 1;
+}
+
+.enterprise-block--maintenance .enterprise-block__content {
+    order: 2;
+}
+
+.enterprise-block__media--maintenance,
+.enterprise-block__media--platform {
+    position: relative;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(226, 232, 240, 0.18) 100%),
+        #E2E8F0;
+}
+
+.enterprise-block__media--maintenance img,
+.enterprise-block__media--platform img {
+    min-height: 460px;
+}
+
+.enterprise-block__content--maintenance,
+.enterprise-block__content--platform {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+}
+
+.enterprise-block__timeline,
+.enterprise-block__feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.enterprise-block__timeline-item,
+.enterprise-block__feature {
+    position: relative;
+    padding-left: 1.4rem;
+}
+
+.enterprise-block__timeline-item::before,
+.enterprise-block__feature::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.45rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #227DB3;
+    box-shadow: 0 0 0 6px rgba(34, 125, 179, 0.08);
+}
+
+.enterprise-block__timeline-item::after,
+.enterprise-block__feature::after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 1rem;
+    bottom: -1.2rem;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(34, 125, 179, 0.3) 0%, rgba(34, 125, 179, 0) 100%);
+}
+
+.enterprise-block__timeline-item:last-child::after,
+.enterprise-block__feature:last-child::after {
+    display: none;
+}
+
+.enterprise-block__badge {
+    margin-top: 1.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    width: fit-content;
+    padding: 0.95rem 1.15rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #103A6A 0%, #1C5D98 100%);
+    color: #FFFFFF;
+    box-shadow: 0 18px 40px rgba(16, 58, 106, 0.2);
+}
+
+.enterprise-block__badge-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.enterprise-block__badge-text {
+    max-width: 20ch;
+    font-size: 0.8rem;
+    line-height: 1.45;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.82);
 }
 
 .enterprise-block-section--alt .enterprise-block__content {
@@ -1413,16 +1544,12 @@
     }
 
     .enterprise-block__media--map {
-        padding: 1.5rem 1rem;
+        padding: 0;
     }
 
     .enterprise-block__media--map img {
-        max-width: min(100%, 260px);
-        max-height: 320px;
-    }
-
-    .enterprise-block__media--map {
-        display: none;
+        max-width: none;
+        max-height: none;
     }
 
     .enterprise-block__media--works {
@@ -1475,6 +1602,20 @@
 
     .enterprise-block__content {
         padding: 1.5rem 1.25rem 1.5rem 1.5rem;
+    }
+
+    .enterprise-block__media--maintenance img,
+    .enterprise-block__media--platform img,
+    .enterprise-block__media--map img {
+        min-height: 280px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .enterprise-block__badge {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
     }
 
     .stats-v2 {
@@ -5768,8 +5909,8 @@ html {
     position: relative;
     overflow: hidden;
     background:
-        linear-gradient(180deg, rgba(15, 23, 42, 0.94) 0%, rgba(2, 6, 23, 0.98) 100%),
-        url('../images/image_rediseño/ittelNEGRO.png') center center / 920px auto no-repeat;
+        linear-gradient(180deg, rgba(8, 19, 37, 0.84) 0%, rgba(2, 6, 23, 0.94) 100%),
+        url('../images/diseño_nuevo_diapo/obras/imagenNocturno.png') center center / cover no-repeat;
     padding: 120px 0;
     isolation: isolate;
 }
@@ -5778,9 +5919,9 @@ html {
     content: '';
     position: absolute;
     inset: 0;
-    background: url('../images/image_rediseño/ittelNEGRO.png') center center / 920px auto no-repeat;
-    opacity: 0.18;
-    mix-blend-mode: luminosity;
+    background:
+        linear-gradient(90deg, rgba(7, 16, 32, 0.86) 0%, rgba(7, 16, 32, 0.55) 48%, rgba(7, 16, 32, 0.82) 100%),
+        radial-gradient(circle at top right, rgba(34, 125, 179, 0.24) 0%, rgba(34, 125, 179, 0) 42%);
     pointer-events: none;
     z-index: -2;
 }
@@ -5790,7 +5931,7 @@ html {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(90deg, rgba(15, 23, 42, 0.82) 0%, rgba(15, 23, 42, 0.64) 50%, rgba(15, 23, 42, 0.82) 100%),
+        linear-gradient(180deg, rgba(15, 23, 42, 0.08) 0%, rgba(15, 23, 42, 0.5) 100%),
         radial-gradient(circle at center, rgba(34, 125, 179, 0.12) 0%, rgba(34, 125, 179, 0) 52%);
     pointer-events: none;
     z-index: -1;

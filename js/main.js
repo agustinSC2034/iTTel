@@ -121,10 +121,6 @@ function initHero() {
     const heroVideo = document.querySelector('#hero-video');
     const fullscreenBtn = document.getElementById('fullscreen-btn');
     
-    console.log('Hero section:', hero); // Debug
-    console.log('Hero video:', heroVideo); // Debug
-    console.log('Fullscreen button:', fullscreenBtn); // Debug
-    
     // Optimize video loading
     if (heroVideo) {
         heroVideo.addEventListener('loadeddata', () => {
@@ -159,8 +155,6 @@ function initHero() {
     if (fullscreenBtn && heroVideo) {
         fullscreenBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            console.log('Fullscreen button clicked'); // Debug
-            
             try {
                 if (heroVideo.requestFullscreen) {
                     heroVideo.requestFullscreen().catch(err => console.error('Error:', err));
@@ -168,8 +162,6 @@ function initHero() {
                     heroVideo.webkitRequestFullscreen();
                 } else if (heroVideo.msRequestFullscreen) {
                     heroVideo.msRequestFullscreen();
-                } else {
-                    console.log('Fullscreen not supported');
                 }
             } catch (error) {
                 console.error('Fullscreen error:', error);
@@ -1062,8 +1054,6 @@ function removeNotification(notification) {
 }
 
 // Console message for developers
-console.log('%c👋 ¡Hola! Sitio web desarrollado para Grupo iTTel', 'color: #227db3; font-size: 16px; font-weight: bold;');
-console.log('%cSi estás interesado en nuestros servicios, contáctanos: administracion@it-tel.com.ar', 'color: #666; font-size: 12px;');
 
 // ==============================
 // Utilidad viewport
@@ -1464,10 +1454,6 @@ function initProjectsInteractive() {
                 let desc = '';
                 
                 // Debug: verificar datos
-                console.log('Rendering mobile content for:', slice.dataset.title);
-                console.log('Image:', img);
-                console.log('Video:', video);
-                
                 // Usar versiones móviles más concisas
                 if (isEn) {
                     desc = slice.dataset.descriptionMobileEn || slice.dataset.descriptionEn || slice.dataset.description || '';
@@ -1498,8 +1484,6 @@ function initProjectsInteractive() {
                     }
                 }
 
-                console.log('Final description:', desc);
-
                 if (img) {
                     const title = slice.dataset.title || '';
                     const isAubasa = title.includes('AUBASA');
@@ -1524,11 +1508,8 @@ function initProjectsInteractive() {
                 }
                 html += desc || '';
                 
-                console.log('Final HTML:', html);
-                
                 const contentWrapper = expandedContent.querySelector('.content-wrapper');
                 contentWrapper.innerHTML = html;
-                console.log('Content wrapper after setting innerHTML:', contentWrapper);
             };
 
             const expandContent = () => {
@@ -2513,6 +2494,18 @@ function initWorksGallery() {
             alt: document.documentElement.lang.toLowerCase().startsWith('en')
                 ? 'Telecommunications field works with elevated equipment and on-site crew'
                 : 'Obras telco en campo con equipamiento elevado y cuadrilla en sitio'
+        },
+        {
+            src: `${assetBase}assets/images/diseño_nuevo_diapo/obras/imagengrua3.png`,
+            alt: document.documentElement.lang.toLowerCase().startsWith('en')
+                ? 'Real telecommunications infrastructure works with crane and field deployment'
+                : 'Obra real de infraestructura de telecomunicaciones con grúa y despliegue en campo'
+        },
+        {
+            src: `${assetBase}assets/images/diseño_nuevo_diapo/obras/58a89b1d-21f0-4274-89a7-05a034be43df.png`,
+            alt: document.documentElement.lang.toLowerCase().startsWith('en')
+                ? 'Aerial view of telco infrastructure deployment and heavy works'
+                : 'Vista aérea de despliegue de infraestructura telco y obra de alta exigencia'
         }
     ];
 
