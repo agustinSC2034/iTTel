@@ -1176,6 +1176,11 @@
     background: linear-gradient(180deg, #F8FAFC 0%, #EEF2F7 100%);
 }
 
+.enterprise-block--works {
+    grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1.18fr);
+    align-items: center;
+}
+
 .works-gallery {
     height: 100%;
     width: 100%;
@@ -1190,7 +1195,7 @@
     width: 100%;
     height: auto;
     min-height: 0;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 5.4;
     background: #0F172A;
 }
 
@@ -1205,7 +1210,7 @@
 
 .obras-telco-image-frame {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 5.4;
     overflow: hidden;
 }
 
@@ -1313,6 +1318,90 @@
     align-items: center;
 }
 
+.audit-platform-section {
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(180deg, rgba(248, 250, 252, 0.98) 0%, rgba(255, 255, 255, 0.98) 100%),
+        url('../images/diseno_nuevo_diapo/14fondo.png') right top / 560px auto no-repeat,
+        url('../images/diseno_nuevo_diapo/2fondo.png') left bottom / 520px auto no-repeat;
+    padding: 108px 0;
+}
+
+.audit-platform-shell {
+    display: grid;
+    gap: 2rem;
+}
+
+.audit-platform-intro {
+    max-width: 980px;
+}
+
+.audit-platform-title {
+    margin: 0 0 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    color: #0F172A;
+    text-transform: uppercase;
+}
+
+.audit-platform-lead {
+    margin: 0 0 1.75rem;
+    max-width: 54ch;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #475569;
+}
+
+.audit-platform-features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.audit-platform-feature {
+    padding: 1.25rem 1.15rem;
+    border-left: 2px solid #227DB3;
+    border-top: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+    background: rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(6px);
+}
+
+.audit-platform-feature h3 {
+    margin: 0 0 0.45rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.audit-platform-feature p {
+    margin: 0;
+    font-size: 0.94rem;
+    line-height: 1.7;
+    color: #475569;
+}
+
+.audit-platform-media {
+    border: 1px solid #D8E1EC;
+    border-radius: 18px;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+}
+
+.audit-platform-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
 .enterprise-block--maintenance .enterprise-block__media {
     order: 1;
 }
@@ -1332,6 +1421,10 @@
 .enterprise-block__media--maintenance img,
 .enterprise-block__media--platform img {
     min-height: 460px;
+}
+
+.enterprise-block__media--maintenance img {
+    object-position: center top;
 }
 
 .enterprise-block__content--maintenance,
@@ -1560,7 +1653,7 @@
     .works-gallery__stage {
         border-radius: 8px;
         min-height: 0;
-        aspect-ratio: 4 / 3;
+        aspect-ratio: 4 / 5;
     }
 
     .works-gallery__stage img {
@@ -1616,6 +1709,22 @@
         width: 100%;
         justify-content: flex-start;
         flex-wrap: wrap;
+    }
+
+    .audit-platform-section {
+        padding: 72px 0;
+        background:
+            linear-gradient(180deg, rgba(248, 250, 252, 0.98) 0%, rgba(255, 255, 255, 0.98) 100%),
+            url('../images/diseno_nuevo_diapo/14fondo.png') right top / 300px auto no-repeat;
+    }
+
+    .audit-platform-features {
+        grid-template-columns: 1fr;
+    }
+
+    .audit-platform-media {
+        padding: 0.8rem;
+        border-radius: 14px;
     }
 
     .stats-v2 {
@@ -5820,11 +5929,17 @@ html {
    Business Units — 2×2 Document Grid
    ======================================== */
 .business-units-section {
-    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%),
+        url('../images/diseno_nuevo_diapo/14fondo.png') left top / 420px auto no-repeat,
+        url('../images/diseno_nuevo_diapo/2fondo.png') right bottom / 420px auto no-repeat;
     padding: 88px 0 72px;
 }
 
 .business-units-shell {
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -5909,8 +6024,8 @@ html {
     position: relative;
     overflow: hidden;
     background:
-        linear-gradient(180deg, rgba(8, 19, 37, 0.84) 0%, rgba(2, 6, 23, 0.94) 100%),
-        url('../images/diseno_nuevo_diapo/obras/imagenNocturno.png') center center / cover no-repeat;
+        linear-gradient(180deg, rgba(7, 18, 35, 0.3) 0%, rgba(2, 6, 23, 0.52) 100%),
+        url('../images/diseno_nuevo_diapo/obras/imagenNocturno.png') center 46% / cover no-repeat;
     padding: 120px 0;
     isolation: isolate;
 }
@@ -5920,8 +6035,8 @@ html {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(90deg, rgba(7, 16, 32, 0.86) 0%, rgba(7, 16, 32, 0.55) 48%, rgba(7, 16, 32, 0.82) 100%),
-        radial-gradient(circle at top right, rgba(34, 125, 179, 0.24) 0%, rgba(34, 125, 179, 0) 42%);
+        linear-gradient(90deg, rgba(6, 15, 30, 0.34) 0%, rgba(6, 15, 30, 0.08) 48%, rgba(6, 15, 30, 0.28) 100%),
+        radial-gradient(circle at top right, rgba(34, 125, 179, 0.12) 0%, rgba(34, 125, 179, 0) 44%);
     pointer-events: none;
     z-index: -2;
 }
@@ -5931,8 +6046,8 @@ html {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(180deg, rgba(15, 23, 42, 0.08) 0%, rgba(15, 23, 42, 0.5) 100%),
-        radial-gradient(circle at center, rgba(34, 125, 179, 0.12) 0%, rgba(34, 125, 179, 0) 52%);
+        linear-gradient(180deg, rgba(15, 23, 42, 0.01) 0%, rgba(15, 23, 42, 0.16) 100%),
+        radial-gradient(circle at center, rgba(34, 125, 179, 0.06) 0%, rgba(34, 125, 179, 0) 54%);
     pointer-events: none;
     z-index: -1;
 }
@@ -5950,9 +6065,10 @@ html {
 .infra-coverage-panel {
     padding: 2.25rem 2rem 2.25rem 2.5rem;
     border-left: 3px solid var(--primary-color);
-    background-color: rgba(15, 23, 42, 0.34);
+    background-color: rgba(9, 18, 34, 0.12);
     border-radius: 8px;
-    backdrop-filter: blur(2px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(1.5px);
 }
 
 .infra-coverage-title {
