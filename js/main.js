@@ -1,4 +1,4 @@
-// Main JavaScript for iTTel Website
+﻿// Main JavaScript for iTTel Website
 
 
 
@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollEffects();
     initBackToTop();
     initLanguageSelector();
-    initSuccessCaseModal();
     initProjectsInteractive(); // Nueva funcionalidad de slices interactivos
     //initItGallery(); // Galería anterior deshabilitada al reemplazar 'Obras en Campo'
     initModalImageFullscreen(); // Fullscreen imagen en modal
@@ -117,66 +116,17 @@ function updateActiveNavLink(activeLink) {
 
 // Hero section functionality
 function initHero() {
-    const hero = document.querySelector('.hero') || document.querySelector('.hero-fullscreen');
-    const heroVideo = document.querySelector('#hero-video');
-    const fullscreenBtn = document.getElementById('fullscreen-btn');
-    
-    // Optimize video loading
-    if (heroVideo) {
-        heroVideo.addEventListener('loadeddata', () => {
-            heroVideo.style.opacity = '1';
-        });
-        
-        // Use IntersectionObserver to manage both play/pause and button visibility efficiently
-        if (hero) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        heroVideo.play();
-                        if(fullscreenBtn) {
-                            fullscreenBtn.style.opacity = '0.8';
-                            fullscreenBtn.style.visibility = 'visible';
-                        }
-                    } else {
-                        heroVideo.pause();
-                        if(fullscreenBtn) {
-                            fullscreenBtn.style.opacity = '0';
-                            fullscreenBtn.style.visibility = 'hidden';
-                        }
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            observer.observe(hero);
-        }
-    }
-    
-    // Fullscreen functionality - click event only
-    if (fullscreenBtn && heroVideo) {
-        fullscreenBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            try {
-                if (heroVideo.requestFullscreen) {
-                    heroVideo.requestFullscreen().catch(err => console.error('Error:', err));
-                } else if (heroVideo.webkitRequestFullscreen) {
-                    heroVideo.webkitRequestFullscreen();
-                } else if (heroVideo.msRequestFullscreen) {
-                    heroVideo.msRequestFullscreen();
-                }
-            } catch (error) {
-                console.error('Fullscreen error:', error);
-            }
-        });
-    }
-    
-    // Parallax effect for hero content
+    const hero = document.querySelector('.hero-image');
+    const heroCopy = document.querySelector('.hero-image__copy');
+    if (!hero) return;
+
+    document.body.classList.add('hero-image-active');
+
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
-        const heroContent = document.querySelector('.hero-content');
-        
-        if (heroContent && scrolled < window.innerHeight) {
-            const parallax = scrolled * 0.5;
-            heroContent.style.transform = `translateY(${parallax}px)`;
+
+        if (heroCopy && scrolled < window.innerHeight) {
+            heroCopy.style.transform = `translateY(${Math.min(scrolled * 0.14, 36)}px)`;
         }
     });
 }

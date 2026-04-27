@@ -857,42 +857,6 @@
     padding-top: 0.25rem;
 }
 
-.success-case-card__actions {
-    margin-top: auto;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 0.25rem;
-    position: relative;
-    z-index: 2;
-}
-
-.success-case-modal-btn {
-    border: 1px solid #CBD5E1;
-    background-color: transparent;
-    color: #0F172A;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.74rem;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    padding: 0.72rem 0.95rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
-    position: relative;
-    z-index: 3;
-    pointer-events: auto;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.success-case-modal-btn:hover {
-    border-color: #227DB3;
-    color: #227DB3;
-    background-color: rgba(34, 125, 179, 0.12);
-}
-
 .success-case-card__link {
     font-family: 'Inter', sans-serif;
     font-size: 0.76rem;
@@ -929,11 +893,6 @@
     max-height: 26px;
     object-fit: contain;
     display: block;
-}
-
-.success-case-modal-content {
-    max-width: 68rem;
-    border-radius: 0.4rem;
 }
 
 .stats-v2 {
@@ -2483,8 +2442,7 @@
 
 /* Focus visible accesible para botones del modal */
 .modal-close:focus,
-.open-modal-btn:focus,
-.fullscreen-btn:focus {
+.open-modal-btn:focus {
     outline: 2px solid var(--primary-color-soft);
     outline-offset: 2px;
 }
@@ -5699,7 +5657,7 @@ html {
 @media print {
     .navbar,
     .back-to-top,
-    .hero-video,
+    .hero-image,
     .scroll-indicator {
         display: none;
     }
@@ -7197,4 +7155,176 @@ html {
 
 .contact-clean .section-title--clean {
     margin-bottom: 0.75rem;
+}
+
+/* ========================================
+   HERO IMAGE - Corporate static version
+   ======================================== */
+
+.hero-fullscreen.hero-image {
+    position: relative;
+    min-height: 100svh;
+    padding: 140px 0 92px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(180deg, #f7fbff 0%, #edf4fb 100%);
+}
+
+.hero-image__bg,
+.hero-image__overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-image__bg {
+    z-index: 0;
+    background: url('../images/fondo_hero/fondo4k.png') center right / cover no-repeat;
+    transform: scale(1.015);
+}
+
+.hero-image__overlay {
+    z-index: 1;
+    background:
+        linear-gradient(180deg, rgba(15, 23, 42, 0.16) 0%, rgba(15, 23, 42, 0.03) 12%, rgba(15, 23, 42, 0) 24%),
+        linear-gradient(90deg,
+            rgba(250, 252, 255, 0.98) 0%,
+            rgba(244, 249, 255, 0.94) 18%,
+            rgba(239, 246, 255, 0.78) 36%,
+            rgba(239, 246, 255, 0.34) 55%,
+            rgba(239, 246, 255, 0.08) 71%,
+            rgba(239, 246, 255, 0) 100%);
+}
+
+.hero-image__content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.hero-image__copy {
+    max-width: min(620px, 100%);
+    padding: 1.25rem 0 0;
+    transition: transform 0.25s ease-out;
+}
+
+.hero-image__logo {
+    width: clamp(180px, 24vw, 260px);
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.hero-image__eyebrow {
+    margin: 0 0 0.7rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(15, 23, 42, 0.66);
+}
+
+.hero-image__title {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2.8rem, 5.8vw, 4.8rem);
+    font-weight: 700;
+    line-height: 0.94;
+    letter-spacing: -0.05em;
+    color: #0f172a;
+}
+
+.hero-image__subtitle {
+    margin: 1rem 0 0;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.88rem, 1.4vw, 1.08rem);
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(30, 41, 59, 0.82);
+}
+
+.hero-image__lead {
+    margin: 1.4rem 0 0;
+    max-width: 34ch;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1rem, 1.45vw, 1.18rem);
+    font-weight: 500;
+    line-height: 1.75;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(15, 23, 42, 0.78);
+}
+
+.hero-image-active .navbar-glass:not(.scrolled) {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(148, 163, 184, 0.22);
+    box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+}
+
+.hero-image-active .navbar-glass:not(.scrolled) .nav-link-glass {
+    color: rgba(15, 23, 42, 0.82);
+    text-shadow: none;
+}
+
+.hero-image-active .navbar-glass:not(.scrolled) .nav-link-glass:hover {
+    color: #0f172a;
+    background: rgba(255, 255, 255, 0.38);
+}
+
+.hero-image-active .navbar-glass:not(.scrolled) .language-btn-glass {
+    background: rgba(255, 255, 255, 0.58);
+    border-color: rgba(148, 163, 184, 0.28);
+    color: rgba(15, 23, 42, 0.78);
+    text-shadow: none;
+}
+
+.hero-image-active .navbar-glass:not(.scrolled) .nav-toggle-glass span {
+    background: rgba(15, 23, 42, 0.78);
+}
+
+@media (max-width: 768px) {
+    .hero-fullscreen.hero-image {
+        min-height: clamp(640px, 92svh, 860px);
+        padding: 126px 0 64px;
+    }
+
+    .hero-image__bg {
+        background-position: 76% center;
+        transform: scale(1.02);
+    }
+
+    .hero-image__overlay {
+        background:
+            linear-gradient(180deg, rgba(15, 23, 42, 0.26) 0%, rgba(15, 23, 42, 0.06) 13%, rgba(15, 23, 42, 0) 24%),
+            linear-gradient(180deg, rgba(250, 252, 255, 0.94) 0%, rgba(248, 251, 255, 0.92) 20%, rgba(244, 249, 255, 0.86) 43%, rgba(240, 246, 255, 0.3) 72%, rgba(240, 246, 255, 0.12) 100%);
+    }
+
+    .hero-image__copy {
+        max-width: 100%;
+        padding-right: 1rem;
+    }
+
+    .hero-image__logo {
+        width: clamp(156px, 46vw, 220px);
+        margin-bottom: 0.85rem;
+    }
+
+    .hero-image__subtitle {
+        max-width: 30ch;
+        letter-spacing: 0.13em;
+    }
+
+    .hero-image__lead {
+        max-width: 30ch;
+        font-size: 0.96rem;
+        line-height: 1.65;
+    }
+}
+
+@media (max-aspect-ratio: 9/16) {
+    .hero-image__bg {
+        background-position: 78% center;
+    }
 }
