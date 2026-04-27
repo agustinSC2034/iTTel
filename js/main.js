@@ -2496,13 +2496,13 @@ function initWorksGallery() {
                 : 'Obras telco en campo con equipamiento elevado y cuadrilla en sitio'
         },
         {
-            src: `${assetBase}assets/images/diseño_nuevo_diapo/obras/imagengrua3.png`,
+            src: `${assetBase}assets/images/diseno_nuevo_diapo/obras/imagengrua3.png`,
             alt: document.documentElement.lang.toLowerCase().startsWith('en')
                 ? 'Real telecommunications infrastructure works with crane and field deployment'
                 : 'Obra real de infraestructura de telecomunicaciones con grúa y despliegue en campo'
         },
         {
-            src: `${assetBase}assets/images/diseño_nuevo_diapo/obras/58a89b1d-21f0-4274-89a7-05a034be43df.png`,
+            src: `${assetBase}assets/images/diseno_nuevo_diapo/obras/58a89b1d-21f0-4274-89a7-05a034be43df.png`,
             alt: document.documentElement.lang.toLowerCase().startsWith('en')
                 ? 'Aerial view of telco infrastructure deployment and heavy works'
                 : 'Vista aérea de despliegue de infraestructura telco y obra de alta exigencia'
