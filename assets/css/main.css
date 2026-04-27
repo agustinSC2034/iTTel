@@ -7328,3 +7328,48 @@ html {
         background-position: 78% center;
     }
 }
+
+.hero-image__copy {
+    max-width: min(680px, 100%);
+}
+
+.hero-image__eyebrow {
+    margin: 0 0 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.68rem, 0.85vw, 0.78rem);
+    font-weight: 800;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(15, 23, 42, 0.58);
+}
+
+.hero-image__logo {
+    width: clamp(250px, 29vw, 350px);
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1.05rem;
+}
+
+.hero-image__title {
+    display: none !important;
+}
+
+.hero-image__subtitle {
+    margin-top: 0.15rem;
+}
+
+.hero-image__lead {
+    max-width: 40ch;
+}
+
+@media (max-width: 768px) {
+    .hero-image__logo {
+        width: clamp(210px, 62vw, 290px);
+    }
+
+    .hero-image__eyebrow {
+        letter-spacing: 0.24em;
+        margin-bottom: 0.65rem;
+    }
+}
