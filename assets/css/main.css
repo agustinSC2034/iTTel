@@ -1168,6 +1168,7 @@
 
 .enterprise-block--rail .enterprise-block__media--map img {
     min-height: 100%;
+    object-position: center 16%;
 }
 
 .enterprise-block__media--works {
@@ -1177,8 +1178,9 @@
 }
 
 .enterprise-block--works {
-    grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1.18fr);
+    grid-template-columns: minmax(360px, 0.92fr) minmax(0, 1.08fr);
     align-items: center;
+    gap: 2.25rem;
 }
 
 .works-gallery {
@@ -1195,7 +1197,7 @@
     width: 100%;
     height: auto;
     min-height: 0;
-    aspect-ratio: 4 / 5.4;
+    aspect-ratio: 4 / 5.2;
     background: #0F172A;
 }
 
@@ -1204,14 +1206,23 @@
     height: 100%;
     display: block;
     object-fit: cover;
-    object-position: center;
+    object-position: center 44%;
     transition: opacity 0.42s ease, transform 0.72s ease;
 }
 
 .obras-telco-image-frame {
     width: 100%;
-    aspect-ratio: 4 / 5.4;
+    aspect-ratio: 4 / 5.2;
     overflow: hidden;
+}
+
+.enterprise-block--works .enterprise-block__content {
+    padding: 2rem 2rem 2rem 2.8rem;
+}
+
+.enterprise-block--works .enterprise-block__lead,
+.enterprise-block--works .enterprise-block__items {
+    max-width: 46ch;
 }
 
 .works-gallery__stage img.is-switching {
@@ -1322,19 +1333,47 @@
     position: relative;
     overflow: hidden;
     background:
-        linear-gradient(180deg, rgba(248, 250, 252, 0.98) 0%, rgba(255, 255, 255, 0.98) 100%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.99) 0%, rgba(255, 255, 255, 0.99) 100%),
         url('../images/diseno_nuevo_diapo/14fondo.png') right top / 560px auto no-repeat,
         url('../images/diseno_nuevo_diapo/2fondo.png') left bottom / 520px auto no-repeat;
     padding: 108px 0;
+    border-top: 1px solid #E7EDF4;
+    border-bottom: 1px solid #E7EDF4;
+}
+
+.audit-platform-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, rgba(34, 125, 179, 0.05) 0%, rgba(34, 125, 179, 0) 32%, rgba(34, 125, 179, 0) 68%, rgba(34, 125, 179, 0.04) 100%);
+    opacity: 0.55;
+}
+
+.audit-platform-section::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: min(1120px, calc(100% - 40px));
+    height: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, rgba(34, 125, 179, 0) 0%, rgba(34, 125, 179, 0.22) 50%, rgba(34, 125, 179, 0) 100%);
+    pointer-events: none;
 }
 
 .audit-platform-shell {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 2rem;
+    align-items: start;
 }
 
 .audit-platform-intro {
     max-width: 980px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .audit-platform-title {
@@ -1354,12 +1393,17 @@
     font-size: 1rem;
     line-height: 1.8;
     color: #475569;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .audit-platform-features {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .audit-platform-feature {
@@ -1368,8 +1412,9 @@
     border-top: 1px solid #E2E8F0;
     border-right: 1px solid #E2E8F0;
     border-bottom: 1px solid #E2E8F0;
-    background: rgba(255, 255, 255, 0.86);
+    background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(6px);
+    text-align: left;
 }
 
 .audit-platform-feature h3 {
@@ -1389,9 +1434,12 @@
 .audit-platform-media {
     border: 1px solid #D8E1EC;
     border-radius: 18px;
-    padding: 1.25rem;
-    background: rgba(255, 255, 255, 0.92);
-    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+    padding: 1.1rem;
+    background: #FFFFFF;
+    box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08);
+    max-width: 760px;
+    width: 100%;
+    justify-self: center;
 }
 
 .audit-platform-media img {
@@ -1714,7 +1762,7 @@
     .audit-platform-section {
         padding: 72px 0;
         background:
-            linear-gradient(180deg, rgba(248, 250, 252, 0.98) 0%, rgba(255, 255, 255, 0.98) 100%),
+            linear-gradient(180deg, rgba(242, 247, 252, 0.98) 0%, rgba(249, 251, 253, 0.98) 100%),
             url('../images/diseno_nuevo_diapo/14fondo.png') right top / 300px auto no-repeat;
     }
 
@@ -1723,7 +1771,9 @@
     }
 
     .audit-platform-media {
-        padding: 0.8rem;
+        max-width: none;
+        justify-self: stretch;
+        padding: 0.9rem;
         border-radius: 14px;
     }
 
@@ -5932,16 +5982,42 @@ html {
     position: relative;
     overflow: hidden;
     background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%),
-        url('../images/diseno_nuevo_diapo/14fondo.png') left top / 420px auto no-repeat,
-        url('../images/diseno_nuevo_diapo/2fondo.png') right bottom / 420px auto no-repeat;
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 250, 252, 0.88) 100%);
     padding: 88px 0 72px;
+}
+
+.business-units-section::before,
+.business-units-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.business-units-section::before {
+    background-image:
+        url('../images/diseno_nuevo_diapo/14fondo.png');
+    background-position: left top;
+    background-size: 420px auto;
+    opacity: 0.3;
+}
+
+.business-units-section::after {
+    background-image:
+        url('../images/diseno_nuevo_diapo/2fondo.png');
+    background-position: calc(100% + 60px) 68%;
+    background-size: 1120px auto;
+    opacity: 0.58;
+    filter: saturate(1.04) contrast(1.06);
 }
 
 .business-units-shell {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
+    z-index: 1;
 }
 
 .business-units-intro {
@@ -5978,16 +6054,19 @@ html {
     gap: 1px;
     border: 1px solid #E2E8F0;
     background-color: #E2E8F0;
+    position: relative;
+    z-index: 1;
 }
 
 .business-unit-card {
     min-height: 208px;
     padding: 1.5rem;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.92);
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
     transition: background-color 0.25s ease, transform 0.25s ease;
+    backdrop-filter: blur(5px);
 }
 
 .business-unit-card:hover {
@@ -6175,6 +6254,14 @@ html {
     .business-unit-card {
         min-height: auto;
         padding: 1.25rem 1.1rem;
+    }
+    .business-units-section::before {
+        background-size: 220px auto;
+        opacity: 0.2;
+    }
+    .business-units-section::after {
+        background-size: 360px auto;
+        opacity: 0.22;
     }
     .business-units-intro {
         margin-bottom: 1.5rem;
