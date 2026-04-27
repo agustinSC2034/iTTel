@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" as="style">
-    <link rel="preload" href="../assets/video/videoIttel1.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="../assets/images/fondo_hero/fondo4k.png" as="image">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
@@ -70,17 +70,18 @@
     <!-- =============================================
          HERO — Video Fullscreen
          ============================================= -->
-    <section id="inicio" class="hero-fullscreen">
-        <div class="hero-video-fullscreen">
-            <video autoplay muted loop playsinline preload="metadata" poster="../assets/images/mundoITTEL.webp" id="hero-video">
-                <source src="../assets/video/videoIttel1.mp4" type="video/mp4">
-                <source src="../assets/video/videoIttel1.webm" type="video/webm">
-            </video>
-            <div class="hero-overlay-fullscreen"></div>
+    <section id="inicio" class="hero-fullscreen hero-image">
+        <div class="hero-image__bg hero-image__bg--en" aria-hidden="true"></div>
+        <div class="hero-image__overlay" aria-hidden="true"></div>
+        <div class="container hero-image__content">
+            <div class="hero-image__copy" data-aos="fade-up">
+                <img src="../assets/images/fondo_hero/Logo_Ittel_AI.png" alt="iTTel Group" class="hero-image__logo" width="232" height="78" decoding="async">
+                <p class="hero-image__eyebrow">Grupo iTTel</p>
+                <h1 class="hero-image__title">Grupo iTTel</h1>
+                <p class="hero-image__subtitle">Information Technology &amp; Telecommunications</p>
+                <p class="hero-image__lead">LEADERS IN ARGENTINA IN INFRASTRUCTURE DEVELOPMENT, NETWORK OPERATIONS AND LARGE-SCALE CONNECTIVITY SERVICES</p>
+            </div>
         </div>
-        <button class="fullscreen-btn-glass" id="fullscreen-btn" title="Fullscreen">
-            <i class="fas fa-expand"></i>
-        </button>
     </section>
 
     <!-- =============================================
@@ -322,9 +323,6 @@
                     </div>
                     <h3 class="success-case-card__title">Buenos Aires City</h3>
                     <p class="success-case-card__text">Over 300 km of operational fiber optic infrastructure and 73 critical towers deployed to maximize connectivity in the country’s highest-demand area.</p>
-                    <div class="success-case-card__actions">
-                        <button class="success-case-modal-btn" type="button" data-case="ausa">Read more</button>
-                    </div>
                 </article>
 
                 <article class="success-case-card" data-aos="fade-up" data-aos-delay="120">
@@ -333,9 +331,6 @@
                     </div>
                     <h3 class="success-case-card__title">Buenos Aires Province</h3>
                     <p class="success-case-card__text">More than 100 km of fiber optic infrastructure with 41 strategic towers, increasing density and connectivity demand coverage across the province.</p>
-                    <div class="success-case-card__actions">
-                        <button class="success-case-modal-btn" type="button" data-case="aubasa">Read more</button>
-                    </div>
                 </article>
             </div>
         </div>
@@ -394,28 +389,6 @@
             </div>
         </div>
     </section>
-
-    <div id="success-case-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="success-case-modal-title" aria-hidden="true" tabindex="-1">
-        <div id="success-case-modal-overlay" class="modal-overlay"></div>
-        <div class="modal-content success-case-modal-content">
-            <div class="modal-header">
-                <h3 id="success-case-modal-title" class="modal-title"></h3>
-                <button id="success-case-modal-close" class="modal-close" aria-label="Close">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-grid">
-                    <div class="modal-media-container">
-                        <img id="success-case-modal-image" src="" alt="" class="modal-image" style="display:none;">
-                        <video id="success-case-modal-video" class="modal-video" controls style="display:none;">
-                            <source src="" type="video/mp4">
-                            Your browser does not support the video element.
-                        </video>
-                    </div>
-                    <div id="success-case-modal-description" class="modal-description"></div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <section id="stats" class="section stats-v2 stats-v2--backed">
         <div class="container">
