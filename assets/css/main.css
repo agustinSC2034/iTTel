@@ -6394,6 +6394,11 @@ html {
     margin: 0;
 }
 
+.business-units-title__prefix,
+.business-units-title__suffix {
+    display: block;
+}
+
 .business-units-lead {
     max-width: 58ch;
     font-size: 1.02rem;
@@ -6640,13 +6645,22 @@ html {
     }
 
     .business-units-title {
-        font-size: clamp(2rem, 8.8vw, 2.75rem);
-        line-height: 1.08;
-        letter-spacing: -0.055em;
+        font-size: clamp(1.7rem, 7.6vw, 2.35rem);
+        line-height: 1.06;
+        letter-spacing: -0.04em;
         max-width: 100%;
-        overflow-wrap: normal;
+        overflow-wrap: anywhere;
         word-break: normal;
-        text-wrap: balance;
+        text-wrap: pretty;
+    }
+
+    .business-units-title__prefix {
+        margin-bottom: 0.15em;
+    }
+
+    .business-units-title__suffix {
+        max-width: 12ch;
+        margin: 0 auto;
     }
 
     .business-units-lead {
