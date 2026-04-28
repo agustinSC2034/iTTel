@@ -1829,6 +1829,32 @@
     letter-spacing: 0.12em;
 }
 
+.telco-logo-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.telco-logo-item {
+    min-width: 96px;
+    height: 42px;
+    padding: 0.45rem 0.75rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.telco-logo-item img {
+    max-width: 86px;
+    max-height: 24px;
+    object-fit: contain;
+    display: block;
+}
+
 .image-story--works .image-story__slide img {
     object-position: center 54%;
 }
@@ -1861,6 +1887,22 @@
 }
 
 @media (max-width: 768px) {
+    .telco-logo-strip {
+        gap: 0.55rem;
+        margin-top: 1rem;
+    }
+
+    .telco-logo-item {
+        min-width: 82px;
+        height: 36px;
+        padding: 0.35rem 0.55rem;
+    }
+
+    .telco-logo-item img {
+        max-width: 72px;
+        max-height: 20px;
+    }
+
     .success-cases-section {
         padding: 72px 0 60px;
     }
