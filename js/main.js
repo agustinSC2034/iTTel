@@ -498,7 +498,7 @@ function initLanguageSelector() {
 
     // Toggle dropdown (Abrir/Cerrar menú)
     languageBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
+        e.stopImmediatePropagation();
         languageDropdown.classList.toggle('active');
     });
     
