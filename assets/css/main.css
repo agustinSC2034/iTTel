@@ -797,7 +797,7 @@
 
 .success-case-card__media {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
     border-radius: 2px;
     background: linear-gradient(180deg, #E2E8F0 0%, #CBD5E1 100%);
@@ -1876,7 +1876,7 @@
     }
 
     .success-case-card__media {
-        aspect-ratio: 4 / 3;
+        aspect-ratio: 5 / 4;
     }
 
     .success-case-card__brand-slot {
@@ -6463,7 +6463,7 @@ html {
     position: relative;
     overflow: hidden;
     background:
-        linear-gradient(180deg, rgba(7, 18, 35, 0.3) 0%, rgba(2, 6, 23, 0.52) 100%),
+        linear-gradient(180deg, rgba(7, 18, 35, 0.16) 0%, rgba(2, 6, 23, 0.34) 100%),
         url('../images/diseno_nuevo_diapo/obras/imagenNocturno.png') center 46% / cover no-repeat;
     padding: 120px 0;
     isolation: isolate;
@@ -6474,8 +6474,8 @@ html {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(90deg, rgba(6, 15, 30, 0.34) 0%, rgba(6, 15, 30, 0.08) 48%, rgba(6, 15, 30, 0.28) 100%),
-        radial-gradient(circle at top right, rgba(34, 125, 179, 0.12) 0%, rgba(34, 125, 179, 0) 44%);
+        linear-gradient(90deg, rgba(6, 15, 30, 0.22) 0%, rgba(6, 15, 30, 0.04) 48%, rgba(6, 15, 30, 0.18) 100%),
+        radial-gradient(circle at top right, rgba(34, 125, 179, 0.16) 0%, rgba(34, 125, 179, 0) 46%);
     pointer-events: none;
     z-index: -2;
 }
@@ -6485,8 +6485,8 @@ html {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(180deg, rgba(15, 23, 42, 0.01) 0%, rgba(15, 23, 42, 0.16) 100%),
-        radial-gradient(circle at center, rgba(34, 125, 179, 0.06) 0%, rgba(34, 125, 179, 0) 54%);
+        linear-gradient(180deg, rgba(15, 23, 42, 0.01) 0%, rgba(15, 23, 42, 0.1) 100%),
+        radial-gradient(circle at center, rgba(34, 125, 179, 0.08) 0%, rgba(34, 125, 179, 0) 58%);
     pointer-events: none;
     z-index: -1;
 }
@@ -6504,10 +6504,10 @@ html {
 .infra-coverage-panel {
     padding: 2.25rem 2rem 2.25rem 2.5rem;
     border-left: 3px solid var(--primary-color);
-    background-color: rgba(9, 18, 34, 0.12);
+    background-color: rgba(9, 18, 34, 0.2);
     border-radius: 8px;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(1.5px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(2px);
 }
 
 .infra-coverage-title {
