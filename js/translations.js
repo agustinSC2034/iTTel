@@ -85,7 +85,7 @@ const translations = {
         'infra.region4.fo': 'nodo FO centralizado',
 
         'infra.projection.label': 'TANDIL',
-        'infra.projection.tandil': 'manzanas FTTH proyectadas a 2029',
+        'infra.projection.tandil': 'usuarios finales',
         
         // Obras en Campo
         'obras.eyebrow': 'OBRAS',
@@ -245,7 +245,7 @@ const translations = {
         'infra.region4.fo': 'centralized FO node',
 
         'infra.projection.label': 'TANDIL',
-        'infra.projection.tandil': 'FTTH blocks projected to 2029',
+        'infra.projection.tandil': 'end users',
         
         // Field Works
         'obras.eyebrow': 'FIELD WORKS',
