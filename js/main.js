@@ -1365,7 +1365,7 @@ function initProjectsInteractive() {
             if (title.includes('USITTEL')) {
                 const bgImg = slice.querySelector('.slice-bg');
                 if (bgImg) {
-                    bgImg.src = 'assets/images/proyectos/USITTEL_horizontal.png';
+                    bgImg.src = 'assets/images/proyectos/USITTEL_horizontal.webp';
                 }
             }
         });
@@ -1452,7 +1452,7 @@ function initProjectsInteractive() {
                 }
                 if (video && !img) {
                     // Añadir poster específico para el video de AUSA
-                    const poster = video.includes('ausa.mp4') ? 'assets/images/proyectos/acuerdo_ittel_ausa.png' : '';
+                    const poster = video.includes('ausa.mp4') ? 'assets/images/proyectos/acuerdo_ittel_ausa.webp' : '';
                     const posterAttr = poster ? ` poster="${poster}"` : '';
                     html += `<div style="margin-bottom:15px"><video src="${video}" controls${posterAttr} style="width:100%;height:auto;border-radius:8px;"></video></div>`;
                 }
@@ -1626,7 +1626,7 @@ function initProjectsInteractive() {
                 if (title.includes('USITTEL')) {
                     const bgImg = slice.querySelector('.slice-bg');
                     if (bgImg && bgImg.src.includes('USITTEL_horizontal.png')) {
-                        bgImg.src = 'assets/images/proyectos/usittel_internet.png';
+                        bgImg.src = 'assets/images/proyectos/usittel_internet.webp';
                     }
                 }
             });
@@ -2434,25 +2434,25 @@ function initWorksGallery() {
     const assetBase = document.documentElement.lang.toLowerCase().startsWith('en') ? '../' : '';
     const items = [
         {
-            src: `${assetBase}assets/images/image_rediseño/obras/obras2/imagengrua1.png`,
+            src: `${assetBase}assets/images/image_rediseño/obras/obras2/imagengrua1.webp`,
             alt: document.documentElement.lang.toLowerCase().startsWith('en')
                 ? 'High-demand telecommunications works with crane deployment'
                 : 'Obras de telecomunicaciones con grúa y despliegue de alta exigencia'
         },
         {
-            src: `${assetBase}assets/images/image_rediseño/obras/obras2/imagengrua2.png`,
+            src: `${assetBase}assets/images/image_rediseño/obras/obras2/imagengrua2.webp`,
             alt: document.documentElement.lang.toLowerCase().startsWith('en')
                 ? 'Telecommunications field works with elevated equipment and on-site crew'
                 : 'Obras telco en campo con equipamiento elevado y cuadrilla en sitio'
         },
         {
-            src: `${assetBase}assets/images/diseno_nuevo_diapo/obras/imagengrua3.png`,
+            src: `${assetBase}assets/images/diseno_nuevo_diapo/obras/imagengrua3.webp`,
             alt: document.documentElement.lang.toLowerCase().startsWith('en')
                 ? 'Real telecommunications infrastructure works with crane and field deployment'
                 : 'Obra real de infraestructura de telecomunicaciones con grúa y despliegue en campo'
         },
         {
-            src: `${assetBase}assets/images/diseno_nuevo_diapo/obras/58a89b1d-21f0-4274-89a7-05a034be43df.png`,
+            src: `${assetBase}assets/images/diseno_nuevo_diapo/obras/58a89b1d-21f0-4274-89a7-05a034be43df.webp`,
             alt: document.documentElement.lang.toLowerCase().startsWith('en')
                 ? 'Aerial view of telco infrastructure deployment and heavy works'
                 : 'Vista aérea de despliegue de infraestructura telco y obra de alta exigencia'

@@ -1,0 +1,530 @@
+{
+  "summary": {
+    "totalScanned": 57,
+    "converted": 57,
+    "skipped": 0,
+    "logosForManualReview": 18,
+    "totalOriginalSize": 106228119,
+    "totalWebpSize": 7761480,
+    "totalSavingPercent": 92.7,
+    "totalSavedBytes": 98466639
+  },
+  "converted": [
+    {
+      "original": "assets\\images\\ciudad.png",
+      "webp": "assets\\images\\ciudad.webp",
+      "originalSize": 3705430,
+      "webpSize": 511870,
+      "savingPercent": 86.2,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\14fondo.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\14fondo.webp",
+      "originalSize": 1219516,
+      "webpSize": 16470,
+      "savingPercent": 98.6,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\1fondo.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\1fondo.webp",
+      "originalSize": 1904784,
+      "webpSize": 143466,
+      "savingPercent": 92.5,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\2fondo.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\2fondo.webp",
+      "originalSize": 1276296,
+      "webpSize": 41476,
+      "savingPercent": 96.8,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\5plataformaauditoria.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\5plataformaauditoria.webp",
+      "originalSize": 1600360,
+      "webpSize": 99282,
+      "savingPercent": 93.8,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\7fondo.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\7fondo.webp",
+      "originalSize": 2980527,
+      "webpSize": 378004,
+      "savingPercent": 87.3,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\9fondo.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\9fondo.webp",
+      "originalSize": 2434227,
+      "webpSize": 228836,
+      "savingPercent": 90.6,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\horizontal\\mantenimiento.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\horizontal\\mantenimiento.webp",
+      "originalSize": 1836163,
+      "webpSize": 97166,
+      "savingPercent": 94.7,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\horizontal\\obra1horizontal.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\horizontal\\obra1horizontal.webp",
+      "originalSize": 2340050,
+      "webpSize": 163140,
+      "savingPercent": 93,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\horizontal\\obra2horizontal.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\horizontal\\obra2horizontal.webp",
+      "originalSize": 2736655,
+      "webpSize": 224538,
+      "savingPercent": 91.8,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\horizontal\\obra3horizontal.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\horizontal\\obra3horizontal.webp",
+      "originalSize": 2666633,
+      "webpSize": 251088,
+      "savingPercent": 90.6,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\horizontal\\obrahorizontal4.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\horizontal\\obrahorizontal4.webp",
+      "originalSize": 2585057,
+      "webpSize": 210030,
+      "savingPercent": 91.9,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\horizontal\\trenes.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\horizontal\\trenes.webp",
+      "originalSize": 2922911,
+      "webpSize": 337430,
+      "savingPercent": 88.5,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\mantenimento.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\mantenimento.webp",
+      "originalSize": 2371701,
+      "webpSize": 204712,
+      "savingPercent": 91.4,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\obraNueva.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\obraNueva.webp",
+      "originalSize": 2652746,
+      "webpSize": 220996,
+      "savingPercent": 91.7,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\obras\\58a89b1d-21f0-4274-89a7-05a034be43df.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\obras\\58a89b1d-21f0-4274-89a7-05a034be43df.webp",
+      "originalSize": 2601743,
+      "webpSize": 205552,
+      "savingPercent": 92.1,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\obras\\imagengrua1.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\obras\\imagengrua1.webp",
+      "originalSize": 5682881,
+      "webpSize": 306508,
+      "savingPercent": 94.6,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\obras\\imagengrua2.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\obras\\imagengrua2.webp",
+      "originalSize": 6395706,
+      "webpSize": 538128,
+      "savingPercent": 91.6,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\obras\\imagengrua3.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\obras\\imagengrua3.webp",
+      "originalSize": 2752656,
+      "webpSize": 247712,
+      "savingPercent": 91,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\obras\\imagenNocturno.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\obras\\imagenNocturno.webp",
+      "originalSize": 1666264,
+      "webpSize": 54250,
+      "savingPercent": 96.7,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\diseno_nuevo_diapo\\obras\\imagenTren.png",
+      "webp": "assets\\images\\diseno_nuevo_diapo\\obras\\imagenTren.webp",
+      "originalSize": 2609716,
+      "webpSize": 237898,
+      "savingPercent": 90.9,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\fondo_hero\\1textko.png",
+      "webp": "assets\\images\\fondo_hero\\1textko.webp",
+      "originalSize": 6723784,
+      "webpSize": 230748,
+      "savingPercent": 96.6,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\fondo_hero\\1texto4k.png",
+      "webp": "assets\\images\\fondo_hero\\1texto4k.webp",
+      "originalSize": 6550425,
+      "webpSize": 190662,
+      "savingPercent": 97.1,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\fondo_hero\\fondo4k.png",
+      "webp": "assets\\images\\fondo_hero\\fondo4k.webp",
+      "originalSize": 8077434,
+      "webpSize": 360024,
+      "savingPercent": 95.5,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\image_rediseño\\contenedores\\ChatGPT Image 22 abr 2026, 11_40_17.png",
+      "webp": "assets\\images\\image_rediseño\\contenedores\\ChatGPT Image 22 abr 2026, 11_40_17.webp",
+      "originalSize": 1767136,
+      "webpSize": 121440,
+      "savingPercent": 93.1,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\image_rediseño\\obra1.png",
+      "webp": "assets\\images\\image_rediseño\\obra1.webp",
+      "originalSize": 1172975,
+      "webpSize": 73460,
+      "savingPercent": 93.7,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\image_rediseño\\obras\\obra1.png",
+      "webp": "assets\\images\\image_rediseño\\obras\\obra1.webp",
+      "originalSize": 1172975,
+      "webpSize": 73460,
+      "savingPercent": 93.7,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\image_rediseño\\obras\\obras2\\imagengrua1.png",
+      "webp": "assets\\images\\image_rediseño\\obras\\obras2\\imagengrua1.webp",
+      "originalSize": 5682881,
+      "webpSize": 306508,
+      "savingPercent": 94.6,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\image_rediseño\\obras\\obras2\\imagengrua2.png",
+      "webp": "assets\\images\\image_rediseño\\obras\\obras2\\imagengrua2.webp",
+      "originalSize": 6395706,
+      "webpSize": 538128,
+      "savingPercent": 91.6,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\image_rediseño\\trenes_arg-removebg-preview.png",
+      "webp": "assets\\images\\image_rediseño\\trenes_arg-removebg-preview.webp",
+      "originalSize": 25895,
+      "webpSize": 9206,
+      "savingPercent": 64.4,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\matanza.jpg",
+      "webp": "assets\\images\\matanza.webp",
+      "originalSize": 41396,
+      "webpSize": 19454,
+      "savingPercent": 53,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\matanzaht.jpeg",
+      "webp": "assets\\images\\matanzaht.webp",
+      "originalSize": 187250,
+      "webpSize": 56234,
+      "savingPercent": 70,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\mobile_img\\hero_mobile.png",
+      "webp": "assets\\images\\mobile_img\\hero_mobile.webp",
+      "originalSize": 1856804,
+      "webpSize": 110034,
+      "savingPercent": 94.1,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\mobile_img\\mantenimiento_mobile.png",
+      "webp": "assets\\images\\mobile_img\\mantenimiento_mobile.webp",
+      "originalSize": 1892171,
+      "webpSize": 103896,
+      "savingPercent": 94.5,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\mobile_img\\obras_mobile.png",
+      "webp": "assets\\images\\mobile_img\\obras_mobile.webp",
+      "originalSize": 1791367,
+      "webpSize": 84764,
+      "savingPercent": 95.3,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\mobile_img\\redes_trenes_mobile.png",
+      "webp": "assets\\images\\mobile_img\\redes_trenes_mobile.webp",
+      "originalSize": 2060308,
+      "webpSize": 138242,
+      "savingPercent": 93.3,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\provincia.png",
+      "webp": "assets\\images\\provincia.webp",
+      "originalSize": 2233067,
+      "webpSize": 149876,
+      "savingPercent": 93.3,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\tandil.jpg",
+      "webp": "assets\\images\\tandil.webp",
+      "originalSize": 65490,
+      "webpSize": 39312,
+      "savingPercent": 40,
+      "replaced": true,
+      "reason": null
+    },
+    {
+      "original": "assets\\images\\tandilht.jpeg",
+      "webp": "assets\\images\\tandilht.webp",
+      "originalSize": 289457,
+      "webpSize": 111126,
+      "savingPercent": 61.6,
+      "replaced": true,
+      "reason": null
+    }
+  ],
+  "logosForReview": [
+    {
+      "original": "assets\\images\\clients\\client-14.png",
+      "webp": "assets\\images\\clients\\client-14.webp",
+      "originalSize": 37771,
+      "webpSize": 9072,
+      "savingPercent": 76,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    },
+    {
+      "original": "assets\\images\\clients\\client-20.png",
+      "webp": "assets\\images\\clients\\client-20.webp",
+      "originalSize": 17582,
+      "webpSize": 4732,
+      "savingPercent": 73.1,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    },
+    {
+      "original": "assets\\images\\clients\\client-23.png",
+      "webp": "assets\\images\\clients\\client-23.webp",
+      "originalSize": 20484,
+      "webpSize": 6272,
+      "savingPercent": 69.4,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    },
+    {
+      "original": "assets\\images\\clients\\client-25.png",
+      "webp": "assets\\images\\clients\\client-25.webp",
+      "originalSize": 29270,
+      "webpSize": 7686,
+      "savingPercent": 73.7,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    },
+    {
+      "original": "assets\\images\\clients\\client-3.png",
+      "webp": "assets\\images\\clients\\client-3.webp",
+      "originalSize": 67236,
+      "webpSize": 17998,
+      "savingPercent": 73.2,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    },
+    {
+      "original": "assets\\images\\clients\\client-4.png",
+      "webp": "assets\\images\\clients\\client-4.webp",
+      "originalSize": 66854,
+      "webpSize": 15592,
+      "savingPercent": 76.7,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    },
+    {
+      "original": "assets\\images\\clients\\client-7.png",
+      "webp": "assets\\images\\clients\\client-7.webp",
+      "originalSize": 12142,
+      "webpSize": 4848,
+      "savingPercent": 60.1,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    },
+    {
+      "original": "assets\\images\\clients\\client-9.png",
+      "webp": "assets\\images\\clients\\client-9.webp",
+      "originalSize": 136064,
+      "webpSize": 44294,
+      "savingPercent": 67.4,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    },
+    {
+      "original": "assets\\images\\clients\\telecom.png",
+      "webp": "assets\\images\\clients\\telecom.webp",
+      "originalSize": 24742,
+      "webpSize": 8704,
+      "savingPercent": 64.8,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    },
+    {
+      "original": "assets\\images\\fondo_hero\\Logo_Ittel_AI.png",
+      "webp": "assets\\images\\fondo_hero\\Logo_Ittel_AI.webp",
+      "originalSize": 77685,
+      "webpSize": 58078,
+      "savingPercent": 25.2,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    },
+    {
+      "original": "assets\\images\\image_rediseño\\argRed.png",
+      "webp": "assets\\images\\image_rediseño\\argRed.webp",
+      "originalSize": 237907,
+      "webpSize": 43660,
+      "savingPercent": 81.6,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    },
+    {
+      "original": "assets\\images\\image_rediseño\\bsasred.png",
+      "webp": "assets\\images\\image_rediseño\\bsasred.webp",
+      "originalSize": 138530,
+      "webpSize": 23940,
+      "savingPercent": 82.7,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    },
+    {
+      "original": "assets\\images\\image_rediseño\\cabared.png",
+      "webp": "assets\\images\\image_rediseño\\cabared.webp",
+      "originalSize": 189799,
+      "webpSize": 28180,
+      "savingPercent": 85.2,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    },
+    {
+      "original": "assets\\images\\image_rediseño\\ittelNEGRO.png",
+      "webp": "assets\\images\\image_rediseño\\ittelNEGRO.webp",
+      "originalSize": 102842,
+      "webpSize": 9910,
+      "savingPercent": 90.4,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    },
+    {
+      "original": "assets\\images\\image_rediseño\\laralogo.png",
+      "webp": "assets\\images\\image_rediseño\\laralogo.webp",
+      "originalSize": 9840,
+      "webpSize": 6168,
+      "savingPercent": 37.3,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    },
+    {
+      "original": "assets\\images\\image_rediseño\\miniTandil.png",
+      "webp": "assets\\images\\image_rediseño\\miniTandil.webp",
+      "originalSize": 22134,
+      "webpSize": 9052,
+      "savingPercent": 59.1,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    },
+    {
+      "original": "assets\\images\\image_rediseño\\Munimatanza.png",
+      "webp": "assets\\images\\image_rediseño\\Munimatanza.webp",
+      "originalSize": 28090,
+      "webpSize": 9386,
+      "savingPercent": 66.6,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    },
+    {
+      "original": "assets\\images\\trenesLogos.png",
+      "webp": "assets\\images\\trenesLogos.webp",
+      "originalSize": 80604,
+      "webpSize": 18782,
+      "savingPercent": 76.7,
+      "replaced": false,
+      "reason": "Logo/brand asset - manual review recommended"
+    }
+  ],
+  "skipped": []
+}

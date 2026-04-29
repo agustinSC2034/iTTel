@@ -742,7 +742,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: url('../images/diseno_nuevo_diapo/14fondo.png') center center / cover no-repeat;
+    background: url('../images/diseno_nuevo_diapo/14fondo.webp') center center / cover no-repeat;
     opacity: 0.08;
     z-index: 0;
 }
@@ -1303,13 +1303,13 @@
 .enterprise-block-section--maintenance {
     background:
         linear-gradient(180deg, rgba(248, 250, 252, 0.98) 0%, rgba(255, 255, 255, 0.98) 100%),
-        url('../images/diseno_nuevo_diapo/2fondo.png') right top / 520px auto no-repeat;
+        url('../images/diseno_nuevo_diapo/2fondo.webp') right top / 520px auto no-repeat;
 }
 
 .enterprise-block-section--platform {
     background:
         linear-gradient(180deg, rgba(248, 250, 252, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%),
-        url('../images/diseno_nuevo_diapo/14fondo.png') right center / 620px auto no-repeat;
+        url('../images/diseno_nuevo_diapo/14fondo.webp') right center / 620px auto no-repeat;
 }
 
 .enterprise-block--maintenance,
@@ -1323,8 +1323,8 @@
     overflow: hidden;
     background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.99) 0%, rgba(255, 255, 255, 0.99) 100%),
-        url('../images/diseno_nuevo_diapo/14fondo.png') right top / 560px auto no-repeat,
-        url('../images/diseno_nuevo_diapo/2fondo.png') left bottom / 520px auto no-repeat;
+        url('../images/diseno_nuevo_diapo/14fondo.webp') right top / 560px auto no-repeat,
+        url('../images/diseno_nuevo_diapo/2fondo.webp') left bottom / 520px auto no-repeat;
     padding: 108px 0;
     border-top: 1px solid #E7EDF4;
     border-bottom: 1px solid #E7EDF4;
@@ -2048,7 +2048,7 @@
         padding: 72px 0;
         background:
             linear-gradient(180deg, rgba(242, 247, 252, 0.98) 0%, rgba(249, 251, 253, 0.98) 100%),
-            url('../images/diseno_nuevo_diapo/14fondo.png') right top / 300px auto no-repeat;
+            url('../images/diseno_nuevo_diapo/14fondo.webp') right top / 300px auto no-repeat;
     }
 
     .audit-platform-features {
@@ -2074,15 +2074,15 @@
     }
 
     .image-story--works {
-        background-image: url('../images/mobile_img/obras_mobile.png');
+        background-image: url('../images/mobile_img/obras_mobile.webp');
     }
 
     .image-story--rail {
-        background-image: url('../images/mobile_img/redes_trenes_mobile.png');
+        background-image: url('../images/mobile_img/redes_trenes_mobile.webp');
     }
 
     .image-story--maintenance {
-        background-image: url('../images/mobile_img/mantenimiento_mobile.png');
+        background-image: url('../images/mobile_img/mantenimiento_mobile.webp');
     }
 
     .image-story__media {
@@ -6404,7 +6404,7 @@ html {
 .business-units-section::before {
     left: 0;
     width: 34%;
-    background-image: url('../images/diseno_nuevo_diapo/14fondo.png');
+    background-image: url('../images/diseno_nuevo_diapo/14fondo.webp');
     background-position: center left;
     background-size: cover;
     opacity: 0.22;
@@ -6414,7 +6414,7 @@ html {
     right: 0;
     width: 44%;
     background-image:
-        url('../images/diseno_nuevo_diapo/2fondo.png');
+        url('../images/diseno_nuevo_diapo/2fondo.webp');
     background-position: right center;
     background-size: auto 100%;
     opacity: 0.58;
@@ -6517,7 +6517,7 @@ html {
     overflow: hidden;
     background:
         linear-gradient(180deg, rgba(7, 18, 35, 0.16) 0%, rgba(2, 6, 23, 0.34) 100%),
-        url('../images/diseno_nuevo_diapo/obras/imagenNocturno.png') center 46% / cover no-repeat;
+        url('../images/diseno_nuevo_diapo/obras/imagenNocturno.webp') center 46% / cover no-repeat;
     padding: 120px 0;
     isolation: isolate;
 }
@@ -7375,7 +7375,7 @@ html {
 
 .hero-image__bg {
     z-index: 0;
-    background: url('../images/fondo_hero/fondo4k.png') center right / cover no-repeat;
+    background: url('../images/fondo_hero/fondo4k.webp') center right / cover no-repeat;
     transform: scale(1.015);
 }
 
@@ -7489,7 +7489,7 @@ html {
     }
 
     .hero-image__bg {
-        background-image: url('../images/mobile_img/hero_mobile.png') !important;
+        background-image: url('../images/mobile_img/hero_mobile.webp') !important;
         background-size: cover;
         background-position: 65% top;
         transform: none;
