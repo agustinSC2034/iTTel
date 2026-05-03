@@ -29,7 +29,7 @@ const translations = {
         'bu.unit3.title': 'Operaci\u00f3n y Mantenimiento',
         'bu.unit3.desc': 'Gesti\u00f3n proactiva de redes con NOC 24/7 y cuadrillas de respuesta r\u00e1pida en campo.',
         'bu.unit4.title': 'Servicios ISP',
-        'bu.unit4.desc': 'Operadores de Internet y TV por fibra (FTTH) a trav\u00e9s de nuestras marcas USITTEL y LARANET.',
+        'bu.unit4.desc': 'Operadores de Internet y TV por fibra (FTTH) a trav\u00e9s de las marcas USITTEL y LARANET.',
         
         // Sección Nuestras Credenciales / Alcance
         'credentials.eyebrow': 'NOSOTROS',
@@ -144,7 +144,7 @@ const translations = {
         
         // Footer
         'footer.about.title': 'Sobre Nosotros',
-        'footer.about.text': 'Somos una empresa líder en telecomunicaciones e IT en Argentina, especializada en infraestructura telco, redes neutrales y soluciones integrales.',
+        'footer.about.text': 'Nos caracteriza la innovacion continua, integrando IT y Telecomunicaciones, brindamos servicios estratégicos y de valor agregado.',
         
         'footer.links.title': 'Enlaces Rápidos',
         'footer.links.services': 'Servicios',
@@ -189,7 +189,7 @@ const translations = {
         'bu.unit3.title': 'Operations & Maintenance',
         'bu.unit3.desc': 'Proactive network management with 24/7 NOC and rapid-response field crews.',
         'bu.unit4.title': 'ISP Services',
-        'bu.unit4.desc': 'Fiber-to-the-home (FTTH) Internet and TV operators through our USITTEL and LARANET brands.',
+        'bu.unit4.desc': 'Fiber-to-the-home (FTTH) Internet and TV operators through the USITTEL and LARANET brands.',
         
         // Credentials / Reach Section
         'credentials.eyebrow': 'ABOUT US',
@@ -304,7 +304,7 @@ const translations = {
         
         // Footer
         'footer.about.title': 'About Us',
-        'footer.about.text': 'We are a leading telecommunications and IT company in Argentina, specialized in telco infrastructure, neutral networks and comprehensive solutions.',
+        'footer.about.text': 'We are characterized by continuous innovation, integrating IT and Telecommunications, providing strategic and value-added services.',
         
         'footer.links.title': 'Quick Links',
         'footer.links.services': 'Services',
