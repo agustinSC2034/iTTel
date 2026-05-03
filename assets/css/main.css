@@ -5241,26 +5241,7 @@ html {
     position: relative;
 }
 
-.clients-carousel::before,
-.clients-carousel::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 80px;
-    z-index: 10;
-    pointer-events: none;
-}
-
-.clients-carousel::before {
-    left: 0;
-    background: linear-gradient(90deg, #F8FAFC 0%, transparent 100%);
-}
-
-.clients-carousel::after {
-    right: 0;
-    background: linear-gradient(270deg, #EEF2F7 0%, transparent 100%);
-}
+/* Máscaras laterales eliminadas para máxima visibilidad de logos */
 
 .clients-track {
     display: flex;
@@ -5276,8 +5257,8 @@ html {
     width: auto;
     max-width: 253px;
     object-fit: contain;
-    filter: grayscale(1);
-    opacity: 0.5;
+    filter: none;
+    opacity: 1;
     transition: var(--transition);
     flex-shrink: 0;
     cursor: pointer;
@@ -5287,7 +5268,7 @@ html {
 }
 
 .client-logo:hover {
-    filter: grayscale(0);
+    filter: none;
     opacity: 1;
     transform: scale(1.05);
 }
