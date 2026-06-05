@@ -1440,9 +1440,11 @@
     font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: -0.02em;
+    grid-row: 1 / span 2;
 }
 
 .audit-platform-feature h3 {
+    grid-column: 2;
     margin: 0 0 0.45rem;
     font-size: 1rem;
     font-weight: 700;
@@ -1450,6 +1452,7 @@
 }
 
 .audit-platform-feature p {
+    grid-column: 2;
     margin: 0;
     font-size: 0.94rem;
     line-height: 1.65;
@@ -2119,6 +2122,24 @@
     .image-story__panel--wide {
         width: min(100%, 580px);
     }
+
+    .audit-platform-shell {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .audit-platform-copy {
+        max-width: 720px;
+    }
+
+    .audit-platform-visual {
+        min-height: 560px;
+    }
+
+    .audit-platform-screen {
+        width: min(760px, 100%);
+        transform: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -2315,6 +2336,7 @@
     .audit-platform-visual {
         min-height: auto;
         padding: 2.2rem 0 0.5rem;
+        flex-direction: column;
     }
 
     .audit-platform-screen {
