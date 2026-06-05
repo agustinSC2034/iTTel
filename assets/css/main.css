@@ -1871,7 +1871,7 @@
 }
 
 .image-story--works .image-story__slide img {
-    object-position: center 54%;
+    object-position: 70% 50%;
 }
 
 .image-story--rail .image-story__media > img {
@@ -2185,7 +2185,7 @@
     }
 
     .image-story--maintenance {
-        background-image: url('../images/mobile_img/mantenimiento_mobile.webp');
+        background-image: url('../images/diseno_nuevo_diapo/mantenimento.png');
     }
 
     .image-story__media {
@@ -2292,7 +2292,7 @@
         font-size: 0.66rem;
         letter-spacing: 0.18em;
         margin-bottom: 0.8rem;
-        color: #38BDF8;
+        color: #ffffff;
     }
 
     .image-story__title {
