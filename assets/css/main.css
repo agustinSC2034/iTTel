@@ -1891,7 +1891,7 @@
         min-height: clamp(520px, 72vw, 620px);
     }
 
-    .image-story__content {
+    .image-story .image-story__content {
         padding: 84px 0;
     }
 
@@ -2098,7 +2098,7 @@
         display: none !important;
     }
 
-    .image-story__content {
+    .image-story .image-story__content {
         padding: 48px 20px 48px;
         justify-content: center;
     }
