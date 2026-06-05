@@ -30,7 +30,7 @@ const translations = {
         'bu.unit3.desc': 'Operadores de Internet y TV por fibra (FTTH) a trav\u00e9s de las marcas USITTEL y LARANET.',
         'bu.unit4.title': 'Obras e Integraci\u00f3n',
         'bu.unit4.desc': 'Ejecuci\u00f3n de obras civiles, despliegue tecnol\u00f3gico en empresas y tendidos de fibra \u00f3ptica.',
-        'bu.unit5.title': 'IT',
+        'bu.unit5.title': 'ITS & IOT',
         'bu.unit5.desc': 'ITS & IOT\nMonitoreo tecnol\u00f3gico de operaciones de campo\nSoluciones On Demand\nCISE PARTNERS',
         
         // Sección Nuestras Credenciales / Alcance
@@ -192,7 +192,7 @@ const translations = {
         'bu.unit3.desc': 'Fiber-to-the-home (FTTH) Internet and TV operators through the USITTEL and LARANET brands.',
         'bu.unit4.title': 'Construction & Integration',
         'bu.unit4.desc': 'Civil works execution, technology deployment in enterprises and fiber optic installations.',
-        'bu.unit5.title': 'IT',
+        'bu.unit5.title': 'ITS & IOT',
         'bu.unit5.desc': 'ITS & IOT\nField operations technology monitoring\nOn Demand Solutions\nCISE PARTNERS',
         
         // Credentials / Reach Section
