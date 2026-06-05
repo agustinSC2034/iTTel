@@ -1921,16 +1921,6 @@
     box-shadow: 0 0 0 6px rgba(34, 125, 179, 0.1);
 }
 
-.image-story--works .telco-logo-strip__label {
-    margin: 1.5rem 0 0.5rem;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #64748B;
-    text-align: center;
-}
-
 .image-story--works .telco-logo-strip {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -2061,13 +2051,12 @@
     }
 
     .image-story--works .telco-logo-strip {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 0.5rem;
     }
 
-    .image-story--works .telco-logo-strip__label {
-        margin-top: 1rem;
-        font-size: 0.65rem;
+    .image-story--works .telco-logo-strip--institutional {
+        grid-template-columns: 1fr;
     }
 
     .image-story--works .telco-logo-item {
@@ -2283,38 +2272,47 @@
     }
 
     .image-story--works .image-story__panel,
-    .image-story--works .image-story__panel--wide {
-        background: rgba(255, 255, 255, 0.88);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        box-shadow: 0 16px 40px rgba(2, 8, 23, 0.12);
-        border-radius: 20px;
-        padding: 1.5rem 1.25rem;
+    .image-story--works .image-story__panel--wide,
+    .image-story--maintenance .image-story__panel,
+    .image-story--maintenance .image-story__panel--wide {
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
     }
 
-    .image-story--works .image-story__eyebrow {
-        color: #227DB3;
+    .image-story--works .image-story__eyebrow,
+    .image-story--maintenance .image-story__eyebrow {
+        color: #38BDF8;
     }
 
-    .image-story--works .image-story__title {
-        color: #0F172A;
+    .image-story--works .image-story__title,
+    .image-story--maintenance .image-story__title {
+        color: #FFFFFF;
     }
 
-    .image-story--works .image-story__lead {
-        color: #475569;
+    .image-story--works .image-story__lead,
+    .image-story--maintenance .image-story__lead {
+        color: rgba(255, 255, 255, 0.82);
     }
 
-    .image-story--works .image-story__list li {
-        color: #475569;
+    .image-story--works .image-story__list li,
+    .image-story--maintenance .image-story__list li {
+        color: rgba(255, 255, 255, 0.78);
     }
 
-    .image-story--works .image-story__list li strong {
-        color: #0F172A;
+    .image-story--works .image-story__list li strong,
+    .image-story--maintenance .image-story__list li strong {
+        color: #FFFFFF;
     }
 
-    .image-story--works .image-story__list li::before {
-        background: #227DB3;
+    .image-story--works .image-story__list li::before,
+    .image-story--maintenance .image-story__list li::before {
+        background: #38BDF8;
+        box-shadow: 0 0 0 6px rgba(56, 189, 248, 0.08);
     }
 
     .image-story__eyebrow {
