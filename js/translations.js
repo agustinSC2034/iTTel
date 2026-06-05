@@ -20,7 +20,7 @@ const translations = {
         'bu.eyebrow': 'UNIDADES DE NEGOCIO',
         'bu.title': 'GRUPO ITTEL',
         'bu.subtitle': 'INFORMATION TECHNOLOGY & TELECOMMUNICATIONS',
-        'bu.lead': 'Somos líderes en Argentina en el desarrollo de infraestructura, operación de redes y servicios de conectividad a gran escala.',
+        'bu.lead': 'Líderes en Argentina en el desarrollo, operación e integración de infraestructura IT & TELCO a gran escala.',
 
         'bu.unit1.title': 'Redes Neutrales',
         'bu.unit1.desc': 'Desarrollo y compartici\u00f3n de infraestructura propia (Torres y Fibra Oscura) optimizando el CAPEX de m\u00faltiples operadores.',
@@ -30,6 +30,8 @@ const translations = {
         'bu.unit3.desc': 'Gesti\u00f3n proactiva de redes con NOC 24/7 y cuadrillas de respuesta r\u00e1pida en campo.',
         'bu.unit4.title': 'Servicios ISP',
         'bu.unit4.desc': 'Operadores de Internet y TV por fibra (FTTH) a trav\u00e9s de las marcas USITTEL y LARANET.',
+        'bu.unit5.title': 'IT',
+        'bu.unit5.desc': 'ITS & IOT\nMonitoreo tecnol\u00f3gico de operaciones de campo\nSoluciones On Demand\nCISE PARTNERS',
         
         // Sección Nuestras Credenciales / Alcance
         'credentials.eyebrow': 'NOSOTROS',
@@ -180,7 +182,7 @@ const translations = {
         'bu.eyebrow': 'BUSINESS UNITS',
         'bu.title': 'GRUPO ITTEL',
         'bu.subtitle': 'INFORMATION TECHNOLOGY & TELECOMMUNICATIONS',
-        'bu.lead': 'We are leaders in Argentina in infrastructure development, network operations, and connectivity services at scale.',
+        'bu.lead': 'Leaders in Argentina in the development, operation and integration of IT & TELCO infrastructure at scale.',
 
         'bu.unit1.title': 'Neutral Networks',
         'bu.unit1.desc': 'Development and sharing of proprietary infrastructure (Towers and Dark Fiber) optimizing CAPEX for multiple operators.',
@@ -190,6 +192,8 @@ const translations = {
         'bu.unit3.desc': 'Proactive network management with 24/7 NOC and rapid-response field crews.',
         'bu.unit4.title': 'ISP Services',
         'bu.unit4.desc': 'Fiber-to-the-home (FTTH) Internet and TV operators through the USITTEL and LARANET brands.',
+        'bu.unit5.title': 'IT',
+        'bu.unit5.desc': 'ITS & IOT\nField operations technology monitoring\nOn Demand Solutions\nCISE PARTNERS',
         
         // Credentials / Reach Section
         'credentials.eyebrow': 'ABOUT US',
