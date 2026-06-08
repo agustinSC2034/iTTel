@@ -2241,6 +2241,16 @@
         background-image: url('../images/diseno_nuevo_diapo/mantenimento.png');
     }
 
+    .image-story--works::before,
+    .image-story--rail::before,
+    .image-story--maintenance::before {
+        background:
+            linear-gradient(180deg, rgba(7, 17, 32, 0.52) 0%, rgba(7, 17, 32, 0.36) 42%, rgba(7, 17, 32, 0.62) 100%),
+            linear-gradient(90deg, rgba(7, 17, 32, 0.52) 0%, rgba(7, 17, 32, 0.18) 55%, rgba(7, 17, 32, 0.36) 100%);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+    }
+
     .image-story__media {
         display: none !important;
     }
@@ -2328,6 +2338,7 @@
         letter-spacing: -0.05em;
         margin-bottom: 1rem;
         color: #ffffff;
+        text-shadow: 0 2px 16px rgba(2, 8, 23, 0.42);
     }
 
     .image-story__lead {
@@ -2345,6 +2356,7 @@
         font-size: 0.9rem;
         line-height: 1.55;
         color: rgba(255, 255, 255, 0.82);
+        text-shadow: 0 1px 10px rgba(2, 8, 23, 0.36);
     }
 
     .image-story__list li strong {
