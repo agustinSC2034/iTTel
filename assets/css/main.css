@@ -7890,7 +7890,7 @@ html {
 }
 
 .sice-metrics {
-    margin-top: 2rem;
+    margin-top: 2.25rem;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     border-top: 1px solid rgba(15, 23, 42, 0.08);
@@ -7899,7 +7899,7 @@ html {
 
 .sice-metric {
     min-width: 0;
-    padding: 1rem 1.1rem 1rem 0;
+    padding: 1.4rem 1.35rem 1.35rem 0;
     border-right: 1px solid rgba(15, 23, 42, 0.08);
 }
 
@@ -7919,7 +7919,7 @@ html {
 
 .sice-metric span {
     display: block;
-    margin-top: 0.45rem;
+    margin-top: 0.62rem;
     color: #64748B;
     font-size: 0.78rem;
     font-weight: 700;
@@ -7943,7 +7943,8 @@ html {
     border-radius: 28px;
     background:
         linear-gradient(145deg, rgba(255, 255, 255, 0.88) 0%, rgba(240, 249, 255, 0.72) 100%),
-        radial-gradient(circle at 72% 28%, rgba(34, 125, 179, 0.16), transparent 36%);
+        radial-gradient(circle at 72% 28%, rgba(20, 184, 166, 0.18), transparent 36%),
+        radial-gradient(circle at 20% 78%, rgba(34, 125, 179, 0.12), transparent 34%);
     box-shadow: 0 28px 70px rgba(15, 23, 42, 0.1);
     overflow: hidden;
 }
@@ -7991,72 +7992,40 @@ html {
     box-shadow: 0 12px 28px rgba(34, 125, 179, 0.22);
 }
 
-.sice-road-system {
+.sice-global-map {
     position: absolute;
-    inset: 4.4rem 1.4rem 1.4rem;
+    inset: 5.5rem 1.65rem 1.6rem;
     z-index: 1;
 }
 
-.sice-road-line {
+.sice-map-svg {
     position: absolute;
-    left: 8%;
-    right: 5%;
-    height: 38%;
-    border: 1px solid rgba(34, 125, 179, 0.28);
-    border-left: 0;
-    border-bottom: 0;
-    border-radius: 0 100% 0 0;
-    transform: rotate(-14deg);
-    transform-origin: left center;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 18px 32px rgba(15, 23, 42, 0.08));
 }
 
-.sice-road-line--outer {
-    top: 36%;
-    border-color: rgba(15, 23, 42, 0.22);
+.sice-map-land {
+    fill: rgba(34, 125, 179, 0.11);
+    stroke: rgba(34, 125, 179, 0.24);
+    stroke-width: 1;
 }
 
-.sice-road-line--middle {
-    top: 47%;
-    left: 13%;
-    border-style: dashed;
-    border-color: rgba(34, 125, 179, 0.34);
+.sice-map-arc {
+    fill: none;
+    stroke: rgba(20, 184, 166, 0.42);
+    stroke-width: 1.5;
+    stroke-dasharray: 6 8;
 }
 
-.sice-road-line--inner {
-    top: 58%;
-    left: 18%;
-    border-color: rgba(20, 184, 166, 0.42);
-}
-
-.sice-data-flow {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 999px;
-    background: #14B8A6;
-    box-shadow: 0 0 0 8px rgba(20, 184, 166, 0.1), 0 0 28px rgba(20, 184, 166, 0.5);
-}
-
-.sice-data-flow--one {
-    left: 34%;
-    top: 43%;
-    animation: sicePulse 2.8s ease-in-out infinite;
-}
-
-.sice-data-flow--two {
-    left: 67%;
-    top: 31%;
-    animation: sicePulse 2.8s ease-in-out 0.8s infinite;
-}
-
-.sice-node {
+.sice-map-point {
     position: absolute;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 58px;
-    min-height: 32px;
-    padding: 0.4rem 0.62rem;
+    gap: 0.42rem;
+    padding: 0.42rem 0.66rem;
     border: 1px solid rgba(15, 23, 42, 0.08);
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.78);
@@ -8069,57 +8038,79 @@ html {
     box-shadow: 0 14px 34px rgba(15, 23, 42, 0.1);
 }
 
-.sice-node::before {
+.sice-map-point::before {
     content: '';
     width: 8px;
     height: 8px;
-    margin-right: 0.42rem;
+    flex: 0 0 auto;
     border-radius: 999px;
-    background: #227DB3;
-    box-shadow: 0 0 0 5px rgba(34, 125, 179, 0.12);
-}
-
-.sice-node--camera {
-    left: 9%;
-    top: 22%;
-}
-
-.sice-node--toll {
-    right: 9%;
-    top: 26%;
-}
-
-.sice-node--noc {
-    right: 16%;
-    bottom: 18%;
-}
-
-.sice-node--lpr {
-    left: 18%;
-    bottom: 28%;
-}
-
-.sice-node--data {
-    left: 46%;
-    top: 11%;
-}
-
-.sice-node--data::before,
-.sice-node--noc::before {
     background: #14B8A6;
-    box-shadow: 0 0 0 5px rgba(20, 184, 166, 0.13);
+    box-shadow: 0 0 0 6px rgba(20, 184, 166, 0.12), 0 0 24px rgba(20, 184, 166, 0.42);
 }
 
-@keyframes sicePulse {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 0.72;
-    }
+.sice-map-point span {
+    white-space: nowrap;
+}
 
-    50% {
-        transform: scale(1.45);
-        opacity: 1;
-    }
+.sice-map-point--argentina {
+    left: 31%;
+    bottom: 19%;
+}
+
+.sice-map-point--argentina::before {
+    background: #227DB3;
+    box-shadow: 0 0 0 7px rgba(34, 125, 179, 0.14), 0 0 28px rgba(34, 125, 179, 0.5);
+}
+
+.sice-map-point--americas {
+    left: 11%;
+    top: 32%;
+}
+
+.sice-map-point--europe {
+    left: 45%;
+    top: 24%;
+}
+
+.sice-map-point--mea {
+    left: 53%;
+    top: 48%;
+}
+
+.sice-map-point--apac {
+    right: 7%;
+    top: 38%;
+}
+
+.sice-map-caption {
+    position: absolute;
+    left: 1.4rem;
+    right: 1.4rem;
+    bottom: 1.25rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    color: #0F172A;
+}
+
+.sice-map-caption strong {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1;
+    letter-spacing: -0.055em;
+}
+
+.sice-map-caption span {
+    max-width: 24ch;
+    color: #64748B;
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1.35;
+    text-align: right;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 @media (max-width: 1024px) {
@@ -8164,7 +8155,7 @@ html {
     }
 
     .sice-metric {
-        padding: 0.9rem 0;
+        padding: 1.15rem 0 1.1rem;
         border-right: 0;
         border-bottom: 1px solid rgba(15, 23, 42, 0.08);
     }
@@ -8189,41 +8180,54 @@ html {
         font-size: 0.95rem;
     }
 
-    .sice-road-system {
-        inset: 3.8rem 0.7rem 0.9rem;
+    .sice-global-map {
+        inset: 4.65rem 0.7rem 0.9rem;
     }
 
-    .sice-node {
-        min-width: 48px;
-        min-height: 28px;
-        padding: 0.32rem 0.5rem;
+    .sice-map-point {
+        padding: 0.34rem 0.48rem;
         font-size: 0.6rem;
         letter-spacing: 0.08em;
     }
 
-    .sice-node::before {
+    .sice-map-point::before {
         width: 6px;
         height: 6px;
-        margin-right: 0.32rem;
     }
 
-    .sice-node--camera {
+    .sice-map-point--americas {
         left: 5%;
+        top: 30%;
+    }
+
+    .sice-map-point--europe {
+        left: 42%;
         top: 22%;
     }
 
-    .sice-node--toll {
+    .sice-map-point--mea {
+        left: 47%;
+        top: 47%;
+    }
+
+    .sice-map-point--apac {
         right: 4%;
-        top: 28%;
+        top: 36%;
     }
 
-    .sice-node--noc {
-        right: 8%;
-        bottom: 17%;
-    }
-
-    .sice-node--lpr {
-        left: 8%;
+    .sice-map-point--argentina {
+        left: 24%;
         bottom: 27%;
+    }
+
+    .sice-map-caption {
+        left: 0.9rem;
+        right: 0.9rem;
+        bottom: 0.9rem;
+    }
+
+    .sice-map-caption span {
+        max-width: 18ch;
+        font-size: 0.66rem;
     }
 }
