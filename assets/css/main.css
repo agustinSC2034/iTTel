@@ -7845,9 +7845,9 @@ html {
     margin: 0.9rem 0 1.15rem;
     max-width: 15ch;
     font-family: 'Inter', sans-serif;
-    font-size: clamp(2.2rem, 5vw, 5.4rem);
-    line-height: 0.98;
-    letter-spacing: -0.055em;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
     color: #0F172A;
     text-transform: uppercase;
 }
@@ -7944,26 +7944,26 @@ html {
     left: var(--x);
     top: var(--y);
     transform: translate(-50%, -50%);
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     padding: 0;
-    border: 1px solid rgba(20, 184, 166, .75);
+    border: 1px solid rgba(20, 184, 166, 0.7);
     border-radius: 999px;
-    background: rgba(20, 184, 166, .10);
-    box-shadow: 0 0 0 6px rgba(20,184,166,.08);
+    background: rgba(20, 184, 166, 0.08);
+    box-shadow: 0 0 0 5px rgba(20,184,166,0.08);
     cursor: pointer;
     z-index: 4;
     pointer-events: auto;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
 }
 
 .sice-hotspot::before {
     content: "";
     position: absolute;
-    inset: 9px;
+    inset: 8px;
     border-radius: inherit;
     background: #14b8a6;
-    box-shadow: 0 0 16px rgba(20,184,166,.55);
+    box-shadow: 0 0 14px rgba(20,184,166,0.55);
 }
 
 .sice-hotspot::after {
@@ -7971,12 +7971,12 @@ html {
     position: absolute;
     inset: -8px;
     border-radius: inherit;
-    border: 1px solid rgba(20,184,166,.32);
+    border: 1px solid rgba(20,184,166,0.32);
     animation: sicePulse 2.4s ease-out infinite;
 }
 
 @keyframes sicePulse {
-    0% { transform: scale(.75); opacity: .75; }
+    0% { transform: scale(0.72); opacity: 0.75; }
     70% { transform: scale(1.55); opacity: 0; }
     100% { transform: scale(1.55); opacity: 0; }
 }
@@ -7984,12 +7984,9 @@ html {
 .sice-hotspot:hover,
 .sice-hotspot:focus-visible,
 .sice-hotspot.is-active {
-    transform: translate(-50%, -50%) scale(1.15);
-}
-
-.sice-hotspot:focus-visible {
-    outline: 2px solid #14B8A6;
-    outline-offset: 3px;
+    transform: translate(-50%, -50%) scale(1.14);
+    border-color: rgba(20, 184, 166, 1);
+    outline: none;
 }
 
 .sice-tooltip {
@@ -8008,7 +8005,7 @@ html {
     visibility: hidden;
     transform: translateY(8px);
     transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
-    z-index: 10;
+    z-index: 20;
     pointer-events: none;
 }
 
@@ -8028,28 +8025,27 @@ html {
 
 .sice-tooltip-country {
     display: block;
-    margin-bottom: 0.42rem;
-    color: #227DB3;
-    font-size: 0.68rem;
-    font-weight: 900;
-    letter-spacing: 0.18em;
+    margin-bottom: 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
+    color: #0f766e;
 }
 
 .sice-tooltip-project {
     display: block;
-    color: #0F172A;
-    font-size: 0.94rem;
+    margin-bottom: 0.45rem;
+    font-size: 0.95rem;
     line-height: 1.35;
+    color: #0F172A;
 }
 
 .sice-tooltip-meta {
     display: block;
-    margin-top: 0.62rem;
+    font-size: 0.78rem;
+    line-height: 1.45;
     color: #64748B;
-    font-size: 0.76rem;
-    font-weight: 700;
-    line-height: 1.4;
 }
 
 @media (max-width: 1024px) {
@@ -8065,7 +8061,7 @@ html {
 
     .sice-alliance-title {
         max-width: none;
-        font-size: clamp(2rem, 10vw, 2.85rem);
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
     }
 
     .sice-alliance-lead {
