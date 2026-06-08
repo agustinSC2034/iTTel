@@ -2588,64 +2588,72 @@ function initSiceMapHotspots() {
         const meta = panel.querySelector('.sice-tooltip-meta');
         const hotspots = Array.from(panel.querySelectorAll('.sice-hotspot'));
         let activeHotspot = null;
+        const mobileMq = window.matchMedia('(max-width: 640px)');
 
         if (!stage || !tooltip || !country || !project || !meta || !hotspots.length) return;
 
-        const setTooltipPosition = (hotspot) => {
-            const x = parseFloat((hotspot.style.getPropertyValue('--x') || '50%').replace('%', ''));
-            const y = parseFloat((hotspot.style.getPropertyValue('--y') || '50%').replace('%', ''));
+        const isMobile = function () { return mobileMq.matches; };
 
-            tooltip.style.setProperty('--tooltip-x', `${Number.isFinite(x) ? x : 50}%`);
-            tooltip.style.setProperty('--tooltip-y', `${Number.isFinite(y) ? y : 50}%`);
+        const setTooltipPosition = function (hotspot) {
+            if (isMobile()) return;
 
-            if (x > 70) {
-                tooltip.style.setProperty('--tooltip-translate-x', 'calc(-100% + 18px)');
-            } else if (x < 30) {
-                tooltip.style.setProperty('--tooltip-translate-x', '-18px');
-            } else {
-                tooltip.style.setProperty('--tooltip-translate-x', '-50%');
+            var stageRect = stage.getBoundingClientRect();
+            var hotspotRect = hotspot.getBoundingClientRect();
+            var tooltipRect = tooltip.getBoundingClientRect();
+
+            var left = hotspotRect.left - stageRect.left + hotspotRect.width + 14;
+            var top = hotspotRect.top - stageRect.top - tooltipRect.height - 10;
+
+            if (left + tooltipRect.width > stageRect.width - 8) {
+                left = hotspotRect.left - stageRect.left - tooltipRect.width - 14;
+            }
+            if (left < 8) {
+                left = 8;
+            }
+            if (top < 8) {
+                top = hotspotRect.bottom - stageRect.top + 14;
+            }
+            if (top + tooltipRect.height > stageRect.height - 8) {
+                top = hotspotRect.top - stageRect.top - tooltipRect.height - 10;
             }
 
-            if (y < 25) {
-                tooltip.style.setProperty('--tooltip-translate-y', '20px');
-                tooltip.style.setProperty('--tooltip-visible-y', '14px');
-            } else {
-                tooltip.style.setProperty('--tooltip-translate-y', '-118%');
-                tooltip.style.setProperty('--tooltip-visible-y', '-112%');
-            }
+            tooltip.style.left = left + 'px';
+            tooltip.style.top = top + 'px';
         };
 
-        const showTooltip = (hotspot, persist = false) => {
+        var showTooltip = function (hotspot, persist) {
+            persist = persist || false;
             country.textContent = hotspot.dataset.country || '';
             project.textContent = hotspot.dataset.project || '';
             meta.textContent = hotspot.dataset.meta || '';
+            tooltip.setAttribute('aria-hidden', 'false');
             setTooltipPosition(hotspot);
-
-            hotspots.forEach((item) => item.classList.toggle('is-active', item === hotspot && persist));
             tooltip.classList.add('is-visible');
-            activeHotspot = persist ? hotspot : activeHotspot;
+            hotspots.forEach(function (item) { item.classList.toggle('is-active', item === hotspot && persist); });
+            if (persist) activeHotspot = hotspot;
         };
 
-        const hideTooltip = (force = false) => {
+        var hideTooltip = function (force) {
+            force = force || false;
             if (activeHotspot && !force) return;
             activeHotspot = null;
+            tooltip.setAttribute('aria-hidden', 'true');
             tooltip.classList.remove('is-visible');
-            hotspots.forEach((item) => item.classList.remove('is-active'));
+            hotspots.forEach(function (item) { item.classList.remove('is-active'); });
         };
 
-        hotspots.forEach((hotspot) => {
-            hotspot.addEventListener('mouseenter', () => showTooltip(hotspot));
-            hotspot.addEventListener('mouseleave', () => {
+        hotspots.forEach(function (hotspot) {
+            hotspot.addEventListener('mouseenter', function () { showTooltip(hotspot); });
+            hotspot.addEventListener('mouseleave', function () {
                 if (activeHotspot !== hotspot) hideTooltip();
             });
-            hotspot.addEventListener('focus', () => showTooltip(hotspot));
-            hotspot.addEventListener('blur', () => {
+            hotspot.addEventListener('focus', function () { showTooltip(hotspot); });
+            hotspot.addEventListener('blur', function () {
                 if (activeHotspot !== hotspot) hideTooltip();
             });
-            hotspot.addEventListener('click', (event) => {
+            hotspot.addEventListener('click', function (event) {
                 event.preventDefault();
-                const shouldClose = activeHotspot === hotspot && tooltip.classList.contains('is-visible');
-                if (shouldClose) {
+                if (activeHotspot === hotspot) {
                     hideTooltip(true);
                     return;
                 }
@@ -2653,16 +2661,23 @@ function initSiceMapHotspots() {
             });
         });
 
-        document.addEventListener('click', (event) => {
+        document.addEventListener('click', function (event) {
             if (!panel.contains(event.target)) hideTooltip(true);
         });
 
-        document.addEventListener('keydown', (event) => {
+        document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') hideTooltip(true);
         });
 
-        window.addEventListener('resize', () => {
-            if (activeHotspot) setTooltipPosition(activeHotspot);
+        window.addEventListener('resize', function () {
+            if (isMobile()) {
+                tooltip.classList.add('is-mobile');
+            } else {
+                tooltip.classList.remove('is-mobile');
+                if (activeHotspot) setTooltipPosition(activeHotspot);
+            }
         });
+
+        if (isMobile()) tooltip.classList.add('is-mobile');
     });
 }
