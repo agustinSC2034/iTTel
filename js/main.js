@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initModalImageFullscreen(); // Fullscreen imagen en modal
     initObrasGallery(); // Nueva galería de Obras en Campo
     initImageStoryCarousels();
-    initSiceMapHotspots();
+    initSiceProjectsMap();
 });
 
 // Navigation functionality
@@ -2576,108 +2576,7 @@ function initImageStoryCarousels() {
     });
 }
 
-function initSiceMapHotspots() {
-    const panels = document.querySelectorAll('.sice-map-panel');
-    if (!panels.length) return;
-
-    panels.forEach((panel) => {
-        const stage = panel.querySelector('.sice-map-stage');
-        const tooltip = panel.querySelector('.sice-tooltip');
-        const country = panel.querySelector('.sice-tooltip-country');
-        const project = panel.querySelector('.sice-tooltip-project');
-        const meta = panel.querySelector('.sice-tooltip-meta');
-        const hotspots = Array.from(panel.querySelectorAll('.sice-hotspot'));
-        let activeHotspot = null;
-        const mobileMq = window.matchMedia('(max-width: 640px)');
-
-        if (!stage || !tooltip || !country || !project || !meta || !hotspots.length) return;
-
-        const isMobile = function () { return mobileMq.matches; };
-
-        const setTooltipPosition = function (hotspot) {
-            if (isMobile()) return;
-
-            var stageRect = stage.getBoundingClientRect();
-            var hotspotRect = hotspot.getBoundingClientRect();
-            var tooltipRect = tooltip.getBoundingClientRect();
-
-            var left = hotspotRect.left - stageRect.left + hotspotRect.width + 14;
-            var top = hotspotRect.top - stageRect.top - tooltipRect.height - 10;
-
-            if (left + tooltipRect.width > stageRect.width - 8) {
-                left = hotspotRect.left - stageRect.left - tooltipRect.width - 14;
-            }
-            if (left < 8) {
-                left = 8;
-            }
-            if (top < 8) {
-                top = hotspotRect.bottom - stageRect.top + 14;
-            }
-            if (top + tooltipRect.height > stageRect.height - 8) {
-                top = hotspotRect.top - stageRect.top - tooltipRect.height - 10;
-            }
-
-            tooltip.style.left = left + 'px';
-            tooltip.style.top = top + 'px';
-        };
-
-        var showTooltip = function (hotspot, persist) {
-            persist = persist || false;
-            country.textContent = hotspot.dataset.country || '';
-            project.textContent = hotspot.dataset.project || '';
-            meta.textContent = hotspot.dataset.meta || '';
-            tooltip.setAttribute('aria-hidden', 'false');
-            setTooltipPosition(hotspot);
-            tooltip.classList.add('is-visible');
-            hotspots.forEach(function (item) { item.classList.toggle('is-active', item === hotspot && persist); });
-            if (persist) activeHotspot = hotspot;
-        };
-
-        var hideTooltip = function (force) {
-            force = force || false;
-            if (activeHotspot && !force) return;
-            activeHotspot = null;
-            tooltip.setAttribute('aria-hidden', 'true');
-            tooltip.classList.remove('is-visible');
-            hotspots.forEach(function (item) { item.classList.remove('is-active'); });
-        };
-
-        hotspots.forEach(function (hotspot) {
-            hotspot.addEventListener('mouseenter', function () { showTooltip(hotspot); });
-            hotspot.addEventListener('mouseleave', function () {
-                if (activeHotspot !== hotspot) hideTooltip();
-            });
-            hotspot.addEventListener('focus', function () { showTooltip(hotspot); });
-            hotspot.addEventListener('blur', function () {
-                if (activeHotspot !== hotspot) hideTooltip();
-            });
-            hotspot.addEventListener('click', function (event) {
-                event.preventDefault();
-                if (activeHotspot === hotspot) {
-                    hideTooltip(true);
-                    return;
-                }
-                showTooltip(hotspot, true);
-            });
-        });
-
-        document.addEventListener('click', function (event) {
-            if (!panel.contains(event.target)) hideTooltip(true);
-        });
-
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') hideTooltip(true);
-        });
-
-        window.addEventListener('resize', function () {
-            if (isMobile()) {
-                tooltip.classList.add('is-mobile');
-            } else {
-                tooltip.classList.remove('is-mobile');
-                if (activeHotspot) setTooltipPosition(activeHotspot);
-            }
-        });
-
-        if (isMobile()) tooltip.classList.add('is-mobile');
-    });
+function initSiceProjectsMap() {
+    // Los proyectos ahora se muestran como tarjetas estáticas junto al mapa.
+    // No se requiere inicialización JS para esta sección.
 }
