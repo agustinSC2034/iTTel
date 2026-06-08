@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initModalImageFullscreen(); // Fullscreen imagen en modal
     initObrasGallery(); // Nueva galería de Obras en Campo
     initImageStoryCarousels();
+    initSiceMapHotspots();
 });
 
 // Navigation functionality
@@ -2572,5 +2573,96 @@ function initImageStoryCarousels() {
         carousel.__imageStoryTimer = window.setInterval(() => {
             setActiveSlide(currentIndex + 1);
         }, Number.isFinite(interval) ? interval : 3000);
+    });
+}
+
+function initSiceMapHotspots() {
+    const panels = document.querySelectorAll('.sice-map-panel');
+    if (!panels.length) return;
+
+    panels.forEach((panel) => {
+        const stage = panel.querySelector('.sice-map-stage');
+        const tooltip = panel.querySelector('.sice-tooltip');
+        const country = panel.querySelector('.sice-tooltip-country');
+        const project = panel.querySelector('.sice-tooltip-project');
+        const meta = panel.querySelector('.sice-tooltip-meta');
+        const hotspots = Array.from(panel.querySelectorAll('.sice-hotspot'));
+        let activeHotspot = null;
+
+        if (!stage || !tooltip || !country || !project || !meta || !hotspots.length) return;
+
+        const setTooltipPosition = (hotspot) => {
+            const x = parseFloat((hotspot.style.getPropertyValue('--x') || '50%').replace('%', ''));
+            const y = parseFloat((hotspot.style.getPropertyValue('--y') || '50%').replace('%', ''));
+
+            tooltip.style.setProperty('--tooltip-x', `${Number.isFinite(x) ? x : 50}%`);
+            tooltip.style.setProperty('--tooltip-y', `${Number.isFinite(y) ? y : 50}%`);
+
+            if (x > 70) {
+                tooltip.style.setProperty('--tooltip-translate-x', 'calc(-100% + 18px)');
+            } else if (x < 30) {
+                tooltip.style.setProperty('--tooltip-translate-x', '-18px');
+            } else {
+                tooltip.style.setProperty('--tooltip-translate-x', '-50%');
+            }
+
+            if (y < 25) {
+                tooltip.style.setProperty('--tooltip-translate-y', '20px');
+                tooltip.style.setProperty('--tooltip-visible-y', '14px');
+            } else {
+                tooltip.style.setProperty('--tooltip-translate-y', '-118%');
+                tooltip.style.setProperty('--tooltip-visible-y', '-112%');
+            }
+        };
+
+        const showTooltip = (hotspot, persist = false) => {
+            country.textContent = hotspot.dataset.country || '';
+            project.textContent = hotspot.dataset.project || '';
+            meta.textContent = hotspot.dataset.meta || '';
+            setTooltipPosition(hotspot);
+
+            hotspots.forEach((item) => item.classList.toggle('is-active', item === hotspot && persist));
+            tooltip.classList.add('is-visible');
+            activeHotspot = persist ? hotspot : activeHotspot;
+        };
+
+        const hideTooltip = (force = false) => {
+            if (activeHotspot && !force) return;
+            activeHotspot = null;
+            tooltip.classList.remove('is-visible');
+            hotspots.forEach((item) => item.classList.remove('is-active'));
+        };
+
+        hotspots.forEach((hotspot) => {
+            hotspot.addEventListener('mouseenter', () => showTooltip(hotspot));
+            hotspot.addEventListener('mouseleave', () => {
+                if (activeHotspot !== hotspot) hideTooltip();
+            });
+            hotspot.addEventListener('focus', () => showTooltip(hotspot));
+            hotspot.addEventListener('blur', () => {
+                if (activeHotspot !== hotspot) hideTooltip();
+            });
+            hotspot.addEventListener('click', (event) => {
+                event.preventDefault();
+                const shouldClose = activeHotspot === hotspot && tooltip.classList.contains('is-visible');
+                if (shouldClose) {
+                    hideTooltip(true);
+                    return;
+                }
+                showTooltip(hotspot, true);
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!panel.contains(event.target)) hideTooltip(true);
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') hideTooltip(true);
+        });
+
+        window.addEventListener('resize', () => {
+            if (activeHotspot) setTooltipPosition(activeHotspot);
+        });
     });
 }
