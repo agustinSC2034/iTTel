@@ -2241,14 +2241,28 @@
         background-image: url('../images/diseno_nuevo_diapo/mantenimento.png');
     }
 
-    .image-story--works::before,
-    .image-story--rail::before,
+    .image-story--works::before {
+        background:
+            linear-gradient(180deg, rgba(7, 17, 32, 0.40) 0%, rgba(7, 17, 32, 0.22) 42%, rgba(7, 17, 32, 0.32) 100%),
+            linear-gradient(90deg, rgba(7, 17, 32, 0.40) 0%, rgba(7, 17, 32, 0.10) 55%, rgba(7, 17, 32, 0.18) 100%);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+    }
+
+    .image-story--rail::before {
+        background:
+            linear-gradient(180deg, rgba(7, 17, 32, 0.28) 0%, rgba(7, 17, 32, 0.14) 42%, rgba(7, 17, 32, 0.22) 100%),
+            linear-gradient(90deg, rgba(7, 17, 32, 0.28) 0%, rgba(7, 17, 32, 0.06) 55%, rgba(7, 17, 32, 0.12) 100%);
+        backdrop-filter: blur(1.2px);
+        -webkit-backdrop-filter: blur(1.2px);
+    }
+
     .image-story--maintenance::before {
         background:
-            linear-gradient(180deg, rgba(7, 17, 32, 0.52) 0%, rgba(7, 17, 32, 0.36) 42%, rgba(7, 17, 32, 0.62) 100%),
-            linear-gradient(90deg, rgba(7, 17, 32, 0.52) 0%, rgba(7, 17, 32, 0.18) 55%, rgba(7, 17, 32, 0.36) 100%);
-        backdrop-filter: blur(3px);
-        -webkit-backdrop-filter: blur(3px);
+            linear-gradient(180deg, rgba(7, 17, 32, 0.44) 0%, rgba(7, 17, 32, 0.28) 42%, rgba(7, 17, 32, 0.46) 100%),
+            linear-gradient(90deg, rgba(7, 17, 32, 0.44) 0%, rgba(7, 17, 32, 0.12) 55%, rgba(7, 17, 32, 0.26) 100%);
+        backdrop-filter: blur(2.4px);
+        -webkit-backdrop-filter: blur(2.4px);
     }
 
     .image-story__media {
