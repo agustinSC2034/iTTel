@@ -7968,10 +7968,10 @@ html {
     width: 28px;
     height: 28px;
     padding: 0;
-    border: 1px solid rgba(20, 184, 166, 0.7);
+    border: 1px solid rgba(249, 115, 22, 0.7);
     border-radius: 999px;
-    background: rgba(20, 184, 166, 0.08);
-    box-shadow: 0 0 0 5px rgba(20,184,166,0.08);
+    background: rgba(249, 115, 22, 0.08);
+    box-shadow: 0 0 0 5px rgba(249,115,22,0.08);
     cursor: pointer;
     z-index: 4;
     pointer-events: auto;
@@ -7983,8 +7983,8 @@ html {
     position: absolute;
     inset: 8px;
     border-radius: inherit;
-    background: #14b8a6;
-    box-shadow: 0 0 14px rgba(20,184,166,0.55);
+    background: #f97316;
+    box-shadow: 0 0 14px rgba(249,115,22,0.55);
 }
 
 .sice-hotspot::after {
@@ -7992,7 +7992,7 @@ html {
     position: absolute;
     inset: -8px;
     border-radius: inherit;
-    border: 1px solid rgba(20,184,166,0.32);
+    border: 1px solid rgba(249,115,22,0.32);
     animation: sicePulse 2.4s ease-out infinite;
 }
 
@@ -8006,7 +8006,7 @@ html {
 .sice-hotspot:focus-visible,
 .sice-hotspot.is-active {
     transform: translate(-50%, -50%) scale(1.14);
-    border-color: rgba(20, 184, 166, 1);
+    border-color: rgba(249, 115, 22, 1);
     outline: none;
 }
 
