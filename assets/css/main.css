@@ -2051,12 +2051,12 @@
     }
 
     .image-story--works .telco-logo-strip {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 0.5rem;
     }
 
     .image-story--works .telco-logo-strip--institutional {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .image-story--works .telco-logo-item {
@@ -2238,7 +2238,11 @@
     }
 
     .image-story--maintenance {
+        background-color: #0a121f;
         background-image: url('../images/diseno_nuevo_diapo/mantenimento.png');
+        background-size: contain;
+        background-position: center bottom;
+        background-repeat: no-repeat;
     }
 
     .image-story--works::before {
