@@ -1321,35 +1321,10 @@
 .audit-platform-section {
     position: relative;
     overflow: hidden;
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.99) 0%, rgba(255, 255, 255, 0.99) 100%),
-        url('../images/diseno_nuevo_diapo/14fondo.webp') right top / 560px auto no-repeat,
-        url('../images/diseno_nuevo_diapo/2fondo.webp') left bottom / 520px auto no-repeat;
+    background: #ffffff;
     padding: 108px 0;
     border-top: 1px solid #E7EDF4;
     border-bottom: 1px solid #E7EDF4;
-}
-
-.audit-platform-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background:
-        linear-gradient(90deg, rgba(34, 125, 179, 0.05) 0%, rgba(34, 125, 179, 0) 32%, rgba(34, 125, 179, 0) 68%, rgba(34, 125, 179, 0.04) 100%);
-    opacity: 0.55;
-}
-
-.audit-platform-section::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: min(1120px, calc(100% - 40px));
-    height: 1px;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, rgba(34, 125, 179, 0) 0%, rgba(34, 125, 179, 0.22) 50%, rgba(34, 125, 179, 0) 100%);
-    pointer-events: none;
 }
 
 .audit-platform-shell {
@@ -1421,11 +1396,6 @@
 }
 
 .audit-platform-media {
-    border: 1px solid #D8E1EC;
-    border-radius: 18px;
-    padding: 1.1rem;
-    background: #FFFFFF;
-    box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08);
     max-width: 760px;
     width: 100%;
     justify-self: center;
@@ -1768,12 +1738,10 @@
     content: '';
     position: absolute;
     left: 0;
-    top: 0.72rem;
-    width: 7px;
-    height: 7px;
-    border-radius: 999px;
+    top: 0.85rem;
+    width: 14px;
+    height: 1.5px;
     background: #38BDF8;
-    box-shadow: 0 0 0 6px rgba(56, 189, 248, 0.08);
 }
 
 .image-story__partner-mark {
@@ -1808,8 +1776,8 @@
     width: fit-content;
     padding: 0.95rem 1.15rem;
     border-radius: 14px;
-    background: linear-gradient(135deg, rgba(34, 125, 179, 0.92) 0%, rgba(56, 189, 248, 0.92) 100%);
-    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.22);
+    background: #227DB3;
+    box-shadow: none;
 }
 
 .image-story__badge-value {
@@ -1918,7 +1886,6 @@
 
 .image-story--works .image-story__list li::before {
     background: #227DB3;
-    box-shadow: 0 0 0 6px rgba(34, 125, 179, 0.1);
 }
 
 .image-story--works .telco-logo-strip {
@@ -2000,13 +1967,12 @@
 
 .image-story--maintenance .image-story__list li::before {
     background: #227DB3;
-    box-shadow: 0 0 0 6px rgba(34, 125, 179, 0.1);
 }
 
 .image-story--maintenance .image-story__badge {
-    background: linear-gradient(135deg, rgba(34, 125, 179, 0.92) 0%, rgba(56, 189, 248, 0.92) 100%);
+    background: #227DB3;
     color: #FFFFFF;
-    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.22);
+    box-shadow: none;
 }
 
 .image-story--maintenance .image-story__badge-value {
@@ -2240,8 +2206,8 @@
     .image-story--maintenance {
         background-color: #0a121f;
         background-image: url('../images/diseno_nuevo_diapo/mantenimento.png');
-        background-size: contain;
-        background-position: center bottom;
+        background-size: cover;
+        background-position: center 72%;
         background-repeat: no-repeat;
     }
 
@@ -2340,7 +2306,6 @@
     .image-story--works .image-story__list li::before,
     .image-story--maintenance .image-story__list li::before {
         background: #38BDF8;
-        box-shadow: 0 0 0 6px rgba(56, 189, 248, 0.08);
     }
 
     .image-story__eyebrow {
@@ -6739,28 +6704,6 @@ html {
     isolation: isolate;
 }
 
-.infra-coverage-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(90deg, rgba(6, 15, 30, 0.22) 0%, rgba(6, 15, 30, 0.04) 48%, rgba(6, 15, 30, 0.18) 100%),
-        radial-gradient(circle at top right, rgba(34, 125, 179, 0.16) 0%, rgba(34, 125, 179, 0) 46%);
-    pointer-events: none;
-    z-index: -2;
-}
-
-.infra-coverage-section::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(180deg, rgba(15, 23, 42, 0.01) 0%, rgba(15, 23, 42, 0.1) 100%),
-        radial-gradient(circle at center, rgba(34, 125, 179, 0.08) 0%, rgba(34, 125, 179, 0) 58%);
-    pointer-events: none;
-    z-index: -1;
-}
-
 .infra-coverage-container {
     max-width: 1200px;
 }
@@ -7822,20 +7765,8 @@ html {
     position: relative;
     overflow: visible;
     padding: clamp(82px, 9vw, 132px) 0;
-    background: linear-gradient(135deg, #f8fbff 0%, #eef9fb 45%, #ffffff 100%);
+    background: #f8fbff;
     border-top: 1px solid rgba(15, 23, 42, 0.08);
-}
-
-.sice-alliance-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background:
-        linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
-    background-size: 88px 88px;
-    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72), transparent 74%);
 }
 
 .sice-alliance-section .container {
@@ -7888,16 +7819,15 @@ html {
 .sice-metric {
     min-width: 0;
     padding: 1.6rem 1.5rem;
-    background: rgba(255, 255, 255, 0.72);
-    border: 1px solid rgba(226, 232, 240, 0.7);
-    border-radius: 16px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
     text-align: center;
-    transition: box-shadow 0.25s ease, border-color 0.25s ease;
+    transition: border-color 0.25s ease;
 }
 
 .sice-metric:hover {
-    border-color: rgba(20, 184, 166, 0.25);
-    box-shadow: 0 8px 32px rgba(20, 184, 166, 0.06);
+    border-color: #CBD5E1;
 }
 
 .sice-metric strong {
@@ -7932,18 +7862,6 @@ html {
     font-weight: 600;
     letter-spacing: 0.01em;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.sice-certification-note::before {
-    content: '\f058';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    font-size: 1.05rem;
-    color: #14b8a6;
 }
 
 .sice-map-panel {
