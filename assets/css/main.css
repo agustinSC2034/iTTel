@@ -1910,7 +1910,7 @@
 }
 
 .image-story--works .telco-logo-strip--institutional {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     margin-top: 0.75rem;
 }
@@ -1924,10 +1924,17 @@
     padding: 0.5rem 1rem;
 }
 
-.image-story--works .telco-logo-item--wide img {
-    max-width: 180px;
-    max-height: 36px;
-}
+    .image-story--works .telco-logo-item--wide img {
+        max-width: 180px;
+        max-height: 36px;
+    }
+
+    .image-story--works .telco-logo-strip--institutional .telco-logo-item--wide img {
+        max-width: 170px;
+        max-height: 44px;
+        width: auto;
+        height: auto;
+    }
 
 .image-story--works .telco-logo-item:hover {
     background: rgba(34, 125, 179, 0.08);
@@ -2023,16 +2030,26 @@
 
     .image-story--works .telco-logo-strip--institutional {
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+        margin-top: 1rem;
+        padding: 0.6rem 0.4rem;
     }
 
     .image-story--works .telco-logo-item {
-        height: 40px;
-        padding: 0.4rem 0.3rem;
+        height: 44px;
+        padding: 0.45rem 0.35rem;
+    }
+
+    .image-story--works .telco-logo-item img {
+        filter: brightness(0) invert(1);
+        opacity: 0.88;
+        max-width: 96px;
+        max-height: 28px;
     }
 
     .image-story--works .telco-logo-item--wide {
-        height: 44px;
-        padding: 0.4rem 0.5rem;
+        height: 58px;
+        padding: 0.5rem 0.55rem;
     }
 
     .success-cases-section {
@@ -2213,8 +2230,8 @@
 
     .image-story--works::before {
         background:
-            linear-gradient(180deg, rgba(7, 17, 32, 0.40) 0%, rgba(7, 17, 32, 0.22) 42%, rgba(7, 17, 32, 0.32) 100%),
-            linear-gradient(90deg, rgba(7, 17, 32, 0.40) 0%, rgba(7, 17, 32, 0.10) 55%, rgba(7, 17, 32, 0.18) 100%);
+            linear-gradient(180deg, rgba(7, 17, 32, 0.55) 0%, rgba(7, 17, 32, 0.40) 42%, rgba(7, 17, 32, 0.50) 100%),
+            linear-gradient(90deg, rgba(7, 17, 32, 0.55) 0%, rgba(7, 17, 32, 0.20) 55%, rgba(7, 17, 32, 0.35) 100%);
         backdrop-filter: blur(2px);
         -webkit-backdrop-filter: blur(2px);
     }
