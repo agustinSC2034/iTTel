@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initObrasGallery(); // Nueva galería de Obras en Campo
     initImageStoryCarousels();
     initSiceProjectsMap();
+    initSicePlatformTabs();
 });
 
 // Navigation functionality
@@ -2669,6 +2670,57 @@ function initImageStoryCarousels() {
 }
 
 function initSiceProjectsMap() {
-    // Los proyectos ahora se muestran como tarjetas estáticas junto al mapa.
-    // No se requiere inicialización JS para esta sección.
+    // Los proyectos ahora se muestran como tarjetas est�ticas junto al mapa.
+    // No se requiere inicializaci�n JS para esta secci�n.
+}
+
+function initSicePlatformTabs() {
+    const containers = document.querySelectorAll('[data-sice-platform-tabs]');
+    if (containers.length === 0) return;
+
+    containers.forEach((container) => {
+        const hero = container.querySelector('.sice-platform-layer__hero');
+        const main = container.querySelector('.sice-platform-layer__main');
+        const tabs = container.querySelectorAll('.sice-platform-layer__tab');
+        const thumbs = container.querySelectorAll('.sice-platform-layer__thumb');
+
+        const sources = Array.from(thumbs).map((t) => {
+            const img = t.querySelector('img');
+            return { src: img ? img.src : '', alt: img ? img.alt : '' };
+        });
+
+        const activate = (index) => {
+            if (index < 0 || index >= sources.length) return;
+
+            if (main) main.classList.add('is-switching');
+
+            window.setTimeout(() => {
+                if (hero && sources[index]) {
+                    hero.src = sources[index].src;
+                    hero.alt = sources[index].alt;
+                }
+                tabs.forEach((tab, i) => {
+                    const active = i === index;
+                    tab.classList.toggle('is-active', active);
+                    tab.setAttribute('aria-selected', active ? 'true' : 'false');
+                });
+                thumbs.forEach((thumb, i) => {
+                    thumb.classList.toggle('is-active', i === index);
+                });
+                if (main) main.classList.remove('is-switching');
+            }, 150);
+        };
+
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                activate(Number.parseInt(tab.dataset.tab || '0', 10));
+            });
+        });
+
+        thumbs.forEach((thumb) => {
+            thumb.addEventListener('click', () => {
+                activate(Number.parseInt(thumb.dataset.tab || '0', 10));
+            });
+        });
+    });
 }

@@ -8154,3 +8154,239 @@ html {
         display: none;
     }
 }
+
+/* ========================================
+   SICE Platform Layer — Plataforma, analítica e IA
+   ======================================== */
+.sice-platform-layer {
+    position: relative;
+    z-index: 1;
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: start;
+}
+
+.sice-platform-layer__content {
+    padding-top: 0.25rem;
+}
+
+.sice-platform-layer__title {
+    margin: 0.85rem 0 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: #0F172A;
+    text-transform: uppercase;
+}
+
+.sice-platform-layer__lead {
+    margin: 0 0 0.85rem;
+    color: #334155;
+    font-size: clamp(0.96rem, 1.2vw, 1.06rem);
+    line-height: 1.7;
+    max-width: 46ch;
+}
+
+.sice-platform-layer__text {
+    margin: 0 0 1.25rem;
+    color: #64748B;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    max-width: 46ch;
+}
+
+.sice-platform-layer__capabilities {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.65rem;
+}
+
+.sice-platform-layer__capabilities li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: #475569;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.sice-platform-layer__capabilities li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 10px;
+    height: 2px;
+    background: #227DB3;
+    border-radius: 2px;
+}
+
+.sice-platform-layer__capabilities li strong {
+    display: inline;
+    color: #0F172A;
+    font-weight: 700;
+}
+
+.sice-platform-layer__capabilities li strong::after {
+    content: ' — ';
+    color: #94A3B8;
+    font-weight: 400;
+}
+
+.sice-platform-layer__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1.25rem;
+}
+
+.sice-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.7rem;
+    background: rgba(34, 125, 179, 0.07);
+    border: 1px solid rgba(34, 125, 179, 0.18);
+    border-radius: 999px;
+    color: #155e8a;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.sice-platform-layer__visual {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.sice-platform-layer__tabs {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.sice-platform-layer__tab {
+    padding: 0.45rem 0.9rem;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 999px;
+    color: #64748B;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+    white-space: nowrap;
+}
+
+.sice-platform-layer__tab:hover {
+    border-color: #CBD5E1;
+    color: #334155;
+}
+
+.sice-platform-layer__tab.is-active {
+    background: #0F172A;
+    border-color: #0F172A;
+    color: #FFFFFF;
+}
+
+.sice-platform-layer__tab:focus-visible {
+    outline: 2px solid #227DB3;
+    outline-offset: 2px;
+}
+
+.sice-platform-layer__main {
+    position: relative;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #F1F5F9;
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
+}
+
+.sice-platform-layer__hero {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.sice-platform-layer__main.is-switching .sice-platform-layer__hero {
+    opacity: 0.35;
+}
+
+.sice-platform-layer__thumbs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+}
+
+.sice-platform-layer__thumb {
+    padding: 0;
+    background: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.2s ease, opacity 0.2s ease;
+    opacity: 0.7;
+}
+
+.sice-platform-layer__thumb:hover {
+    opacity: 1;
+}
+
+.sice-platform-layer__thumb.is-active {
+    border-color: #227DB3;
+    opacity: 1;
+}
+
+.sice-platform-layer__thumb:focus-visible {
+    outline: 2px solid #227DB3;
+    outline-offset: 2px;
+}
+
+.sice-platform-layer__thumb img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 8;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .sice-platform-layer {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .sice-platform-layer__lead {
+        font-size: 0.96rem;
+    }
+
+    .sice-platform-layer__tab {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.72rem;
+    }
+
+    .sice-platform-layer__thumbs {
+        gap: 0.45rem;
+    }
+
+    .sice-chip {
+        font-size: 0.62rem;
+        padding: 0.25rem 0.6rem;
+    }
+}
