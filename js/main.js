@@ -403,6 +403,11 @@ function initClients() {
     };
 
     const applyPosition = (pos) => {
+        if (distance <= 0) {
+            position = 0;
+            clientsTrack.style.transform = 'translateX(0px)';
+            return;
+        }
         while (pos <= -distance) pos += distance;
         while (pos >= 0) pos -= distance;
         position = pos;
@@ -411,6 +416,7 @@ function initClients() {
 
     const startAutoPlay = () => {
         if (autoPlayRAF) cancelAnimationFrame(autoPlayRAF);
+        if (distance <= 0) return;
         autoPlayActive = true;
 
         const animate = (ts) => {
@@ -484,8 +490,10 @@ function initClients() {
     }, { passive: true });
 
     clientsTrack.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
         onDragMove(e.touches[0].clientX);
-    });
+    }, { passive: false });
 
     clientsTrack.addEventListener('touchend', onDragEnd);
 
@@ -507,10 +515,22 @@ function initClients() {
         });
     });
 
-    Promise.all(logoLoadPromises).then(() => {
+    const initAutoplay = () => {
         calcMetrics();
-        startAutoPlay();
-    });
+        if (distance > 0) {
+            startAutoPlay();
+        } else {
+            setTimeout(() => {
+                calcMetrics();
+                startAutoPlay();
+            }, 800);
+        }
+    };
+
+    Promise.race([
+        Promise.all(logoLoadPromises),
+        new Promise((resolve) => setTimeout(resolve, 2000))
+    ]).then(initAutoplay);
 
     window.addEventListener('resize', debounce(() => {
         calcMetrics();
