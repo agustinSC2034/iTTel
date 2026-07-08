@@ -7963,16 +7963,16 @@ html {
         width: calc(100% + 2rem);
         max-width: none;
         height: auto;
-        margin: 0 -1rem 1.15rem;
+        margin: 0 -1rem 1.25rem;
     }
 
     .sice-mobile-card {
-        margin: 0 0 0.75rem;
+        margin: 0 0 0.8rem;
         padding: 1rem;
         background: #FFFFFF;
         border: 1px solid #E2E8F0;
         border-radius: 8px;
-        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.09);
     }
 
     .sice-mobile-card h3 {
@@ -7989,21 +7989,12 @@ html {
         text-transform: uppercase;
     }
 
-    .sice-mobile-card h3 span {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+    .sice-mobile-flag {
         flex: 0 0 auto;
-        width: 2rem;
-        height: 1.35rem;
-        background: #eef8fb;
-        border: 1px solid rgba(34, 125, 179, 0.22);
-        border-left: 4px solid #227db3;
-        border-radius: 3px;
-        color: #075985;
-        font-size: 0.62rem;
-        font-weight: 800;
-        letter-spacing: 0.04em;
+        width: 1.9rem;
+        height: auto;
+        border-radius: 2px;
+        box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.1);
     }
 
     .sice-mobile-card__grid {
@@ -8013,6 +8004,10 @@ html {
     }
 
     .sice-mobile-project {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(5.2rem, auto);
+        column-gap: 0.85rem;
+        align-items: center;
         padding-top: 0.85rem;
     }
 
@@ -8031,6 +8026,7 @@ html {
     }
 
     .sice-mobile-project ul {
+        grid-column: 1;
         margin: 0;
         padding-left: 1.05rem;
         color: #0F172A;
@@ -8039,19 +8035,112 @@ html {
         line-height: 1.65;
     }
 
-    .sice-mobile-project p {
+    .sice-mobile-brand {
         display: inline-flex;
-        margin: 0.75rem 0 0;
-        padding: 0.35rem 0.55rem;
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-items: center;
+        justify-content: center;
+        justify-self: end;
+        min-width: 5.2rem;
+        max-width: 6.7rem;
+        min-height: 2.75rem;
+        margin: 0;
+        padding: 0.45rem 0.6rem;
         background: #F8FAFC;
         border: 1px solid #E2E8F0;
         border-radius: 6px;
         color: #475569;
-        font-size: 0.7rem;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.66rem;
         font-weight: 800;
-        line-height: 1;
+        line-height: 1.12;
+        text-align: center;
         text-transform: uppercase;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.02em;
+    }
+
+    .sice-mobile-brand--dragados,
+    .sice-mobile-brand--acs {
+        background: #0B3A8F;
+        border-color: #0B3A8F;
+        color: #FFE928;
+        font-size: 0.78rem;
+    }
+
+    .sice-mobile-brand--bouygues {
+        background: #FFFFFF;
+        border: 2px solid #f15a24;
+        border-radius: 999px;
+        color: #0F172A;
+        font-size: 0.58rem;
+    }
+
+    .sice-mobile-brand--queiroz {
+        background: #FFFFFF;
+        border: none;
+        color: #e23d18;
+        font-size: 0.58rem;
+        font-style: italic;
+        box-shadow: inset 0 0 0 1px #F1F5F9;
+    }
+
+    .sice-mobile-brand--madrid {
+        background: #FFFFFF;
+        color: #1d4ed8;
+        font-size: 0.72rem;
+    }
+
+    .sice-mobile-brand--calle30 {
+        min-width: 3.6rem;
+        min-height: 3.6rem;
+        border-radius: 50%;
+        background: #1d4ed8;
+        color: #FFFFFF;
+        font-size: 0.58rem;
+    }
+
+    .sice-mobile-brand--viaexpresso {
+        background: #1E293B;
+        border-color: #334155;
+        color: #FFFFFF;
+    }
+
+    .sice-mobile-brand--ayalon,
+    .sice-mobile-brand--nsw,
+    .sice-mobile-brand--sotra,
+    .sice-mobile-brand--trafikverket,
+    .sice-mobile-brand--waterview {
+        background: #FFFFFF;
+        color: #0F172A;
+    }
+
+    .sice-mobile-brand--cpb {
+        background: #FFFFFF;
+        color: #0F172A;
+        border-top: 5px solid #ff5b22;
+    }
+
+    .sice-mobile-brand--femern {
+        min-width: 3.4rem;
+        background: #0f4b4f;
+        color: #FFFFFF;
+        font-family: Georgia, serif;
+        font-size: 1.45rem;
+        text-transform: none;
+    }
+
+    @media (max-width: 380px) {
+        .sice-mobile-project {
+            grid-template-columns: 1fr;
+        }
+
+        .sice-mobile-brand {
+            grid-column: 1;
+            grid-row: auto;
+            justify-self: start;
+            margin-top: 0.75rem;
+        }
     }
 
     .sice-metrics {
