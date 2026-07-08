@@ -3910,21 +3910,17 @@ html {
 
 /* Mobile Navigation */
 .nav-toggle {
-.clients {background:#ffffff;padding:70px 0;}
-.clients .container { max-width: 1260px; } /* +5% sobre 1200px */
     display: none;
     flex-direction: column;
     background: none;
     border: none;
     cursor: pointer;
-.clients-carousel {overflow:hidden;margin-top:40px;}
     padding: 5px;
 }
 
 .nav-toggle span {
     width: 25px;
     height: 3px;
-.clients-track {display:flex;align-items:center;gap:70px;animation:scroll 10s linear infinite;}
     background: #333;
     margin: 3px 0;
     transition: all 0.3s ease;
@@ -5460,8 +5456,10 @@ html {
     align-items: center;
     gap: 80px;
     width: max-content;
-    animation: scroll var(--clients-scroll-duration, 16s) linear infinite;
     will-change: transform;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: pan-y;
 }
 
 .client-logo {

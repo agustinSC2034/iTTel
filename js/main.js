@@ -359,7 +359,7 @@ function initProjects() {
     });
 }
 
-// Clients carousel functionality
+// Clients carousel functionality — drag/swipe + autoplay
 function initClients() {
     const clientsTrack = document.getElementById('clients-track');
     if (!clientsTrack) return;
@@ -376,24 +376,127 @@ function initClients() {
         clientsTrack.dataset.cloned = 'true';
     }
 
-    const updateClientsCarousel = () => {
+    clientsTrack.style.animation = 'none';
+
+    let position = 0;
+    let autoPlayActive = true;
+    let autoPlayRAF = null;
+    let resumeTimeout = null;
+    let isDragging = false;
+    let startX = 0;
+    let startPosition = 0;
+    let lastTimestamp = 0;
+    let distance = 0;
+    let pixelsPerSecond = 260;
+
+    const calcMetrics = () => {
         const allLogos = Array.from(clientsTrack.querySelectorAll('.client-logo'));
-        const visibleOriginals = allLogos.slice(0, allLogos.length / 2);
-        if (visibleOriginals.length === 0) return;
-
+        const originals = allLogos.slice(0, allLogos.length / 2);
+        if (originals.length === 0) return;
         const styles = window.getComputedStyle(clientsTrack);
-        const gap = parseFloat(styles.columnGap || styles.gap || '0');
-        const distance = visibleOriginals.reduce((sum, logo) => {
+        const gap = parseFloat(styles.columnGap || styles.gap || '80');
+        distance = originals.reduce((sum, logo) => {
             return sum + logo.getBoundingClientRect().width;
-        }, 0) + gap * Math.max(visibleOriginals.length - 1, 0);
-
-        const pixelsPerSecond = window.innerWidth <= 768 ? 210 : 260;
-        const duration = Math.max(distance / pixelsPerSecond, 8);
-
-        clientsTrack.style.setProperty('--clients-scroll-distance', `${distance}px`);
-        clientsTrack.style.setProperty('--clients-scroll-duration', `${duration}s`);
-        clientsTrack.style.animationPlayState = 'running';
+        }, 0) + gap * Math.max(originals.length - 1, 0);
+        pixelsPerSecond = window.innerWidth <= 768 ? 210 : 260;
     };
+
+    const applyPosition = (pos) => {
+        while (pos <= -distance) pos += distance;
+        while (pos >= 0) pos -= distance;
+        position = pos;
+        clientsTrack.style.transform = `translateX(${position}px)`;
+    };
+
+    const startAutoPlay = () => {
+        if (autoPlayRAF) cancelAnimationFrame(autoPlayRAF);
+        autoPlayActive = true;
+
+        const animate = (ts) => {
+            if (!autoPlayActive) return;
+            if (!lastTimestamp) lastTimestamp = ts;
+            const dt = Math.min((ts - lastTimestamp) / 1000, 0.1);
+            lastTimestamp = ts;
+            position -= pixelsPerSecond * dt;
+            applyPosition(position);
+            autoPlayRAF = requestAnimationFrame(animate);
+        };
+
+        lastTimestamp = 0;
+        autoPlayRAF = requestAnimationFrame(animate);
+    };
+
+    const stopAutoPlay = () => {
+        autoPlayActive = false;
+        if (autoPlayRAF) {
+            cancelAnimationFrame(autoPlayRAF);
+            autoPlayRAF = null;
+        }
+        if (resumeTimeout) {
+            clearTimeout(resumeTimeout);
+            resumeTimeout = null;
+        }
+    };
+
+    const scheduleResume = () => {
+        if (resumeTimeout) clearTimeout(resumeTimeout);
+        resumeTimeout = setTimeout(() => {
+            resumeTimeout = null;
+            if (!isDragging) startAutoPlay();
+        }, 1500);
+    };
+
+    const onDragStart = (clientX) => {
+        stopAutoPlay();
+        isDragging = true;
+        startX = clientX;
+        startPosition = position;
+        clientsTrack.style.cursor = 'grabbing';
+    };
+
+    const onDragMove = (clientX) => {
+        if (!isDragging) return;
+        const dx = clientX - startX;
+        applyPosition(startPosition + dx);
+    };
+
+    const onDragEnd = () => {
+        if (!isDragging) return;
+        isDragging = false;
+        clientsTrack.style.cursor = 'grab';
+        scheduleResume();
+    };
+
+    clientsTrack.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        onDragStart(e.clientX);
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        onDragMove(e.clientX);
+    });
+
+    window.addEventListener('mouseup', onDragEnd);
+
+    clientsTrack.addEventListener('touchstart', (e) => {
+        onDragStart(e.touches[0].clientX);
+    }, { passive: true });
+
+    clientsTrack.addEventListener('touchmove', (e) => {
+        onDragMove(e.touches[0].clientX);
+    });
+
+    clientsTrack.addEventListener('touchend', onDragEnd);
+
+    clientsTrack.addEventListener('mouseenter', () => {
+        if (!isDragging) stopAutoPlay();
+    });
+
+    clientsTrack.addEventListener('mouseleave', () => {
+        if (!isDragging) scheduleResume();
+    });
+
+    clientsTrack.style.cursor = 'grab';
 
     const logoLoadPromises = Array.from(clientsTrack.querySelectorAll('.client-logo')).map((logo) => {
         if (logo.complete) return Promise.resolve();
@@ -403,25 +506,14 @@ function initClients() {
         });
     });
 
-    Promise.all(logoLoadPromises).then(updateClientsCarousel);
-
-    clientsTrack.addEventListener('mouseenter', () => {
-        clientsTrack.style.animationPlayState = 'paused';
+    Promise.all(logoLoadPromises).then(() => {
+        calcMetrics();
+        startAutoPlay();
     });
 
-    clientsTrack.addEventListener('mouseleave', () => {
-        clientsTrack.style.animationPlayState = 'running';
-    });
-
-    clientsTrack.addEventListener('touchstart', () => {
-        clientsTrack.style.animationPlayState = 'paused';
-    }, { passive: true });
-
-    clientsTrack.addEventListener('touchend', () => {
-        clientsTrack.style.animationPlayState = 'running';
-    });
-
-    window.addEventListener('resize', debounce(updateClientsCarousel, 200));
+    window.addEventListener('resize', debounce(() => {
+        calcMetrics();
+    }, 200));
 }
 
 // Scroll effects and animations
