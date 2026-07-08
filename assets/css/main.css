@@ -8153,8 +8153,6 @@ html {
     }
 
     .sice-certification-note {
-        flex-direction: column;
-        gap: 0.3rem;
-        padding: 0.8rem 1rem;
+        display: none;
     }
 }
