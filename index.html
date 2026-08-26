@@ -29,7 +29,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./assets/css/main.css?v=5">
+    <link rel="stylesheet" href="./assets/css/main.css?v=6">
 
     <!-- Favicon -->
     <link rel="icon" href="./assets/images/favicon.webp" type="image/webp">
@@ -48,14 +48,14 @@
             <div class="nav-menu-glass" id="nav-menu">
                 <a href="#inicio" class="nav-link-glass active">INICIO</a>
                 <a href="#unidades-negocio" class="nav-link-glass">UNIDADES DE NEGOCIO</a>
-                <a href="#obras-telecomunicaciones" class="nav-link-glass">OBRAS</a>
-                <a href="#casos-ftth" class="nav-link-glass">CASOS DE EXITO</a>
+                <a href="#soluciones" class="nav-link-glass">SOLUCIONES</a>
+                <a href="#casos-exito" class="nav-link-glass">CASOS DE ÉXITO</a>
                 <a href="#alianza-sice" class="nav-link-glass">PARTNERS</a>
                 <a href="#clientes" class="nav-link-glass">CLIENTES</a>
                 <a href="#contacto" class="nav-link-glass">CONTACTO</a>
 
                 <div class="language-selector-glass">
-                    <button class="language-btn-glass" id="language-btn">
+                    <button class="language-btn-glass" id="language-btn" type="button" aria-controls="language-dropdown" aria-expanded="false" aria-label="Cambiar idioma">
                         <img src="https://flagcdn.com/w20/ar.png" alt="Argentina" class="flag-icon">
                         <span>ARG</span>
                         <i class="fas fa-chevron-down"></i>
@@ -74,7 +74,7 @@
                 </div>
             </div>
 
-            <button class="nav-toggle-glass" id="nav-toggle">
+            <button class="nav-toggle-glass" id="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir navegación">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -84,10 +84,327 @@
 
 
 
+    <main id="contenido-principal">
+        <section id="inicio" class="section renewal-hero" data-renewal-hero aria-roledescription="carrusel" aria-label="Grupo iTTel: IT y Telecomunicaciones">
+            <div class="renewal-hero__slides">
+                <figure class="renewal-hero__slide is-active" data-hero-slide aria-hidden="false">
+                    <img src="assets/images/fondo_hero/fondo4k.webp" alt="Despliegue de infraestructura de telecomunicaciones en altura" width="3344" height="1882" fetchpriority="high" decoding="async">
+                </figure>
+                <figure class="renewal-hero__slide" data-hero-slide aria-hidden="true">
+                    <img src="assets/images/fondo_hero/operation-center.webp" alt="Centro de operación de infraestructura vial y tecnológica" width="879" height="796" loading="lazy" decoding="async">
+                </figure>
+            </div>
+            <div class="renewal-hero__veil" aria-hidden="true"></div>
+            <div class="container renewal-hero__content">
+                <div class="renewal-hero__copy">
+                    <span class="renewal-kicker">GRUPO ITTEL</span>
+                    <img src="assets/images/fondo_hero/Logo_Ittel_AI.png" alt="Grupo iTTel" class="renewal-hero__logo" width="320" height="108" decoding="async">
+                    <p class="renewal-hero__subtitle">Information Technology &amp; Telecommunications</p>
+                    <h1>Líderes en Argentina en el desarrollo, operación e integración de infraestructura IT &amp; TELCO a gran escala.</h1>
+                </div>
+            </div>
+            <div class="renewal-hero__controls" aria-label="Controles del hero">
+                <button type="button" data-hero-prev aria-label="Escena anterior">←</button>
+                <span class="renewal-hero__status" data-hero-status aria-live="polite">TELCO · 01 / 02</span>
+                <button type="button" data-hero-pause aria-label="Pausar reproducción" aria-pressed="false">Pausa</button>
+                <button type="button" data-hero-next aria-label="Escena siguiente">→</button>
+            </div>
+        </section>
+
+        <section id="unidades-negocio" class="section renewal-overview">
+            <img class="renewal-overview__blueprint" src="assets/images/diseno_nuevo_diapo/2fondo.webp" alt="" aria-hidden="true" width="1672" height="941" loading="lazy" decoding="async">
+            <div class="container renewal-overview__inner">
+                <header class="renewal-section-heading">
+                    <span class="renewal-kicker">GRUPO ITTEL</span>
+                    <h2>Infraestructura que conecta.<br>Tecnología que decide.</h2>
+                    <p>Integramos telecomunicaciones e IT para desplegar, operar y mantener infraestructura crítica con una mirada completa del servicio.</p>
+                </header>
+                <div class="renewal-capabilities" aria-label="Capacidades de Grupo iTTel">
+                    <article class="renewal-capability">
+                        <span>01 / TELCO</span>
+                        <h3>Redes e infraestructura</h3>
+                        <p>Despliegue, operación y mantenimiento de redes de alta disponibilidad.</p>
+                    </article>
+                    <article class="renewal-capability">
+                        <span>02 / TELCO</span>
+                        <h3>Obra e integración</h3>
+                        <p>Implementación en campo con ingeniería, cuadrillas y control operativo.</p>
+                    </article>
+                    <article class="renewal-capability">
+                        <span>03 / TELCO</span>
+                        <h3>Mantenimiento</h3>
+                        <p>Atención preventiva y correctiva para sostener la continuidad.</p>
+                    </article>
+                    <article class="renewal-capability">
+                        <span>04 / IT</span>
+                        <h3>Operación inteligente</h3>
+                        <p>Integración de sistemas ITS, eventos, equipos y comunicaciones.</p>
+                    </article>
+                    <article class="renewal-capability">
+                        <span>05 / IT</span>
+                        <h3>Plataformas de gestión</h3>
+                        <p>Información operacional centralizada para coordinar y decidir.</p>
+                    </article>
+                    <article class="renewal-capability">
+                        <span>06 / IT</span>
+                        <h3>Analítica y trazabilidad</h3>
+                        <p>Datos y evidencia para mejorar control, seguimiento y respuesta.</p>
+                    </article>
+                </div>
+                <p class="renewal-overview__closing">Una sola operación. Dos capacidades complementarias.</p>
+            </div>
+        </section>
+
+        <section id="soluciones" class="section renewal-solutions" aria-labelledby="soluciones-title">
+            <header class="renewal-solutions__intro container">
+                <span class="renewal-kicker">SOLUCIONES</span>
+                <h2 id="soluciones-title">Capacidad integral, visible en cada etapa.</h2>
+            </header>
+
+            <article class="renewal-solution renewal-solution--light">
+                <img class="renewal-solution__media" src="assets/images/diseno_nuevo_diapo/horizontal/obra1horizontal.webp" alt="Cuadrilla iTTel desplegando infraestructura de telecomunicaciones" width="1672" height="941" loading="lazy" decoding="async">
+                <div class="renewal-solution__shade" aria-hidden="true"></div>
+                <div class="container renewal-solution__layout">
+                    <div class="renewal-solution__card renewal-solution__card--right">
+                        <span class="renewal-kicker">01 / REDES NEUTRALES</span>
+                        <h3>Infraestructura compartida para conectar más y mejor.</h3>
+                        <p>Diseñamos, desplegamos y operamos redes de telecomunicaciones preparadas para múltiples operadores y servicios.</p>
+                        <ul>
+                            <li>Diseño y despliegue de red</li>
+                            <li>Operación de infraestructura</li>
+                            <li>Integración con operadores</li>
+                            <li>Escalabilidad y continuidad</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <article class="renewal-solution renewal-solution--dark renewal-solution--its">
+                <div class="container renewal-solution__layout renewal-solution__layout--split">
+                    <div class="renewal-solution__copy">
+                        <span class="renewal-kicker">02 / OPERACIÓN INTELIGENTE · ITS</span>
+                        <h3>Datos, eventos y equipos en una operación coordinada.</h3>
+                        <p>Integramos plataformas, comunicaciones y dispositivos para construir una visión operacional común de la infraestructura.</p>
+                        <ul>
+                            <li>Monitoreo centralizado</li>
+                            <li>Gestión de eventos</li>
+                            <li>Integración de equipos</li>
+                            <li>Analítica para la decisión</li>
+                        </ul>
+                    </div>
+                    <div class="renewal-solution__visual renewal-solution__visual--its">
+                        <img src="assets/images/ciudad.webp" alt="Mapa operacional de infraestructura en la Ciudad de Buenos Aires" width="1513" height="1040" loading="lazy" decoding="async">
+                        <img src="assets/images/sice/sidera-control.webp" alt="Panel de control operacional SIDERA" width="1394" height="722" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </article>
+
+            <article class="renewal-solution renewal-solution--light">
+                <img class="renewal-solution__media" src="assets/images/diseno_nuevo_diapo/horizontal/obra2horizontal.webp" alt="Obra e integración tecnológica realizada por iTTel" width="1672" height="941" loading="lazy" decoding="async">
+                <div class="renewal-solution__shade" aria-hidden="true"></div>
+                <div class="container renewal-solution__layout">
+                    <div class="renewal-solution__card renewal-solution__card--right">
+                        <span class="renewal-kicker">03 / OBRAS E INTEGRACIÓN TECNOLÓGICA</span>
+                        <h3>De la ingeniería al campo, con una ejecución coordinada.</h3>
+                        <p>Implementamos infraestructura crítica integrando obra, tecnología, equipos y puesta en servicio.</p>
+                        <ul>
+                            <li>Ingeniería y planificación</li>
+                            <li>Cuadrillas especializadas</li>
+                            <li>Integración de sistemas</li>
+                            <li>Control de calidad y entrega</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <article class="renewal-solution renewal-solution--light renewal-solution--maintenance">
+                <img class="renewal-solution__media" src="assets/images/diseno_nuevo_diapo/horizontal/mantenimiento.webp" alt="Técnico iTTel realizando mantenimiento de infraestructura" width="1672" height="941" loading="lazy" decoding="async">
+                <div class="renewal-solution__shade" aria-hidden="true"></div>
+                <div class="container renewal-solution__layout">
+                    <div class="renewal-solution__card renewal-solution__card--right">
+                        <span class="renewal-kicker">04 / MANTENIMIENTO</span>
+                        <h3>Continuidad operativa, todos los días.</h3>
+                        <p>Sostenemos infraestructura crítica con mantenimiento preventivo y correctivo, trazabilidad de tareas y capacidad de respuesta.</p>
+                        <ul>
+                            <li>Prevención y diagnóstico</li>
+                            <li>Atención correctiva</li>
+                            <li>Seguimiento de tareas</li>
+                            <li>Cobertura operativa 24/7</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section id="alianza-sice" class="section renewal-sice" data-renewal-sice aria-label="Alianza tecnológica iTTel y SICE">
+            <div class="renewal-sice__sticky">
+                <div class="renewal-sice__stage">
+                    <article class="renewal-sice__scene is-active" data-sice-scene="0" aria-hidden="false">
+                        <div class="renewal-sice__scene-grid renewal-sice__scene-grid--map">
+                            <div class="renewal-sice__content">
+                                <img class="renewal-sice__brand" src="assets/images/sice/sice-logo.webp" alt="SICE" width="316" height="150" loading="lazy" decoding="async">
+                                <span class="renewal-kicker">TECNOLOGÍA Y SISTEMAS</span>
+                                <h2>Experiencia global en infraestructura crítica.</h2>
+                                <p>SICE aporta experiencia internacional en sistemas de control, túneles, autopistas y movilidad inteligente.</p>
+                                <dl class="renewal-sice__metrics">
+                                    <div><dt>3500</dt><dd>personas</dd></div>
+                                    <div><dt>+30</dt><dd>países</dd></div>
+                                    <div><dt>5</dt><dd>continentes</dd></div>
+                                    <div><dt>3000 / 800</dt><dd>clientes públicos / privados</dd></div>
+                                </dl>
+                            </div>
+                            <div class="renewal-map" data-sice-map>
+                                <img src="assets/images/sice/sice-world-map.webp" alt="Mapa de proyectos internacionales destacados de SICE" width="1672" height="941" loading="lazy" decoding="async">
+                                <button type="button" class="renewal-map__point" style="--x: 29%; --y: 30%;" data-country="Canadá" data-project="ITS for the new bridge over the St. Lawrence River (Montreal)" data-meta="12.7M USD · 2015–2019 · 2.1 miles de puente" aria-label="Ver experiencia de SICE en Canadá"></button>
+                                <button type="button" class="renewal-map__point" style="--x: 34%; --y: 43%;" data-country="Estados Unidos" data-project="TCMS &amp; ICA systems for SR99 Tunnel · Systems Integration (Seattle)" data-meta="24.4M USD · 2012–2019 · SIDERA · 2 miles de túnel" aria-label="Ver experiencia de SICE en Estados Unidos"></button>
+                                <button type="button" class="renewal-map__point" style="--x: 36%; --y: 64%;" data-country="Perú" data-project="Gambetta Airport Tunnel · ITS, electrical and mechanical systems" data-meta="10M USD · 2014–2016 · 2.1 miles" aria-label="Ver experiencia de SICE en Perú"></button>
+                                <button type="button" class="renewal-map__point" style="--x: 50%; --y: 39%;" data-country="España" data-project="Madrid urban tunnels management and control centre" data-meta="39.3M USD · 2001–2026 · 29 túneles integrados" aria-label="Ver experiencia de SICE en España"></button>
+                                <button type="button" class="renewal-map__point" style="--x: 48%; --y: 41%;" data-country="Portugal" data-project="Madeira tunnels · safety, control system &amp; control centre" data-meta="15M USD · SIDERA (migración) · 52 túneles integrados" aria-label="Ver experiencia de SICE en Portugal"></button>
+                                <button type="button" class="renewal-map__point" style="--x: 56%; --y: 28%;" data-country="Noruega" data-project="Electromechanical &amp; automation systems for Sotra Connection (Bergen)" data-meta="50.83M USD · 2024–2027" aria-label="Ver experiencia de SICE en Noruega"></button>
+                                <button type="button" class="renewal-map__point" style="--x: 58%; --y: 29%;" data-country="Suecia" data-project="Stockholm Bypass · Electromechanical systems" data-meta="31.7M USD · 2019–2030 · 34.3 miles" aria-label="Ver experiencia de SICE en Suecia"></button>
+                                <button type="button" class="renewal-map__point" style="--x: 54%; --y: 33%;" data-country="Dinamarca" data-project="Electromechanical systems for Femarn Belt Fixed Link" data-meta="+500M USD · 2023–2030 · 15.6 miles" aria-label="Ver experiencia de SICE en Dinamarca"></button>
+                                <button type="button" class="renewal-map__point" style="--x: 62%; --y: 45%;" data-country="Israel" data-project="Ayalon Highway · Traffic monitoring and control system" data-meta="6.3M USD · 2012–2017" aria-label="Ver experiencia de SICE en Israel"></button>
+                                <button type="button" class="renewal-map__point" style="--x: 82%; --y: 69%;" data-country="Australia" data-project="WestConnex Tunnels · M4 East, M8, M4-M8 Link and Rozelle Interchange" data-meta="160M USD · 2016–2023 · SIDERA" aria-label="Ver experiencia de SICE en Australia"></button>
+                                <button type="button" class="renewal-map__point" style="--x: 87%; --y: 75%;" data-country="Nueva Zelanda" data-project="Waterview Tunnel · integrated tunnel management system" data-meta="106.7M USD · 2012–actualidad · SIDERA" aria-label="Ver experiencia de SICE en Nueva Zelanda"></button>
+                                <aside class="renewal-map__detail" data-map-detail aria-live="polite">
+                                    <button type="button" data-map-close aria-label="Cerrar detalle">×</button>
+                                    <strong data-map-country>España</strong>
+                                    <span data-map-project>Madrid urban tunnels management and control centre</span>
+                                    <small data-map-meta>39.3M USD · 2001–2026 · 29 túneles integrados</small>
+                                </aside>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="renewal-sice__scene renewal-sice__scene--alliance" data-sice-scene="1" aria-hidden="true">
+                        <div class="renewal-sice__scene-grid">
+                            <div class="renewal-sice__content">
+                                <span class="renewal-kicker">ALIANZA LOCAL</span>
+                                <div class="renewal-sice__lockup">
+                                    <img src="assets/images/logoIttel1.webp" alt="iTTel" width="560" height="197" loading="lazy" decoding="async">
+                                    <span aria-hidden="true">+</span>
+                                    <img src="assets/images/sice/sice-logo.webp" alt="SICE" width="316" height="150" loading="lazy" decoding="async">
+                                </div>
+                                <h2>Capacidad global. Ejecución local.</h2>
+                                <p>iTTel integra la tecnología y la experiencia de SICE con presencia territorial, operación y soporte en Argentina.</p>
+                                <div class="renewal-sice__roles">
+                                    <p><strong>SICE</strong><span>Tecnología, sistemas y experiencia internacional.</span></p>
+                                    <p><strong>iTTel</strong><span>Integración, despliegue, operación y mantenimiento local.</span></p>
+                                </div>
+                                <p class="renewal-sice__note">Homologados por SICE Tecnología y Sistemas para Argentina.</p>
+                            </div>
+                            <div class="renewal-sice__visual renewal-sice__visual--territory">
+                                <img src="assets/images/ciudad.webp" alt="Cobertura operacional en la Ciudad de Buenos Aires" width="1513" height="1040" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="renewal-sice__scene renewal-sice__scene--platform" data-sice-scene="2" aria-hidden="true">
+                        <div class="renewal-sice__scene-grid">
+                            <div class="renewal-sice__content">
+                                <span class="renewal-kicker">PLATAFORMA INTEGRAL ITS</span>
+                                <h2>SIDERA: una visión común para toda la operación.</h2>
+                                <p>Plataforma abierta, modular y flexible para integrar mapas, eventos, equipos, comunicaciones y analítica en entornos operativos 24/7.</p>
+                                <ul class="renewal-sice__features">
+                                    <li>Mapas operacionales</li>
+                                    <li>Gestión de eventos</li>
+                                    <li>Equipos y comunicaciones</li>
+                                    <li>Analítica integrada</li>
+                                </ul>
+                            </div>
+                            <div class="renewal-sice__visual renewal-sice__visual--screen">
+                                <img src="assets/images/sice/sidera-control.webp" alt="Interfaz operacional de la plataforma SIDERA" width="1394" height="722" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="renewal-sice__scene renewal-sice__scene--audit" data-sice-scene="3" aria-hidden="true">
+                        <div class="renewal-sice__scene-grid">
+                            <div class="renewal-sice__content">
+                                <span class="renewal-kicker">PRODUCTO ITTEL</span>
+                                <h2>Auditoría Urbana: la operación de campo, trazable.</h2>
+                                <p>Una plataforma de iTTel para organizar tareas, cuadrillas, equipos e inventario, con evidencia y seguimiento de cada intervención.</p>
+                                <ul class="renewal-sice__features">
+                                    <li>Tareas y cuadrillas</li>
+                                    <li>Equipos e inventario</li>
+                                    <li>Evidencia en campo</li>
+                                    <li>Trazabilidad y control</li>
+                                </ul>
+                            </div>
+                            <div class="renewal-sice__visual renewal-sice__visual--screen">
+                                <img src="assets/images/diseno_nuevo_diapo/5plataformaauditoria.webp" alt="Interfaz de gestión de Auditoría Urbana" width="1586" height="992" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="renewal-sice__progress" aria-label="Progreso de la narrativa SICE">
+                        <span data-sice-current>01</span>
+                        <div aria-hidden="true"><i data-sice-progress></i></div>
+                        <span>04</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="casos-exito" class="section renewal-cases" aria-labelledby="casos-title">
+            <header class="renewal-cases__header container">
+                <span class="renewal-kicker">CASOS DE ÉXITO</span>
+                <h2 id="casos-title">Infraestructura en operación real.</h2>
+            </header>
+
+            <article class="renewal-case renewal-case--rail">
+                <img class="renewal-case__media" src="assets/images/diseno_nuevo_diapo/horizontal/trenes.webp" alt="Infraestructura ferroviaria conectada por iTTel" width="1672" height="941" loading="lazy" decoding="async">
+                <div class="renewal-case__overlay" aria-hidden="true"></div>
+                <div class="container renewal-case__content">
+                    <span class="renewal-kicker">REDES EN ARGENTINA</span>
+                    <h3>Conectividad crítica a escala nacional.</h3>
+                    <p>Redes de alta disponibilidad para sostener operaciones de transporte e infraestructura en distintos puntos del país.</p>
+                </div>
+            </article>
+
+            <article class="renewal-case renewal-case--highways">
+                <div class="container renewal-case__split">
+                    <div class="renewal-case__maps">
+                        <img src="assets/images/ciudad.webp" alt="Red en autopistas de la Ciudad de Buenos Aires" width="1513" height="1040" loading="lazy" decoding="async">
+                        <img src="assets/images/provincia.webp" alt="Red en autopistas de la Provincia de Buenos Aires" width="1625" height="968" loading="lazy" decoding="async">
+                    </div>
+                    <div class="renewal-case__copy">
+                        <span class="renewal-kicker">REDES EN AUTOPISTAS</span>
+                        <h3>Más de 1.000 km de red y más de 200 torres.</h3>
+                        <p>Despliegue y operación de infraestructura de telecomunicaciones en corredores viales urbanos, provinciales y nacionales.</p>
+                        <dl class="renewal-case__facts">
+                            <div><dt>+300 km</dt><dd>Ciudad de Buenos Aires · 73 torres</dd></div>
+                            <div><dt>+100 km</dt><dd>Provincia de Buenos Aires · 41 torres</dd></div>
+                        </dl>
+                    </div>
+                </div>
+            </article>
+
+            <article class="renewal-case renewal-case--isp">
+                <div class="container">
+                    <header class="renewal-case__isp-heading">
+                        <span class="renewal-kicker">REDES DE NUESTROS ISP</span>
+                        <h3>Redes locales, impacto directo.</h3>
+                        <p>Infraestructura desplegada para acompañar a operadores de Internet en su crecimiento territorial.</p>
+                    </header>
+                    <div class="renewal-case__isp-grid">
+                        <figure>
+                            <img src="assets/images/image_rediseño/cabared.webp" alt="Trazado de red ISP en La Matanza" width="445" height="287" loading="lazy" decoding="async">
+                            <figcaption><strong>La Matanza</strong><span>Red FTTH para LARANET.</span></figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/images/image_rediseño/bsasred.webp" alt="Trazado de red ISP en Tandil" width="448" height="287" loading="lazy" decoding="async">
+                            <figcaption><strong>Tandil</strong><span>Red FTTH para USITTEL.</span></figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </article>
+        </section>
+    <template class="legacy-renewal-source" data-legacy-layout>
     <!-- =============================================
          HERO — Video Fullscreen
          ============================================= -->
-    <section id="inicio" class="hero-fullscreen hero-image">
+    <section id="legacy-inicio" class="hero-fullscreen hero-image">
         <div class="hero-image__bg" aria-hidden="true"></div>
         <div class="hero-image__overlay" aria-hidden="true"></div>
         <div class="container hero-image__content">
@@ -103,7 +420,7 @@
     <!-- =============================================
          UNIDADES DE NEGOCIO
          ============================================= -->
-    <section id="unidades-negocio" class="section business-units-section">
+    <section id="legacy-unidades-negocio" class="section business-units-section">
         <div class="container">
             <div class="business-units-shell">
                 <div class="business-units-intro" data-aos="fade-up">
@@ -484,7 +801,7 @@
         </div>
     </section>
 
-    <section id="casos-exito" class="section success-cases-section success-cases-section--soft">
+    <section id="legacy-casos-exito" class="section success-cases-section success-cases-section--soft">
         <div class="container">
             <span class="global-eyebrow" data-aos="fade-up">GRUPO ITTEL | CASOS DE ÉXITO</span>
             <div class="success-cases-header" data-aos="fade-up">
@@ -581,7 +898,7 @@
         </div>
     </section>
 
-    <section id="alianza-sice" class="section sice-alliance-section">
+    <section id="legacy-alianza-sice" class="section sice-alliance-section">
         <div class="container">
             <header class="sice-alliance-header" data-aos="fade-up">
                 <span class="global-eyebrow">GRUPO ITTEL | ALIANZA TECNOL&Oacute;GICA</span>
@@ -865,6 +1182,8 @@
         </div>
     </section>
 
+    </template>
+
     <section id="stats" class="section stats-v2 stats-v2--backed">
         <div class="container">
             <div class="stats-v2-header" data-aos="fade-up">
@@ -874,21 +1193,21 @@
             <div class="stats-v2-grid" data-aos="fade-up" data-aos-delay="80">
                 <div class="stat-v2-item" data-aos="fade-up" data-aos-delay="100">
                     <div class="stat-v2-number-group">
-                        <span class="stat-v2-number" data-target="15">0</span>
+                        <span class="stat-v2-number" data-target="15">15</span>
                         <span class="stat-v2-suffix">+</span>
                     </div>
                     <p class="stat-v2-label">AÑOS DE EXPERIENCIA</p>
                 </div>
                 <div class="stat-v2-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="stat-v2-number-group">
-                        <span class="stat-v2-number" data-target="340">0</span>
+                        <span class="stat-v2-number" data-target="340">340</span>
                         <span class="stat-v2-suffix">+</span>
                     </div>
                     <p class="stat-v2-label">PROYECTOS DE ÉXITO</p>
                 </div>
                 <div class="stat-v2-item" data-aos="fade-up" data-aos-delay="300">
                     <div class="stat-v2-number-group">
-                        <span class="stat-v2-number" data-target="99.99">0</span>
+                        <span class="stat-v2-number" data-target="99.99">99.99</span>
                         <span class="stat-v2-suffix">%</span>
                     </div>
                     <p class="stat-v2-label">DE SLA GARANTIZADO</p>
@@ -990,7 +1309,7 @@
                 </div>
                 <div class="contact-clean-right">
                     <div class="contact-map clean">
-                        <iframe
+                        <iframe title="Ubicación de Grupo iTTel en Puerto Madero"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.8449842614746!2d-58.36786302362235!3d-34.60767597295765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb1f88c4e3f1%3A0x98e82e4c6c68b3c4!2sAv.%20Alicia%20Moreau%20de%20Justo%201930%2C%20C1107AAP%20CABA!5e0!3m2!1ses-419!2sar!4v1737586800000!5m2!1ses-419!2sar"
                             allowfullscreen="auto" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
@@ -1035,6 +1354,8 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -1043,7 +1364,7 @@
                     <h4 data-i18n="footer.links.title">Enlaces Rápidos</h4>
                     <ul class="footer-links">
                         <li><a href="#unidades-negocio" data-i18n="nav.nosotros">Nosotros</a></li>
-                        <li><a href="#infraestructura-cobertura" data-i18n="nav.servicios">Servicios</a></li>
+                        <li><a href="#soluciones" data-i18n="footer.links.services">Soluciones</a></li>
                         <li><a href="#clientes" data-i18n="nav.clientes">Clientes</a></li>
                         <li><a href="#alianza-sice">Partners</a></li>
                         <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
@@ -1052,7 +1373,7 @@
 
                 <div class="footer-section">
                     <h4 data-i18n="footer.about.title">Sobre Nosotros</h4>
-                    <p data-i18n="footer.about.text">Nos caracteriza la innovacion continua, integrando IT y Telecomunicaciones, brindamos servicios estratégicos y de valor agregado.</p>
+                    <p data-i18n="footer.about.text">Nos caracteriza la innovación continua, integrando IT y Telecomunicaciones, brindamos servicios estratégicos y de valor agregado.</p>
                 </div>
 
                 <div class="footer-section">
@@ -1071,14 +1392,14 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="back-to-top">
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Volver arriba">
         <i class="fas fa-chevron-up"></i>
     </button>
 
     <!-- Scripts -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./js/main.js?v=5"></script>
+    <script src="./js/main.js?v=6"></script>
     <script>
         // Inicializar AOS
         AOS.init({

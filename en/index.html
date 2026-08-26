@@ -18,7 +18,7 @@
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/main.css?v=5">
+    <link rel="stylesheet" href="../assets/css/main.css?v=6">
     <link rel="icon" href="../assets/images/favicon.webp" type="image/webp">
 
     <!-- Google reCAPTCHA will be loaded at the end -->
@@ -34,14 +34,14 @@
             <div class="nav-menu-glass" id="nav-menu">
                 <a href="#inicio" class="nav-link-glass active">HOME</a>
                 <a href="#unidades-negocio" class="nav-link-glass">BUSINESS UNITS</a>
-                <a href="#obras-telecomunicaciones" class="nav-link-glass">WORKS</a>
-                <a href="#casos-ftth" class="nav-link-glass">SUCCESS CASES</a>
-                <a href="#sice-alliance" class="nav-link-glass">PARTNERS</a>
+                <a href="#soluciones" class="nav-link-glass">SOLUTIONS</a>
+                <a href="#casos-exito" class="nav-link-glass">SUCCESS CASES</a>
+                <a href="#alianza-sice" class="nav-link-glass">PARTNERS</a>
                 <a href="#clientes" class="nav-link-glass">CLIENTS</a>
                 <a href="#contacto" class="nav-link-glass">CONTACT</a>
 
                 <div class="language-selector-glass">
-                    <button class="language-btn-glass" id="language-btn">
+                    <button class="language-btn-glass" id="language-btn" type="button" aria-controls="language-dropdown" aria-expanded="false" aria-label="Change language">
                         <img src="https://flagcdn.com/w20/us.png" alt="USA" class="flag-icon">
                         <span>ENG</span>
                         <i class="fas fa-chevron-down"></i>
@@ -60,7 +60,7 @@
                 </div>
             </div>
 
-            <button class="nav-toggle-glass" id="nav-toggle">
+            <button class="nav-toggle-glass" id="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" aria-label="Open navigation">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -68,10 +68,157 @@
         </div>
     </nav>
 
+    <main id="main-content">
+        <section id="inicio" class="section renewal-hero" data-renewal-hero aria-roledescription="carousel" aria-label="iTTel Group: IT and Telecommunications">
+            <div class="renewal-hero__slides">
+                <figure class="renewal-hero__slide is-active" data-hero-slide aria-hidden="false">
+                    <img src="../assets/images/fondo_hero/fondo4k.webp" alt="Telecommunications infrastructure deployment at height" width="3344" height="1882" fetchpriority="high" decoding="async">
+                </figure>
+                <figure class="renewal-hero__slide" data-hero-slide aria-hidden="true">
+                    <img src="../assets/images/fondo_hero/operation-center.webp" alt="Road and technology infrastructure operations centre" width="879" height="796" loading="lazy" decoding="async">
+                </figure>
+            </div>
+            <div class="renewal-hero__veil" aria-hidden="true"></div>
+            <div class="container renewal-hero__content">
+                <div class="renewal-hero__copy">
+                    <span class="renewal-kicker">ITTEL GROUP</span>
+                    <img src="../assets/images/fondo_hero/Logo_Ittel_AI.png" alt="iTTel Group" class="renewal-hero__logo" width="320" height="108" decoding="async">
+                    <p class="renewal-hero__subtitle">Information Technology &amp; Telecommunications</p>
+                    <h1>Leaders in Argentina in the development, operation and integration of IT &amp; TELCO infrastructure at scale.</h1>
+                </div>
+            </div>
+            <div class="renewal-hero__controls" aria-label="Hero controls">
+                <button type="button" data-hero-prev aria-label="Previous scene">←</button>
+                <span class="renewal-hero__status" data-hero-status aria-live="polite">TELCO · 01 / 02</span>
+                <button type="button" data-hero-pause aria-label="Pause playback" aria-pressed="false">Pause</button>
+                <button type="button" data-hero-next aria-label="Next scene">→</button>
+            </div>
+        </section>
+
+        <section id="unidades-negocio" class="section renewal-overview">
+            <img class="renewal-overview__blueprint" src="../assets/images/diseno_nuevo_diapo/2fondo.webp" alt="" aria-hidden="true" width="1672" height="941" loading="lazy" decoding="async">
+            <div class="container renewal-overview__inner">
+                <header class="renewal-section-heading">
+                    <span class="renewal-kicker">ITTEL GROUP</span>
+                    <h2>Infrastructure that connects.<br>Technology that decides.</h2>
+                    <p>We integrate telecommunications and IT to deploy, operate and maintain critical infrastructure with a complete service perspective.</p>
+                </header>
+                <div class="renewal-capabilities" aria-label="iTTel Group capabilities">
+                    <article class="renewal-capability"><span>01 / TELCO</span><h3>Networks and infrastructure</h3><p>Deployment, operation and maintenance of high-availability networks.</p></article>
+                    <article class="renewal-capability"><span>02 / TELCO</span><h3>Works and integration</h3><p>Field implementation with engineering, crews and operational control.</p></article>
+                    <article class="renewal-capability"><span>03 / TELCO</span><h3>Maintenance</h3><p>Preventive and corrective response to sustain continuity.</p></article>
+                    <article class="renewal-capability"><span>04 / IT</span><h3>Intelligent operations</h3><p>Integration of ITS systems, events, equipment and communications.</p></article>
+                    <article class="renewal-capability"><span>05 / IT</span><h3>Management platforms</h3><p>Centralised operational information to coordinate and decide.</p></article>
+                    <article class="renewal-capability"><span>06 / IT</span><h3>Analytics and traceability</h3><p>Data and evidence to improve control, monitoring and response.</p></article>
+                </div>
+                <p class="renewal-overview__closing">One operation. Two complementary capabilities.</p>
+            </div>
+        </section>
+
+        <section id="soluciones" class="section renewal-solutions" aria-labelledby="solutions-title">
+            <header class="renewal-solutions__intro container">
+                <span class="renewal-kicker">SOLUTIONS</span>
+                <h2 id="solutions-title">End-to-end capability, visible at every stage.</h2>
+            </header>
+            <article class="renewal-solution renewal-solution--light">
+                <img class="renewal-solution__media" src="../assets/images/diseno_nuevo_diapo/horizontal/obra1horizontal.webp" alt="iTTel crew deploying telecommunications infrastructure" width="1672" height="941" loading="lazy" decoding="async">
+                <div class="renewal-solution__shade" aria-hidden="true"></div>
+                <div class="container renewal-solution__layout"><div class="renewal-solution__card renewal-solution__card--right">
+                    <span class="renewal-kicker">01 / NEUTRAL NETWORKS</span><h3>Shared infrastructure to connect further and better.</h3>
+                    <p>We design, deploy and operate telecommunications networks prepared for multiple operators and services.</p>
+                    <ul><li>Network design and deployment</li><li>Infrastructure operations</li><li>Operator integration</li><li>Scalability and continuity</li></ul>
+                </div></div>
+            </article>
+            <article class="renewal-solution renewal-solution--dark renewal-solution--its">
+                <div class="container renewal-solution__layout renewal-solution__layout--split">
+                    <div class="renewal-solution__copy"><span class="renewal-kicker">02 / INTELLIGENT OPERATIONS · ITS</span><h3>Data, events and equipment in one coordinated operation.</h3>
+                        <p>We integrate platforms, communications and devices to build a shared operational view of the infrastructure.</p>
+                        <ul><li>Centralised monitoring</li><li>Event management</li><li>Equipment integration</li><li>Decision analytics</li></ul>
+                    </div>
+                    <div class="renewal-solution__visual renewal-solution__visual--its">
+                        <img src="../assets/images/ciudad.webp" alt="Operational infrastructure map for the City of Buenos Aires" width="1513" height="1040" loading="lazy" decoding="async">
+                        <img src="../assets/images/sice/sidera-control.webp" alt="SIDERA operational control panel" width="1394" height="722" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </article>
+            <article class="renewal-solution renewal-solution--light">
+                <img class="renewal-solution__media" src="../assets/images/diseno_nuevo_diapo/horizontal/obra2horizontal.webp" alt="Technology works and integration carried out by iTTel" width="1672" height="941" loading="lazy" decoding="async">
+                <div class="renewal-solution__shade" aria-hidden="true"></div>
+                <div class="container renewal-solution__layout"><div class="renewal-solution__card renewal-solution__card--right">
+                    <span class="renewal-kicker">03 / WORKS AND TECHNOLOGY INTEGRATION</span><h3>From engineering to the field, with coordinated delivery.</h3>
+                    <p>We implement critical infrastructure by integrating works, technology, equipment and commissioning.</p>
+                    <ul><li>Engineering and planning</li><li>Specialist crews</li><li>Systems integration</li><li>Quality control and delivery</li></ul>
+                </div></div>
+            </article>
+            <article class="renewal-solution renewal-solution--light renewal-solution--maintenance">
+                <img class="renewal-solution__media" src="../assets/images/diseno_nuevo_diapo/horizontal/mantenimiento.webp" alt="iTTel technician maintaining infrastructure" width="1672" height="941" loading="lazy" decoding="async">
+                <div class="renewal-solution__shade" aria-hidden="true"></div>
+                <div class="container renewal-solution__layout"><div class="renewal-solution__card renewal-solution__card--right">
+                    <span class="renewal-kicker">04 / MAINTENANCE</span><h3>Operational continuity, every day.</h3>
+                    <p>We sustain critical infrastructure through preventive and corrective maintenance, task traceability and response capability.</p>
+                    <ul><li>Prevention and diagnostics</li><li>Corrective response</li><li>Task monitoring</li><li>24/7 operational coverage</li></ul>
+                </div></div>
+            </article>
+        </section>
+
+        <section id="alianza-sice" class="section renewal-sice" data-renewal-sice aria-label="iTTel and SICE technology alliance">
+            <div class="renewal-sice__sticky"><div class="renewal-sice__stage">
+                <article class="renewal-sice__scene is-active" data-sice-scene="0" aria-hidden="false">
+                    <div class="renewal-sice__scene-grid renewal-sice__scene-grid--map">
+                        <div class="renewal-sice__content">
+                            <img class="renewal-sice__brand" src="../assets/images/sice/sice-logo.webp" alt="SICE" width="316" height="150" loading="lazy" decoding="async">
+                            <span class="renewal-kicker">TECHNOLOGY AND SYSTEMS</span><h2>Global experience in critical infrastructure.</h2>
+                            <p>SICE brings international experience in control systems, tunnels, motorways and intelligent mobility.</p>
+                            <dl class="renewal-sice__metrics"><div><dt>3500</dt><dd>people</dd></div><div><dt>+30</dt><dd>countries</dd></div><div><dt>5</dt><dd>continents</dd></div><div><dt>3000 / 800</dt><dd>public / private clients</dd></div></dl>
+                        </div>
+                        <div class="renewal-map" data-sice-map>
+                            <img src="../assets/images/sice/sice-world-map.webp" alt="Map of selected international SICE projects" width="1672" height="941" loading="lazy" decoding="async">
+                            <button type="button" class="renewal-map__point" style="--x: 29%; --y: 30%;" data-country="Canada" data-project="ITS for the new bridge over the St. Lawrence River (Montreal)" data-meta="12.7M USD · 2015–2019 · 2.1-mile bridge" aria-label="View SICE experience in Canada"></button>
+                            <button type="button" class="renewal-map__point" style="--x: 34%; --y: 43%;" data-country="United States" data-project="TCMS &amp; ICA systems for SR99 Tunnel · Systems Integration (Seattle)" data-meta="24.4M USD · 2012–2019 · SIDERA · 2-mile tunnel" aria-label="View SICE experience in the United States"></button>
+                            <button type="button" class="renewal-map__point" style="--x: 36%; --y: 64%;" data-country="Peru" data-project="Gambetta Airport Tunnel · ITS, electrical and mechanical systems" data-meta="10M USD · 2014–2016 · 2.1 miles" aria-label="View SICE experience in Peru"></button>
+                            <button type="button" class="renewal-map__point" style="--x: 50%; --y: 39%;" data-country="Spain" data-project="Madrid urban tunnels management and control centre" data-meta="39.3M USD · 2001–2026 · 29 tunnels integrated" aria-label="View SICE experience in Spain"></button>
+                            <button type="button" class="renewal-map__point" style="--x: 48%; --y: 41%;" data-country="Portugal" data-project="Madeira tunnels · safety, control system &amp; control centre" data-meta="15M USD · SIDERA migration · 52 tunnels integrated" aria-label="View SICE experience in Portugal"></button>
+                            <button type="button" class="renewal-map__point" style="--x: 56%; --y: 28%;" data-country="Norway" data-project="Electromechanical &amp; automation systems for Sotra Connection (Bergen)" data-meta="50.83M USD · 2024–2027" aria-label="View SICE experience in Norway"></button>
+                            <button type="button" class="renewal-map__point" style="--x: 58%; --y: 29%;" data-country="Sweden" data-project="Stockholm Bypass · Electromechanical systems" data-meta="31.7M USD · 2019–2030 · 34.3 miles" aria-label="View SICE experience in Sweden"></button>
+                            <button type="button" class="renewal-map__point" style="--x: 54%; --y: 33%;" data-country="Denmark" data-project="Electromechanical systems for Femarn Belt Fixed Link" data-meta="+500M USD · 2023–2030 · 15.6 miles" aria-label="View SICE experience in Denmark"></button>
+                            <button type="button" class="renewal-map__point" style="--x: 62%; --y: 45%;" data-country="Israel" data-project="Ayalon Highway · Traffic monitoring and control system" data-meta="6.3M USD · 2012–2017" aria-label="View SICE experience in Israel"></button>
+                            <button type="button" class="renewal-map__point" style="--x: 82%; --y: 69%;" data-country="Australia" data-project="WestConnex Tunnels · M4 East, M8, M4-M8 Link and Rozelle Interchange" data-meta="160M USD · 2016–2023 · SIDERA" aria-label="View SICE experience in Australia"></button>
+                            <button type="button" class="renewal-map__point" style="--x: 87%; --y: 75%;" data-country="New Zealand" data-project="Waterview Tunnel · integrated tunnel management system" data-meta="106.7M USD · 2012–ongoing · SIDERA" aria-label="View SICE experience in New Zealand"></button>
+                            <aside class="renewal-map__detail" data-map-detail aria-live="polite"><button type="button" data-map-close aria-label="Close details">×</button><strong data-map-country>Spain</strong><span data-map-project>Madrid urban tunnels management and control centre</span><small data-map-meta>39.3M USD · 2001–2026 · 29 tunnels integrated</small></aside>
+                        </div>
+                    </div>
+                </article>
+                <article class="renewal-sice__scene renewal-sice__scene--alliance" data-sice-scene="1" aria-hidden="true">
+                    <div class="renewal-sice__scene-grid"><div class="renewal-sice__content">
+                        <span class="renewal-kicker">LOCAL ALLIANCE</span><div class="renewal-sice__lockup"><img src="../assets/images/logoIttel1.webp" alt="iTTel" width="560" height="197" loading="lazy" decoding="async"><span aria-hidden="true">+</span><img src="../assets/images/sice/sice-logo.webp" alt="SICE" width="316" height="150" loading="lazy" decoding="async"></div>
+                        <h2>Global capability. Local delivery.</h2><p>iTTel integrates SICE technology and experience with local presence, operations and support in Argentina.</p>
+                        <div class="renewal-sice__roles"><p><strong>SICE</strong><span>Technology, systems and international experience.</span></p><p><strong>iTTel</strong><span>Local integration, deployment, operations and maintenance.</span></p></div>
+                        <p class="renewal-sice__note">Certified by SICE Tecnología y Sistemas for Argentina.</p>
+                    </div><div class="renewal-sice__visual renewal-sice__visual--territory"><img src="../assets/images/ciudad.webp" alt="Operational coverage in the City of Buenos Aires" width="1513" height="1040" loading="lazy" decoding="async"></div></div>
+                </article>
+                <article class="renewal-sice__scene renewal-sice__scene--platform" data-sice-scene="2" aria-hidden="true">
+                    <div class="renewal-sice__scene-grid"><div class="renewal-sice__content"><span class="renewal-kicker">INTEGRATED ITS PLATFORM</span><h2>SIDERA: a shared view of the entire operation.</h2><p>An open, modular and flexible platform integrating maps, events, equipment, communications and analytics in 24/7 operational environments.</p><ul class="renewal-sice__features"><li>Operational maps</li><li>Event management</li><li>Equipment and communications</li><li>Integrated analytics</li></ul></div>
+                    <div class="renewal-sice__visual renewal-sice__visual--screen"><img src="../assets/images/sice/sidera-control.webp" alt="SIDERA operational platform interface" width="1394" height="722" loading="lazy" decoding="async"></div></div>
+                </article>
+                <article class="renewal-sice__scene renewal-sice__scene--audit" data-sice-scene="3" aria-hidden="true">
+                    <div class="renewal-sice__scene-grid"><div class="renewal-sice__content"><span class="renewal-kicker">ITTEL PRODUCT</span><h2>Urban Auditing: traceable field operations.</h2><p>An iTTel platform for organising tasks, crews, equipment and inventory, with evidence and monitoring for every intervention.</p><ul class="renewal-sice__features"><li>Tasks and crews</li><li>Equipment and inventory</li><li>Field evidence</li><li>Traceability and control</li></ul></div>
+                    <div class="renewal-sice__visual renewal-sice__visual--screen"><img src="../assets/images/diseno_nuevo_diapo/5plataformaauditoria.webp" alt="Urban Auditing management interface" width="1586" height="992" loading="lazy" decoding="async"></div></div>
+                </article>
+                <div class="renewal-sice__progress" aria-label="SICE narrative progress"><span data-sice-current>01</span><div aria-hidden="true"><i data-sice-progress></i></div><span>04</span></div>
+            </div></div>
+        </section>
+
+        <section id="casos-exito" class="section renewal-cases" aria-labelledby="cases-title">
+            <header class="renewal-cases__header container"><span class="renewal-kicker">SUCCESS CASES</span><h2 id="cases-title">Infrastructure in real-world operation.</h2></header>
+            <article class="renewal-case renewal-case--rail"><img class="renewal-case__media" src="../assets/images/diseno_nuevo_diapo/horizontal/trenes.webp" alt="Railway infrastructure connected by iTTel" width="1672" height="941" loading="lazy" decoding="async"><div class="renewal-case__overlay" aria-hidden="true"></div><div class="container renewal-case__content"><span class="renewal-kicker">NETWORKS IN ARGENTINA</span><h3>Critical connectivity at national scale.</h3><p>High-availability networks supporting transport and infrastructure operations across the country.</p></div></article>
+            <article class="renewal-case renewal-case--highways"><div class="container renewal-case__split"><div class="renewal-case__maps"><img src="../assets/images/ciudad.webp" alt="Motorway network in the City of Buenos Aires" width="1513" height="1040" loading="lazy" decoding="async"><img src="../assets/images/provincia.webp" alt="Motorway network in the Province of Buenos Aires" width="1625" height="968" loading="lazy" decoding="async"></div><div class="renewal-case__copy"><span class="renewal-kicker">MOTORWAY NETWORKS</span><h3>More than 1,000 km of network and over 200 towers.</h3><p>Deployment and operation of telecommunications infrastructure across urban, provincial and national road corridors.</p><dl class="renewal-case__facts"><div><dt>+300 km</dt><dd>City of Buenos Aires · 73 towers</dd></div><div><dt>+100 km</dt><dd>Province of Buenos Aires · 41 towers</dd></div></dl></div></div></article>
+            <article class="renewal-case renewal-case--isp"><div class="container"><header class="renewal-case__isp-heading"><span class="renewal-kicker">OUR ISP NETWORKS</span><h3>Local networks, direct impact.</h3><p>Infrastructure deployed to support Internet operators as they expand their territorial coverage.</p></header><div class="renewal-case__isp-grid"><figure><img src="../assets/images/image_rediseño/cabared.webp" alt="ISP network layout in La Matanza" width="445" height="287" loading="lazy" decoding="async"><figcaption><strong>La Matanza</strong><span>FTTH network for LARANET.</span></figcaption></figure><figure><img src="../assets/images/image_rediseño/bsasred.webp" alt="ISP network layout in Tandil" width="448" height="287" loading="lazy" decoding="async"><figcaption><strong>Tandil</strong><span>FTTH network for USITTEL.</span></figcaption></figure></div></div></article>
+        </section>
+    <template class="legacy-renewal-source" data-legacy-layout>
     <!-- =============================================
          HERO — Video Fullscreen
          ============================================= -->
-    <section id="inicio" class="hero-fullscreen hero-image">
+    <section id="legacy-inicio" class="hero-fullscreen hero-image">
         <div class="hero-image__bg hero-image__bg--en" aria-hidden="true"></div>
         <div class="hero-image__overlay" aria-hidden="true"></div>
         <div class="container hero-image__content">
@@ -87,7 +234,7 @@
     <!-- =============================================
          ABOUT US
          ============================================= -->
-    <section id="unidades-negocio" class="section business-units-section">
+    <section id="legacy-unidades-negocio" class="section business-units-section">
         <div class="container">
             <div class="business-units-shell">
                 <div class="business-units-intro" data-aos="fade-up">
@@ -320,7 +467,7 @@
         </div>
     </section>
 
-    <section id="casos-exito" class="section success-cases-section success-cases-section--soft">
+    <section id="legacy-casos-exito" class="section success-cases-section success-cases-section--soft">
         <div class="container">
             <span class="global-eyebrow" data-aos="fade-up">GRUPO ITTEL | SUCCESS CASES</span>
             <div class="success-cases-header" data-aos="fade-up">
@@ -701,6 +848,8 @@
         </div>
     </section>
 
+    </template>
+
     <section id="stats" class="section stats-v2 stats-v2--backed">
         <div class="container">
             <div class="stats-v2-header" data-aos="fade-up">
@@ -710,21 +859,21 @@
             <div class="stats-v2-grid" data-aos="fade-up" data-aos-delay="80">
                 <div class="stat-v2-item" data-aos="fade-up" data-aos-delay="100">
                     <div class="stat-v2-number-group">
-                        <span class="stat-v2-number" data-target="15">0</span>
+                        <span class="stat-v2-number" data-target="15">15</span>
                         <span class="stat-v2-suffix">+</span>
                     </div>
                     <p class="stat-v2-label">YEARS OF EXPERIENCE</p>
                 </div>
                 <div class="stat-v2-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="stat-v2-number-group">
-                        <span class="stat-v2-number" data-target="340">0</span>
+                        <span class="stat-v2-number" data-target="340">340</span>
                         <span class="stat-v2-suffix">+</span>
                     </div>
                     <p class="stat-v2-label">SUCCESSFUL PROJECTS</p>
                 </div>
                 <div class="stat-v2-item" data-aos="fade-up" data-aos-delay="300">
                     <div class="stat-v2-number-group">
-                        <span class="stat-v2-number" data-target="99.99">0</span>
+                        <span class="stat-v2-number" data-target="99.99">99.99</span>
                         <span class="stat-v2-suffix">%</span>
                     </div>
                     <p class="stat-v2-label">GUARANTEED SLA</p>
@@ -797,7 +946,7 @@
                 </div>
                 <div class="contact-clean-right">
                     <div class="contact-map clean">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.8449842614746!2d-58.36786302362235!3d-34.60767597295765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb1f88c4e3f1%3A0x98e82e4c6c68b3c4!2sAv.%20Alicia%20Moreau%20de%20Justo%201930%2C%20C1107AAP%20CABA!5e0!3m2!1ses-419!2sar!4v1737586800000!5m2!1ses-419!2sar" allowfullscreen="auto" loading="lazy"></iframe>
+                        <iframe title="iTTel Group location in Puerto Madero" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.8449842614746!2d-58.36786302362235!3d-34.60767597295765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb1f88c4e3f1%3A0x98e82e4c6c68b3c4!2sAv.%20Alicia%20Moreau%20de%20Justo%201930%2C%20C1107AAP%20CABA!5e0!3m2!1ses-419!2sar!4v1737586800000!5m2!1ses-419!2sar" allowfullscreen="auto" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -830,6 +979,8 @@
         </div>
     </section>
 
+    </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -837,9 +988,9 @@
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="#unidades-negocio">About Us</a></li>
-                        <li><a href="#infraestructura-cobertura">Services</a></li>
+                        <li><a href="#soluciones">Solutions</a></li>
                         <li><a href="#clientes">Clients</a></li>
-                        <li><a href="#sice-alliance">Partners</a></li>
+                        <li><a href="#alianza-sice">Partners</a></li>
                         <li><a href="#contacto">Contact</a></li>
                     </ul>
                 </div>
@@ -861,10 +1012,10 @@
         </div>
     </footer>
 
-    <button class="back-to-top" id="back-to-top"><i class="fas fa-chevron-up"></i></button>
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="../js/main.js?v=5"></script>
+    <script src="../js/main.js?v=6"></script>
     <script>
         AOS.init({ duration: 1000, once: true, offset: 100 });
         

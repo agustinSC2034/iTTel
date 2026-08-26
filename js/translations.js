@@ -5,7 +5,7 @@ const translations = {
         'nav.inicio': 'INICIO',
         'nav.nosotros': 'NOSOTROS',
         'nav.servicios': 'IT & TELCO',
-        'nav.obras': 'OBRAS',
+        'nav.obras': 'SOLUCIONES',
         'nav.proyectos': 'PROYECTOS',
         'nav.clientes': 'CLIENTES',
         'nav.contacto': 'CONTACTO',
@@ -146,10 +146,10 @@ const translations = {
         
         // Footer
         'footer.about.title': 'Sobre Nosotros',
-        'footer.about.text': 'Nos caracteriza la innovacion continua, integrando IT y Telecomunicaciones, brindamos servicios estratégicos y de valor agregado.',
+        'footer.about.text': 'Nos caracteriza la innovación continua, integrando IT y Telecomunicaciones, brindamos servicios estratégicos y de valor agregado.',
         
         'footer.links.title': 'Enlaces Rápidos',
-        'footer.links.services': 'Servicios',
+        'footer.links.services': 'Soluciones',
         'footer.links.projects': 'Proyectos',
         'footer.links.clients': 'Clientes',
         'footer.links.contact': 'Contacto',
@@ -167,7 +167,7 @@ const translations = {
         'nav.inicio': 'HOME',
         'nav.nosotros': 'ABOUT US',
         'nav.servicios': 'IT & TELCO',
-        'nav.obras': 'FIELD WORKS',
+        'nav.obras': 'SOLUTIONS',
         'nav.proyectos': 'PROJECTS',
         'nav.clientes': 'CLIENTS',
         'nav.contacto': 'CONTACT',
@@ -311,7 +311,7 @@ const translations = {
         'footer.about.text': 'We are characterized by continuous innovation, integrating IT and Telecommunications, providing strategic and value-added services.',
         
         'footer.links.title': 'Quick Links',
-        'footer.links.services': 'Services',
+        'footer.links.services': 'Solutions',
         'footer.links.projects': 'Projects',
         'footer.links.clients': 'Clients',
         'footer.links.contact': 'Contact',

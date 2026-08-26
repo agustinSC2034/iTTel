@@ -15,25 +15,34 @@ document.addEventListener('DOMContentLoaded', function() {
         disable: function() { return window.innerWidth <= 768; }
     });
     
-    // Initialize all components
+    const hasRenewalExperience = Boolean(document.querySelector('[data-renewal-hero]'));
+
+    // Initialize shared components
     initNavigation();
-    initHero();
-    initInnovationTech(); // Nueva función para la sección innovadora
     initStats();
-    initProjectsFull();
     initClients();
-    initContactForm(); // Nueva función para el formulario de contacto
-    initInnovationParticles(); // Partículas en IT & TELCO
+    initContactForm();
     initScrollEffects();
     initBackToTop();
     initLanguageSelector();
-    initProjectsInteractive(); // Nueva funcionalidad de slices interactivos
-    //initItGallery(); // Galería anterior deshabilitada al reemplazar 'Obras en Campo'
-    initModalImageFullscreen(); // Fullscreen imagen en modal
-    initObrasGallery(); // Nueva galería de Obras en Campo
-    initImageStoryCarousels();
-    initSiceProjectsMap();
-    initSicePlatformTabs();
+
+    if (hasRenewalExperience) {
+        initRenewalHero();
+        initRenewalSiceNarrative();
+        initRenewalSiceMap();
+        initRenewalNavigationA11y();
+    } else {
+        initHero();
+        initInnovationTech();
+        initProjectsFull();
+        initInnovationParticles();
+        initProjectsInteractive();
+        initModalImageFullscreen();
+        initObrasGallery();
+        initImageStoryCarousels();
+        initSiceProjectsMap();
+        initSicePlatformTabs();
+    }
 });
 
 // Navigation functionality
@@ -813,8 +822,9 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Tab' && !document.querySelector('.skip-link:focus')) {
         // Add skip link if not present
         const skipLink = document.createElement('a');
-        skipLink.href = '#nosotros';
-        skipLink.textContent = 'Saltar al contenido principal';
+        const isEnglish = document.documentElement.lang.toLowerCase().startsWith('en');
+        skipLink.href = isEnglish ? '#main-content' : '#contenido-principal';
+        skipLink.textContent = isEnglish ? 'Skip to main content' : 'Saltar al contenido principal';
         skipLink.className = 'skip-link';
         skipLink.style.cssText = `
             position: absolute;
@@ -2743,4 +2753,300 @@ function initSicePlatformTabs() {
             });
         });
     });
+}
+
+function initRenewalHero() {
+    const hero = document.querySelector('[data-renewal-hero]');
+    if (!hero) return;
+
+    document.body.classList.add('renewal-active');
+
+    const slides = Array.from(hero.querySelectorAll('[data-hero-slide]'));
+    const previousButton = hero.querySelector('[data-hero-prev]');
+    const nextButton = hero.querySelector('[data-hero-next]');
+    const pauseButton = hero.querySelector('[data-hero-pause]');
+    const status = hero.querySelector('[data-hero-status]');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const isEnglish = document.documentElement.lang.toLowerCase().startsWith('en');
+    const labels = ['TELCO', 'IT'];
+
+    let currentIndex = 0;
+    let timerId = null;
+    let userPaused = reducedMotion.matches;
+    let temporarilyPaused = false;
+    let inViewport = true;
+
+    const updatePauseControl = () => {
+        if (!pauseButton) return;
+        const paused = userPaused || reducedMotion.matches;
+        pauseButton.setAttribute('aria-pressed', paused ? 'true' : 'false');
+        pauseButton.textContent = paused
+            ? (isEnglish ? 'Play' : 'Reproducir')
+            : (isEnglish ? 'Pause' : 'Pausa');
+        pauseButton.setAttribute('aria-label', paused
+            ? (isEnglish ? 'Resume playback' : 'Reanudar reproducción')
+            : (isEnglish ? 'Pause playback' : 'Pausar reproducción'));
+    };
+
+    const showSlide = (nextIndex) => {
+        currentIndex = (nextIndex + slides.length) % slides.length;
+        slides.forEach((slide, index) => {
+            const isActive = index === currentIndex;
+            slide.classList.toggle('is-active', isActive);
+            slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+        });
+        if (status) {
+            status.textContent = `${labels[currentIndex]} · ${String(currentIndex + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+        }
+    };
+
+    const stopAutoplay = () => {
+        if (timerId !== null) {
+            window.clearInterval(timerId);
+            timerId = null;
+        }
+    };
+
+    const startAutoplay = () => {
+        stopAutoplay();
+        if (slides.length < 2 || userPaused || temporarilyPaused || !inViewport || document.hidden || reducedMotion.matches) return;
+        timerId = window.setInterval(() => showSlide(currentIndex + 1), 7000);
+    };
+
+    const pauseFromInteraction = () => {
+        userPaused = true;
+        stopAutoplay();
+        updatePauseControl();
+    };
+
+    previousButton?.addEventListener('click', () => {
+        showSlide(currentIndex - 1);
+        pauseFromInteraction();
+    });
+
+    nextButton?.addEventListener('click', () => {
+        showSlide(currentIndex + 1);
+        pauseFromInteraction();
+    });
+
+    pauseButton?.addEventListener('click', () => {
+        userPaused = !userPaused;
+        updatePauseControl();
+        startAutoplay();
+    });
+
+    hero.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') {
+            event.preventDefault();
+            showSlide(currentIndex - 1);
+            pauseFromInteraction();
+        }
+        if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            showSlide(currentIndex + 1);
+            pauseFromInteraction();
+        }
+    });
+
+    hero.addEventListener('mouseenter', () => {
+        temporarilyPaused = true;
+        stopAutoplay();
+    });
+    hero.addEventListener('mouseleave', () => {
+        temporarilyPaused = false;
+        startAutoplay();
+    });
+    hero.addEventListener('focusin', () => {
+        temporarilyPaused = true;
+        stopAutoplay();
+    });
+    hero.addEventListener('focusout', (event) => {
+        if (hero.contains(event.relatedTarget)) return;
+        temporarilyPaused = false;
+        startAutoplay();
+    });
+
+    document.addEventListener('visibilitychange', startAutoplay);
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            inViewport = entries[0]?.isIntersecting ?? true;
+            hero.classList.toggle('is-out-of-view', !inViewport);
+            startAutoplay();
+        }, { threshold: 0.15 });
+        observer.observe(hero);
+    }
+
+    const handleMotionChange = () => {
+        if (reducedMotion.matches) {
+            userPaused = true;
+            stopAutoplay();
+        }
+        updatePauseControl();
+        startAutoplay();
+    };
+
+    reducedMotion.addEventListener?.('change', handleMotionChange);
+    showSlide(0);
+    updatePauseControl();
+    startAutoplay();
+}
+
+function initRenewalSiceNarrative() {
+    const section = document.querySelector('[data-renewal-sice]');
+    if (!section) return;
+
+    const scenes = Array.from(section.querySelectorAll('[data-sice-scene]'));
+    const currentLabel = section.querySelector('[data-sice-current]');
+    const progressBar = section.querySelector('[data-sice-progress]');
+    const desktopQuery = window.matchMedia('(min-width: 1200px)');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let activeIndex = -1;
+    let ticking = false;
+
+    const usesPinnedNarrative = () => desktopQuery.matches && !reducedMotion.matches;
+
+    const showScene = (index) => {
+        const safeIndex = Math.max(0, Math.min(scenes.length - 1, index));
+        if (activeIndex === safeIndex && usesPinnedNarrative()) return;
+        activeIndex = safeIndex;
+
+        scenes.forEach((scene, sceneIndex) => {
+            const isActive = sceneIndex === safeIndex;
+            scene.classList.toggle('is-active', isActive);
+
+            if (usesPinnedNarrative()) {
+                scene.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+                scene.toggleAttribute('inert', !isActive);
+            } else {
+                scene.setAttribute('aria-hidden', 'false');
+                scene.removeAttribute('inert');
+            }
+        });
+
+        if (currentLabel) currentLabel.textContent = String(safeIndex + 1).padStart(2, '0');
+        if (progressBar) progressBar.style.width = `${((safeIndex + 1) / scenes.length) * 100}%`;
+    };
+
+    const updateFromScroll = () => {
+        ticking = false;
+        if (!usesPinnedNarrative()) {
+            showScene(0);
+            return;
+        }
+
+        const scrollableDistance = Math.max(1, section.offsetHeight - window.innerHeight);
+        const progress = Math.max(0, Math.min(1, (window.scrollY - section.offsetTop) / scrollableDistance));
+        const nextIndex = Math.min(scenes.length - 1, Math.floor(progress * scenes.length));
+        showScene(nextIndex);
+    };
+
+    const requestUpdate = () => {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(updateFromScroll);
+    };
+
+    const handleModeChange = () => {
+        activeIndex = -1;
+        requestUpdate();
+    };
+
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate);
+    desktopQuery.addEventListener?.('change', handleModeChange);
+    reducedMotion.addEventListener?.('change', handleModeChange);
+    requestUpdate();
+}
+
+function initRenewalSiceMap() {
+    document.querySelectorAll('[data-sice-map]').forEach((map) => {
+        const points = Array.from(map.querySelectorAll('.renewal-map__point'));
+        const detail = map.querySelector('[data-map-detail]');
+        const country = detail?.querySelector('[data-map-country]');
+        const project = detail?.querySelector('[data-map-project]');
+        const meta = detail?.querySelector('[data-map-meta]');
+        const closeButton = detail?.querySelector('[data-map-close]');
+        let activePoint = points.find((point) => ['España', 'Spain'].includes(point.dataset.country));
+
+        const showDetail = (point) => {
+            if (!point || !detail) return;
+            activePoint = point;
+            points.forEach((item) => {
+                const isActive = item === point;
+                item.classList.toggle('is-active', isActive);
+                item.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+            });
+            if (country) country.textContent = point.dataset.country || '';
+            if (project) project.textContent = point.dataset.project || '';
+            if (meta) meta.textContent = point.dataset.meta || '';
+            detail.hidden = false;
+        };
+
+        const hideDetail = () => {
+            if (!detail) return;
+            detail.hidden = true;
+            points.forEach((item) => {
+                item.classList.remove('is-active');
+                item.setAttribute('aria-expanded', 'false');
+            });
+            activePoint = null;
+        };
+
+        points.forEach((point) => {
+            point.setAttribute('aria-expanded', 'false');
+            point.addEventListener('click', () => showDetail(point));
+            point.addEventListener('focus', () => showDetail(point));
+            point.addEventListener('pointerenter', () => showDetail(point));
+        });
+
+        closeButton?.addEventListener('click', hideDetail);
+
+        document.addEventListener('pointerdown', (event) => {
+            if (!map.contains(event.target)) hideDetail();
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key !== 'Escape' || !activePoint) return;
+            const pointToRestore = activePoint;
+            hideDetail();
+            pointToRestore.focus();
+        });
+
+        if (activePoint) showDetail(activePoint);
+    });
+}
+
+function initRenewalNavigationA11y() {
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const languageButton = document.getElementById('language-btn');
+    const languageDropdown = document.getElementById('language-dropdown');
+    const isEnglish = document.documentElement.lang.toLowerCase().startsWith('en');
+
+    const syncNavigationState = () => {
+        if (navToggle && navMenu) {
+            const expanded = navMenu.classList.contains('active');
+            navToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+            navToggle.setAttribute('aria-label', expanded
+                ? (isEnglish ? 'Close navigation' : 'Cerrar navegación')
+                : (isEnglish ? 'Open navigation' : 'Abrir navegación'));
+        }
+        if (languageButton && languageDropdown) {
+            languageButton.setAttribute('aria-expanded', languageDropdown.classList.contains('active') ? 'true' : 'false');
+        }
+    };
+
+    navToggle?.addEventListener('click', () => window.setTimeout(syncNavigationState, 0));
+    languageButton?.addEventListener('click', () => window.setTimeout(syncNavigationState, 0));
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape') return;
+        navMenu?.classList.remove('active');
+        navToggle?.classList.remove('active');
+        languageDropdown?.classList.remove('active');
+        syncNavigationState();
+    });
+
+    syncNavigationState();
 }
