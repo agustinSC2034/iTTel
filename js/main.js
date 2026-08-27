@@ -2780,9 +2780,9 @@ function initRenewalHero() {
         if (!pauseButton) return;
         const paused = userPaused || reducedMotion.matches;
         pauseButton.setAttribute('aria-pressed', paused ? 'true' : 'false');
-        pauseButton.textContent = paused
-            ? (isEnglish ? 'Play' : 'Reproducir')
-            : (isEnglish ? 'Pause' : 'Pausa');
+        pauseButton.innerHTML = paused
+            ? '<i class="fa-solid fa-play" aria-hidden="true"></i>'
+            : '<i class="fa-solid fa-pause" aria-hidden="true"></i>';
         pauseButton.setAttribute('aria-label', paused
             ? (isEnglish ? 'Resume playback' : 'Reanudar reproducción')
             : (isEnglish ? 'Pause playback' : 'Pausar reproducción'));
