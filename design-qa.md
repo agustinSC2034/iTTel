@@ -73,6 +73,41 @@ No quedan hallazgos P0, P1 o P2 en el Hero. Como P3 aceptable, la fotografía li
 
 final result: passed
 
+## Revalidación específica — Narrativa iTTel + SICE en mobile
+
+### Evidencia normalizada
+
+- Verdad visual y problema reportado: `C:/Users/Agustin/AppData/Local/Temp/codex-clipboard-7020b283-d8bf-4248-87e5-1ec5bdab9f87.png` y `C:/Users/Agustin/AppData/Local/Temp/codex-clipboard-a95aef95-174f-4a43-8574-437bcb7b7d5d.png`.
+- Implementación final: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/sice-mobile-final/global-390x844.png` y `alliance-390x844.png`.
+- Viewport CSS de Chrome: `390 × 844`, DPR 1. El área activa capturada fue `375 × 811` y se normalizó a `390 × 844` para la comparación.
+- Comparación completa conjunta: `sice-mobile-final/comparison-global.png`.
+- Comparación focal de orden y alianza: `sice-mobile-final/comparison-alliance.png`.
+- Estado: navegación móvil cerrada, sección SICE al inicio y alianza local en lectura natural; español. La estructura equivalente también se verificó en inglés.
+
+### Historial de hallazgos y correcciones
+
+- [P1 resuelto] Las escenas heredaban la lógica absoluta y sticky de escritorio, generando pantallas vacías, medios desconectados y títulos fuera del viewport. En `max-width: 900px` las cinco escenas ahora son bloques estáticos independientes, siempre visibles y sin transformaciones heredadas.
+- [P1 resuelto] La alianza local mostraba primero un mapa aislado y saltaba directamente a SIDERA. Se reordenó cada escena como copy → marca/roles → imagen, conservando global → experiencias → alianza → SIDERA → Auditoría Urbana.
+- [P2 resuelto] El logo SICE se veía como una tarjeta blanca dominante. Se recortó visualmente el asset corporativo existente dentro de un lockup compacto, sin recrear ni alterar la marca.
+- [P2 resuelto] Las once experiencias se comprimían en dos columnas a 390 px. Ahora son tarjetas de una columna con texto legible; desde 600 px pasan a dos columnas.
+- [P2 resuelto] Los dashboards y mapas usaban alturas rígidas y recortes agresivos. Ahora se presentan en contenedores con proporción controlada, `object-fit: contain` para interfaces y `cover` sólo para el mapa de Buenos Aires.
+- [P2 resuelto] Al ocultar saltos `<br>` en mobile se unían palabras en las bajadas. Se preservaron espacios reales en español e inglés.
+
+### Superficies de fidelidad
+
+- Tipografía: Poppins/Inter, pesos, tamaños, tracking e interlíneas conservan el sistema aprobado; los títulos quiebran sin desbordar a 390 y 768 px.
+- Espaciado y ritmo: cada capítulo tiene entrada, copy, marca y media con separadores sutiles; no quedan huecos vacíos ni solapamientos con la navbar.
+- Color: blanco, azul noche, turquesa SICE, grises fríos y bordes `#d8e3ec` mantienen el lenguaje corporativo y contraste legible.
+- Calidad de imagen: mapa mundial, mapa Buenos Aires, SIDERA y Auditoría Urbana usan los WebP existentes, completos y sin estiramiento; no se agregaron placeholders ni gráficos dibujados en CSS.
+- Copy: se preservan las cifras aprobadas, las once experiencias verificadas y el contenido bilingüe; no se inventaron métricas o proyectos.
+- Responsive y accesibilidad: cinco escenas visibles, once tarjetas presentes, cero imágenes rotas, cero pendientes de carga, sin overflow horizontal y sin dependencia de tabs, hover o sticky.
+- Consola: cero errores o advertencias durante el recorrido móvil completo.
+- Desktop: a `1440 × 900` la sección conserva `4500 px`, contenedor sticky y una única escena activa; la hoja móvil no interviene.
+
+No quedan hallazgos P0, P1 o P2 en el bloque iTTel + SICE mobile.
+
+final result: passed
+
 ## Revalidación final — Responsive mobile y minimalismo
 
 Esta revisión toma como patrón la implementación pública anterior de `https://ittel.com.ar/` y corrige la adaptación móvil de la renovación sin alterar la composición desktop aprobada.

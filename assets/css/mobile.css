@@ -628,12 +628,17 @@
 }
 
 @media (max-width: 900px) {
-    /* SICE: static, compact scenes with controlled image-to-copy transitions. */
+    /* SICE mobile: editorial flow independent from the desktop sticky narrative. */
     .renewal-sice,
     .renewal-sice__sticky,
     .renewal-sice__stage {
         height: auto;
         min-height: 0;
+    }
+
+    .renewal-sice {
+        overflow: clip;
+        background: #f5f8fb;
     }
 
     .renewal-sice__sticky {
@@ -648,7 +653,17 @@
         min-height: 0;
         opacity: 1;
         visibility: visible;
-        transform: none;
+        transform: none !important;
+    }
+
+    .renewal-sice__scene + .renewal-sice__scene {
+        border-top: 1px solid #dce5ed;
+    }
+
+    .renewal-sice [data-aos],
+    .renewal-sice .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
     }
 
     .renewal-sice__progress {
@@ -657,7 +672,8 @@
 
     .sice-global {
         min-height: 0;
-        padding: 94px 20px 52px;
+        padding: 86px 20px 48px;
+        overflow: visible;
     }
 
     .sice-global__intro {
@@ -668,7 +684,7 @@
 
     .sice-global__kicker,
     .sice-story__kicker {
-        margin-bottom: 22px;
+        margin-bottom: 18px;
         font-size: 0.62rem;
         letter-spacing: 0.17em;
         line-height: 1.45;
@@ -684,31 +700,41 @@
 
     .renewal-sice .sice-global__intro > p,
     .sice-experiences__header p {
+        margin-top: 18px;
         font-size: 0.9rem;
         line-height: 1.5;
     }
 
+    .renewal-sice .sice-global__intro > p br,
+    .sice-story__lead br {
+        display: none;
+    }
+
     .sice-global__brand {
-        width: 208px;
-        height: 76px;
-        margin-top: 24px;
+        width: 190px;
+        height: 66px;
+        margin-top: 22px;
         overflow: hidden;
     }
 
     .sice-global__brand img,
     .sice-alliance-lockup__sice {
-        width: 300px;
+        width: 242px;
         max-width: none;
-        height: 142px;
+        height: 115px;
         clip-path: none;
         object-fit: cover;
-        transform: translate(-34px, -32px);
+        transform: translate(-25px, -24px);
         mix-blend-mode: multiply;
     }
 
     .renewal-sice__scene--global .renewal-map {
         width: 100%;
-        margin: 20px 0 0;
+        margin: 26px 0 0;
+        padding: 13px 10px;
+        border: 1px solid #dde6ed;
+        border-radius: 12px;
+        background: #fff;
     }
 
     .renewal-sice__scene--global .renewal-map img {
@@ -720,14 +746,17 @@
     .sice-global__metrics {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 0;
-        margin-top: 18px;
+        margin-top: 22px;
+        border-top: 1px solid #dbe4ec;
     }
 
     .sice-global__metrics > div,
     .sice-global__metrics > div:nth-child(2),
     .sice-global__metrics > div:nth-child(3) {
-        grid-template-columns: 38px auto minmax(0, 1fr);
-        padding: 15px 8px;
+        grid-template-columns: 36px minmax(0, 1fr);
+        grid-template-rows: auto auto;
+        gap: 2px 8px;
+        padding: 16px 8px;
         border-right: 0;
         border-bottom: 1px solid #dbe4ec;
     }
@@ -737,55 +766,67 @@
     }
 
     .sice-global__metric-icon {
-        width: 34px;
-        height: 34px;
-        font-size: 1rem;
+        width: 32px;
+        height: 32px;
+        grid-row: 1 / 3;
+        font-size: 0.92rem;
     }
 
     .sice-global__metrics dt {
-        margin-left: 5px;
+        margin: 0;
         font-size: 1rem;
     }
 
     .sice-global__metrics dd {
-        margin-left: 5px;
+        margin: 0;
         font-size: 0.58rem;
+        line-height: 1.25;
         white-space: normal;
     }
 
     .sice-experiences {
-        padding: 82px 16px 54px;
+        padding: 72px 20px 62px;
+        background: #f5f8fb;
     }
 
     .sice-experiences__header {
-        max-width: 350px;
-        margin-bottom: 28px;
+        display: block;
+        max-width: 560px;
+        margin-bottom: 30px;
     }
 
     .sice-experiences__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
+        grid-template-columns: 1fr;
+        gap: 9px;
     }
 
     .sice-experiences__grid article {
         min-height: 0;
-        padding: 15px 13px;
+        padding: 17px 18px 16px;
+        border-color: #d8e3ec;
+        border-left: 3px solid #1c9b9a;
+        border-radius: 8px;
+        background: #fff;
     }
 
     .sice-experiences__grid article > span {
-        font-size: 0.56rem;
+        font-size: 0.6rem;
     }
 
     .sice-experiences__grid h3 {
-        margin-top: 8px;
-        font-size: 0.78rem;
+        margin-top: 7px;
+        font-size: 0.88rem;
         line-height: 1.3;
     }
 
     .sice-experiences__grid p,
     .sice-experiences__grid small {
-        font-size: 0.66rem;
-        line-height: 1.4;
+        font-size: 0.72rem;
+        line-height: 1.45;
+    }
+
+    .sice-experiences__grid small {
+        padding-top: 7px;
     }
 
     .sice-story,
@@ -796,8 +837,9 @@
         min-height: 0;
         flex-direction: column;
         gap: 0;
-        padding: 0;
-        overflow: hidden;
+        padding: 66px 0 64px;
+        overflow: visible;
+        background: #fff;
     }
 
     .sice-story__media,
@@ -806,21 +848,31 @@
     .sice-story--audit .sice-story__media {
         position: relative;
         inset: auto;
-        order: 1;
-        width: 100%;
-        height: 240px;
-        aspect-ratio: auto;
-        margin: 0;
+        order: 2;
+        width: calc(100% - 32px);
+        height: auto;
+        aspect-ratio: 16 / 10;
+        margin: 34px 16px 0;
+        overflow: hidden;
+        border: 1px solid #d4e0e9;
+        border-radius: 12px;
+        background: #061a31;
+        box-shadow: 0 12px 30px rgba(12, 35, 60, 0.12);
     }
 
     .sice-story__media img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
+    }
+
+    .sice-story--alliance .sice-story__media {
+        aspect-ratio: 1.18 / 1;
     }
 
     .sice-story--alliance .sice-story__media img {
-        object-position: 80% center;
+        object-fit: cover;
+        object-position: 72% center;
     }
 
     .sice-story__copy,
@@ -829,36 +881,38 @@
     .sice-story--audit .sice-story__copy {
         position: relative;
         inset: auto;
-        order: 2;
+        order: 1;
         width: 100%;
         max-width: none;
-        padding: 42px 20px 58px;
+        padding: 0 20px;
     }
 
     .sice-story h2,
     .sice-story--platform h2,
     .sice-story--audit h2 {
-        margin-top: 22px;
+        margin-top: 18px;
         font-size: clamp(2rem, 9.2vw, 2.55rem);
         line-height: 1.06;
     }
 
     .sice-story__lead {
-        margin-top: 18px;
+        margin-top: 16px;
         font-size: 0.9rem;
         line-height: 1.5;
     }
 
     .sice-alliance-lockup {
         width: 100%;
-        height: 74px;
-        gap: 14px;
-        margin-top: 26px;
-        overflow: hidden;
+        height: 66px;
+        gap: 12px;
+        margin-top: 24px;
+        overflow: visible;
     }
 
     .sice-alliance-lockup__sice {
-        flex: 0 0 208px;
+        flex: 0 0 170px;
+        height: 66px;
+        overflow: hidden;
     }
 
     .sice-alliance-lockup__divider {
@@ -866,11 +920,11 @@
     }
 
     .sice-alliance-lockup__local {
-        width: 92px;
+        width: 82px;
     }
 
     .sice-alliance-lockup__local img {
-        width: 86px;
+        width: 78px;
     }
 
     .sice-alliance-roles {
@@ -880,25 +934,29 @@
 
     .sice-alliance-roles p {
         grid-template-columns: 48px 1fr;
-        font-size: 0.72rem;
+        gap: 8px;
+        font-size: 0.7rem;
+        line-height: 1.45;
     }
 
     .sidera-lockup {
-        height: 58px;
-        gap: 12px;
-        margin-top: 23px;
+        height: 52px;
+        gap: 11px;
+        margin-top: 20px;
     }
 
     .sidera-lockup__sice {
-        width: 105px;
-        height: 54px;
+        width: 92px;
+        height: 48px;
     }
 
     .sidera-lockup__sice img {
-        width: 110px;
-        height: 54px;
+        width: 126px;
+        height: 60px;
         object-fit: cover;
-        object-position: 52% 40%;
+        object-position: 52% 45%;
+        transform: translate(-17px, -6px);
+        mix-blend-mode: multiply;
     }
 
     .sidera-lockup__divider {
@@ -906,7 +964,7 @@
     }
 
     .sidera-lockup__name strong {
-        font-size: 1.7rem;
+        font-size: 1.55rem;
     }
 
     .sidera-lockup__name small {
@@ -915,9 +973,9 @@
 
     .sice-story__capabilities,
     .sice-story__qualities {
-        margin-top: 25px;
+        margin-top: 23px;
         font-size: 0.68rem;
-        line-height: 1.65;
+        line-height: 1.75;
         white-space: normal;
     }
 
@@ -929,7 +987,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        margin-top: 24px;
+        margin-top: 21px;
     }
 
     .audit-lockup strong {
@@ -937,7 +995,27 @@
     }
 
     .audit-lockup img {
-        width: 66px;
+        width: 62px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    .sice-experiences__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .sice-story__media,
+    .sice-story--alliance .sice-story__media,
+    .sice-story--platform .sice-story__media,
+    .sice-story--audit .sice-story__media {
+        width: calc(100% - 84px);
+        margin-right: 42px;
+        margin-left: 42px;
+    }
+
+    .sice-story--alliance .sice-story__media {
+        aspect-ratio: 16 / 9;
     }
 }
 
