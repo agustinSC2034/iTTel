@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (hasRenewalExperience) {
         initRenewalHero();
+        initImageStoryCarousels();
+        initRenewalScrollReveal();
         initRenewalSiceNarrative();
         initRenewalSiceMap();
         initRenewalNavigationA11y();
@@ -78,7 +80,10 @@ function initNavigation() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80;
+                const targetTop = targetSection.getBoundingClientRect().top + window.scrollY;
+                const offsetTop = targetSection.classList.contains('renewal-overview') || targetSection.classList.contains('renewal-sice')
+                    ? targetTop
+                    : targetTop - 80;
                 
                 window.scrollTo({
                     top: offsetTop,
@@ -101,11 +106,11 @@ function initNavigation() {
         const sections = document.querySelectorAll('.section, .hero');
         
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
+            const sectionTop = section.getBoundingClientRect().top + window.scrollY - 100;
             const sectionHeight = section.clientHeight;
             
             if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
+                current = section.dataset.navSection || section.getAttribute('id');
             }
         });
         
@@ -2892,6 +2897,120 @@ function initRenewalHero() {
     startAutoplay();
 }
 
+function initRenewalScrollReveal() {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const overview = document.querySelector('.renewal-overview');
+    const floatingNavigation = document.querySelector('.navbar-glass');
+    const desktopQuery = window.matchMedia('(min-width: 1200px)');
+
+    if ('IntersectionObserver' in window && overview && floatingNavigation) {
+        const navigationObserver = new IntersectionObserver((entries) => {
+            const shouldYieldToOverview = desktopQuery.matches && entries[0].intersectionRatio >= 0.72;
+            floatingNavigation.classList.toggle('is-overview-hidden', shouldYieldToOverview);
+        }, { threshold: [0, 0.72, 1] });
+
+        navigationObserver.observe(overview);
+
+        desktopQuery.addEventListener?.('change', () => {
+            if (!desktopQuery.matches) floatingNavigation.classList.remove('is-overview-hidden');
+        });
+    }
+
+    if (reducedMotion.matches || !('IntersectionObserver' in window)) return;
+
+    const revealGroups = [
+        {
+            selector: '.renewal-section-heading > *, .renewal-solutions__intro > *, .renewal-cases__header > *, .renewal-case__isp-heading > *',
+            stagger: 90
+        },
+        {
+            selector: '.renewal-overview__column h3, .renewal-overview__column li, .renewal-overview__matrix-footer',
+            stagger: 70
+        },
+        {
+            selector: '.renewal-solution__card, .renewal-solution__copy, .operation-card, .works-card, .maintenance-card',
+            stagger: 0,
+            direction: 'left'
+        },
+        {
+            selector: '.renewal-solution__visual, .operation-feed-label',
+            stagger: 0,
+            direction: 'right'
+        },
+        {
+            selector: '.renewal-sice__content > *, .sice-global__intro > *, .sice-global__metrics > div',
+            stagger: 85
+        },
+        {
+            selector: '.renewal-map, .renewal-sice__visual',
+            stagger: 0,
+            direction: 'scale'
+        },
+        {
+            selector: '.renewal-case__content > *, .renewal-case__copy > *',
+            stagger: 90
+        },
+        {
+            selector: '.renewal-case__maps',
+            stagger: 0,
+            direction: 'left'
+        },
+        {
+            selector: '.renewal-case__isp-grid figure',
+            stagger: 110,
+            direction: 'scale'
+        }
+    ];
+
+    const targets = [];
+
+    revealGroups.forEach(({ selector, stagger, direction = 'up' }) => {
+        document.querySelectorAll(selector).forEach((element, index) => {
+            element.classList.add('renewal-scroll-reveal', `renewal-scroll-reveal--${direction}`);
+            element.style.setProperty('--renewal-reveal-delay', `${Math.min(index * stagger, 270)}ms`);
+            targets.push(element);
+        });
+    });
+
+    const mediaTargets = document.querySelectorAll(
+        '.renewal-solution__media, .renewal-case__media, .renewal-solution__visual img, .renewal-case__maps img, .operation-stage__background, .works-stage__background, .maintenance-stage__background'
+    );
+
+    mediaTargets.forEach((element) => element.classList.add('renewal-scroll-media'));
+
+    if (targets.length === 0) return;
+
+    document.documentElement.classList.add('renewal-motion-ready');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            entry.target.classList.add('is-revealed');
+            revealObserver.unobserve(entry.target);
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -9% 0px'
+    });
+
+    const mediaObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            entry.target.classList.add('is-revealed');
+            mediaObserver.unobserve(entry.target);
+        });
+    }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -5% 0px'
+    });
+
+    targets.forEach((element) => revealObserver.observe(element));
+    mediaTargets.forEach((element) => mediaObserver.observe(element));
+
+}
+
 function initRenewalSiceNarrative() {
     const section = document.querySelector('[data-renewal-sice]');
     if (!section) return;
@@ -2899,6 +3018,7 @@ function initRenewalSiceNarrative() {
     const scenes = Array.from(section.querySelectorAll('[data-sice-scene]'));
     const currentLabel = section.querySelector('[data-sice-current]');
     const progressBar = section.querySelector('[data-sice-progress]');
+    const stepItems = Array.from(section.querySelectorAll('[data-sice-step]'));
     const desktopQuery = window.matchMedia('(min-width: 1200px)');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let activeIndex = -1;
@@ -2926,6 +3046,37 @@ function initRenewalSiceNarrative() {
 
         if (currentLabel) currentLabel.textContent = String(safeIndex + 1).padStart(2, '0');
         if (progressBar) progressBar.style.width = `${((safeIndex + 1) / scenes.length) * 100}%`;
+        stepItems.forEach((step, stepIndex) => {
+            step.classList.toggle('is-active', stepIndex === safeIndex);
+            step.classList.toggle('is-complete', stepIndex < safeIndex);
+            if (stepIndex === safeIndex) step.setAttribute('aria-current', 'step');
+            else step.removeAttribute('aria-current');
+        });
+    };
+
+    const applyFluidSceneState = (scenePosition) => {
+        scenes.forEach((scene, sceneIndex) => {
+            const signedDistance = sceneIndex - scenePosition;
+            const distance = Math.min(1, Math.abs(signedDistance));
+            const opacity = Math.max(0, 1 - distance);
+            const shift = signedDistance * 30;
+            const scale = 1 - (distance * 0.012);
+            const contentShift = signedDistance * 34;
+
+            scene.style.setProperty('--sice-opacity', opacity.toFixed(3));
+            scene.style.setProperty('--sice-shift', `${shift.toFixed(2)}px`);
+            scene.style.setProperty('--sice-scale', scale.toFixed(4));
+            scene.style.setProperty('--sice-content-x', `${contentShift.toFixed(2)}px`);
+        });
+
+        const completedIndex = Math.floor(scenePosition);
+        const partialProgress = scenePosition - completedIndex;
+        stepItems.forEach((step, stepIndex) => {
+            let fill = 0;
+            if (stepIndex <= completedIndex) fill = 1;
+            else if (stepIndex === completedIndex + 1) fill = partialProgress;
+            step.style.setProperty('--sice-step-fill', fill.toFixed(3));
+        });
     };
 
     const updateFromScroll = () => {
@@ -2937,7 +3088,9 @@ function initRenewalSiceNarrative() {
 
         const scrollableDistance = Math.max(1, section.offsetHeight - window.innerHeight);
         const progress = Math.max(0, Math.min(1, (window.scrollY - section.offsetTop) / scrollableDistance));
-        const nextIndex = Math.min(scenes.length - 1, Math.floor(progress * scenes.length));
+        const scenePosition = progress * Math.max(1, scenes.length - 1);
+        const nextIndex = Math.min(scenes.length - 1, Math.round(scenePosition));
+        applyFluidSceneState(scenePosition);
         showScene(nextIndex);
     };
 
@@ -2967,7 +3120,13 @@ function initRenewalSiceMap() {
         const project = detail?.querySelector('[data-map-project]');
         const meta = detail?.querySelector('[data-map-meta]');
         const closeButton = detail?.querySelector('[data-map-close]');
-        let activePoint = points.find((point) => ['España', 'Spain'].includes(point.dataset.country));
+        let activePoint = null;
+        let hideTimer = 0;
+
+        const cancelHide = () => {
+            window.clearTimeout(hideTimer);
+            hideTimer = 0;
+        };
 
         const showDetail = (point) => {
             if (!point || !detail) return;
@@ -2979,7 +3138,17 @@ function initRenewalSiceMap() {
             });
             if (country) country.textContent = point.dataset.country || '';
             if (project) project.textContent = point.dataset.project || '';
-            if (meta) meta.textContent = point.dataset.meta || '';
+            if (meta) {
+                const values = (point.dataset.meta || '')
+                    .split('|')
+                    .map((value) => value.trim())
+                    .filter(Boolean);
+                meta.replaceChildren(...values.map((value) => {
+                    const item = document.createElement('li');
+                    item.textContent = value;
+                    return item;
+                }));
+            }
             detail.hidden = false;
         };
 
@@ -2993,14 +3162,39 @@ function initRenewalSiceMap() {
             activePoint = null;
         };
 
+        const scheduleHide = () => {
+            cancelHide();
+            hideTimer = window.setTimeout(() => {
+                const focusedInside = map.contains(document.activeElement);
+                if (!focusedInside) hideDetail();
+            }, 120);
+        };
+
         points.forEach((point) => {
             point.setAttribute('aria-expanded', 'false');
-            point.addEventListener('click', () => showDetail(point));
-            point.addEventListener('focus', () => showDetail(point));
-            point.addEventListener('pointerenter', () => showDetail(point));
+            point.addEventListener('click', () => {
+                if (activePoint === point && !detail?.hidden) hideDetail();
+                else showDetail(point);
+            });
+            point.addEventListener('focus', () => {
+                cancelHide();
+                showDetail(point);
+            });
+            point.addEventListener('blur', scheduleHide);
+            point.addEventListener('pointerenter', (event) => {
+                if (event.pointerType && event.pointerType !== 'mouse') return;
+                cancelHide();
+                showDetail(point);
+            });
+            point.addEventListener('pointerleave', (event) => {
+                if (event.pointerType && event.pointerType !== 'mouse') return;
+                scheduleHide();
+            });
         });
 
         closeButton?.addEventListener('click', hideDetail);
+        detail?.addEventListener('pointerenter', cancelHide);
+        detail?.addEventListener('pointerleave', scheduleHide);
 
         document.addEventListener('pointerdown', (event) => {
             if (!map.contains(event.target)) hideDetail();
@@ -3013,7 +3207,6 @@ function initRenewalSiceMap() {
             pointToRestore.focus();
         });
 
-        if (activePoint) showDetail(activePoint);
     });
 }
 

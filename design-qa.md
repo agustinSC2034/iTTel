@@ -1,7 +1,7 @@
 # Design QA — Renovación web iTTel + SICE
 
-Fecha: 2026-08-26
-Rama: `codex/renovacion-web-ittel-sice`
+Fecha: 2026-08-27
+Rama: `main` (cambios locales de esta revisión todavía sin push)
 
 ## Resultado
 
@@ -70,5 +70,289 @@ La renovación quedó verificada visual y funcionalmente en los cuatro anchos so
 - Consola: 0 errores en las escenas finales. Mobile sin overflow horizontal (`scrollWidth 375`, viewport 390).
 
 No quedan hallazgos P0, P1 o P2 en el Hero. Como P3 aceptable, la fotografía limpia del observatorio puede presentar microvariaciones en detalles de oficina respecto de la captura compuesta original.
+
+final result: passed
+
+## Revalidación específica — Casos de éxito, cifras, clientes, contacto y footer
+
+### Evidencia
+
+- Verdades visuales: `codex-clipboard-6008549b-3f49-44b1-93d5-0ad866a6a7ad.png` (`1773 × 887`), `codex-clipboard-6d0fd3b3-ca89-4f97-b36f-7202f124cb47.png` (`1774 × 887`), `codex-clipboard-796dc5e6-16db-45ca-8053-8ceb67b7eaef.png` (`1774 × 887`) y las tres capturas de cifras/clientes, contacto y footer de aproximadamente `1890 × 1086` con `59 px` de chrome del navegador normalizados fuera del contenido.
+- Implementaciones finales: `case-01.png`, `case-02.png`, `case-03.png`, `stats.png`, `clients.png`, `contact.png` y `footer.png` en `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/ittel-final/`.
+- Captura desktop: viewport CSS de Chrome `1920 × 889`, área renderizada `1905 × 882`, DPR 1.
+- Comparaciones completas lado a lado: `compare-case-01.jpg`, `compare-case-02.jpg`, `compare-case-03.jpg`, `compare-stats.jpg`, `compare-contact.jpg` y `compare-footer.jpg` en la misma carpeta.
+- Comparación focal: tarjetas ISP, trazados de red, etiquetas de mapas, copy de casos, formulario, datos de contacto y columnas de footer son legibles en las comparaciones completas; no fue necesario un recorte adicional después de normalizar cada par a `1300 px` por lado.
+- Responsive validado en Chrome con viewport explícito `1440 × 900`, `1024 × 768`, `768 × 900` y `390 × 844`.
+- Estado: navegación activa en `CASOS DE ÉXITO`, `CLIENTES` y `CONTACTO`; carrusel en movimiento, formulario presente y versión inglesa con los mismos recursos.
+
+### Historial de comparación y correcciones
+
+- [P1 resuelto] Los tres casos anteriores usaban bloques genéricos y no reproducían el recorrido aprobado. Se reconstruyeron en el orden ferroviario → autopistas → ISP con copy, jerarquía, fondos, mapas y llamadas al siguiente bloque de las referencias.
+- [P1 resuelto] Las tarjetas ISP utilizaban mapas crudos distintos de los mockups. Se preservaron los trazados aprobados como dos WebP limpios sin textos de interfaz incrustados; logos, títulos, métricas y contenido continúan como HTML accesible.
+- [P2 resuelto] Autopistas mostraba mapas superpuestos y dejaba el contenido derecho fuera del primer viewport. Ahora ambos mapas ocupan la columna izquierda completa y todo el resumen, la capacidad nacional y el enlace siguiente permanecen visibles.
+- [P2 resuelto] El primer caso tenía el copy demasiado alto y oscurecía en exceso la fotografía. Se ajustaron margen izquierdo, altura editorial, ritmo de beneficios y doble overlay manteniendo visible el trabajo sobre las vías.
+- [P2 resuelto] La vista de `390 px` dejaba parte del copy de Autopistas dentro de un contenedor de altura fija. Desde `900 px` la sección crece con su contenido y presenta mapas y texto en lectura vertical natural.
+- [P2 resuelto] Contacto comenzaba aproximadamente `50 px` antes que la referencia. Se recalibró el aire superior sin modificar formulario, reCAPTCHA, mapa ni datos existentes.
+
+### Superficies de fidelidad
+
+- Tipografía: Poppins/Inter, mayúsculas, tamaños, pesos, tracking, interlíneas y quiebres verificados contra las seis referencias.
+- Espaciado y composición: márgenes de `62–156 px`, relaciones mapa/copy, dos tarjetas ISP, bloque oscuro de métricas, carrusel, formulario y footer conservan la jerarquía objetivo.
+- Color: azul marino, blanco frío, cian de acento, overlays y superficies de tarjetas coinciden con el lenguaje corporativo aprobado y mantienen contraste AA en el contenido principal.
+- Calidad de imagen: fondo ferroviario y mapas de autopistas reutilizan assets limpios del proyecto; los dos mapas ISP son WebP de `551 × 405` y `591 × 405`, sin capturas completas usadas como interfaz.
+- Contenido: copy español literal de las referencias; la versión inglesa mantiene el mismo orden, estructura y recursos sin inventar proyectos ni cifras.
+- Iconos: se reutiliza Font Awesome ya presente para flechas y globo, con tamaños y alineación consistentes; no se incorporaron SVG o dibujos CSS sustitutos.
+- Interacción: los enlaces “Siguiente” navegan al caso posterior, la sección activa cambia en la navbar y el carrusel de clientes avanza continuamente y conserva pausa/arrastre existentes.
+- Accesibilidad: artículos y figuras semánticos, alt útiles, foco visible, enlaces reales, formulario intacto, navegación colapsable y `prefers-reduced-motion` preservado.
+- Responsive: `documentElement.scrollWidth === clientWidth` en `1440`, `1024`, `768` y `390 px`; ningún caso, cliente, contacto o footer provoca overflow horizontal. En tablet/mobile las secciones altas crecen con el contenido.
+- Validación técnica: recursos de casos cargan con ancho natural válido en español e inglés, todas las anclas internas resuelven, `node --check js/main.js` y `git diff --check` pasan.
+
+No quedan hallazgos P0, P1 o P2. Como P3 aceptable, la navbar global conserva el ancho compacto ya aprobado en las secciones anteriores y el reCAPTCHA muestra el aviso esperado únicamente en `localhost`, porque la clave está autorizada para el dominio productivo.
+
+final result: passed
+
+## Revalidación específica — iTTel + SICE / Experiencia global
+
+### Evidencia
+
+- Verdad visual: `C:/Users/Agustin/AppData/Local/Temp/codex-clipboard-86b3bd87-d26c-477c-bcef-c69cec146222.png` (`1774 × 887`).
+- Implementación final: `sice-global-final-desktop.png`, capturada en Chrome con viewport CSS `1774 × 898` y España activa mediante hover real.
+- Comparación completa lado a lado: `sice-global-comparison-final.jpg`.
+- Responsive: validación de layout en `1024`, `768` y `390` px; en los tres anchos `scrollWidth` coincide con `clientWidth`.
+- Versiones: español e inglés comparten estructura, mapa e interacción y conservan textos localizados.
+
+### Historial de comparación y correcciones
+
+- [P1 resuelto] Se descartó el mapa alternativo con pines grandes incrustados y se reutilizó el recurso original limpio `assets/images/sice_sin_ubicaciones.png` (`1672 × 941`), coincidente con la referencia.
+- [P1 resuelto] El mapa dejó de ser una imagen informativa estática: cada país dispone de un punto HTML operable por hover, foco y toque, con información proveniente del material original del proyecto.
+- [P2 resuelto] La ficha de España se calibró contra la referencia y se vinculó visualmente con el país mediante un conector sutil; no hay textos ni tarjetas incrustados en el mapa.
+- [P2 resuelto] Se reprodujeron la jerarquía editorial, el logotipo SICE, la fila de cuatro magnitudes y el progreso `01/04` a `04/04`.
+- [P2 resuelto] La sección mantiene `SOLUCIONES` como estado activo de navegación y respeta el recorrido sticky existente.
+- [P2 resuelto] En tablet y mobile el contenido pasa a lectura natural, conserva todos los países y evita overflow horizontal.
+
+### Superficies de fidelidad
+
+- Tipografía: Poppins/Inter, mayúsculas, pesos, tracking, color, interlínea y quiebres comparados con la captura.
+- Espaciado y composición: navbar flotante, bloque editorial izquierdo, mapa, ficha contextual, métricas y progreso alineados con el encuadre de referencia.
+- Color: fondo blanco, azul oscuro corporativo, acento turquesa SICE y países inactivos en gris tenue.
+- Imágenes: se reutilizaron el mapa y el logotipo SICE existentes; no se generó ni falsificó material corporativo para esta escena.
+- Interacción: hover con mouse, foco de teclado, toque/click y cierre con `Escape`; la ficha no queda visible sin una selección activa.
+- Accesibilidad: botones por país con `aria-label`, `aria-expanded`, foco visible y contenido de detalle semántico.
+- Movimiento reducido: la escena conserva lectura completa sin depender de transiciones.
+- Validación estática: `node --check js/main.js` y `git diff --check` sin errores.
+
+No quedan hallazgos P0, P1 o P2 en la escena Experiencia global.
+
+final result: passed
+
+## Revalidación específica — Soluciones / Mantenimiento preventivo y correctivo
+
+### Evidencia
+
+- Verdad visual: `C:/Users/Agustin/AppData/Local/Temp/codex-clipboard-84c804ee-dc46-4fcf-8f88-526bbf189ea0.png` (`1774 × 887`).
+- Implementación final: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/maintenance-final-desktop.png` (viewport CSS `1774 × 898`, DPR 1; captura física `1759 × 814`).
+- Normalización: área activa `1610 × 814`, recortada del relleno de Chrome y normalizada a `1774 × 887` en `maintenance-final-desktop-normalized.png`.
+- Comparación completa lado a lado: `maintenance-comparison-final.jpg` en la misma carpeta de evidencia.
+- Comparación focal del panel: `maintenance-card-comparison-final.jpg` en la misma carpeta de evidencia.
+- Responsive: `maintenance-final-1024.png`, `maintenance-final-768.png` y `maintenance-final-390.png`.
+- Versión inglesa: `maintenance-final-en-1024.png`.
+
+### Historial de comparación y correcciones
+
+- [P1 resuelto] El bloque utilizaba la fotografía correcta, pero la tarjeta tenía un título genérico, una descripción extensa y una grilla resumida que no reproducían la referencia. Se conservó el fondo existente y se reconstruyó únicamente el contenido del panel.
+- [P2 resuelto] La tarjeta inicial no respetaba las proporciones del mockup. Se calibró a `x 947 / y 141 / 516 × 691 px`, frente al objetivo aproximado `x 947 / y 140 / 516 × 691 px`.
+- [P2 resuelto] Kicker, título, bajada y beneficios tenían jerarquía y ritmo distintos. Se ajustaron relleno, tracking, interlínea, color y espacios contra la comparación focal.
+- [P2 resuelto] Faltaba el cierre visual de atención permanente. Se incorporó el bloque azul `7x24` con el mensaje aprobado de cobertura durante los 365 días.
+- [P2 resuelto] En tablet y mobile la tarjeta superpuesta reducía la legibilidad. Desde 900 px la fotografía queda arriba y el panel continúa debajo mediante scroll natural.
+
+### Superficies de fidelidad
+
+- Tipografía: Poppins/Inter, título en tres líneas, pesos, tracking, interlíneas y escalas comparados con la captura.
+- Espaciado y composición: posición, ancho, alto, relleno, tres beneficios y bloque 7x24 alineados con las proporciones de referencia.
+- Color: superficie gris fría, azul oscuro del texto, acento cian y cierre azul coherentes con el original.
+- Imágenes: se reutiliza sin modificaciones `horizontal/mantenimiento.webp` (`1672 × 941`), ya coincidente con la fotografía y el degradado de la referencia; no se generaron nuevos fondos.
+- Contenido: copy español literal de la referencia y equivalente inglés completo.
+- Interacción y movimiento: entrada progresiva al hacer scroll; con movimiento reducido se eliminan transiciones y transformaciones.
+- Responsive: sin overflow horizontal en 1024, 768 y 390 px; la imagen carga con su resolución natural y el panel permanece completo.
+- Navegación: `SOLUCIONES` queda activa al recorrer el bloque y el ancla directa funciona en ambos idiomas.
+
+No quedan hallazgos P0, P1 o P2 en Mantenimiento. Como P3 aceptable, el área detrás de la navbar transparente muestra el final del bloque anterior durante la captura aislada, porque se preservó la navegación global y el recorrido vertical real del sitio.
+
+final result: passed
+
+## Revalidación específica — Soluciones / Operación inteligente
+
+### Evidencia
+
+- Verdad visual: `C:/Users/Agustin/AppData/Local/Temp/codex-clipboard-2b749528-c0e3-4168-83f1-4a124ccf7062.png` (`1804 × 872`).
+- Implementación final: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/operation-final-desktop.png` (viewport CSS `1805 × 871`, DPR 1; captura física `1790 × 829`).
+- Normalización: área activa `1683 × 813`, recortada del relleno de Chrome y normalizada a `1804 × 872` en `operation-final-desktop-normalized.png`.
+- Comparación completa lado a lado: `operation-comparison-final.jpg` en la misma carpeta de evidencia.
+- Comparación focal del panel: `operation-card-comparison-final.jpg` en la misma carpeta de evidencia.
+- Responsive: `operation-final-1024.png`, `operation-final-768.png` y `operation-final-390.png`.
+- Estado comparado: sección iniciando 81 px debajo del borde superior, navbar flotante visible y animación de entrada finalizada.
+
+### Historial de comparación y correcciones
+
+- [P1 resuelto] El bloque anterior era una composición genérica de dos imágenes. Se reemplazó por un fondo limpio generado específicamente con mapa ITS y cuatro cámaras operativas, sin textos principales incrustados.
+- [P1 resuelto] Faltaban la matriz de cámaras, la detección de velocidad y residuos, el panel variable y el vínculo visual con SICE. Se reconstruyeron todos los elementos presentes en la referencia.
+- [P2 resuelto] La tarjeta inicial no respetaba posición, tamaño ni contenido. Se calibró a `x 95.2 / y 160.5 / 532.5 × 595 px`, frente al objetivo aproximado `x 96 / y 161 / 530 × 595 px`.
+- [P2 resuelto] Los beneficios aparecían inicialmente en dos columnas por una regla heredada. Se aislaron en una columna y se corrigieron interlínea, márgenes, azul del panel y alineación del wordmark SICE.
+- [P2 resuelto] En 768 px la composición seguía superpuesta y comprimida. Desde 900 px se muestra primero la matriz operativa y luego la tarjeta completa en lectura vertical natural.
+
+### Superficies de fidelidad
+
+- Tipografía: Poppins/Inter, jerarquía, mayúsculas, pesos, interlíneas, tracking y cortes comparados en región focal.
+- Espaciado y composición: panel, cuatro cámaras, rótulos, cajas de detección y panel variable alineados con las proporciones de la captura.
+- Color: superficie del panel muestreada en `rgb(2, 25, 52)`, acento cian, bordes de detección rojo/ámbar y mapa azul marino coherentes con la referencia.
+- Imágenes: fondo generado en alta resolución, optimizado a WebP y sin navbar, tarjeta ni copy principal incrustado; wordmark SICE aislado como asset raster limpio.
+- Contenido: copy español literal de la referencia y equivalente inglés completo.
+- Interacción y movimiento: entrada progresiva por scroll mediante `IntersectionObserver`; `prefers-reduced-motion` elimina las transiciones.
+- Responsive: sin overflow horizontal ni imágenes rotas en 1024, 768 y 390 px; la lectura mobile no oculta beneficios.
+- Consola y recursos: `node --check js/main.js` y `git diff --check` sin errores; español e inglés sin recursos rotos.
+
+No quedan hallazgos P0, P1 o P2 en Operación inteligente. Como P3 aceptable, el fondo generado presenta microvariaciones fotográficas respecto de la composición original, pero conserva sujetos, jerarquía, encuadre y densidad visual.
+
+final result: passed
+
+## Revalidación específica — Soluciones / Redes Neutrales
+
+### Evidencia
+
+- Verdad visual: `C:/Users/Agustin/AppData/Local/Temp/codex-clipboard-06000dac-a30a-4a73-9a28-45009968783d.png` (`1805 × 871`).
+- Implementación final: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/solutions-final-desktop.png` (viewport CSS `1805 × 871`, DPR 1; captura física `1790 × 829`).
+- Normalización: el navegador entregó un área activa de `1683 × 813`, recortada del relleno blanco de la captura y normalizada a `1805 × 871` en `solutions-final-desktop-normalized.png`.
+- Comparación completa lado a lado: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/solutions-comparison-final.jpg`.
+- Comparación focal del panel: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/solutions-panel-comparison-final.jpg`.
+- Responsive: `solutions-final-1024-normalized.png`, `solutions-final-768-normalized.png` y `solutions-final-390-normalized.png` en la misma carpeta de evidencia.
+
+### Historial de comparación y correcciones
+
+- [P1 resuelto] La portada intermedia de “Capacidad integral” agregaba un viewport completo que no existe en la referencia. Se retiró del flujo visual y se conservó su encabezado sólo para semántica accesible.
+- [P1 resuelto] El panel anterior tenía copy genérico, grilla de cuatro capacidades y no mostraba marcas. Se reconstruyó con el contenido literal de Redes Neutrales, tres beneficios y los 14 logos reales existentes.
+- [P1 resuelto] Las cuatro fotografías existentes sólo estaban disponibles en la fuente legada. Se reactivaron como carrusel sobrio de fondo, con fundido y respeto por `prefers-reduced-motion`.
+- [P2 resuelto] El primer panel estaba desplazado, sobredimensionado y con demasiado espacio inferior. Se calibró a `497 × 690` px, posición `x 937 / y 134` en el viewport de referencia.
+- [P2 resuelto] El fondo y la superficie del panel tenían contraste y temperatura incorrectos. Se ajustó el oscurecimiento lateral azul marino y el bloque de gris frío a blanco suave.
+- [P2 resuelto] Logos, títulos y descripciones no respetaban el ritmo de cuatro, cuatro, tres y tres elementos. Se reprodujo esa matriz usando los assets corporativos existentes.
+
+### Superficies de fidelidad
+
+- Tipografía: jerarquía Poppins/Inter, título en mayúsculas, kicker azul, pesos, interlíneas y quiebres comparados en región focal.
+- Espaciado y composición: panel, márgenes, padding, tres beneficios y cuatro filas de logos alineados con la captura.
+- Color: fondo fotográfico con oscurecimiento progresivo y bloque gris claro de transición vertical coherentes con la referencia.
+- Imágenes: cuatro fondos WebP existentes y 14 logos corporativos reales; no se generaron ni falsificaron marcas.
+- Contenido: copy español literal de la referencia y equivalente inglés completo.
+- Interacción: el carrusel avanza entre cuatro fotografías cada 4,2 segundos y queda estático con movimiento reducido.
+- Responsive: sin overflow horizontal en 1024, 768 y 390 px; en mobile el panel continúa por scroll natural sin ocultar logos.
+- Consola y recursos: 0 errores, 0 imágenes rotas en español e inglés.
+
+La diferencia P3 aceptada es el ancho de la navbar global: se preservó el componente ya aprobado para no degradar el Hero ni la sección Nosotros.
+
+final result: passed
+
+## Revalidación específica — Nosotros / Grupo iTTel
+
+### Evidencia
+
+- Verdad visual: `C:/Users/Agustin/AppData/Local/Temp/codex-clipboard-241259f3-0bb7-4683-8abc-1f205764c186.png` (`1857 × 847`).
+- Implementación final: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/overview-final-desktop.png` (viewport configurado `1858 × 846`; contenido capturado `1843 × 839`, DPR 1).
+- Comparación completa normalizada: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/overview-comparison-final.jpg`.
+- Comparación focal del contenido central: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/overview-center-comparison-final.jpg`.
+- Responsive: `overview-final-1024.png`, `overview-final-768.png` y `overview-final-390.png` en la misma carpeta de evidencia.
+
+### Historial de comparación y correcciones
+
+- [P1 resuelto] La composición lateral no existía como asset limpio. Se generó `overview-technical-background.webp` con mapa aéreo y señalización a la izquierda, torre técnica a la derecha, red inferior y centro blanco libre de texto incrustado.
+- [P1 resuelto] El centro anterior no respetaba la jerarquía ni la matriz de la referencia. Se reconstruyeron título, bajada, seis capacidades y cierre con HTML semántico y copy literal.
+- [P2 resuelto] La barra flotante cubría el kicker en desktop. Ahora cede de manera transitoria cuando la sección ocupa el viewport y se conserva visible en tablet y mobile.
+- [P2 resuelto] La primera descripción generaba un salto de línea y alteraba las alturas. Se calibraron cuerpo y ancho para mantener la proporción de la captura.
+- [P2 resuelto] La regla global `.container` anulaba el espacio superior en 390 px. Se reforzó el padding responsive y el encabezado queda por debajo de la navegación.
+- [P2 resuelto] Se restauró el espacio semántico de la bajada en mobile entre “de” e “infraestructura”.
+
+### Superficies de fidelidad
+
+- Tipografía: Poppins e Inter con tamaños, pesos, tracking, color, interlínea y quiebres ajustados contra la referencia.
+- Espaciado y composición: contenido central de 1098 px, dos columnas equivalentes, seis filas y cierre alineados al encuadre original.
+- Color: azul oscuro, azul de acento, grises fríos, bordes tenues y fondo blanco técnico reproducidos.
+- Imágenes: fondo generado y optimizado a WebP (`1858 × 846`, 99 516 bytes), sin textos, navbar ni controles incrustados.
+- Contenido: textos en español respetados literalmente y versión inglesa equivalente con seis capacidades.
+- Interacción: revelado progresivo con scroll, navegación por ancla y foco visual preservados; en mobile la lectura se apila sin ocultar contenido.
+- Responsive: sin overflow horizontal en 1024, 768 y 390 px; `scrollWidth` coincide con `clientWidth`.
+- Consola: 0 errores en español e inglés. `node --check js/main.js` y `git diff --check` sin errores.
+
+No quedan hallazgos P0, P1 o P2 en la sección Nosotros.
+
+final result: passed
+
+## Revalidación específica — Soluciones / Obras e integración tecnológica
+
+### Evidencia
+
+- Verdad visual: `C:/Users/Agustin/AppData/Local/Temp/codex-clipboard-2b56583c-3f34-4a3a-a2a4-612acc97a008.png` (`1774 × 887`).
+- Implementación final: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/works-final-desktop.png` (viewport CSS `1774 × 898`; captura física `1759 × 814`, DPR 1).
+- Normalización: área activa `1610 × 814`, recortada del relleno de Chrome y normalizada a `1774 × 887` en `works-final-desktop-normalized.png`.
+- Comparación completa lado a lado: `works-comparison-final.jpg` en la misma carpeta de evidencia.
+- Comparación focal del panel: `works-card-comparison-final.jpg` en la misma carpeta de evidencia.
+- Responsive: `works-final-1024.png`, `works-final-768.png` y `works-final-390.png`.
+- Versiones: español e inglés comprobados con la misma estructura semántica y recursos compartidos.
+
+### Historial de comparación y correcciones
+
+- [P1 resuelto] El bloque anterior utilizaba una fotografía aérea genérica y una tarjeta que no reproducían la escena solicitada. Se reemplazó por la obra vial con camioneta iTTel, excavadora, zanja, ductos y cuadrillas de la referencia.
+- [P1 resuelto] Para evitar texto o interfaz incrustados en la imagen, se preservó la región fotográfica limpia de la referencia y se generó únicamente su continuación derecha, destinada a quedar debajo del degradado y del panel HTML.
+- [P2 resuelto] El panel se calibró a `x 918 / y 139 / 495 × 677 px`, frente al objetivo aproximado `x 918 / y 140 / 495 × 677 px`.
+- [P2 resuelto] Se ajustaron fondo gris frío, relleno, kicker, título en tres líneas, interlíneas, beneficios y flujo inferior contra una comparación focal directa.
+- [P2 resuelto] En tablet y mobile la composición superpuesta comprimía el contenido. Desde 900 px se usa una fotografía dedicada sin empalmes y el panel pasa a lectura vertical natural.
+- [P2 resuelto] El cálculo de sección activa usaba offsets relativos y podía dejar otra opción seleccionada. Ahora la navegación marca `SOLUCIONES` al alcanzar este bloque.
+
+### Superficies de fidelidad
+
+- Tipografía: Poppins/Inter, mayúsculas, pesos, tracking, color, interlínea y quiebres comparados en la región focal.
+- Espaciado y composición: foto, transición azul marino, panel, beneficios y flujo de tres etapas alineados con la referencia.
+- Color: panel `rgb(235, 236, 238)`, azul oscuro corporativo, acento cian y degradado lateral coherentes con la captura.
+- Imágenes: fondo desktop WebP `1774 × 800` y recorte mobile WebP `918 × 800`, ambos sin tarjeta ni copy principal incrustado.
+- Contenido: copy español literal de la referencia y equivalente inglés completo.
+- Interacción y movimiento: entrada progresiva al hacer scroll; `prefers-reduced-motion` elimina transformaciones y transiciones.
+- Responsive: sin overflow horizontal ni imágenes rotas en 1024, 768 y 390 px; el contenido no queda oculto detrás del panel.
+- Consola y recursos: `node --check js/main.js` y `git diff --check` sin errores.
+
+No quedan hallazgos P0, P1 o P2 en Obras e integración tecnológica. Como P3 aceptable, la continuación generada del extremo derecho puede presentar microvariaciones bajo el degradado respecto de la composición original.
+
+final result: passed
+
+## Revalidación específica — Narrativa iTTel + SICE / escenas 02 a 04
+
+### Evidencia
+
+- Verdades visuales: `codex-clipboard-d0006c9c-eb30-40f5-a9eb-cf06b94ff4a3.png`, `codex-clipboard-d0b69802-c853-4055-9666-1da70cfb0b63.png` y `codex-clipboard-868cc04b-8c77-4a86-97df-1b501ee01495.png`, todas de `1788 × 880`.
+- Implementaciones finales: `sice-alliance-final.png`, `sice-sidera-final.png` y `sice-audit-final.png` en `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/`.
+- Captura del navegador: viewport CSS `1788 × 880`; captura física `1773 × 821`, DPR 1 y área activa `1638 × 821`.
+- Normalización: área activa recortada y normalizada a `1788 × 880` en `sice-alliance-final-normalized.png`, `sice-sidera-final-normalized.png` y `sice-audit-final-normalized.png`.
+- Comparaciones completas: `sice-alliance-comparison-final.jpg`, `sice-sidera-comparison-final.jpg` y `sice-audit-comparison-final.jpg` en la misma carpeta.
+- Estados: escenas `02/04`, `03/04` y `04/04` en sus posiciones exactas del recorrido sticky.
+- Responsive: comprobación de `1024`, `768` y `390` px; versión inglesa comprobada a `1024` px.
+
+### Historial de comparación y correcciones
+
+- [P1 resuelto] Las escenas anteriores no reproducían los mapas e interfaces de las referencias. Se extrajeron solamente las superficies visuales limpias: Buenos Aires, SIDERA y Auditoría Urbana; títulos, navegación y progreso permanecen como HTML accesible.
+- [P2 resuelto] Alianza local presentaba el título en tres líneas y desplazaba logotipos y roles. Se amplió la columna editorial, se ajustó la familia tipográfica y se recalibraron márgenes hasta recuperar las dos líneas de la referencia.
+- [P2 resuelto] SIDERA dividía “Toda la infraestructura” en dos líneas adicionales. Se ajustaron ancho, tamaño, interlínea y tracking para conservar el bloque de dos líneas.
+- [P2 resuelto] Auditoría Urbana partía la bajada en tres líneas y alejaba capacidades y atributos. Se amplió la columna y se redujo el margen intermedio; la jerarquía final coincide con la referencia.
+- [P2 resuelto] El cambio entre escenas era un salto por cuartos. Ahora la posición continua del scroll interpola opacidad, desplazamiento, escala, contenido y progreso entre las cuatro escenas, sin interceptar la rueda.
+- [P2 resuelto] En tablet y mobile las escenas quedan apiladas, `aria-hidden="false"`, con imágenes completas y lectura natural.
+
+### Superficies de fidelidad
+
+- Tipografía: Inter/Poppins, pesos, tamaños, tracking, interlíneas y quiebres comparados en las tres composiciones completas.
+- Espaciado y composición: columnas editoriales, media, logos, encabezados y progreso alineados contra cada captura de `1788 × 880`.
+- Color: blanco frío, azul iTTel, turquesa SICE, grises editoriales y superficies oscuras provienen de las referencias y los tokens existentes.
+- Calidad de imagen: cuatro WebP nuevos entre `404` y `172448` bytes; no se utilizó una captura completa como fondo y no se recrearon interfaces con divs, SVGs o placeholders.
+- Contenido: copy español literal de las referencias; versión inglesa equivalente conserva estructura y recursos.
+- Interacción: narrativa sticky de scroll natural, progreso `01/04` a `04/04`, transición continua y escenas no interactivas marcadas `inert` en desktop.
+- Accesibilidad: semántica de artículos y figuras, textos alternativos útiles, estado activo con `aria-current` y secuencia estática completa con movimiento reducido.
+- Responsive: `scrollWidth === clientWidth` en `1024`, `768` y `390` px; las tres imágenes tienen ancho natural válido y ninguna queda rota.
+- Validación técnica: `node --check js/main.js` y `git diff --check` sin errores.
+
+No quedan hallazgos P0, P1 o P2. Como P3 aceptable, la navbar global conserva el ancho ya aprobado en el resto del sitio, levemente más compacto que el de las tres referencias.
 
 final result: passed
