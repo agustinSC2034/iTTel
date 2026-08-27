@@ -454,3 +454,36 @@ Esta revisión reemplaza las decisiones anteriores sobre interacción por país 
 No quedan hallazgos P0, P1 o P2 para esta revisión.
 
 final result: passed
+
+## Revalidación específica — Experiencias internacionales SICE
+
+### Evidencia
+
+- Verdad visual: `C:/Users/Agustin/AppData/Local/Temp/codex-clipboard-a3b2be5b-2a2d-4a29-83bb-13c5497fecc5.png` (`1737 × 877`).
+- Implementación final: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/sice-experiences-final.png` (`1724 × 869`).
+- Comparación normalizada: `sice-experiences-comparison.png`, ambas vistas ajustadas a `1739 × 877`, DPR 1.
+- Región focal: `sice-experiences-focused-comparison.png`, recorte común de encabezados, banderas, contenido y metadatos de las once fichas.
+- Estado: escena `02/05 · PROYECTOS`, recorrido sticky desktop.
+
+### Historial de comparación y correcciones
+
+- [P1 resuelto] La escena activa se mezclaba permanentemente con la anterior durante el progreso del scroll, dejando textos y métricas fantasma bajo las tarjetas. El cambio de escena conserva desplazamiento y escala fluidos, pero la escena activa pasa a ser completamente opaca después de la transición.
+- [P2 resuelto] El panel interior tenía ancho máximo y un fondo gris distinto a la escena, lo que producía el corte lateral reportado. Escena, stage y panel usan ahora blanco sólido de borde a borde.
+- [P2 resuelto] Las experiencias carecían de reconocimiento visual por país y los datos aparecían en una sola línea débil. Cada una de las once fichas usa una bandera real, país, proyecto, alcance y período claramente jerarquizados, sin incorporar datos nuevos.
+- [P2 resuelto] Las tarjetas tenían escasa presencia y lectura plana. Se ajustaron borde, acento superior, separación interna, sombra y estado hover/focus con movimiento corporativo sutil.
+- [P2 resuelto] En mobile las nuevas cabeceras y metadatos necesitaban una composición propia. La ficha se adapta a una columna en `390 px`, dos en `768 px` y tres en `1024 px`, sin overflow horizontal.
+
+### Superficies de fidelidad
+
+- Tipografía: Poppins/Inter, pesos, mayúsculas, tracking, jerarquía y quiebres comparados en vista completa y región focal.
+- Espaciado y composición: fondo blanco continuo, grilla `4/3/2/1`, tarjetas de altura consistente y progreso inferior sin superposición.
+- Color: blanco puro, azul iTTel, turquesa SICE y grises existentes; contraste conservado sobre cada ficha.
+- Calidad de imagen: once banderas raster reales servidas por FlagCDN, con dimensiones declaradas, carga diferida y recorte uniforme; no se usaron emojis ni aproximaciones dibujadas.
+- Contenido: se preservaron exactamente las once experiencias, alcances, períodos y cifras existentes en español e inglés.
+- Interacción: hover/focus sutil en desktop, secuencia estática legible en tablet/mobile y transición entre escenas sin mezcla residual.
+- Responsive: sin overflow a `1440`, `1024`, `768` y `390 px`; grillas verificadas en navegador.
+- Consola y validación: 0 errores o advertencias en español e inglés; `node --check js/main.js`, balance de llaves CSS y `git diff --check` correctos.
+
+No quedan hallazgos P0, P1 o P2. Como P3 aceptable, las banderas dependen del mismo proveedor externo que ya utiliza el selector de idioma del sitio.
+
+final result: passed
