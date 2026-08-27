@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
         initImageStoryCarousels();
         initRenewalScrollReveal();
         initRenewalSiceNarrative();
-        initRenewalSiceMap();
         initRenewalNavigationA11y();
     } else {
         initHero();
@@ -2815,7 +2814,7 @@ function initRenewalHero() {
     const startAutoplay = () => {
         stopAutoplay();
         if (slides.length < 2 || userPaused || temporarilyPaused || !inViewport || document.hidden || reducedMotion.matches) return;
-        timerId = window.setInterval(() => showSlide(currentIndex + 1), 7000);
+        timerId = window.setInterval(() => showSlide(currentIndex + 1), 6000);
     };
 
     const pauseFromInteraction = () => {
@@ -2933,12 +2932,12 @@ function initRenewalScrollReveal() {
             direction: 'left'
         },
         {
-            selector: '.renewal-solution__visual, .operation-feed-label',
+            selector: '.renewal-solution__visual',
             stagger: 0,
             direction: 'right'
         },
         {
-            selector: '.renewal-sice__content > *, .sice-global__intro > *, .sice-global__metrics > div',
+            selector: '.renewal-sice__content > *, .sice-global__intro > *, .sice-global__metrics > div, .sice-experiences__header > *, .sice-experiences__grid article',
             stagger: 85
         },
         {

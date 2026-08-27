@@ -29,7 +29,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./assets/css/main.css?v=19">
+    <link rel="stylesheet" href="./assets/css/main.css?v=21">
+    <link rel="stylesheet" href="./assets/css/mobile.css?v=3">
 
     <!-- Favicon -->
     <link rel="icon" href="./assets/images/favicon.webp" type="image/webp">
@@ -115,7 +116,6 @@
             <img class="renewal-overview__blueprint" src="assets/images/diseno_nuevo_diapo/overview-technical-background.webp" alt="" aria-hidden="true" width="1858" height="846" loading="lazy" decoding="async">
             <div class="container renewal-overview__inner">
                 <header class="renewal-section-heading">
-                    <span class="renewal-kicker">NOSOTROS</span>
                     <h2>GRUPO ITTEL<br>INFORMATION TECHNOLOGY &amp;<br>TELECOMMUNICATIONS</h2>
                     <p>Líderes en Argentina en el desarrollo, operación e integración de <br>infraestructura IT &amp; TELCO a gran escala.</p>
                 </header>
@@ -124,17 +124,17 @@
                         <section class="renewal-overview__column" aria-labelledby="overview-telco-title">
                             <h3 id="overview-telco-title">INFRAESTRUCTURA &amp; TELCO</h3>
                             <ol>
-                                <li><span>01</span><div><strong>REDES NEUTRALES Y FIBRA</strong><p>Infraestructura propia y redes optimizadas para múltiples operadores.</p></div></li>
-                                <li><span>02</span><div><strong>OPERACIÓN Y MANTENIMIENTO</strong><p>NOC 24/7 y respuesta en campo.</p></div></li>
-                                <li><span>03</span><div><strong>SERVICIOS ISP</strong><p>Internet y TV por fibra a través de USITTEL y LARANET.</p></div></li>
+                                <li><div><strong>REDES NEUTRALES Y FIBRA</strong><p>Infraestructura propia y redes optimizadas para múltiples operadores.</p></div></li>
+                                <li><div><strong>OPERACIÓN Y MANTENIMIENTO</strong><p>NOC 24/7 y respuesta en campo.</p></div></li>
+                                <li><div><strong>SERVICIOS ISP</strong><p>Internet y TV por fibra a través de USITTEL y LARANET.</p></div></li>
                             </ol>
                         </section>
                         <section class="renewal-overview__column" aria-labelledby="overview-it-title">
                             <h3 id="overview-it-title">TECNOLOGÍA &amp; OPERACIONES</h3>
                             <ol start="4">
-                                <li><span>04</span><div><strong>PLATAFORMAS ITS</strong><p>Gestión y monitoreo de infraestructura crítica junto a SICE.</p></div></li>
-                                <li><span>05</span><div><strong>INTEGRACIÓN E IOT</strong><p>Sistemas, dispositivos y datos conectados en una misma operación.</p></div></li>
-                                <li><span>06</span><div><strong>APLICACIONES Y ANALÍTICA</strong><p>Herramientas para seguimiento, control y toma de decisiones.</p></div></li>
+                                <li><div><strong>PLATAFORMAS ITS</strong><p>Gestión y monitoreo de infraestructura crítica junto a SICE.</p></div></li>
+                                <li><div><strong>INTEGRACIÓN E IOT</strong><p>Sistemas, dispositivos y datos conectados en una misma operación.</p></div></li>
+                                <li><div><strong>APLICACIONES Y ANALÍTICA</strong><p>Herramientas para seguimiento, control y toma de decisiones.</p></div></li>
                             </ol>
                         </section>
                     </div>
@@ -197,10 +197,6 @@
                             <span>PARTNER<br>TECNOLÓGICO</span>
                         </div>
                     </div>
-                    <div class="operation-feed-label operation-feed-label--live">LIVE</div>
-                    <div class="operation-feed-label operation-feed-label--speed">EXCESO DE VELOCIDAD</div>
-                    <div class="operation-feed-label operation-feed-label--waste">DETECCIÓN DE RESIDUOS</div>
-                    <div class="operation-feed-label operation-feed-label--message">PANEL DE MENSAJE VARIABLE</div>
                     <div class="operation-speed-readout" aria-label="Velocidad detectada: 118 kilómetros por hora; límite 80 kilómetros por hora"><strong>118<small> km/h</small></strong><span>LÍMITE 80 km/h</span></div>
                     <span class="operation-detection operation-detection--speed" aria-hidden="true"></span>
                     <span class="operation-detection operation-detection--waste" aria-hidden="true"></span>
@@ -214,7 +210,7 @@
                 <div class="works-stage">
                     <picture class="works-stage__picture">
                         <source media="(max-width: 900px)" srcset="assets/images/diseno_nuevo_diapo/works-integration-mobile.webp">
-                        <img class="works-stage__background" src="assets/images/diseno_nuevo_diapo/works-integration-background.webp" alt="Cuadrilla iTTel ejecutando una obra de canalización e integración tecnológica junto a una autopista" width="1774" height="800" loading="lazy" decoding="async">
+                        <img class="works-stage__background" src="assets/images/diseno_nuevo_diapo/works-integration-background-v2.webp" alt="Cuadrilla iTTel ejecutando una obra de canalización e integración tecnológica junto a una autopista" width="1867" height="842" loading="lazy" decoding="async">
                     </picture>
                     <div class="works-stage__shade" aria-hidden="true"></div>
                     <div class="works-card">
@@ -272,28 +268,10 @@
                                 <p>Tecnología y experiencia internacional para<br>operar infraestructura crítica en Argentina.</p>
                                 <div class="sice-global__brand">
                                     <img src="assets/images/sice/sice-logo.webp" alt="SICE" width="316" height="150" loading="lazy" decoding="async">
-                                    <span>TECNOLOGÍA Y SISTEMAS</span>
                                 </div>
                             </div>
-                            <div class="renewal-map" data-sice-map>
+                            <div class="renewal-map">
                                 <img src="assets/images/sice_sin_ubicaciones.png" alt="Mapa de presencia y experiencia internacional de SICE" width="1672" height="941" loading="lazy" decoding="async">
-                                <button type="button" class="renewal-map__point" style="--x: 29%; --y: 30%;" data-country="Canadá" data-project="ITS para el nuevo puente sobre el río San Lorenzo, Montreal" data-meta="2015–2019|2,1 millas de puente" aria-label="Ver experiencia de SICE en Canadá"></button>
-                                <button type="button" class="renewal-map__point" style="--x: 34%; --y: 43%;" data-country="Estados Unidos" data-project="Sistemas TCMS e ICA para el túnel SR99 de Seattle" data-meta="2012–2019|SIDERA|2 millas de túnel" aria-label="Ver experiencia de SICE en Estados Unidos"></button>
-                                <button type="button" class="renewal-map__point" style="--x: 36%; --y: 64%;" data-country="Perú" data-project="Túnel aeroportuario Gambetta: ITS, sistemas eléctricos y mecánicos" data-meta="2014–2016|2,1 millas" aria-label="Ver experiencia de SICE en Perú"></button>
-                                <button type="button" class="renewal-map__point" style="--x: 50%; --y: 39%;" data-country="España" data-project="Centro de gestión y control de túneles urbanos de Madrid" data-meta="2001–2026|29 túneles integrados" aria-label="Ver experiencia de SICE en España"></button>
-                                <button type="button" class="renewal-map__point" style="--x: 48%; --y: 41%;" data-country="Portugal" data-project="Túneles de Madeira: seguridad, control y centro de gestión" data-meta="Migración SIDERA|52 túneles integrados" aria-label="Ver experiencia de SICE en Portugal"></button>
-                                <button type="button" class="renewal-map__point" style="--x: 56%; --y: 28%;" data-country="Noruega" data-project="Sistemas electromecánicos y automatización para Sotra Connection" data-meta="2024–2027|Bergen" aria-label="Ver experiencia de SICE en Noruega"></button>
-                                <button type="button" class="renewal-map__point" style="--x: 58%; --y: 29%;" data-country="Suecia" data-project="Stockholm Bypass: sistemas electromecánicos" data-meta="2019–2030|34,3 millas" aria-label="Ver experiencia de SICE en Suecia"></button>
-                                <button type="button" class="renewal-map__point" style="--x: 54%; --y: 33%;" data-country="Dinamarca" data-project="Sistemas electromecánicos para Femarn Belt Fixed Link" data-meta="2023–2030|15,6 millas" aria-label="Ver experiencia de SICE en Dinamarca"></button>
-                                <button type="button" class="renewal-map__point" style="--x: 62%; --y: 45%;" data-country="Israel" data-project="Autopista Ayalon: monitoreo y control de tránsito" data-meta="2012–2017" aria-label="Ver experiencia de SICE en Israel"></button>
-                                <button type="button" class="renewal-map__point" style="--x: 82%; --y: 69%;" data-country="Australia" data-project="Túneles WestConnex: M4 East, M8 y Rozelle Interchange" data-meta="2016–2023|SIDERA" aria-label="Ver experiencia de SICE en Australia"></button>
-                                <button type="button" class="renewal-map__point" style="--x: 87%; --y: 75%;" data-country="Nueva Zelanda" data-project="Waterview Tunnel: sistema integrado de gestión" data-meta="2012–actualidad|SIDERA" aria-label="Ver experiencia de SICE en Nueva Zelanda"></button>
-                                <aside class="renewal-map__detail" data-map-detail aria-live="polite" hidden>
-                                    <button type="button" data-map-close aria-label="Cerrar detalle">×</button>
-                                    <strong data-map-country>España</strong>
-                                    <span data-map-project>Centro de gestión y control de túneles urbanos de Madrid</span>
-                                    <ul data-map-meta><li>2001–2026</li><li>29 túneles integrados</li></ul>
-                                </aside>
                             </div>
                             <dl class="sice-global__metrics" aria-label="SICE en cifras">
                                 <div><span class="sice-global__metric-icon" aria-hidden="true"><i class="fas fa-earth-americas"></i></span><dt>+30</dt><dd>PAÍSES</dd></div>
@@ -304,7 +282,30 @@
                         </div>
                     </article>
 
-                    <article class="renewal-sice__scene renewal-sice__scene--alliance" data-sice-scene="1" aria-hidden="true">
+                    <article class="renewal-sice__scene renewal-sice__scene--experiences" data-sice-scene="1" aria-hidden="true">
+                        <div class="sice-experiences">
+                            <header class="sice-experiences__header">
+                                <span class="sice-story__kicker">TECNOLOGÍA | EXPERIENCIA SICE</span>
+                                <h2>EXPERIENCIA INTERNACIONAL<br>EN INFRAESTRUCTURA CRÍTICA.</h2>
+                                <p>Proyectos verificados de movilidad, túneles y control operacional.</p>
+                            </header>
+                            <div class="sice-experiences__grid">
+                                <article><span>CANADÁ</span><h3>Puente sobre el río San Lorenzo</h3><p>ITS para el nuevo puente de Montreal.</p><small>2015–2019 · 2,1 millas</small></article>
+                                <article><span>ESTADOS UNIDOS</span><h3>Túnel SR99 de Seattle</h3><p>Sistemas TCMS e ICA.</p><small>2012–2019 · SIDERA · 2 millas</small></article>
+                                <article><span>PERÚ</span><h3>Túnel aeroportuario Gambetta</h3><p>ITS, sistemas eléctricos y mecánicos.</p><small>2014–2016 · 2,1 millas</small></article>
+                                <article><span>ESPAÑA</span><h3>Túneles urbanos de Madrid</h3><p>Centro de gestión y control.</p><small>2001–2026 · 29 túneles</small></article>
+                                <article><span>PORTUGAL</span><h3>Túneles de Madeira</h3><p>Seguridad, control y centro de gestión.</p><small>Migración SIDERA · 52 túneles</small></article>
+                                <article><span>NORUEGA</span><h3>Sotra Connection</h3><p>Sistemas electromecánicos y automatización.</p><small>2024–2027 · Bergen</small></article>
+                                <article><span>SUECIA</span><h3>Stockholm Bypass</h3><p>Sistemas electromecánicos.</p><small>2019–2030 · 34,3 millas</small></article>
+                                <article><span>DINAMARCA</span><h3>Femarn Belt Fixed Link</h3><p>Sistemas electromecánicos.</p><small>2023–2030 · 15,6 millas</small></article>
+                                <article><span>ISRAEL</span><h3>Autopista Ayalon</h3><p>Monitoreo y control de tránsito.</p><small>2012–2017</small></article>
+                                <article><span>AUSTRALIA</span><h3>Túneles WestConnex</h3><p>M4 East, M8 y Rozelle Interchange.</p><small>2016–2023 · SIDERA</small></article>
+                                <article><span>NUEVA ZELANDA</span><h3>Waterview Tunnel</h3><p>Sistema integrado de gestión.</p><small>2012–actualidad · SIDERA</small></article>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="renewal-sice__scene renewal-sice__scene--alliance" data-sice-scene="2" aria-hidden="true">
                         <div class="sice-story sice-story--alliance">
                             <div class="sice-story__copy">
                                 <span class="sice-story__kicker">TECNOLOGÍA | ALIANZA ITTEL + SICE</span>
@@ -313,19 +314,18 @@
                                 <div class="sice-alliance-lockup" aria-label="Alianza SICE e iTTel">
                                     <img class="sice-alliance-lockup__sice" src="assets/images/sice/sice-logo.webp" alt="SICE Tecnología y Sistemas" width="316" height="150" loading="lazy" decoding="async">
                                     <span class="sice-alliance-lockup__divider" aria-hidden="true"></span>
-                                    <span class="sice-alliance-lockup__local"><img src="assets/images/logoIttel1.webp" alt="iTTel" width="560" height="197" loading="lazy" decoding="async"><strong>INTEGRACIÓN LOCAL</strong></span>
+                                    <span class="sice-alliance-lockup__local"><img src="assets/images/logoIttel1.webp" alt="iTTel" width="560" height="197" loading="lazy" decoding="async"></span>
                                 </div>
                                 <div class="sice-alliance-roles">
                                     <p><strong>SICE</strong><span>PLATAFORMA Y EXPERIENCIA ITS</span></p>
                                     <p><strong>ITTEL</strong><span>INTEGRACIÓN, DESARROLLO Y SOPORTE LOCAL</span></p>
                                 </div>
                             </div>
-                            <img class="sice-story__context" src="assets/images/sice/sice-alliance-world-link.webp" alt="Conexión entre la experiencia global y la integración local" width="455" height="230" loading="lazy" decoding="async">
                             <figure class="sice-story__media"><img src="assets/images/sice/sice-alliance-buenos-aires.webp" alt="Red vial de Buenos Aires conectada mediante la alianza local entre SICE e iTTel" width="893" height="813" loading="lazy" decoding="async"></figure>
                         </div>
                     </article>
 
-                    <article class="renewal-sice__scene renewal-sice__scene--platform" data-sice-scene="2" aria-hidden="true">
+                    <article class="renewal-sice__scene renewal-sice__scene--platform" data-sice-scene="3" aria-hidden="true">
                         <div class="sice-story sice-story--platform">
                             <div class="sice-story__copy">
                                 <span class="sice-story__kicker">TECNOLOGÍA | SICE</span>
@@ -339,11 +339,11 @@
                         </div>
                     </article>
 
-                    <article class="renewal-sice__scene renewal-sice__scene--audit" data-sice-scene="3" aria-hidden="true">
+                    <article class="renewal-sice__scene renewal-sice__scene--audit" data-sice-scene="4" aria-hidden="true">
                         <div class="sice-story sice-story--audit">
                             <div class="sice-story__copy">
                                 <span class="sice-story__kicker">TECNOLOGÍA | PRODUCTO ITTEL</span>
-                                <div class="audit-lockup"><strong>AUDITORÍA<br>URBANA</strong><img src="assets/images/sice/audit-corner-mark.webp" alt="" width="52" height="49" aria-hidden="true"></div>
+                                <div class="audit-lockup"><strong>AUDITORÍA<br>URBANA</strong><img src="assets/images/logoIttel1.webp" alt="iTTel" width="560" height="197" loading="lazy" decoding="async"></div>
                                 <h2>DEL TERRITORIO<br>A LA DECISIÓN.</h2>
                                 <p class="sice-story__lead">Una plataforma para auditar, coordinar y<br>documentar operaciones urbanas desde un único mapa.</p>
                                 <p class="sice-story__capabilities">MAPA OPERATIVO · TAREAS · CUADRILLAS · EQUIPOS · INVENTARIO</p>
@@ -355,10 +355,11 @@
 
                     <nav class="renewal-sice__progress" aria-label="Progreso de la narrativa SICE">
                         <ol>
-                            <li class="is-active" data-sice-step><span>01 / 04</span><strong>EXPERIENCIA GLOBAL</strong><i aria-hidden="true"></i></li>
-                            <li data-sice-step><span>02 / 04</span><strong>ALIANZA LOCAL</strong><i aria-hidden="true"></i></li>
-                            <li data-sice-step><span>03 / 04</span><strong>ITS EN OPERACIÓN</strong><i aria-hidden="true"></i></li>
-                            <li data-sice-step><span>04 / 04</span><strong>PRODUCTO ITTEL</strong><i aria-hidden="true"></i></li>
+                            <li class="is-active" data-sice-step><span>01 / 05</span><strong>EXPERIENCIA GLOBAL</strong><i aria-hidden="true"></i></li>
+                            <li data-sice-step><span>02 / 05</span><strong>PROYECTOS</strong><i aria-hidden="true"></i></li>
+                            <li data-sice-step><span>03 / 05</span><strong>ALIANZA LOCAL</strong><i aria-hidden="true"></i></li>
+                            <li data-sice-step><span>04 / 05</span><strong>ITS EN OPERACIÓN</strong><i aria-hidden="true"></i></li>
+                            <li data-sice-step><span>05 / 05</span><strong>PRODUCTO ITTEL</strong><i aria-hidden="true"></i></li>
                         </ol>
                     </nav>
                 </div>
@@ -375,7 +376,7 @@
                 <img class="renewal-case__media" src="assets/images/diseno_nuevo_diapo/horizontal/trenes.webp" alt="Infraestructura ferroviaria conectada por iTTel" width="1672" height="941" loading="lazy" decoding="async">
                 <div class="renewal-case__overlay" aria-hidden="true"></div>
                 <div class="container renewal-case__content">
-                    <span class="renewal-kicker">GRUPO ITTEL | CASO DE ÉXITO 01</span>
+                    <span class="renewal-kicker">GRUPO ITTEL | CASO DE ÉXITO</span>
                     <h3>REDES EN<br>ARGENTINA</h3>
                     <div class="renewal-case__partner"><strong>TRENES ARGENTINOS</strong><span>INFRAESTRUCTURA</span></div>
                     <p class="renewal-case__lead">Infraestructura compartida<br>desplegada sobre la red ferroviaria nacional.</p>
@@ -384,7 +385,6 @@
                         <li><strong>DESPLIEGUE PARALELO</strong><span>Torres y anillos de fibra sobre nodos ferroviarios.</span></li>
                         <li><strong>CONECTIVIDAD CONTINUA</strong><span>Capilaridad para ampliar la cobertura de la red.</span></li>
                     </ul>
-                    <a class="renewal-case__next" href="#caso-autopistas">SIGUIENTE: REDES EN AUTOPISTAS <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
                 </div>
             </article>
 
@@ -395,7 +395,7 @@
                         <figure><figcaption>PROVINCIA DE BUENOS AIRES</figcaption><img src="assets/images/provincia.webp" alt="Red en autopistas de la Provincia de Buenos Aires" width="1625" height="968" loading="lazy" decoding="async"></figure>
                     </div>
                     <div class="renewal-case__copy">
-                        <span class="renewal-kicker">GRUPO ITTEL | CASO DE ÉXITO 02</span>
+                        <span class="renewal-kicker">GRUPO ITTEL | CASO DE ÉXITO</span>
                         <h3>REDES EN<br>AUTOPISTAS</h3>
                         <div class="renewal-case__partner"><strong>DESPLIEGUES ESTRATÉGICOS</strong></div>
                         <p class="renewal-case__lead">Fibra óptica y torres desplegadas sobre<br>autopistas y corredores estratégicos.</p>
@@ -404,7 +404,6 @@
                             <li><strong>PROVINCIA DE BUENOS AIRES</strong><span>+100 km de fibra y 41 torres estratégicas.</span></li>
                         </ul>
                         <div class="renewal-case__capacity"><i class="fas fa-globe" aria-hidden="true"></i><p><strong>CAPACIDAD NACIONAL</strong><span>+1.000 km de fibra óptica · +200 torres telco</span></p></div>
-                        <a class="renewal-case__next" href="#caso-isp">SIGUIENTE: REDES DE NUESTROS ISP <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </article>
@@ -412,11 +411,10 @@
             <article id="caso-isp" class="renewal-case renewal-case--isp">
                 <div class="renewal-case__isp-layout">
                     <header class="renewal-case__isp-heading">
-                        <span class="renewal-kicker">GRUPO ITTEL | CASO DE ÉXITO 03</span>
+                        <span class="renewal-kicker">GRUPO ITTEL | CASO DE ÉXITO</span>
                         <h3>REDES DE<br>NUESTROS ISP</h3>
                         <p>Redes FTTH diseñadas, desplegadas<br>y operadas bajo nuestras marcas<br>USITTEL y LARANET.</p>
                         <strong class="renewal-case__isp-tags">INFRAESTRUCTURA PROPIA · OPERACIÓN LOCAL · CONECTIVIDAD</strong>
-                        <a class="renewal-case__next" href="#stats">SIGUIENTE: CLIENTES Y ORGANISMOS <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
                     </header>
                     <div class="renewal-case__isp-grid">
                         <figure>
@@ -598,78 +596,6 @@
                 </div>
 
             </div>
-        </div>
-    </section>
-
-    <!-- Obras en Campo — Showroom Slider -->
-    <section id="obras" class="section showroom-section" hidden aria-hidden="true" style="display: none !important;">
-        <div class="container">
-            <span class="global-eyebrow" data-aos="fade-up" data-i18n="obras.eyebrow">OBRAS</span>
-            <div class="showroom-header" data-aos="fade-up">
-                <h2 class="showroom-title" data-i18n="obras.title">Obras en Campo</h2>
-                <p class="showroom-desc" data-i18n="obras.description">Registro fotográfico de obras ejecutadas en campo a lo largo del territorio nacional.</p>
-            </div>
-
-            <div class="showroom-viewport" data-aos="fade-up" data-aos-delay="100">
-                <div class="showroom-track" id="showroom-track">
-
-                    <div class="showroom-page">
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/1.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/21.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/22.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/23.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/18.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/4.webp" alt="" loading="lazy" decoding="async"></div>
-                    </div>
-
-                    <div class="showroom-page">
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/6.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/7.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/8.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/9.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/10.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/11.webp" alt="" loading="lazy" decoding="async"></div>
-                    </div>
-
-                    <div class="showroom-page">
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/12.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/13.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/14.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/15.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/16.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/17.webp" alt="" loading="lazy" decoding="async"></div>
-                    </div>
-
-                    <div class="showroom-page">
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/19.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/20.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/24.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/25.webp" alt="" loading="lazy" decoding="async"></div>
-                        <div class="showroom-card"><img src="assets/images/obras_en_campo/2.webp" alt="" loading="lazy" decoding="async"></div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="showroom-controls">
-                <button class="showroom-btn-prev" id="showroom-prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-                <div class="showroom-dots" id="showroom-dots">
-                    <button class="showroom-dot active" data-page="0"></button>
-                    <button class="showroom-dot" data-page="1"></button>
-                    <button class="showroom-dot" data-page="2"></button>
-                    <button class="showroom-dot" data-page="3"></button>
-                </div>
-                <button class="showroom-btn-next" id="showroom-next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-
-        <div class="sw-lightbox" id="sw-lightbox" aria-hidden="true">
-            <div class="sw-lb-overlay" id="sw-lb-overlay"></div>
-            <button class="sw-lb-close" id="sw-lb-close" aria-label="Cerrar">×</button>
-            <button class="sw-lb-nav sw-lb-prev" id="sw-lb-prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-            <img class="sw-lb-image" id="sw-lb-image" src="" alt="">
-            <button class="sw-lb-nav sw-lb-next" id="sw-lb-next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
-            <div class="sw-lb-counter" id="sw-lb-counter">1 / 23</div>
         </div>
     </section>
 
