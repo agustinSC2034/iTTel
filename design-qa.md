@@ -73,6 +73,53 @@ No quedan hallazgos P0, P1 o P2 en el Hero. Como P3 aceptable, la fotografía li
 
 final result: passed
 
+## Revalidación específica — Tipografía del hero
+
+### Evidencia
+
+- Referencia anterior: `C:/Users/Agustin/AppData/Local/Temp/codex-clipboard-d8022ba4-c043-4add-95ef-f5552048a168.png`.
+- Implementación final: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/hero-text-after.png`.
+- Vista mobile: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/hero-text-mobile.png` (`390 × 844`).
+
+### Correcciones y resultado
+
+- [P2 resuelto] El subtítulo y el texto principal habían quedado más chicos y claros que en la versión anterior. Se restauró una escala mayor, el gris corporativo `#344054` y el interlineado original más amplio.
+- Fondo, posición de la antena, logo, navegación y controles del hero no fueron modificados.
+- El ajuste desktop mantiene la adaptación mobile existente; no hay overflow horizontal a `390 px`.
+
+No quedan hallazgos P0, P1 o P2 para este ajuste.
+
+final result: passed
+
+## Revalidación específica — Selector de idioma minimalista
+
+### Evidencia
+
+- Verdad visual: `C:/Users/Agustin/AppData/Local/Temp/codex-clipboard-4392b187-3c0c-4c5f-bb7e-febd994b987a.png` (`1604 × 161`).
+- Implementación desktop: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/language-selector-minimal-closed.png` (`1280 × 720`, DPR 1).
+- Comparación focal normalizada: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/language-selector-comparison.png`.
+- Implementación mobile: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/language-selector-minimal-mobile.png` (`390 × 844`, DPR 1).
+- Estado: navbar sobre el hero, selector cerrado y desplegable abierto verificados.
+
+### Historial de comparación y correcciones
+
+- [P2 resuelto] El selector tenía forma de píldora, fondo celeste, borde y texto `ARG/ENG`, generando un bloque visual innecesario. Se retiraron texto, fondo, borde, sombra y blur; quedan únicamente la bandera real y el chevron existente.
+- [P2 resuelto] El listener anterior abría el menú pero bloqueaba la sincronización de `aria-expanded`. El mismo control actualiza ahora el estado accesible al abrir y al cerrar fuera del menú.
+- [P2 resuelto] La variante mobile conservaba el fondo y borde forzados del diseño anterior. El selector también es transparente dentro del menú móvil y mantiene un área táctil de `46 × 34 px`.
+
+### Superficies de fidelidad
+
+- Tipografía y contenido: se eliminó solamente la etiqueta redundante; la elección completa sigue visible dentro del desplegable.
+- Espaciado: control compacto, centrado y alineado con los links del navbar, sin alterar la cápsula principal.
+- Color e imagen: bandera de FlagCDN preservada; fondo y borde del control son completamente transparentes.
+- Interacción y accesibilidad: apertura/cierre operativos, `aria-expanded` sincronizado y foco visible conservado.
+- Responsive: desktop y `390 px` sin overflow horizontal.
+- Bilingüe y consola: banderas correctas en español e inglés; 0 errores o advertencias.
+
+No quedan hallazgos P0, P1 o P2 para este ajuste.
+
+final result: passed
+
 ## Revalidación específica — Retiro de la alianza local
 
 ### Evidencia
@@ -512,5 +559,32 @@ final result: passed
 - Consola y validación: 0 errores o advertencias en español e inglés; `node --check js/main.js`, balance de llaves CSS y `git diff --check` correctos.
 
 No quedan hallazgos P0, P1 o P2. Como P3 aceptable, las banderas dependen del mismo proveedor externo que ya utiliza el selector de idioma del sitio.
+
+final result: passed
+
+## Revalidación específica — Ancho del carrusel de clientes
+
+### Evidencia
+
+- Estado anterior: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/clients-carousel-before.png`.
+- Implementación final desktop: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/clients-carousel-after.png` (`1280 × 720`, DPR 1).
+- Implementación final mobile: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/clients-carousel-mobile.png` (`390 × 844`, DPR 1).
+- Estado: sección `#clientes`, carrusel en reproducción automática.
+
+### Historial de comparación y correcciones
+
+- [P2 resuelto] La banda de logos heredaba el ancho editorial de `1150 px`, por lo que terminaba visualmente demasiado pronto en ambos laterales. El encabezado conserva ese ancho de lectura, mientras el carrusel se extiende ahora hasta `min(1720px, 100vw - 48px)`.
+- [P2 resuelto] En mobile el carrusel también quedaba limitado por el contenedor interno. La banda usa ahora `100vw - 24px`, con márgenes laterales mínimos y sin overflow horizontal.
+
+### Superficies de fidelidad
+
+- Tipografía y contenido: sin cambios; títulos, descripción y los 27 logos originales se preservan.
+- Espaciado: carrusel centrado respecto del viewport, con márgenes simétricos y encabezado alineado al sistema editorial existente.
+- Color e imagen: no se modificaron filtros, tamaños, proporciones ni archivos de logos.
+- Interacción: autoplay confirmado en movimiento; arrastre y lógica JavaScript permanecen intactos.
+- Responsive: ancho comprobado en desktop y `390 px`, sin overflow horizontal.
+- Bilingüe y consola: misma geometría en español e inglés; 0 errores o advertencias.
+
+No quedan hallazgos P0, P1 o P2 para este ajuste.
 
 final result: passed
