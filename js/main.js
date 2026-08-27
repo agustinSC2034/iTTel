@@ -626,12 +626,14 @@ function initLanguageSelector() {
     // Toggle dropdown (Abrir/Cerrar menú)
     languageBtn.addEventListener('click', (e) => {
         e.stopImmediatePropagation();
-        languageDropdown.classList.toggle('active');
+        const isOpen = languageDropdown.classList.toggle('active');
+        languageBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
     
     // Close dropdown when clicking outside
     document.addEventListener('click', () => {
         languageDropdown.classList.remove('active');
+        languageBtn.setAttribute('aria-expanded', 'false');
     });
     
     // NOTA: Ya no necesitamos los listeners para los clicks en las opciones

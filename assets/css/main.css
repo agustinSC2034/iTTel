@@ -6164,9 +6164,9 @@ html[lang="en"] .renewal-sice .sice-experiences__header h2 {
 
 .renewal-hero__subtitle {
     margin: 0 0 1.4rem;
-    color: #26354d;
+    color: #344054;
     font-family: 'Inter', sans-serif;
-    font-size: clamp(0.82rem, 1vw, 1.1rem);
+    font-size: clamp(1rem, 1.18vw, 1.35rem);
     font-weight: 400;
     letter-spacing: 0.15em;
     line-height: 1.4;
@@ -6176,12 +6176,12 @@ html[lang="en"] .renewal-sice .sice-experiences__header h2 {
 .renewal-hero h1 {
     max-width: 570px;
     margin: 0;
-    color: #223149;
+    color: #344054;
     font-family: 'Inter', sans-serif;
-    font-size: clamp(1rem, 1.05vw, 1.25rem);
+    font-size: clamp(1.25rem, 1.38vw, 1.6rem);
     font-weight: 400;
     letter-spacing: 0.005em;
-    line-height: 1.58;
+    line-height: 1.55;
     text-transform: uppercase;
     text-wrap: initial;
 }
@@ -11151,7 +11151,10 @@ html[lang="en"] .renewal-sice .sice-experiences__header h2 {
 }
 
 .renewal-active #clientes .clients-carousel {
+    width: min(1720px, calc(100vw - 48px));
     margin-top: 74px;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 .renewal-active .contact-clean {
@@ -13645,4 +13648,35 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
     .audit-lockup img {
         width: 74px;
     }
+}
+
+/* Selector de idioma minimalista: sólo bandera y desplegable. */
+.renewal-active .language-btn-glass,
+.renewal-active .navbar-glass.scrolled .language-btn-glass,
+.renewal-active .navbar-glass:not(.scrolled) .language-btn-glass {
+    min-width: 38px;
+    min-height: 34px;
+    justify-content: center;
+    gap: 7px;
+    padding: 6px 4px;
+    border-color: transparent !important;
+    background: transparent !important;
+    box-shadow: none;
+    color: #17233d;
+    text-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.renewal-active .language-btn-glass:hover {
+    border-color: transparent !important;
+    background: transparent !important;
+    box-shadow: none;
+    color: #227db3;
+    transform: none;
+}
+
+.renewal-active .language-btn-glass .flag-icon {
+    width: 17px;
+    height: 12px;
 }

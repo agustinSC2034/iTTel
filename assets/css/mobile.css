@@ -1233,6 +1233,7 @@
     }
 
     .renewal-active #clientes .clients-carousel {
+        width: calc(100vw - 24px);
         margin-top: 50px;
     }
 
@@ -1257,5 +1258,16 @@
     .sice-alliance-lockup__local img {
         width: 76px;
         mix-blend-mode: multiply;
+    }
+}
+
+@media (max-width: 900px) {
+    .renewal-active .nav-menu-glass .language-btn-glass {
+        min-width: 38px;
+        justify-content: center;
+        padding: 6px 4px;
+        border-color: transparent !important;
+        background: transparent !important;
+        box-shadow: none;
     }
 }
