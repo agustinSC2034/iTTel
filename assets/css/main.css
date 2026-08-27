@@ -5711,6 +5711,301 @@ body.renewal-active {
     }
 }
 
+/* Ajustes de simplificación visual — revisión agosto 2026 */
+.renewal-hero__controls {
+    right: clamp(18px, 3vw, 52px);
+    bottom: 22px;
+    gap: 0.12rem;
+    opacity: 0.46;
+}
+
+.renewal-hero__controls button {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(6, 27, 55, 0.18);
+    color: rgba(255, 255, 255, 0.86);
+    box-shadow: none;
+    backdrop-filter: blur(5px);
+    font-size: 0.66rem;
+}
+
+.renewal-hero__controls button:hover,
+.renewal-hero__controls button:focus-visible {
+    background: rgba(255, 255, 255, 0.84);
+    color: #0b426a;
+}
+
+.renewal-overview__column li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+}
+
+.renewal-solution__card--networks {
+    height: 710px;
+    min-height: 710px;
+    padding-bottom: 45px;
+}
+
+.renewal-solution__logo-grid--institutions {
+    padding-bottom: 12px;
+}
+
+.works-stage__shade {
+    background: linear-gradient(90deg,
+        rgba(3, 12, 23, 0) 0%,
+        rgba(3, 13, 26, 0.04) 34%,
+        rgba(4, 21, 43, 0.18) 47%,
+        rgba(4, 24, 49, 0.48) 65%,
+        rgba(4, 27, 56, 0.96) 100%);
+}
+
+.renewal-sice {
+    height: 500svh;
+}
+
+.sice-global__brand {
+    width: 245px;
+    height: 104px;
+    overflow: hidden;
+    margin-top: 34px;
+}
+
+.sice-global__brand img,
+.sice-alliance-lockup__sice {
+    width: 250px;
+    height: 118px;
+    clip-path: inset(14px 18px 16px 18px);
+    mix-blend-mode: multiply;
+    object-fit: cover;
+}
+
+.renewal-sice__progress ol {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.renewal-sice__progress li {
+    grid-template-columns: auto auto minmax(20px, 1fr);
+    gap: 9px;
+    font-size: 0.65rem;
+}
+
+.renewal-sice__scene--experiences {
+    background: #f7f9fc;
+}
+
+.sice-experiences {
+    width: min(1680px, 100%);
+    height: 100%;
+    margin: 0 auto;
+    padding: 126px 4.5% 92px;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg, rgba(8, 103, 197, 0.045), transparent 42%),
+        #f7f9fc;
+}
+
+.sice-experiences__header {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+    gap: 36px;
+    align-items: end;
+    margin-bottom: 30px;
+}
+
+.sice-experiences__header .sice-story__kicker {
+    grid-column: 1 / -1;
+}
+
+.renewal-sice .sice-experiences__header h2,
+html[lang="en"] .renewal-sice .sice-experiences__header h2 {
+    margin: 0;
+    color: #07162f;
+    font: 700 clamp(2rem, 2.55vw, 2.85rem)/1.12 'Poppins', sans-serif;
+    letter-spacing: -0.035em;
+}
+
+.sice-experiences__header p {
+    margin: 0 0 4px;
+    color: #67758a;
+    font: 400 1rem/1.5 'Inter', sans-serif;
+}
+
+.sice-experiences__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.sice-experiences__grid article {
+    display: flex;
+    min-height: 132px;
+    flex-direction: column;
+    padding: 17px 18px 15px;
+    border: 1px solid #dbe4ed;
+    background: rgba(255, 255, 255, 0.88);
+}
+
+.sice-experiences__grid article > span {
+    color: #087fbe;
+    font: 750 0.68rem/1.2 'Inter', sans-serif;
+    letter-spacing: 0.12em;
+}
+
+.sice-experiences__grid h3 {
+    margin: 8px 0 4px;
+    color: #0a1b34;
+    font: 700 0.98rem/1.25 'Inter', sans-serif;
+}
+
+.sice-experiences__grid p {
+    margin: 0;
+    color: #56677e;
+    font: 400 0.8rem/1.35 'Inter', sans-serif;
+}
+
+.sice-experiences__grid small {
+    margin-top: auto;
+    padding-top: 9px;
+    color: #8190a3;
+    font: 600 0.69rem/1.2 'Inter', sans-serif;
+}
+
+.sice-alliance-lockup {
+    height: 96px;
+    gap: 18px;
+}
+
+.sice-alliance-lockup__sice {
+    flex: 0 0 218px;
+}
+
+.sice-alliance-lockup__divider {
+    height: 52px;
+    background: #a8b2c0;
+}
+
+.sice-alliance-lockup__local {
+    display: block;
+    width: 126px;
+}
+
+.sice-alliance-lockup__local img {
+    width: 112px;
+}
+
+.audit-lockup {
+    gap: 22px;
+    align-items: center;
+}
+
+.audit-lockup img {
+    position: static;
+    width: 94px;
+    height: auto;
+    object-fit: contain;
+}
+
+.renewal-case--highways .renewal-case__bullets {
+    margin-top: 20px;
+}
+
+.footer-section h4 {
+    color: #78c8e8;
+}
+
+@media (max-width: 1199px) {
+    .renewal-sice {
+        height: auto;
+    }
+
+    .sice-experiences {
+        height: auto;
+        padding: 104px 28px 72px;
+        overflow: visible;
+    }
+
+    .sice-experiences__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .renewal-hero__controls {
+        right: 14px;
+        bottom: 14px;
+    }
+
+    .renewal-solution__card--networks {
+        height: auto;
+        min-height: 0;
+        padding-bottom: 40px;
+    }
+
+    .sice-experiences {
+        padding: 88px 20px 62px;
+    }
+
+    .sice-experiences__header {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .renewal-sice .sice-experiences__header h2,
+    html[lang="en"] .renewal-sice .sice-experiences__header h2 {
+        font-size: clamp(1.9rem, 9vw, 2.6rem);
+    }
+
+    .sice-experiences__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sice-experiences__grid article {
+        min-height: 0;
+    }
+
+    .sice-alliance-lockup__sice {
+        flex-basis: 158px;
+        width: 180px;
+    }
+
+    .audit-lockup {
+        gap: 14px;
+    }
+
+    .audit-lockup img {
+        width: 74px;
+    }
+
+    .renewal-solution--works .works-card__journey ol {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        overflow: visible;
+        padding-bottom: 0;
+    }
+
+    .renewal-solution--works .works-card__journey li,
+    .renewal-solution--works .works-card__journey li:nth-child(odd),
+    .renewal-solution--works .works-card__journey li:nth-child(even) {
+        min-width: 0;
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+
+    .renewal-solution--works .works-card__journey .works-card__journey-arrow {
+        display: none;
+    }
+
+    .works-card__journey strong {
+        white-space: normal;
+    }
+}
+
 .renewal-active .navbar-glass,
 .renewal-active .navbar-glass:not(.scrolled) {
     background: rgba(255, 255, 255, 0.92);
@@ -13128,5 +13423,188 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
     .sice-global__metrics {
         transform: none !important;
         transition: none !important;
+    }
+}
+
+/* La revisión de simplificación se declara al final para prevalecer sobre la capa histórica. */
+@media (max-width: 767px) {
+    .renewal-solution--works .works-card__journey li.works-card__journey-arrow {
+        display: none !important;
+    }
+}
+@media (max-width: 767px) {
+    .renewal-solution--works .works-card__journey ol {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        overflow: visible;
+        padding-bottom: 0;
+    }
+
+    .renewal-solution--works .works-card__journey li,
+    .renewal-solution--works .works-card__journey li:nth-child(odd),
+    .renewal-solution--works .works-card__journey li:nth-child(even) {
+        min-width: 0;
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+
+    .renewal-solution--works .works-card__journey .works-card__journey-arrow {
+        display: none;
+    }
+
+    .works-card__journey strong {
+        white-space: normal;
+    }
+}
+.renewal-hero__controls {
+    right: clamp(18px, 3vw, 52px);
+    bottom: 22px;
+    gap: 0.12rem;
+    opacity: 0.46;
+}
+
+.renewal-hero__controls button {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(6, 27, 55, 0.18);
+    color: rgba(255, 255, 255, 0.86);
+    box-shadow: none;
+    backdrop-filter: blur(5px);
+    font-size: 0.66rem;
+}
+
+.renewal-hero__controls button:hover,
+.renewal-hero__controls button:focus-visible {
+    background: rgba(255, 255, 255, 0.84);
+    color: #0b426a;
+}
+
+.renewal-overview__column li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+}
+
+.renewal-solution__card--networks {
+    height: 710px;
+    min-height: 710px;
+    padding-bottom: 45px;
+}
+
+.renewal-solution__logo-grid--institutions {
+    padding-bottom: 12px;
+}
+
+.works-stage__shade {
+    background: linear-gradient(90deg, rgba(3, 12, 23, 0) 0%, rgba(3, 13, 26, 0.04) 34%, rgba(4, 21, 43, 0.18) 47%, rgba(4, 24, 49, 0.48) 65%, rgba(4, 27, 56, 0.96) 100%);
+}
+
+.renewal-sice {
+    height: 500svh;
+}
+
+.sice-global__brand {
+    width: 245px;
+    height: 104px;
+    overflow: hidden;
+    margin-top: 34px;
+}
+
+.sice-global__brand img,
+.sice-alliance-lockup__sice {
+    width: 250px;
+    height: 118px;
+    clip-path: inset(14px 18px 16px 18px);
+    mix-blend-mode: multiply;
+    object-fit: cover;
+}
+
+.renewal-sice__progress ol {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.renewal-sice__progress li {
+    grid-template-columns: auto auto minmax(20px, 1fr);
+    gap: 9px;
+    font-size: 0.65rem;
+}
+
+.sice-alliance-lockup {
+    height: 96px;
+    gap: 18px;
+}
+
+.sice-alliance-lockup__sice {
+    flex: 0 0 218px;
+}
+
+.sice-alliance-lockup__divider {
+    height: 52px;
+    background: #a8b2c0;
+}
+
+.sice-alliance-lockup__local {
+    display: block;
+    width: 126px;
+}
+
+.sice-alliance-lockup__local img {
+    width: 112px;
+}
+
+.audit-lockup {
+    gap: 22px;
+    align-items: center;
+}
+
+.audit-lockup img {
+    position: static;
+    width: 94px;
+    height: auto;
+    object-fit: contain;
+}
+
+.renewal-case--highways .renewal-case__bullets {
+    margin-top: 20px;
+}
+
+.footer-section h4 {
+    color: #78c8e8;
+}
+
+@media (max-width: 1199px) {
+    .renewal-sice {
+        height: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .renewal-hero__controls {
+        right: 14px;
+        bottom: 14px;
+    }
+
+    .renewal-solution__card--networks {
+        height: auto;
+        min-height: 0;
+        padding-bottom: 40px;
+    }
+
+    .sice-alliance-lockup__sice {
+        flex-basis: 158px;
+        width: 180px;
+    }
+
+    .audit-lockup {
+        gap: 14px;
+    }
+
+    .audit-lockup img {
+        width: 74px;
     }
 }

@@ -1,0 +1,1172 @@
+/* Responsive composition for the renewed site. */
+
+@media (max-width: 900px) {
+    html,
+    body {
+        overflow-x: clip;
+    }
+
+    .renewal-active .navbar-glass {
+        top: 12px;
+        width: calc(100% - 28px);
+        padding: 6px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.82);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.94) !important;
+        box-shadow: 0 15px 36px rgba(8, 24, 47, 0.14);
+        backdrop-filter: blur(16px);
+    }
+
+    .renewal-active .nav-glass-container {
+        height: 50px;
+    }
+
+    .renewal-active .nav-toggle-glass {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+    }
+
+    /* Full-screen hero, following the original site's mobile pattern. */
+    .renewal-hero,
+    .renewal-hero__content {
+        height: 100svh;
+        min-height: 680px;
+    }
+
+    .renewal-hero__slide img,
+    .renewal-hero__slide--telco img,
+    .renewal-hero__slide--it img {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        object-fit: cover;
+    }
+
+    .renewal-hero__slide--telco img {
+        object-position: 71% center;
+    }
+
+    .renewal-hero__slide--it img {
+        object-position: 65% center;
+        transform: none;
+    }
+
+    .renewal-hero__veil {
+        background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.08) 25%, rgba(255, 255, 255, 0.18) 60%, rgba(255, 255, 255, 0.4) 100%),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.3) 58%, rgba(255, 255, 255, 0.02) 100%);
+    }
+
+    .renewal-hero__content {
+        width: 100%;
+        align-items: center;
+        padding: 96px 16px 46px;
+    }
+
+    .renewal-hero__copy {
+        width: min(100%, 340px);
+        margin-top: 14vh;
+        transform: none;
+    }
+
+    .renewal-hero .renewal-kicker {
+        margin-bottom: 13px;
+        font-size: 0.62rem;
+        letter-spacing: 0.34em;
+    }
+
+    .renewal-hero__logo {
+        width: min(255px, 72vw);
+        margin-bottom: 24px;
+    }
+
+    .renewal-hero__subtitle {
+        display: none;
+    }
+
+    .renewal-hero h1 {
+        width: min(300px, 84vw);
+        color: #243249;
+        font-size: 0.78rem;
+        line-height: 1.52;
+    }
+
+    .renewal-hero__controls {
+        right: 12px;
+        bottom: 12px;
+        gap: 2px;
+        opacity: 0.28;
+    }
+
+    .renewal-hero__controls button {
+        width: 36px;
+        min-width: 36px;
+        height: 36px;
+        min-height: 36px;
+        background: rgba(4, 25, 48, 0.34);
+        font-size: 0.58rem;
+    }
+
+    /* Compact editorial overview. */
+    .renewal-overview {
+        min-height: 0;
+        background: #f8fbfe;
+    }
+
+    .renewal-overview__blueprint {
+        width: 100%;
+        height: 100%;
+        opacity: 0.16;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .renewal-overview .renewal-overview__inner {
+        width: calc(100% - 32px);
+        padding: 96px 0 52px;
+    }
+
+    .renewal-overview .renewal-section-heading {
+        margin-bottom: 28px;
+        text-align: center;
+    }
+
+    .renewal-overview .renewal-section-heading h2 {
+        margin: 0 auto 20px;
+        font-size: clamp(1.65rem, 7.8vw, 2rem);
+        line-height: 1.13;
+    }
+
+    .renewal-overview .renewal-section-heading p {
+        max-width: 330px;
+        margin: 0 auto;
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+
+    .renewal-overview__columns {
+        grid-template-columns: 1fr;
+    }
+
+    .renewal-overview__column + .renewal-overview__column {
+        border-top: 1px solid #dbe5ee;
+        border-left: 0;
+    }
+
+    .renewal-overview__column h3,
+    .renewal-overview__matrix-footer strong {
+        padding: 14px 16px;
+        font-size: 0.72rem;
+    }
+
+    .renewal-overview__column li {
+        min-height: 0;
+        padding: 17px 16px;
+    }
+
+    .renewal-overview__column strong {
+        font-size: 0.82rem;
+    }
+
+    .renewal-overview__column p,
+    .renewal-overview__matrix-footer p {
+        margin-top: 4px;
+        font-size: 0.78rem;
+        line-height: 1.45;
+    }
+
+    .renewal-overview__matrix-footer {
+        padding-bottom: 17px;
+    }
+
+    /* Image-led solution scenes instead of detached white cards. */
+    .renewal-solution--networks,
+    .renewal-solution--networks .renewal-solution__layout,
+    .operation-stage,
+    .works-stage,
+    .maintenance-stage {
+        min-height: 100svh;
+    }
+
+    .renewal-solution--networks .renewal-solution__media,
+    .renewal-solution--networks .renewal-solution__carousel,
+    .operation-stage__background,
+    .works-stage__picture,
+    .works-stage__background,
+    .maintenance-stage__background {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .renewal-solution--networks .image-story__slide img {
+        object-position: center;
+    }
+
+    .renewal-solution--networks .renewal-solution__shade {
+        background: linear-gradient(180deg, rgba(3, 15, 30, 0.28) 0%, rgba(3, 18, 37, 0.78) 43%, #031327 100%);
+    }
+
+    .renewal-solution--networks .renewal-solution__layout {
+        align-items: center;
+        padding: 100px 20px 58px;
+    }
+
+    .renewal-solution__card--networks {
+        width: 100%;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        color: #fff;
+        backdrop-filter: none;
+    }
+
+    .renewal-solution__card--networks .renewal-kicker,
+    .operation-card__kicker,
+    .works-card__kicker,
+    .maintenance-card__kicker {
+        margin-bottom: 18px;
+        color: #5acbf2;
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
+    }
+
+    .renewal-solution__card--networks h3,
+    html[lang="en"] .renewal-solution__card--networks h3,
+    .operation-card h3,
+    html[lang="en"] .operation-card h3,
+    .works-card h3,
+    html[lang="en"] .works-card h3,
+    .maintenance-card h3,
+    html[lang="en"] .maintenance-card h3 {
+        margin-bottom: 16px;
+        color: #fff;
+        font-size: clamp(2rem, 10vw, 2.65rem);
+        line-height: 1.04;
+        text-wrap: balance;
+    }
+
+    .renewal-solution__card--networks > .renewal-solution__lead,
+    .operation-card__lead,
+    .renewal-solution--works .works-card__lead,
+    .renewal-solution--maintenance .maintenance-card__lead {
+        color: rgba(255, 255, 255, 0.88);
+        font-size: 0.92rem;
+        line-height: 1.5;
+    }
+
+    .renewal-solution__card--networks .renewal-solution__feature-list,
+    .renewal-solution--operation .operation-card__features,
+    .renewal-solution--works .works-card__features,
+    .renewal-solution--maintenance .maintenance-card__features {
+        gap: 18px;
+        margin-top: 26px;
+    }
+
+    .renewal-solution__card--networks .renewal-solution__feature-list strong,
+    .renewal-solution__card--networks .renewal-solution__feature-list p,
+    .operation-card__features strong,
+    .operation-card__features span,
+    .works-card__features strong,
+    .works-card__features span,
+    .maintenance-card__features strong,
+    .maintenance-card__features span {
+        color: #fff;
+    }
+
+    .renewal-solution__card--networks .renewal-solution__feature-list strong,
+    .operation-card__features strong,
+    .works-card__features strong,
+    .maintenance-card__features strong {
+        font-size: 0.88rem;
+    }
+
+    .renewal-solution__card--networks .renewal-solution__feature-list p,
+    .operation-card__features span,
+    .works-card__features span,
+    .maintenance-card__features span {
+        margin-top: 3px;
+        font-size: 0.8rem;
+        line-height: 1.45;
+        opacity: 0.82;
+    }
+
+    .renewal-solution__logo-grid--operators {
+        gap: 22px 16px;
+        margin-top: 34px;
+    }
+
+    .renewal-solution__logo-grid--institutions {
+        gap: 18px 12px;
+        margin-top: 26px;
+        padding-bottom: 10px;
+    }
+
+    .renewal-solution__logo-grid img {
+        height: 25px;
+        filter: grayscale(1) brightness(0) invert(1);
+        opacity: 0.88;
+    }
+
+    .renewal-solution__logo-grid--institutions img {
+        height: 38px;
+    }
+
+    .operation-stage,
+    .works-stage,
+    .maintenance-stage {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        background: #03182f;
+    }
+
+    .operation-stage::after,
+    .maintenance-stage::after {
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(2, 17, 34, 0.25) 0%, rgba(2, 21, 43, 0.76) 40%, #03172e 100%);
+        content: '';
+        pointer-events: none;
+    }
+
+    .operation-stage__background {
+        z-index: 0;
+        object-position: 72% center;
+    }
+
+    .operation-card,
+    .works-card,
+    .maintenance-card {
+        position: relative;
+        z-index: 2;
+        inset: auto;
+        display: flex;
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        min-height: 100svh;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        padding: 104px 22px 58px;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        color: #fff;
+    }
+
+    .operation-card__partner {
+        margin-top: 34px;
+    }
+
+    .operation-card__partner img {
+        filter: grayscale(1) brightness(0) invert(1);
+    }
+
+    .works-stage__picture {
+        z-index: 0;
+    }
+
+    .works-stage__background {
+        object-position: 45% center;
+    }
+
+    .works-stage__shade {
+        z-index: 1;
+        background: linear-gradient(180deg, rgba(2, 17, 34, 0.2) 0%, rgba(3, 21, 42, 0.75) 44%, #03172e 100%);
+    }
+
+    .works-card__journey {
+        display: none;
+    }
+
+    .maintenance-stage__background {
+        z-index: 0;
+        object-position: 54% center;
+    }
+
+    .maintenance-card__coverage {
+        align-self: flex-start;
+        margin-top: 34px;
+        box-shadow: none;
+    }
+}
+
+/* Casos de éxito y cierre: lectura corta, imágenes protagonistas y menos ornamento. */
+@media (max-width: 900px) {
+    .renewal-cases,
+    .renewal-case,
+    .renewal-case--rail,
+    .renewal-case--highways,
+    .renewal-case--isp {
+        min-height: 0;
+    }
+
+    .renewal-case--rail {
+        display: flex;
+        min-height: 100svh;
+        padding: 108px 20px 52px;
+        background-position: 66% center;
+    }
+
+    .renewal-case--rail::before {
+        background: linear-gradient(90deg, rgba(3, 24, 50, 0.95) 0%, rgba(3, 24, 50, 0.77) 62%, rgba(3, 24, 50, 0.2) 100%);
+    }
+
+    .renewal-case--rail .renewal-case__content {
+        align-self: center;
+        width: min(100%, 330px);
+        padding: 0;
+    }
+
+    .renewal-case__eyebrow {
+        margin-bottom: 22px;
+        font-size: 0.66rem;
+        letter-spacing: 0.18em;
+    }
+
+    .renewal-case h2 {
+        font-size: clamp(2.35rem, 12vw, 3.35rem);
+        line-height: 0.98;
+    }
+
+    .renewal-case__partner {
+        margin: 24px 0;
+        font-size: 0.77rem;
+    }
+
+    .renewal-case__lead,
+    .renewal-case__items p {
+        font-size: 0.87rem;
+        line-height: 1.5;
+    }
+
+    .renewal-case__items {
+        margin-top: 25px;
+        gap: 19px;
+    }
+
+    .renewal-case--highways,
+    .renewal-case--isp {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 104px 20px 56px;
+        background: #f5f8fb;
+        color: #0b1c37;
+    }
+
+    .renewal-case--highways .renewal-case__copy,
+    .renewal-case--isp .renewal-case__copy {
+        order: 1;
+        width: 100%;
+        padding: 0 0 32px;
+        color: inherit;
+    }
+
+    .renewal-case--highways .renewal-case__lead,
+    .renewal-case--highways .renewal-case__items p,
+    .renewal-case--isp .renewal-case__lead {
+        color: #596b84;
+    }
+
+    .renewal-case--highways .renewal-case__maps,
+    .renewal-case--isp .renewal-case__cards {
+        order: 2;
+        width: 100%;
+    }
+
+    .renewal-case--highways .renewal-case__maps {
+        display: grid;
+        gap: 12px;
+    }
+
+    .renewal-case--highways figure {
+        aspect-ratio: 1.34 / 1;
+        border: 1px solid #d7e2ee;
+        border-radius: 3px;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .renewal-case--highways figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .renewal-case--highways figcaption {
+        padding: 7px 10px;
+        background: rgba(5, 35, 68, 0.92);
+        color: #fff;
+        font-size: 0.65rem;
+    }
+
+    .renewal-case__capacity {
+        margin-top: 26px;
+        padding-top: 22px;
+        border-top-color: #cbd8e6;
+    }
+
+    .renewal-case--isp .renewal-case__copy {
+        padding-bottom: 28px;
+    }
+
+    .renewal-case--isp .renewal-case__cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .renewal-isp-card {
+        min-height: 0;
+        border: 1px solid #d7e2ee;
+        border-radius: 3px;
+        background: #fff;
+        color: #0b1c37;
+        box-shadow: none;
+    }
+
+    .renewal-isp-card__visual {
+        min-height: 260px;
+    }
+
+    .renewal-isp-card__visual img {
+        object-fit: contain;
+        padding: 18px;
+    }
+
+    .renewal-isp-card__body {
+        padding: 24px 22px 28px;
+        background: #fff;
+    }
+
+    .renewal-isp-card__body p,
+    .renewal-isp-card__metric {
+        color: #596b84;
+    }
+
+    .stats-section {
+        padding: 70px 20px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .clients-section,
+    .contact-section {
+        padding-top: 82px;
+        padding-bottom: 82px;
+    }
+
+    .clients-header,
+    .contact-header {
+        margin-bottom: 44px;
+    }
+
+    .clients-title,
+    .contact-title {
+        font-size: clamp(2rem, 9vw, 2.55rem);
+    }
+
+    .clients-carousel {
+        min-height: 128px;
+    }
+
+    .client-logo {
+        max-width: 150px;
+        max-height: 66px;
+        filter: grayscale(1);
+    }
+
+    .contact-grid,
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+}
+
+@media (max-width: 430px) {
+    .renewal-hero,
+    .renewal-solution--networks,
+    .renewal-solution--operation,
+    .renewal-solution--works,
+    .renewal-solution--maintenance,
+    .renewal-case--rail {
+        min-height: 844px;
+    }
+
+    .renewal-solution__operator-logos,
+    .renewal-solution__institution-logos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .renewal-hero__scene,
+    .reveal-on-scroll,
+    .sice-story__scene {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@media (max-width: 900px) {
+    /* SICE: static, compact scenes with controlled image-to-copy transitions. */
+    .renewal-sice,
+    .renewal-sice__sticky,
+    .renewal-sice__stage {
+        height: auto;
+        min-height: 0;
+    }
+
+    .renewal-sice__sticky {
+        position: relative;
+        top: auto;
+    }
+
+    .renewal-sice__scene,
+    .renewal-sice__scene.is-active {
+        position: relative;
+        inset: auto;
+        min-height: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .renewal-sice__progress {
+        display: none;
+    }
+
+    .sice-global {
+        min-height: 0;
+        padding: 94px 20px 52px;
+    }
+
+    .sice-global__intro {
+        position: relative;
+        inset: auto;
+        width: 100%;
+    }
+
+    .sice-global__kicker,
+    .sice-story__kicker {
+        margin-bottom: 22px;
+        font-size: 0.62rem;
+        letter-spacing: 0.17em;
+        line-height: 1.45;
+    }
+
+    .renewal-sice .sice-global__intro h2,
+    html[lang="en"] .renewal-sice .sice-global__intro h2,
+    .renewal-sice .sice-experiences__header h2,
+    html[lang="en"] .renewal-sice .sice-experiences__header h2 {
+        font-size: clamp(2rem, 9.5vw, 2.55rem);
+        line-height: 1.06;
+    }
+
+    .renewal-sice .sice-global__intro > p,
+    .sice-experiences__header p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .sice-global__brand {
+        width: 208px;
+        height: 76px;
+        margin-top: 24px;
+        overflow: hidden;
+    }
+
+    .sice-global__brand img,
+    .sice-alliance-lockup__sice {
+        width: 300px;
+        max-width: none;
+        height: 142px;
+        clip-path: none;
+        object-fit: cover;
+        transform: translate(-34px, -32px);
+        mix-blend-mode: multiply;
+    }
+
+    .renewal-sice__scene--global .renewal-map {
+        width: 100%;
+        margin: 20px 0 0;
+    }
+
+    .renewal-sice__scene--global .renewal-map img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .sice-global__metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+        margin-top: 18px;
+    }
+
+    .sice-global__metrics > div,
+    .sice-global__metrics > div:nth-child(2),
+    .sice-global__metrics > div:nth-child(3) {
+        grid-template-columns: 38px auto minmax(0, 1fr);
+        padding: 15px 8px;
+        border-right: 0;
+        border-bottom: 1px solid #dbe4ec;
+    }
+
+    .sice-global__metrics > div:nth-child(odd) {
+        border-right: 1px solid #dbe4ec;
+    }
+
+    .sice-global__metric-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
+    }
+
+    .sice-global__metrics dt {
+        margin-left: 5px;
+        font-size: 1rem;
+    }
+
+    .sice-global__metrics dd {
+        margin-left: 5px;
+        font-size: 0.58rem;
+        white-space: normal;
+    }
+
+    .sice-experiences {
+        padding: 82px 16px 54px;
+    }
+
+    .sice-experiences__header {
+        max-width: 350px;
+        margin-bottom: 28px;
+    }
+
+    .sice-experiences__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .sice-experiences__grid article {
+        min-height: 0;
+        padding: 15px 13px;
+    }
+
+    .sice-experiences__grid article > span {
+        font-size: 0.56rem;
+    }
+
+    .sice-experiences__grid h3 {
+        margin-top: 8px;
+        font-size: 0.78rem;
+        line-height: 1.3;
+    }
+
+    .sice-experiences__grid p,
+    .sice-experiences__grid small {
+        font-size: 0.66rem;
+        line-height: 1.4;
+    }
+
+    .sice-story,
+    .sice-story--alliance,
+    .sice-story--platform,
+    .sice-story--audit {
+        display: flex;
+        min-height: 0;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .sice-story__media,
+    .sice-story--alliance .sice-story__media,
+    .sice-story--platform .sice-story__media,
+    .sice-story--audit .sice-story__media {
+        position: relative;
+        inset: auto;
+        order: 1;
+        width: 100%;
+        height: 240px;
+        aspect-ratio: auto;
+        margin: 0;
+    }
+
+    .sice-story__media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .sice-story--alliance .sice-story__media img {
+        object-position: 80% center;
+    }
+
+    .sice-story__copy,
+    .sice-story--alliance .sice-story__copy,
+    .sice-story--platform .sice-story__copy,
+    .sice-story--audit .sice-story__copy {
+        position: relative;
+        inset: auto;
+        order: 2;
+        width: 100%;
+        max-width: none;
+        padding: 42px 20px 58px;
+    }
+
+    .sice-story h2,
+    .sice-story--platform h2,
+    .sice-story--audit h2 {
+        margin-top: 22px;
+        font-size: clamp(2rem, 9.2vw, 2.55rem);
+        line-height: 1.06;
+    }
+
+    .sice-story__lead {
+        margin-top: 18px;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .sice-alliance-lockup {
+        width: 100%;
+        height: 74px;
+        gap: 14px;
+        margin-top: 26px;
+        overflow: hidden;
+    }
+
+    .sice-alliance-lockup__sice {
+        flex: 0 0 208px;
+    }
+
+    .sice-alliance-lockup__divider {
+        height: 46px;
+    }
+
+    .sice-alliance-lockup__local {
+        width: 92px;
+    }
+
+    .sice-alliance-lockup__local img {
+        width: 86px;
+    }
+
+    .sice-alliance-roles {
+        gap: 9px;
+        margin-top: 25px;
+    }
+
+    .sice-alliance-roles p {
+        grid-template-columns: 48px 1fr;
+        font-size: 0.72rem;
+    }
+
+    .sidera-lockup {
+        height: 58px;
+        gap: 12px;
+        margin-top: 23px;
+    }
+
+    .sidera-lockup__sice {
+        width: 105px;
+        height: 54px;
+    }
+
+    .sidera-lockup__sice img {
+        width: 110px;
+        height: 54px;
+        object-fit: cover;
+        object-position: 52% 40%;
+    }
+
+    .sidera-lockup__divider {
+        height: 44px;
+    }
+
+    .sidera-lockup__name strong {
+        font-size: 1.7rem;
+    }
+
+    .sidera-lockup__name small {
+        font-size: 0.58rem;
+    }
+
+    .sice-story__capabilities,
+    .sice-story__qualities {
+        margin-top: 25px;
+        font-size: 0.68rem;
+        line-height: 1.65;
+        white-space: normal;
+    }
+
+    .sice-story__qualities {
+        margin-top: 18px;
+    }
+
+    .audit-lockup {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 24px;
+    }
+
+    .audit-lockup strong {
+        font-size: 2.25rem;
+    }
+
+    .audit-lockup img {
+        width: 66px;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 900px) {
+    .renewal-hero__copy {
+        width: min(100%, 470px);
+        margin-top: 12vh;
+    }
+
+    .renewal-hero__logo {
+        width: 310px;
+    }
+
+    .renewal-hero h1 {
+        font-size: 1.02rem;
+        line-height: 1.55;
+    }
+
+    .sice-global,
+    .sice-experiences,
+    .sice-story__copy,
+    .sice-story--alliance .sice-story__copy,
+    .sice-story--platform .sice-story__copy,
+    .sice-story--audit .sice-story__copy {
+        padding-right: 42px;
+        padding-left: 42px;
+    }
+}
+
+/* Ajustes de contraste y de estructura detectados en la comparación visual real. */
+@media (max-width: 900px) {
+    .renewal-solution--networks .renewal-solution__card,
+    .renewal-solution--networks .renewal-kicker,
+    .renewal-solution--networks h2,
+    .renewal-solution--networks .renewal-solution__lead,
+    .renewal-solution--networks .renewal-solution__feature-list strong,
+    .renewal-solution--networks .renewal-solution__feature-list span,
+    .renewal-solution--maintenance .renewal-kicker,
+    .renewal-solution--maintenance h2,
+    .renewal-solution--maintenance .renewal-solution__lead,
+    .renewal-solution--maintenance .maintenance-card__feature-list strong,
+    .renewal-solution--maintenance .maintenance-card__feature-list span {
+        color: #fff !important;
+    }
+
+    .renewal-solution--maintenance .maintenance-card__kicker,
+    .renewal-solution--maintenance .maintenance-card h3,
+    .renewal-solution--maintenance .maintenance-card__lead,
+    .renewal-solution--maintenance .maintenance-card__features strong,
+    .renewal-solution--maintenance .maintenance-card__features span {
+        color: #fff !important;
+    }
+
+    .renewal-solution--maintenance .maintenance-card__kicker {
+        color: #50c8ff !important;
+    }
+
+    .renewal-solution--networks .renewal-kicker,
+    .renewal-solution--maintenance .renewal-kicker {
+        color: #50c8ff !important;
+    }
+
+    .renewal-case--highways {
+        display: block;
+        padding: 0;
+    }
+
+    .renewal-case--highways .renewal-case__split {
+        display: flex;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        flex-direction: column;
+        padding: 104px 20px 56px;
+    }
+
+    .renewal-case--highways .renewal-case__copy {
+        order: 1;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 0 0 32px;
+    }
+
+    .renewal-case--highways .renewal-case__copy h3,
+    .renewal-case--highways .renewal-case__partner strong,
+    .renewal-case--highways .renewal-case__bullets strong,
+    .renewal-case--highways .renewal-case__capacity,
+    .renewal-case--highways .renewal-case__capacity p {
+        color: #0b1c37;
+    }
+
+    .renewal-case--highways .renewal-case__lead,
+    .renewal-case--highways .renewal-case__bullets span,
+    .renewal-case--highways .renewal-case__capacity span {
+        color: #596b84 !important;
+    }
+
+    .renewal-case--highways .renewal-case__lead,
+    .renewal-case--highways .renewal-case__bullets span {
+        color: #596b84 !important;
+    }
+
+    .renewal-case--highways .renewal-case__maps {
+        order: 2;
+        display: grid;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        grid-template-rows: none;
+        gap: 12px;
+        padding: 0;
+    }
+
+    .renewal-case--highways .renewal-case__maps figure {
+        width: 100%;
+        min-height: 0;
+        aspect-ratio: 1.34 / 1;
+    }
+
+    .renewal-case--isp {
+        display: block;
+        padding: 0;
+    }
+
+    .renewal-case__isp-layout {
+        display: flex;
+        width: 100%;
+        min-height: 0;
+        flex-direction: column;
+        gap: 0;
+        padding: 104px 20px 56px;
+    }
+
+    .renewal-case__isp-heading {
+        width: 100%;
+        padding: 0 0 32px;
+    }
+
+    .renewal-case__isp-heading h3 {
+        margin-bottom: 20px;
+        font-size: clamp(2.35rem, 12vw, 3.35rem);
+        line-height: 0.98;
+    }
+
+    .renewal-case__isp-heading p {
+        color: #596b84;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .renewal-case__isp-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin: 0;
+    }
+
+    .renewal-case__isp-grid figure {
+        display: grid;
+        min-height: 0;
+        grid-template-rows: auto auto;
+        border-color: #d7e2ee;
+        border-radius: 3px;
+        box-shadow: none;
+    }
+
+    .renewal-case__isp-map {
+        min-height: 0;
+        aspect-ratio: 1.16 / 1;
+    }
+
+    .renewal-case__isp-map > img:not(.renewal-case__isp-logo) {
+        height: 100%;
+        padding-top: 46px;
+        object-fit: contain;
+    }
+
+    .renewal-case__isp-grid figcaption {
+        min-height: 0;
+        padding: 25px 22px 28px;
+    }
+
+    .renewal-case__isp-grid figcaption::before {
+        height: 34px;
+    }
+
+    .renewal-case__isp-grid figcaption b {
+        margin-top: 24px;
+    }
+
+    .renewal-active #clientes {
+        min-height: 0;
+        padding-top: 82px;
+        padding-bottom: 82px;
+    }
+
+    .renewal-active #clientes .container {
+        width: calc(100% - 40px);
+    }
+
+    .renewal-active #clientes .section-header {
+        margin-top: 0;
+    }
+
+    .renewal-active #clientes .clients-carousel {
+        margin-top: 50px;
+    }
+
+    .sice-alliance-lockup {
+        height: 94px;
+        overflow: visible;
+    }
+
+    .sice-alliance-lockup__sice {
+        width: 180px;
+        height: 86px;
+        flex: 0 0 180px;
+        clip-path: inset(10px 12px 14px 12px);
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .sice-alliance-lockup__local {
+        width: 76px;
+    }
+
+    .sice-alliance-lockup__local img {
+        width: 76px;
+        mix-blend-mode: multiply;
+    }
+}

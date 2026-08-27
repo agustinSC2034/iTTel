@@ -9,17 +9,17 @@ La renovación quedó verificada visual y funcionalmente en los cuatro anchos so
 
 | Viewport | Verificación principal | Resultado |
 | --- | --- | --- |
-| 1440 × 900 | Hero, navegación flotante, bloque SICE sticky 01/04–04/04, casos y clientes | PASS |
+| 1440 × 900 | Hero, navegación flotante, bloque SICE sticky 01/05–05/05, casos y clientes | PASS |
 | 1024 × 768 | Menú responsive, escenas SICE apiladas, lectura y foco | PASS |
 | 768 × 1024 | Hero, soluciones, ausencia de overflow horizontal | PASS |
-| 390 × 844 | Lectura mobile, controles táctiles, mapa SICE y formulario | PASS |
+| 390 × 844 | Lectura mobile, controles táctiles, experiencias SICE y formulario | PASS |
 
 ## Flujos verificados
 
 - Hero TELCO/IT con dos escenas, controles accesibles, pausa por interacción y por visibilidad, teclado y estado anunciado.
 - Cuatro soluciones presentes en el recorrido vertical, sin contenido esencial detrás de tabs o clics.
-- Cuatro escenas iTTel + SICE: sticky y vinculadas al scroll en desktop; apiladas en tablet, mobile y `prefers-reduced-motion`.
-- Mapa SICE operable con mouse, teclado y toque; `Escape` cierra el detalle y devuelve el foco.
+- Cinco escenas iTTel + SICE: sticky y vinculadas al scroll en desktop; apiladas en tablet, mobile y `prefers-reduced-motion`.
+- Mapa global SICE simplificado, sin interacción por país, seguido por una escena con las once experiencias internacionales verificadas visibles en conjunto.
 - Tres casos de éxito, cifras aprobadas, carrusel completo de clientes, contacto, mapa, idioma y footer.
 - Navegación por anclas, sección activa, menú responsive y cierre con `Escape`.
 - Versión inglesa equivalente y sin romper el selector de idioma.
@@ -31,7 +31,7 @@ La renovación quedó verificada visual y funcionalmente en los cuatro anchos so
 - Recursos locales activos: 0 referencias faltantes en español y en inglés.
 - Imágenes del recorrido completo: 0 rotas y 0 pendientes después del scroll.
 - Sin IDs duplicados ni overflow horizontal en los viewports probados.
-- Comparación lado a lado contra `1HERO.png` y `8_1.png`; se corrigieron jerarquía del hero, comportamiento sticky y separación de objetivos táctiles del mapa.
+- Comparación lado a lado contra `1HERO.png` y `8_1.png`; se corrigieron jerarquía del hero, comportamiento sticky y densidad visual de la narrativa SICE.
 
 ## Pendientes externos
 
@@ -70,6 +70,41 @@ La renovación quedó verificada visual y funcionalmente en los cuatro anchos so
 - Consola: 0 errores en las escenas finales. Mobile sin overflow horizontal (`scrollWidth 375`, viewport 390).
 
 No quedan hallazgos P0, P1 o P2 en el Hero. Como P3 aceptable, la fotografía limpia del observatorio puede presentar microvariaciones en detalles de oficina respecto de la captura compuesta original.
+
+final result: passed
+
+## Revalidación final — Responsive mobile y minimalismo
+
+Esta revisión toma como patrón la implementación pública anterior de `https://ittel.com.ar/` y corrige la adaptación móvil de la renovación sin alterar la composición desktop aprobada.
+
+### Evidencia comparada
+
+- Fuente mobile: 30 capturas consecutivas de la web pública a `390 × 844 px` en `mobile-responsive-source/`.
+- Implementación previa: 33 capturas consecutivas a `390 × 844 px` en `mobile-responsive-before/`.
+- Implementación corregida: capturas por bloque a `390 × 844 px` y `768 × 900 px` en `mobile-responsive-after/`.
+- Comparación conjunta, mismo viewport: `mobile-responsive-after/compare-hero-source-vs-local.png`.
+- Desktop preservado: `1440 × 900 px`, sin intervención de la hoja responsive dedicada.
+
+### Correcciones verificadas
+
+- Hero: vuelve a usar una escena fotográfica de viewport completo con copy integrado, antena visible en TELCO y centro de operaciones completo en IT; los controles quedan pequeños y translúcidos.
+- Presentación: matriz compacta, sin `NOSOTROS` ni numeración ornamental.
+- Soluciones: Redes neutrales, Operación inteligente, Obras y Mantenimiento usan fotografías de fondo y copy superpuesto con contraste AA; los logos institucionales se presentan monocromos sobre fondo oscuro.
+- SICE: las cinco escenas se apilan en móvil sin sticky, tabs ni pantallas vacías; mapa, experiencias, alianza, SIDERA y Auditoría Urbana mantienen orden natural y logos recortados sin recuadros dominantes.
+- Casos de éxito: Redes en Argentina conserva el patrón inmersivo; Autopistas e ISP se convierten en composiciones editoriales claras con mapas y fichas apiladas.
+- Cierre: cifras, carrusel de clientes, contacto y footer mantienen la arquitectura y el contenido existentes con espaciado móvil más corto.
+- Minimalismo: eliminados todos los conectores `SIGUIENTE…` y `NEXT…` en español e inglés.
+
+### Validación técnica y funcional
+
+- Viewports comprobados: `390 × 844`, `768 × 900` y `1440 × 900`.
+- Español e inglés: `scrollWidth <= innerWidth`, cero imágenes rotas y secuencia completa visible.
+- Navbar: menú móvil abierto y cerrado con estado `aria-expanded` correcto.
+- Consola española: sin errores ni advertencias; sólo el mensaje `debug` esperado del mapa embebido de Google.
+- Código: `node --check js/main.js`, balance CSS `190/190` y `git diff --check` sin errores.
+- Movimiento reducido: transiciones y revelados desactivados mediante `prefers-reduced-motion: reduce`.
+
+No quedan hallazgos P0, P1 o P2 para la adaptación responsive solicitada.
 
 final result: passed
 
@@ -354,5 +389,33 @@ final result: passed
 - Validación técnica: `node --check js/main.js` y `git diff --check` sin errores.
 
 No quedan hallazgos P0, P1 o P2. Como P3 aceptable, la navbar global conserva el ancho ya aprobado en el resto del sitio, levemente más compacto que el de las tres referencias.
+
+final result: passed
+
+## Revalidación final — Simplificación visual solicitada
+
+Esta revisión reemplaza las decisiones anteriores sobre interacción por país y progreso de cuatro escenas. El recorrido SICE vigente tiene cinco escenas y el mapa global es deliberadamente informativo, sin puntos interactivos ni ficha flotante.
+
+### Cambios verificados
+
+- Hero: selector reducido a controles translúcidos de baja presencia visual y rotación automática ajustada a `6000 ms`.
+- Presentación: se eliminaron el kicker `NOSOTROS` y la numeración `01–06`, manteniendo la matriz de capacidades y su lectura bilingüe.
+- Redes neutrales: se incorporó aire inferior después de la última fila de logos.
+- Operación inteligente: se retiraron `LIVE`, los rótulos de velocidad, residuos y panel variable para bajar la carga visual sin modificar el mosaico operativo.
+- Obras e integración: se sustituyó el fondo con empalme visible por `works-integration-background-v2.webp`, una continuidad fotográfica limpia y optimizada.
+- Narrativa SICE: el mapa global quedó estático; una nueva escena consecutiva presenta las once experiencias verificadas en tarjetas visibles; la alianza local ya no muestra el recuadro del mundo ni la leyenda redundante bajo iTTel.
+- Auditoría Urbana: se agregó la marca iTTel junto al nombre del producto para explicitar su propiedad.
+- Casos de éxito: se retiró la numeración editorial y se amplió la separación entre la introducción y los despliegues de Redes en Autopistas.
+- Footer: títulos ajustados a un celeste más calmo (`#78c8e8`).
+
+### Evidencia y validación
+
+- Capturas finales: `revision-final/works-desktop.png`, `revision-final/works-mobile.png`, `revision-final/sice-experiences-desktop.png` y `revision-final/sice-experiences-mobile.png` dentro de la carpeta de evidencias de esta tarea.
+- Español e inglés: cinco escenas SICE, once experiencias, sin puntos por país, etiquetas operativas ni numeración de presentación.
+- Responsive: lectura natural y sin overflow horizontal a `390 px`; recorrido desktop comprobado a `1905 × 900`.
+- Consola: 0 errores o advertencias en la versión inglesa; comprobación equivalente completada en español.
+- Validación estática: `node --check js/main.js` y `git diff --check` sin errores.
+
+No quedan hallazgos P0, P1 o P2 para esta revisión.
 
 final result: passed
