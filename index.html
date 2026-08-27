@@ -29,7 +29,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./assets/css/main.css?v=6">
+    <link rel="stylesheet" href="./assets/css/main.css?v=7">
 
     <!-- Favicon -->
     <link rel="icon" href="./assets/images/favicon.webp" type="image/webp">
@@ -87,11 +87,11 @@
     <main id="contenido-principal">
         <section id="inicio" class="section renewal-hero" data-renewal-hero aria-roledescription="carrusel" aria-label="Grupo iTTel: IT y Telecomunicaciones">
             <div class="renewal-hero__slides">
-                <figure class="renewal-hero__slide is-active" data-hero-slide aria-hidden="false">
+                <figure class="renewal-hero__slide renewal-hero__slide--telco is-active" data-hero-slide aria-hidden="false">
                     <img src="assets/images/fondo_hero/fondo4k.webp" alt="Despliegue de infraestructura de telecomunicaciones en altura" width="3344" height="1882" fetchpriority="high" decoding="async">
                 </figure>
-                <figure class="renewal-hero__slide" data-hero-slide aria-hidden="true">
-                    <img src="assets/images/fondo_hero/operation-center.webp" alt="Centro de operación de infraestructura vial y tecnológica" width="879" height="796" loading="lazy" decoding="async">
+                <figure class="renewal-hero__slide renewal-hero__slide--it" data-hero-slide aria-hidden="true">
+                    <img src="assets/images/fondo_hero/operation-center-clean.webp" alt="Centro de operación de infraestructura vial y tecnológica" width="1779" height="884" loading="lazy" decoding="async">
                 </figure>
             </div>
             <div class="renewal-hero__veil" aria-hidden="true"></div>
@@ -100,14 +100,14 @@
                     <span class="renewal-kicker">GRUPO ITTEL</span>
                     <img src="assets/images/fondo_hero/Logo_Ittel_AI.png" alt="Grupo iTTel" class="renewal-hero__logo" width="320" height="108" decoding="async">
                     <p class="renewal-hero__subtitle">Information Technology &amp; Telecommunications</p>
-                    <h1>Líderes en Argentina en el desarrollo, operación e integración de infraestructura IT &amp; TELCO a gran escala.</h1>
+                    <h1>Líderes en Argentina en el desarrollo,<br>operación e integración de<br>infraestructura IT &amp; TELCO a gran escala.</h1>
                 </div>
             </div>
             <div class="renewal-hero__controls" aria-label="Controles del hero">
-                <button type="button" data-hero-prev aria-label="Escena anterior">←</button>
+                <button type="button" data-hero-prev aria-label="Escena anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
                 <span class="renewal-hero__status" data-hero-status aria-live="polite">TELCO · 01 / 02</span>
-                <button type="button" data-hero-pause aria-label="Pausar reproducción" aria-pressed="false">Pausa</button>
-                <button type="button" data-hero-next aria-label="Escena siguiente">→</button>
+                <button type="button" data-hero-pause aria-label="Pausar reproducción" aria-pressed="false"><i class="fa-solid fa-pause" aria-hidden="true"></i></button>
+                <button type="button" data-hero-next aria-label="Escena siguiente"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
             </div>
         </section>
 
@@ -1399,7 +1399,7 @@
     <!-- Scripts -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./js/main.js?v=6"></script>
+    <script src="./js/main.js?v=7"></script>
     <script>
         // Inicializar AOS
         AOS.init({
