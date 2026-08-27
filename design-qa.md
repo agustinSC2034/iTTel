@@ -73,6 +73,33 @@ No quedan hallazgos P0, P1 o P2 en el Hero. Como P3 aceptable, la fotografía li
 
 final result: passed
 
+## Revalidación específica — Retiro de la alianza local
+
+### Evidencia
+
+- Verdad visual: `C:/Users/Agustin/AppData/Local/Temp/codex-clipboard-ada50d7f-2a94-4c6e-ae96-dad19f857336.png` (`1892 × 927`), escena señalada para retirar.
+- Implementación final: `C:/Users/Agustin/.codex/visualizations/2026/08/26/01a03f9b-bc54-7512-822a-4490b4b66aac/sice-four-scenes-platform-settled.png` (`1425 × 891`).
+- Comparación normalizada: `sice-alliance-removal-comparison.png`, ambas vistas ajustadas a `1440 × 900`, DPR 1.
+- Estado final: SIDERA pasa a ser la escena `03/04`, inmediatamente después de `PROYECTOS`.
+
+### Hallazgos resueltos
+
+- [P1 resuelto] Se eliminó por completo la escena `Tecnología global, integrada en Argentina` de las versiones española e inglesa.
+- [P2 resuelto] Se recalcularon índices, progreso y altura sticky de cinco a cuatro escenas, evitando un tramo de scroll vacío.
+- [P2 resuelto] En tablet y mobile la secuencia estática conserva las cuatro escenas restantes en orden natural y sin overflow horizontal.
+
+### Superficies de fidelidad
+
+- Composición: la transición visual ahora conecta `PROYECTOS` directamente con SIDERA, sin panel intermedio redundante.
+- Progreso: numeración consistente `01/04` a `04/04` en desktop.
+- Responsive: cuatro escenas relativas y legibles a `390 × 844`; sin desborde horizontal.
+- Bilingüe: mismo retiro y misma secuencia en español e inglés.
+- Validación técnica: cuatro escenas reales, ausencia del bloque retirado, `node --check js/main.js` y `git diff --check` correctos.
+
+No quedan hallazgos P0, P1 o P2 para este cambio.
+
+final result: passed
+
 ## Revalidación específica — Narrativa iTTel + SICE en mobile
 
 ### Evidencia normalizada
