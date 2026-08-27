@@ -786,7 +786,7 @@
 
     .sice-experiences {
         padding: 72px 20px 62px;
-        background: #f5f8fb;
+        background: #ffffff;
     }
 
     .sice-experiences__header {
@@ -800,16 +800,27 @@
         gap: 9px;
     }
 
-    .sice-experiences__grid article {
+    .sice-experience-card {
         min-height: 0;
         padding: 17px 18px 16px;
         border-color: #d8e3ec;
+        border-top: 1px solid #d8e3ec;
         border-left: 3px solid #1c9b9a;
         border-radius: 8px;
         background: #fff;
+        box-shadow: 0 8px 20px rgba(11, 34, 59, 0.06);
     }
 
-    .sice-experiences__grid article > span {
+    .sice-experience-card__country {
+        gap: 9px;
+    }
+
+    .sice-experience-card__country img {
+        width: 26px;
+        height: 18px;
+    }
+
+    .sice-experience-card__country span {
         font-size: 0.6rem;
     }
 
@@ -820,13 +831,13 @@
     }
 
     .sice-experiences__grid p,
-    .sice-experiences__grid small {
+    .sice-experience-card small {
         font-size: 0.72rem;
         line-height: 1.45;
     }
 
-    .sice-experiences__grid small {
-        padding-top: 7px;
+    .sice-experience-card footer {
+        padding-top: 8px;
     }
 
     .sice-story,

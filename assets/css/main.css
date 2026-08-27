@@ -5794,18 +5794,16 @@ body.renewal-active {
 }
 
 .renewal-sice__scene--experiences {
-    background: #f7f9fc;
+    background: #ffffff;
 }
 
 .sice-experiences {
-    width: min(1680px, 100%);
+    width: 100%;
     height: 100%;
     margin: 0 auto;
-    padding: 126px 4.5% 92px;
+    padding: 112px clamp(42px, 4.25vw, 76px) 88px;
     overflow: hidden;
-    background:
-        linear-gradient(135deg, rgba(8, 103, 197, 0.045), transparent 42%),
-        #f7f9fc;
+    background: #ffffff;
 }
 
 .sice-experiences__header {
@@ -5837,19 +5835,47 @@ html[lang="en"] .renewal-sice .sice-experiences__header h2 {
 .sice-experiences__grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 12px;
+    gap: 14px;
 }
 
-.sice-experiences__grid article {
+.sice-experience-card {
     display: flex;
-    min-height: 132px;
+    min-height: 146px;
     flex-direction: column;
     padding: 17px 18px 15px;
-    border: 1px solid #dbe4ed;
-    background: rgba(255, 255, 255, 0.88);
+    overflow: hidden;
+    border: 1px solid #d5e0e9;
+    border-top: 3px solid #1c9b9a;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 8px 22px rgba(11, 34, 59, 0.055);
+    transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
 }
 
-.sice-experiences__grid article > span {
+.sice-experience-card:hover,
+.sice-experience-card:focus-within {
+    transform: translateY(-3px);
+    border-color: #9dcfcf;
+    box-shadow: 0 15px 30px rgba(11, 34, 59, 0.1);
+}
+
+.sice-experience-card__country {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sice-experience-card__country img {
+    width: 28px;
+    height: 20px;
+    flex: 0 0 auto;
+    border: 1px solid rgba(7, 22, 47, 0.12);
+    border-radius: 3px;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(7, 22, 47, 0.09);
+}
+
+.sice-experience-card__country span {
     color: #087fbe;
     font: 750 0.68rem/1.2 'Inter', sans-serif;
     letter-spacing: 0.12em;
@@ -5867,9 +5893,21 @@ html[lang="en"] .renewal-sice .sice-experiences__header h2 {
     font: 400 0.8rem/1.35 'Inter', sans-serif;
 }
 
-.sice-experiences__grid small {
+.sice-experience-card footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     margin-top: auto;
-    padding-top: 9px;
+    padding-top: 10px;
+    border-top: 1px solid #edf2f6;
+}
+
+.sice-experience-card footer i {
+    color: #1c9b9a;
+    font-size: 0.72rem;
+}
+
+.sice-experience-card small {
     color: #8190a3;
     font: 600 0.69rem/1.2 'Inter', sans-serif;
 }
@@ -5963,7 +6001,7 @@ html[lang="en"] .renewal-sice .sice-experiences__header h2 {
         grid-template-columns: 1fr;
     }
 
-    .sice-experiences__grid article {
+    .sice-experience-card {
         min-height: 0;
     }
 
@@ -6539,7 +6577,7 @@ html[lang="en"] .renewal-sice .sice-experiences__header h2 {
 .renewal-sice__stage {
     position: relative;
     height: 100%;
-    background: #f7f9fc;
+    background: #ffffff;
 }
 
 .renewal-sice__scene {
@@ -13223,15 +13261,15 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
 
 @media (min-width: 1200px) {
     .renewal-sice__stage .renewal-sice__scene {
-        opacity: var(--sice-opacity, 0);
+        opacity: 0;
         transform: translate3d(0, var(--sice-shift, 28px), 0) scale(var(--sice-scale, 0.985));
         transform-origin: center center;
-        transition: none;
+        transition: opacity 420ms ease, transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
         will-change: opacity, transform;
     }
 
     .renewal-sice__stage .renewal-sice__scene.is-active {
-        opacity: var(--sice-opacity, 1);
+        opacity: 1;
         transform: translate3d(0, var(--sice-shift, 0px), 0) scale(var(--sice-scale, 1));
     }
 
