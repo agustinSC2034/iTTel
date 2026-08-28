@@ -75,6 +75,27 @@ final result: passed
 
 ---
 
+# Design QA — ajuste superior de Redes TELCO en mobile
+
+## Referencia y evidencia
+
+- Fuente visual: `C:\Users\Agustin\AppData\Local\Temp\codex-clipboard-9de2223c-9d3f-4daf-bb60-7368f476efe6.png` (550 × 1021 px, incluyendo marco de dispositivo).
+- Implementación final: `C:\Users\Agustin\AppData\Local\Temp\ittel-telco-mobile-gap-final.png` a viewport CSS 390 × 844 px y densidad 1.
+- Comparación conjunta: `C:\Users\Agustin\AppData\Local\Temp\ittel-telco-mobile-gap-comparison.png`; ambas vistas se normalizaron a 844 px de alto.
+
+## Hallazgos y corrección
+
+- El bloque mobile conservaba 96 px de relleno superior y 20 px de margen adicional antes del contenido, generando un área de fondo sin función entre la navegación y el título.
+- Se eliminó el margen adicional y se redujo el relleno superior exclusivamente para teléfonos de hasta 430 px.
+- El título comienza 112 px después del inicio del caso y mantiene 16 px de separación visible respecto de la navegación fija en el viewport probado.
+- La versión española no presenta desbordamiento horizontal y conserva completa la jerarquía de título, cobertura, introducción y tres puntos de alcance.
+- La versión inglesa mantiene la misma corrección responsive y no presenta desbordamiento horizontal.
+- Desktop conserva sus reglas originales; el cambio no se aplica por encima de 430 px.
+
+final result: passed
+
+---
+
 # Design QA — mapa global SICE con banderas
 
 ## Referencia y estado
@@ -88,7 +109,7 @@ final result: passed
 ## Fidelidad y hallazgos
 
 - El mapa mantiene la composición blanca, teal y azul del bloque aprobado, con el rótulo `EXPERIENCIA SICE EN EL MUNDO` dentro del módulo.
-- Se incorporaron 31 señaladores con banderas oficiales: 30 países soberanos más Puerto Rico como experiencia confirmada.
+- Se incorporaron 32 señaladores con banderas oficiales: 31 países soberanos más Puerto Rico como experiencia confirmada.
 - Argentina y Chile están pintados y señalados; también se representan Norteamérica, Centroamérica, Sudamérica, Europa, África, Medio Oriente, Asia y Oceanía.
 - Catar y Emiratos Árabes Unidos se distinguen como países separados; Dubái queda correctamente representado mediante Emiratos Árabes Unidos.
 - En mobile los señaladores se reducen proporcionalmente y conservan borde, contraste y lectura sin desbordar el módulo.
@@ -96,8 +117,8 @@ final result: passed
 
 ## Verificación funcional y responsive
 
-- Español verificado a 390 × 844 px: 31 banderas cargadas, mapa cargado y sin desbordamiento horizontal.
-- Inglés verificado a 390 × 844 px: 31 banderas cargadas, rótulo traducido y sin desbordamiento horizontal.
+- Español verificado a 390 × 844 px: 32 banderas cargadas, mapa cargado y sin desbordamiento horizontal.
+- Inglés verificado a 390 × 844 px: 32 banderas cargadas, rótulo traducido y sin desbordamiento horizontal.
 - Desktop verificado a 1440 × 900 px: mapa proporcionado, banderas legibles y layout general sin desbordamiento.
 - Consola sin errores ni advertencias durante la revisión del bloque.
 
@@ -789,7 +810,7 @@ passed
 - Evidencia final desktop: `business-units-final.png`, capturada a 1440 × 900 px.
 - El título principal pasó al azul corporativo y mantiene una jerarquía consistente con los encabezados de las tres unidades.
 - Obras y Servicios conserva los conceptos técnicos suministrados, pero con redacción editorial, lectura por bloques y separación visual clara.
-- La experiencia internacional se presenta con las 11 banderas y el ecosistema SIDERA muestra Traffic, Analytics, Lighting, Residuos y Gestión Integral en un único módulo.
+- La experiencia internacional se presenta con 32 banderas y el ecosistema SIDERA reúne Traffic, Analytics, Lighting, Residuos, Gestión Integral, ITS & Tunnels, Tolling, Rail, AFC y UNIQ.
 
 ## Verificación
 
@@ -797,7 +818,7 @@ passed
 - Sin desbordamiento horizontal en ninguno de los cuatro anchos.
 - Tres escenas SICE accesibles en secuencia natural en mobile y vinculadas al scroll en desktop.
 - Navegación activa en `Partners` durante el recorrido SICE.
-- Versión inglesa comprobada con las mismas tres escenas y las 11 presencias internacionales.
+- Versión inglesa comprobada con las mismas tres escenas y las 32 presencias o experiencias internacionales verificadas.
 - Consola sin errores ni advertencias.
 
 ## Resultado final
@@ -863,5 +884,58 @@ passed
 - Desktop verificado a 1440 × 900 px: conserva las imágenes horizontales y el carrusel continúa avanzando.
 - Menú mobile probado de cerrado a abierto y nuevamente cerrado mediante `aria-expanded`.
 - Página con contenido significativo, sin overlay de error y sin errores ni advertencias de consola.
+
+final result: passed
+
+---
+
+# Design QA — ampliación del ecosistema SIDERA
+
+## Fuentes y evidencia
+
+- Fuentes oficiales verificadas: páginas de producto de SICE para SIDERA ITS & Tunnels, SIDERA Tolling, SIDERA Rail, SIDERA AFC y SIDERA UNIQ.
+- Implementación mobile: `C:\Users\Agustin\AppData\Local\Temp\ittel-sidera-modules-mobile.png` a viewport CSS 390 × 844 px y densidad 1.
+- Implementación desktop final: `C:\Users\Agustin\AppData\Local\Temp\ittel-sidera-modules-desktop-final.png` a viewport CSS 1440 × 900 px y densidad 1.
+- Estado: tercera escena de la narrativa SICE activa, navegación cerrada y progreso visible.
+
+## Hallazgos y correcciones
+
+- La primera captura desktop mostraba los módulos AFC y UNIQ demasiado próximos al progreso inferior; se clasificó como P2.
+- Se redujeron únicamente el margen y el espaciado interno de la lista, conservando el título, la imagen de SIDERA Analytics y la estructura en dos columnas.
+- La captura posterior muestra los 10 módulos completos en cinco filas parejas y con separación respecto del progreso.
+- Mobile mantiene una columna natural para lectura, 10 módulos completos y sin desbordamiento horizontal.
+- Tipografía, colores, imagen de plataforma y textos se mantienen dentro del sistema visual existente.
+- Español e inglés contienen los mismos 10 módulos oficiales.
+
+final result: passed
+
+---
+
+# Design QA — grilla compacta de países SICE
+
+## Referencia y evidencia
+
+- Fuente visual desktop: `C:\Users\Agustin\AppData\Local\Temp\codex-clipboard-17663e82-9e2f-4027-83ac-f3decd53d506.png` (1892 × 1027 px).
+- Fuente visual mobile: `C:\Users\Agustin\AppData\Local\Temp\codex-clipboard-d045dd93-95e9-40d5-9405-3c9c22f29741.png` (512 × 977 px, incluyendo marco de dispositivo).
+- Implementación mobile: `C:\Users\Agustin\AppData\Local\Temp\ittel-sice-countries-mobile-final.png` a viewport CSS 390 × 844 px y densidad 1.
+- Implementación desktop: `C:\Users\Agustin\AppData\Local\Temp\ittel-sice-countries-desktop-final.png` a viewport CSS 1440 × 900 px y densidad 1.
+- Comparación conjunta: `C:\Users\Agustin\AppData\Local\Temp\ittel-sice-countries-comparison.png`; la referencia conserva el marco del teléfono y ambas vistas se normalizaron a 844 px de alto.
+
+## Hallazgos y fidelidad
+
+- Tipografía: se conserva Inter, el peso corporativo y las mayúsculas; se redujo el tamaño de los nombres sólo lo necesario para sostener dos columnas en mobile.
+- Espaciado: se eliminaron bordes, fondos, radios y alturas de tarjeta; cada país ocupa una fila compacta con bandera y nombre.
+- Colores: permanecen el azul oscuro para el texto y el blanco del bloque, sin introducir contenedores ni acentos nuevos.
+- Imágenes: las 32 banderas se cargan desde el proveedor ya utilizado por el proyecto, con proporción, borde mínimo y nitidez correctos.
+- Contenido: se añadieron los mismos 32 destinos verificados del mapa; Alemania completa la grilla con experiencia respaldada por la historia oficial de SICE y los nombres largos pueden ocupar dos líneas sin superposición.
+- La diferencia de densidad respecto de la referencia es intencional y responde al pedido: la implementación reemplaza las tarjetas grandes por una lista limpia que permite mostrar todos los países.
+- La comparación final no presenta diferencias accionables P0, P1 o P2. No fue necesario un recorte focal adicional porque todas las banderas y etiquetas son legibles en la vista completa.
+
+## Verificación responsive
+
+- Mobile español: 32 elementos, dos columnas y 16 filas completas, cero banderas fallidas y sin desbordamiento horizontal.
+- Mobile inglés: 32 elementos, nombres traducidos, 16 filas completas, cero banderas fallidas y sin desbordamiento horizontal.
+- Desktop: ocho columnas y cuatro filas completas, 32 elementos y sin desbordamiento horizontal.
+- Consola sin errores ni advertencias durante la revisión final.
 
 final result: passed

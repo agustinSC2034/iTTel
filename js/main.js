@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         initImageStoryCarousels();
         initRenewalScrollReveal();
         initRenewalSiceNarrative();
+        initSiceModulesToggle();
         initRenewalNavigationA11y();
     } else {
         initHero();
@@ -3212,6 +3213,22 @@ function initRenewalSiceMap() {
             pointToRestore.focus();
         });
 
+    });
+}
+
+function initSiceModulesToggle() {
+    document.querySelectorAll('[data-sice-modules-toggle]').forEach((button) => {
+        const listId = button.getAttribute('aria-controls');
+        const list = listId ? document.getElementById(listId) : null;
+        const label = button.querySelector('span');
+        if (!list || !label) return;
+
+        button.addEventListener('click', () => {
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', String(!isExpanded));
+            list.classList.toggle('is-expanded', !isExpanded);
+            label.textContent = isExpanded ? button.dataset.moreLabel : button.dataset.lessLabel;
+        });
     });
 }
 

@@ -807,9 +807,13 @@
         aspect-ratio: 2754 / 1398;
     }
 
-    .renewal-sice__scene--global .sice-presence-map__canvas > img {
+    .renewal-sice__scene--global .sice-presence-map__canvas > picture,
+    .renewal-sice__scene--global .sice-presence-map__canvas > picture > img {
         width: 100%;
         height: 100%;
+    }
+
+    .renewal-sice__scene--global .sice-presence-map__canvas > picture > img {
         object-fit: contain;
     }
 
@@ -1699,8 +1703,12 @@
         transform: scale(1.1);
     }
 
+    .renewal-case--rail {
+        padding-top: 84px;
+    }
+
     .renewal-case--rail .renewal-case__content {
-        margin-top: 20px;
+        margin-top: 0;
     }
 
     .renewal-case--network-cards .renewal-case__isp-layout,
@@ -1774,27 +1782,26 @@
 
     .sice-experiences__grid--countries {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
+        gap: 3px 14px;
+        margin-top: 24px;
+        scroll-margin-top: 112px;
     }
 
-    .sice-experience-card--country,
-    .sice-experience-card--country .sice-experience-card__country {
-        min-height: 82px;
+    .sice-country {
+        min-height: 41px;
+        gap: 8px;
+        padding: 4px 0;
     }
 
-    .sice-experience-card--country .sice-experience-card__country {
-        gap: 11px;
-        padding: 15px 13px;
+    .sice-country img {
+        width: 26px;
+        height: 19px;
     }
 
-    .sice-experience-card--country .sice-experience-card__country img {
-        width: 32px;
-        height: 23px;
-    }
-
-    .sice-experience-card--country .sice-experience-card__country span {
-        font-size: 0.66rem;
-        letter-spacing: 0.055em;
+    .sice-country span {
+        font-size: 0.6rem;
+        line-height: 1.18;
+        letter-spacing: 0.04em;
     }
 
     .sice-ecosystem {
@@ -1830,6 +1837,43 @@
         padding: 14px 0;
     }
 
+    .sice-ecosystem__systems li:nth-child(n + 7) {
+        display: none;
+    }
+
+    .sice-ecosystem__systems.is-expanded li:nth-child(n + 7) {
+        display: list-item;
+    }
+
+    .sice-ecosystem__toggle {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        padding: 16px 0 4px;
+        border: 0;
+        border-top: 1px solid #d5e0ea;
+        background: transparent;
+        color: #0875ba;
+        font: 700 0.78rem/1.2 'Inter', sans-serif;
+        letter-spacing: 0.04em;
+        text-align: left;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    .sice-ecosystem__toggle::after {
+        content: '+';
+        font-size: 1.2rem;
+        font-weight: 500;
+        line-height: 1;
+    }
+
+    .sice-ecosystem__toggle[aria-expanded="true"]::after {
+        content: '−';
+    }
+
     .sice-ecosystem__visual {
         order: -1;
         border-radius: 8px;
@@ -1858,6 +1902,12 @@
         min-height: 0 !important;
         padding: 0 !important;
         object-fit: contain;
+    }
+}
+
+@media (min-width: 901px) {
+    .sice-ecosystem__toggle {
+        display: none;
     }
 }
 
