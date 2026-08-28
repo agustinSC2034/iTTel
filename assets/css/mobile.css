@@ -1656,3 +1656,25 @@
         margin-top: 76px;
     }
 }
+
+/* Compacta la transición del hero a Unidades de negocio sólo en teléfonos. */
+@media (max-width: 640px) {
+    .renewal-hero,
+    .renewal-hero__content {
+        height: 72svh;
+        min-height: 520px;
+    }
+
+    .renewal-hero__content {
+        align-items: flex-end;
+        padding-bottom: 38px;
+    }
+
+    .renewal-hero__copy {
+        margin-top: 0;
+    }
+
+    .renewal-overview--business-units .renewal-overview__inner {
+        padding-top: 42px;
+    }
+}
