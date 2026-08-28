@@ -14,7 +14,7 @@ const translations = {
         'hero.eyebrow': 'GRUPO ITTEL \u00a0|\u00a0 INFORMATION TECHNOLOGY & TELECOMMUNICATIONS',
         'hero.title': 'Somos l\u00edderes en el desarrollo y operaci\u00f3n de infraestructura cr\u00edtica.',
         'hero.lead': 'Conectamos el futuro garantizando el cumplimiento de los SLAs m\u00e1s exigentes para operadores, gobiernos y empresas.',
-        'hero.anchor': 'Líderes en Argentina en el desarrollo, operación e integración IT & TELCO a gran escala.',
+        'hero.anchor': 'Líderes en operación e integración IT & TELCO a gran escala.',
 
         // Unidades de Negocio
         'bu.eyebrow': 'UNIDADES DE NEGOCIO',
@@ -184,7 +184,7 @@ const translations = {
         'hero.eyebrow': 'GRUPO ITTEL \u00a0|\u00a0 INFORMATION TECHNOLOGY & TELECOMMUNICATIONS',
         'hero.title': 'We lead the development and operation of critical infrastructure.',
         'hero.lead': 'Connecting the future while ensuring compliance with the most demanding SLAs for operators, governments and enterprises.',
-        'hero.anchor': 'Leaders in Argentina in the development, operation and integration across IT & TELCO at scale.',
+        'hero.anchor': 'Leaders in the operation and integration of IT & TELCO at scale.',
 
         // Business Units
         'bu.eyebrow': 'BUSINESS UNITS',
