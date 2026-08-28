@@ -681,6 +681,37 @@ passed
 
 ---
 
+# Design QA — Unidades de negocio y narrativa SICE
+
+## Alcance
+
+- Sección `Unidades de negocio` reorganizada en tres unidades: TELCO, IT y Obras y Servicios.
+- Narrativa SICE simplificada en tres escenas: alcance global, países y ecosistema SIDERA.
+- Eliminación de la cifra de facturación y de los detalles de proyectos que restringían la presentación a túneles o ITS.
+
+## Comparación visual
+
+- Referencia de redacción y jerarquía: `codex-clipboard-32d1444b-b6db-47d0-b3ab-044ab79515ee.png`.
+- Evidencia final desktop: `business-units-final.png`, capturada a 1440 × 900 px.
+- El título principal pasó al azul corporativo y mantiene una jerarquía consistente con los encabezados de las tres unidades.
+- Obras y Servicios conserva los conceptos técnicos suministrados, pero con redacción editorial, lectura por bloques y separación visual clara.
+- La experiencia internacional se presenta con las 11 banderas y el ecosistema SIDERA muestra Traffic, Analytics, Lighting, Residuos y Gestión Integral en un único módulo.
+
+## Verificación
+
+- Viewports comprobados: 1440, 1024, 768 y 390 px.
+- Sin desbordamiento horizontal en ninguno de los cuatro anchos.
+- Tres escenas SICE accesibles en secuencia natural en mobile y vinculadas al scroll en desktop.
+- Navegación activa en `Partners` durante el recorrido SICE.
+- Versión inglesa comprobada con las mismas tres escenas y las 11 presencias internacionales.
+- Consola sin errores ni advertencias.
+
+## Resultado final
+
+passed
+
+---
+
 # Design QA — composición SIDERA en Tecnología y Operaciones
 
 ## Referencia y evidencia
