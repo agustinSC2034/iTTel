@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=$HOME/public_html/
+    - /bin/cp -f index.html $DEPLOYPATH
+    - /bin/cp -f contacto.php $DEPLOYPATH
+    - /bin/cp -f .htaccess $DEPLOYPATH
+    - /bin/cp -Rf assets $DEPLOYPATH
+    - /bin/cp -Rf en $DEPLOYPATH
+    - /bin/cp -Rf js $DEPLOYPATH
