@@ -2676,6 +2676,7 @@ function initImageStoryCarousels() {
 
         const setActiveSlide = (nextIndex) => {
             currentIndex = (nextIndex + slides.length) % slides.length;
+            carousel.dataset.activeSlide = String(currentIndex);
 
             slides.forEach((slide, index) => {
                 const isActive = index === currentIndex;

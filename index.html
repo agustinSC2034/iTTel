@@ -29,8 +29,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./assets/css/main.css?v=29">
-    <link rel="stylesheet" href="./assets/css/mobile.css?v=9">
+    <link rel="stylesheet" href="./assets/css/main.css?v=31">
+    <link rel="stylesheet" href="./assets/css/mobile.css?v=10">
 
     <!-- Favicon -->
     <link rel="icon" href="./assets/images/favicon.webp" type="image/webp">
@@ -157,11 +157,9 @@
                 <div class="renewal-solution__shade" aria-hidden="true"></div>
                 <div class="container renewal-solution__layout">
                     <div class="renewal-solution__card renewal-solution__card--right renewal-solution__card--networks">
-                        <span class="renewal-kicker">GRUPO ITTEL | SOLUCIONES EN ACCIÓN</span>
-                        <h3 id="neutral-networks-title">REDES NEUTRALES</h3>
-                        <p class="renewal-solution__lead">Torres, fibra oscura y sitios estratégicos para múltiples operadores.</p>
-                        <ul class="renewal-solution__feature-list" aria-label="Beneficios principales de las redes neutrales">
-                            <li><span aria-hidden="true">—</span><div><strong>Infraestructura compartida</strong><p>Red preparada para múltiples operadores.</p></div></li>
+                        <h3 id="neutral-networks-title">COMPARTICIÓN DE INFRAESTRUCTURA</h3>
+                        <p class="renewal-solution__lead">Torres, fibra óptica y sitios para múltiples operadores.</p>
+                        <ul class="renewal-solution__feature-list" aria-label="Beneficios principales de la compartición de infraestructura">
                             <li><span aria-hidden="true">—</span><div><strong>CAPEX optimizado</strong><p>Menos inversión duplicada y despliegues más rápidos.</p></div></li>
                             <li><span aria-hidden="true">—</span><div><strong>Escala operativa</strong><p>Capacidad para operadores, carriers y organismos.</p></div></li>
                         </ul>
@@ -175,17 +173,18 @@
                 </div>
             </article>
 
-            <article class="renewal-solution renewal-solution--operation" aria-labelledby="operation-title">
+            <article class="renewal-solution renewal-solution--operation" data-image-story-carousel data-carousel-interval="5200" aria-labelledby="operation-title">
                 <div class="operation-stage">
-                    <img class="operation-stage__background" src="assets/images/diseno_nuevo_diapo/operation-intelligent-background.webp" alt="Mapa operacional ITS con cámaras de autopista, control de velocidad, detección de residuos y panel de mensaje variable" width="1896" height="830" loading="lazy" decoding="async">
+                    <div class="operation-stage__media solution-stage-carousel">
+                        <div class="image-story__slide is-active" aria-hidden="false"><img class="operation-stage__background" src="assets/images/diseno_nuevo_diapo/operation-intelligent-background.webp" alt="Centro de control Smart City con cámaras, analítica de tránsito, detección de residuos y señalización variable" width="1896" height="830" loading="lazy" decoding="async"></div>
+                        <div class="image-story__slide" aria-hidden="true"><img class="operation-stage__background" src="assets/images/sice/sidera-platform-reference.webp" alt="Plataforma SIDERA para mapas, eventos, equipos y analítica operativa" width="1068" height="692" loading="lazy" decoding="async"></div>
+                    </div>
                     <div class="operation-card">
-                        <span class="operation-card__kicker">GRUPO ITTEL | SOLUCIONES EN ACCIÓN</span>
-                        <h3 id="operation-title">OPERACIÓN<br>INTELIGENTE</h3>
-                        <p class="operation-card__lead">Plataformas ITS para monitorear<br>e integrar infraestructura crítica.</p>
+                        <h3 id="operation-title">TECNOLOGÍA Y<br>OPERACIONES</h3>
                         <ul class="operation-card__features">
-                            <li><strong>Monitoreo centralizado</strong><span>Cámaras, sensores y activos en una sola plataforma.</span></li>
+                            <li><strong>Monitoreo centralizado y predictivo</strong><span>Cámaras, sensores y activos en una sola plataforma.</span></li>
                             <li><strong>Gestión de eventos</strong><span>Información operativa para coordinar respuestas.</span></li>
-                            <li><strong>Integración ITS</strong><span>Sistemas y señalización conectados junto a SICE.</span></li>
+                            <li><strong>Ecosistema Smart City</strong><span>Familia SIDERA para Traffic, Analytics, Lighting, Residuos y gestión urbana.</span></li>
                         </ul>
                         <div class="operation-card__partner" aria-label="SICE, partner tecnológico">
                             <img src="assets/images/sice/sice-wordmark-white.webp" alt="SICE" width="118" height="43" loading="lazy" decoding="async">
@@ -201,15 +200,14 @@
                 </div>
             </article>
 
-            <article id="obras-integracion" class="renewal-solution renewal-solution--works" aria-labelledby="works-title">
+            <article id="obras-integracion" class="renewal-solution renewal-solution--works" data-image-story-carousel data-carousel-interval="5600" aria-labelledby="works-title">
                 <div class="works-stage">
-                    <picture class="works-stage__picture">
-                        <source media="(max-width: 900px)" srcset="assets/images/diseno_nuevo_diapo/works-integration-mobile.webp">
-                        <img class="works-stage__background" src="assets/images/diseno_nuevo_diapo/works-integration-background-v2.webp" alt="Cuadrilla iTTel ejecutando una obra de canalización e integración tecnológica junto a una autopista" width="1867" height="842" loading="lazy" decoding="async">
-                    </picture>
+                    <div class="works-stage__media solution-stage-carousel">
+                        <div class="image-story__slide is-active" aria-hidden="false"><picture class="works-stage__picture"><source media="(max-width: 900px)" srcset="assets/images/diseno_nuevo_diapo/works-integration-mobile.webp"><img class="works-stage__background" src="assets/images/diseno_nuevo_diapo/works-integration-background-v2.webp" alt="Cuadrilla iTTel ejecutando una obra de canalización e integración tecnológica junto a una autopista" width="1867" height="842" loading="lazy" decoding="async"></picture></div>
+                        <div class="image-story__slide" aria-hidden="true"><img class="works-stage__background" src="assets/images/diseno_nuevo_diapo/works-integration-aerial.webp" alt="Vista aérea de una obra de fibra óptica junto a una autopista argentina" width="1672" height="941" loading="lazy" decoding="async"></div>
+                    </div>
                     <div class="works-stage__shade" aria-hidden="true"></div>
                     <div class="works-card">
-                        <span class="works-card__kicker">GRUPO ITTEL | SOLUCIONES EN ACCIÓN</span>
                         <h3 id="works-title">OBRAS E<br>INTEGRACIÓN<br>TECNOLÓGICA</h3>
                         <p class="works-card__lead">Obra, infraestructura y tecnología conectadas<br>de punta a punta.</p>
                         <ul class="works-card__features">
@@ -235,7 +233,6 @@
                 <div class="maintenance-stage">
                     <img class="maintenance-stage__background" src="assets/images/diseno_nuevo_diapo/horizontal/mantenimiento.webp" alt="Cuadrillas iTTel realizando mantenimiento preventivo y correctivo junto a una autopista" width="1672" height="941" loading="lazy" decoding="async">
                     <div class="maintenance-card">
-                        <span class="maintenance-card__kicker">GRUPO ITTEL | SOLUCIONES EN ACCIÓN</span>
                         <h3 id="maintenance-title">MANTENIMIENTO<br>PREVENTIVO Y<br>CORRECTIVO</h3>
                         <p class="maintenance-card__lead">Continuidad operativa para infraestructura crítica.</p>
                         <ul class="maintenance-card__features">
@@ -252,7 +249,7 @@
             </article>
         </section>
 
-        <section id="alianza-sice" class="section renewal-sice" data-renewal-sice data-nav-section="soluciones" aria-label="Alianza tecnológica iTTel y SICE">
+        <section id="alianza-sice" class="section renewal-sice" data-renewal-sice data-nav-section="alianza-sice" aria-label="Experiencia internacional de SICE">
             <div class="renewal-sice__sticky">
                 <div class="renewal-sice__stage">
                     <article class="renewal-sice__scene renewal-sice__scene--global is-active" data-sice-scene="0" aria-hidden="false">
@@ -300,40 +297,10 @@
                         </div>
                     </article>
 
-                    <article class="renewal-sice__scene renewal-sice__scene--platform" data-sice-scene="2" aria-hidden="true">
-                        <div class="sice-story sice-story--platform">
-                            <div class="sice-story__copy">
-                                <span class="sice-story__kicker">TECNOLOGÍA | SICE</span>
-                                <div class="sidera-lockup" aria-label="SICE SIDERA ITS y túneles"><span class="sidera-lockup__sice"><img src="assets/images/sice/sice-logo.webp" alt="SICE" width="316" height="150" loading="lazy" decoding="async"></span><span class="sidera-lockup__divider" aria-hidden="true"></span><span class="sidera-lockup__name"><strong>SIDERA</strong><small>ITS &amp; TUNNELS</small></span></div>
-                                <h2>UNA PLATAFORMA.<br>TODA LA INFRAESTRUCTURA.</h2>
-                                <p class="sice-story__lead">Gestión centralizada de autopistas y túneles <br>desde una única interfaz abierta, modular y flexible.</p>
-                                <p class="sice-story__capabilities">MAPAS INTERACTIVOS · EVENTOS · EMERGENCIAS · REPORTING · EQUIPOS</p>
-                                <p class="sice-story__qualities">ABIERTA · MODULAR · ESCALABLE · 24/7</p>
-                            </div>
-                            <figure class="sice-story__media"><img src="assets/images/sice/sidera-platform-reference.webp" alt="Interfaz operacional de SIDERA para mapas, eventos, equipos y analítica" width="1068" height="692" loading="lazy" decoding="async"></figure>
-                        </div>
-                    </article>
-
-                    <article class="renewal-sice__scene renewal-sice__scene--audit" data-sice-scene="3" aria-hidden="true">
-                        <div class="sice-story sice-story--audit">
-                            <div class="sice-story__copy">
-                                <span class="sice-story__kicker">TECNOLOGÍA | PRODUCTO ITTEL</span>
-                                <div class="audit-lockup"><strong>AUDITORÍA<br>URBANA</strong><img src="assets/images/logoIttel1.webp" alt="iTTel" width="560" height="197" loading="lazy" decoding="async"></div>
-                                <h2>DEL TERRITORIO<br>A LA DECISIÓN.</h2>
-                                <p class="sice-story__lead">Una plataforma para auditar, coordinar y <br>documentar operaciones urbanas desde un único mapa.</p>
-                                <p class="sice-story__capabilities">MAPA OPERATIVO · TAREAS · CUADRILLAS · EQUIPOS · INVENTARIO</p>
-                                <p class="sice-story__qualities">TRAZABILIDAD · EVIDENCIA · CONTROL</p>
-                            </div>
-                            <figure class="sice-story__media"><img src="assets/images/sice/auditoria-urbana-reference.webp" alt="Mapa operativo de Auditoría Urbana con tareas, cuadrillas y recursos asignados" width="1131" height="687" loading="lazy" decoding="async"></figure>
-                        </div>
-                    </article>
-
                     <nav class="renewal-sice__progress" aria-label="Progreso de la narrativa SICE">
                         <ol>
-                            <li class="is-active" data-sice-step><span>01 / 04</span><strong>EXPERIENCIA GLOBAL</strong><i aria-hidden="true"></i></li>
-                            <li data-sice-step><span>02 / 04</span><strong>PROYECTOS</strong><i aria-hidden="true"></i></li>
-                            <li data-sice-step><span>03 / 04</span><strong>ITS EN OPERACIÓN</strong><i aria-hidden="true"></i></li>
-                            <li data-sice-step><span>04 / 04</span><strong>PRODUCTO ITTEL</strong><i aria-hidden="true"></i></li>
+                            <li class="is-active" data-sice-step><span>01 / 02</span><strong>EXPERIENCIA GLOBAL</strong><i aria-hidden="true"></i></li>
+                            <li data-sice-step><span>02 / 02</span><strong>PROYECTOS</strong><i aria-hidden="true"></i></li>
                         </ol>
                     </nav>
                 </div>
@@ -1330,7 +1297,7 @@
     <!-- Scripts -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./js/main.js?v=18"></script>
+    <script src="./js/main.js?v=19"></script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const langBtn = document.getElementById('language-btn');
