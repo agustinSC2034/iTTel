@@ -1859,15 +1859,34 @@
 
     .renewal-hero__content {
         align-items: flex-end;
-        padding-bottom: 140px;
+        padding-bottom: 92px;
     }
 
     .renewal-hero__copy {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         margin-top: 0;
     }
 
-    .renewal-hero__logo {
+    .renewal-hero .renewal-kicker {
+        order: 1;
+        margin-bottom: 12px;
+        font-size: clamp(1.65rem, 8vw, 2rem);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        line-height: 1;
+    }
+
+    .renewal-hero h1 {
+        order: 2;
         margin-bottom: 18px;
+    }
+
+    .renewal-hero__logo {
+        order: 3;
+        width: min(112px, 30vw);
+        margin-bottom: 0;
     }
 
     .renewal-overview--business-units .renewal-overview__inner {
