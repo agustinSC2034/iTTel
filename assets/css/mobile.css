@@ -1660,8 +1660,23 @@
         padding-left: 20px;
     }
 
+    .renewal-case--rail .renewal-case__media {
+        object-position: 69% 84%;
+        transform: scale(1.1);
+    }
+
     .renewal-case--rail .renewal-case__content {
-        margin-top: 76px;
+        margin-top: 20px;
+    }
+
+    .renewal-case--network-cards .renewal-case__isp-layout,
+    #caso-isp .renewal-case__isp-layout {
+        padding-top: 48px;
+    }
+
+    .renewal-case--network-cards .renewal-case__isp-heading,
+    #caso-isp .renewal-case__isp-heading {
+        padding-top: 0;
     }
 }
 
@@ -1873,5 +1888,13 @@
 
     .operation-stage::after {
         background: linear-gradient(180deg, rgba(2, 14, 29, 0.04) 0%, rgba(2, 18, 36, 0.12) 42%, rgba(2, 20, 40, 0.58) 64%, #02172e 100%);
+    }
+}
+
+/* Casos de redes: elimina el exceso de aire antes de los títulos en teléfonos. */
+@media (max-width: 430px) {
+    .renewal-case--network-cards .renewal-case__isp-layout,
+    #caso-isp .renewal-case__isp-layout {
+        padding-top: 48px;
     }
 }
