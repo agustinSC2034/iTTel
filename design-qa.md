@@ -646,3 +646,35 @@ passed
 ## Final result
 
 passed
+
+---
+
+# Design QA — corrección responsive mobile
+
+## Flujo objetivo
+
+`Inicio → Soluciones → Casos de éxito → Clientes` a 390 px, con texto legible, imágenes integradas, mapas y marcas ISP sin superposición y navegación estable.
+
+## Referencias del reporte
+
+- Hero: `codex-clipboard-ec7fd506-f3d0-44e9-ac36-f1817c576f06.png`
+- Tecnología y operaciones: `codex-clipboard-fb4ab56d-81a6-4cb1-9e44-ac05c01f80a2.png`
+- Obras: `codex-clipboard-677ca11c-009b-41b9-879c-c121736fab7c.png`
+- Redes en Argentina: `codex-clipboard-3a74e8f6-b267-49e6-aeeb-848e8b45209b.png`
+- ISP: `codex-clipboard-fff61dbe-0aef-446e-b058-386279ee0a53.png`
+- Clientes: `codex-clipboard-50007f63-8e31-4a23-87e0-7b5f48270d0d.png`
+
+## Evidencia y verificación
+
+- Capturas finales en `ittel-mobile-qa/`: hero, tecnología, obras, mantenimiento, redes, ISP y clientes a 390 px; regresión del hero a 1440 px.
+- Viewports comprobados: 320, 390, 768 y 1440 px.
+- Hero comprobado en español e inglés.
+- Se verificaron las dos escenas de Tecnología y Operaciones.
+- Consola del navegador sin errores ni advertencias.
+- Hallazgos P0: 0.
+- Hallazgos P1: 0.
+- Hallazgos P2: 0.
+
+## Resultado final
+
+passed
