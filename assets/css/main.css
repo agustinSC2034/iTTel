@@ -5702,6 +5702,13 @@ body.renewal-active {
     }
 }
 
+/* AOS is an optional enhancement loaded from a CDN. Keep content usable if it fails. */
+.aos-unavailable [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .renewal-scroll-reveal,
     .renewal-scroll-media {
@@ -5783,7 +5790,7 @@ body.renewal-active {
 }
 
 .renewal-sice__progress ol {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 12px;
 }
 
@@ -13565,7 +13572,7 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
 }
 
 .renewal-sice__progress ol {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 12px;
 }
 
