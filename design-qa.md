@@ -611,3 +611,38 @@ final result: passed
 ## Final result
 
 passed
+
+---
+
+# Design QA — Hero único Argentina tecnológica
+
+- Source: `C:\\Users\\Agustin\\.codex\\generated_images\\01a03f9b-bc54-7512-822a-4490b4b66aac\\exec-36f1d84d-ad3c-46ee-89ef-26fc00f30895.png`
+- Implementation desktop: `C:\\Users\\Agustin\\.codex\\visualizations\\2026\\08\\26\\01a03f9b-bc54-7512-822a-4490b4b66aac\\hero-single-desktop.png`
+- Implementation mobile: `C:\\Users\\Agustin\\.codex\\visualizations\\2026\\08\\26\\01a03f9b-bc54-7512-822a-4490b4b66aac\\hero-single-mobile.png`
+- Combined comparison: `C:\\Users\\Agustin\\.codex\\visualizations\\2026\\08\\26\\01a03f9b-bc54-7512-822a-4490b4b66aac\\hero-single-comparison.png`
+- Source dimensions: 1672 × 941 px.
+- Browser verification: desktop viewport override 1672 × 941 px (rendered browser surface 1265 × 720 px) and mobile 390 × 844 px (rendered width 375 px).
+
+## Full-view comparison
+
+- The approved image remains the sole photographic layer: blue-hour metropolitan motorway, visible traffic and restrained cyan technology trails.
+- The existing white editorial veil is retained only to protect the navy iTTel copy and logo; the road and skyline remain visible across the right half of the composition.
+- The floating navigation preserves its solid white treatment and readable contrast at page start.
+
+## Focused region
+
+- Region reviewed: left-to-centre transition between the white text field and the motorway.
+- Reason: this is the highest-risk area for either losing the approved image under an excessive white veil or reducing the legibility of the dark corporate copy.
+- Result: the transition is gradual, the bridge and traffic continue behind the text field, and the principal road remains visually dominant without competing with the message.
+
+## Comparison history and fixes
+
+1. The two-scene TELCO/IT carousel and its previous/pause/next controls were removed because the approved direction is now a single hero image.
+2. The generated PNG was converted to a 208 KB WebP asset with declared 1672 × 941 dimensions and high fetch priority.
+3. Desktop uses a centred cover crop. Mobile uses a 70% horizontal focal point so the motorway and technology trails remain visible behind the stacked composition.
+4. Spanish and English variants use the same asset and preserve their approved copy.
+5. Browser checks confirmed one hero slide, zero obsolete carousel controls, no horizontal overflow and no console warnings or errors.
+
+## Final result
+
+passed

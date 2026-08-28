@@ -47,6 +47,10 @@
         object-position: 71% center;
     }
 
+    .renewal-hero--single .renewal-hero__slide img {
+        object-position: 70% center;
+    }
+
     .renewal-hero__slide--it img {
         object-position: 65% center;
         transform: none;
