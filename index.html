@@ -29,7 +29,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./assets/css/main.css?v=27">
+    <link rel="stylesheet" href="./assets/css/main.css?v=28">
     <link rel="stylesheet" href="./assets/css/mobile.css?v=8">
 
     <!-- Favicon -->
@@ -111,36 +111,41 @@
             </div>
         </section>
 
-        <section id="unidades-negocio" class="section renewal-overview">
-            <img class="renewal-overview__blueprint" src="assets/images/diseno_nuevo_diapo/overview-technical-background.webp" alt="" aria-hidden="true" width="1858" height="846" loading="lazy" decoding="async">
+        <section id="unidades-negocio" class="section renewal-overview renewal-overview--business-units" aria-labelledby="business-units-title">
+            <img class="renewal-overview__blueprint" src="assets/images/diseno_nuevo_diapo/business-units-network-background.webp" alt="" aria-hidden="true" width="1672" height="941" loading="lazy" decoding="async">
             <div class="container renewal-overview__inner">
-                <header class="renewal-section-heading">
-                    <h2>GRUPO ITTEL<br>INFORMATION TECHNOLOGY &amp;<br>TELECOMMUNICATIONS</h2>
-                    <p>Líderes en Argentina en el desarrollo, operación e integración de <br>infraestructura IT &amp; TELCO a gran escala.</p>
+                <header class="business-units-heading" data-aos="fade-up">
+                    <h2 id="business-units-title">UNIDADES DE NEGOCIO</h2>
+                    <p>Tres capacidades integradas para llevar infraestructura y tecnología a producción.</p>
                 </header>
-                <div class="renewal-overview__matrix">
-                    <div class="renewal-overview__columns" aria-label="Capacidades de Grupo iTTel">
-                        <section class="renewal-overview__column" aria-labelledby="overview-telco-title">
-                            <h3 id="overview-telco-title">INFRAESTRUCTURA &amp; TELCO</h3>
-                            <ol>
-                                <li><div><strong>REDES NEUTRALES Y FIBRA</strong><p>Infraestructura propia y redes optimizadas para múltiples operadores.</p></div></li>
-                                <li><div><strong>OPERACIÓN Y MANTENIMIENTO</strong><p>NOC 24/7 y respuesta en campo.</p></div></li>
-                                <li><div><strong>SERVICIOS ISP</strong><p>Internet y TV por fibra a través de USITTEL y LARANET.</p></div></li>
-                            </ol>
-                        </section>
-                        <section class="renewal-overview__column" aria-labelledby="overview-it-title">
-                            <h3 id="overview-it-title">TECNOLOGÍA &amp; OPERACIONES</h3>
-                            <ol start="4">
-                                <li><div><strong>PLATAFORMAS ITS</strong><p>Gestión y monitoreo de infraestructura crítica junto a SICE.</p></div></li>
-                                <li><div><strong>INTEGRACIÓN E IOT</strong><p>Sistemas, dispositivos y datos conectados en una misma operación.</p></div></li>
-                                <li><div><strong>APLICACIONES Y ANALÍTICA</strong><p>Herramientas para seguimiento, control y toma de decisiones.</p></div></li>
-                            </ol>
-                        </section>
-                    </div>
-                    <div class="renewal-overview__matrix-footer">
-                        <strong>OBRAS, DESPLIEGUE E INTEGRACIÓN</strong>
-                        <p>Ejecución en campo para llevar infraestructura y tecnología a producción.</p>
-                    </div>
+
+                <div class="business-units-grid" aria-label="Unidades de negocio de Grupo iTTel">
+                    <section class="business-unit-lane" aria-labelledby="business-unit-telco-title" data-aos="fade-up" data-aos-delay="80">
+                        <h3 id="business-unit-telco-title">INFRAESTRUCTURA &amp; TELCO</h3>
+                        <ul class="business-unit-list">
+                            <li><h4>COMPARTICIÓN DE INFRAESTRUCTURA</h4><p>Torres, fibra óptica y capacidad de red para múltiples operadores.</p></li>
+                            <li><h4>OPERACIÓN Y MANTENIMIENTO</h4><p>Supervisión 24/7 y respuesta técnica preventiva y correctiva.</p></li>
+                            <li><h4>SERVICIOS ISP</h4><p>Conectividad de Internet y televisión por fibra para hogares y empresas.</p></li>
+                        </ul>
+                    </section>
+
+                    <section class="business-unit-lane" aria-labelledby="business-unit-technology-title" data-aos="fade-up" data-aos-delay="160">
+                        <h3 id="business-unit-technology-title">TECNOLOGÍA &amp; OPERACIONES</h3>
+                        <ul class="business-unit-list">
+                            <li><h4>APPS Y ANALÍTICA PREDICTIVA</h4><p>Plataformas para seguimiento, control, eficiencia productiva y anticipación de desvíos.</p></li>
+                            <li><h4>SICE PARTNERS</h4><p>Plataformas ITS y Smart City para movilidad, iluminación, analítica y gestión urbana.</p></li>
+                            <li><h4>SOLUCIONES IOT</h4><p>Sensores, dispositivos y datos conectados para automatizar y optimizar operaciones.</p></li>
+                        </ul>
+                    </section>
+
+                    <section class="business-unit-lane" aria-labelledby="business-unit-works-title" data-aos="fade-up" data-aos-delay="240">
+                        <h3 id="business-unit-works-title">OBRAS, DESPLIEGUE E INTEGRACIÓN</h3>
+                        <ul class="business-unit-list">
+                            <li><h4>OBRAS CIVILES DE FIBRA ÓPTICA</h4><p>Canalizaciones, tendidos y despliegues preparados para crecer.</p></li>
+                            <li><h4>TORRES Y DATACENTERS</h4><p>Infraestructura crítica, energía, montaje y puesta en servicio.</p></li>
+                            <li><h4>INTEGRACIONES IT</h4><p>Sistemas, comunicaciones y equipamiento conectados de punta a punta.</p></li>
+                        </ul>
+                    </section>
                 </div>
             </div>
         </section>
