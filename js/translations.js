@@ -14,13 +14,13 @@ const translations = {
         'hero.eyebrow': 'GRUPO ITTEL \u00a0|\u00a0 INFORMATION TECHNOLOGY & TELECOMMUNICATIONS',
         'hero.title': 'Somos l\u00edderes en el desarrollo y operaci\u00f3n de infraestructura cr\u00edtica.',
         'hero.lead': 'Conectamos el futuro garantizando el cumplimiento de los SLAs m\u00e1s exigentes para operadores, gobiernos y empresas.',
-        'hero.anchor': 'Pioneros en Argentina en el desarrollo de proyectos de compartici\u00f3n de infraestructura de gran escala.',
+        'hero.anchor': 'Líderes en Argentina en el desarrollo, operación e integración IT & TELCO a gran escala.',
 
         // Unidades de Negocio
         'bu.eyebrow': 'UNIDADES DE NEGOCIO',
         'bu.title': 'UNIDADES DE NEGOCIO',
-        'bu.subtitle': 'Tres capacidades integradas',
-        'bu.lead': 'Tres capacidades integradas para llevar infraestructura y tecnología a producción.',
+        'bu.subtitle': 'Tres unidades especializadas e integradas',
+        'bu.lead': 'Contamos con tres unidades de negocio que pueden trabajar de manera especializada o integrarse bajo un mismo concepto de ciudad inteligente.',
 
         'bu.unit1.title': 'Compartición de infraestructura',
         'bu.unit1.desc': 'Torres, fibra óptica y capacidad de red para múltiples operadores.',
@@ -34,12 +34,12 @@ const translations = {
         'bu.unit5.desc': 'Plataformas ITS y Smart City para movilidad, iluminación, analítica y gestión urbana.',
         'bu.unit6.title': 'Soluciones IoT',
         'bu.unit6.desc': 'Sensores, dispositivos y datos conectados para automatizar y optimizar operaciones.',
-        'bu.unit7.title': 'Obras civiles de fibra óptica',
-        'bu.unit7.desc': 'Canalizaciones, tendidos y despliegues preparados para crecer.',
-        'bu.unit8.title': 'Torres y Datacenters',
-        'bu.unit8.desc': 'Infraestructura crítica, energía, montaje y puesta en servicio.',
-        'bu.unit9.title': 'Integraciones IT',
-        'bu.unit9.desc': 'Sistemas, comunicaciones y equipamiento conectados de punta a punta.',
+        'bu.unit7.title': 'Obras',
+        'bu.unit7.desc': 'Ejecutamos obras integrales de fibra óptica y energía, con canalizaciones y tendidos preparados para escalar. Construimos torres reticuladas, monopostes y estructuras arriostradas, además de soluciones críticas para radiofrecuencia, telefonía móvil, datacenters, racks y tableros eléctricos.',
+        'bu.unit8.title': 'Servicios',
+        'bu.unit8.desc': 'Brindamos mantenimiento preventivo y correctivo con cuadrillas de campo, trazabilidad de cada intervención y tecnología aplicada al control predictivo de la operación.',
+
+        'sice.ecosystem.title': 'UN ECOSISTEMA PENSADO PARA SMART CITIES.',
         
         // Sección Nuestras Credenciales / Alcance
         'credentials.eyebrow': 'NOSOTROS',
@@ -164,7 +164,7 @@ const translations = {
         
         'footer.contact.title': 'Contacto',
         
-        'footer.copyright': 'GRUPO ITTEL SRL | INFORMATION TECHNOLOGY & TELECOMMUNICATIONS',
+        'footer.copyright': 'GRUPO ITTEL S.A | INFORMATION TECHNOLOGY & TELECOMMUNICATIONS',
         
         // Botones generales
         'button.back-to-top': 'Volver arriba'
@@ -184,13 +184,13 @@ const translations = {
         'hero.eyebrow': 'GRUPO ITTEL \u00a0|\u00a0 INFORMATION TECHNOLOGY & TELECOMMUNICATIONS',
         'hero.title': 'We lead the development and operation of critical infrastructure.',
         'hero.lead': 'Connecting the future while ensuring compliance with the most demanding SLAs for operators, governments and enterprises.',
-        'hero.anchor': 'Pioneers in Argentina in the development of large-scale infrastructure sharing projects.',
+        'hero.anchor': 'Leaders in Argentina in the development, operation and integration across IT & TELCO at scale.',
 
         // Business Units
         'bu.eyebrow': 'BUSINESS UNITS',
         'bu.title': 'BUSINESS UNITS',
-        'bu.subtitle': 'Three integrated capabilities',
-        'bu.lead': 'Three integrated capabilities to bring infrastructure and technology into production.',
+        'bu.subtitle': 'Three specialised and integrated units',
+        'bu.lead': 'We operate through three business units that can work independently or integrate under a single smart-city approach.',
 
         'bu.unit1.title': 'Infrastructure sharing',
         'bu.unit1.desc': 'Towers, fibre optics and network capacity for multiple operators.',
@@ -204,12 +204,12 @@ const translations = {
         'bu.unit5.desc': 'ITS and Smart City platforms for mobility, lighting, analytics and urban management.',
         'bu.unit6.title': 'IoT solutions',
         'bu.unit6.desc': 'Sensors, devices and connected data to automate and optimize operations.',
-        'bu.unit7.title': 'Civil works for fibre optics',
-        'bu.unit7.desc': 'Conduits, cabling and deployments prepared to grow.',
-        'bu.unit8.title': 'Towers and data centers',
-        'bu.unit8.desc': 'Critical infrastructure, energy, assembly and commissioning.',
-        'bu.unit9.title': 'IT integrations',
-        'bu.unit9.desc': 'Systems, communications and equipment connected end to end.',
+        'bu.unit7.title': 'Works',
+        'bu.unit7.desc': 'We deliver end-to-end fibre-optic and energy works, with conduits and cabling designed to scale. We build lattice, monopole and guyed towers, as well as critical solutions for radio frequency, mobile telephony, data centres, server racks and electrical panels.',
+        'bu.unit8.title': 'Services',
+        'bu.unit8.desc': 'We provide preventive and corrective maintenance through field crews, full intervention traceability and technology applied to predictive operational control.',
+
+        'sice.ecosystem.title': 'AN ECOSYSTEM DESIGNED FOR SMART CITIES.',
         
         // Credentials / Reach Section
         'credentials.eyebrow': 'ABOUT US',
