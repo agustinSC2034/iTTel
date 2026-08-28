@@ -3,17 +3,19 @@
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar AOS (Animate On Scroll)
-    AOS.init({
-        // Más rápido en desktop
-        duration: 600,
-        easing: 'ease-in-out',
-        once: true,
-        offset: 100,
-        delay: 0,
-        // Desactivar en mobile por viewport
-        disable: function() { return window.innerWidth <= 768; }
-    });
+    // AOS mejora las transiciones, pero el sitio no debe depender de un CDN externo.
+    if (window.AOS && typeof window.AOS.init === 'function') {
+        window.AOS.init({
+            duration: 600,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100,
+            delay: 0,
+            disable: function() { return window.innerWidth <= 768; }
+        });
+    } else {
+        document.documentElement.classList.add('aos-unavailable');
+    }
     
     const hasRenewalExperience = Boolean(document.querySelector('[data-renewal-hero]'));
 
