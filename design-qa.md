@@ -73,6 +73,67 @@ No quedan hallazgos P0, P1 o P2 en el Hero. Como P3 aceptable, la fotografía li
 
 final result: passed
 
+---
+
+# Design QA — mapa global SICE con banderas
+
+## Referencia y estado
+
+- Fuente visual aprobada: `C:\Users\Agustin\.codex\generated_images\01a04950-8a36-74a0-8250-294865484eb4\exec-99e37b0a-4371-48be-9a6f-42113352f96a.png` (868 × 1800 px).
+- Activo cartográfico implementado: `assets/images/sice/sice-presence-map-v2.svg` (2754 × 1398 px).
+- Implementación mobile capturada: `C:\Users\Agustin\AppData\Local\Temp\ittel-sice-flags-mobile.png` a 390 × 844 px y densidad 1.
+- Implementación desktop capturada: `C:\Users\Agustin\AppData\Local\Temp\ittel-sice-flags-desktop.png` a 1440 × 900 px y densidad 1.
+- Comparación normalizada: `C:\Users\Agustin\AppData\Local\Temp\ittel-sice-flags-comparison.png`, con la referencia y la implementación a 844 px de alto.
+
+## Fidelidad y hallazgos
+
+- El mapa mantiene la composición blanca, teal y azul del bloque aprobado, con el rótulo `EXPERIENCIA SICE EN EL MUNDO` dentro del módulo.
+- Se incorporaron 31 señaladores con banderas oficiales: 30 países soberanos más Puerto Rico como experiencia confirmada.
+- Argentina y Chile están pintados y señalados; también se representan Norteamérica, Centroamérica, Sudamérica, Europa, África, Medio Oriente, Asia y Oceanía.
+- Catar y Emiratos Árabes Unidos se distinguen como países separados; Dubái queda correctamente representado mediante Emiratos Árabes Unidos.
+- En mobile los señaladores se reducen proporcionalmente y conservan borde, contraste y lectura sin desbordar el módulo.
+- La comparación final conserva la intención visual de la referencia y no muestra diferencias accionables P0, P1 o P2.
+
+## Verificación funcional y responsive
+
+- Español verificado a 390 × 844 px: 31 banderas cargadas, mapa cargado y sin desbordamiento horizontal.
+- Inglés verificado a 390 × 844 px: 31 banderas cargadas, rótulo traducido y sin desbordamiento horizontal.
+- Desktop verificado a 1440 × 900 px: mapa proporcionado, banderas legibles y layout general sin desbordamiento.
+- Consola sin errores ni advertencias durante la revisión del bloque.
+
+final result: passed
+
+---
+
+# Design QA — fondo mobile de Obras e integración tecnológica
+
+## Referencia y estado comparado
+
+- Fuente visual aprobada: `C:\Users\Agustin\.codex\generated_images\01a04950-8a36-74a0-8250-294865484eb4\exec-4cae2426-d8f0-46a2-bfb7-c43448a08e0d.png` (1024 × 1536 px).
+- Activo web optimizado: `assets/images/mobile_img/works-integration-mobile-v2.webp` (1024 × 1536 px, 278704 bytes).
+- Implementación capturada: `C:\Users\Agustin\AppData\Local\Temp\ittel-works-mobile-v2.png`.
+- Viewport CSS: 390 × 844 px, densidad 1; el bloque visible ocupa aproximadamente 375 × 605 px por la barra de desplazamiento del navegador.
+- Comparación normalizada lado a lado: `C:\Users\Agustin\AppData\Local\Temp\ittel-works-mobile-v2-comparison.png`, con el fondo aprobado recortado mediante `object-fit: cover` y la implementación al mismo tamaño visible.
+- Estado: portada española, menú cerrado, ancla `#obras-integracion` y primer fondo fijo del bloque.
+
+## Fidelidad visual
+
+- Tipografía y contenido: se preservaron íntegramente la jerarquía, el wrapping, los pesos y los textos existentes; la imagen no contiene texto ni sustituye contenido HTML.
+- Espaciado y composición: el bloque mantiene su altura compacta mobile y continúa sin espacio vacío antes de Mantenimiento.
+- Color y contraste: el velo azul existente conserva la lectura en blanco y mantiene reconocibles la autopista, la zanja, el tendido y los técnicos.
+- Calidad de imagen: el WebP vertical conserva 1024 × 1536 px, presenta nitidez suficiente y utiliza un recorte centrado sin estirar el activo.
+- Copia: español e inglés conservan sus textos y ambos cargan el nuevo fondo mobile.
+- No fue necesaria una comparación focal adicional: el bloque completo permite evaluar simultáneamente imagen, título, cuerpo y transición a la sección siguiente.
+
+## Verificación responsive y funcional
+
+- Mobile ES e inglés: el `currentSrc` verificado es `works-integration-mobile-v2.webp`, hay un solo slide visible y no existe desborde horizontal.
+- Desktop 1440 × 900 px: conserva `works-integration-background-v2.webp`, el bloque mantiene 650 px de alto y no existe desborde horizontal.
+- Consola: sin errores ni advertencias durante la comprobación final.
+- No se encontraron diferencias accionables P0, P1 o P2.
+
+final result: passed
+
 ## Revalidación específica — Tipografía del hero
 
 ### Evidencia
@@ -614,6 +675,39 @@ passed
 
 ---
 
+# Design QA — hero mobile aprobado
+
+## Referencia y estado comparado
+
+- Fuente visual aprobada: `C:\Users\Agustin\.codex\generated_images\01a04950-8a36-74a0-8250-294865484eb4\exec-01be7d72-47b6-4bb9-a495-90c3a8aae67c.png` (853 × 1844 px).
+- Implementación final: `C:\Users\Agustin\AppData\Local\Temp\ittel-hero-after-2.png`, capturada en la portada española con el menú cerrado.
+- Viewport CSS verificado: 390 × 844 px, densidad 1. La captura del navegador se normalizó a 390 × 844 para la comparación.
+- Comparación completa lado a lado: `C:\Users\Agustin\AppData\Local\Temp\ittel-hero-comparison-2.png`.
+
+## Fidelidad visual
+
+- Se reprodujo la composición vertical de la referencia: navegación flotante, imagen de ciudad a pantalla completa, degradado celeste inferior y contenido centrado en el tercio bajo.
+- El título `GRUPO ITTEL`, la línea celeste y el texto mantienen la jerarquía, el ancho y el espaciado de la referencia.
+- El texto queda en dos líneas con salto antes de `IT & TELCO`, y se eliminó el segundo logo del cuerpo en mobile.
+- Se conservaron el activo fotográfico y la identidad visual existentes, sin pérdida ni sustitución de imagen.
+
+## Historial de corrección
+
+1. La primera comparación detectó una imagen demasiado lavada, navegación alta, título pequeño y texto demasiado ancho.
+2. Se redujo el velo superior, se ajustaron posición y ancho de la navegación y se refinó la escala del título y del cuerpo.
+3. La comparación posterior no mostró diferencias accionables P0, P1 o P2.
+
+## Verificación funcional y responsive
+
+- Menú mobile probado: abre, actualiza `aria-expanded` y vuelve a cerrar correctamente.
+- Portadas española e inglesa verificadas a 390 × 844 px.
+- Desktop verificado a 1440 × 900 px: conserva su composición; sólo incorpora el salto de línea previamente solicitado.
+- La página renderiza contenido completo y la comprobación de consola previa no mostró errores ni advertencias.
+
+final result: passed
+
+---
+
 # Design QA — Hero único Argentina tecnológica
 
 - Source: `C:\\Users\\Agustin\\.codex\\generated_images\\01a03f9b-bc54-7512-822a-4490b4b66aac\\exec-36f1d84d-ad3c-46ee-89ef-26fc00f30895.png`
@@ -740,3 +834,34 @@ passed
 ## Resultado final
 
 passed
+
+---
+
+# Design QA — fondos fijos de Soluciones en mobile
+
+## Referencia y estado
+
+- Fuente visual aprobada: `C:\Users\Agustin\.codex\generated_images\01a04950-8a36-74a0-8250-294865484eb4\exec-1ab72b2b-38e1-40b5-a578-06c8c2ef3cc9.png` (1024 × 1536 px).
+- Activo optimizado: `assets/images/mobile_img/infrastructure-sharing-mobile-v1.webp` (1024 × 1536 px, 198948 bytes).
+- Implementación capturada: `C:\Users\Agustin\AppData\Local\Temp\ittel-infrastructure-mobile-final.png`.
+- Comparación normalizada: `C:\Users\Agustin\AppData\Local\Temp\ittel-infrastructure-mobile-comparison.png`, con fuente e implementación a 390 × 844 px y densidad 1.
+- Estado: portada española, viewport 390 × 844 px, navegación cerrada y bloque Compartición de infraestructura visible.
+
+## Fidelidad y hallazgos
+
+- Tipografía: se conserva la jerarquía, el peso y el wrapping del sistema visual existente.
+- Espaciado: las cuatro secciones de Soluciones se encadenan con 0 px de separación; el alto queda determinado por su contenido.
+- Colores: el velo azul fue aligerado sólo sobre Compartición para mantener visible la obra sin perder contraste del texto blanco.
+- Imagen: la grúa, el monoposte, la cuadrilla y la autopista permanecen reconocibles con un recorte vertical mobile; el WebP mantiene nitidez adecuada.
+- Contenido: textos, beneficios y logos existentes se conservan sin cambios.
+- La comparación final no muestra diferencias accionables P0, P1 o P2. No fue necesario un recorte adicional porque la imagen, el título y la transición al bloque siguiente son legibles en la vista completa.
+
+## Verificación funcional y responsive
+
+- En mobile sólo queda visible la primera imagen de cada bloque; después de superar el intervalo anterior de los carruseles, los tres índices permanecieron en `0`.
+- Español e inglés verificados a 390 × 844 px con los cuatro fondos mobile correctos.
+- Desktop verificado a 1440 × 900 px: conserva las imágenes horizontales y el carrusel continúa avanzando.
+- Menú mobile probado de cerrado a abierto y nuevamente cerrado mediante `aria-expanded`.
+- Página con contenido significativo, sin overlay de error y sin errores ni advertencias de consola.
+
+final result: passed
