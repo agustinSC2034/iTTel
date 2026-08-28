@@ -13687,3 +13687,256 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
     width: 17px;
     height: 12px;
 }
+
+/* Unidades de negocio: composición editorial aprobada. */
+.renewal-overview--business-units {
+    display: flex;
+    min-height: clamp(760px, 56.3vw, 941px);
+    align-items: center;
+    padding: 0;
+    background: #fbfcfe;
+    color: #0a1e3b;
+}
+
+.renewal-overview--business-units::after {
+    display: none;
+}
+
+.renewal-overview--business-units .renewal-overview__blueprint {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    object-fit: cover;
+    object-position: center;
+    mix-blend-mode: normal;
+}
+
+.renewal-overview--business-units .renewal-overview__inner {
+    width: min(1280px, calc(100% - 64px));
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: clamp(96px, 6.3vw, 112px) 0 clamp(82px, 6vw, 104px);
+}
+
+.business-units-heading {
+    max-width: 920px;
+    margin: 0 0 clamp(48px, 3.4vw, 58px);
+    text-align: left;
+}
+
+.business-units-heading h2 {
+    margin: 0;
+    color: #071d3d;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(3rem, 4vw, 4.15rem);
+    font-weight: 700;
+    letter-spacing: -0.045em;
+    line-height: 1.04;
+}
+
+.business-units-heading p {
+    margin: 18px 0 0;
+    color: #536176;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1rem, 1.12vw, 1.13rem);
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+.renewal-overview--business-units .business-units-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    border: 0;
+    background: transparent;
+}
+
+.business-unit-lane {
+    min-width: 0;
+    padding: 0 clamp(32px, 3.1vw, 52px);
+}
+
+.business-unit-lane:first-child {
+    padding-left: 0;
+}
+
+.business-unit-lane:last-child {
+    padding-right: 0;
+}
+
+.business-unit-lane + .business-unit-lane {
+    border-left: 1px solid #cbd5e1;
+}
+
+.business-unit-lane h3 {
+    min-height: 47px;
+    margin: 0 0 26px;
+    color: #0875ba;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.96rem, 1.12vw, 1.08rem);
+    font-weight: 750;
+    letter-spacing: -0.015em;
+    line-height: 1.35;
+}
+
+.business-unit-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.business-unit-list li {
+    min-height: 116px;
+    padding: 0 0 30px;
+}
+
+.business-unit-list li + li {
+    padding-top: 29px;
+    border-top: 1px solid #cbd5e1;
+}
+
+.business-unit-list h4 {
+    margin: 0;
+    color: #0a1e3b;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.93rem, 1.02vw, 1.02rem);
+    font-weight: 750;
+    letter-spacing: -0.015em;
+    line-height: 1.4;
+}
+
+.business-unit-list p {
+    margin: 8px 0 0;
+    color: #526075;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.91rem, 0.98vw, 0.98rem);
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+@media (max-width: 1023px) {
+    .renewal-overview--business-units {
+        min-height: 0;
+        align-items: flex-start;
+    }
+
+    .renewal-overview--business-units .renewal-overview__inner {
+        width: min(880px, calc(100% - 48px));
+        padding: 116px 0 86px;
+    }
+
+    .business-units-heading {
+        margin-bottom: 54px;
+    }
+
+    .business-units-heading h2 {
+        font-size: clamp(2.65rem, 6vw, 3.7rem);
+    }
+
+    .renewal-overview--business-units .business-units-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .business-unit-lane,
+    .business-unit-lane:first-child,
+    .business-unit-lane:last-child {
+        padding: 0;
+    }
+
+    .business-unit-lane + .business-unit-lane {
+        margin-top: 44px;
+        padding-top: 42px;
+        border-top: 1px solid #cbd5e1;
+        border-left: 0;
+    }
+
+    .business-unit-lane h3 {
+        min-height: 0;
+        margin-bottom: 28px;
+    }
+
+    .business-unit-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 28px;
+    }
+
+    .business-unit-list li,
+    .business-unit-list li + li {
+        min-height: 0;
+        padding: 0;
+        border-top: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .renewal-overview--business-units .renewal-overview__blueprint {
+        object-position: center top;
+    }
+
+    .renewal-overview--business-units .renewal-overview__inner {
+        width: calc(100% - 40px);
+        padding: 108px 0 70px;
+    }
+
+    .business-units-heading {
+        margin-bottom: 48px;
+    }
+
+    .business-units-heading h2 {
+        max-width: 310px;
+        font-size: clamp(2.25rem, 11vw, 3rem);
+        letter-spacing: -0.05em;
+        line-height: 1.02;
+    }
+
+    .business-units-heading p {
+        max-width: 340px;
+        margin-top: 17px;
+        font-size: 0.94rem;
+        line-height: 1.62;
+    }
+
+    .business-unit-lane + .business-unit-lane {
+        margin-top: 38px;
+        padding-top: 36px;
+    }
+
+    .business-unit-lane h3 {
+        margin-bottom: 24px;
+        font-size: 0.9rem;
+        letter-spacing: 0.015em;
+    }
+
+    .business-unit-list {
+        display: block;
+    }
+
+    .business-unit-list li {
+        padding-bottom: 24px;
+    }
+
+    .business-unit-list li + li {
+        padding-top: 24px;
+        border-top: 1px solid #d5dde7;
+    }
+
+    .business-unit-list h4 {
+        font-size: 0.9rem;
+    }
+
+    .business-unit-list p {
+        margin-top: 7px;
+        font-size: 0.88rem;
+        line-height: 1.6;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .renewal-overview--business-units [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}

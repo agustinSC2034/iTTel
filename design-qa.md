@@ -588,3 +588,26 @@ final result: passed
 No quedan hallazgos P0, P1 o P2 para este ajuste.
 
 final result: passed
+
+---
+
+# Design QA — Unidades de negocio
+
+- Source: `C:\\Users\\Agustin\\.codex\\generated_images\\01a03f9b-bc54-7512-822a-4490b4b66aac\\exec-7559a30f-f6a8-418f-bd3c-ba3896873885.png`
+- Implementation: `C:\\Users\\Agustin\\.codex\\visualizations\\2026\\08\\26\\01a03f9b-bc54-7512-822a-4490b4b66aac\\business-units-desktop.png`
+- Combined comparison: `C:\\Users\\Agustin\\.codex\\visualizations\\2026\\08\\26\\01a03f9b-bc54-7512-822a-4490b4b66aac\\business-units-comparison.png`
+- Reference viewport: 1672 × 941 px
+- Verified viewports: 1672 × 941, 1440 × 900, 1024 × 768, 768 × 1024, 390 × 844 px
+
+## Comparison history
+
+1. Initial implementation preserved a legacy solid grid background. It was classified as P1 because it materially changed the approved open editorial composition.
+2. The grid background, border and gap were removed; the heading and column spacing were aligned with the reference.
+3. The first mobile pass inherited the three-column desktop rule. It was classified as P0 because text columns overlapped.
+4. The responsive rule was scoped to the renewed section. The 390 px layout now stacks all three units and all nine capabilities without horizontal overflow.
+5. Tablet layouts were checked at 768 and 1024 px. The Spanish and English versions preserve all content, hierarchy and readable line lengths.
+6. Final browser check returned no console warnings or errors.
+
+## Final result
+
+passed
