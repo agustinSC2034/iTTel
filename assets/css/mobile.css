@@ -1645,6 +1645,14 @@
         margin-top: 16vh;
     }
 
+    .operation-card {
+        padding-bottom: 112px;
+    }
+
+    .maintenance-card {
+        padding-bottom: 120px;
+    }
+
     .operation-card,
     .works-card,
     .maintenance-card {
