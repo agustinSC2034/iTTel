@@ -12718,7 +12718,7 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
     z-index: 1;
     width: 62.5%;
     min-height: 0;
-    aspect-ratio: 1672 / 941;
+    aspect-ratio: 2754 / 1398;
 }
 
 .renewal-sice__scene--global .renewal-map > img {
@@ -12727,6 +12727,79 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
     height: auto;
     min-height: 0;
     object-fit: contain;
+}
+
+.sice-presence-map__eyebrow {
+    position: absolute;
+    top: -24px;
+    left: 2.5%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    color: #0b716f;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.62rem, 0.72vw, 0.78rem);
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.sice-presence-map__eyebrow i {
+    color: #12a6a1;
+    font-size: 1.1em;
+}
+
+.sice-presence-map__canvas {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.sice-presence-map__canvas > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sice-presence-map__pins {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.sice-presence-pin {
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    display: grid;
+    width: clamp(18px, 1.55vw, 28px);
+    aspect-ratio: 1;
+    padding: 2px;
+    overflow: hidden;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 0 1px rgba(15, 166, 165, 0.38), 0 5px 13px rgba(5, 31, 54, 0.2);
+    transform: translate(-50%, -50%);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    pointer-events: auto;
+}
+
+.sice-presence-pin:hover {
+    z-index: 4;
+    box-shadow: 0 0 0 3px rgba(15, 166, 165, 0.18), 0 7px 16px rgba(5, 31, 54, 0.25);
+    transform: translate(-50%, -50%) scale(1.18);
+}
+
+.sice-presence-pin img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .renewal-sice__scene--global .renewal-map__point {
