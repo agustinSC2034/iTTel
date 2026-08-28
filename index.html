@@ -29,8 +29,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./assets/css/main.css?v=31">
-    <link rel="stylesheet" href="./assets/css/mobile.css?v=14">
+    <link rel="stylesheet" href="./assets/css/main.css?v=35">
+    <link rel="stylesheet" href="./assets/css/mobile.css?v=16">
 
     <!-- Favicon -->
     <link rel="icon" href="./assets/images/favicon.webp" type="image/webp">
@@ -88,7 +88,10 @@
         <section id="inicio" class="section renewal-hero renewal-hero--single" data-renewal-hero aria-label="Grupo iTTel: IT y Telecomunicaciones">
             <div class="renewal-hero__slides">
                 <figure class="renewal-hero__slide renewal-hero__slide--single is-active" data-hero-slide aria-hidden="false">
-                    <img src="assets/images/fondo_hero/hero-buenos-aires-interchange-tech-v3.webp" alt="Distribuidor de autopistas de la Ciudad de Buenos Aires con tránsito y trazas tecnológicas" width="1676" height="939" fetchpriority="high" decoding="async">
+                    <picture>
+                        <source media="(max-width: 640px)" srcset="assets/images/mobile_img/hero_buenos_aires_mobile_v1.webp">
+                        <img src="assets/images/fondo_hero/hero-buenos-aires-interchange-tech-v3.webp" alt="Distribuidor de autopistas de la Ciudad de Buenos Aires con tránsito y trazas tecnológicas" width="1676" height="939" fetchpriority="high" decoding="async">
+                    </picture>
                 </figure>
             </div>
             <div class="renewal-hero__veil" aria-hidden="true"></div>
@@ -97,7 +100,7 @@
                     <span class="renewal-kicker">GRUPO ITTEL</span>
                     <img src="assets/images/fondo_hero/Logo_Ittel_AI.png" alt="Grupo iTTel" class="renewal-hero__logo" width="320" height="108" decoding="async">
                     <p class="renewal-hero__subtitle">Information Technology &amp; Telecommunications</p>
-                    <h1>Líderes en Argentina en el desarrollo,<br>operación e integración de<br>IT &amp; TELCO a gran escala.</h1>
+                    <h1>Líderes en Argentina en el desarrollo,<br>operación e integración<br>IT &amp; TELCO a gran escala.</h1>
                 </div>
             </div>
         </section>
@@ -107,12 +110,12 @@
             <div class="container renewal-overview__inner">
                 <header class="business-units-heading" data-aos="fade-up">
                     <h2 id="business-units-title">UNIDADES DE NEGOCIO</h2>
-                    <p>Tres capacidades integradas para llevar infraestructura y tecnología a producción.</p>
+                    <p>Contamos con tres unidades de negocio que pueden trabajar de manera especializada o integrarse bajo un mismo concepto de ciudad inteligente.</p>
                 </header>
 
                 <div class="business-units-grid" aria-label="Unidades de negocio de Grupo iTTel">
                     <section class="business-unit-lane" aria-labelledby="business-unit-telco-title" data-aos="fade-up" data-aos-delay="80">
-                        <h3 id="business-unit-telco-title">INFRAESTRUCTURA &amp; TELCO</h3>
+                        <h3 id="business-unit-telco-title">UNIDAD TELCO</h3>
                         <ul class="business-unit-list">
                             <li><h4>COMPARTICIÓN DE INFRAESTRUCTURA</h4><p>Torres, fibra óptica y capacidad de red para múltiples operadores.</p></li>
                             <li><h4>OPERACIÓN Y MANTENIMIENTO</h4><p>Supervisión 24/7 y respuesta técnica preventiva y correctiva.</p></li>
@@ -121,7 +124,7 @@
                     </section>
 
                     <section class="business-unit-lane" aria-labelledby="business-unit-technology-title" data-aos="fade-up" data-aos-delay="160">
-                        <h3 id="business-unit-technology-title">TECNOLOGÍA &amp; OPERACIONES</h3>
+                        <h3 id="business-unit-technology-title">UNIDAD IT</h3>
                         <ul class="business-unit-list">
                             <li><h4>APPS Y ANALÍTICA PREDICTIVA</h4><p>Plataformas para seguimiento, control, eficiencia productiva y anticipación de desvíos.</p></li>
                             <li><h4>SICE PARTNERS</h4><p>Plataformas ITS y Smart City para movilidad, iluminación, analítica y gestión urbana.</p></li>
@@ -130,11 +133,10 @@
                     </section>
 
                     <section class="business-unit-lane" aria-labelledby="business-unit-works-title" data-aos="fade-up" data-aos-delay="240">
-                        <h3 id="business-unit-works-title">OBRAS, DESPLIEGUE E INTEGRACIÓN</h3>
+                        <h3 id="business-unit-works-title">OBRAS Y SERVICIOS</h3>
                         <ul class="business-unit-list">
-                            <li><h4>OBRAS CIVILES DE FIBRA ÓPTICA</h4><p>Canalizaciones, tendidos y despliegues preparados para crecer.</p></li>
-                            <li><h4>TORRES Y DATACENTERS</h4><p>Infraestructura crítica, energía, montaje y puesta en servicio.</p></li>
-                            <li><h4>INTEGRACIONES IT</h4><p>Sistemas, comunicaciones y equipamiento conectados de punta a punta.</p></li>
+                            <li><h4>OBRAS</h4><p>Ejecutamos obras integrales de fibra óptica y energía, con canalizaciones y tendidos preparados para escalar. Construimos torres reticuladas, monopostes y estructuras arriostradas, además de soluciones críticas para radiofrecuencia, telefonía móvil, datacenters, racks y tableros eléctricos.</p></li>
+                            <li><h4>SERVICIOS</h4><p>Brindamos mantenimiento preventivo y correctivo con cuadrillas de campo, trazabilidad de cada intervención y tecnología aplicada al control predictivo de la operación.</p></li>
                         </ul>
                     </section>
                 </div>
@@ -176,20 +178,20 @@
             <article class="renewal-solution renewal-solution--operation" data-image-story-carousel data-carousel-interval="5200" aria-labelledby="operation-title">
                 <div class="operation-stage">
                     <div class="operation-stage__media solution-stage-carousel">
-                        <div class="image-story__slide is-active" aria-hidden="false"><img class="operation-stage__background" src="assets/images/diseno_nuevo_diapo/operation-intelligent-background.webp" alt="Centro de control Smart City con cámaras, analítica de tránsito, detección de residuos y señalización variable" width="1896" height="830" loading="lazy" decoding="async"></div>
-                        <div class="image-story__slide" aria-hidden="true"><img class="operation-stage__background" src="assets/images/sice/sidera-platform-background-v2.webp" alt="Plataforma SIDERA presentada en un entorno tecnológico de operación" width="1862" height="845" loading="lazy" decoding="async"></div>
+                        <div class="image-story__slide is-active" aria-hidden="false"><picture><source media="(max-width: 900px)" srcset="assets/images/mobile_img/technology_operations_mobile_v1.webp"><img class="operation-stage__background" src="assets/images/diseno_nuevo_diapo/operation-intelligent-background.webp" alt="Centro de control Smart City con cámaras, analítica de tránsito, detección de residuos y señalización variable" width="1896" height="830" loading="lazy" decoding="async"></picture></div>
+                        <div class="image-story__slide" aria-hidden="true"><picture><source media="(max-width: 900px)" srcset="assets/images/mobile_img/technology_operations_mobile_v1.webp"><img class="operation-stage__background" src="assets/images/sice/sidera-platform-background-v2.webp" alt="Plataforma SIDERA presentada en un entorno tecnológico de operación" width="1862" height="845" loading="lazy" decoding="async"></picture></div>
                     </div>
                     <div class="operation-card">
                         <h3 id="operation-title">TECNOLOGÍA Y<br>OPERACIONES</h3>
                         <ul class="operation-card__features">
                             <li><strong>Monitoreo centralizado y predictivo</strong><span>Cámaras, sensores y activos en una sola plataforma.</span></li>
                             <li><strong>Gestión de eventos</strong><span>Información operativa para coordinar respuestas.</span></li>
-                            <li><strong>Ecosistema Smart City</strong><span>Familia SIDERA para Traffic, Analytics, Lighting, Residuos y gestión urbana.</span></li>
+                            <li><strong>Ecosistema Smart City</strong><span>Familia SIDERA para Traffic, Analytics, Lighting, <br> Residuos y gestión urbana.</span></li>
                         </ul>
-                        <div class="operation-card__partner" aria-label="SICE, partner tecnológico">
+                        <a class="operation-card__partner" href="https://www.sice.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar el sitio web de SICE, partner tecnológico (se abre en una pestaña nueva)">
                             <img src="assets/images/sice/sice-wordmark-white.webp" alt="SICE" width="118" height="43" loading="lazy" decoding="async">
                             <span>PARTNER<br>TECNOLÓGICO</span>
-                        </div>
+                        </a>
                     </div>
                     <div class="operation-speed-readout" aria-label="Velocidad detectada: 118 kilómetros por hora; límite 80 kilómetros por hora"><strong>118<small> km/h</small></strong><span>LÍMITE 80 km/h</span></div>
                     <span class="operation-detection operation-detection--speed" aria-hidden="true"></span>
@@ -257,7 +259,7 @@
                             <div class="sice-global__intro">
                                 <span class="sice-global__kicker">TECNOLOGÍA | ALIANZA ITTEL + SICE</span>
                                 <h2>EXPERIENCIA GLOBAL.<br>CAPACIDAD LOCAL.</h2>
-                                <p>Tecnología y experiencia internacional para <br>operar infraestructura crítica en Argentina.</p>
+                                <p>Tecnología y experiencia internacional para <br>desarrollar y operar ciudades inteligentes.</p>
                                 <div class="sice-global__brand">
                                     <img src="assets/images/sice/sice-logo.webp" alt="SICE" width="316" height="150" loading="lazy" decoding="async">
                                 </div>
@@ -269,7 +271,6 @@
                                 <div><span class="sice-global__metric-icon" aria-hidden="true"><i class="fas fa-earth-americas"></i></span><dt>+30</dt><dd>PAÍSES</dd></div>
                                 <div><span class="sice-global__metric-icon" aria-hidden="true"><i class="fas fa-globe"></i></span><dt>5</dt><dd>CONTINENTES</dd></div>
                                 <div><span class="sice-global__metric-icon" aria-hidden="true"><i class="fas fa-people-group"></i></span><dt>3500</dt><dd>PERSONAS</dd></div>
-                                <div><span class="sice-global__metric-icon" aria-hidden="true"><i class="fas fa-chart-column"></i></span><dt>+500</dt><dd>MM€ FACTURACIÓN</dd></div>
                             </dl>
                         </div>
                     </article>
@@ -278,29 +279,50 @@
                         <div class="sice-experiences">
                             <header class="sice-experiences__header">
                                 <span class="sice-story__kicker">TECNOLOGÍA | EXPERIENCIA SICE</span>
-                                <h2>EXPERIENCIA INTERNACIONAL<br>EN INFRAESTRUCTURA CRÍTICA.</h2>
-                                <p>Proyectos verificados de movilidad, túneles y control operacional.</p>
+                                <h2>EXPERIENCIA INTERNACIONAL<br>DESARROLLANDO Y OPERANDO SMART CITIES.</h2>
+                                <p>Presencia internacional aplicada a la gestión inteligente de ciudades y operaciones urbanas.</p>
                             </header>
-                            <div class="sice-experiences__grid">
-                                <article class="sice-experience-card"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/ca.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>CANADÁ</span></div><h3>Puente sobre el río San Lorenzo</h3><p>ITS para el nuevo puente de Montreal.</p><footer><i class="fa-regular fa-calendar-days" aria-hidden="true"></i><small>2015–2019 · 2,1 millas</small></footer></article>
-                                <article class="sice-experience-card"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/us.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>ESTADOS UNIDOS</span></div><h3>Túnel SR99 de Seattle</h3><p>Sistemas TCMS e ICA.</p><footer><i class="fa-regular fa-calendar-days" aria-hidden="true"></i><small>2012–2019 · SIDERA · 2 millas</small></footer></article>
-                                <article class="sice-experience-card"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/pe.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>PERÚ</span></div><h3>Túnel aeroportuario Gambetta</h3><p>ITS, sistemas eléctricos y mecánicos.</p><footer><i class="fa-regular fa-calendar-days" aria-hidden="true"></i><small>2014–2016 · 2,1 millas</small></footer></article>
-                                <article class="sice-experience-card"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/es.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>ESPAÑA</span></div><h3>Túneles urbanos de Madrid</h3><p>Centro de gestión y control.</p><footer><i class="fa-regular fa-calendar-days" aria-hidden="true"></i><small>2001–2026 · 29 túneles</small></footer></article>
-                                <article class="sice-experience-card"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/pt.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>PORTUGAL</span></div><h3>Túneles de Madeira</h3><p>Seguridad, control y centro de gestión.</p><footer><i class="fa-regular fa-calendar-days" aria-hidden="true"></i><small>Migración SIDERA · 52 túneles</small></footer></article>
-                                <article class="sice-experience-card"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/no.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>NORUEGA</span></div><h3>Sotra Connection</h3><p>Sistemas electromecánicos y automatización.</p><footer><i class="fa-regular fa-calendar-days" aria-hidden="true"></i><small>2024–2027 · Bergen</small></footer></article>
-                                <article class="sice-experience-card"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/se.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>SUECIA</span></div><h3>Stockholm Bypass</h3><p>Sistemas electromecánicos.</p><footer><i class="fa-regular fa-calendar-days" aria-hidden="true"></i><small>2019–2030 · 34,3 millas</small></footer></article>
-                                <article class="sice-experience-card"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/dk.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>DINAMARCA</span></div><h3>Femarn Belt Fixed Link</h3><p>Sistemas electromecánicos.</p><footer><i class="fa-regular fa-calendar-days" aria-hidden="true"></i><small>2023–2030 · 15,6 millas</small></footer></article>
-                                <article class="sice-experience-card"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/il.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>ISRAEL</span></div><h3>Autopista Ayalon</h3><p>Monitoreo y control de tránsito.</p><footer><i class="fa-regular fa-calendar-days" aria-hidden="true"></i><small>2012–2017</small></footer></article>
-                                <article class="sice-experience-card"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/au.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>AUSTRALIA</span></div><h3>Túneles WestConnex</h3><p>M4 East, M8 y Rozelle Interchange.</p><footer><i class="fa-regular fa-calendar-days" aria-hidden="true"></i><small>2016–2023 · SIDERA</small></footer></article>
-                                <article class="sice-experience-card"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/nz.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>NUEVA ZELANDA</span></div><h3>Waterview Tunnel</h3><p>Sistema integrado de gestión.</p><footer><i class="fa-regular fa-calendar-days" aria-hidden="true"></i><small>2012–actualidad · SIDERA</small></footer></article>
+                            <div class="sice-experiences__grid sice-experiences__grid--countries">
+                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/ca.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>CANADÁ</span></div></article>
+                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/us.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>ESTADOS UNIDOS</span></div></article>
+                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/pe.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>PERÚ</span></div></article>
+                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/es.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>ESPAÑA</span></div></article>
+                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/pt.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>PORTUGAL</span></div></article>
+                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/no.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>NORUEGA</span></div></article>
+                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/se.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>SUECIA</span></div></article>
+                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/dk.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>DINAMARCA</span></div></article>
+                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/il.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>ISRAEL</span></div></article>
+                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/au.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>AUSTRALIA</span></div></article>
+                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/nz.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>NUEVA ZELANDA</span></div></article>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="renewal-sice__scene renewal-sice__scene--ecosystem" data-sice-scene="2" aria-hidden="true">
+                        <div class="sice-ecosystem">
+                            <div class="sice-ecosystem__copy">
+                                <span class="sice-story__kicker">TECNOLOGÍA | ECOSISTEMA SIDERA</span>
+                                <h2 data-i18n="sice.ecosystem.title">UN ECOSISTEMA<br>PENSADO PARA SMART CITIES.</h2>
+                                <p>Una familia integrada de sistemas para observar, anticipar y coordinar la operación urbana desde un único entorno.</p>
+                                <ul class="sice-ecosystem__systems" aria-label="Sistemas de la familia SIDERA">
+                                    <li><strong>SIDERA Traffic</strong><span>Movilidad, tránsito y gestión de eventos.</span></li>
+                                    <li><strong>SIDERA Analytics</strong><span>Datos, indicadores y analítica predictiva.</span></li>
+                                    <li><strong>SIDERA Lighting</strong><span>Iluminación conectada y eficiencia energética.</span></li>
+                                    <li><strong>SIDERA Residuos</strong><span>Monitoreo y coordinación de servicios urbanos.</span></li>
+                                    <li><strong>SIDERA Gestión Integral</strong><span>Supervisión centralizada y visión operativa unificada.</span></li>
+                                </ul>
+                            </div>
+                            <div class="sice-ecosystem__visual">
+                                <img src="assets/images/sice/sidera-analytics-platform-v2.webp" alt="Interfaz SIDERA Analytics con análisis de energía, ambiente, servicios, predicción y alertas" width="1814" height="867" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </article>
 
                     <nav class="renewal-sice__progress" aria-label="Progreso de la narrativa SICE">
                         <ol>
-                            <li class="is-active" data-sice-step><span>01 / 02</span><strong>EXPERIENCIA GLOBAL</strong><i aria-hidden="true"></i></li>
-                            <li data-sice-step><span>02 / 02</span><strong>PROYECTOS</strong><i aria-hidden="true"></i></li>
+                            <li class="is-active" data-sice-step><span>01 / 03</span><strong>ALCANCE GLOBAL</strong><i aria-hidden="true"></i></li>
+                            <li data-sice-step><span>02 / 03</span><strong>PAÍSES</strong><i aria-hidden="true"></i></li>
+                            <li data-sice-step><span>03 / 03</span><strong>ECOSISTEMA SIDERA</strong><i aria-hidden="true"></i></li>
                         </ol>
                     </nav>
                 </div>
@@ -310,14 +332,15 @@
         <section id="casos-exito" class="section renewal-cases" aria-labelledby="casos-title">
             <header class="renewal-cases__header container">
                 <span class="renewal-kicker">CASOS DE ÉXITO</span>
-                <h2 id="casos-title">Infraestructura en operación real.</h2>
+                <h2 id="casos-title">Redes TELCO en Argentina.</h2>
+                <p class="renewal-cases__locations">La Matanza · Tandil · Trenes Argentinos · Ciudad de Buenos Aires · Buenos Aires</p>
             </header>
 
             <article class="renewal-case renewal-case--rail">
                 <img class="renewal-case__media" src="assets/images/diseno_nuevo_diapo/horizontal/trenes.webp" alt="Infraestructura ferroviaria conectada por iTTel" width="1672" height="941" loading="lazy" decoding="async">
                 <div class="renewal-case__overlay" aria-hidden="true"></div>
                 <div class="container renewal-case__content">
-                    <h3>REDES EN<br>ARGENTINA</h3>
+                    <h3>REDES TELCO<br>EN ARGENTINA</h3>
                     <div class="renewal-case__partner"><strong>TRENES ARGENTINOS</strong><span>INFRAESTRUCTURA</span></div>
                     <p class="renewal-case__lead">Infraestructura compartida<br>desplegada sobre la red ferroviaria nacional.</p>
                     <ul class="renewal-case__bullets">
@@ -328,21 +351,22 @@
                 </div>
             </article>
 
-            <article id="caso-autopistas" class="renewal-case renewal-case--highways">
-                <div class="renewal-case__split">
-                    <div class="renewal-case__maps">
-                        <figure><figcaption>CIUDAD DE BUENOS AIRES</figcaption><img src="assets/images/ciudad.webp" alt="Red en autopistas de la Ciudad de Buenos Aires" width="1513" height="1040" loading="lazy" decoding="async"></figure>
-                        <figure><img src="assets/images/provincia.webp" alt="Red en autopistas de la Provincia de Buenos Aires" width="1625" height="968" loading="lazy" decoding="async"></figure>
-                    </div>
-                    <div class="renewal-case__copy">
+            <article id="caso-autopistas" class="renewal-case renewal-case--isp renewal-case--network-cards">
+                <div class="renewal-case__isp-layout">
+                    <header class="renewal-case__isp-heading">
                         <h3>REDES EN<br>AUTOPISTAS</h3>
-                        <div class="renewal-case__partner"><strong>DESPLIEGUES ESTRATÉGICOS</strong></div>
-                        <p class="renewal-case__lead">Fibra óptica y torres desplegadas sobre<br>autopistas y corredores estratégicos.</p>
-                        <ul class="renewal-case__bullets">
-                            <li><strong>CIUDAD DE BUENOS AIRES</strong><span>+300 km de fibra operativa y 73 torres críticas.</span></li>
-                            <li><span>+100 km de fibra y 41 torres estratégicas.</span></li>
-                        </ul>
-                        <div class="renewal-case__capacity"><i class="fas fa-globe" aria-hidden="true"></i><p><strong>CAPACIDAD NACIONAL</strong><span>+1.000 km de fibra óptica · +200 torres telco</span></p></div>
+                        <p>Fibra óptica y torres desplegadas sobre autopistas y corredores de alta demanda.</p>
+                        <strong class="renewal-case__isp-tags">INFRAESTRUCTURA · COBERTURA · OPERACIÓN</strong>
+                    </header>
+                    <div class="renewal-case__isp-grid">
+                        <figure>
+                            <div class="renewal-case__isp-map"><img src="assets/images/ciudad.webp" alt="Mapa de la red TELCO en la Ciudad de Buenos Aires" width="1513" height="1040" loading="lazy" decoding="async"></div>
+                            <figcaption><span>CIUDAD DE BUENOS AIRES</span><strong>RED TELCO URBANA</strong><i aria-hidden="true"></i><p>Fibra óptica operativa y torres críticas desplegadas para sostener la conectividad urbana.</p><b><i class="fas fa-globe" aria-hidden="true"></i> +300 KM DE FIBRA · 73 TORRES</b></figcaption>
+                        </figure>
+                        <figure>
+                            <div class="renewal-case__isp-map"><img src="assets/images/provincia.webp" alt="Mapa de la red TELCO en Buenos Aires" width="1625" height="968" loading="lazy" decoding="async"></div>
+                            <figcaption><span>BUENOS AIRES</span><strong>COBERTURA REGIONAL</strong><i aria-hidden="true"></i><p>Infraestructura de fibra óptica y torres para ampliar la cobertura sobre corredores provinciales.</p><b><i class="fas fa-globe" aria-hidden="true"></i> +100 KM DE FIBRA · 41 TORRES</b></figcaption>
+                        </figure>
                     </div>
                 </div>
             </article>
@@ -350,18 +374,18 @@
             <article id="caso-isp" class="renewal-case renewal-case--isp">
                 <div class="renewal-case__isp-layout">
                     <header class="renewal-case__isp-heading">
-                        <h3>REDES DE<br>NUESTROS ISP</h3>
-                        <p>Redes FTTH diseñadas, desplegadas<br>y operadas bajo nuestras marcas<br>USITTEL y LARANET.</p>
-                        <strong class="renewal-case__isp-tags">INFRAESTRUCTURA PROPIA · OPERACIÓN LOCAL · CONECTIVIDAD</strong>
+                        <h3>REDES<br>LOCALES</h3>
+                        <p>Redes neutrales para Internet y TV, diseñadas para brindar cobertura local y operación permanente.</p>
+                        <strong class="renewal-case__isp-tags">RED NEUTRAL · OPERACIÓN LOCAL · CONECTIVIDAD</strong>
                     </header>
                     <div class="renewal-case__isp-grid">
                         <figure>
-                            <div class="renewal-case__isp-map"><img class="renewal-case__isp-logo renewal-case__isp-logo--usittel" src="assets/images/image_rediseño/usilogo.webp" alt="USITTEL"><img src="assets/images/cases/isp-tandil-map.webp" alt="Trazado de la red FTTH de USITTEL en Tandil" width="551" height="405" loading="lazy" decoding="async"></div>
-                            <figcaption><span>TANDIL</span><strong>DESPLIEGUE FTTH</strong><i aria-hidden="true"></i><p>Red GPON para Internet e IPTV,<br>con cobertura urbana y periurbana en expansión.</p><b><i class="fas fa-globe" aria-hidden="true"></i> +350 MANZANAS CON FTTH</b></figcaption>
+                            <div class="renewal-case__isp-map"><img src="assets/images/cases/isp-tandil-map.webp" alt="Mapa de la red neutral para Internet y TV en Tandil" width="551" height="405" loading="lazy" decoding="async"></div>
+                            <figcaption><span>TANDIL</span><strong>RED NEUTRAL PARA INTERNET Y TV</strong><i aria-hidden="true"></i><p>Cobertura de red neutral para Internet y TV en todo Tandil.</p></figcaption>
                         </figure>
                         <figure>
-                            <div class="renewal-case__isp-map"><img class="renewal-case__isp-logo renewal-case__isp-logo--laranet" src="assets/images/image_rediseño/laralogo.webp" alt="LARANET"><img src="assets/images/cases/isp-matanza-map.webp" alt="Trazado de la red óptica de LARANET en La Matanza" width="591" height="405" loading="lazy" decoding="async"></div>
-                            <figcaption><span>LA MATANZA</span><strong>RED ÓPTICA ESCALABLE</strong><i aria-hidden="true"></i><p>Arquitectura FTTH con backbone<br>redundante y operación permanente.</p><b><i class="fas fa-globe" aria-hidden="true"></i> +300 KM DE NODO FO CENTRALIZADO</b></figcaption>
+                            <div class="renewal-case__isp-map"><img src="assets/images/cases/isp-matanza-map.webp" alt="Mapa de la red neutral para Internet y TV en La Matanza" width="591" height="405" loading="lazy" decoding="async"></div>
+                            <figcaption><span>LA MATANZA</span><strong>RED NEUTRAL PARA INTERNET Y TV</strong><i aria-hidden="true"></i><p>Cobertura y operación de red neutral para Internet y TV en La Matanza.</p></figcaption>
                         </figure>
                     </div>
                 </div>
@@ -1281,7 +1305,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p data-i18n="footer.copyright">&copy; GRUPO ITTEL SRL | INFORMATION TECHNOLOGY & TELECOMMUNICATIONS</p>
+                <p data-i18n="footer.copyright">&copy; GRUPO ITTEL S.A | INFORMATION TECHNOLOGY & TELECOMMUNICATIONS</p>
             </div>
         </div>
     </footer>

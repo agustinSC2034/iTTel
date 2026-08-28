@@ -1373,10 +1373,10 @@
 
     .renewal-hero h1 {
         width: min(315px, 88vw);
-        color: #17263d;
-        font-size: 0.84rem;
-        font-weight: 500;
-        line-height: 1.58;
+        color: #102a4a;
+        font-size: 0.94rem;
+        font-weight: 600;
+        line-height: 1.46;
         text-shadow: 0 1px 0 rgba(255, 255, 255, 0.82);
     }
 
@@ -1657,24 +1657,213 @@
     }
 }
 
+/* Cierre responsive: unidades, narrativa SICE y familia visual de redes. */
+@media (max-width: 900px) {
+    .renewal-hero,
+    .renewal-hero__content {
+        height: 88svh;
+        min-height: 610px;
+    }
+
+    .renewal-hero__copy {
+        margin-top: 8svh;
+    }
+
+    .renewal-overview--business-units .renewal-overview__inner {
+        padding-top: 76px;
+    }
+
+    .renewal-overview--business-units {
+        scroll-margin-top: 82px;
+    }
+
+    .business-units-heading h2 {
+        max-width: none;
+        color: #0875ba;
+        font-size: clamp(2.15rem, 10vw, 2.9rem);
+        letter-spacing: -0.04em;
+    }
+
+    .business-unit-lane h3 {
+        min-height: 0;
+        font-size: 1.1rem;
+        letter-spacing: -0.01em;
+    }
+
+    .business-unit-lane:last-child .business-unit-list li {
+        min-height: 0;
+    }
+
+    .sice-global__metrics {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .sice-global__metrics > div,
+    .sice-global__metrics > div:nth-child(2),
+    .sice-global__metrics > div:nth-child(3) {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        padding: 17px 8px;
+        border-right: 1px solid #dbe4ec;
+        text-align: center;
+    }
+
+    .sice-global__metrics > div:last-child {
+        border-right: 0;
+    }
+
+    .sice-experiences__grid--countries {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .sice-experience-card--country,
+    .sice-experience-card--country .sice-experience-card__country {
+        min-height: 82px;
+    }
+
+    .sice-experience-card--country .sice-experience-card__country {
+        gap: 11px;
+        padding: 15px 13px;
+    }
+
+    .sice-experience-card--country .sice-experience-card__country img {
+        width: 32px;
+        height: 23px;
+    }
+
+    .sice-experience-card--country .sice-experience-card__country span {
+        font-size: 0.66rem;
+        letter-spacing: 0.055em;
+    }
+
+    .sice-ecosystem {
+        display: flex;
+        width: 100%;
+        min-height: 0;
+        flex-direction: column;
+        gap: 32px;
+        padding: 86px 20px 70px;
+    }
+
+    .sice-ecosystem__copy,
+    .sice-ecosystem__visual {
+        width: 100%;
+    }
+
+    .sice-ecosystem__copy h2 {
+        margin: 18px 0 16px;
+        font-size: clamp(2.05rem, 9.8vw, 2.8rem);
+    }
+
+    .sice-ecosystem__copy > p {
+        font-size: 0.93rem;
+        line-height: 1.58;
+    }
+
+    .sice-ecosystem__systems {
+        grid-template-columns: 1fr;
+        margin-top: 29px;
+    }
+
+    .sice-ecosystem__systems li {
+        padding: 14px 0;
+    }
+
+    .sice-ecosystem__visual {
+        order: -1;
+        border-radius: 8px;
+        box-shadow: 0 15px 32px rgba(9, 34, 61, 0.14);
+    }
+
+    .renewal-cases__locations {
+        margin-top: 14px;
+        font-size: 0.8rem;
+    }
+
+    .renewal-case--network-cards .renewal-case__isp-layout,
+    #caso-isp .renewal-case__isp-layout {
+        padding-top: 84px;
+    }
+
+    .renewal-case--network-cards .renewal-case__isp-map,
+    #caso-isp .renewal-case__isp-map {
+        aspect-ratio: 1.35 / 1;
+    }
+
+    .renewal-case--network-cards .renewal-case__isp-map > img,
+    #caso-isp .renewal-case__isp-map > img {
+        width: 100%;
+        height: 100%;
+        min-height: 0 !important;
+        padding: 12px !important;
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 430px) {
+    .renewal-hero__copy {
+        margin-top: 7svh;
+    }
+
+    .renewal-overview--business-units .renewal-overview__inner {
+        padding-top: 68px;
+    }
+}
+
 /* Compacta la transición del hero a Unidades de negocio sólo en teléfonos. */
 @media (max-width: 640px) {
     .renewal-hero,
     .renewal-hero__content {
-        height: 72svh;
-        min-height: 520px;
+        height: 100svh;
+        min-height: 560px;
     }
 
     .renewal-hero__content {
         align-items: flex-end;
-        padding-bottom: 38px;
+        padding-bottom: 64px;
     }
 
     .renewal-hero__copy {
         margin-top: 0;
     }
 
+    .renewal-hero__logo {
+        margin-bottom: 18px;
+    }
+
     .renewal-overview--business-units .renewal-overview__inner {
         padding-top: 42px;
+    }
+}
+
+/* Tecnología y Operaciones: fondo vertical continuo exclusivo para mobile. */
+@media (max-width: 900px) {
+    .operation-stage__media .image-story__slide,
+    .operation-stage__media .image-story__slide > picture {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .operation-stage__media .image-story__slide img,
+    .operation-stage__media .image-story__slide:first-child img,
+    .operation-stage__media .image-story__slide:nth-child(2) img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: auto;
+        object-fit: cover;
+        object-position: center top;
+        transform: none;
+    }
+
+    .operation-stage::after {
+        background: linear-gradient(180deg, rgba(2, 14, 29, 0.04) 0%, rgba(2, 18, 36, 0.12) 42%, rgba(2, 20, 40, 0.58) 64%, #02172e 100%);
     }
 }

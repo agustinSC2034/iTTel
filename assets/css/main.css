@@ -6181,6 +6181,12 @@ html[lang="en"] .renewal-sice .sice-experiences__header h2 {
     transform: scale(1);
 }
 
+.renewal-hero__slide picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .renewal-hero__slide img {
     display: block;
     width: 68%;
@@ -6214,7 +6220,7 @@ html[lang="en"] .renewal-sice .sice-experiences__header h2 {
     position: absolute;
     z-index: 2;
     inset: 0;
-    background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.98) 25%, rgba(255, 255, 255, 0.72) 41%, rgba(255, 255, 255, 0.08) 61%, transparent 72%);
+    background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.98) 26%, rgba(255, 255, 255, 0.84) 42%, rgba(255, 255, 255, 0.24) 58%, rgba(255, 255, 255, 0.04) 69%, transparent 76%);
     pointer-events: none;
 }
 
@@ -6230,7 +6236,7 @@ html[lang="en"] .renewal-sice .sice-experiences__header h2 {
 
 .renewal-hero__copy {
     width: min(620px, 48vw);
-    transform: translateY(44px);
+    transform: translateY(20px);
 }
 
 .renewal-hero__logo {
@@ -6241,26 +6247,27 @@ html[lang="en"] .renewal-sice .sice-experiences__header h2 {
 }
 
 .renewal-hero__subtitle {
-    margin: 0 0 1.4rem;
-    color: #344054;
+    max-width: 540px;
+    margin: 0 0 1.3rem;
+    color: #253a57;
     font-family: 'Inter', sans-serif;
-    font-size: clamp(1rem, 1.18vw, 1.35rem);
-    font-weight: 400;
-    letter-spacing: 0.15em;
-    line-height: 1.4;
+    font-size: clamp(0.86rem, 0.9vw, 1rem);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 1.45;
     text-transform: uppercase;
 }
 
 .renewal-hero h1 {
-    max-width: 570px;
+    max-width: 540px;
     margin: 0;
-    color: #344054;
+    color: #102a4a;
     font-family: 'Inter', sans-serif;
-    font-size: clamp(1.25rem, 1.38vw, 1.6rem);
-    font-weight: 400;
-    letter-spacing: 0.005em;
-    line-height: 1.55;
-    text-transform: uppercase;
+    font-size: clamp(1.35rem, 1.5vw, 1.72rem);
+    font-weight: 600;
+    letter-spacing: -0.012em;
+    line-height: 1.38;
+    text-transform: none;
     text-wrap: initial;
 }
 
@@ -11825,6 +11832,7 @@ html[lang="en"] .operation-card h3 {
     align-items: center;
     gap: 14px;
     margin-top: auto;
+    text-decoration: none;
 }
 
 .operation-card__partner img {
@@ -13765,6 +13773,7 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
     min-height: clamp(760px, 56.3vw, 941px);
     align-items: center;
     padding: 0;
+    scroll-margin-top: 96px;
     background: #fbfcfe;
     color: #0a1e3b;
 }
@@ -14012,17 +14021,217 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
     }
 }
 
-/* Overrides finales: dos momentos SICE y fondos editoriales sincronizados. */
+/* Overrides finales: narrativa SICE, unidades y casos TELCO sincronizados. */
 .renewal-sice {
-    height: 200svh;
+    height: 300svh;
 }
 
 .renewal-sice__progress ol {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.business-units-heading h2 {
+    color: #0875ba;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2.75rem, 3.45vw, 3.55rem);
+    font-weight: 760;
+    letter-spacing: -0.035em;
+}
+
+.business-units-heading p {
+    max-width: 860px;
+}
+
+.business-unit-lane h3 {
+    min-height: 54px;
+    font-size: clamp(1.14rem, 1.32vw, 1.32rem);
+    line-height: 1.25;
+}
+
+.sice-global__brand img {
+    mix-blend-mode: normal;
+    filter: contrast(1.2) saturate(1.08);
+}
+
+.business-unit-lane:last-child .business-unit-list li {
+    min-height: 174px;
+}
+
+.sice-global__metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sice-experiences__grid--countries {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.sice-experience-card--country {
+    min-height: 108px;
+    padding: 0;
+    border-color: #dce5ed;
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.sice-experience-card--country .sice-experience-card__country {
+    display: flex;
+    min-height: 106px;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 24px;
+}
+
+.sice-experience-card--country .sice-experience-card__country img {
+    width: 44px;
+    height: 32px;
+    flex: 0 0 auto;
+    border: 1px solid #d8e1eb;
+    object-fit: cover;
+}
+
+.sice-experience-card--country .sice-experience-card__country span {
+    color: #0b2748;
+    font-size: 0.82rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+}
+
+.renewal-sice__scene--ecosystem {
+    background: #f5f8fb;
+}
+
+.sice-ecosystem {
+    display: grid;
+    width: min(1800px, 100%);
+    height: 100%;
+    min-height: 100svh;
+    grid-template-columns: minmax(430px, 0.78fr) minmax(0, 1.32fr);
+    margin: 0 auto;
+    padding: clamp(116px, 8vw, 144px) clamp(52px, 5.4vw, 104px) clamp(92px, 7vw, 118px);
+    align-items: center;
+    gap: clamp(44px, 5vw, 92px);
+}
+
+.sice-ecosystem__copy {
+    position: relative;
+    z-index: 2;
+}
+
+.sice-ecosystem__copy h2 {
+    max-width: 650px;
+    margin: 24px 0 22px;
+    color: #071a37;
+    font: 750 clamp(2.75rem, 3.65vw, 4.15rem)/1.06 'Inter', sans-serif;
+    letter-spacing: -0.048em;
+}
+
+.sice-ecosystem__copy > p {
+    max-width: 610px;
+    margin: 0;
+    color: #5b6980;
+    font: 400 clamp(1rem, 1.13vw, 1.18rem)/1.65 'Inter', sans-serif;
+}
+
+.sice-ecosystem__systems {
+    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 24px;
+    margin: 38px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sice-ecosystem__systems li {
+    min-width: 0;
+    padding: 17px 0;
+    border-top: 1px solid #d5e0ea;
+}
+
+.sice-ecosystem__systems strong,
+.sice-ecosystem__systems span {
+    display: block;
+}
+
+.sice-ecosystem__systems strong {
+    color: #0a3158;
+    font: 700 0.93rem/1.3 'Inter', sans-serif;
+}
+
+.sice-ecosystem__systems span {
+    margin-top: 5px;
+    color: #66758a;
+    font: 400 0.82rem/1.45 'Inter', sans-serif;
+}
+
+.sice-ecosystem__visual {
+    position: relative;
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid #cbd9e6;
+    border-radius: 12px;
+    background: #03182e;
+    box-shadow: 0 24px 56px rgba(9, 34, 61, 0.16);
+}
+
+.sice-ecosystem__visual::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(3, 24, 46, 0.08), transparent 35%);
+    content: '';
+    pointer-events: none;
+}
+
+.sice-ecosystem__visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1814 / 867;
+    object-fit: contain;
+    object-position: center;
+}
+
+.renewal-cases__locations {
+    max-width: 860px;
+    margin: 18px auto 0;
+    color: #5d6b80;
+    font: 500 0.9rem/1.55 'Inter', sans-serif;
+    letter-spacing: 0.02em;
+}
+
+.renewal-case--network-cards .renewal-case__isp-map > img,
+#caso-isp .renewal-case__isp-map > img {
+    padding-top: 0;
+}
+
+.renewal-case--network-cards .renewal-case__isp-map > img {
+    object-fit: cover;
+}
+
+.renewal-case--network-cards .renewal-case__isp-heading,
+#caso-isp .renewal-case__isp-heading {
+    padding-top: 52px;
 }
 
 @media (max-width: 1199px) {
     .renewal-sice {
         height: auto;
+    }
+
+    .sice-experiences__grid--countries {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .sice-ecosystem {
+        min-height: 0;
+        grid-template-columns: 1fr;
+        padding: 118px 48px 92px;
+    }
+
+    .sice-ecosystem__copy,
+    .sice-ecosystem__visual {
+        width: min(900px, 100%);
+        margin-right: auto;
+        margin-left: auto;
     }
 }
