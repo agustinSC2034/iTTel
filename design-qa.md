@@ -678,3 +678,34 @@ passed
 ## Resultado final
 
 passed
+
+---
+
+# Design QA — composición SIDERA en Tecnología y Operaciones
+
+## Referencia y evidencia
+
+- Referencia del problema: `codex-clipboard-454054a6-88ba-4ef7-8c84-9d48e49ac550.png`.
+- Fuente visual de la plataforma: `assets/images/sice/sidera-platform-reference.webp`.
+- Nueva composición: `assets/images/sice/sidera-platform-background-v2.webp` (1862 × 845 px).
+- Captura desktop: `operation-platform-v2-desktop.jpg` a 1440 × 900 px.
+- Captura mobile ES: `operation-platform-v2-mobile.jpg` a 390 × 844 px.
+- Captura mobile EN: `operation-platform-v2-mobile-en.jpg` a 390 × 844 px.
+
+## Comparación visual
+
+- La interfaz dejó de ocupar y estirarse sobre todo el fondo.
+- La plataforma completa queda proporcionada y enmarcada en el sector derecho.
+- El sector izquierdo conserva un campo azul tecnológico calmo para sostener el bloque de texto sin competencia visual.
+- En mobile, la plataforma se mantiene como una pieza panorámica separada sobre el contenido y no se deforma.
+
+## Historial de corrección
+
+1. Se clasificó como P1 la captura expandida porque alteraba la escala de la interfaz y competía con el texto.
+2. Se generó una composición específica para el espacio real del bloque, usando la plataforma existente como fuente visual.
+3. Se ajustó el encuadre mobile para conservar la proporción 1862:845 y mostrar la interfaz completa.
+4. Se verificaron las versiones española e inglesa y la consola no presentó errores ni advertencias.
+
+## Resultado final
+
+passed

@@ -1400,10 +1400,12 @@
     }
 
     .operation-stage__media .image-story__slide:nth-child(2) img {
-        inset: 84px 0 auto;
-        height: 43%;
+        inset: 92px auto auto -10%;
+        width: 120%;
+        height: auto;
+        aspect-ratio: 1862 / 845;
         object-fit: contain;
-        object-position: center top;
+        object-position: center;
         transform: none;
     }
 
