@@ -6139,6 +6139,19 @@ html[lang="en"] .renewal-sice .sice-experiences__header h2 {
     object-position: center center;
 }
 
+.renewal-hero--single .renewal-hero__slide {
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+.renewal-hero--single .renewal-hero__slide img {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    object-position: center center;
+}
+
 .renewal-hero__veil {
     position: absolute;
     z-index: 2;
