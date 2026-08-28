@@ -160,7 +160,7 @@
 .oceanxx { fill: #ffffff; stroke: none; }
 .antxx { fill: #eef2f6; }
 .ca, .us, .mx, .gt, .pr, .ec, .co, .pe, .bo, .cl, .ar, .br, .ve,
-.es, .pt, .gb, .no, .se, .dk, .dz, .bw, .za, .sa, .qa, .ae, .il,
+.es, .pt, .gb, .no, .se, .dk, .de, .dz, .bw, .za, .sa, .qa, .ae, .il,
 .in, .cn, .ru, .au, .nz { fill: #0fa6a5 !important; }
 	</style>
 

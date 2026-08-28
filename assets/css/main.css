@@ -12756,10 +12756,14 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
     height: 100%;
 }
 
-.sice-presence-map__canvas > img {
+.sice-presence-map__canvas > picture,
+.sice-presence-map__canvas > picture > img {
     display: block;
     width: 100%;
     height: 100%;
+}
+
+.sice-presence-map__canvas > picture > img {
     object-fit: contain;
 }
 
@@ -14135,38 +14139,40 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
 }
 
 .sice-experiences__grid--countries {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
-}
-
-.sice-experience-card--country {
-    min-height: 108px;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 8px 22px;
+    margin: 32px 0 0;
     padding: 0;
-    border-color: #dce5ed;
-    background: rgba(255, 255, 255, 0.92);
+    scroll-margin-top: 120px;
+    list-style: none;
 }
 
-.sice-experience-card--country .sice-experience-card__country {
+.sice-country {
     display: flex;
-    min-height: 106px;
+    min-width: 0;
+    min-height: 42px;
     align-items: center;
-    gap: 18px;
-    padding: 22px 24px;
+    gap: 10px;
+    padding: 5px 0;
 }
 
-.sice-experience-card--country .sice-experience-card__country img {
-    width: 44px;
-    height: 32px;
+.sice-country img {
+    width: 30px;
+    height: 21px;
     flex: 0 0 auto;
     border: 1px solid #d8e1eb;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(9, 34, 61, 0.1);
     object-fit: cover;
 }
 
-.sice-experience-card--country .sice-experience-card__country span {
+.sice-country span {
+    min-width: 0;
     color: #0b2748;
-    font-size: 0.82rem;
+    font-size: 0.7rem;
     font-weight: 750;
-    letter-spacing: 0.08em;
+    line-height: 1.2;
+    letter-spacing: 0.055em;
 }
 
 .renewal-sice__scene--ecosystem {
@@ -14209,14 +14215,14 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0 24px;
-    margin: 38px 0 0;
+    margin: 26px 0 0;
     padding: 0;
     list-style: none;
 }
 
 .sice-ecosystem__systems li {
     min-width: 0;
-    padding: 17px 0;
+    padding: 9px 0;
     border-top: 1px solid #d5e0ea;
 }
 
@@ -14227,13 +14233,13 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
 
 .sice-ecosystem__systems strong {
     color: #0a3158;
-    font: 700 0.93rem/1.3 'Inter', sans-serif;
+    font: 700 0.87rem/1.25 'Inter', sans-serif;
 }
 
 .sice-ecosystem__systems span {
-    margin-top: 5px;
+    margin-top: 3px;
     color: #66758a;
-    font: 400 0.82rem/1.45 'Inter', sans-serif;
+    font: 400 0.76rem/1.35 'Inter', sans-serif;
 }
 
 .sice-ecosystem__visual {
@@ -14292,7 +14298,7 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
     }
 
     .sice-experiences__grid--countries {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
     .sice-ecosystem {
@@ -14306,5 +14312,63 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
         width: min(900px, 100%);
         margin-right: auto;
         margin-left: auto;
+    }
+}
+
+/* Ajuste desktop: aprovecha la altura de las escenas SICE sin invadir el progreso. */
+@media (min-width: 1200px) {
+    .sice-experiences__grid--countries {
+        gap: 24px 22px;
+        margin-top: 38px;
+    }
+
+    .sice-country {
+        min-height: 84px;
+        gap: 12px;
+        padding: 8px 0;
+    }
+
+    .sice-country img {
+        width: 40px;
+        height: 28px;
+    }
+
+    .sice-country span {
+        font-size: 0.76rem;
+        line-height: 1.22;
+    }
+
+    .sice-ecosystem {
+        padding-top: clamp(108px, 6.6vw, 124px);
+        padding-bottom: 78px;
+    }
+
+    .sice-ecosystem__copy h2 {
+        margin-top: 18px;
+        margin-bottom: 16px;
+    }
+
+    .sice-ecosystem__copy > p {
+        line-height: 1.52;
+    }
+
+    .sice-ecosystem__systems {
+        gap: 0 20px;
+        margin-top: 18px;
+    }
+
+    .sice-ecosystem__systems li {
+        padding: 7px 0;
+    }
+
+    .sice-ecosystem__systems strong {
+        font-size: 0.82rem;
+        line-height: 1.18;
+    }
+
+    .sice-ecosystem__systems span {
+        margin-top: 2px;
+        font-size: 0.71rem;
+        line-height: 1.25;
     }
 }

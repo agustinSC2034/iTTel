@@ -29,8 +29,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./assets/css/main.css?v=36">
-    <link rel="stylesheet" href="./assets/css/mobile.css?v=25">
+    <link rel="stylesheet" href="./assets/css/main.css?v=41">
+    <link rel="stylesheet" href="./assets/css/mobile.css?v=29">
 
     <!-- Favicon -->
     <link rel="icon" href="./assets/images/favicon.webp" type="image/webp">
@@ -269,8 +269,11 @@
                             <div class="renewal-map sice-presence-map">
                                 <p class="sice-presence-map__eyebrow"><i class="fas fa-earth-americas" aria-hidden="true"></i> EXPERIENCIA SICE EN EL MUNDO</p>
                                 <div class="sice-presence-map__canvas">
-                                    <img src="assets/images/sice/sice-presence-map-v2.svg" alt="Mapa de presencia y experiencia internacional verificada de SICE" width="2754" height="1398" loading="lazy" decoding="async">
-                                    <div class="sice-presence-map__pins" aria-label="Países con presencia o experiencia verificada de SICE">
+                                    <picture>
+                                        <source media="(max-width: 900px)" srcset="assets/images/sice/sice-presence-map-flags-mobile-v2.svg">
+                                        <img src="assets/images/sice/sice-presence-map-flags-v1.svg" alt="Mapa de presencia y experiencia internacional verificada de SICE con las banderas integradas sobre cada país" width="2754" height="1398" loading="lazy" decoding="async">
+                                    </picture>
+                                    <!-- Marcadores anteriores retirados: las banderas ahora forman parte de la imagen SVG.
                                         <span class="sice-presence-pin" style="--x: 18%; --y: 26%;" role="img" aria-label="Canadá" title="Canadá"><img src="https://flagcdn.com/w40/ca.png" srcset="https://flagcdn.com/w80/ca.png 2x" alt="" aria-hidden="true"></span>
                                         <span class="sice-presence-pin" style="--x: 17%; --y: 39%;" role="img" aria-label="Estados Unidos" title="Estados Unidos"><img src="https://flagcdn.com/w40/us.png" srcset="https://flagcdn.com/w80/us.png 2x" alt="" aria-hidden="true"></span>
                                         <span class="sice-presence-pin" style="--x: 16%; --y: 51%;" role="img" aria-label="México" title="México"><img src="https://flagcdn.com/w40/mx.png" srcset="https://flagcdn.com/w80/mx.png 2x" alt="" aria-hidden="true"></span>
@@ -290,6 +293,7 @@
                                         <span class="sice-presence-pin" style="--x: 51%; --y: 16%;" role="img" aria-label="Noruega" title="Noruega"><img src="https://flagcdn.com/w40/no.png" srcset="https://flagcdn.com/w80/no.png 2x" alt="" aria-hidden="true"></span>
                                         <span class="sice-presence-pin" style="--x: 54%; --y: 22%;" role="img" aria-label="Suecia" title="Suecia"><img src="https://flagcdn.com/w40/se.png" srcset="https://flagcdn.com/w80/se.png 2x" alt="" aria-hidden="true"></span>
                                         <span class="sice-presence-pin" style="--x: 50%; --y: 29%;" role="img" aria-label="Dinamarca" title="Dinamarca"><img src="https://flagcdn.com/w40/dk.png" srcset="https://flagcdn.com/w80/dk.png 2x" alt="" aria-hidden="true"></span>
+                                        <span class="sice-presence-pin" style="--x: 54%; --y: 35%;" role="img" aria-label="Alemania" title="Alemania"><img src="https://flagcdn.com/w40/de.png" srcset="https://flagcdn.com/w80/de.png 2x" alt="" aria-hidden="true"></span>
                                         <span class="sice-presence-pin" style="--x: 48%; --y: 52%;" role="img" aria-label="Argelia" title="Argelia"><img src="https://flagcdn.com/w40/dz.png" srcset="https://flagcdn.com/w80/dz.png 2x" alt="" aria-hidden="true"></span>
                                         <span class="sice-presence-pin" style="--x: 55%; --y: 77%;" role="img" aria-label="Botsuana" title="Botsuana"><img src="https://flagcdn.com/w40/bw.png" srcset="https://flagcdn.com/w80/bw.png 2x" alt="" aria-hidden="true"></span>
                                         <span class="sice-presence-pin" style="--x: 56%; --y: 88%;" role="img" aria-label="Sudáfrica" title="Sudáfrica"><img src="https://flagcdn.com/w40/za.png" srcset="https://flagcdn.com/w80/za.png 2x" alt="" aria-hidden="true"></span>
@@ -301,8 +305,7 @@
                                         <span class="sice-presence-pin" style="--x: 79%; --y: 44%;" role="img" aria-label="China" title="China"><img src="https://flagcdn.com/w40/cn.png" srcset="https://flagcdn.com/w80/cn.png 2x" alt="" aria-hidden="true"></span>
                                         <span class="sice-presence-pin" style="--x: 75%; --y: 24%;" role="img" aria-label="Rusia" title="Rusia"><img src="https://flagcdn.com/w40/ru.png" srcset="https://flagcdn.com/w80/ru.png 2x" alt="" aria-hidden="true"></span>
                                         <span class="sice-presence-pin" style="--x: 86%; --y: 80%;" role="img" aria-label="Australia" title="Australia"><img src="https://flagcdn.com/w40/au.png" srcset="https://flagcdn.com/w80/au.png 2x" alt="" aria-hidden="true"></span>
-                                        <span class="sice-presence-pin" style="--x: 94%; --y: 88%;" role="img" aria-label="Nueva Zelanda" title="Nueva Zelanda"><img src="https://flagcdn.com/w40/nz.png" srcset="https://flagcdn.com/w80/nz.png 2x" alt="" aria-hidden="true"></span>
-                                    </div>
+                                    -->
                                 </div>
                             </div>
                             <dl class="sice-global__metrics" aria-label="SICE en cifras">
@@ -320,35 +323,62 @@
                                 <h2>EXPERIENCIA INTERNACIONAL<br>DESARROLLANDO Y OPERANDO SMART CITIES.</h2>
                                 <p>Presencia internacional aplicada a la gestión inteligente de ciudades y operaciones urbanas.</p>
                             </header>
-                            <div class="sice-experiences__grid sice-experiences__grid--countries">
-                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/ca.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>CANADÁ</span></div></article>
-                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/us.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>ESTADOS UNIDOS</span></div></article>
-                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/pe.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>PERÚ</span></div></article>
-                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/es.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>ESPAÑA</span></div></article>
-                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/pt.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>PORTUGAL</span></div></article>
-                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/no.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>NORUEGA</span></div></article>
-                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/se.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>SUECIA</span></div></article>
-                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/dk.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>DINAMARCA</span></div></article>
-                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/il.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>ISRAEL</span></div></article>
-                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/au.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>AUSTRALIA</span></div></article>
-                                <article class="sice-experience-card sice-experience-card--country"><div class="sice-experience-card__country"><img src="https://flagcdn.com/w40/nz.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>NUEVA ZELANDA</span></div></article>
-                            </div>
+                            <ul id="sice-countries" class="sice-experiences__grid sice-experiences__grid--countries" aria-label="Países con presencia o experiencia verificada de SICE">
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/ca.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>CANADÁ</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/us.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>ESTADOS UNIDOS</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/mx.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>MÉXICO</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/gt.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>GUATEMALA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/pr.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>PUERTO RICO</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/ec.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>ECUADOR</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/co.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>COLOMBIA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/pe.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>PERÚ</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/bo.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>BOLIVIA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/cl.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>CHILE</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/ar.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>ARGENTINA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/br.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>BRASIL</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/ve.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>VENEZUELA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/es.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>ESPAÑA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/pt.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>PORTUGAL</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/gb.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>REINO UNIDO</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/no.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>NORUEGA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/se.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>SUECIA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/dk.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>DINAMARCA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/de.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>ALEMANIA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/dz.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>ARGELIA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/bw.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>BOTSUANA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/za.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>SUDÁFRICA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/sa.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>ARABIA SAUDITA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/qa.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>CATAR</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/ae.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>EMIRATOS ÁRABES UNIDOS</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/il.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>ISRAEL</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/in.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>INDIA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/cn.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>CHINA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/ru.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>RUSIA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/au.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>AUSTRALIA</span></li>
+                                <li class="sice-country"><img src="https://flagcdn.com/w40/nz.png" alt="" width="40" height="30" loading="lazy" decoding="async"><span>NUEVA ZELANDA</span></li>
+                            </ul>
                         </div>
                     </article>
 
                     <article class="renewal-sice__scene renewal-sice__scene--ecosystem" data-sice-scene="2" aria-hidden="true">
-                        <div class="sice-ecosystem">
+                        <div id="sice-ecosystem" class="sice-ecosystem">
                             <div class="sice-ecosystem__copy">
                                 <span class="sice-story__kicker">TECNOLOGÍA | ECOSISTEMA SIDERA</span>
                                 <h2 data-i18n="sice.ecosystem.title">UN ECOSISTEMA<br>PENSADO PARA SMART CITIES.</h2>
                                 <p>Una familia integrada de sistemas para observar, anticipar y coordinar la operación urbana desde un único entorno.</p>
-                                <ul class="sice-ecosystem__systems" aria-label="Sistemas de la familia SIDERA">
+                                <ul id="sidera-systems" class="sice-ecosystem__systems" aria-label="Sistemas de la familia SIDERA">
                                     <li><strong>SIDERA Traffic</strong><span>Movilidad, tránsito y gestión de eventos.</span></li>
                                     <li><strong>SIDERA Analytics</strong><span>Datos, indicadores y analítica predictiva.</span></li>
                                     <li><strong>SIDERA Lighting</strong><span>Iluminación conectada y eficiencia energética.</span></li>
                                     <li><strong>SIDERA Residuos</strong><span>Monitoreo y coordinación de servicios urbanos.</span></li>
                                     <li><strong>SIDERA Gestión Integral</strong><span>Supervisión centralizada y visión operativa unificada.</span></li>
+                                    <li><strong>SIDERA ITS &amp; Tunnels</strong><span>Tráfico, seguridad y sistemas electromecánicos en corredores y túneles.</span></li>
+                                    <li><strong>SIDERA Tolling</strong><span>Peaje, transacciones y back office operacional y comercial.</span></li>
+                                    <li><strong>SIDERA Rail</strong><span>Estaciones, túneles, vías, material rodante y operación ferroviaria.</span></li>
+                                    <li><strong>SIDERA AFC</strong><span>Venta, validación y gestión centralizada de títulos de transporte.</span></li>
+                                    <li><strong>SIDERA UNIQ</strong><span>Múltiples verticales integradas en un único entorno operativo.</span></li>
                                 </ul>
+                                <button class="sice-ecosystem__toggle" type="button" aria-controls="sidera-systems" aria-expanded="false" data-sice-modules-toggle data-more-label="Ver más módulos" data-less-label="Ver menos módulos"><span>Ver más módulos</span></button>
                             </div>
                             <div class="sice-ecosystem__visual">
                                 <img src="assets/images/sice/sidera-analytics-platform-v2.webp" alt="Interfaz SIDERA Analytics con análisis de energía, ambiente, servicios, predicción y alertas" width="1814" height="867" loading="lazy" decoding="async">
@@ -374,7 +404,7 @@
                 <p class="renewal-cases__locations">La Matanza · Tandil · Trenes Argentinos · Ciudad de Buenos Aires · Buenos Aires</p>
             </header>
 
-            <article class="renewal-case renewal-case--rail">
+            <article id="caso-redes-telco" class="renewal-case renewal-case--rail">
                 <img class="renewal-case__media" src="assets/images/diseno_nuevo_diapo/horizontal/trenes.webp" alt="Infraestructura ferroviaria conectada por iTTel" width="1672" height="941" loading="lazy" decoding="async">
                 <div class="renewal-case__overlay" aria-hidden="true"></div>
                 <div class="container renewal-case__content">
@@ -1356,7 +1386,7 @@
     <!-- Scripts -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./js/main.js?v=20"></script>
+    <script src="./js/main.js?v=21"></script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const langBtn = document.getElementById('language-btn');
