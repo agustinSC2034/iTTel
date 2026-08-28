@@ -1822,7 +1822,7 @@
         width: 100%;
         height: 100%;
         min-height: 0 !important;
-        padding: 12px !important;
+        padding: 0 !important;
         object-fit: contain;
     }
 }
@@ -1908,5 +1908,16 @@
     .renewal-case--network-cards .renewal-case__isp-layout,
     #caso-isp .renewal-case__isp-layout {
         padding-top: 48px;
+    }
+}
+
+/* Soluciones mobile: una misma altura de inicio para títulos, bajadas y listas. */
+@media (max-width: 900px) {
+    .operation-card,
+    .works-card,
+    .maintenance-card {
+        justify-content: flex-start;
+        padding-top: clamp(120px, 18svh, 156px);
+        padding-bottom: 48px;
     }
 }
