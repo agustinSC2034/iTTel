@@ -29,8 +29,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./assets/css/main.css?v=46">
-    <link rel="stylesheet" href="./assets/css/mobile.css?v=29">
+    <link rel="stylesheet" href="./assets/css/main.css?v=48">
+    <link rel="stylesheet" href="./assets/css/mobile.css?v=30">
 
     <!-- Favicon -->
     <link rel="icon" href="./assets/images/favicon.webp" type="image/webp">
@@ -363,9 +363,11 @@
                     <article class="renewal-sice__scene renewal-sice__scene--ecosystem" data-sice-scene="2" aria-hidden="true">
                         <div id="sice-ecosystem" class="sice-ecosystem">
                             <div class="sice-ecosystem__copy">
-                                <span class="sice-story__kicker">TECNOLOGÍA | ECOSISTEMA SIDERA</span>
-                                <h2 data-i18n="sice.ecosystem.title">UN ECOSISTEMA<br>PENSADO PARA CIUDADES INTELIGENTES.</h2>
-                                <p>Una familia integrada de sistemas para observar, anticipar y coordinar la operación urbana desde un único entorno.</p>
+                                <div class="sice-ecosystem__intro">
+                                    <span class="sice-story__kicker">TECNOLOGÍA | ECOSISTEMA SIDERA</span>
+                                    <h2 data-i18n="sice.ecosystem.title">UN ECOSISTEMA<br>PENSADO PARA CIUDADES INTELIGENTES.</h2>
+                                    <p>Una familia integrada de sistemas para observar, anticipar y coordinar la operación urbana desde un único entorno.</p>
+                                </div>
                                 <ul id="sidera-systems" class="sice-ecosystem__systems" aria-label="Sistemas de la familia SIDERA">
                                     <li><strong>SIDERA Traffic</strong><span>Movilidad, tránsito y gestión de eventos.</span></li>
                                     <li><strong>SIDERA Analytics</strong><span>Datos, indicadores y analítica predictiva.</span></li>
@@ -380,12 +382,17 @@
                                 </ul>
                                 <button class="sice-ecosystem__toggle" type="button" aria-controls="sidera-systems" aria-expanded="false" data-sice-modules-toggle data-more-label="Ver más módulos" data-less-label="Ver menos módulos"><span>Ver más módulos</span></button>
                             </div>
-                            <figure class="sice-ecosystem__visual sice-ecosystem__visual--mosaic" aria-label="Vistas operativas de la plataforma SIDERA">
-                                <div class="sidera-mosaic">
+                            <figure class="sice-ecosystem__visual sice-ecosystem__visual--mosaic" aria-label="Vistas operativas de la plataforma SIDERA" data-sidera-carousel>
+                                <div class="sidera-mosaic" data-sidera-track tabindex="0" aria-label="Carrusel de vistas operativas SIDERA">
                                     <img class="sidera-mosaic__image sidera-mosaic__image--map" src="assets/images/sice/sidera-monitor-traffic.webp" alt="Mapa operativo con cámaras, paneles de mensaje variable y sensores de tránsito" width="1200" height="566" loading="lazy" decoding="async">
                                     <img class="sidera-mosaic__image sidera-mosaic__image--analytics" src="assets/images/sice/sidera-analytics-platform-v2.webp" alt="Panel de analítica e indicadores operativos" width="1814" height="867" loading="lazy" decoding="async">
                                     <img class="sidera-mosaic__image sidera-mosaic__image--events" src="assets/images/sice/sidera-monitor-events.webp" alt="Vista de supervisión de eventos y alarmas" width="1200" height="578" loading="lazy" decoding="async">
                                     <img class="sidera-mosaic__image sidera-mosaic__image--signs" src="assets/images/sice/sidera-monitor-signs.webp" alt="Gestión operativa de señalización variable" width="1200" height="574" loading="lazy" decoding="async">
+                                </div>
+                                <div class="sidera-carousel__controls">
+                                    <button type="button" data-sidera-prev aria-label="Ver pantalla anterior"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                                    <span data-sidera-status aria-live="polite">1 / 4</span>
+                                    <button type="button" data-sidera-next aria-label="Ver pantalla siguiente"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
                                 </div>
                             </figure>
                         </div>
@@ -1391,7 +1398,7 @@
     <!-- Scripts -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./js/main.js?v=21"></script>
+    <script src="./js/main.js?v=22"></script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const langBtn = document.getElementById('language-btn');

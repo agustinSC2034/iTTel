@@ -75,6 +75,33 @@ final result: passed
 
 ---
 
+# Design QA — carrusel SIDERA en mobile
+
+## Evidencia
+
+- Fuente visual del problema: `C:\Users\Agustin\AppData\Local\Temp\codex-clipboard-d44f1ad2-f0f6-48da-8e48-fbf94c2be9a9.png` (1890 × 1060 px, DPR 1), complementada por la observación del usuario sobre la versión mobile con las cuatro imágenes apiladas antes del texto.
+- Implementación renderizada: capturas inline de Codex sobre `http://127.0.0.1:4173/?preview=50#sice-ecosystem`.
+- Viewports: mobile 390 × 844 px y desktop 1900 × 1050 px; DPR 1.
+- Estado mobile comprobado: título y desarrollo visibles antes del carrusel, primera y segunda pantalla del slider, navegación cerrada.
+- Estado desktop comprobado: tercera escena SICE activa y mosaico 2 × 2 intacto.
+
+## Hallazgos, iteraciones y fidelidad
+
+- [P1 resuelto] La regla mobile anterior colocaba las cuatro imágenes antes del título y consumía demasiada altura. Se eliminó ese orden y el visual se insertó entre la introducción y el listado de módulos.
+- [P2 resuelto] La primera iteración del carrusel conservó en caché la hoja mobile anterior; se actualizó su versión para asegurar la composición correcta.
+- [P2 resuelto] La primera captura funcional mostró la flecha derecha debajo del botón flotante de volver arriba. Los controles se centraron con márgenes laterales suficientes y la segunda captura confirma que ambos botones quedan libres.
+- Tipografía y copy: se conservan Inter, pesos, jerarquía, título, desarrollo y textos de módulos sin cambios.
+- Espaciado: una sola pantalla ocupa el ancho disponible; el contador y las flechas forman una fila compacta antes de los módulos.
+- Colores: se mantienen el azul corporativo, el fondo claro y los mismos niveles de contraste.
+- Imágenes: se reutilizan las cuatro capturas SIDERA aprobadas, sin regeneración, deformación ni pérdida de proporción.
+- Interacción y accesibilidad: flechas anterior/siguiente, swipe horizontal, teclas izquierda/derecha, contador vivo y `aria-hidden` sincronizado por pantalla.
+- La comparación completa fue suficiente porque muestra simultáneamente título, desarrollo, imagen y controles; no hizo falta un recorte focal adicional.
+- No quedan hallazgos accionables P0, P1 o P2.
+
+final result: passed
+
+---
+
 # Design QA — alineación final del mosaico SIDERA
 
 ## Evidencia

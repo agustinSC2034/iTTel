@@ -1823,7 +1823,8 @@
         font-size: clamp(2.05rem, 9.8vw, 2.8rem);
     }
 
-    .sice-ecosystem__copy > p {
+    .sice-ecosystem__copy > p,
+    .sice-ecosystem__intro > p {
         font-size: 0.93rem;
         line-height: 1.58;
     }
@@ -1875,7 +1876,6 @@
     }
 
     .sice-ecosystem__visual {
-        order: -1;
         border-radius: 8px;
         box-shadow: 0 15px 32px rgba(9, 34, 61, 0.14);
     }
