@@ -75,6 +75,29 @@ final result: passed
 
 ---
 
+# Design QA — alineación final del mosaico SIDERA
+
+## Evidencia
+
+- Fuente visual del problema: `C:\Users\Agustin\AppData\Local\Temp\codex-clipboard-d44f1ad2-f0f6-48da-8e48-fbf94c2be9a9.png` (1890 × 1060 px, DPR 1).
+- Implementación renderizada: captura inline de Codex sobre `http://127.0.0.1:4173/?preview=46#sice-ecosystem` a 1900 × 1050 px y DPR 1.
+- Verificación responsive adicional: captura inline de Codex a 390 × 844 px y DPR 1.
+- Estado: tercera escena SICE activa, navegación cerrada y las cuatro vistas operativas visibles.
+
+## Comparación y resultado
+
+- [P2 resuelto] La composición escalonada provocaba superposición y bordes desalineados entre las cuatro capturas.
+- Se conservaron exactamente las cuatro vistas anteriores y se reorganizaron en una grilla 2 × 2 de columnas y filas parejas, con una separación uniforme.
+- En mobile las cuatro imágenes se apilan en una sola columna sin desbordamiento horizontal.
+- Tipografía y copy no cambiaron; el ajuste se limita a la composición visual.
+- Colores, tratamiento suave, proporción y calidad de las capturas mantienen el lenguaje visual existente.
+- La comparación completa permite verificar alineación, ritmo y recorte; no fue necesario un recorte focal adicional porque las cuatro aristas y separaciones son visibles en la captura completa.
+- No quedan hallazgos accionables P0, P1 o P2.
+
+final result: passed
+
+---
+
 # Design QA — ajuste superior de Redes TELCO en mobile
 
 ## Referencia y evidencia
@@ -937,5 +960,27 @@ final result: passed
 - Mobile inglés: 32 elementos, nombres traducidos, 16 filas completas, cero banderas fallidas y sin desbordamiento horizontal.
 - Desktop: ocho columnas y cuatro filas completas, 32 elementos y sin desbordamiento horizontal.
 - Consola sin errores ni advertencias durante la revisión final.
+
+final result: passed
+
+---
+
+# Design QA — collage operativo SIDERA
+
+## Evidencia
+
+- Fuentes visuales: las tres capturas SIDERA suministradas por el usuario (mapa, eventos y señalización) y `assets/images/sice/sidera-analytics-platform-v2.webp`.
+- Implementación: `http://127.0.0.1:4173/?preview=45#sice-ecosystem`.
+- Viewports comprobados: 1900 × 1050, 1000 × 900 y 390 × 844 px; DPR 1.
+- Estado: tercera escena SICE activa, versión española.
+
+## Comparación y correcciones
+
+- [P1 resuelto] Se retiró la composición generada que se alejaba de las vistas SIDERA suministradas.
+- [P2 resuelto] Las cuatro capturas originales se restauraron como un collage escalonado, sin tarjetas, bordes, títulos ni explicaciones visibles.
+- [P2 resuelto] Se suavizaron saturación, contraste y extremos de cada captura para integrarlas sobre el fondo del bloque.
+- [P2 resuelto] La métrica larga de presencia internacional usa dos líneas desde tablet para evitar colisiones.
+- En mobile las cuatro vistas se apilan sin desborde horizontal.
+- No quedan hallazgos accionables P0, P1 o P2.
 
 final result: passed
