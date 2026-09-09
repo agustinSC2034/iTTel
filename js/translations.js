@@ -31,15 +31,15 @@ const translations = {
         'bu.unit4.title': 'Apps y analítica predictiva',
         'bu.unit4.desc': 'Plataformas para seguimiento, control, eficiencia productiva y anticipación de desvíos.',
         'bu.unit5.title': 'SICE Partners',
-        'bu.unit5.desc': 'Plataformas ITS y Smart City para movilidad, iluminación, analítica y gestión urbana.',
+        'bu.unit5.desc': 'Plataformas ITS y soluciones para ciudades inteligentes, aplicadas a movilidad, iluminación, analítica y gestión urbana.',
         'bu.unit6.title': 'Soluciones IoT',
         'bu.unit6.desc': 'Sensores, dispositivos y datos conectados para automatizar y optimizar operaciones.',
         'bu.unit7.title': 'Obras',
-        'bu.unit7.desc': 'Ejecutamos obras integrales de fibra óptica y energía, con canalizaciones y tendidos preparados para escalar. Construimos torres reticuladas, monopostes y estructuras arriostradas, además de soluciones críticas para radiofrecuencia, telefonía móvil, datacenters, racks y tableros eléctricos.',
+        'bu.unit7.desc': 'Ejecutamos obras integrales de fibra óptica y energía, con canalizaciones y tendidos preparados para escalar. Construimos torres reticuladas, monopostes y estructuras arriestradas. Además, instalamos y configuramos equipamiento crítico para radiofrecuencia, telefonía móvil, datacenters, racks y tableros eléctricos.',
         'bu.unit8.title': 'Servicios',
-        'bu.unit8.desc': 'Brindamos mantenimiento preventivo y correctivo con cuadrillas de campo, trazabilidad de cada intervención y tecnología aplicada al control predictivo de la operación.',
+        'bu.unit8.desc': 'A su vez, brindamos mantenimiento preventivo y correctivo con cuadrillas de campo gestionadas desde una plataforma que brinda trazabilidad de cada intervención y tecnología aplicada al control de la operación.',
 
-        'sice.ecosystem.title': 'UN ECOSISTEMA PENSADO PARA SMART CITIES.',
+        'sice.ecosystem.title': 'UN ECOSISTEMA PENSADO PARA CIUDADES INTELIGENTES.',
         
         // Sección Nuestras Credenciales / Alcance
         'credentials.eyebrow': 'NOSOTROS',
@@ -51,7 +51,7 @@ const translations = {
         'credentials.pillar2.title': 'Redes Neutrales',
         'credentials.pillar2.desc': 'Compartición de infraestructura que optimiza costos y acelera el despliegue comercial.',
         'credentials.pillar3.title': 'Soluciones de Alta Criticidad',
-        'credentials.pillar3.desc': 'Obras civiles de infraestructura, tecnología aplicada (Smart Cities) y soporte operativo 24/7.',
+        'credentials.pillar3.desc': 'Obras civiles de infraestructura, tecnología aplicada a ciudades inteligentes y soporte operativo 24/7.',
 
         'credentials.item1.label': 'Operadores Móviles',
         'credentials.item1.note': 'Acuerdos comerciales vigentes con la totalidad de los operadores móviles de Argentina.',
@@ -70,7 +70,7 @@ const translations = {
         'services.pillar1.title': 'INFRAESTRUCTURA',
         'services.pillar1.desc': 'Construcción integral de redes fijas y móviles, despliegues civiles de alta criticidad y mantenimiento preventivo con respuesta rápida.',
         'services.pillar2.title': 'TECNOLOGÍA',
-        'services.pillar2.desc': 'Soluciones de Smart Cities, radares, videovigilancia avanzada y sensores IoT para entornos corporativos y públicos.',
+        'services.pillar2.desc': 'Soluciones para ciudades inteligentes, radares, videovigilancia avanzada y sensores IoT para entornos corporativos y públicos.',
         'services.pillar3.title': 'CONECTIVIDAD',
         'services.pillar3.desc': 'Desarrollo y gestión de redes neutrales de alta capacidad para compartición entre múltiples operadores.',
 
