@@ -1011,3 +1011,24 @@ final result: passed
 - No quedan hallazgos accionables P0, P1 o P2.
 
 final result: passed
+
+---
+
+# Design QA — separación del progreso SIDERA en desktop
+
+- Fuente visual: `C:\Users\Agustin\AppData\Local\Temp\codex-clipboard-3361f9db-8763-44b2-80a3-8c19cac9f550.png`.
+- Implementación verificada: `http://127.0.0.1:4173/?preview=52#sice-ecosystem` en el navegador integrado.
+- Viewport de comparación: 1554 × 826 CSS px, DPR 1; la fuente mide 1943 × 1033 px y representa la misma composición a escala de pantalla del 125 %.
+- Estado: tercera escena SICE activa, versión española.
+
+## Comparación y correcciones
+
+- [P2 resuelto] En la captura de referencia, la última fila de módulos invade la navegación inferior. Antes del ajuste, el listado terminaba 4,6 px por debajo del inicio del progreso.
+- Se compactó únicamente el espaciado vertical de las filas en desktop con altura de hasta 900 px; título, textos, imágenes, columnas y navegación conservaron su composición.
+- Evidencia posterior: el listado termina 15,4 px antes del progreso, sin desborde horizontal.
+- Mobile 390 × 844: sin desborde; el carrusel avanzó de `1 / 4` a `2 / 4` y el progreso desktop permanece oculto.
+- Consola: sin errores ni advertencias relevantes. No se detectó overlay de framework.
+- Superficies revisadas: tipografía, ritmo y espaciado, colores, calidad de imágenes y contenido; no se observaron regresiones fuera del ajuste solicitado.
+- Comparación focal suficiente: el defecto y la corrección se concentran en el límite entre la última fila de módulos y el progreso inferior.
+
+final result: passed
