@@ -14374,6 +14374,13 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
     }
 }
 
+/* Mantiene los módulos separados del progreso en pantallas desktop de poca altura. */
+@media (min-width: 1200px) and (max-height: 900px) {
+    .sice-ecosystem__systems li {
+        padding: 5px 0;
+    }
+}
+
 /* SIDERA operational views presented as a soft, borderless collage. */
 .sice-ecosystem__visual.sice-ecosystem__visual--mosaic {
     overflow: visible;
