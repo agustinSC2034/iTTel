@@ -14204,7 +14204,8 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
     letter-spacing: -0.048em;
 }
 
-.sice-ecosystem__copy > p {
+.sice-ecosystem__copy > p,
+.sice-ecosystem__intro > p {
     max-width: 610px;
     margin: 0;
     color: #5b6980;
@@ -14412,10 +14413,38 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
     object-position: 47% center;
 }
 
+.sidera-carousel__controls {
+    display: none;
+}
+
 @media (max-width: 767px) {
+    .sice-ecosystem__copy {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sice-ecosystem__visual.sice-ecosystem__visual--mosaic {
+        width: 100%;
+        margin: 24px 0 0;
+        overflow: hidden;
+    }
+
+    .sice-ecosystem__systems {
+        margin-top: 24px;
+    }
+
     .sidera-mosaic {
-        grid-template-columns: 1fr;
-        gap: 4px;
+        display: flex;
+        gap: 0;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        touch-action: pan-x pan-y;
+    }
+
+    .sidera-mosaic::-webkit-scrollbar {
+        display: none;
     }
 
     .sidera-mosaic__image,
@@ -14423,9 +14452,46 @@ html[lang="en"] .renewal-sice .sice-global__intro h2 {
     .sidera-mosaic__image--analytics,
     .sidera-mosaic__image--events,
     .sidera-mosaic__image--signs {
-        grid-column: 1;
-        grid-row: auto;
+        flex: 0 0 100%;
         aspect-ratio: 2.08 / 1;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    .sidera-carousel__controls {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 44px 1fr 44px;
+        align-items: center;
+        padding: 10px 64px 0;
+        color: #0a3158;
+    }
+
+    .sidera-carousel__controls button {
+        display: inline-grid;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+        border: 1px solid #c7d7e6;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.86);
+        color: #075fc1;
+        cursor: pointer;
+    }
+
+    .sidera-carousel__controls button:last-child {
+        justify-self: end;
+    }
+
+    .sidera-carousel__controls button:focus-visible {
+        outline: 3px solid rgba(7, 95, 193, 0.25);
+        outline-offset: 2px;
+    }
+
+    .sidera-carousel__controls span {
+        justify-self: center;
+        font: 700 0.72rem/1 'Inter', sans-serif;
+        letter-spacing: 0.16em;
     }
 }
 
