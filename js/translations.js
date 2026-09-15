@@ -82,7 +82,7 @@ const translations = {
 
         'infra.region1.name': 'CABA',
         'infra.region1.fo': 'FO operativa',
-        'infra.region1.torres': 'torres críticas',
+        'infra.region1.torres': 'torres',
 
         'infra.region2.name': 'PROVINCIA DE BS. AS.',
         'infra.region2.fo': 'de FO',
@@ -252,7 +252,7 @@ const translations = {
 
         'infra.region1.name': 'CABA',
         'infra.region1.fo': 'of operational FO',
-        'infra.region1.torres': 'critical towers',
+        'infra.region1.torres': 'towers',
 
         'infra.region2.name': 'BUENOS AIRES PROVINCE',
         'infra.region2.fo': 'of FO',
