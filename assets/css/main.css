@@ -1,3 +1,139 @@
+/* Quality certification */
+.certification-section {
+    padding: 84px 0;
+    background: #061b35;
+    color: #fff;
+    border-block: 1px solid rgba(174, 202, 230, 0.18);
+    scroll-margin-top: 110px;
+}
+
+.certification-section > .container {
+    width: min(1150px, calc(100% - 48px));
+    padding: 0;
+}
+
+.certification-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 388px;
+    align-items: center;
+    gap: 64px;
+}
+
+.certification-copy {
+    min-width: 0;
+}
+
+.certification-copy .global-eyebrow {
+    margin-bottom: 24px;
+    color: var(--primary-color-soft);
+}
+
+.certification-standard {
+    margin: 0 0 24px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2.5rem, 4.8vw, 4.25rem);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.045em;
+    white-space: nowrap;
+}
+
+.certification-description {
+    max-width: 580px;
+    margin: 0 0 28px;
+    color: #d8e3ef;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.certification-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(174, 202, 230, 0.24);
+}
+
+.certification-number {
+    margin: 0;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.certification-cta {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border: 1px solid var(--primary-color-soft);
+    border-radius: 4px;
+    background: var(--primary-color-soft);
+    color: #061b35;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.certification-cta:hover {
+    background: #fff;
+    border-color: #fff;
+}
+
+.certification-cta:focus-visible,
+.certification-qr:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 5px;
+}
+
+.certification-verification {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 174px;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.certification-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.certification-qr {
+    display: block;
+    width: 174px;
+    padding: 12px;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.certification-qr img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.certification-caption {
+    grid-column: 1 / -1;
+    max-width: 300px;
+    margin: 4px auto 0;
+    color: #475569;
+    font-size: 0.75rem;
+    line-height: 1.65;
+    text-align: center;
+}
+
 /* ========================================
    Nosotros Section v2 (Renovada)
    ======================================== */

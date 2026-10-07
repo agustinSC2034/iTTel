@@ -1,5 +1,75 @@
 /* Responsive composition for the renewed site. */
 
+@media (max-width: 1100px) and (min-width: 901px) {
+    .certification-content {
+        grid-template-columns: minmax(0, 1fr) 350px;
+        gap: 36px;
+    }
+
+    .certification-standard {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .certification-section {
+        padding: 64px 0;
+    }
+
+    .certification-content {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    .certification-standard {
+        font-size: clamp(1.9rem, 8.5vw, 3.5rem);
+    }
+
+    .certification-verification {
+        width: min(100%, 388px);
+        justify-self: start;
+    }
+}
+
+@media (max-width: 600px) {
+    .certification-section > .container {
+        width: calc(100% - 40px);
+    }
+
+    .certification-copy .global-eyebrow {
+        margin-bottom: 20px;
+    }
+
+    .certification-description {
+        font-size: 0.9375rem;
+    }
+
+    .certification-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .certification-cta {
+        width: 100%;
+    }
+
+    .certification-verification {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+        gap: 12px;
+        padding: 24px;
+    }
+
+    .certification-logo {
+        width: 170px;
+    }
+
+    .certification-caption {
+        max-width: 260px;
+    }
+}
+
 @media (max-width: 900px) {
     html,
     body {
