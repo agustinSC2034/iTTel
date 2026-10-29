@@ -117,8 +117,29 @@
     outline-offset: 4px;
 }
 
+.certification-issuer-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.certification-issuer-mark {
+    flex: 0 0 auto;
+    padding: 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.certification-issuer-logo {
+    display: block;
+    width: 96px;
+    height: auto;
+}
+
 .certification-issuer {
-    margin: 20px 0 0;
+    margin: 0;
     color: #b8c9da;
     font-size: 0.75rem;
     line-height: 1.6;
