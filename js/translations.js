@@ -1,12 +1,17 @@
 // Sistema de traducciones para iTTel
 const translations = {
     es: {
-        // Certificación de calidad
-        'certification.eyebrow': 'CERTIFICACIÓN DE CALIDAD',
-        'certification.description': 'Grupo iTTel S.A. cuenta con un Sistema de Gestión de la Calidad certificado conforme a la norma ISO 9001:2015.',
-        'certification.number': 'Certificado NVC-2026-087',
-        'certification.cta': 'Verificar certificado',
-        'certification.caption': 'Escaneá el código para verificar la autenticidad del certificado.',
+        // Certifications
+        'certification.eyebrow': 'CERTIFICACIONES',
+        'certification.title': 'Calidad y seguridad de la información',
+        'certification.quality': 'Gestión de la calidad',
+        'certification.security': 'Seguridad de la información',
+        'certification.qualityDescription': 'Sistema de Gestión de la Calidad certificado de Grupo iTTel S.A.',
+        'certification.securityDescription': 'Sistema de gestión certificado para nuestras soluciones y operaciones de TI.',
+        'certification.cta': 'Ver certificado',
+        'certification.qualityNumber': 'Certificado NVC-2026-087',
+        'certification.securityNumber': 'Certificado NVC-2026-088',
+        'certification.issuer': 'Certificaciones emitidas por Novum Veritas Cert.',
 
         // Navegación
         'nav.inicio': 'INICIO',
@@ -178,12 +183,17 @@ const translations = {
     },
     
     en: {
-        // Quality certification
-        'certification.eyebrow': 'QUALITY CERTIFICATION',
-        'certification.description': 'Grupo iTTel S.A. operates a Quality Management System certified in accordance with ISO 9001:2015.',
-        'certification.number': 'Certificate NVC-2026-087',
-        'certification.cta': 'Verify certificate',
-        'certification.caption': 'Scan the code to verify the authenticity of the certificate.',
+        // Certifications
+        'certification.eyebrow': 'CERTIFICATIONS',
+        'certification.title': 'Quality and information security',
+        'certification.quality': 'Quality management',
+        'certification.security': 'Information security',
+        'certification.qualityDescription': 'Grupo iTTel S.A.\'s certified Quality Management System.',
+        'certification.securityDescription': 'Certified management system for our IT solutions and operations.',
+        'certification.cta': 'View certificate',
+        'certification.qualityNumber': 'Certificate NVC-2026-087',
+        'certification.securityNumber': 'Certificate NVC-2026-088',
+        'certification.issuer': 'Certifications issued by Novum Veritas Cert.',
 
         // Navigation
         'nav.inicio': 'HOME',

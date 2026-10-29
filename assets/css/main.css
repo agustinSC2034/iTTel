@@ -1,6 +1,6 @@
-/* Quality certification */
+/* Quality and information security certifications */
 .certification-section {
-    padding: 84px 0;
+    padding: 64px 0;
     background: #061b35;
     color: #fff;
     border-block: 1px solid rgba(174, 202, 230, 0.18);
@@ -12,126 +12,116 @@
     padding: 0;
 }
 
-.certification-content {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 388px;
-    align-items: center;
-    gap: 64px;
+.certification-heading {
+    margin-bottom: 28px;
 }
 
-.certification-copy {
-    min-width: 0;
-}
-
-.certification-copy .global-eyebrow {
-    margin-bottom: 24px;
+.certification-heading .global-eyebrow {
+    margin-bottom: 12px;
     color: var(--primary-color-soft);
 }
 
-.certification-standard {
-    margin: 0 0 24px;
+.certification-heading h2 {
+    margin: 0;
     color: #fff;
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(2.5rem, 4.8vw, 4.25rem);
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+}
+
+.certification-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.certification-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 28px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: #fff;
+    color: #0f172a;
+}
+
+.certification-standard {
+    margin: 0 0 8px;
+    color: #061b35;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
     font-weight: 600;
-    line-height: 1.12;
-    letter-spacing: -0.045em;
-    white-space: nowrap;
+    line-height: 1.25;
+    letter-spacing: -0.035em;
+}
+
+.certification-label {
+    margin: 0 0 12px;
+    color: #0f172a;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.5;
 }
 
 .certification-description {
-    max-width: 580px;
-    margin: 0 0 28px;
-    color: #d8e3ef;
-    font-size: 1rem;
-    line-height: 1.8;
+    margin: 0 0 24px;
+    color: #475569;
+    font-size: 0.9375rem;
+    line-height: 1.65;
 }
 
 .certification-actions {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 16px 24px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(174, 202, 230, 0.24);
+    gap: 12px 20px;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
 }
 
 .certification-number {
     margin: 0;
-    color: #fff;
-    font-size: 0.8rem;
-    font-weight: 600;
+    color: #64748b;
+    font-size: 0.75rem;
     line-height: 1.6;
 }
 
 .certification-cta {
     display: inline-flex;
-    min-height: 48px;
+    min-height: 44px;
     align-items: center;
     justify-content: center;
-    padding: 12px 24px;
-    border: 1px solid var(--primary-color-soft);
+    gap: 12px;
+    padding: 10px 16px;
+    border: 1px solid #227db3;
     border-radius: 4px;
-    background: var(--primary-color-soft);
-    color: #061b35;
+    background: #fff;
+    color: #17618e;
     font-size: 0.875rem;
     font-weight: 600;
     text-decoration: none;
-    transition: background-color 0.2s, border-color 0.2s;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .certification-cta:hover {
-    background: #fff;
-    border-color: #fff;
+    background: #227db3;
+    color: #fff;
 }
 
-.certification-cta:focus-visible,
-.certification-qr:focus-visible {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 5px;
+.certification-cta:focus-visible {
+    outline: 3px solid #227db3;
+    outline-offset: 4px;
 }
 
-.certification-verification {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 174px;
-    align-items: center;
-    gap: 12px;
-    padding: 24px 20px;
-    border: 1px solid #e2e8f0;
-    border-radius: 6px;
-    background: #fff;
-}
-
-.certification-logo {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-.certification-qr {
-    display: block;
-    width: 174px;
-    padding: 12px;
-    border-radius: 4px;
-    background: #fff;
-}
-
-.certification-qr img {
-    display: block;
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-}
-
-.certification-caption {
-    grid-column: 1 / -1;
-    max-width: 300px;
-    margin: 4px auto 0;
-    color: #475569;
+.certification-issuer {
+    margin: 20px 0 0;
+    color: #b8c9da;
     font-size: 0.75rem;
-    line-height: 1.65;
-    text-align: center;
+    line-height: 1.6;
 }
 
 /* ========================================
